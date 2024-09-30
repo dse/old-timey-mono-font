@@ -25,9 +25,9 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="px"
      showgrid="true"
-     inkscape:zoom="0.51394928"
-     inkscape:cx="2575.1568"
-     inkscape:cy="1228.7205"
+     inkscape:zoom="0.25697464"
+     inkscape:cx="2257.0321"
+     inkscape:cy="153.71167"
      inkscape:window-width="1920"
      inkscape:window-height="1027"
      inkscape:window-x="2248"
@@ -983,11 +983,7 @@
        style="display:inline;opacity:1;fill:none;stroke:#000000;stroke-width:5.29166675;stroke-linecap:round;stroke-linejoin:round"
        d="m 542.3959,236.80209 c 0,0 -1.91646,7.22526 -7.20813,7.22526 -5.29166,0 -6.69109,-5.90235 -9.33691,-13.83985 -2.64582,-7.93749 -4.62165,-13.88205 -11.23622,-13.88205 -6.61457,0 -10.58332,8.59039 -10.58332,8.59039"
        id="path56"
-       sodipodi:nodetypes="czzzc" /><path
-       style="display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:5.29166675;stroke-linecap:round;stroke-linejoin:round"
-       d="m 687.00883,56.749 c 0.93544,-0.935444 1.39645,-2.345333 0.37417,-4.115946 -2.73916,-4.744389 -11.59949,-16.463809 -15.34126,-20.205586 -2.80633,-2.806332 -4.67722,-2.80632 -8.419,0.935454 -3.74176,3.74177 -3.74176,5.612652 -0.93544,8.418983 3.74177,3.741778 15.48183,12.614004 20.20557,15.341278 1.77064,1.022268 3.18052,0.561254 4.11596,-0.374183 z"
-       id="path57"
-       sodipodi:nodetypes="zscccsz" /><circle
+       sodipodi:nodetypes="czzzc" /><circle
        style="display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:5.29166675;stroke-opacity:1;stroke-linecap:round;stroke-linejoin:round"
        id="circle72"
        cx="181.43935"
@@ -1000,4 +996,8 @@
        style="display:inline;fill:none;stroke:#000000;stroke-width:5.29166675;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
        d="m 891.64593,748.77084 c 0,-3.49504 2.64583,-10.58333 10.58333,-10.58333 7.9375,0 13.22917,10.58333 21.16667,10.58333 7.9375,0 10.58334,-7.26287 10.58334,-10.58333"
        id="path271"
-       sodipodi:nodetypes="czzc" /></g></svg>
+       sodipodi:nodetypes="czzc" /><path
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:5.29167;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+       d="m 662.78132,34.395834 9.26042,0 14.55208,19.84375 -1.32291,-10e-7 z"
+       id="path292"
+       sodipodi:nodetypes="ccccc" /></g></svg>
