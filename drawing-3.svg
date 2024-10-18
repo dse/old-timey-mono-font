@@ -2,8 +2,8 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="252"
-   height="420"
+   width="1008"
+   height="1680"
    viewBox="0 0 63 105"
    version="1.1"
    id="svg5"
@@ -25,9 +25,9 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="px"
      showgrid="true"
-     inkscape:zoom="0.14214258"
-     inkscape:cx="3693.4745"
-     inkscape:cy="-112.56303"
+     inkscape:zoom="0.28896746"
+     inkscape:cx="83182.375"
+     inkscape:cy="923.97946"
      inkscape:window-width="1440"
      inkscape:window-height="847"
      inkscape:window-x="0"
@@ -110,11 +110,7 @@
        dotted="false"
        gridanglex="30"
        gridanglez="30"
-       visible="true" /><sodipodi:guide
-       position="0,21"
-       orientation="0,-1"
-       id="guide1"
-       inkscape:locked="false" /></sodipodi:namedview><defs
+       visible="true" /></sodipodi:namedview><defs
      id="defs2" /><g
      inkscape:groupmode="layer"
      id="layer3"
@@ -767,11 +763,11 @@
        id="path14"
        sodipodi:nodetypes="cczzzzzzzzzc" /><path
        style="display:inline;fill:none;fill-opacity:1;stroke:#000000;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
-       d="m 98.250034,18.500016 c 0,0 -11.24999,21.249999 -11.24999,42.5 0,21.249994 11.24999,42.499944 11.24999,42.499944"
+       d="m 98.250034,17.000016 c 0,0 -11.24999,21.249999 -11.24999,42.5 0,21.249994 11.24999,42.499944 11.24999,42.499944"
        id="path15"
        sodipodi:nodetypes="czc" /><path
        style="display:inline;fill:none;fill-opacity:1;stroke:#000000;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
-       d="m 972.74996,103.50001 c 0,0 11.25,-21.25 11.25,-42.5 0,-21.25 -11.25,-42.50001 -11.25,-42.50001"
+       d="m 972.74996,102.00001 c 0,0 11.25,-21.25 11.25,-42.5 0,-21.25 -11.25,-42.50001 -11.25,-42.50001"
        id="path16"
        sodipodi:nodetypes="czc" /><ellipse
        style="display:inline;fill:none;fill-opacity:1;stroke:#000000;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
