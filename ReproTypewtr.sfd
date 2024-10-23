@@ -22,7 +22,7 @@ OS2Version: 0
 OS2_WeightWidthSlopeOnly: 0
 OS2_UseTypoMetrics: 1
 CreationTime: 1729142792
-ModificationTime: 1729727587
+ModificationTime: 1729727670
 OS2TypoAscent: 0
 OS2TypoAOffset: 1
 OS2TypoDescent: 0
@@ -45,10 +45,10 @@ NameList: AGL For New Fonts
 DisplaySize: -48
 AntiAlias: 1
 FitToEm: 0
-WinInfo: 8176 16 11
+WinInfo: 80 16 11
 BeginPrivate: 0
 EndPrivate
-BeginChars: 65576 422
+BeginChars: 65576 423
 
 StartChar: parenleft
 Encoding: 40 40 0
@@ -11493,7 +11493,7 @@ StartChar: paragraph
 Encoding: 182 182 411
 Width: 1008
 VWidth: 4000
-Flags: HW
+Flags: HWO
 HStem: 330 96<137.512 184 824 870.488>
 LayerCount: 2
 Fore
@@ -11781,7 +11781,7 @@ StartChar: uni2046
 Encoding: 8262 8262 421
 Width: 1008
 VWidth: 4000
-Flags: HWO
+Flags: HW
 HStem: -300 96<17.5122 64 944 990.488>
 LayerCount: 2
 Fore
@@ -11804,6 +11804,37 @@ SplineSet
  652 1008 l 2
  652 1034.4921875 630.4921875 1056 604 1056 c 2
  404 1056 l 2
+EndSplineSet
+EndChar
+
+StartChar: uni204B
+Encoding: 8267 8267 422
+Width: 1008
+VWidth: 4000
+Flags: HW
+HStem: 330 96<137.512 184 824 870.488>
+LayerCount: 2
+Fore
+SplineSet
+580 500 m 5
+ 514 500 l 5
+ 514 -252 l 6
+ 514 -278.4921875 492.4921875 -300 466 -300 c 4
+ 439.5078125 -300 418 -278.4921875 418 -252 c 6
+ 418 960 l 5
+ 298 960 l 5
+ 298 -252 l 6
+ 298 -278.4921875 276.4921875 -300 250 -300 c 4
+ 223.5078125 -300 202 -278.4921875 202 -252 c 6
+ 202 960 l 5
+ 138 960 l 6
+ 111.5078125 960 90 981.5078125 90 1008 c 4
+ 90 1034.4921875 111.5078125 1056 138 1056 c 6
+ 250 1056 l 5
+ 442 1056 l 5
+ 580 1056 l 5
+ 733.4296875 1056 858 931.4296875 858 778 c 4
+ 858 624.5703125 733.4296875 500 580 500 c 5
 EndSplineSet
 EndChar
 EndChars
