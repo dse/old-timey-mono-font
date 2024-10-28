@@ -22,7 +22,7 @@ OS2Version: 0
 OS2_WeightWidthSlopeOnly: 0
 OS2_UseTypoMetrics: 1
 CreationTime: 1729142792
-ModificationTime: 1729729055
+ModificationTime: 1730151816
 OS2TypoAscent: 0
 OS2TypoAOffset: 1
 OS2TypoDescent: 0
@@ -48,6 +48,19 @@ FitToEm: 0
 WinInfo: 112 16 11
 BeginPrivate: 0
 EndPrivate
+Grid
+0 528 m 25
+ 1008 528 l 1049
+-1008 378 m 29
+ 2016 378 l 1053
+-1008 756 m 25
+ 2016 756 l 1049
+-1008 1056 m 25
+ 2016 1056 l 1049
+504 3072 m 25
+ 504 -2048 l 25
+ 504 3072 l 25
+EndSplineSet
 BeginChars: 65576 425
 
 StartChar: parenleft
