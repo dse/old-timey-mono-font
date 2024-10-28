@@ -1,0 +1,62 @@
+#!/usr/bin/env -S fontforge -quiet
+# -*- mode: python; coding: utf-8 -*-
+
+import os
+import fontforge
+import re
+import argparse
+
+def main():
+    global args
+    parser = argparse.ArgumentParser(description="import SVG characters")
+    parser.add_argument('font_filename', help="font filename")
+    parser.add_argument('svg_filenames', nargs='+', help="svg characters")
+    parser.add_argument('--clockwise', action='store_true')
+    parser.add_argument('--expand-stroke', '-x', type=int, help="pixels to expand stroke")
+    parser.add_argument('--glyph-width', '--width', '-w', type=int, help="glyph width", default=1008)
+    args = parser.parse_args()
+
+    print("Loading %s" % args.font_filename)
+    font = fontforge.open(args.font_filename)
+    for svg_filename in args.svg_filenames:
+        (svg_dirname, svg_basename) = os.path.split(svg_filename)
+        match = re.search(r'^u\+([0-9a-f]+)', svg_basename, flags=re.IGNORECASE)
+        if not match:
+            print("%s: not an SVG character filename; skipping" % svg_filename)
+            continue
+        hex = match.expand('\\1')
+        codepoint = int(hex, 16)
+
+        match = re.search(r'--', svg_basename, flags=re.IGNORECASE)
+        if match:
+            print("%s: alternate glyph not supported yet; skipping" % svg_filename)
+            continue
+
+        if codepoint in font:
+            font.removeGlyph(codepoint)
+        glyph = font.createChar(codepoint)
+        glyph.importOutlines(svg_filename)
+        if args.clockwise:
+            new_contours = []
+            for i in range(0, len(glyph.foreground)):
+                contour = glyph.foreground[i]
+                if contour.isClockwise() == 0:
+                    contour.reverseDirection()
+                new_contours += [contour]
+            font.removeGlyph(codepoint)
+            glyph = font.createChar(codepoint)
+            for contour in new_contours:
+                glyph.foreground += contour
+                glyph.background += contour
+        if args.expand_stroke is not None:
+            glyph.stroke("circular", args.expand_stroke, "round", "round")
+        glyph.removeOverlap()
+        glyph.width = args.glyph_width
+    if os.path.splitext(args.font_filename)[1] == '.sfd':
+        print("Saving %s" % args.font_filename)
+        font.save(args.font_filename)
+    else:
+        print("Generating %s" % args.font_filename)
+        font.generate(args.font_filename)
+
+main()
