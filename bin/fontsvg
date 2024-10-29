@@ -32,11 +32,14 @@ def main():
             print("%s: alternate glyph not supported yet; skipping" % svg_filename)
             continue
 
+        print("%s: U+%04X" % (svg_filename, codepoint))
         if codepoint in font:
             font.removeGlyph(codepoint)
         glyph = font.createChar(codepoint)
+        print("    importing outlines")
         glyph.importOutlines(svg_filename)
         if args.clockwise:
+            print("    uniformly directing contours")
             new_contours = []
             for i in range(0, len(glyph.foreground)):
                 contour = glyph.foreground[i]
@@ -47,9 +50,12 @@ def main():
             glyph = font.createChar(codepoint)
             for contour in new_contours:
                 glyph.foreground += contour
-                glyph.background += contour
+                # glyph.background += contour
+            glyph.removeOverlap()
         if args.expand_stroke is not None:
+            print("    expanding strokes by %d px" % args.expand_stroke)
             glyph.stroke("circular", args.expand_stroke, "round", "round")
+        print("    removing overlaps")
         glyph.removeOverlap()
         glyph.width = args.glyph_width
     if os.path.splitext(args.font_filename)[1] == '.sfd':
