@@ -22,12 +22,17 @@ OS2Version: 0
 OS2_WeightWidthSlopeOnly: 0
 OS2_UseTypoMetrics: 1
 CreationTime: 1729142792
-ModificationTime: 1730158960
+ModificationTime: 1730230094
+PfmFamily: 17
+TTFWeight: 400
+TTFWidth: 5
+LineGap: 0
+VLineGap: 0
 OS2TypoAscent: 0
 OS2TypoAOffset: 1
 OS2TypoDescent: 0
 OS2TypoDOffset: 1
-OS2TypoLinegap: 151
+OS2TypoLinegap: 0
 OS2WinAscent: 0
 OS2WinAOffset: 1
 OS2WinDescent: 0
@@ -61,7 +66,7 @@ Grid
  504 -2048 l 25
  504 3072 l 25
 EndSplineSet
-BeginChars: 65584 471
+BeginChars: 65584 468
 
 StartChar: parenleft
 Encoding: 40 40 0
@@ -12971,104 +12976,74 @@ StartChar: uni2070
 Encoding: 8304 8304 451
 Width: 1008
 VWidth: 4000
-Flags: HWO
+Flags: HW
 LayerCount: 2
 Fore
 Refer: 186 -1 S 1 0 0 1 0 660 2
 EndChar
 
-StartChar: uni2071
-Encoding: 8305 8305 452
-Width: 1008
-VWidth: 4000
-Flags: HW
-LayerCount: 2
-Fore
-Refer: 187 -1 N 1 0 0 1 0 0 2
-EndChar
-
-StartChar: uni2072
-Encoding: 8306 8306 453
-Width: 1008
-VWidth: 4000
-Flags: HW
-LayerCount: 2
-Fore
-Refer: 188 -1 N 1 0 0 1 0 0 2
-EndChar
-
-StartChar: uni2073
-Encoding: 8307 8307 454
-Width: 1008
-VWidth: 4000
-Flags: HW
-LayerCount: 2
-Fore
-Refer: 189 -1 N 1 0 0 1 0 0 2
-EndChar
-
 StartChar: uni2074
-Encoding: 8308 8308 455
+Encoding: 8308 8308 452
 Width: 1008
-VWidth: 4000
+VWidth: 4660
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 190 -1 N 1 0 0 1 0 0 2
+Refer: 190 -1 N 1 0 0 1 0 660 2
 EndChar
 
 StartChar: uni2075
-Encoding: 8309 8309 456
+Encoding: 8309 8309 453
 Width: 1008
-VWidth: 4000
+VWidth: 4660
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 191 -1 N 1 0 0 1 0 0 2
+Refer: 191 -1 N 1 0 0 1 0 660 2
 EndChar
 
 StartChar: uni2076
-Encoding: 8310 8310 457
+Encoding: 8310 8310 454
 Width: 1008
-VWidth: 4000
+VWidth: 4660
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 192 -1 N 1 0 0 1 0 0 2
+Refer: 192 -1 N 1 0 0 1 0 660 2
 EndChar
 
 StartChar: uni2077
-Encoding: 8311 8311 458
+Encoding: 8311 8311 455
 Width: 1008
-VWidth: 4000
+VWidth: 4660
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 193 -1 N 1 0 0 1 0 0 2
+Refer: 193 -1 N 1 0 0 1 0 660 2
 EndChar
 
 StartChar: uni2078
-Encoding: 8312 8312 459
+Encoding: 8312 8312 456
 Width: 1008
-VWidth: 4000
+VWidth: 4660
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 194 -1 N 1 0 0 1 0 0 2
+Refer: 194 -1 N 1 0 0 1 0 660 2
 EndChar
 
 StartChar: uni2079
-Encoding: 8313 8313 460
+Encoding: 8313 8313 457
 Width: 1008
-VWidth: 4000
+VWidth: 4660
 Flags: HW
 LayerCount: 2
 Fore
-Refer: 195 -1 N 1 0 0 1 0 0 2
+Refer: 195 -1 N 1 0 0 1 0 660 2
 EndChar
 
 StartChar: uni2080
-Encoding: 8320 8320 461
+Encoding: 8320 8320 458
 Width: 1008
 VWidth: 4000
 Flags: HW
@@ -13078,7 +13053,7 @@ Refer: 186 -1 N 1 0 0 1 0 0 2
 EndChar
 
 StartChar: uni2081
-Encoding: 8321 8321 462
+Encoding: 8321 8321 459
 Width: 1008
 VWidth: 4000
 Flags: HW
@@ -13088,7 +13063,7 @@ Refer: 187 -1 N 1 0 0 1 0 0 2
 EndChar
 
 StartChar: uni2082
-Encoding: 8322 8322 463
+Encoding: 8322 8322 460
 Width: 1008
 VWidth: 4000
 Flags: HW
@@ -13098,7 +13073,7 @@ Refer: 188 -1 N 1 0 0 1 0 0 2
 EndChar
 
 StartChar: uni2083
-Encoding: 8323 8323 464
+Encoding: 8323 8323 461
 Width: 1008
 VWidth: 4000
 Flags: HW
@@ -13108,7 +13083,7 @@ Refer: 189 -1 N 1 0 0 1 0 0 2
 EndChar
 
 StartChar: uni2084
-Encoding: 8324 8324 465
+Encoding: 8324 8324 462
 Width: 1008
 VWidth: 4000
 Flags: HW
@@ -13118,7 +13093,7 @@ Refer: 190 -1 N 1 0 0 1 0 0 2
 EndChar
 
 StartChar: uni2085
-Encoding: 8325 8325 466
+Encoding: 8325 8325 463
 Width: 1008
 VWidth: 4000
 Flags: HW
@@ -13128,7 +13103,7 @@ Refer: 191 -1 N 1 0 0 1 0 0 2
 EndChar
 
 StartChar: uni2086
-Encoding: 8326 8326 467
+Encoding: 8326 8326 464
 Width: 1008
 VWidth: 4000
 Flags: HW
@@ -13138,7 +13113,7 @@ Refer: 192 -1 N 1 0 0 1 0 0 2
 EndChar
 
 StartChar: uni2087
-Encoding: 8327 8327 468
+Encoding: 8327 8327 465
 Width: 1008
 VWidth: 4000
 Flags: HW
@@ -13148,7 +13123,7 @@ Refer: 193 -1 N 1 0 0 1 0 0 2
 EndChar
 
 StartChar: uni2088
-Encoding: 8328 8328 469
+Encoding: 8328 8328 466
 Width: 1008
 VWidth: 4000
 Flags: HW
@@ -13158,7 +13133,7 @@ Refer: 194 -1 N 1 0 0 1 0 0 2
 EndChar
 
 StartChar: uni2089
-Encoding: 8329 8329 470
+Encoding: 8329 8329 467
 Width: 1008
 VWidth: 4000
 Flags: HW
