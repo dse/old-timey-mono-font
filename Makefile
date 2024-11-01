@@ -18,4 +18,9 @@ metrics: FORCE
 	glyphbearings src/ReproTypewrA.sfd > data/orig-metrics.txt
 	glyphbearings src/ReproTypewr.sfd > data/new-metrics.txt
 
+braille: FORCE
+	fontbraille -W 200 -f $(FONT_SRC)
+boxdraw: FORCE
+	fontboxdraw -f $(FONT_SRC)
+
 .PHONY: FORCE
