@@ -9,7 +9,7 @@
    id="svg5"
    xml:space="preserve"
    inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
-   sodipodi:docname="u+0032 digit two.svg"
+   sodipodi:docname="u+0032-digit-two.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -26,7 +26,7 @@
      inkscape:document-units="px"
      showgrid="false"
      inkscape:zoom="0.5"
-     inkscape:cx="93"
+     inkscape:cx="31"
      inkscape:cy="584"
      inkscape:window-width="1908"
      inkscape:window-height="1017"
@@ -136,15 +136,15 @@
      id="layer1"
      style="display:inline"><path
        style="display:inline;fill:none;stroke:#000000;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
-       d="M 10.25,81.00001 C 12.4512,67.69254 20.4331,59.48379 32.803,53.27647 45.1728,47.06916 51.2593,44.18577 51.2593,35.41532 51.2593,26.64488 42.75,19.74999 31.5,19.75 20.25,19.75001 12.3138,26.60195 12.3138,34.10195"
+       d="m 10.0993,81.00001 c 2.2012,-13.30747 10.1831,-21.51622 22.553,-27.72354 12.3698,-6.20731 18.4563,-9.0907 18.4563,-17.86115 0,-8.77044 -8.5093,-15.66533 -19.7593,-15.66532 -11.25,10e-6 -19.1862,6.85195 -19.1862,14.35195"
        id="path72"
        sodipodi:nodetypes="czzzc" /><path
        style="display:inline;fill:none;stroke:#000000;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
-       d="m 10.25,81.00001 c 0,0 5.1829,-6.3357 12.3898,-6.3357 7.2068,0 11.8685,7.47791 18.8573,7.47791 6.9888,0 10.158,-6.08866 11.5543,-8.50044"
+       d="m 10.0993,81.00001 c 0,0 5.1829,-6.3357 12.3898,-6.3357 7.2068,0 11.8685,7.47791 18.8573,7.47791 6.9888,0 10.158,-6.08866 11.5543,-8.50044"
        id="path73"
        sodipodi:nodetypes="czzc" /><circle
-       style="display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1;stroke-dasharray:none"
+       style="display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
        id="circle72"
-       cx="14.188721"
+       cx="14.038021"
        cy="34.102066"
        r="1.875" /></g></svg>

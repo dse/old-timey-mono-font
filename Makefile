@@ -14,4 +14,8 @@ fontsvg: FORCE
 	$(FONTSVG) --clockwise $(FONT_SRC) src/chars/96-px-outlines/*.svg
 	$(FONTSVG) --expand-stroke 84 $(FONT_SRC) src/chars/12-px-outlines/*.svg
 
+metrics: FORCE
+	glyphbearings src/ReproTypewrA.sfd > data/orig-metrics.txt
+	glyphbearings src/ReproTypewr.sfd > data/new-metrics.txt
+
 .PHONY: FORCE
