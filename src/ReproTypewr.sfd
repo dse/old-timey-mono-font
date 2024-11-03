@@ -22,7 +22,7 @@ OS2Version: 0
 OS2_WeightWidthSlopeOnly: 0
 OS2_UseTypoMetrics: 1
 CreationTime: 1729142792
-ModificationTime: 1730441966
+ModificationTime: 1730670580
 PfmFamily: 17
 TTFWeight: 400
 TTFWidth: 5
@@ -53,14 +53,56 @@ NameList: AGL For New Fonts
 DisplaySize: -48
 AntiAlias: 1
 FitToEm: 0
-WinInfo: 48 16 11
+WinInfo: 0 39 14
 BeginPrivate: 0
 EndPrivate
 Grid
-0 528 m 25
- 1008 528 l 1049
--1008 378 m 29
- 2016 378 l 1053
+100 960 m 1
+ 908 960 l 1025
+100 1008 m 1
+ 908 1008 l 1025
+100 660 m 1
+ 908 660 l 1025
+100 708 m 1
+ 908 708 l 1025
+100 48 m 1
+ 908 48 l 1025
+100 96 m 1
+ 908 96 l 1025
+352 -224 m 1
+ 676 -224 l 1025
+352 -272 m 1
+ 676 -272 l 1025
+352 -320 m 1
+ 676 -320 l 1025
+352 1076 m 1
+ 676 1076 l 1025
+352 1028 m 1
+ 676 1028 l 1025
+352 980 m 1
+ 676 980 l 1025
+352 776 m 1
+ 676 776 l 1025
+352 728 m 1
+ 676 728 l 1025
+352 680 m 1
+ 676 680 l 1025
+352 76 m 1
+ 676 76 l 1025
+352 28 m 1
+ 676 28 l 1025
+352 -20 m 1
+ 676 -20 l 1025
+100 -252 m 1
+ 908 -252 l 1025
+100 -204 m 1
+ 908 -204 l 1025
+-1008 -300 m 1
+ 2016 -300 l 1025
+100 528 m 25
+ 908 528 l 1049
+-1008 378 m 25
+ 2016 378 l 1049
 -1008 756 m 25
  2016 756 l 1049
 -1008 1056 m 25
@@ -12549,7 +12591,7 @@ EndChar
 StartChar: p
 Encoding: 112 112 432
 Width: 1008
-Flags: HW
+Flags: HWO
 LayerCount: 2
 Fore
 SplineSet
