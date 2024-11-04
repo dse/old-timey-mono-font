@@ -12,7 +12,6 @@
    sodipodi:docname="u+2039-left-pointing-single-guillemet.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg"><sodipodi:namedview
      id="namedview7"
@@ -196,7 +195,7 @@
      id="layer3"
      inkscape:label="Layer 3"
      style="display:inline;opacity:0.5;stroke-width:3.60000001;stroke-dasharray:none"
-     transform="matrix(0.83333333,0,0,0.83333333,-157.97619,-173.09626)"></g><g
+     transform="matrix(0.83333333,0,0,0.83333333,-157.97619,-173.09626)" /><g
      inkscape:groupmode="layer"
      id="layer2"
      inkscape:label="Layer 2"
@@ -205,7 +204,7 @@
      inkscape:groupmode="layer"
      id="layer1"
      style="display:inline"><path
-       style="display:inline;fill:none;stroke:#121212;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2.61313"
+       style="display:inline;fill:none;stroke:#121212;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2.61313;stroke-dasharray:none"
        d="M 36,42.75 27,60.375 36,78"
        id="path2931"
        sodipodi:nodetypes="ccc" /></g></svg>
