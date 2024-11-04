@@ -12,7 +12,6 @@
    sodipodi:docname="u+204b-reversed-pilcrow-sign.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg"><sodipodi:namedview
      id="namedview7"
@@ -26,12 +25,12 @@
      inkscape:document-units="px"
      showgrid="false"
      inkscape:zoom="0.90509668"
-     inkscape:cx="335.32329"
-     inkscape:cy="421.50193"
+     inkscape:cx="319.30291"
+     inkscape:cy="454.64756"
      inkscape:window-width="1447"
      inkscape:window-height="746"
-     inkscape:window-x="2486"
-     inkscape:window-y="409"
+     inkscape:window-x="2566"
+     inkscape:window-y="448"
      inkscape:window-maximized="0"
      inkscape:current-layer="layer1"
      showguides="true"
@@ -110,7 +109,7 @@
      id="layer3"
      inkscape:label="Layer 3"
      style="display:inline;opacity:0.5;stroke-width:3.60000001;stroke-dasharray:none"
-     transform="matrix(0.83333333,0,0,0.83333333,-157.97619,-173.09626)"></g><g
+     transform="matrix(0.83333333,0,0,0.83333333,-157.97619,-173.09626)" /><g
      inkscape:groupmode="layer"
      id="layer2"
      inkscape:label="Layer 2"
@@ -136,7 +135,7 @@
        id="path3240"
        sodipodi:nodetypes="cc" /><path
        style="display:inline;fill:none;stroke:#000000;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
-       d="m 36.250006,49.750015 h -8.49997"
+       d="m 36.250006,49.750015 h -6.99997"
        id="path3242"
        sodipodi:nodetypes="cc" /><path
        style="display:inline;fill:none;stroke:#000000;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
@@ -144,11 +143,11 @@
        id="path3244"
        sodipodi:nodetypes="cc" /><path
        style="display:inline;fill:none;stroke:#000000;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
-       d="M 27.625036,21.125 V 99.75"
+       d="M 29.125062,21.125 V 99.75"
        id="path3248"
        sodipodi:nodetypes="cc" /><path
        style="display:inline;fill:none;stroke:#000000;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2.61313"
-       d="m 30.000036,23.625 0.125,23.625015"
+       d="m 30.625036,23.625 0.125,23.625015"
        id="path7940"
        sodipodi:nodetypes="cc" /><path
        style="display:inline;fill:none;stroke:#000000;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2.61313"
