@@ -14,6 +14,7 @@ def main():
     parser.add_argument('--clockwise', action='store_true')
     parser.add_argument('--expand-stroke', '-x', type=int, help="pixels to expand stroke")
     parser.add_argument('--glyph-width', '--width', '-w', type=int, help="glyph width", default=1008)
+    parser.add_argument('--dry-run', '-n', action='store_true')
     args = parser.parse_args()
 
     print("Loading %s" % args.font_filename)
@@ -26,16 +27,17 @@ def main():
             continue
         hex = match.expand('\\1')
         codepoint = int(hex, 16)
-
-        match = re.search(r'--', svg_basename, flags=re.IGNORECASE)
+        match = re.search(r'--(.+)', os.path.splitext(svg_basename)[0])
         if match:
-            print("%s: alternate glyph not supported yet; skipping" % svg_filename)
-            continue
-
-        print("%s: U+%04X" % (svg_filename, codepoint))
-        if codepoint in font:
-            font.removeGlyph(codepoint)
-        glyph = font.createChar(codepoint)
+            suffix = match.expand('\\1')
+            glyphname = fontforge.nameFromUnicode(codepoint) + "." + suffix
+            if glyphname in font:
+                font.removeGlyph(glyphname)
+            glyph = font.createChar(-1, glyphname)
+        else:
+            if codepoint in font:
+                font.removeGlyph(codepoint)
+            glyph = font.createChar(codepoint)
         glyph.importOutlines(svg_filename)
         if args.clockwise:
             glyph = all_clockwise(glyph, codepoint)
@@ -45,6 +47,9 @@ def main():
             glyph = all_clockwise(glyph, codepoint)
         glyph.removeOverlap()
         glyph.width = args.glyph_width
+    if args.dry_run:
+        print("DRY RUN: not saving or generating %s" % args.font_filename)
+        return
     if os.path.splitext(args.font_filename)[1] == '.sfd':
         print("Saving %s" % args.font_filename)
         font.save(args.font_filename)
