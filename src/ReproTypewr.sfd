@@ -22,7 +22,7 @@ OS2Version: 0
 OS2_WeightWidthSlopeOnly: 0
 OS2_UseTypoMetrics: 1
 CreationTime: 1729142792
-ModificationTime: 1730958759
+ModificationTime: 1730958864
 PfmFamily: 17
 TTFWeight: 400
 TTFWidth: 5
@@ -45,6 +45,7 @@ HheadDOffset: 0
 OS2CapHeight: 1056
 OS2XHeight: 756
 OS2Vendor: 'PfEd'
+Lookup: 260 0 0 "'mark' Mark Positioning lookup 0" { "'mark' Mark Positioning lookup 0-1"  } ['mark' ('DFLT' <'dflt' > 'brai' <'dflt' > 'latn' <'dflt' > ) ]
 MarkAttachClasses: 1
 DEI: 91125
 Encoding: UnicodeBmp
@@ -113,6 +114,7 @@ Grid
  504 -2048 l 25
  504 3072 l 25
 EndSplineSet
+AnchorClass2: "bottom" "'mark' Mark Positioning lookup 0-1" "top" "'mark' Mark Positioning lookup 0-1"
 BeginChars: 65596 760
 
 StartChar: cedilla
@@ -18195,7 +18197,7 @@ EndChar
 StartChar: A
 Encoding: 65 65 628
 Width: 1008
-Flags: HWO
+Flags: HW
 LayerCount: 2
 Fore
 SplineSet
