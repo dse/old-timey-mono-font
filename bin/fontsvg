@@ -36,16 +36,13 @@ def main():
         if codepoint in font:
             font.removeGlyph(codepoint)
         glyph = font.createChar(codepoint)
-        # print("    importing outlines")
         glyph.importOutlines(svg_filename)
         if args.clockwise:
             glyph = all_clockwise(glyph, codepoint)
         if args.expand_stroke is not None:
-            # print("    expanding strokes by %d px" % args.expand_stroke)
             glyph.stroke("circular", args.expand_stroke, "round", "round")
         if codepoint == ord('i') or codepoint == ord('j'):
             glyph = all_clockwise(glyph, codepoint)
-        # print("    removing overlaps")
         glyph.removeOverlap()
         glyph.width = args.glyph_width
     if os.path.splitext(args.font_filename)[1] == '.sfd':
@@ -57,7 +54,6 @@ def main():
 
 def all_clockwise(glyph, codepoint):
     font = glyph.font
-    # print("    uniformly directing contours")
     new_contours = []
     for i in range(0, len(glyph.foreground)):
         contour = glyph.foreground[i]
