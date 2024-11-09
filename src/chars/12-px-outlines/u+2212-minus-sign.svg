@@ -9,7 +9,7 @@
    id="svg5"
    xml:space="preserve"
    inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
-   sodipodi:docname="u+007c-vertical-line.svg"
+   sodipodi:docname="u+2212-minus-sign.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -24,9 +24,9 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="px"
      showgrid="false"
-     inkscape:zoom="0.64"
-     inkscape:cx="333.59375"
-     inkscape:cy="1031.25"
+     inkscape:zoom="0.45254834"
+     inkscape:cx="228.70485"
+     inkscape:cy="702.68736"
      inkscape:window-width="1908"
      inkscape:window-height="1017"
      inkscape:window-x="2256"
@@ -212,7 +212,6 @@
      inkscape:groupmode="layer"
      id="layer1"
      style="display:inline"><path
-       style="fill:none;stroke:#000000;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2.61313"
-       d="M 31.5,21 V 99.75"
-       id="path10483"
-       sodipodi:nodetypes="cc" /></g></svg>
+       style="display:inline;fill:none;stroke:#000000;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       d="m 11.50005,60.375 h 39.9999"
+       id="path1493" /></g></svg>

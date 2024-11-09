@@ -12,7 +12,7 @@ def main():
     parser.add_argument('font_filename', help="font filename")
     parser.add_argument('svg_filenames', nargs='+', help="svg characters")
     parser.add_argument('--clockwise', action='store_true')
-    parser.add_argument('--expand-stroke', '-x', type=int, help="pixels to expand stroke")
+    parser.add_argument('--expand-stroke', '-x', type=int, help="number of pixels to expand stroke")
     parser.add_argument('--glyph-width', '--width', '-w', type=int, help="glyph width", default=1008)
     parser.add_argument('--dry-run', '-n', action='store_true')
     args = parser.parse_args()
@@ -21,23 +21,27 @@ def main():
     font = fontforge.open(args.font_filename)
     for svg_filename in args.svg_filenames:
         (svg_dirname, svg_basename) = os.path.split(svg_filename)
-        match = re.search(r'^u\+([0-9a-f]+)', svg_basename, flags=re.IGNORECASE)
-        if not match:
+        match_1 = re.search(r'^u\+([0-9a-f]+)', svg_basename, flags=re.IGNORECASE)
+        match_2 = re.search(r'^x--', svg_basename, flags=re.IGNORECASE)
+        match_3 = re.search(r'--(.+)$', os.path.splitext(svg_basename)[0]) # foo--bar.svg => "bar"
+        if not match_1 and not match_2:
             print("%s: not an SVG character filename; skipping" % svg_filename)
             continue
-        hex = match.expand('\\1')
-        codepoint = int(hex, 16)
-        match = re.search(r'--(.+)', os.path.splitext(svg_basename)[0])
-        if match:
-            suffix = match.expand('\\1')
+        suffix = match_3.expand('\\1') if match_3 else None
+        hex = match_1.expand('\\1') if match_1 else None
+        codepoint = int(hex, 16) if hex is not None else -1
+        if codepoint < 0:
+            glyphname = suffix
+        elif suffix is not None:
             glyphname = fontforge.nameFromUnicode(codepoint) + "." + suffix
-            if glyphname in font:
-                font.removeGlyph(glyphname)
+            codepoint = -1
+        else:
+            glyphname = fontforge.nameFromUnicode(codepoint)
+        if codepoint < 0:
             glyph = font.createChar(-1, glyphname)
         else:
-            if codepoint in font:
-                font.removeGlyph(codepoint)
             glyph = font.createChar(codepoint)
+        glyph.foreground = fontforge.layer()
         glyph.importOutlines(svg_filename)
         if args.clockwise:
             glyph = all_clockwise(glyph, codepoint)
