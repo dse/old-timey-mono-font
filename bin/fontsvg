@@ -12,42 +12,48 @@ def main():
     parser.add_argument('font_filename', help="font filename")
     parser.add_argument('svg_filenames', nargs='+', help="svg characters")
     parser.add_argument('--clockwise', action='store_true')
-    parser.add_argument('--expand-stroke', '-x', type=int, help="pixels to expand stroke")
+    parser.add_argument('--expand-stroke', '-x', type=int, help="number of pixels to expand stroke")
     parser.add_argument('--glyph-width', '--width', '-w', type=int, help="glyph width", default=1008)
+    parser.add_argument('--dry-run', '-n', action='store_true')
     args = parser.parse_args()
 
     print("Loading %s" % args.font_filename)
     font = fontforge.open(args.font_filename)
     for svg_filename in args.svg_filenames:
         (svg_dirname, svg_basename) = os.path.split(svg_filename)
-        match = re.search(r'^u\+([0-9a-f]+)', svg_basename, flags=re.IGNORECASE)
-        if not match:
+        match_1 = re.search(r'^u\+([0-9a-f]+)', svg_basename, flags=re.IGNORECASE)
+        match_2 = re.search(r'^x--', svg_basename, flags=re.IGNORECASE)
+        match_3 = re.search(r'--(.+)$', os.path.splitext(svg_basename)[0]) # foo--bar.svg => "bar"
+        if not match_1 and not match_2:
             print("%s: not an SVG character filename; skipping" % svg_filename)
             continue
-        hex = match.expand('\\1')
-        codepoint = int(hex, 16)
-
-        match = re.search(r'--', svg_basename, flags=re.IGNORECASE)
-        if match:
-            print("%s: alternate glyph not supported yet; skipping" % svg_filename)
-            continue
-
-        print("%s: U+%04X" % (svg_filename, codepoint))
-        if codepoint in font:
-            font.removeGlyph(codepoint)
-        glyph = font.createChar(codepoint)
-        # print("    importing outlines")
+        suffix = match_3.expand('\\1') if match_3 else None
+        hex = match_1.expand('\\1') if match_1 else None
+        codepoint = int(hex, 16) if hex is not None else -1
+        if codepoint < 0:
+            glyphname = suffix
+        elif suffix is not None:
+            glyphname = fontforge.nameFromUnicode(codepoint) + "." + suffix
+            codepoint = -1
+        else:
+            glyphname = fontforge.nameFromUnicode(codepoint)
+        if codepoint < 0:
+            glyph = font.createChar(-1, glyphname)
+        else:
+            glyph = font.createChar(codepoint, glyphname)
+        glyph.foreground = fontforge.layer()
         glyph.importOutlines(svg_filename)
         if args.clockwise:
             glyph = all_clockwise(glyph, codepoint)
         if args.expand_stroke is not None:
-            # print("    expanding strokes by %d px" % args.expand_stroke)
             glyph.stroke("circular", args.expand_stroke, "round", "round")
         if codepoint == ord('i') or codepoint == ord('j'):
             glyph = all_clockwise(glyph, codepoint)
-        # print("    removing overlaps")
         glyph.removeOverlap()
         glyph.width = args.glyph_width
+    if args.dry_run:
+        print("DRY RUN: not saving or generating %s" % args.font_filename)
+        return
     if os.path.splitext(args.font_filename)[1] == '.sfd':
         print("Saving %s" % args.font_filename)
         font.save(args.font_filename)
@@ -57,7 +63,6 @@ def main():
 
 def all_clockwise(glyph, codepoint):
     font = glyph.font
-    # print("    uniformly directing contours")
     new_contours = []
     for i in range(0, len(glyph.foreground)):
         contour = glyph.foreground[i]

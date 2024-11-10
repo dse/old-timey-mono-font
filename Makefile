@@ -11,7 +11,6 @@ dist/ttf/%.ttf: src/%.sfd $(FONTCONVERT) $(MAKEFILE)
 	mv "$@.tmp.ttf" "$@"
 
 fontsvg: FORCE
-	$(FONTSVG) --clockwise $(FONT_SRC) src/chars/96-px-outlines/*.svg
 	$(FONTSVG) --expand-stroke 84 $(FONT_SRC) src/chars/12-px-outlines/*.svg
 
 metrics: FORCE

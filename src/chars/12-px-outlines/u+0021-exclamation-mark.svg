@@ -12,7 +12,6 @@
    sodipodi:docname="u+0021-exclamation-mark.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg"><sodipodi:namedview
      id="namedview7"
@@ -25,9 +24,9 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="px"
      showgrid="false"
-     inkscape:zoom="1"
-     inkscape:cx="463.5"
-     inkscape:cy="734"
+     inkscape:zoom="2.8284271"
+     inkscape:cx="493.73731"
+     inkscape:cy="385.01964"
      inkscape:window-width="1908"
      inkscape:window-height="1017"
      inkscape:window-x="2256"
@@ -110,7 +109,7 @@
      id="layer3"
      inkscape:label="Layer 3"
      style="display:inline;opacity:0.5;stroke-width:3.60000001;stroke-dasharray:none"
-     transform="matrix(0.83333333,0,0,0.83333333,-157.97619,-173.09626)"></g><g
+     transform="matrix(0.83333333,0,0,0.83333333,-157.97619,-173.09626)" /><g
      inkscape:groupmode="layer"
      id="layer2"
      inkscape:label="Layer 2"
@@ -137,5 +136,10 @@
        id="path2288"
        sodipodi:nodetypes="cc" /><path
        style="fill:none;stroke:#000000;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2.61313"
-       d="M 31.5,24 V 51"
-       id="path2318" /></g></svg>
+       d="M 30.75,22.75 31.5,51"
+       id="path2318"
+       sodipodi:nodetypes="cc" /><path
+       style="fill:none;stroke:#000000;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2.61313"
+       d="M 32.25,22.75 31.5,51"
+       id="path3161"
+       sodipodi:nodetypes="cc" /></g></svg>
