@@ -40,7 +40,7 @@ def main():
         if codepoint < 0:
             glyph = font.createChar(-1, glyphname)
         else:
-            glyph = font.createChar(codepoint)
+            glyph = font.createChar(codepoint, glyphname)
         glyph.foreground = fontforge.layer()
         glyph.importOutlines(svg_filename)
         if args.clockwise:
