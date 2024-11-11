@@ -5,6 +5,7 @@ import os
 import fontforge
 import re
 import argparse
+import psMat
 
 def main():
     global args
@@ -13,12 +14,18 @@ def main():
     parser.add_argument('svg_filenames', nargs='+', help="svg characters")
     parser.add_argument('--clockwise', action='store_true')
     parser.add_argument('--expand-stroke', '-x', type=int, help="number of pixels to expand stroke")
+    parser.add_argument('--expand-sm-stroke', '-X', type=int, help="number of pixels to expand stroke in .smol glyphs")
     parser.add_argument('--glyph-width', '--width', '-w', type=int, help="glyph width", default=1008)
     parser.add_argument('--dry-run', '-n', action='store_true')
+    parser.add_argument('--ignore-svg-stroke-width', action='store_true',
+                        help='ignore SVG stroke widths')
     args = parser.parse_args()
 
     print("Loading %s" % args.font_filename)
     font = fontforge.open(args.font_filename)
+
+    expand_sm_stroke = args.expand_sm_stroke if args.expand_sm_stroke is not None else args.expand_stroke
+
     for svg_filename in args.svg_filenames:
         (svg_dirname, svg_basename) = os.path.split(svg_filename)
         match_1 = re.search(r'^u\+([0-9a-f]+)', svg_basename, flags=re.IGNORECASE)
@@ -41,16 +48,20 @@ def main():
             glyph = font.createChar(-1, glyphname)
         else:
             glyph = font.createChar(codepoint, glyphname)
-        glyph.foreground = fontforge.layer()
-        glyph.importOutlines(svg_filename)
-        if args.clockwise:
-            glyph = all_clockwise(glyph, codepoint)
-        if args.expand_stroke is not None:
-            glyph.stroke("circular", args.expand_stroke, "round", "round")
-        if codepoint == ord('i') or codepoint == ord('j'):
-            glyph = all_clockwise(glyph, codepoint)
-        glyph.removeOverlap()
-        glyph.width = args.glyph_width
+
+        do_import_work(font, glyph, svg_filename)
+        do_outline_work(font, glyph, args.expand_stroke)
+
+        if codepoint in range(33,127):
+            # ASCII printable
+            sm_glyphname = fontforge.nameFromUnicode(codepoint) + '.smol'
+            sm_glyph = font.createChar(-1, sm_glyphname)
+            do_import_work(font, sm_glyph, svg_filename)
+            sm_glyph.transform(psMat.scale(0.5))
+            sm_glyph.transform(psMat.translate(glyph.width / 4, expand_sm_stroke / 4))
+            sm_glyph.width = glyph.width
+            do_outline_work(font, sm_glyph, expand_sm_stroke)
+
     if args.dry_run:
         print("DRY RUN: not saving or generating %s" % args.font_filename)
         return
@@ -76,5 +87,27 @@ def all_clockwise(glyph, codepoint):
         # glyph.background += contour
     glyph.removeOverlap()
     return glyph
+
+def do_import_work(font, glyph, svg_filename):
+    global args
+    glyph.foreground = fontforge.layer()
+    if args.ignore_svg_stroke_width:
+        font.strokedfont = True
+        glyph.importOutlines(svg_filename)
+        font.strokedfont = False
+    else:
+        glyph.importOutlines(svg_filename)
+
+def do_outline_work(font, glyph, expand_stroke=None):
+    global args
+    codepoint = glyph.codepoint
+    if args.clockwise:
+        glyph = all_clockwise(glyph, codepoint)
+    if expand_stroke is not None:
+        glyph.stroke("circular", expand_stroke, "round", "round")
+    if codepoint == ord('i') or codepoint == ord('j'):
+        glyph = all_clockwise(glyph, codepoint)
+    glyph.removeOverlap()
+    glyph.width = args.glyph_width
 
 main()
