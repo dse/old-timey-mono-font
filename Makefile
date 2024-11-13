@@ -11,7 +11,7 @@ dist/ttf/%.ttf: src/%.sfd $(FONTCONVERT) $(MAKEFILE)
 	mv "$@.tmp.ttf" "$@"
 
 fontsvg: FORCE
-	$(FONTSVG) --expand-stroke 96 --ignore-svg-stroke-width $(FONT_SRC) src/chars/12-px-outlines/*.svg
+	$(FONTSVG) --expand-stroke 96 --ignore-svg-stroke-width $(FONT_SRC) `find src/chars -type f -name '*.svg'`
 
 metrics: FORCE
 	glyphbearings src/ReproTypewrA.sfd > data/orig-metrics.txt
