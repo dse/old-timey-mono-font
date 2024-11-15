@@ -12,7 +12,6 @@ def main():
     parser = argparse.ArgumentParser(description="import SVG characters")
     parser.add_argument('font_filename', help="font filename")
     parser.add_argument('svg_filenames', nargs='+', help="svg characters")
-    parser.add_argument('--clockwise', action='store_true')
     parser.add_argument('--expand-stroke', '-x', type=int, help="number of pixels to expand stroke")
     parser.add_argument('--expand-sm-stroke', '-X', type=int, help="number of pixels to expand stroke in .smol glyphs")
     parser.add_argument('--glyph-width', '--width', '-w', type=int, help="glyph width", default=1008)
@@ -54,22 +53,6 @@ def main():
         print("Generating %s" % args.font_filename)
         font.generate(args.font_filename)
 
-def all_clockwise(glyph, codepoint):
-    font = glyph.font
-    new_contours = []
-    for i in range(0, len(glyph.foreground)):
-        contour = glyph.foreground[i]
-        if contour.isClockwise() == 0:
-            contour.reverseDirection()
-        new_contours += [contour]
-    font.removeGlyph(codepoint)
-    glyph = font.createChar(codepoint)
-    for contour in new_contours:
-        glyph.foreground += contour
-        # glyph.background += contour
-    glyph.removeOverlap()
-    return glyph
-
 def do_import_work(font, glyph, svg_filename):
     global args
     glyph.foreground = fontforge.layer()
@@ -86,12 +69,8 @@ def do_import_work(font, glyph, svg_filename):
 def do_outline_work(font, glyph, expand_stroke=None):
     global args
     codepoint = glyph.codepoint
-    if args.clockwise:
-        glyph = all_clockwise(glyph, codepoint)
     if expand_stroke is not None:
         glyph.stroke("circular", expand_stroke, "round", "round")
-    if codepoint == ord('i') or codepoint == ord('j'):
-        glyph = all_clockwise(glyph, codepoint)
     glyph.removeOverlap()
     glyph.width = args.glyph_width
 
