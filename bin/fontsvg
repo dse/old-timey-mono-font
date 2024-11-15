@@ -74,10 +74,13 @@ def do_import_work(font, glyph, svg_filename):
     global args
     glyph.foreground = fontforge.layer()
     if args.ignore_svg_stroke_width:
+        # Import just the paths without expanding strokes.
         font.strokedfont = True
         glyph.importOutlines(svg_filename)
         font.strokedfont = False
     else:
+        # Fontforge will expand the strokes to their svg stroke
+        # widths.
         glyph.importOutlines(svg_filename)
 
 def do_outline_work(font, glyph, expand_stroke=None):
