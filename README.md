@@ -1,4 +1,4 @@
-# Reproducing Reproducing Typewriter
+# Reproducing Typewriter
 
 ## Introducing Reproducing Typewriter
 
@@ -41,7 +41,7 @@ Also to aid use in coding, the following features are added:
 -   The period, comma, and other selected punctuation marks are made
     larger for better visibility.
     
-## About This Project
+## Reproducing Reproducing Typewriter
 
 This is the first digitally available clean version of Reproducing
 Typewriter.
@@ -72,6 +72,10 @@ but in my experience it's close enough.
 
 -   Plenty of additional punctuation marks, mathematical operators,
     geometric shapes, and basic arrows from U+2000 on up.
+    
+## Loosing Reproducing Typewriter
+
+SIL OFL 1.1.
     
 ## Footnotes
 
