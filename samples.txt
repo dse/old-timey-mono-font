@@ -1,0 +1,138 @@
+Concat('TURBO',' Pascal')
+Concat('TU','RBO',' Pascal')
+Concat('T','U','R','B','O',Name)
+
+CURSOR MOVEMENT COMMANDS:
+  Character left              To top of screen
+  Character right             To top of file
+  Word left                   To top of file
+  Word right                  To end of file
+  Line up                     To left on line
+  Line down                   To right on line
+  Scroll up                   To beginning of block
+  Scroll down                 To end of block
+  Page up                     To last cursor position
+  Page down
+
+INSERT & DELETE COMMANDS:
+  Insert mode on/off          Delete right word
+  Insert line                 Delete character under cursor
+  Delete line                 Delete left charnctor
+  Delete to end of line
+
+BLOCK COMMANDS:             MISC. EDITING COMMANDS:
+  Mark block begin            End edit
+  Mark block end              Tab
+  Mark single word            Auto tab on/off
+  Copy block                  Restore line
+  Move block                  Find
+  Delete block                Find & replace
+  Read block from disk        Repeat last find
+  Write block to disk         Control character prefix
+  Hide/display block
+  The TURBO Editor
+
+Letters
+  A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+  a b c d e f g h i j k l m n o p q r s t u v w x y z _
+Digits
+  0 1 2 3 4 5 6 7 8 9
+Special symbols
+  + - * / = ^ < > ( ) [ ] { } . , : ; ' # $
+Other ASCII printable characters
+  ! " % & ? @ \ ` | ~
+
+Angle := Angle * Pi;
+AccessOK := False;
+Entry := Answer = PassWord;
+SpherVol := 4 * Pi * R * R;
+
+if Interest > 25 then
+  Usury := True
+else
+  TakeLoan := OK;
+
+if (Entry < 0) or (Entry > 100) then
+begin
+  Write('Range is 1 to 100, please re-enter: ');
+  Read(Entry);
+end;
+
+case Operator of
+  '+' : Result Answer + Result;
+  '-' : Result Answer - Result;
+  '*' : Result Answer * Result;
+  '/' : Result Answer / Result;
+end;
+case Year of
+  Min..1939: begin
+               Time := PreWorldWar2;
+               Writeln('The world at peace...');
+             end;
+  1946..Max: begin
+               Time := PostWorldWar2;
+               Writeln('Building a new world.');
+             end;
+       else  begin
+               Time := WorldWar2;
+               Writeln('We are at war');
+             end;
+
+program UpDateProductFile;
+const
+  MaxNumberOfProducts = 100;
+type
+  ProductName = string[20];
+  Product = record
+              Name: ProductName;
+              ItemNumber: Integer;
+              InStock: Real;
+              Supplier: Integer;
+            end;
+var
+  ProductFile: file or Product;
+  ProductRec: Product;
+  I, Pnr: Integer;
+begin
+  Assign(ProductFile,'PRODUCT.DTA'); Reset(ProductFile);
+  ClrScr;
+  Write('Enter product number (O= stop) '); Readln(Pnr);
+  while Pnr in [l..MaxNumberOfProducts] do
+  begin
+    Seek(ProductFile,Pnr-l); Read(ProductFile,ProductRec);
+    with ProductRec do
+    begin
+      Write('Enter name of product (',Name:20,')  ');
+      Readln(Name);
+      Write('Enter number in stock (',InStock:20:0,')  ');
+      Readln(InStock);
+      Write('Enter supplier number (',Supplier:20,')  ');
+      Readln(Supplier);
+      ItemNumber:=Pnr;
+    end;
+    Seek(ProductFile,Pnr-l);
+    Write(ProductFile,ProductRec);
+    ClrScr; Writeln;
+    Write('Enter product number (0= stop) '); Readln(Pnr);
+  end;
+  Close(ProductFile);
+end.
+
+Choose one of the following terminals:
+
+  1) ADDS 20/25/30         15) Lear-Siegler ADM-3l
+  2) ADDS 40/60            16) Liberty
+  3) ADDS Viewpoint-1A     17) Morrow MDT-20
+  4) ADM 3A                18) Otrona Attache
+  5) Ampex D80             19) Qume
+  6) ANSI                  20) Soroc IQ-120
+  7) Apple/graphics        21) Soroc new models
+  8) Hazeltine 1500        22) Teletext 3000
+  9) Hazeltine Esprit      23) Televideo 912/920/925
+ 10) IBM PC CCP/M b/w      24) Visual 200
+ 11) IBM PC CCP/M color    25) Wyse WY-1OO/200/300
+ 12) Kaypro 10             26) Zenith
+ 13) Kaypro II and 4       27) None of the above
+ 14) Lear-Siegler ADM-20   28) Delete a definition
+
+Which terminal? (Enter no. or AX to exit):
