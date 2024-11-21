@@ -5,7 +5,7 @@ FONT_SRC = src/ReproTypewr.sfd
 FONT_TTF = dist/ttf/ReproTypewr.ttf
 CODING_FONT_TTF = dist/ttf/ReproTypewrCode.ttf
 
-default: $(FONT_TTF)
+default: $(FONT_TTF) $(CODING_FONT_TTF)
 
 dist/ttf/%.ttf: src/%.sfd $(FONTCONVERT) $(MAKEFILE)
 	$(FONTCONVERT) "$<" "$@.tmp.ttf"
@@ -25,7 +25,7 @@ boxdraw: FORCE
 
 coding: $(CODING_FONT_TTF)
 
-$(CODING_FONT_TTF): $(FONT_TTF) Makefile bin/fontnames
+$(CODING_FONT_TTF): $(FONT_TTF) $(MAKEFILE) bin/fontnames
 	pyftfeatfreeze -f code -S -U Code "$<" "$@"
 	bin/fontnames --ps-name ReproTypewrCode "$@"
 
