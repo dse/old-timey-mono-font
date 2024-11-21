@@ -3,6 +3,7 @@ FONTCONVERT = bin/fontconvert
 FONTSVG = bin/fontsvg
 FONT_SRC = src/ReproTypewr.sfd
 FONT_TTF = dist/ttf/ReproTypewr.ttf
+CODING_FONT_TTF = dist/ttf/ReproTypewrCode.ttf
 
 default: $(FONT_TTF)
 
@@ -21,5 +22,11 @@ braille: FORCE
 	fontbraille -W 200 -f $(FONT_SRC)
 boxdraw: FORCE
 	fontboxdraw -f $(FONT_SRC)
+
+coding: $(CODING_FONT_TTF)
+
+$(CODING_FONT_TTF): $(FONT_TTF) Makefile bin/fontnames
+	pyftfeatfreeze -f code -S -U Code "$<" "$@"
+	bin/fontnames --ps-name ReproTypewrCode "$@"
 
 .PHONY: FORCE
