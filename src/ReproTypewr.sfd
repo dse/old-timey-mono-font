@@ -22,7 +22,7 @@ OS2Version: 0
 OS2_WeightWidthSlopeOnly: 0
 OS2_UseTypoMetrics: 1
 CreationTime: 1729142792
-ModificationTime: 1732156301
+ModificationTime: 1732170395
 PfmFamily: 17
 TTFWeight: 400
 TTFWidth: 5
@@ -45,6 +45,7 @@ HheadDOffset: 0
 OS2CapHeight: 1056
 OS2XHeight: 756
 OS2Vendor: 'PfEd'
+Lookup: 1 0 0 "'code' Coding Friendly lookup 0" { "'code' Coding Friendly lookup 0 subtable"  } ['code' ('DFLT' <'dflt' > 'brai' <'dflt' > 'cyrl' <'dflt' > 'grek' <'dflt' > 'latn' <'dflt' > ) ]
 Lookup: 260 0 0 "'mark' Mark Positioning lookup 0" { "'mark' Mark Positioning lookup 0-1"  } ['mark' ('DFLT' <'dflt' > 'brai' <'dflt' > 'latn' <'dflt' > ) ]
 MarkAttachClasses: 1
 DEI: 91125
@@ -55,7 +56,7 @@ NameList: AGL For New Fonts
 DisplaySize: -48
 AntiAlias: 1
 FitToEm: 0
-WinInfo: 0 32 13
+WinInfo: 819 39 14
 BeginPrivate: 0
 EndPrivate
 Grid
@@ -116,7 +117,7 @@ Grid
  504 3072 l 25
 EndSplineSet
 AnchorClass2: "tonos" "'mark' Mark Positioning lookup 0-1" "cedilla" "'mark' Mark Positioning lookup 0-1" "ogonek" "'mark' Mark Positioning lookup 0-1" "bottom" "'mark' Mark Positioning lookup 0-1" "top" "'mark' Mark Positioning lookup 0-1"
-BeginChars: 65730 1359
+BeginChars: 65732 1361
 
 StartChar: cedilla
 Encoding: 184 184 0
@@ -157,13 +158,15 @@ Flags: HW
 LayerCount: 2
 Fore
 SplineSet
-101.979492188 -248.794921875 m 2
- 84.38671875 -280.559570312 107.46484375 -320 144 -320 c 0
- 162.077148438 -320 177.833984375 -309.985351562 186.020507812 -295.205078125 c 2
- 906.020507812 1004.79492188 l 2
- 923.61328125 1036.55957031 900.53515625 1076 864 1076 c 0
- 845.922851562 1076 830.166015625 1065.98535156 821.979492188 1051.20507812 c 2
- 101.979492188 -248.794921875 l 2
+144.001556982 -320.002638382 m 0
+ 117.508655371 -320.002638382 95.9997784271 -298.493761439 95.9997784271 -272.000859828 c 0
+ 95.9997784271 -263.586211141 98.1696331576 -255.674359952 101.979853582 -248.794795298 c 2
+ 822.037064505 1051.3085022 l 2
+ 830.223042446 1066.08874015 845.980514981 1076.10421623 864.058767906 1076.10421623 c 0
+ 890.551669517 1076.10421623 912.06054646 1054.59533928 912.06054646 1028.10243767 c 0
+ 912.06054646 1019.68778899 909.89069173 1011.7759378 906.020146418 1004.7947953 c 2
+ 185.962935495 -295.308502203 l 2
+ 177.837282441 -309.987162306 162.079809907 -320.002638382 144.001556982 -320.002638382 c 0
 EndSplineSet
 EndChar
 
@@ -7272,6 +7275,7 @@ Flags: HW
 LayerCount: 2
 Fore
 Refer: 1339 -1 N 1 0 0 1 0 0 2
+Substitution2: "'code' Coding Friendly lookup 0 subtable" quotesinglbase.larger
 EndChar
 
 StartChar: quotereversed
@@ -7282,6 +7286,7 @@ Flags: HW
 LayerCount: 2
 Fore
 Refer: 1355 -1 N 1 0 0 1 0 0 2
+Substitution2: "'code' Coding Friendly lookup 0 subtable" quotereversed.larger
 EndChar
 
 StartChar: quotedblbase
@@ -7292,6 +7297,7 @@ Flags: HW
 LayerCount: 2
 Fore
 Refer: 1346 -1 N 1 0 0 1 0 0 2
+Substitution2: "'code' Coding Friendly lookup 0 subtable" quotedblbase.larger
 EndChar
 
 StartChar: uni201F
@@ -15401,6 +15407,7 @@ Flags: HW
 LayerCount: 2
 Fore
 Refer: 1339 -1 N 1 0 0 1 0 0 2
+Substitution2: "'code' Coding Friendly lookup 0 subtable" comma.larger
 EndChar
 
 StartChar: hyphen
@@ -15428,6 +15435,7 @@ Flags: HW
 LayerCount: 2
 Fore
 Refer: 1341 -1 N 1 0 0 1 0 0 2
+Substitution2: "'code' Coding Friendly lookup 0 subtable" period.larger
 EndChar
 
 StartChar: slash
@@ -15457,6 +15465,7 @@ Flags: HW
 LayerCount: 2
 Fore
 Refer: 73 -1 N 1 0 0 1 0 0 2
+Substitution2: "'code' Coding Friendly lookup 0 subtable" zero.slash
 EndChar
 
 StartChar: one
@@ -15467,6 +15476,7 @@ Flags: HW
 LayerCount: 2
 Fore
 Refer: 74 -1 N 1 0 0 1 0 0 2
+Substitution2: "'code' Coding Friendly lookup 0 subtable" one.coding
 EndChar
 
 StartChar: two
@@ -15738,6 +15748,7 @@ Flags: HW
 LayerCount: 2
 Fore
 Refer: 291 -1 N 1 0 0 1 0 0 2
+Substitution2: "'code' Coding Friendly lookup 0 subtable" colon.larger
 EndChar
 
 StartChar: semicolon
@@ -15748,6 +15759,7 @@ Flags: HW
 LayerCount: 2
 Fore
 Refer: 293 -1 N 1 0 0 1 0 0 2
+Substitution2: "'code' Coding Friendly lookup 0 subtable" semicolon.larger
 EndChar
 
 StartChar: less
@@ -18550,6 +18562,7 @@ Flags: HW
 LayerCount: 2
 Fore
 Refer: 736 -1 N 1 0 0 1 0 0 2
+Substitution2: "'code' Coding Friendly lookup 0 subtable" quoteleft.larger
 EndChar
 
 StartChar: quoteright
@@ -18560,6 +18573,7 @@ Flags: HW
 LayerCount: 2
 Fore
 Refer: 737 -1 N 1 0 0 1 0 0 2
+Substitution2: "'code' Coding Friendly lookup 0 subtable" quoteright.larger
 EndChar
 
 StartChar: quotedblleft
@@ -18570,6 +18584,7 @@ Flags: HW
 LayerCount: 2
 Fore
 Refer: 738 -1 N 1 0 0 1 0 0 2
+Substitution2: "'code' Coding Friendly lookup 0 subtable" quotedblleft.larger
 EndChar
 
 StartChar: quotedblright
@@ -18580,6 +18595,7 @@ Flags: HW
 LayerCount: 2
 Fore
 Refer: 739 -1 N 1 0 0 1 0 0 2
+Substitution2: "'code' Coding Friendly lookup 0 subtable" quotedblright.larger
 EndChar
 
 StartChar: uni2023
@@ -33359,6 +33375,42 @@ SplineSet
  810.49192 96 832 74.49192 832 48 c 0
  832 21.50808 810.49192 0 784 0 c 2
  224 0 l 2
+EndSplineSet
+EndChar
+
+StartChar: comma.larger
+Encoding: 65730 -1 1359
+Width: 1008
+VWidth: 0
+Flags: HW
+LayerCount: 2
+Fore
+SplineSet
+311.764155961 -202.47986103 m 0
+ 313.872466848 -201.030397295 426.202205814 -123.159712959 490.32842961 -19.2477695407 c 1
+ 428.855197643 -12.4411912032 381.000000001 39.7204530825 381 103 c 0
+ 381 170.900467153 436.099532847 226 504 226 c 0
+ 571.900467153 226 627 170.900467153 627 103 c 0
+ 627 -99.3776839306 380.077247663 -272.004173973 366.14655167 -281.581527473 c 0
+ 358.330423943 -286.945752501 348.979635965 -290.054349184 338.908525741 -290.054349184 c 0
+ 312.418735015 -290.054349184 290.912383716 -268.547997885 290.912383716 -242.058207159 c 0
+ 290.912383716 -225.639526657 299.174402626 -211.135316453 311.764155961 -202.47986103 c 0
+EndSplineSet
+EndChar
+
+StartChar: period.larger
+Encoding: 65731 -1 1360
+Width: 1008
+VWidth: 0
+Flags: HW
+LayerCount: 2
+Fore
+SplineSet
+381 103 m 0
+ 381 170.900467153 436.099532847 226 504 226 c 0
+ 571.900467153 226 627 170.900467153 627 103 c 0
+ 627 35.0995328472 571.900467153 -20 504 -20 c 0
+ 436.099532847 -20 381 35.0995328472 381 103 c 0
 EndSplineSet
 EndChar
 EndChars
