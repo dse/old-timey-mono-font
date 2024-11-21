@@ -22,7 +22,7 @@ OS2Version: 0
 OS2_WeightWidthSlopeOnly: 0
 OS2_UseTypoMetrics: 1
 CreationTime: 1729142792
-ModificationTime: 1732170395
+ModificationTime: 1732172656
 PfmFamily: 17
 TTFWeight: 400
 TTFWidth: 5
@@ -56,7 +56,7 @@ NameList: AGL For New Fonts
 DisplaySize: -48
 AntiAlias: 1
 FitToEm: 0
-WinInfo: 819 39 14
+WinInfo: 0 39 14
 BeginPrivate: 0
 EndPrivate
 Grid
@@ -1345,6 +1345,7 @@ VStem: 406 196<302.398 453.627>
 LayerCount: 2
 Fore
 Refer: 754 -1 N 1 0 0 1 0 0 2
+Substitution2: "'code' Coding Friendly lookup 0 subtable" periodcentered.larger
 EndChar
 
 StartChar: minus
