@@ -28,12 +28,15 @@ Reproducing Typewriter, or something very close to it, is also the
 typeface used for code examples in the _Turbo Pascal 3.0_ manual.  I
 cut my teeth on Turbo Pascal!
 
-## For Use in Coding
+## Original and Coding Variants
 
 I created this with the hope that its shorter serifs also make it a
-little more suitable for coding than other old-timey typewriter fonts.
+more suitable basis for a coding-friendly typeface than other
+old-timey typewriter fonts.
 
-Also to aid use in coding, the following features are added:
+**Reproducing Typewriter** is to a great extent the original typeface.
+
+**Reproducing Typewriter Code** makes the following changes:
 
 -   The digits `0` and `1` are modified for disambiguity with the
     capital `O` and small `l`.
