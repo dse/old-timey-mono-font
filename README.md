@@ -76,9 +76,9 @@ but in my experience it's close enough.
 -   Plenty of additional punctuation marks, mathematical operators,
     geometric shapes, and basic arrows from U+2000 on up.
     
-## Loosing Reproducing Typewriter
+## License
 
-SIL OFL 1.1.
+[SIL OFL 1.1][OFL.md]
     
 ## Footnotes
 
