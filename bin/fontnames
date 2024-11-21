@@ -30,7 +30,7 @@ def main():
         changed = True
         font.fullname = args.full_name
     if not changed:
-        raise "Font not changed"
+        raise Exception("Font not changed")
     if (os.path.splitext(args.filename))[1] == '.sfd':
         font.save(args.filename)
     else:
