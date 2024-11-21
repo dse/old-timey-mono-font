@@ -1,0 +1,39 @@
+#!/usr/bin/env -S fontforge -quiet
+# -*- mode: python; coding: utf-8 -*-
+import os
+import fontforge
+import re
+import argparse
+
+def main():
+    global args
+    parser = argparse.ArgumentParser(description="edit font names")
+    parser.add_argument('filename', help='font filename')
+    parser.add_argument('--ps-name', type=str, help='e.g., ComicSansItalic')
+    parser.add_argument('--family-name', type=str, help='e.g., "Comic Sans"')
+    parser.add_argument('--ps-weight', type=str, help='e.g., "Italic"')
+    parser.add_argument('--full-name', type=str, help='e.g., "Comic Sans Italic"')
+    args = parser.parse_args()
+
+    font = fontforge.open(args.filename)
+    changed = False
+    if args.ps_name is not None:
+        changed = True
+        font.fontname = args.ps_name
+    if args.family_name is not None:
+        changed = True
+        font.familyname = args.family_name
+    if args.ps_weight is not None:
+        changed = True
+        font.weight = args.ps_weight
+    if args.full_name is not None:
+        changed = True
+        font.fullname = args.full_name
+    if not changed:
+        raise "Font not changed"
+    if (os.path.splitext(args.filename))[1] == '.sfd':
+        font.save(args.filename)
+    else:
+        font.generate(args.filename)
+
+main()
