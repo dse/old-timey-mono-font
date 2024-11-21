@@ -78,7 +78,7 @@ but in my experience it's close enough.
     
 ## License
 
-[SIL OFL 1.1][OFL.md]
+[SIL OFL 1.1](OFL.md)
     
 ## Footnotes
 
