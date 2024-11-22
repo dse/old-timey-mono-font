@@ -11,8 +11,12 @@ def main():
     parser.add_argument('filename', help='font filename')
     parser.add_argument('--ps-name', type=str, help='e.g., ComicSansItalic')
     parser.add_argument('--family-name', type=str, help='e.g., "Comic Sans"')
-    parser.add_argument('--ps-weight', type=str, help='e.g., "Italic"')
+    parser.add_argument('--ps-weight', type=str, help='e.g., "Bold" (italic not specified here)')
     parser.add_argument('--full-name', type=str, help='e.g., "Comic Sans Italic"')
+    parser.add_argument('--append-ps-name', type=str, help='e.g., "Bold", "CodeBold"')
+    parser.add_argument('--append-full-name', type=str, help='e.g., "Bold", "Code Bold"')
+    parser.add_argument('--append-family-name', type=str, help='e.g., "Code"')
+    parser.add_argument('--italic-angle', type=int, help='e.g., -12 = //, 12 = \\\\')
     args = parser.parse_args()
 
     font = fontforge.open(args.filename)
@@ -29,11 +33,32 @@ def main():
     if args.full_name is not None:
         changed = True
         font.fullname = args.full_name
+    if args.append_ps_name is not None:
+        changed = True
+        font.fontname += rm_space(args.append_ps_name)
+    if args.append_full_name is not None:
+        changed = True
+        font.fullname += ' ' + trim_norm_space(args.append_full_name)
+    if args.append_family_name is not None:
+        changed = True
+        font.familyname += ' ' + trim_norm_space(args.append_family_name)
+    if args.italic_angle is not None:
+        changed = True
+        font.italicangle = args.italic_angle
     if not changed:
         raise Exception("Font not changed")
     if (os.path.splitext(args.filename))[1] == '.sfd':
         font.save(args.filename)
     else:
         font.generate(args.filename)
+
+def trim_norm_space(str):
+    result = str
+    result = re.sub(r'^\s+', '', result)
+    result = re.sub(r'\s+$', '', result)
+    result = re.sub(r'\s+', ' ', result)
+    return result
+def rm_space(str):
+    return re.sub(r'\s+', '', str)
 
 main()
