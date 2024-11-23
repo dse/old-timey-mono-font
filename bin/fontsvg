@@ -18,10 +18,16 @@ def main():
     parser.add_argument('--dry-run', '-n', action='store_true')
     parser.add_argument('--ignore-svg-stroke-width', action='store_true',
                         help='ignore SVG stroke widths')
+    parser.add_argument('-o', '--save-as', '--output', type=str, help="after editing, save as new file, converts if file extension is different")
+    parser.add_argument('--translate-x', type=int)
+    parser.add_argument('--translate-y', type=int)
+    parser.add_argument('--scale-y', type=float)
+    parser.add_argument('--scale-y-from', type=float)
     args = parser.parse_args()
 
     print("Loading %s" % args.font_filename)
     font = fontforge.open(args.font_filename)
+    write_font_filename = args.save_as if args.save_as is not None else args.font_filename
 
     expand_sm_stroke = args.expand_sm_stroke if args.expand_sm_stroke is not None else args.expand_stroke
 
@@ -43,15 +49,34 @@ def main():
             sm_glyph.width = glyph.width
             do_outline_work(font, sm_glyph, expand_sm_stroke)
 
+    xform = None
+    if args.translate_y or args.translate_x:
+        if xform is None:
+            xform = psMat.identity()
+        xlate_x = args.translate_x if args.translate_x else 0
+        xlate_y = args.translate_y if args.translate_y else 0
+        xform = psMat.compose(xform, psMat.translate(xlate_x, xlate_y))
+    if args.scale_y:
+        scale_y = args.scale_y / args.scale_y_from if args.scale_y_from else args.scale_y
+        if xform is None:
+            xform = psMat.identity()
+        xform = psMat.compose(xform, psMat.scale(1.0, scale_y))
+    if xform:
+        print(len(list(font.glyphs())))
+        for glyph in font.glyphs():
+            if not(glyph.unicode in range(0x2800, 0x2900) or
+                   glyph.unicode in range(0x2500, 0x25a0)):
+                glyph.transform(xform)
+
     if args.dry_run:
-        print("DRY RUN: not saving or generating %s" % args.font_filename)
+        print("DRY RUN: not saving or generating %s" % write_font_filename)
         return
-    if os.path.splitext(args.font_filename)[1] == '.sfd':
-        print("Saving %s" % args.font_filename)
-        font.save(args.font_filename)
+    if os.path.splitext(write_font_filename)[1] == '.sfd':
+        print("Saving %s" % write_font_filename)
+        font.save(write_font_filename)
     else:
-        print("Generating %s" % args.font_filename)
-        font.generate(args.font_filename)
+        print("Generating %s" % write_font_filename)
+        font.generate(write_font_filename)
 
 def do_import_work(font, glyph, svg_filename):
     global args
