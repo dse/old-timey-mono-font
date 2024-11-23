@@ -1,0 +1,68 @@
+@font-face {
+    src: url('fonts/ttf/ReproTypewr.ttf');
+    font-family: 'Reproducing Typewriter';
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    src: url('fonts/ttf/ReproTypewrCode.ttf');
+    font-family: 'Reproducing Typewriter Code';
+    font-weight: 400;
+    font-style: normal;
+}
+html {
+    font-family: 'Reproducing Typewriter';
+    margin: 0;
+    padding: 0;
+    color: black;
+    background-color: white;
+}
+body {
+    margin-top: 8px;
+    max-width: 800px;
+    padding-left: 8px;
+    padding-right: 8px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1;
+    font-size: 24px;
+}
+p, ul, ol, dl, menu, dir, h1, h2, h3, h4, h5, h6, pre {
+    margin-top: 0;
+    margin-bottom: 1em;
+}
+ul, ol, dd {
+    padding-left: 4ch;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-size: 1em;
+}
+h1 { color: blue; font-weight: bold; font-style: normal; }
+h2 { color: blue; font-weight: bold; font-style: italic; }
+h3 { color: blue; font-weight: normal; font-style: italic; }
+h4 { color: blue; font-weight: normal; font-style: normal; }
+h5 { color: green; font-weight: normal; font-style: italic; }
+h6 { color: green; font-weight: normal; font-style: normal; }
+pre {
+    font-family: inherit;
+}
+.code {
+    font-family: "Reproducing Typewriter Code";
+}
+b, strong {
+    color: #ff3333;
+}
+b, strong, h1, h2 {
+    font-weight: normal;
+    text-shadow: currentcolor 0.05em 0 0;
+}
+
+/* h/t: https://stackoverflow.com/a/13955165/8621049 */
+@keyframes blink {
+    50% {
+        opacity: 0.0;
+    }
+}
+.blink {
+    animation: blink 1s step-start 0s infinite;
+}
