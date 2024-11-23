@@ -19,7 +19,7 @@ html {
 }
 body {
     margin-top: 8px;
-    max-width: 800px;
+    max-width: 65ch;
     padding-left: 8px;
     padding-right: 8px;
     margin-left: auto;
