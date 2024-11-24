@@ -163,3 +163,10 @@ ul > li::before {
 [type="checkbox"]:checked + .fancy-checkbox::before {
     content: '[+]';
 }
+.container--sticky {
+    background-color: white;
+    border-bottom: 1px solid white;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
