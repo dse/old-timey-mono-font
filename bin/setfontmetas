@@ -21,30 +21,41 @@ def main():
 
     font = fontforge.open(args.filename)
     changed = False
+
     if args.ps_name is not None:
         changed = True
         font.fontname = args.ps_name
+        print("####################### updated font.fontname: %s" % font.fontname)
     if args.family_name is not None:
         changed = True
         font.familyname = args.family_name
+        print("####################### updated font.familyname: %s" % font.familyname)
     if args.ps_weight is not None:
         changed = True
         font.weight = args.ps_weight
+        print("####################### updated font.weight: %s" % font.weight)
     if args.full_name is not None:
         changed = True
         font.fullname = args.full_name
+        print("####################### updated font.fullname: %s" % font.fullname)
+
     if args.append_ps_name is not None:
         changed = True
         font.fontname += rm_space(args.append_ps_name)
+        print("####################### updated font.fontname by appending: %s" % font.fontname)
     if args.append_full_name is not None:
         changed = True
         font.fullname += ' ' + trim_norm_space(args.append_full_name)
+        print("####################### updated font.fullname by appending: %s" % font.fullname)
     if args.append_family_name is not None:
         changed = True
         font.familyname += ' ' + trim_norm_space(args.append_family_name)
+        print("####################### updated font.familyname by appending: %s" % font.familyname)
+
     if args.italic_angle is not None:
         changed = True
         font.italicangle = args.italic_angle
+        print("####################### updated font.italicangle: %d" % font.italicangle)
     if not changed:
         raise Exception("Font not changed")
     if (os.path.splitext(args.filename))[1] == '.sfd':

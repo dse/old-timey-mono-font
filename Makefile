@@ -4,7 +4,7 @@ FONT_SRC := src/ReproTypewr.sfd
 FONTCONVERT_SCRIPT := bin/fontconvert
 FONTSVG_SCRIPT := bin/fontsvg
 FONTUNHINT_SCRIPT := bin/fontunhint
-FONTNAMES_SCRIPT := bin/fontnames
+SETFONTMETAS_SCRIPT := bin/setfontmetas
 
 FONT_TTF := dist/ttf/ReproTypewr.ttf
 CODING_FONT_TTF := dist/ttf/ReproTypewrCode.ttf
@@ -31,25 +31,40 @@ braille: FORCE
 boxdraw: FORCE
 	fontboxdraw -f $(FONT_SRC)
 
-$(LIGHT_FONT_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(FONTNAMES_SCRIPT) $(FONTUNHINT_SCRIPT)
+$(LIGHT_FONT_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
 	$(FONTSVG_SCRIPT) $(FONTSVG__LIGHT) --ignore-svg-stroke-width $< -o $@ `find src/chars -type f -name '*.svg'`
-	$(FONTNAMES_SCRIPT) --ps-name ReproTypewrLight --ps-weight Light "$@"
+	$(SETFONTMETAS_SCRIPT) \
+		--family-name "Reproducing Typewriter" \
+		--full-name   "Reproducing Typewriter Light" \
+		--ps-name     "ReproTypewrLight" \
+		--ps-weight   "Light" \
+		"$@"
 	$(FONTUNHINT_SCRIPT) "$@"
 
-$(CODING_FONT_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(FONTNAMES_SCRIPT) $(FONTUNHINT_SCRIPT)
+$(CODING_FONT_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
 	$(FONTSVG_SCRIPT) --expand-stroke 96 --ignore-svg-stroke-width $< -o $@ `find src/chars -type f -name '*.svg'`
 	mv "$@" "$@.tmp.ttf"	# tmp file required for featfreeze to work
 	pyftfeatfreeze -f code -S -U Code "$@.tmp.ttf" "$@"
 	rm "$@.tmp.ttf"
-	$(FONTNAMES_SCRIPT) --append-ps-name Code --append-family-name Code --append-full-name Code "$@"
+	$(SETFONTMETAS_SCRIPT) \
+		--family-name "Reproducing Typewriter Code" \
+		--full-name   "Reproducing Typewriter Code" \
+		--ps-name     "ReproTypewrCode" \
+		--ps-weight   "Book" \
+		"$@"
 	$(FONTUNHINT_SCRIPT) "$@"
 
-$(LIGHT_CODING_FONT_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(FONTNAMES_SCRIPT) $(FONTUNHINT_SCRIPT)
+$(LIGHT_CODING_FONT_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
 	$(FONTSVG_SCRIPT) $(FONTSVG__LIGHT) --ignore-svg-stroke-width $< -o $@ `find src/chars -type f -name '*.svg'`
 	mv "$@" "$@.tmp.ttf"	# tmp file required for featfreeze to work
 	pyftfeatfreeze -f code -S -U Code "$@.tmp.ttf" "$@"
 	rm "$@.tmp.ttf"
-	$(FONTNAMES_SCRIPT) --ps-weight Light --append-ps-name "CodeLight" --append-family-name "Code" --append-full-name "Code Light" "$@"
+	$(SETFONTMETAS_SCRIPT) \
+		--family-name "Reproducing Typewriter Code" \
+		--full-name   "Reproducing Typewriter Code Light" \
+		--ps-name     "ReproTypewrCodeLight" \
+		--ps-weight   "Light" \
+		"$@"
 	$(FONTUNHINT_SCRIPT) "$@"
 
 clean: FORCE
