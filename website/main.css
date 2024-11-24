@@ -11,21 +11,49 @@
     font-style: normal;
 }
 html {
-    font-family: 'Reproducing Typewriter';
+    --bg: white;
+    --bgbg: #eeeeee;
+    --bgsh: #dddddd;
+    --shwd: 3ch;
+    --pw = 85ch
     margin: 0;
     padding: 0;
     color: black;
     background-color: white;
+    background-image: linear-gradient(to right,
+                                      var(--bgbg) 0%,
+                                      var(--bgbg) calc(50% - var(--pw) / 2 - var(--shwd)),
+                                      var(--bgsh) calc(50% - var(--pw) / 2),
+                                      var(--bg)   calc(50% - var(--pw) / 2),
+                                      var(--bg)   calc(50% + var(--pw) / 2),
+                                      var(--bgsh) calc(50% + var(--pw) / 2),
+                                      var(--bgbg) calc(50% + var(--pw) / 2 + var(--shwd)),
+                                      var(--bgbg) 100%);
 }
+
+html {
+    font-size: 16px;
+}
+@media (min-width: 768px) {
+    html {
+        font-size: calc(1.8519vw + 1.7778px); /* 24px at 1200px */
+    }
+}
+@media (min-width: 1200px) {
+    html {
+        font-size: 24px;
+    }
+}
+
 body {
-    margin-top: 8px;
+    font-family: 'Reproducing Typewriter';
+    margin-top: 1em;
     max-width: 65ch;
-    padding-left: 8px;
-    padding-right: 8px;
+    padding-left: 1ch;
+    padding-right: 1ch;
     margin-left: auto;
     margin-right: auto;
     line-height: 1;
-    font-size: 24px;
 }
 p, ul, ol, dl, menu, dir, h1, h2, h3, h4, h5, h6, pre {
     margin-top: 0;
