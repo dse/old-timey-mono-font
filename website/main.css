@@ -1,11 +1,11 @@
 @font-face {
-    src: url('fonts/ttf/ReproTypewr.ttf');
+    src: url('fonts/ttf/ReproTypewr.ttf?v=1');
     font-family: 'Reproducing Typewriter';
     font-weight: 400;
     font-style: normal;
 }
 @font-face {
-    src: url('fonts/ttf/ReproTypewrCode.ttf');
+    src: url('fonts/ttf/ReproTypewrCode.ttf?v=1');
     font-family: 'Reproducing Typewriter Code';
     font-weight: 400;
     font-style: normal;
