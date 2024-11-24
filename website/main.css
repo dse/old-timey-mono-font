@@ -62,6 +62,9 @@ p, ul, ol, dl, menu, dir, h1, h2, h3, h4, h5, h6, pre {
 ul, ol, dd {
     padding-left: 4ch;
 }
+.ul--2ch {
+    padding-left: 2ch;
+}
 h1, h2, h3, h4, h5, h6 {
     font-size: 1em;
 }
@@ -93,4 +96,25 @@ b, strong, h1, h2 {
 }
 .blink {
     animation: blink 1s step-start 0s infinite;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    column-gap: 2ch;
+}
+.col-16 {
+    flex: 1 0 16ch;
+}
+ul {
+    list-style: none;
+}
+ul > li {
+    position: relative;
+}
+ul > li::before {
+    content: '+ ';
+    position: absolute;
+    top: 0;
+    left: -2ch;
 }
