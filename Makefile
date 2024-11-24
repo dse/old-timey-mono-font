@@ -80,6 +80,16 @@ $(LIGHT_CODING_FONT_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMET
 		"$@"
 	$(FONTUNHINT_SCRIPT) "$@"
 
+CHARGRID_TPL := website/chargrid.mustache
+CHARGRID_HTML := website/chargrid.html
+
+chargrid: FORCE $(CHARGRID_HTML)
+
+$(CHARGRID_HTML): $(FONT_SRC) $(CHARGRID_TPL) $(MAKEFILE)
+	bin/fontdata $(FONT_SRC) > temp.json
+	chevron -d temp.json $(CHARGRID_TPL) > $@
+	rm temp.json
+
 clean: FORCE
 	/bin/rm $(FONT_TTF) $(CODING_FONT_TTF) $(LIGHT_FONT_TTF) $(LIGHT_CODING_FONT_TTF) || true
 	find . -type f \( -name '*.tmp' -o -name '*.tmp.*' -o -name '*.featfreeze.otf' -o -name '*~' -o -name '#*#' \) -exec rm {} + || true

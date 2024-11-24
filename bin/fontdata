@@ -1,0 +1,57 @@
+#!/usr/bin/env -S fontforge -quiet
+# -*- mode: python; coding: utf-8 -*-
+import os
+import sys
+import argparse
+import fontforge
+import unicodedata
+import json
+
+sys.path.append(os.environ["HOME"] + "/.venv/lib/python3.12/site-packages")
+import unicodeblocks
+
+def main():
+    global args
+    parser = argparse.ArgumentParser()
+    parser.add_argument('filenames', nargs='+')
+    args = parser.parse_args()
+    for filename in args.filenames:
+        font = fontforge.open(filename)
+        data = {}
+        data["blocks"] = []
+        glyphs = list(font.glyphs())
+        glyphs = [glyph for glyph in glyphs if glyph.unicode >= 0]
+        glyphs.sort(key=lambda glyph: glyph.unicode)
+
+        blocks = [unicodeblocks.blocks[block] for block in unicodeblocks.blocks]
+        blocks.sort(key=lambda block: block.start)
+
+        for block in blocks:
+            block_data = {
+                "name": block.name,
+                "start": block.start,
+                "end": block.end,
+                "ustart": "U+%04x" % block.start,
+                "uend": "U+%04x" % block.end,
+            }
+            glyphs_in_block = [glyph for glyph in glyphs if (glyph.unicode in range(block.start, block.end + 1)
+                                                             and glyph.unicode not in range(0, 32)
+                                                             and glyph.unicode not in range(128, 160))]
+            if len(glyphs_in_block) == 0:
+                continue
+            data["blocks"].append(block_data)
+            block_data["chars"] = []
+            for glyph in glyphs_in_block:
+                name = None
+                try:
+                    name = unicodedata.name(chr(glyph.unicode))
+                except ValueError:
+                    name = "(no name)"
+                char_data = {
+                    "uhex": "U+%04X" % glyph.unicode,
+                    "char": chr(glyph.unicode),
+                    "name": name,
+                }
+                block_data["chars"].append(char_data)
+        print(json.dumps(data, indent=4))
+main()
