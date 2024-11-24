@@ -19,8 +19,15 @@ default: $(FONTS)
 
 .SUFFIXES: .sfd .ttf
 
-dist/ttf/%.ttf: src/%.sfd $(FONTCONVERT_SCRIPT) $(MAKEFILE) $(FONTUNHINT_SCRIPT)
+dist/ttf/%.ttf: src/%.sfd $(FONTCONVERT_SCRIPT) $(MAKEFILE) $(FONTUNHINT_SCRIPT) $(SETFONTMETAS_SCRIPT)
 	$(FONTCONVERT_SCRIPT) "$<" "$@"
+	$(SETFONTMETAS_SCRIPT) \
+		--family-name "Reproducing Typewriter" \
+		--full-name   "Reproducing Typewriter" \
+		--ps-name     "ReproTypewr" \
+		--ps-weight   "Book" \
+		--os2-weight  400 \
+		"$@"
 	$(FONTUNHINT_SCRIPT) "$@"
 
 # update source font fron SVG files
@@ -38,6 +45,8 @@ $(LIGHT_FONT_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRI
 		--full-name   "Reproducing Typewriter Light" \
 		--ps-name     "ReproTypewrLight" \
 		--ps-weight   "Light" \
+		--os2-weight  250 \
+		--panose      2,14,3,9,-,2,-,-,-,- \
 		"$@"
 	$(FONTUNHINT_SCRIPT) "$@"
 
@@ -51,6 +60,8 @@ $(CODING_FONT_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCR
 		--full-name   "Reproducing Typewriter Code" \
 		--ps-name     "ReproTypewrCode" \
 		--ps-weight   "Book" \
+		--os2-weight  400 \
+		--panose      2,14,5,9,-,2,-,-,-,- \
 		"$@"
 	$(FONTUNHINT_SCRIPT) "$@"
 
@@ -64,6 +75,8 @@ $(LIGHT_CODING_FONT_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMET
 		--full-name   "Reproducing Typewriter Code Light" \
 		--ps-name     "ReproTypewrCodeLight" \
 		--ps-weight   "Light" \
+		--os2-weight  250 \
+		--panose      2,14,3,9,-,2,-,-,-,- \
 		"$@"
 	$(FONTUNHINT_SCRIPT) "$@"
 
