@@ -17,8 +17,8 @@ def main():
     parser.add_argument('--append-full-name', type=str, help='e.g., "Bold", "Code Bold"')
     parser.add_argument('--append-family-name', type=str, help='e.g., "Code"')
     parser.add_argument('--italic-angle', type=int, help='e.g., -12 = //, 12 = \\\\')
-    parser.add_argument('--os2-weight', type=int)
-    parser.add_argument('--panose', type=str)
+    parser.add_argument('--os2-weight', type=int, help='100 to 900')
+    parser.add_argument('--panose', type=str, help='10 values, each either "-" or non-neg integer')
     args = parser.parse_args()
 
     font = fontforge.open(args.filename)
