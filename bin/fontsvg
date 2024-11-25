@@ -70,7 +70,6 @@ def main():
             xform = psMat.identity()
         xform = psMat.compose(xform, psMat.scale(scale_x, 1.0))
     if xform:
-        print(len(list(font.glyphs())))
         for glyph in font.glyphs():
             if not(glyph.unicode in range(0x2800, 0x2900) or
                    glyph.unicode in range(0x2500, 0x25a0)):
