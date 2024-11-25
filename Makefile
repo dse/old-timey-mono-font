@@ -27,6 +27,7 @@ dist/ttf/%.ttf: src/%.sfd $(FONTCONVERT_SCRIPT) $(MAKEFILE) $(FONTUNHINT_SCRIPT)
 		--ps-name     "ReproTypewr" \
 		--ps-weight   "Book" \
 		--os2-weight  400 \
+		--panose      2,14,5,9,-,2,-,-,-,- \
 		"$@"
 	$(FONTUNHINT_SCRIPT) "$@"
 
