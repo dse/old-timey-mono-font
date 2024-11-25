@@ -16,8 +16,6 @@ def main():
     parser.add_argument('--expand-stroke', '-x', type=int, help="number of pixels to expand stroke")
     parser.add_argument('--expand-sm-stroke', '-X', type=int, help="number of pixels to expand stroke in .smol glyphs")
     parser.add_argument('--dry-run', '-n', action='store_true')
-    parser.add_argument('--ignore-svg-stroke-width', action='store_true',
-                        help='ignore SVG stroke widths')
     parser.add_argument('-o', '--save-as', '--output', type=str, help="after editing, save as new file, converts if file extension is different")
     parser.add_argument('--translate-x', type=int)
     parser.add_argument('--translate-y', type=int)
@@ -97,15 +95,11 @@ def font_glyph_width(font):
 def do_import_work(font, glyph, svg_filename):
     global args
     glyph.foreground = fontforge.layer()
-    if args.ignore_svg_stroke_width:
-        # Import just the paths without expanding strokes.
-        font.strokedfont = True
-        glyph.importOutlines(svg_filename)
-        font.strokedfont = False
-    else:
-        # Fontforge will expand the strokes to their svg stroke
-        # widths.
-        glyph.importOutlines(svg_filename)
+
+    # Import just the paths without expanding strokes.
+    font.strokedfont = True
+    glyph.importOutlines(svg_filename)
+    font.strokedfont = False
 
 def do_outline_work(font, glyph, expand_stroke=None):
     global args
