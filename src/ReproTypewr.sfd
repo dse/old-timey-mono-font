@@ -22,7 +22,7 @@ OS2Version: 0
 OS2_WeightWidthSlopeOnly: 0
 OS2_UseTypoMetrics: 1
 CreationTime: 1729142792
-ModificationTime: 1732498587
+ModificationTime: 1732498889
 PfmFamily: 17
 TTFWeight: 400
 TTFWidth: 5
@@ -2212,6 +2212,7 @@ Flags: HW
 LayerCount: 2
 Fore
 Refer: 1337 -1 N 1 0 0 1 0 0 2
+Substitution2: "'code' Coding Friendly lookup 0 subtable" onedotenleader.larger
 EndChar
 
 StartChar: twodotenleader
@@ -2222,6 +2223,7 @@ Flags: HW
 LayerCount: 2
 Fore
 Refer: 1348 -1 N 1 0 0 1 0 0 2
+Substitution2: "'code' Coding Friendly lookup 0 subtable" twodotenleader.larger
 EndChar
 
 StartChar: ellipsis
@@ -2232,6 +2234,7 @@ Flags: HW
 LayerCount: 2
 Fore
 Refer: 1350 -1 N 1 0 0 1 0 0 2
+Substitution2: "'code' Coding Friendly lookup 0 subtable" ellipsis.larger
 EndChar
 
 StartChar: exclamdbl
