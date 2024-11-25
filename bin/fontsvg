@@ -74,11 +74,14 @@ def main():
         for glyph in font.glyphs():
             if not(glyph.unicode in range(0x2800, 0x2900) or
                    glyph.unicode in range(0x2500, 0x25a0)):
-                glyph.unlinkThisGlyph()
+                # reference unlinking required because transforms
+                # screw this up
+                glyph.unlinkRef()
                 orig_width = glyph.width
                 glyph.transform(xform, ['round'])
                 glyph.left_side_bearing = int(glyph.left_side_bearing + round((orig_width - glyph.width) / 2))
                 glyph.width = orig_width
+                glyph.removeOverlap()
 
     if args.dry_run:
         print("DRY RUN: not saving or generating %s" % write_font_filename)
