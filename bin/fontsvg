@@ -15,7 +15,6 @@ def main():
     parser.add_argument('svg_filenames', nargs='+', help="svg characters")
     parser.add_argument('--expand-stroke', '-x', type=int, help="number of pixels to expand stroke")
     parser.add_argument('--expand-sm-stroke', '-X', type=int, help="number of pixels to expand stroke in .smol glyphs")
-    parser.add_argument('--glyph-width', '--width', '-w', type=int, help="glyph width", default=1008)
     parser.add_argument('--dry-run', '-n', action='store_true')
     parser.add_argument('--ignore-svg-stroke-width', action='store_true',
                         help='ignore SVG stroke widths')
@@ -111,10 +110,11 @@ def do_import_work(font, glyph, svg_filename):
 def do_outline_work(font, glyph, expand_stroke=None):
     global args
     codepoint = glyph.codepoint
+    orig_width = glyph.width
     if expand_stroke is not None:
         glyph.stroke("circular", expand_stroke, "round", "round")
     glyph.removeOverlap()
-    glyph.width = args.glyph_width
+    glyph.width = orig_width
 
 def parse_glyph_svg_filename(svg_filename):
     (svg_dirname, svg_basename) = os.path.split(svg_filename)
