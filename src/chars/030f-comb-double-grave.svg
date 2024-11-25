@@ -9,7 +9,7 @@
    id="svg5"
    xml:space="preserve"
    inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
-   sodipodi:docname="u+030f-combining-double-grave-accent.svg"
+   sodipodi:docname="030f-comb-double-grave.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -25,8 +25,8 @@
      inkscape:document-units="px"
      showgrid="true"
      inkscape:zoom="0.90509668"
-     inkscape:cx="462.93397"
-     inkscape:cy="403.27184"
+     inkscape:cx="464.03883"
+     inkscape:cy="404.37669"
      inkscape:window-width="1908"
      inkscape:window-height="1017"
      inkscape:window-x="2256"
@@ -213,10 +213,10 @@
      id="layer1"
      style="display:inline"><path
        style="display:inline;fill:none;stroke:#000000;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
-       d="M 45,12 36,3"
+       d="M 45,13.5 36,3"
        id="path9"
        sodipodi:nodetypes="cc" /><path
        style="display:inline;fill:none;stroke:#000000;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
-       d="M 27,12 18,3"
+       d="M 27,13.5 18,3"
        id="path969"
        sodipodi:nodetypes="cc" /></g></svg>
