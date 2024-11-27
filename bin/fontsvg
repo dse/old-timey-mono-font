@@ -78,9 +78,6 @@ def main():
             sm_glyph.transform(psMat.translate(glyph.width / 4, expand_sm_stroke / 4))
             sm_glyph.width = glyph.width
             do_outline_work(font, sm_glyph, expand_sm_stroke)
-            if glyph.unicode == 0x69 or glyph.glyphname == 'i' or glyph.glyphname.startswith('i.'):
-                print("make smol from (%s, %s)" % (glyph.glyphname, glyph.unicode))
-                print("generated (%s, %s)" % (sm_glyph.glyphname, sm_glyph.unicode))
 
     xform = None
     if args.translate_y or args.translate_x:
@@ -131,12 +128,6 @@ def do_import_work(font, glyph, svg_filename):
     global args
     glyph.foreground = fontforge.layer()
 
-    if glyph.unicode == 0x69 or glyph.glyphname == 'i' or glyph.glyphname.startswith('i.'):
-        print("###############  i  ############### do_import_work on (%s, %s)" % (glyph.glyphname, glyph.unicode))
-
-    if glyph.unicode == 0x2189 or glyph.glyphname == 'uni2189' or glyph.glyphname.startswith('uni2189'):
-        print("############### 0/3 ############### do_import_work on (%s, %s)" % (glyph.glyphname, glyph.unicode))
-
     # Import just the paths without expanding strokes.
     font.strokedfont = True
     glyph.importOutlines(svg_filename)
@@ -144,13 +135,6 @@ def do_import_work(font, glyph, svg_filename):
 
 def do_outline_work(font, glyph, expand_stroke=None):
     global args
-
-    if glyph.unicode == 0x69 or glyph.glyphname == 'i' or glyph.glyphname.startswith('i.'):
-        print("###############  i  ############### do_outline_work on (%s, %s)" % (glyph.glyphname, glyph.unicode))
-
-    if glyph.unicode == 0x2189 or glyph.glyphname == 'uni2189' or glyph.glyphname.startswith('uni2189'):
-        print("############### 0/3 ############### do_outline_work on (%s, %s)" % (glyph.glyphname, glyph.unicode))
-
     codepoint = glyph.codepoint
     orig_width = glyph.width
     if expand_stroke is not None:
