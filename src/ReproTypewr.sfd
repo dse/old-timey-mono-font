@@ -2,7 +2,7 @@ SplineFontDB: 3.2
 FontName: ReproTypewr
 FullName: Reproducing Typewriter
 FamilyName: Reproducing Typewriter
-Weight: Regular
+Weight: Medium
 Copyright: Copyright (c) 2024, Darren Embry
 UComments: "2024-10-17: Created with FontForge (http://fontforge.org)"
 Version: 001.000
@@ -24,7 +24,7 @@ OS2_UseTypoMetrics: 1
 CreationTime: 1729142792
 ModificationTime: 1732523422
 PfmFamily: 17
-TTFWeight: 400
+TTFWeight: 500
 TTFWidth: 5
 LineGap: 0
 VLineGap: 0
