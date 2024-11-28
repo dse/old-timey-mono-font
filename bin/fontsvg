@@ -14,7 +14,6 @@ def main():
     parser.add_argument('font_filename', help="font filename")
     parser.add_argument('svg_filenames', nargs='+', help="svg characters")
     parser.add_argument('--expand-stroke', '-x', type=int, help="number of pixels to expand stroke")
-    parser.add_argument('--expand-sm-stroke', '-X', type=int, help="number of pixels to expand stroke in .smol glyphs")
     parser.add_argument('--dry-run', '-n', action='store_true')
     parser.add_argument('-o', '--save-as', '--output', type=str, help="after editing, save as new file, converts if file extension is different")
     parser.add_argument('--translate-x', type=int)
@@ -28,8 +27,6 @@ def main():
     print("Loading %s" % args.font_filename)
     font = fontforge.open(args.font_filename)
     write_font_filename = args.save_as if args.save_as is not None else args.font_filename
-
-    expand_sm_stroke = args.expand_sm_stroke if args.expand_sm_stroke is not None else args.expand_stroke
 
     for svg_filename in args.svg_filenames:
         (codepoint, glyphname, suffix) = parse_glyph_svg_filename(svg_filename)
@@ -75,9 +72,9 @@ def main():
             sm_glyph.foreground = fontforge.layer()
             do_import_work(font, sm_glyph, svg_filename)
             sm_glyph.transform(psMat.scale(0.5))
-            sm_glyph.transform(psMat.translate(glyph.width / 4, expand_sm_stroke / 4))
+            sm_glyph.transform(psMat.translate(glyph.width / 4, args.expand_stroke / 4))
             sm_glyph.width = glyph.width
-            do_outline_work(font, sm_glyph, expand_sm_stroke)
+            do_outline_work(font, sm_glyph, args.expand_stroke)
 
     if (args.translate_x or args.translate_y or args.scale_x or args.scale_y):
         for glyph in font.glyphs():
