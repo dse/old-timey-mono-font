@@ -7,7 +7,8 @@ product manual that shipped with Turbo Pascal 3.0.
 
 This is the first digitally available verison of Reproducing
 Typewriter.  It is a clean and somewhat* accurate reproduction, not a
-"grungy" typeface like Trixie.
+"grungy" typeface like Trixie.  It is intended to provide an
+aesthetic, but above all it is meant to be used.
 
 ## Original and Coding Variants
 
