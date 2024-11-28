@@ -84,11 +84,13 @@ def main():
     if has_xform:
         for glyph in font.glyphs():
             if glyph.unicode in range(0x2800, 0x2900) or glyph.unicode in range(0x2500, 0x25a0):
+                # Leave Braille, Box Drawing, and Block Elements alone.
                 continue
             if len(glyph.references) and not len(glyph.foreground):
                 glyph.unlinkRef()
         for glyph in font.glyphs():
             if glyph.unicode in range(0x2800, 0x2900) or glyph.unicode in range(0x2500, 0x25a0):
+                # Leave Braille, Box Drawing, and Block Elements alone.
                 continue
             xform = psMat.identity()
             if args.scale_y:
