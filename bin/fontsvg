@@ -83,6 +83,8 @@ def main():
 
     if has_xform:
         for glyph in font.glyphs():
+            if glyph.unicode in range(0x2800, 0x2900) or glyph.unicode in range(0x2500, 0x25a0):
+                continue
             xform = None
             if args.translate_y or args.translate_x:
                 if xform is None:
@@ -100,18 +102,16 @@ def main():
                 if xform is None:
                     xform = psMat.identity()
                 xform = psMat.compose(xform, psMat.scale(scale_x, 1.0))
-            if not(glyph.unicode in range(0x2800, 0x2900) or
-                   glyph.unicode in range(0x2500, 0x25a0)):
-                if len(glyph.references) and not len(glyph.foreground):
-                    glyph.unlinkRef()
-                # reference unlinking required because transforms
-                # screw this up
-                if len(glyph.foreground) and not len(glyph.references):
-                    orig_width = glyph.width
-                    glyph.transform(xform)
-                    glyph.left_side_bearing = int(glyph.left_side_bearing + round((orig_width - glyph.width) / 2))
-                    glyph.width = orig_width
-                    glyph.removeOverlap()
+            if len(glyph.references) and not len(glyph.foreground):
+                glyph.unlinkRef()
+            # reference unlinking required because transforms
+            # screw this up
+            if len(glyph.foreground) and not len(glyph.references):
+                orig_width = glyph.width
+                glyph.transform(xform)
+                glyph.left_side_bearing = int(glyph.left_side_bearing + round((orig_width - glyph.width) / 2))
+                glyph.width = orig_width
+                glyph.removeOverlap()
 
     if args.dry_run:
         print("DRY RUN: not saving or generating %s" % write_font_filename)
