@@ -8,54 +8,70 @@ SETFONTMETAS_SCRIPT := bin/setfontmetas
 
 FONT_TTF := dist/ttf/ReproTypewr.ttf
 CODING_FONT_TTF := dist/ttf/ReproTypewrCode.ttf
-LIGHT_FONT_TTF := dist/ttf/ReproTypewrLight.ttf
-LIGHT_CODING_FONT_TTF := dist/ttf/ReproTypewrCodeLight.ttf
-SEMI_LIGHT_FONT_TTF := dist/ttf/ReproTypewrSemiLight.ttf
-SEMI_LIGHT_CODING_FONT_TTF := dist/ttf/ReproTypewrCodeSemiLight.ttf
+LIGHT_FONT_TTF := dist/ttf/ReproTypewr-Light.ttf
+LIGHT_CODING_FONT_TTF := dist/ttf/ReproTypewrCode-Light.ttf
+SEMI_LIGHT_FONT_TTF := dist/ttf/ReproTypewr-SemiLight.ttf
+SEMI_LIGHT_CODING_FONT_TTF := dist/ttf/ReproTypewrCode-SemiLight.ttf
 
-FONTS := $(FONT_TTF) \
+FONTS := \
+	$(FONT_TTF) \
 	$(LIGHT_FONT_TTF) \
 	$(CODING_FONT_TTF) \
 	$(LIGHT_CODING_FONT_TTF) \
 	$(SEMI_LIGHT_FONT_TTF) \
 	$(SEMI_LIGHT_CODING_FONT_TTF)
 
-FONTSVG__SEMI_LIGHT := --expand-stroke 68 --translate-y -14  --scale-y 1056 --scale-y-from 1028  --scale-x 1008 --scale-x-from 980
-FONTSVG__LIGHT      := --expand-stroke 48 --translate-y -24  --scale-y 1056 --scale-y-from 1008  --scale-x 1008 --scale-x-from 960
+ORIGINAL_FONTS := \
+	$(FONT_TTF) \
+	$(LIGHT_FONT_TTF) \
+	$(SEMI_LIGHT_FONT_TTF)
+
+CODING_FONTS := \
+	$(CODING_FONT_TTF) \
+	$(LIGHT_CODING_FONT_TTF) \
+	$(SEMI_LIGHT_CODING_FONT_TTF)
+
+FONTSVG__REGULAR    := --expand-stroke 96
+FONTSVG__SEMI_LIGHT := --expand-stroke 72 --translate-y -12  --scale-y 1344 --scale-y-from 1320  --scale-x 1008 --scale-x-from 984
+FONTSVG__LIGHT      := --expand-stroke 48 --translate-y -24  --scale-y 1344 --scale-y-from 1296  --scale-x 1008 --scale-x-from 960
+#                                                                      ^^^^     ascent     ^^^^
 
 default: $(FONTS)
+original: $(ORIGINAL_FONTS)
+coding: $(CODING_FONTS)
 
 .SUFFIXES: .sfd .ttf
 
-dist/ttf/%.ttf: src/%.sfd $(FONTCONVERT_SCRIPT) $(MAKEFILE) $(FONTUNHINT_SCRIPT) $(SETFONTMETAS_SCRIPT)
-	$(FONTCONVERT_SCRIPT) "$<" "$@"
-	$(SETFONTMETAS_SCRIPT) \
-		--family-name "Reproducing Typewriter" \
-		--full-name   "Reproducing Typewriter" \
-		--ps-name     "ReproTypewr" \
-		--ps-weight   "Book" \
-		--os2-weight  400 \
-		--panose      2,14,5,9,-,2,-,-,-,- \
-		"$@"
-	$(FONTUNHINT_SCRIPT) "$@"
+# dist/ttf/%.ttf: src/%.sfd $(FONTCONVERT_SCRIPT) $(MAKEFILE) $(FONTUNHINT_SCRIPT) $(SETFONTMETAS_SCRIPT)
+#	$(FONTCONVERT_SCRIPT) "$<" "$@"
+#	$(SETFONTMETAS_SCRIPT) \
+#		--family-name "Reproducing Typewriter" \
+#		--full-name   "Reproducing Typewriter" \
+#		--ps-name     "ReproTypewr" \
+#		--ps-weight   "Medium" \
+#		--os2-weight  400 \
+#		--panose      2,0,5,9,3,0,-,-,-,3 \
+#		"$@"
+#	$(FONTUNHINT_SCRIPT) "$@"
 
 # update source font fron SVG files
 fontsvg: FORCE
 	$(FONTSVG_SCRIPT) --expand-stroke 96 $(FONT_SRC) `find src/chars -type f -name '*.svg'`
+
 braille: FORCE
 	fontbraille -W 200 -f $(FONT_SRC)
 boxdraw: FORCE
 	fontboxdraw -f $(FONT_SRC)
 
-$(LIGHT_FONT_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
-	$(FONTSVG_SCRIPT) $(FONTSVG__LIGHT) $< -o $@ `find src/chars -type f -name '*.svg'`
+$(FONT_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
+	$(FONTSVG_SCRIPT) $(FONTSVG__REGULAR) $< -o $@ `find src/chars -type f -name '*.svg'`
 	$(SETFONTMETAS_SCRIPT) \
 		--family-name "Reproducing Typewriter" \
-		--full-name   "Reproducing Typewriter Light" \
-		--ps-name     "ReproTypewrLight" \
-		--ps-weight   "Light" \
-		--os2-weight  300 \
-		--panose      2,14,3,9,-,2,-,-,-,- \
+		--full-name   "Reproducing Typewriter" \
+		--ps-name     "ReproTypewr" \
+		--ps-weight   "Medium" \
+		--os2-weight  400 \
+		--panose      2,0,5,9,3,0,-,-,-,3 \
 		"$@"
 	$(FONTUNHINT_SCRIPT) "$@"
 
@@ -64,15 +80,27 @@ $(SEMI_LIGHT_FONT_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETAS
 	$(SETFONTMETAS_SCRIPT) \
 		--family-name "Reproducing Typewriter" \
 		--full-name   "Reproducing Typewriter Semi-Light" \
-		--ps-name     "ReproTypewrSemiLight" \
+		--ps-name     "ReproTypewr-SemiLight" \
 		--ps-weight   "Semi-Light" \
 		--os2-weight  350 \
-		--panose      2,14,4,9,-,2,-,-,-,- \
+		--panose      2,0,3,9,3,0,-,-,-,3 \
+		"$@"
+	$(FONTUNHINT_SCRIPT) "$@"
+
+$(LIGHT_FONT_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
+	$(FONTSVG_SCRIPT) $(FONTSVG__LIGHT) $< -o $@ `find src/chars -type f -name '*.svg'`
+	$(SETFONTMETAS_SCRIPT) \
+		--family-name "Reproducing Typewriter" \
+		--full-name   "Reproducing Typewriter Light" \
+		--ps-name     "ReproTypewr-Light" \
+		--ps-weight   "Light" \
+		--os2-weight  300 \
+		--panose      2,0,4,9,3,0,-,-,-,3 \
 		"$@"
 	$(FONTUNHINT_SCRIPT) "$@"
 
 $(CODING_FONT_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
-	$(FONTSVG_SCRIPT) --expand-stroke 96 $< -o $@ `find src/chars -type f -name '*.svg'`
+	$(FONTSVG_SCRIPT) $(FONTSVG__REGULAR) $< -o $@ `find src/chars -type f -name '*.svg'`
 	mv "$@" "$@.tmp.ttf"	# tmp file required for featfreeze to work
 	pyftfeatfreeze -f code -S -U Code "$@.tmp.ttf" "$@"
 	rm "$@.tmp.ttf"
@@ -80,9 +108,9 @@ $(CODING_FONT_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCR
 		--family-name "Reproducing Typewriter Code" \
 		--full-name   "Reproducing Typewriter Code" \
 		--ps-name     "ReproTypewrCode" \
-		--ps-weight   "Book" \
+		--ps-weight   "Medium" \
 		--os2-weight  400 \
-		--panose      2,14,5,9,-,2,-,-,-,- \
+		--panose      2,0,5,9,3,0,-,-,-,3 \
 		"$@"
 	$(FONTUNHINT_SCRIPT) "$@"
 
@@ -94,10 +122,10 @@ $(SEMI_LIGHT_CODING_FONT_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFO
 	$(SETFONTMETAS_SCRIPT) \
 		--family-name "Reproducing Typewriter Code" \
 		--full-name   "Reproducing Typewriter Code Semi-Light" \
-		--ps-name     "ReproTypewrCodeSemiLight" \
+		--ps-name     "ReproTypewrCode-SemiLight" \
 		--ps-weight   "Semi-Light" \
 		--os2-weight  350 \
-		--panose      2,14,4,9,-,2,-,-,-,- \
+		--panose      2,0,4,9,3,0,-,-,-,3 \
 		"$@"
 	$(FONTUNHINT_SCRIPT) "$@"
 
@@ -109,10 +137,10 @@ $(LIGHT_CODING_FONT_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMET
 	$(SETFONTMETAS_SCRIPT) \
 		--family-name "Reproducing Typewriter Code" \
 		--full-name   "Reproducing Typewriter Code Light" \
-		--ps-name     "ReproTypewrCodeLight" \
+		--ps-name     "ReproTypewrCode-Light" \
 		--ps-weight   "Light" \
 		--os2-weight  300 \
-		--panose      2,14,3,9,-,2,-,-,-,- \
+		--panose      2,0,3,9,3,0,-,-,-,3 \
 		"$@"
 	$(FONTUNHINT_SCRIPT) "$@"
 
@@ -131,3 +159,6 @@ clean: FORCE
 	find . -type f \( -name '*.tmp' -o -name '*.tmp.*' -o -name '*.featfreeze.otf' -o -name '*~' -o -name '#*#' \) -exec rm {} + || true
 
 .PHONY: FORCE
+
+# resetting DisplaySize: ___ doesn't break
+# resetting Weight: Regular breaks

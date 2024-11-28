@@ -2,7 +2,7 @@ SplineFontDB: 3.2
 FontName: ReproTypewr
 FullName: Reproducing Typewriter
 FamilyName: Reproducing Typewriter
-Weight: Regular
+Weight: Medium
 Copyright: Copyright (c) 2024, Darren Embry
 UComments: "2024-10-17: Created with FontForge (http://fontforge.org)"
 Version: 001.000
@@ -22,9 +22,9 @@ OS2Version: 0
 OS2_WeightWidthSlopeOnly: 0
 OS2_UseTypoMetrics: 1
 CreationTime: 1729142792
-ModificationTime: 1732523422
+ModificationTime: 1732700730
 PfmFamily: 17
-TTFWeight: 400
+TTFWeight: 500
 TTFWidth: 5
 LineGap: 0
 VLineGap: 0
@@ -56,7 +56,7 @@ NameList: AGL For New Fonts
 DisplaySize: -48
 AntiAlias: 1
 FitToEm: 0
-WinInfo: 117 39 16
+WinInfo: 667 29 11
 BeginPrivate: 0
 EndPrivate
 Grid
@@ -32253,13 +32253,10 @@ EndChar
 StartChar: uni2189
 Encoding: 8585 8585 1306
 Width: 1008
-Flags: HW
+Flags: HWO
 LayerCount: 2
 Fore
-SplineSet
-1320 608 m 1049
-EndSplineSet
-Refer: 82 -1 S 1 0 0 1 0 -300 2
+Refer: 82 -1 N 1 0 0 1 0 -300 2
 Refer: 79 -1 N 1 0 0 1 0 480 2
 Refer: 92 -1 N 1 0 0 1 0 0 2
 EndChar
