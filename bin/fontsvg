@@ -86,12 +86,6 @@ def main():
             if glyph.unicode in range(0x2800, 0x2900) or glyph.unicode in range(0x2500, 0x25a0):
                 continue
             xform = None
-            if args.translate_y or args.translate_x:
-                if xform is None:
-                    xform = psMat.identity()
-                xlate_x = args.translate_x if args.translate_x else 0
-                xlate_y = args.translate_y if args.translate_y else 0
-                xform = psMat.compose(xform, psMat.translate(xlate_x, xlate_y))
             if args.scale_y:
                 scale_y = args.scale_y / args.scale_y_from if args.scale_y_from else args.scale_y
                 if xform is None:
@@ -102,6 +96,12 @@ def main():
                 if xform is None:
                     xform = psMat.identity()
                 xform = psMat.compose(xform, psMat.scale(scale_x, 1.0))
+            if args.translate_y or args.translate_x:
+                if xform is None:
+                    xform = psMat.identity()
+                xlate_x = args.translate_x if args.translate_x else 0
+                xlate_y = args.translate_y if args.translate_y else 0
+                xform = psMat.compose(xform, psMat.translate(xlate_x, xlate_y))
             if len(glyph.references) and not len(glyph.foreground):
                 glyph.unlinkRef()
             # reference unlinking required because transforms
