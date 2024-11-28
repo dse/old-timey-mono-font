@@ -1,38 +1,17 @@
 # Reproducing Typewriter
 
-## Introducing Reproducing Typewriter
+This is a digital revival of Reproducing Typewriter, a "typewriter"
+monospace typeface designed to be readable at smaller point sizes from
+over a century ago.  You may have seen this typeface used in the
+product manual that shipped with Turbo Pascal 3.0.
 
-Reproducing Typewriter is one of many early 20th-century typefaces
-used for simulating typewritten letters on hot metal and/or mechanical
-typesetting equipment.  As opposed to typefaces resembling those of
-typewriter manufacturers such as Remington and Smith, Reproducing
-Typewriter appears to have been designed for better readability at
-smaller point sizes and/or when reproduced by mimeograph machines and
-whatnots.
-
-According to the American Type Founders [Line
-Book](https://bit.ly/atflinebook1908) of 1908:
-
-> A specialty has also been made of Reproducing Typewriter faces, to
-> meet the constantly increasing demand for facsimile letters in
-> reduced size.
-
-Its main differentiating characteristic from other contemporaneous
-typewriter styles is that most serifs are shorter.  Where the serifs
-of other typefaces might bleed together, the capital H, for example,
-continues to look more like a capital H.
-
-## How We Were Likely Introduced to Reproducing Typewriter
-
-Reproducing Typewriter, or something very close to it, is also the
-typeface used for code examples in the _Turbo Pascal 3.0_ manual.  I
-cut my teeth on Turbo Pascal!
+This is the first digitally available verison of Reproducing
+Typewriter.  It is a clean and somewhat* accurate reproduction, not a
+"grungy" typeface like Trixie.
 
 ## Original and Coding Variants
 
-I created this with the hope that its shorter serifs also make it a
-more suitable basis for a coding-friendly typeface than other
-old-timey typewriter fonts.
+Reproducing Typewriter comes in two font families:
 
 **Reproducing Typewriter** is to a great extent the original typeface.
 
@@ -44,14 +23,25 @@ old-timey typewriter fonts.
 -   The period, comma, and other selected punctuation marks are made
     larger for better visibility.
     
-## Reproducing Reproducing Typewriter
+## What is Reproducing Typewriter
+    
+Reproducing Typewriter is one of many early 20th-century typefaces
+used for simulating typewritten letters on hot metal and/or mechanical
+typesetting equipment.  As opposed to typefaces resembling those of
+typewriter manufacturers such as Remington and Smith, Reproducing
+Typewriter was designed for better readability at smaller point sizes
+and/or when reproduced by mimeograph machines and whatnots.
 
-This is the first digitally available clean version of Reproducing
-Typewriter.
+According to the American Type Founders [Line Book][linebook] of 1908:
 
-I created this by tracing from scans of the Turbo Pascal manual as
-well as scans of typeface specimens.  So it may not be super accurate,
-but in my experience it's close enough.
+> A specialty has also been made of Reproducing Typewriter faces, to
+> meet the constantly increasing demand for facsimile letters in
+> reduced size.
+
+Its main differentiating characteristic from other contemporaneous
+typewriter styles is that most serifs are shorter.  Where the serifs
+of other typefaces might bleed together, the capital H, for example,
+continues to look more like a capital H.
 
 ## Unicode Coverage
 
@@ -61,17 +51,18 @@ but in my experience it's close enough.
 -   U+0080–U+00FF Latin-1 Supplement: all printable ISO-8859-1
     characters.  Again, no control characters.
 
--   U+2800–U+28FF Braille Patterns in its entirety.
-
 -   U+2500–U+257F Box Drawing in its entirety.
 
 -   U+2580–U+259F Block Elements in its entirety.
+
+-   U+2800–U+28FF Braille Patterns in its entirety.
 
 ### In Progress
 
 -   A lot of extended Latin symbols.
 
--   Some Greek and Cyrillic symbols.
+-   Some Greek and Cyrillic symbols.  All Cyrillic used in Russia and
+    Ukraine is complete.
 
 -   Plenty of additional punctuation marks, mathematical operators,
     geometric shapes, and basic arrows from U+2000 on up.
@@ -82,4 +73,4 @@ but in my experience it's close enough.
     
 ## Footnotes
 
-[atflinebook1908]: https://www.google.com/books/edition/American_Line_Type_Book/WadRAAAAYAAJ?hl=en&gbpv=1&pg=PP5&printsec=frontcover
+[linebook]: https://www.google.com/books/edition/American_Line_Type_Book/WadRAAAAYAAJ?hl=en&gbpv=1&pg=PP5&printsec=frontcover
