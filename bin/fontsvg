@@ -79,9 +79,7 @@ def main():
             sm_glyph.width = glyph.width
             do_outline_work(font, sm_glyph, expand_sm_stroke)
 
-    has_xform = (args.translate_x or args.translate_y or args.scale_x or args.scale_y)
-
-    if has_xform:
+    if (args.translate_x or args.translate_y or args.scale_x or args.scale_y):
         for glyph in font.glyphs():
             if glyph.unicode in range(0x2800, 0x2900) or glyph.unicode in range(0x2500, 0x25a0):
                 # Leave Braille, Box Drawing, and Block Elements alone.
