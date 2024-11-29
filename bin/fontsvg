@@ -53,7 +53,14 @@ def main():
             if glyph.unicode in range(0x2800, 0x2900) or glyph.unicode in range(0x2500, 0x25a0):
                 # Leave Braille, Box Drawing, and Block Elements alone.
                 continue
+            # Unfortunately some upside down references would have
+            # the wrong offset if we simply transformed them.
             if len(glyph.references) and not len(glyph.foreground):
+                # Ordinarily a glyph.unlinkRef() call would replace
+                # the refs with the contours from when the font was
+                # loaded, ignoring any changes such as the .stroke()
+                # calls.
+                reconstitute_references(glyph)
                 glyph.unlinkRef()
         for glyph in font.glyphs():
             if glyph.unicode in range(0x2800, 0x2900) or glyph.unicode in range(0x2500, 0x25a0):
@@ -126,5 +133,14 @@ def parse_glyph_svg_filename(svg_filename):
     else:
         glyphname = fontforge.nameFromUnicode(codepoint)
     return [codepoint, glyphname, suffix]
+
+def reconstitute_references(glyph):
+    # Apparently a glyph.unlinkRef() call will replace the
+    # references with the contours from when the font was
+    # loaded, ignoring any changes we make to the glyph.
+    references = glyph.references
+    glyph.references = []
+    for reference in references:
+        glyph.addReference(reference[0], reference[1])
 
 main()
