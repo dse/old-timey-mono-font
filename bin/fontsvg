@@ -103,7 +103,6 @@ def do_import_work(font, glyph, svg_filename):
 
 def do_outline_work(font, glyph, expand_stroke=None):
     global args
-    codepoint = glyph.codepoint
     orig_width = glyph.width
     if expand_stroke is not None:
         glyph.stroke("circular", expand_stroke, "round", "round")
