@@ -32,9 +32,9 @@ CODING_FONTS := \
 	$(SEMI_LIGHT_CODING_FONT_TTF)
 
 FONTSVG__REGULAR    := --expand-stroke 96
-FONTSVG__SEMI_LIGHT := --expand-stroke 72 --translate-y -12  --scale-y 1344 --scale-y-from 1320  --scale-x 1008 --scale-x-from 984
-FONTSVG__LIGHT      := --expand-stroke 48 --translate-y -24  --scale-y 1344 --scale-y-from 1296  --scale-x 1008 --scale-x-from 960
-#                                                                      ^^^^     ascent     ^^^^
+FONTSVG__SEMI_LIGHT := --expand-stroke 72 # --translate-y -12  --scale-y 1344 --scale-y-from 1320  --scale-x 1008 --scale-x-from 984
+FONTSVG__LIGHT      := --expand-stroke 48 # --translate-y -24  --scale-y 1344 --scale-y-from 1296  --scale-x 1008 --scale-x-from 960
+#                                                                        ^^^^     ascent     ^^^^
 
 default: $(FONTS)
 original: $(ORIGINAL_FONTS)
