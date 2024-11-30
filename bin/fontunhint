@@ -1,0 +1,21 @@
+#!/usr/bin/env -S fontforge -quiet
+# -*- mode: python; coding: utf-8 -*-
+import os
+import fontforge
+import argparse
+def main():
+    global args
+    parser = argparse.ArgumentParser(description="remove hints from specified font(s)")
+    args = parser.parse_args()
+    for filename in args.filenames:
+        font = fontforge.open(args.source_filename)
+        for glyph in font.glyphs():
+            glyph.hhints = tuple()
+            glyph.vhints = tuple()
+            glyph.manualHints = True
+            font.gasp_version = 1
+            font.gasp = ((1, ('antialias',),),)
+        if filename.endswith(".sfd"):
+            font.save(filename)
+        else:
+            font.generate(filename, flags=['no-hints','no-flex'])

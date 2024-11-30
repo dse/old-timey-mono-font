@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+        <title>Reproducing Typewriter original and coding fonts</title>
+        <link rel="stylesheet" href="main.css?v=1">
+    </head>
+    <body>
+        <div class="container">
+
+            <h1>
+                Reproducing Typewriter
+            </h1>
+
+            <p class="blink" style="text-transform: uppercase;">
+                Work in Progress
+            </p>
+
+            <p>
+                An early 20th-century typeface designed for readability at
+                lower point sizes.  It was a typeface you'd use with
+                Linotype machines and whatnot to simulate typewritten
+                letters.  A few computer books also used it, including the
+                <a target="_blank" href="https://bitsavers.trailing-edge.com/pdf/borland/turbo_pascal/Turbo_Pascal_Version_3.0_Reference_Manual_1986.pdf">Turbo Pascal 3.0 manual</a>.
+            </p>
+
+            <p>
+                At a size of 12pt, Reproducing Typewriter is a pica font,
+                10 characters per inch, and 6 lines per inch.  It <b>should</b> also be suitable for screenplay writing.
+            </p>
+
+            <h2>
+                TTF Downloads
+            </h2>
+
+            <ul>
+                <li><a href="dist/ttf/ReproTypewr.ttf">Reproducing Typewriter</a> (Original)</li>
+                <li><a href="dist/ttf/ReproTypewrCode.ttf">Reproducing Typewriter Code</a></li>
+            </ul>
+
+            <h2>
+                Reproducing Typewriter (Original)
+            </h2>
+
+            <p>
+                The quick brown fox jumps over the lazy dog.<br>
+                Wafting zephyrs quickly vex bold Jim.<br>
+                Pack my box with five dozen liquor jugs.<br>
+                Sphinx of black quartz, judge my vow.
+            </p>
+
+            <h2>
+                Reproducing Typewriter Code
+            </h2>
+
+            <pre class="code">
+send(to, from, count)
+register short *to, *from;
+register count;
+{
+        register n=(count+7)/8;
+        switch(count%8){
+        case 0:	do{	*to = *from++;
+        case 7:		*to = *from++;
+        case 6:		*to = *from++;
+        case 5:		*to = *from++;
+        case 4:		*to = *from++;
+        case 3:		*to = *from++;
+        case 2:		*to = *from++;
+        case 1:		*to = *from++;
+                }while(--n>0);
+        }
+}</pre>
+
+            <h2>
+                Original vs. Code
+            </h2>
+
+            <div class="row">
+                <div class="col-16">
+                    <h3>
+                        Original
+                    </h3>
+                    <p>
+                        &nbsp;!&quot;#$%&amp;&#39;<wbr>()*+,-./<wbr>01234567<wbr>89:;&lt;=&gt;?<wbr>@ABCDEFG<wbr>HIJKLMNO<wbr>PQRSTUVW<wbr>XYZ[\]^_<wbr>`abcdefg<wbr>hijklmno<wbr>pqrstuvw<wbr>xyz{|}~
+                    </p>
+                </div>
+                <div class="col-16">
+                    <div class="code">
+                        <h3>
+                            Code
+                        </h3>
+                        <p class="code">
+                            &nbsp;!&quot;#$%&amp;&#39;<wbr>()*+,-./<wbr>01234567<wbr>89:;&lt;=&gt;?<wbr>@ABCDEFG<wbr>HIJKLMNO<wbr>PQRSTUVW<wbr>XYZ[\]^_<wbr>`abcdefg<wbr>hijklmno<wbr>pqrstuvw<wbr>xyz{|}~
+                        </p>
+                        <ul class="ul--2ch">
+                            <li>
+                                Distinguished digit 0 from capital letter O.
+                            </li>
+                            <li>
+                                Distinguished digit 1 from small letter L (l).
+                            </li>
+                            <li>
+                                Selected punctuation marks are larger for enhanced visibility.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h2>
+                Copyright/License
+            </h2>
+
+            <p>
+                Copyright 2024 <a href="mailto:dsembry@gmail.com">Darren Embry</a>.
+            </p>
+
+            <p>
+                Will be <a target="_blank" href="https://openfontlicense.org/open-font-license-official-text/">SIL-OFL 1.1</a> when
+                I put up the code repository at some point.
+            </p>
+
+            <h2>
+                I Also Made...
+            </h2>
+
+            <ul>
+                <li>
+                    <a target="_blank" href="https://webonastick.com/fonts/dse-typewriter/">DSE Typewriter</a>,
+                    a different sort of old-timey typewriter aesthetic.
+                    It has an OpenType feature for old-style numerals, and it's 12cpi elite unlike this font.
+                </li>
+                <li>
+                    <a target="_blank" href="https://github.com/dse/dse-typewriter-bitmap-font">DSE Typewriter Bitmap</a>
+                </li>
+            </ul>
+
+            <h2>
+                See Also
+            </h2>
+
+            <ul>
+                <li>
+                    <a target="_blank" href="https://copypaste.wtf/TT2020/docs/">TT2020</a>
+                </li>
+            </ul>
+
+            <ul class="char-grid">
+                <li class="char-grid__item">
+                    <div class="char-grid__codepoint">U+203D</div>
+                    <div class="char-grid__char">&#x203d;</div>
+                    <div class="char-grid__charname">INTERROBANG</div>
+                </li>
+            </ul>
+
+        </div>
+    </body>
+</html>

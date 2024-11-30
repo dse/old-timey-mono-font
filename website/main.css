@@ -1,0 +1,172 @@
+@font-face {
+    src: url('fonts/ttf/ReproTypewr.ttf?v=1');
+    font-family: 'Reproducing Typewriter';
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    src: url('fonts/ttf/ReproTypewrCode.ttf?v=1');
+    font-family: 'Reproducing Typewriter Code';
+    font-weight: 400;
+    font-style: normal;
+}
+html {
+    font-size: 16px;
+}
+@media (min-width: 768px) {
+    html {
+        font-size: calc(1.8519vw + 1.7778px); /* 24px at 1200px */
+    }
+}
+@media (min-width: 1200px) {
+    html {
+        font-size: 24px;
+    }
+}
+html {
+    font-family: 'Reproducing Typewriter';
+    margin: 0;
+    padding: 0;
+    color: black;
+}
+body {
+    --bg: white;
+    --bgbg: #eeeeee;
+    --bgsh: #dddddd;
+    --shwd: 3ch;
+    background-image: linear-gradient(to right,
+                                      var(--bgbg) 0%,
+                                      var(--bgbg) calc(50% - 42.5ch - var(--shwd)),
+                                      var(--bgsh) calc(50% - 42.5ch),
+                                      var(--bg)   calc(50% - 42.5ch),
+                                      var(--bg)   calc(50% + 42.5ch),
+                                      var(--bgsh) calc(50% + 42.5ch),
+                                      var(--bgbg) calc(50% + 42.5ch + var(--shwd)),
+                                      var(--bgbg) 100%);
+}
+body {
+    margin-top: 1em;
+    line-height: 1;
+}
+.container {
+    max-width: 65ch;
+    padding-left: 1ch;
+    padding-right: 1ch;
+    margin-left: auto;
+    margin-right: auto;
+}
+p, ul, ol, dl, menu, dir, h1, h2, h3, h4, h5, h6, pre {
+    margin-top: 0;
+    margin-bottom: 1em;
+}
+ul, ol, dd {
+    padding-left: 4ch;
+}
+.ul--2ch {
+    padding-left: 2ch;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-size: 1em;
+}
+h1 { color: blue; font-weight: bold; font-style: normal; }
+h2 { color: blue; font-weight: bold; font-style: italic; }
+h3 { color: blue; font-weight: normal; font-style: italic; }
+h4 { color: blue; font-weight: normal; font-style: normal; }
+h5 { color: green; font-weight: normal; font-style: italic; }
+h6 { color: green; font-weight: normal; font-style: normal; }
+pre {
+    font-family: inherit;
+}
+.code {
+    font-family: "Reproducing Typewriter Code";
+}
+b, strong {
+    color: #ff3333;
+}
+b, strong, h1, h2 {
+    font-weight: normal;
+    text-shadow: currentcolor 0.05em 0 0;
+}
+
+/* h/t: https://stackoverflow.com/a/13955165/8621049 */
+@keyframes blink {
+    50% {
+        opacity: 0.0;
+    }
+}
+.blink {
+    animation: blink 1s step-start 0s infinite;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    column-gap: 2ch;
+}
+.col-16 {
+    flex: 1 0 16ch;
+}
+ul {
+    list-style: none;
+}
+ul > li {
+    position: relative;
+}
+ul > li::before {
+    content: '+ ';
+    position: absolute;
+    top: 0;
+    left: -2ch;
+}
+
+.char-grid {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 1ch;
+    row-gap: 1em;
+    margin-bottom: 1em;
+}
+.char-grid__item::before {
+    content: none;
+}
+.char-grid__item {
+    width: 7ch;
+    flex: 0 0 7ch;
+}
+.char-grid__item::before {
+    content: none;
+}
+.char-grid__codepoint {
+    font-size: 100%;
+}
+.char-grid__char {
+    margin-top: 0.25em; /* room for excessive diacriticals */
+    margin-bottom: 0.25em; /* room for below the bottom */
+    width: 1ch;
+    font-size: 500%;
+    text-align: center;
+    border: 1px solid #eee;
+}
+.char-grid__charname {
+    font-size: 50%;
+}
+
+.fancy-checkbox__checkbox {
+    display: none;
+}
+[type="checkbox"] + .fancy-checkbox::before {
+    content: '[ ]';
+}
+[type="checkbox"]:checked + .fancy-checkbox::before {
+    content: '[+]';
+}
+.container--sticky {
+    background-color: white;
+    border-bottom: 1px solid white;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
