@@ -22,7 +22,7 @@ OS2Version: 0
 OS2_WeightWidthSlopeOnly: 0
 OS2_UseTypoMetrics: 1
 CreationTime: 1729142792
-ModificationTime: 1733019529
+ModificationTime: 1733019850
 PfmFamily: 17
 TTFWeight: 500
 TTFWidth: 5
@@ -56,7 +56,6 @@ NameList: AGL For New Fonts
 DisplaySize: -48
 AntiAlias: 1
 FitToEm: 0
-WinInfo: 667 29 11
 BeginPrivate: 0
 EndPrivate
 Grid
@@ -17013,6 +17012,7 @@ StartChar: b
 Encoding: 98 98 639
 Width: 1008
 Flags: HW
+AnchorPoint: "top" 505 1224 basechar 0
 LayerCount: 2
 Fore
 SplineSet
@@ -17075,6 +17075,7 @@ StartChar: d
 Encoding: 100 100 641
 Width: 1008
 Flags: HW
+AnchorPoint: "top" 505 1224 basechar 0
 LayerCount: 2
 Fore
 SplineSet
@@ -17137,6 +17138,7 @@ StartChar: f
 Encoding: 102 102 643
 Width: 1008
 Flags: HW
+AnchorPoint: "top" 505 1224 basechar 0
 LayerCount: 2
 Fore
 SplineSet
@@ -17226,6 +17228,7 @@ Width: 1008
 Flags: HW
 HStem: 0 96<117.512 216 312 410.488 597.512 696 792 890.488> 684.864 96<445.024 655.621> 960 96<117.512 216>
 VStem: 116 196<961.512 1054.48> 216 96<96 566.861 668.047 960> 696 96<96 642.982>
+AnchorPoint: "top" 505 1224 basechar 0
 LayerCount: 2
 Fore
 SplineSet
@@ -17267,6 +17270,7 @@ Width: 1008
 Flags: HW
 HStem: 0.000976562 96<90.6382 189.126 285.126 383.614 624.387 708.618 827.357 917.362> 660 96<530.638 617.658 756.378 843.614> 960.001 96<90.6382 189.126>
 VStem: 89.126 196<961.513 1054.49> 189.126 96<96.001 208.381 341.322 960.001>
+AnchorPoint: "top" 505 1224 basechar 0
 LayerCount: 2
 Fore
 SplineSet
@@ -17314,6 +17318,7 @@ Width: 1008
 Flags: HW
 HStem: 0 96<177.512 456 552 830.488> 960 96<221.512 456>
 VStem: 456 96<96 960>
+AnchorPoint: "top" 505 1224 basechar 0
 AnchorPoint: "ogonek" 504 48 basechar 0
 AnchorPoint: "cedilla" 504 48 basechar 0
 LayerCount: 2
@@ -17616,6 +17621,7 @@ Width: 1008
 Flags: HW
 HStem: -19.9873 96<499.963 676.733> 660 96<157.518 356.001 452.001 650.486> 1035.99 20G<390.755 417.247>
 VStem: 356.001 96<126.738 660 756 1054.48>
+AnchorPoint: "top" 505 1224 basechar 0
 AnchorPoint: "ogonek" 604 28 basechar 0
 AnchorPoint: "cedilla" 604 28 basechar 0
 LayerCount: 2
@@ -24628,6 +24634,7 @@ StartChar: uni0304
 Encoding: 772 772 874
 Width: 1008
 Flags: HW
+AnchorPoint: "top" 505 1224 mark 0
 LayerCount: 2
 Fore
 SplineSet
@@ -24645,6 +24652,7 @@ StartChar: uni0305
 Encoding: 773 773 875
 Width: 1008
 Flags: HW
+AnchorPoint: "top" 505 1224 mark 0
 LayerCount: 2
 Fore
 SplineSet
@@ -28441,6 +28449,7 @@ StartChar: uni030D
 Encoding: 781 781 1174
 Width: 1008
 Flags: HW
+AnchorPoint: "top" 505 1224 mark 0
 LayerCount: 2
 Fore
 SplineSet
@@ -28458,6 +28467,7 @@ StartChar: uni030E
 Encoding: 782 782 1175
 Width: 1008
 Flags: HW
+AnchorPoint: "top" 505 1224 mark 0
 LayerCount: 2
 Fore
 SplineSet
@@ -33452,7 +33462,7 @@ EndChar
 StartChar: quotesinglbase.smol
 Encoding: 65733 -1 1361
 Width: 1008
-VWidth: 24
+VWidth: 36
 Flags: HW
 LayerCount: 2
 Fore
@@ -33472,7 +33482,7 @@ EndChar
 StartChar: uni201F.smol
 Encoding: 65734 -1 1362
 Width: 1008
-VWidth: 24
+VWidth: 36
 Flags: HW
 LayerCount: 2
 Fore
@@ -33501,7 +33511,7 @@ EndChar
 StartChar: onedotenleader.smol
 Encoding: 65735 -1 1363
 Width: 1008
-VWidth: 24
+VWidth: 36
 Flags: HW
 LayerCount: 2
 Fore
@@ -33542,7 +33552,7 @@ EndChar
 StartChar: quotedblright.smol
 Encoding: 65737 -1 1365
 Width: 1008
-VWidth: 24
+VWidth: 36
 Flags: HW
 LayerCount: 2
 Fore
@@ -33571,7 +33581,7 @@ EndChar
 StartChar: quotedblbase.smol
 Encoding: 65738 -1 1366
 Width: 1008
-VWidth: 24
+VWidth: 36
 Flags: HW
 LayerCount: 2
 Fore
@@ -33600,7 +33610,7 @@ EndChar
 StartChar: quoteright.smol
 Encoding: 65739 -1 1367
 Width: 1008
-VWidth: 24
+VWidth: 36
 Flags: HW
 LayerCount: 2
 Fore
@@ -33620,7 +33630,7 @@ EndChar
 StartChar: periodcentered.smol
 Encoding: 65740 -1 1368
 Width: 1008
-VWidth: 24
+VWidth: 36
 Flags: HW
 LayerCount: 2
 Fore
@@ -33661,7 +33671,7 @@ EndChar
 StartChar: quotedblleft.smol
 Encoding: 65742 -1 1370
 Width: 1008
-VWidth: 24
+VWidth: 36
 Flags: HW
 LayerCount: 2
 Fore
@@ -33715,7 +33725,7 @@ EndChar
 StartChar: twodotenleader.smol
 Encoding: 65744 -1 1372
 Width: 1008
-VWidth: 24
+VWidth: 36
 Flags: HW
 LayerCount: 2
 Fore
@@ -33736,7 +33746,7 @@ EndChar
 StartChar: quoteleft.smol
 Encoding: 65745 -1 1373
 Width: 1008
-VWidth: 24
+VWidth: 36
 Flags: HW
 LayerCount: 2
 Fore
@@ -33756,7 +33766,7 @@ EndChar
 StartChar: ellipsis.smol
 Encoding: 65746 -1 1374
 Width: 1008
-VWidth: 24
+VWidth: 36
 Flags: HW
 LayerCount: 2
 Fore
@@ -33782,7 +33792,7 @@ EndChar
 StartChar: quotereversed.smol
 Encoding: 65747 -1 1375
 Width: 1008
-VWidth: 24
+VWidth: 36
 Flags: HW
 LayerCount: 2
 Fore
