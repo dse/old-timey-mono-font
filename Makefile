@@ -13,6 +13,11 @@ LIGHT_CODING_FONT_TTF := dist/ttf/ReproTypewrCode-Light.ttf
 SEMI_LIGHT_FONT_TTF := dist/ttf/ReproTypewr-SemiLight.ttf
 SEMI_LIGHT_CODING_FONT_TTF := dist/ttf/ReproTypewrCode-SemiLight.ttf
 
+CHARGRID_TPL := website/chargrid.mustache
+CHARGRID_HTML := website/chargrid.html
+CHARLIST_TPL := website/charlist.mustache
+CHARLIST_HTML := website/charlist.html
+
 FONTS := \
 	$(FONT_TTF) \
 	$(LIGHT_FONT_TTF) \
@@ -36,7 +41,8 @@ FONTSVG__SEMI_LIGHT := --expand-stroke 72 # --translate-y -12  --scale-y 1344 --
 FONTSVG__LIGHT      := --expand-stroke 48 # --translate-y -24  --scale-y 1344 --scale-y-from 1296  --scale-x 1008 --scale-x-from 960
 #                                                                        ^^^^     ascent     ^^^^
 
-default: $(FONTS)
+default: $(FONTS) $(CHARGRID_HTML) $(CHARLIST_HTML)
+fonts: $(FONTS)
 original: $(ORIGINAL_FONTS)
 coding: $(CODING_FONTS)
 
@@ -144,18 +150,21 @@ $(LIGHT_CODING_FONT_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMET
 		"$@"
 	$(FONTUNHINT_SCRIPT) "$@"
 
-CHARGRID_TPL := website/chargrid.mustache
-CHARGRID_HTML := website/chargrid.html
-
 chargrid: FORCE $(CHARGRID_HTML)
+charlist: FORCE $(CHARLIST_HTML)
 
 $(CHARGRID_HTML): $(FONT_SRC) $(CHARGRID_TPL) $(MAKEFILE)
 	bin/fontdata $(FONT_SRC) > temp.json
 	chevron -d temp.json $(CHARGRID_TPL) > $@
 	rm temp.json
 
+$(CHARLIST_HTML): $(FONT_SRC) $(CHARLIST_TPL) $(MAKEFILE)
+	bin/fontdata $(FONT_SRC) > temp2.json
+	chevron -d temp2.json $(CHARLIST_TPL) > $@
+	rm temp2.json
+
 clean: FORCE
-	/bin/rm $(FONT_TTF) $(CODING_FONT_TTF) $(LIGHT_FONT_TTF) $(LIGHT_CODING_FONT_TTF) || true
+	/bin/rm $(FONT_TTF) $(CODING_FONT_TTF) $(LIGHT_FONT_TTF) $(LIGHT_CODING_FONT_TTF) $(CHARGRID_HTML) $(CHARLIST_HTML) || true
 	find . -type f \( -name '*.tmp' -o -name '*.tmp.*' -o -name '*.featfreeze.otf' -o -name '*~' -o -name '#*#' \) -exec rm {} + || true
 
 .PHONY: FORCE

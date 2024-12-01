@@ -7,6 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
         <title>Characters in Reproducing Typewriter</title>
         <link rel="stylesheet" href="main.css?v=1">
+        <script src="main.js"></script>
     </head>
     <body>
         <div class="container">
@@ -15,12 +16,17 @@
             </h1>
         </div>
         <div class="container container--sticky">
-            <p>
-                <label>
-                    <input class="fancy-checkbox__checkbox" id="code-checkbox" type="checkbox" name="code" value="1"><span class="fancy-checkbox"></span>
-                    Show Reproducing Typewriter Code
-                </label>
-            </p>
+            <header class="top-header">
+                <p class="top-header__checkbox">
+                    <label>
+                        <input class="fancy-checkbox__checkbox" id="code-checkbox" type="checkbox" name="code" value="1"><span class="fancy-checkbox"></span>
+                        Show Reproducing Typewriter Code
+                    </label>
+                </p>
+                <p class="top-header__toggle">
+                    Grid | <a href="charlist.html">List</a>
+                </p>
+            </header>
         </div>
         <div class="container">
             <div id="whole-char-grid">
@@ -2654,6 +2660,11 @@
                                 <div class="char-grid__charname">CYRILLIC SMALL LETTER SHORT U</div>
                             </li>
                             <li class="char-grid__item">
+                                <div class="char-grid__codepoint">U+045F</div>
+                                <div class="char-grid__char">џ</div>
+                                <div class="char-grid__charname">CYRILLIC SMALL LETTER DZHE</div>
+                            </li>
+                            <li class="char-grid__item">
                                 <div class="char-grid__codepoint">U+046C</div>
                                 <div class="char-grid__char">Ѭ</div>
                                 <div class="char-grid__charname">CYRILLIC CAPITAL LETTER IOTIFIED BIG YUS</div>
@@ -2662,6 +2673,16 @@
                                 <div class="char-grid__codepoint">U+046D</div>
                                 <div class="char-grid__char">ѭ</div>
                                 <div class="char-grid__charname">CYRILLIC SMALL LETTER IOTIFIED BIG YUS</div>
+                            </li>
+                            <li class="char-grid__item">
+                                <div class="char-grid__codepoint">U+0490</div>
+                                <div class="char-grid__char">Ґ</div>
+                                <div class="char-grid__charname">CYRILLIC CAPITAL LETTER GHE WITH UPTURN</div>
+                            </li>
+                            <li class="char-grid__item">
+                                <div class="char-grid__codepoint">U+0491</div>
+                                <div class="char-grid__char">ґ</div>
+                                <div class="char-grid__charname">CYRILLIC SMALL LETTER GHE WITH UPTURN</div>
                             </li>
                     </ul>
                     <h2>
@@ -6051,19 +6072,5 @@
                     </ul>
             </div>
         </div>
-        <script>
-            (function () {
-                var checkbox = document.getElementById("code-checkbox");
-                var grid = document.getElementById("whole-char-grid");
-                checkbox.addEventListener("change", update);
-                function update() {
-                    if (checkbox.checked) {
-                        grid.classList.add("code");
-                    } else {
-                        grid.classList.remove("code");
-                    }
-                }
-            }());
-        </script>
     </body>
 </html>

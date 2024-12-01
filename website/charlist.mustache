@@ -24,22 +24,22 @@
                     </label>
                 </p>
                 <p class="top-header__toggle">
-                    Grid | <a href="charlist.html">List</a>
+                    <a href="chargrid.html">Grid</a> | List
                 </p>
             </header>
         </div>
         <div class="container">
-            <div id="whole-char-grid">
+            <div id="whole-char-list">
                 {{#blocks}}
                     <h2>
                         {{name}}
                     </h2>
-                    <ul class="char-grid">
+                    <ul class="char-list">
                         {{#chars}}
-                            <li class="char-grid__item">
-                                <div class="char-grid__codepoint">{{uhex}}</div>
-                                <div class="char-grid__char">{{char}}</div>
-                                <div class="char-grid__charname">{{name}}</div>
+                            <li class="char-list__item">
+                                <div class="char-list__codepoint">{{uhex}}</div>
+                                <div class="char-list__char">{{char}}</div>
+                                <div class="char-list__charname">{{name}}</div>
                             </li>
                         {{/chars}}
                     </ul>
