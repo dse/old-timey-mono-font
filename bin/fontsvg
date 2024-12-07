@@ -30,6 +30,7 @@ def main():
 
     svg_char_structs = []
     smol_char_structs = []
+    generated_glyphs = []
 
     for svg_filename in args.svg_filenames:
         (codepoint, glyphname, suffix) = parse_glyph_svg_filename(svg_filename)
@@ -65,15 +66,19 @@ def main():
         glyph = font.createChar(codepoint, glyphname)
         struct.append(glyph)
 
-    for struct in svg_char_structs:
-        (codepoint, glyphname, suffix, plain_glyphname, real_codepoint, svg_filename, glyph) = struct
-        do_import_work(font, glyph, svg_filename)
-        do_outline_work(font, glyph, args.expand_stroke)
-
     for struct in smol_char_structs:
         (codepoint, sm_glyphname, suffix, plain_glyphname, real_codepoint, svg_filename) = struct
         sm_glyph = font.createChar(-1, sm_glyphname)
         struct.append(sm_glyph)
+
+    for glyph in font.glyphs():
+        if glyph.unicode in range(0x2800, 0x2900) or glyph.unicode in range(0x2500, 0x25a0):
+            generated_glyphs.append(glyph)
+
+    for struct in svg_char_structs:
+        (codepoint, glyphname, suffix, plain_glyphname, real_codepoint, svg_filename, glyph) = struct
+        do_import_work(font, glyph, svg_filename)
+        do_outline_work(font, glyph, args.expand_stroke)
 
     for struct in smol_char_structs:
         (codepoint, sm_glyphname, suffix, plain_glyphname, real_codepoint, svg_filename, sm_glyph) = struct
