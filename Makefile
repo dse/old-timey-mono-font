@@ -6,26 +6,26 @@ FONTSVG_SCRIPT := bin/fontsvg
 FONTUNHINT_SCRIPT := bin/fontunhint
 SETFONTMETAS_SCRIPT := bin/setfontmetas
 
-FONT_TTF := dist/ttf/ReproTypewr.ttf
-CODING_FONT_TTF := dist/ttf/ReproTypewrCode.ttf
-LIGHT_FONT_TTF := dist/ttf/ReproTypewr-Light.ttf
-LIGHT_CODING_FONT_TTF := dist/ttf/ReproTypewrCode-Light.ttf
-SEMI_LIGHT_FONT_TTF := dist/ttf/ReproTypewr-SemiLight.ttf
-SEMI_LIGHT_CODING_FONT_TTF := dist/ttf/ReproTypewrCode-SemiLight.ttf
+FONT_TTF				:= dist/ttf/ReproTypewr.ttf
+CODING_FONT_TTF				:= dist/ttf/ReproTypewrCode.ttf
+LIGHT_FONT_TTF				:= dist/ttf/ReproTypewr-Light.ttf
+LIGHT_CODING_FONT_TTF			:= dist/ttf/ReproTypewrCode-Light.ttf
+SEMI_LIGHT_FONT_TTF			:= dist/ttf/ReproTypewr-SemiLight.ttf
+SEMI_LIGHT_CODING_FONT_TTF		:= dist/ttf/ReproTypewrCode-SemiLight.ttf
 
-FONT_COND_TTF := dist/ttf/ReproTypewr-Cond.ttf
-CODING_FONT_COND_TTF := dist/ttf/ReproTypewrCode-Cond.ttf
-LIGHT_FONT_COND_TTF := dist/ttf/ReproTypewr-CondLight.ttf
-LIGHT_CODING_FONT_COND_TTF := dist/ttf/ReproTypewrCode-CondLight.ttf
-SEMI_LIGHT_FONT_COND_TTF := dist/ttf/ReproTypewr-CondSemiLight.ttf
-SEMI_LIGHT_CODING_FONT_COND_TTF := dist/ttf/ReproTypewrCode-CondSemiLight.ttf
+FONT_COND_TTF				:= dist/ttf/ReproTypewrCond.ttf
+CODING_FONT_COND_TTF			:= dist/ttf/ReproTypewrCodeCond.ttf
+LIGHT_FONT_COND_TTF			:= dist/ttf/ReproTypewrCond-Light.ttf
+LIGHT_CODING_FONT_COND_TTF		:= dist/ttf/ReproTypewrCodeCond-Light.ttf
+SEMI_LIGHT_FONT_COND_TTF		:= dist/ttf/ReproTypewrCond-SemiLight.ttf
+SEMI_LIGHT_CODING_FONT_COND_TTF		:= dist/ttf/ReproTypewrCodeCond-SemiLight.ttf
 
-FONT_SEMICOND_TTF := dist/ttf/ReproTypewr-SemiCond.ttf
-CODING_FONT_SEMICOND_TTF := dist/ttf/ReproTypewrCode-SemiCond.ttf
-LIGHT_FONT_SEMICOND_TTF := dist/ttf/ReproTypewr-SemiCondLight.ttf
-LIGHT_CODING_FONT_SEMICOND_TTF := dist/ttf/ReproTypewrCode-SemiCondLight.ttf
-SEMI_LIGHT_FONT_SEMICOND_TTF := dist/ttf/ReproTypewr-SemiCondSemiLight.ttf
-SEMI_LIGHT_CODING_FONT_SEMICOND_TTF := dist/ttf/ReproTypewrCode-SemiCondSemiLight.ttf
+FONT_SEMICOND_TTF			:= dist/ttf/ReproTypewrSemiCond.ttf
+CODING_FONT_SEMICOND_TTF		:= dist/ttf/ReproTypewrCodeSemiCond.ttf
+LIGHT_FONT_SEMICOND_TTF			:= dist/ttf/ReproTypewrSemiCond-Light.ttf
+LIGHT_CODING_FONT_SEMICOND_TTF		:= dist/ttf/ReproTypewrCodeSemiCond-Light.ttf
+SEMI_LIGHT_FONT_SEMICOND_TTF		:= dist/ttf/ReproTypewrSemiCond-SemiLight.ttf
+SEMI_LIGHT_CODING_FONT_SEMICOND_TTF	:= dist/ttf/ReproTypewrCodeSemiCond-SemiLight.ttf
 
 CHARGRID_TPL := website/chargrid.mustache
 CHARGRID_HTML := website/chargrid.html
