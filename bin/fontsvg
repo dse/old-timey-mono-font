@@ -87,42 +87,36 @@ def main():
         glyph.width = orig_width
     font.strokedfont = False
 
-    if (args.translate_x or args.translate_y or args.scale_x or args.scale_y):
-        for glyph in font.glyphs():
-            if glyph.unicode in range(0x2800, 0x2900) or glyph.unicode in range(0x2500, 0x25a0):
-                # Leave Braille, Box Drawing, and Block Elements alone.
-                continue
-            # Unfortunately some upside down references would have
-            # the wrong offset if we simply transformed them.
-            if len(glyph.references) and not len(glyph.foreground):
-                # Ordinarily a glyph.unlinkRef() call would replace
-                # the refs with the contours from when the font was
-                # loaded, ignoring any changes such as the .stroke()
-                # calls.
-                reconstitute_references(glyph)
-                glyph.unlinkRef()
-        for glyph in font.glyphs():
-            if glyph.unicode in range(0x2800, 0x2900) or glyph.unicode in range(0x2500, 0x25a0):
-                # Leave Braille, Box Drawing, and Block Elements alone.
-                continue
-            xform = psMat.identity()
-            orig_width = glyph.width
-            if args.scale_y:
-                scale_y = args.scale_y / args.scale_y_from if args.scale_y_from else args.scale_y
-                xform = psMat.compose(xform, psMat.scale(1.0, scale_y))
-            if args.scale_x:
-                scale_x = args.scale_x / args.scale_x_from if args.scale_x_from else args.scale_x
-                xform = psMat.compose(xform, psMat.translate(-orig_width / 2, 0))
-                xform = psMat.compose(xform, psMat.scale(scale_x, 1.0))
-                xform = psMat.compose(xform, psMat.translate(orig_width / 2, 0))
-            if args.translate_y or args.translate_x:
-                xlate_x = args.translate_x if args.translate_x else 0
-                xlate_y = args.translate_y if args.translate_y else 0
-                xform = psMat.compose(xform, psMat.translate(xlate_x, xlate_y))
-            glyph.transform(xform)
-            glyph.left_side_bearing = int(glyph.left_side_bearing + round((orig_width - glyph.width) / 2))
-            glyph.width = orig_width
-            glyph.removeOverlap()
+    for glyph in composite_glyphs:
+        # Ordinarily a glyph.unlinkRef() call would replace
+        # the refs with the contours from when the font was
+        # loaded, ignoring any changes such as the .stroke()
+        # calls.
+        reconstitute_references(glyph)
+        glyph.unlinkRef()
+
+    for glyph in [*smol_glyphs, *stroked_glyphs, *composite_glyphs]:
+        if glyph.unicode in range(0x2800, 0x2900) or glyph.unicode in range(0x2500, 0x25a0):
+            # Leave Braille, Box Drawing, and Block Elements alone.
+            continue
+        xform = psMat.identity()
+        orig_width = glyph.width
+        if args.scale_y:
+            scale_y = args.scale_y / args.scale_y_from if args.scale_y_from else args.scale_y
+            xform = psMat.compose(xform, psMat.scale(1.0, scale_y))
+        if args.scale_x:
+            scale_x = args.scale_x / args.scale_x_from if args.scale_x_from else args.scale_x
+            xform = psMat.compose(xform, psMat.translate(-orig_width / 2, 0))
+            xform = psMat.compose(xform, psMat.scale(scale_x, 1.0))
+            xform = psMat.compose(xform, psMat.translate(orig_width / 2, 0))
+        if args.translate_y or args.translate_x:
+            xlate_x = args.translate_x if args.translate_x else 0
+            xlate_y = args.translate_y if args.translate_y else 0
+            xform = psMat.compose(xform, psMat.translate(xlate_x, xlate_y))
+        glyph.transform(xform)
+        glyph.left_side_bearing = int(glyph.left_side_bearing + round((orig_width - glyph.width) / 2))
+        glyph.width = orig_width
+        glyph.removeOverlap()
 
     if args.dry_run:
         print("DRY RUN: not saving or generating %s" % write_font_filename)
