@@ -38,15 +38,15 @@ def main():
             print("%s: not an SVG character filename; skipping" % svg_filename)
             continue
         glyph = font.createChar(codepoint, glyphname)
-        svg_char_tuples.append((
-            glyph,
+        svg_char_tuples.append([
             codepoint,
             glyphname,
             suffix,
             plain_glyphname,
             real_codepoint,
             svg_filename,
-        ))
+            glyph,
+        ])
         do_import_work(font, glyph, svg_filename)
         do_outline_work(font, glyph, args.expand_stroke)
         if codepoint in range(33,127) or suffix == 'orig':
