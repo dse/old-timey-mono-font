@@ -28,6 +28,8 @@ def main():
     font = fontforge.open(args.font_filename)
     write_font_filename = args.save_as if args.save_as is not None else args.font_filename
 
+    svg_char_tuples = []
+
     for svg_filename in args.svg_filenames:
         (codepoint, glyphname, suffix) = parse_glyph_svg_filename(svg_filename)
         plain_glyphname = glyphname.split('.')[0]
@@ -36,6 +38,15 @@ def main():
             print("%s: not an SVG character filename; skipping" % svg_filename)
             continue
         glyph = font.createChar(codepoint, glyphname)
+        svg_char_tuples.append((
+            glyph,
+            codepoint,
+            glyphname,
+            suffix,
+            plain_glyphname,
+            real_codepoint,
+            svg_filename,
+        ))
         do_import_work(font, glyph, svg_filename)
         do_outline_work(font, glyph, args.expand_stroke)
         if codepoint in range(33,127) or suffix == 'orig':
