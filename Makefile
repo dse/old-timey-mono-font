@@ -13,12 +13,12 @@ LIGHT_CODING_FONT_TTF			:= dist/ttf/ReproTypewrCode-Light.ttf
 SEMI_LIGHT_FONT_TTF			:= dist/ttf/ReproTypewr-SemiLight.ttf
 SEMI_LIGHT_CODING_FONT_TTF		:= dist/ttf/ReproTypewrCode-SemiLight.ttf
 
-FONT_NARROW_TTF				:= dist/ttf/ReproTypewrSevntn.ttf
-CODING_FONT_NARROW_TTF			:= dist/ttf/ReproTypewrCodeSevntn.ttf
-LIGHT_FONT_NARROW_TTF			:= dist/ttf/ReproTypewrSevntn-Light.ttf
-LIGHT_CODING_FONT_NARROW_TTF		:= dist/ttf/ReproTypewrCodeSevntn-Light.ttf
-SEMI_LIGHT_FONT_NARROW_TTF		:= dist/ttf/ReproTypewrSevntn-SemiLight.ttf
-SEMI_LIGHT_CODING_FONT_NARROW_TTF		:= dist/ttf/ReproTypewrCodeSevntn-SemiLight.ttf
+FONT_NARROW_TTF				:= dist/ttf/ReproTypewr17Pitch.ttf
+CODING_FONT_NARROW_TTF			:= dist/ttf/ReproTypewrCode17Pitch.ttf
+LIGHT_FONT_NARROW_TTF			:= dist/ttf/ReproTypewr17Pitch-Light.ttf
+LIGHT_CODING_FONT_NARROW_TTF		:= dist/ttf/ReproTypewrCode17Pitch-Light.ttf
+SEMI_LIGHT_FONT_NARROW_TTF		:= dist/ttf/ReproTypewr17Pitch-SemiLight.ttf
+SEMI_LIGHT_CODING_FONT_NARROW_TTF		:= dist/ttf/ReproTypewrCode17Pitch-SemiLight.ttf
 
 FONT_PICA_TTF			:= dist/ttf/ReproTypewrPica.ttf
 CODING_FONT_PICA_TTF		:= dist/ttf/ReproTypewrCodePica.ttf
@@ -182,9 +182,9 @@ $(LIGHT_CODING_FONT_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMET
 $(FONT_NARROW_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
 	$(FONTSVG_SCRIPT) $(FONTSVG__REGULAR) $(FONTSVG__NARROW) $< -o $@ `find src/chars -type f -name '*.svg'`
 	$(SETFONTMETAS_SCRIPT) \
-		--family-name "Repro Typewr Sevntn" \
-		--full-name   "Repro Typewr Sevntn" \
-		--ps-name     "ReproTypewrSevntn" \
+		--family-name "Repro Typewr 17 Pitch" \
+		--full-name   "Repro Typewr 17 Pitch" \
+		--ps-name     "ReproTypewr17Pitch" \
 		--ps-weight   "Medium" \
 		--os2-weight  400 \
 		--panose      2,0,5,9,3,0,-,-,-,3 \
@@ -194,9 +194,9 @@ $(FONT_NARROW_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCR
 $(SEMI_LIGHT_FONT_NARROW_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
 	$(FONTSVG_SCRIPT) $(FONTSVG__SEMI_LIGHT) $(FONTSVG__NARROW) $< -o $@ `find src/chars -type f -name '*.svg'`
 	$(SETFONTMETAS_SCRIPT) \
-		--family-name "Repro Typewr Sevntn" \
-		--full-name   "Repro Typewr Sevntn Semi-Light" \
-		--ps-name     "ReproTypewrSevntn-SemiLight" \
+		--family-name "Repro Typewr 17 Pitch" \
+		--full-name   "Repro Typewr 17 Pitch Semi-Light" \
+		--ps-name     "ReproTypewr17Pitch-SemiLight" \
 		--ps-weight   "Semi-Light" \
 		--os2-weight  350 \
 		--panose      2,0,3,9,3,0,-,-,-,3 \
@@ -206,9 +206,9 @@ $(SEMI_LIGHT_FONT_NARROW_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFO
 $(LIGHT_FONT_NARROW_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
 	$(FONTSVG_SCRIPT) $(FONTSVG__LIGHT) $(FONTSVG__NARROW) $< -o $@ `find src/chars -type f -name '*.svg'`
 	$(SETFONTMETAS_SCRIPT) \
-		--family-name "Repro Typewr Sevntn" \
-		--full-name   "Repro Typewr Sevntn Light" \
-		--ps-name     "ReproTypewrSevntn-Light" \
+		--family-name "Repro Typewr 17 Pitch" \
+		--full-name   "Repro Typewr 17 Pitch Light" \
+		--ps-name     "ReproTypewr17Pitch-Light" \
 		--ps-weight   "Light" \
 		--os2-weight  300 \
 		--panose      2,0,4,9,3,0,-,-,-,3 \
@@ -221,9 +221,9 @@ $(CODING_FONT_NARROW_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTME
 	pyftfeatfreeze -f code -S -U Code "$@.tmp.ttf" "$@"
 	rm "$@.tmp.ttf"
 	$(SETFONTMETAS_SCRIPT) \
-		--family-name "Repro Typewr Code Sevntn" \
-		--full-name   "Repro Typewr Code Sevntn" \
-		--ps-name     "ReproTypewrCodeSevntn" \
+		--family-name "Repro Typewr Code 17 Pitch" \
+		--full-name   "Repro Typewr Code 17 Pitch" \
+		--ps-name     "ReproTypewrCode17Pitch" \
 		--ps-weight   "Medium" \
 		--os2-weight  400 \
 		--panose      2,0,5,9,3,0,-,-,-,3 \
@@ -236,9 +236,9 @@ $(SEMI_LIGHT_CODING_FONT_NARROW_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) 
 	pyftfeatfreeze -f code -S -U Code "$@.tmp.ttf" "$@"
 	rm "$@.tmp.ttf"
 	$(SETFONTMETAS_SCRIPT) \
-		--family-name "Repro Typewr Code Sevntn" \
-		--full-name   "Repro Typewr Code Sevntn Semi-Light" \
-		--ps-name     "ReproTypewrCodeSevntn-SemiLight" \
+		--family-name "Repro Typewr Code 17 Pitch" \
+		--full-name   "Repro Typewr Code 17 Pitch Semi-Light" \
+		--ps-name     "ReproTypewrCode17Pitch-SemiLight" \
 		--ps-weight   "Semi-Light" \
 		--os2-weight  350 \
 		--panose      2,0,4,9,3,0,-,-,-,3 \
@@ -251,9 +251,9 @@ $(LIGHT_CODING_FONT_NARROW_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SET
 	pyftfeatfreeze -f code -S -U Code "$@.tmp.ttf" "$@"
 	rm "$@.tmp.ttf"
 	$(SETFONTMETAS_SCRIPT) \
-		--family-name "Repro Typewr Code Sevntn" \
-		--full-name   "Repro Typewr Code Sevntn Light" \
-		--ps-name     "ReproTypewrCodeSevntn-Light" \
+		--family-name "Repro Typewr Code 17 Pitch" \
+		--full-name   "Repro Typewr Code 17 Pitch Light" \
+		--ps-name     "ReproTypewrCode17Pitch-Light" \
 		--ps-weight   "Light" \
 		--os2-weight  300 \
 		--panose      2,0,3,9,3,0,-,-,-,3 \
