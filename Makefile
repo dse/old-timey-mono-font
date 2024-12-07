@@ -13,12 +13,12 @@ LIGHT_CODING_FONT_TTF			:= dist/ttf/ReproTypewrCode-Light.ttf
 SEMI_LIGHT_FONT_TTF			:= dist/ttf/ReproTypewr-SemiLight.ttf
 SEMI_LIGHT_CODING_FONT_TTF		:= dist/ttf/ReproTypewrCode-SemiLight.ttf
 
-FONT_NARROW_TTF				:= dist/ttf/ReproTypewrNarrow.ttf
-CODING_FONT_NARROW_TTF			:= dist/ttf/ReproTypewrCodeNarrow.ttf
-LIGHT_FONT_NARROW_TTF			:= dist/ttf/ReproTypewrNarrow-Light.ttf
-LIGHT_CODING_FONT_NARROW_TTF		:= dist/ttf/ReproTypewrCodeNarrow-Light.ttf
-SEMI_LIGHT_FONT_NARROW_TTF		:= dist/ttf/ReproTypewrNarrow-SemiLight.ttf
-SEMI_LIGHT_CODING_FONT_NARROW_TTF		:= dist/ttf/ReproTypewrCodeNarrow-SemiLight.ttf
+FONT_NARROW_TTF				:= dist/ttf/ReproTypewrSevntn.ttf
+CODING_FONT_NARROW_TTF			:= dist/ttf/ReproTypewrCodeSevntn.ttf
+LIGHT_FONT_NARROW_TTF			:= dist/ttf/ReproTypewrSevntn-Light.ttf
+LIGHT_CODING_FONT_NARROW_TTF		:= dist/ttf/ReproTypewrCodeSevntn-Light.ttf
+SEMI_LIGHT_FONT_NARROW_TTF		:= dist/ttf/ReproTypewrSevntn-SemiLight.ttf
+SEMI_LIGHT_CODING_FONT_NARROW_TTF		:= dist/ttf/ReproTypewrCodeSevntn-SemiLight.ttf
 
 FONT_PICA_TTF			:= dist/ttf/ReproTypewrPica.ttf
 CODING_FONT_PICA_TTF		:= dist/ttf/ReproTypewrCodePica.ttf
@@ -182,9 +182,9 @@ $(LIGHT_CODING_FONT_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMET
 $(FONT_NARROW_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
 	$(FONTSVG_SCRIPT) $(FONTSVG__REGULAR) $(FONTSVG__NARROW) $< -o $@ `find src/chars -type f -name '*.svg'`
 	$(SETFONTMETAS_SCRIPT) \
-		--family-name "Repro Typewr Narrow" \
-		--full-name   "Repro Typewr Narrow" \
-		--ps-name     "ReproTypewrNarrow" \
+		--family-name "Repro Typewr Sevntn" \
+		--full-name   "Repro Typewr Sevntn" \
+		--ps-name     "ReproTypewrSevntn" \
 		--ps-weight   "Medium" \
 		--os2-weight  400 \
 		--panose      2,0,5,9,3,0,-,-,-,3 \
@@ -194,9 +194,9 @@ $(FONT_NARROW_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCR
 $(SEMI_LIGHT_FONT_NARROW_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
 	$(FONTSVG_SCRIPT) $(FONTSVG__SEMI_LIGHT) $(FONTSVG__NARROW) $< -o $@ `find src/chars -type f -name '*.svg'`
 	$(SETFONTMETAS_SCRIPT) \
-		--family-name "Repro Typewr Narrow" \
-		--full-name   "Repro Typewr Narrow Semi-Light" \
-		--ps-name     "ReproTypewrNarrow-SemiLight" \
+		--family-name "Repro Typewr Sevntn" \
+		--full-name   "Repro Typewr Sevntn Semi-Light" \
+		--ps-name     "ReproTypewrSevntn-SemiLight" \
 		--ps-weight   "Semi-Light" \
 		--os2-weight  350 \
 		--panose      2,0,3,9,3,0,-,-,-,3 \
@@ -206,9 +206,9 @@ $(SEMI_LIGHT_FONT_NARROW_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFO
 $(LIGHT_FONT_NARROW_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
 	$(FONTSVG_SCRIPT) $(FONTSVG__LIGHT) $(FONTSVG__NARROW) $< -o $@ `find src/chars -type f -name '*.svg'`
 	$(SETFONTMETAS_SCRIPT) \
-		--family-name "Repro Typewr Narrow" \
-		--full-name   "Repro Typewr Narrow Light" \
-		--ps-name     "ReproTypewrNarrow-Light" \
+		--family-name "Repro Typewr Sevntn" \
+		--full-name   "Repro Typewr Sevntn Light" \
+		--ps-name     "ReproTypewrSevntn-Light" \
 		--ps-weight   "Light" \
 		--os2-weight  300 \
 		--panose      2,0,4,9,3,0,-,-,-,3 \
@@ -221,9 +221,9 @@ $(CODING_FONT_NARROW_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTME
 	pyftfeatfreeze -f code -S -U Code "$@.tmp.ttf" "$@"
 	rm "$@.tmp.ttf"
 	$(SETFONTMETAS_SCRIPT) \
-		--family-name "Repro Typewr Code Narrow" \
-		--full-name   "Repro Typewr Code Narrow" \
-		--ps-name     "ReproTypewrCodeNarrow" \
+		--family-name "Repro Typewr Code Sevntn" \
+		--full-name   "Repro Typewr Code Sevntn" \
+		--ps-name     "ReproTypewrCodeSevntn" \
 		--ps-weight   "Medium" \
 		--os2-weight  400 \
 		--panose      2,0,5,9,3,0,-,-,-,3 \
@@ -236,9 +236,9 @@ $(SEMI_LIGHT_CODING_FONT_NARROW_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) 
 	pyftfeatfreeze -f code -S -U Code "$@.tmp.ttf" "$@"
 	rm "$@.tmp.ttf"
 	$(SETFONTMETAS_SCRIPT) \
-		--family-name "Repro Typewr Code Narrow" \
-		--full-name   "Repro Typewr Code Narrow Semi-Light" \
-		--ps-name     "ReproTypewrCodeNarrow-SemiLight" \
+		--family-name "Repro Typewr Code Sevntn" \
+		--full-name   "Repro Typewr Code Sevntn Semi-Light" \
+		--ps-name     "ReproTypewrCodeSevntn-SemiLight" \
 		--ps-weight   "Semi-Light" \
 		--os2-weight  350 \
 		--panose      2,0,4,9,3,0,-,-,-,3 \
@@ -251,9 +251,9 @@ $(LIGHT_CODING_FONT_NARROW_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SET
 	pyftfeatfreeze -f code -S -U Code "$@.tmp.ttf" "$@"
 	rm "$@.tmp.ttf"
 	$(SETFONTMETAS_SCRIPT) \
-		--family-name "Repro Typewr Code Narrow" \
-		--full-name   "Repro Typewr Code Narrow Light" \
-		--ps-name     "ReproTypewrCodeNarrow-Light" \
+		--family-name "Repro Typewr Code Sevntn" \
+		--full-name   "Repro Typewr Code Sevntn Light" \
+		--ps-name     "ReproTypewrCodeSevntn-Light" \
 		--ps-weight   "Light" \
 		--os2-weight  300 \
 		--panose      2,0,3,9,3,0,-,-,-,3 \

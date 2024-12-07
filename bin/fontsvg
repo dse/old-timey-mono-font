@@ -7,6 +7,7 @@ import re
 import argparse
 import psMat
 import statistics
+import math
 
 STROKE_WIDTH_BASIS = 96
 
@@ -120,7 +121,7 @@ def main():
     if args.aspect:
         for glyph in [*smol_glyphs, *stroked_glyphs, *composite_glyphs]:
             orig_width = glyph.width
-            final_width = round(glyph.width * args.aspect)
+            final_width = math.floor(glyph.width * args.aspect)
             xform = psMat.identity()
             xform = psMat.compose(xform, psMat.translate(-orig_width / 2, 0))
             orig_width_2 = orig_width - STROKE_WIDTH_BASIS
@@ -134,7 +135,7 @@ def main():
         for glyph in font.glyphs():
             if not glyph.temporary["is_resized"]:
                 orig_width = glyph.width
-                final_width = round(glyph.width * args.aspect)
+                final_width = math.floor(glyph.width * args.aspect)
                 glyph.transform(psMat.scale(args.aspect, 1))
                 if glyph.width != final_width:
                     print("%s: glyph.transform did not produce correct glyph width" % glyph.glyphname)
