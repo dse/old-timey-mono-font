@@ -80,10 +80,18 @@ def main():
     font.strokedfont = True
     for glyph in stroked_glyphs:
         glyph.foreground = fontforge.layer()
+        orig_width = glyph.width
         glyph.importOutlines(glyph.temporary["svg_filename"])
+        if glyph.width != orig_width:
+            print("import outlines nessed with glyph width: %s" % glyph.glyphname)
+        glyph.width = orig_width
     for glyph in smol_glyphs:
         glyph.foreground = fontforge.layer()
+        orig_width = glyph.width
         glyph.importOutlines(glyph.temporary["svg_filename"])
+        if glyph.width != orig_width:
+            print("import outlines nessed with glyph width: %s" % glyph.glyphname)
+        glyph.width = orig_width
     font.strokedfont = False
 
     # apply smol glyph transforms
@@ -91,6 +99,8 @@ def main():
         orig_width = glyph.width
         glyph.transform(psMat.scale(0.5))
         glyph.transform(psMat.translate(orig_width / 4, args.expand_stroke / 4))
+        # if glyph.width != orig_width:
+        #     print("smol glyph transform nessed with glyph width: %s" % glyph.glyphname)
         glyph.width = orig_width
 
     # unlink references
@@ -99,8 +109,12 @@ def main():
         # the refs with the contours from when the font was
         # loaded, ignoring any changes such as the .stroke()
         # calls.
+        orig_width = glyph.width
         reconstitute_references(glyph)
         glyph.unlinkRef()
+        if glyph.width != orig_width:
+            print("unlink references messed with glyph width: %s" % glyph.glyphname)
+        glyph.width = orig_width
 
     # apply aspect
     if args.aspect:
@@ -115,11 +129,17 @@ def main():
             xform = psMat.compose(xform, psMat.translate(final_width / 2, 0))
             glyph.transform(xform)
             glyph.width = final_width
-            print("[ASPECT] %s: %d => %d" % (glyph.glyphname, orig_width, final_width))
+            print("[ASPECT] %s: %d => %d" % (glyph.glyphname, orig_width, glyph.width))
             glyph.temporary["is_resized"] = True
         for glyph in font.glyphs():
             if not glyph.temporary["is_resized"]:
+                orig_width = glyph.width
+                final_width = round(glyph.width * args.aspect)
                 glyph.transform(psMat.scale(args.aspect, 1))
+                if glyph.width != final_width:
+                    print("%s: glyph.transform did not produce correct glyph width" % glyph.glyphname)
+                glyph.width = final_width
+                print("[ASPECT] %s: %d => %d" % (glyph.glyphname, orig_width, glyph.width))
                 glyph.temporary["is_resized"] = True
 
     # expand strokes
@@ -128,6 +148,8 @@ def main():
         if args.expand_stroke is not None:
             glyph.stroke("circular", args.expand_stroke, "round", "round")
         glyph.removeOverlap()
+        if glyph.width != orig_width:
+            print("expand strokes messed with glyph width: %s" % glyph.glyphname)
         glyph.width = orig_width
 
     if args.dry_run:
