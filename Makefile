@@ -13,52 +13,59 @@ LIGHT_CODING_FONT_TTF := dist/ttf/ReproTypewrCode-Light.ttf
 SEMI_LIGHT_FONT_TTF := dist/ttf/ReproTypewr-SemiLight.ttf
 SEMI_LIGHT_CODING_FONT_TTF := dist/ttf/ReproTypewrCode-SemiLight.ttf
 
+FONT_COND_TTF := dist/ttf/ReproTypewr-Cond.ttf
+CODING_FONT_COND_TTF := dist/ttf/ReproTypewrCode-Cond.ttf
+LIGHT_FONT_COND_TTF := dist/ttf/ReproTypewr-CondLight.ttf
+LIGHT_CODING_FONT_COND_TTF := dist/ttf/ReproTypewrCode-CondLight.ttf
+SEMI_LIGHT_FONT_COND_TTF := dist/ttf/ReproTypewr-CondSemiLight.ttf
+SEMI_LIGHT_CODING_FONT_COND_TTF := dist/ttf/ReproTypewrCode-CondSemiLight.ttf
+
 CHARGRID_TPL := website/chargrid.mustache
 CHARGRID_HTML := website/chargrid.html
 CHARLIST_TPL := website/charlist.mustache
 CHARLIST_HTML := website/charlist.html
 
-FONTS := \
-	$(FONT_TTF) \
-	$(LIGHT_FONT_TTF) \
-	$(CODING_FONT_TTF) \
-	$(LIGHT_CODING_FONT_TTF) \
-	$(SEMI_LIGHT_FONT_TTF) \
-	$(SEMI_LIGHT_CODING_FONT_TTF)
-
 ORIGINAL_FONTS := \
 	$(FONT_TTF) \
 	$(LIGHT_FONT_TTF) \
-	$(SEMI_LIGHT_FONT_TTF)
+	$(SEMI_LIGHT_FONT_TTF) \
+	$(FONT_COND_TTF) \
+	$(LIGHT_FONT_COND_TTF) \
+	$(SEMI_LIGHT_FONT_COND_TTF) 
 
 CODING_FONTS := \
 	$(CODING_FONT_TTF) \
 	$(LIGHT_CODING_FONT_TTF) \
-	$(SEMI_LIGHT_CODING_FONT_TTF)
+	$(SEMI_LIGHT_CODING_FONT_TTF) \
+	$(CODING_FONT_COND_TTF) \
+	$(LIGHT_CODING_FONT_COND_TTF) \
+	$(SEMI_LIGHT_CODING_FONT_COND_TTF)
+
+CONDENSED_FONTS := \
+	$(FONT_COND_TTF) \
+	$(CODING_FONT_COND_TTF) \
+	$(LIGHT_FONT_COND_TTF) \
+	$(LIGHT_CODING_FONT_COND_TTF) \
+	$(SEMI_LIGHT_FONT_COND_TTF) \
+	$(SEMI_LIGHT_CODING_FONT_COND_TTF)
+
+FONTS := $(ORIGINAL_FONTS) $(CODING_FONTS)
 
 FONTSVG__REGULAR    := --expand-stroke 96
 FONTSVG__SEMI_LIGHT := --expand-stroke 72 # --translate-y -12  --scale-y 1344 --scale-y-from 1320  --scale-x 1008 --scale-x-from 984
 FONTSVG__LIGHT      := --expand-stroke 48 # --translate-y -24  --scale-y 1344 --scale-y-from 1296  --scale-x 1008 --scale-x-from 960
 #                                                                        ^^^^     ascent     ^^^^
 
+FONTSVG__SEMICONDENSED := --aspect 0.833333
+FONTSVG__CONDENSED     := --aspect 0.666666
+
 default: $(FONTS) $(CHARGRID_HTML) $(CHARLIST_HTML)
 fonts: $(FONTS)
 original: $(ORIGINAL_FONTS)
 coding: $(CODING_FONTS)
+condensed: $(CONDENSED_FONTS)
 
 .SUFFIXES: .sfd .ttf
-
-# dist/ttf/%.ttf: src/%.sfd $(FONTCONVERT_SCRIPT) $(MAKEFILE) $(FONTUNHINT_SCRIPT) $(SETFONTMETAS_SCRIPT)
-#	$(FONTCONVERT_SCRIPT) "$<" "$@"
-#	$(SETFONTMETAS_SCRIPT) \
-#		--family-name "Reproducing Typewriter" \
-#		--full-name   "Reproducing Typewriter" \
-#		--ps-name     "ReproTypewr" \
-#		--ps-weight   "Medium" \
-#		--os2-weight  400 \
-#		--panose      2,0,5,9,3,0,-,-,-,3 \
-#		"$@"
-#	$(FONTUNHINT_SCRIPT) "$@"
 
 # update source font fron SVG files
 fontsvg: FORCE
@@ -81,6 +88,18 @@ $(FONT_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(
 		"$@"
 	$(FONTUNHINT_SCRIPT) "$@"
 
+$(FONT_COND_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
+	$(FONTSVG_SCRIPT) $(FONTSVG__REGULAR) $(FONTSVG__CONDENSED) $< -o $@ `find src/chars -type f -name '*.svg'`
+	$(SETFONTMETAS_SCRIPT) \
+		--family-name "Reproducing Typewriter" \
+		--full-name   "Reproducing Typewriter Condensed" \
+		--ps-name     "ReproTypewr-Cond" \
+		--ps-weight   "Medium" \
+		--os2-weight  400 \
+		--panose      2,0,5,9,3,0,-,-,-,3 \
+		"$@"
+	$(FONTUNHINT_SCRIPT) "$@"
+
 $(SEMI_LIGHT_FONT_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
 	$(FONTSVG_SCRIPT) $(FONTSVG__SEMI_LIGHT) $< -o $@ `find src/chars -type f -name '*.svg'`
 	$(SETFONTMETAS_SCRIPT) \
@@ -93,12 +112,36 @@ $(SEMI_LIGHT_FONT_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETAS
 		"$@"
 	$(FONTUNHINT_SCRIPT) "$@"
 
+$(SEMI_LIGHT_FONT_COND_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
+	$(FONTSVG_SCRIPT) $(FONTSVG__SEMI_LIGHT) $(FONTSVG__CONDENSED) $< -o $@ `find src/chars -type f -name '*.svg'`
+	$(SETFONTMETAS_SCRIPT) \
+		--family-name "Reproducing Typewriter" \
+		--full-name   "Reproducing Typewriter Condensed Semi-Light" \
+		--ps-name     "ReproTypewr-CondSemiLight" \
+		--ps-weight   "Semi-Light" \
+		--os2-weight  350 \
+		--panose      2,0,3,9,3,0,-,-,-,3 \
+		"$@"
+	$(FONTUNHINT_SCRIPT) "$@"
+
 $(LIGHT_FONT_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
 	$(FONTSVG_SCRIPT) $(FONTSVG__LIGHT) $< -o $@ `find src/chars -type f -name '*.svg'`
 	$(SETFONTMETAS_SCRIPT) \
 		--family-name "Reproducing Typewriter" \
 		--full-name   "Reproducing Typewriter Light" \
 		--ps-name     "ReproTypewr-Light" \
+		--ps-weight   "Light" \
+		--os2-weight  300 \
+		--panose      2,0,4,9,3,0,-,-,-,3 \
+		"$@"
+	$(FONTUNHINT_SCRIPT) "$@"
+
+$(LIGHT_FONT_COND_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
+	$(FONTSVG_SCRIPT) $(FONTSVG__LIGHT) $(FONTSVG__CONDENSED) $< -o $@ `find src/chars -type f -name '*.svg'`
+	$(SETFONTMETAS_SCRIPT) \
+		--family-name "Reproducing Typewriter" \
+		--full-name   "Reproducing Typewriter Condensed Light" \
+		--ps-name     "ReproTypewr-CondLight" \
 		--ps-weight   "Light" \
 		--os2-weight  300 \
 		--panose      2,0,4,9,3,0,-,-,-,3 \
@@ -120,6 +163,21 @@ $(CODING_FONT_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCR
 		"$@"
 	$(FONTUNHINT_SCRIPT) "$@"
 
+$(CODING_FONT_COND_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
+	$(FONTSVG_SCRIPT) $(FONTSVG__REGULAR) $(FONTSVG__CONDENSED) $< -o $@ `find src/chars -type f -name '*.svg'`
+	mv "$@" "$@.tmp.ttf"	# tmp file required for featfreeze to work
+	pyftfeatfreeze -f code -S -U Code "$@.tmp.ttf" "$@"
+	rm "$@.tmp.ttf"
+	$(SETFONTMETAS_SCRIPT) \
+		--family-name "Reproducing Typewriter Code" \
+		--full-name   "Reproducing Typewriter Code Condensed" \
+		--ps-name     "ReproTypewrCode-Cond" \
+		--ps-weight   "Medium" \
+		--os2-weight  400 \
+		--panose      2,0,5,9,3,0,-,-,-,3 \
+		"$@"
+	$(FONTUNHINT_SCRIPT) "$@"
+
 $(SEMI_LIGHT_CODING_FONT_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
 	$(FONTSVG_SCRIPT) $(FONTSVG__SEMI_LIGHT) $< -o $@ `find src/chars -type f -name '*.svg'`
 	mv "$@" "$@.tmp.ttf"	# tmp file required for featfreeze to work
@@ -129,6 +187,21 @@ $(SEMI_LIGHT_CODING_FONT_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFO
 		--family-name "Reproducing Typewriter Code" \
 		--full-name   "Reproducing Typewriter Code Semi-Light" \
 		--ps-name     "ReproTypewrCode-SemiLight" \
+		--ps-weight   "Semi-Light" \
+		--os2-weight  350 \
+		--panose      2,0,4,9,3,0,-,-,-,3 \
+		"$@"
+	$(FONTUNHINT_SCRIPT) "$@"
+
+$(SEMI_LIGHT_CODING_FONT_COND_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
+	$(FONTSVG_SCRIPT) $(FONTSVG__SEMI_LIGHT) $(FONTSVG__CONDENSED) $< -o $@ `find src/chars -type f -name '*.svg'`
+	mv "$@" "$@.tmp.ttf"	# tmp file required for featfreeze to work
+	pyftfeatfreeze -f code -S -U Code "$@.tmp.ttf" "$@"
+	rm "$@.tmp.ttf"
+	$(SETFONTMETAS_SCRIPT) \
+		--family-name "Reproducing Typewriter Code" \
+		--full-name   "Reproducing Typewriter Code Condensed Semi-Light" \
+		--ps-name     "ReproTypewrCode-CondSemiLight" \
 		--ps-weight   "Semi-Light" \
 		--os2-weight  350 \
 		--panose      2,0,4,9,3,0,-,-,-,3 \
@@ -150,6 +223,21 @@ $(LIGHT_CODING_FONT_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMET
 		"$@"
 	$(FONTUNHINT_SCRIPT) "$@"
 
+$(LIGHT_CODING_FONT_COND_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
+	$(FONTSVG_SCRIPT) $(FONTSVG__LIGHT) $(FONTSVG__CONDENSED) $< -o $@ `find src/chars -type f -name '*.svg'`
+	mv "$@" "$@.tmp.ttf"	# tmp file required for featfreeze to work
+	pyftfeatfreeze -f code -S -U Code "$@.tmp.ttf" "$@"
+	rm "$@.tmp.ttf"
+	$(SETFONTMETAS_SCRIPT) \
+		--family-name "Reproducing Typewriter Code" \
+		--full-name   "Reproducing Typewriter Code Condensed Light" \
+		--ps-name     "ReproTypewrCode-CondLight" \
+		--ps-weight   "Light" \
+		--os2-weight  300 \
+		--panose      2,0,3,9,3,0,-,-,-,3 \
+		"$@"
+	$(FONTUNHINT_SCRIPT) "$@"
+
 chargrid: FORCE $(CHARGRID_HTML)
 charlist: FORCE $(CHARLIST_HTML)
 
@@ -164,7 +252,7 @@ $(CHARLIST_HTML): $(FONT_SRC) $(CHARLIST_TPL) $(MAKEFILE)
 	rm temp2.json
 
 clean: FORCE
-	/bin/rm $(FONT_TTF) $(CODING_FONT_TTF) $(LIGHT_FONT_TTF) $(LIGHT_CODING_FONT_TTF) $(CHARGRID_HTML) $(CHARLIST_HTML) || true
+	/bin/rm $(FONTS) $(CHARGRID_HTML) $(CHARLIST_HTML) || true
 	find . -type f \( -name '*.tmp' -o -name '*.tmp.*' -o -name '*.featfreeze.otf' -o -name '*~' -o -name '#*#' \) -exec rm {} + || true
 
 .PHONY: FORCE
