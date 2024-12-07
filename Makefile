@@ -88,18 +88,6 @@ $(FONT_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(
 		"$@"
 	$(FONTUNHINT_SCRIPT) "$@"
 
-$(FONT_COND_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
-	$(FONTSVG_SCRIPT) $(FONTSVG__REGULAR) $(FONTSVG__CONDENSED) $< -o $@ `find src/chars -type f -name '*.svg'`
-	$(SETFONTMETAS_SCRIPT) \
-		--family-name "Reproducing Typewriter" \
-		--full-name   "Reproducing Typewriter Condensed" \
-		--ps-name     "ReproTypewr-Cond" \
-		--ps-weight   "Medium" \
-		--os2-weight  400 \
-		--panose      2,0,5,9,3,0,-,-,-,3 \
-		"$@"
-	$(FONTUNHINT_SCRIPT) "$@"
-
 $(SEMI_LIGHT_FONT_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
 	$(FONTSVG_SCRIPT) $(FONTSVG__SEMI_LIGHT) $< -o $@ `find src/chars -type f -name '*.svg'`
 	$(SETFONTMETAS_SCRIPT) \
@@ -112,36 +100,12 @@ $(SEMI_LIGHT_FONT_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETAS
 		"$@"
 	$(FONTUNHINT_SCRIPT) "$@"
 
-$(SEMI_LIGHT_FONT_COND_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
-	$(FONTSVG_SCRIPT) $(FONTSVG__SEMI_LIGHT) $(FONTSVG__CONDENSED) $< -o $@ `find src/chars -type f -name '*.svg'`
-	$(SETFONTMETAS_SCRIPT) \
-		--family-name "Reproducing Typewriter" \
-		--full-name   "Reproducing Typewriter Condensed Semi-Light" \
-		--ps-name     "ReproTypewr-CondSemiLight" \
-		--ps-weight   "Semi-Light" \
-		--os2-weight  350 \
-		--panose      2,0,3,9,3,0,-,-,-,3 \
-		"$@"
-	$(FONTUNHINT_SCRIPT) "$@"
-
 $(LIGHT_FONT_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
 	$(FONTSVG_SCRIPT) $(FONTSVG__LIGHT) $< -o $@ `find src/chars -type f -name '*.svg'`
 	$(SETFONTMETAS_SCRIPT) \
 		--family-name "Reproducing Typewriter" \
 		--full-name   "Reproducing Typewriter Light" \
 		--ps-name     "ReproTypewr-Light" \
-		--ps-weight   "Light" \
-		--os2-weight  300 \
-		--panose      2,0,4,9,3,0,-,-,-,3 \
-		"$@"
-	$(FONTUNHINT_SCRIPT) "$@"
-
-$(LIGHT_FONT_COND_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
-	$(FONTSVG_SCRIPT) $(FONTSVG__LIGHT) $(FONTSVG__CONDENSED) $< -o $@ `find src/chars -type f -name '*.svg'`
-	$(SETFONTMETAS_SCRIPT) \
-		--family-name "Reproducing Typewriter" \
-		--full-name   "Reproducing Typewriter Condensed Light" \
-		--ps-name     "ReproTypewr-CondLight" \
 		--ps-weight   "Light" \
 		--os2-weight  300 \
 		--panose      2,0,4,9,3,0,-,-,-,3 \
@@ -163,21 +127,6 @@ $(CODING_FONT_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCR
 		"$@"
 	$(FONTUNHINT_SCRIPT) "$@"
 
-$(CODING_FONT_COND_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
-	$(FONTSVG_SCRIPT) $(FONTSVG__REGULAR) $(FONTSVG__CONDENSED) $< -o $@ `find src/chars -type f -name '*.svg'`
-	mv "$@" "$@.tmp.ttf"	# tmp file required for featfreeze to work
-	pyftfeatfreeze -f code -S -U Code "$@.tmp.ttf" "$@"
-	rm "$@.tmp.ttf"
-	$(SETFONTMETAS_SCRIPT) \
-		--family-name "Reproducing Typewriter Code" \
-		--full-name   "Reproducing Typewriter Code Condensed" \
-		--ps-name     "ReproTypewrCode-Cond" \
-		--ps-weight   "Medium" \
-		--os2-weight  400 \
-		--panose      2,0,5,9,3,0,-,-,-,3 \
-		"$@"
-	$(FONTUNHINT_SCRIPT) "$@"
-
 $(SEMI_LIGHT_CODING_FONT_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
 	$(FONTSVG_SCRIPT) $(FONTSVG__SEMI_LIGHT) $< -o $@ `find src/chars -type f -name '*.svg'`
 	mv "$@" "$@.tmp.ttf"	# tmp file required for featfreeze to work
@@ -187,21 +136,6 @@ $(SEMI_LIGHT_CODING_FONT_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFO
 		--family-name "Reproducing Typewriter Code" \
 		--full-name   "Reproducing Typewriter Code Semi-Light" \
 		--ps-name     "ReproTypewrCode-SemiLight" \
-		--ps-weight   "Semi-Light" \
-		--os2-weight  350 \
-		--panose      2,0,4,9,3,0,-,-,-,3 \
-		"$@"
-	$(FONTUNHINT_SCRIPT) "$@"
-
-$(SEMI_LIGHT_CODING_FONT_COND_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
-	$(FONTSVG_SCRIPT) $(FONTSVG__SEMI_LIGHT) $(FONTSVG__CONDENSED) $< -o $@ `find src/chars -type f -name '*.svg'`
-	mv "$@" "$@.tmp.ttf"	# tmp file required for featfreeze to work
-	pyftfeatfreeze -f code -S -U Code "$@.tmp.ttf" "$@"
-	rm "$@.tmp.ttf"
-	$(SETFONTMETAS_SCRIPT) \
-		--family-name "Reproducing Typewriter Code" \
-		--full-name   "Reproducing Typewriter Code Condensed Semi-Light" \
-		--ps-name     "ReproTypewrCode-CondSemiLight" \
 		--ps-weight   "Semi-Light" \
 		--os2-weight  350 \
 		--panose      2,0,4,9,3,0,-,-,-,3 \
@@ -220,6 +154,72 @@ $(LIGHT_CODING_FONT_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMET
 		--ps-weight   "Light" \
 		--os2-weight  300 \
 		--panose      2,0,3,9,3,0,-,-,-,3 \
+		"$@"
+	$(FONTUNHINT_SCRIPT) "$@"
+
+$(FONT_COND_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
+	$(FONTSVG_SCRIPT) $(FONTSVG__REGULAR) $(FONTSVG__CONDENSED) $< -o $@ `find src/chars -type f -name '*.svg'`
+	$(SETFONTMETAS_SCRIPT) \
+		--family-name "Reproducing Typewriter" \
+		--full-name   "Reproducing Typewriter Condensed" \
+		--ps-name     "ReproTypewr-Cond" \
+		--ps-weight   "Medium" \
+		--os2-weight  400 \
+		--panose      2,0,5,9,3,0,-,-,-,3 \
+		"$@"
+	$(FONTUNHINT_SCRIPT) "$@"
+
+$(SEMI_LIGHT_FONT_COND_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
+	$(FONTSVG_SCRIPT) $(FONTSVG__SEMI_LIGHT) $(FONTSVG__CONDENSED) $< -o $@ `find src/chars -type f -name '*.svg'`
+	$(SETFONTMETAS_SCRIPT) \
+		--family-name "Reproducing Typewriter" \
+		--full-name   "Reproducing Typewriter Condensed Semi-Light" \
+		--ps-name     "ReproTypewr-CondSemiLight" \
+		--ps-weight   "Semi-Light" \
+		--os2-weight  350 \
+		--panose      2,0,3,9,3,0,-,-,-,3 \
+		"$@"
+	$(FONTUNHINT_SCRIPT) "$@"
+
+$(LIGHT_FONT_COND_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
+	$(FONTSVG_SCRIPT) $(FONTSVG__LIGHT) $(FONTSVG__CONDENSED) $< -o $@ `find src/chars -type f -name '*.svg'`
+	$(SETFONTMETAS_SCRIPT) \
+		--family-name "Reproducing Typewriter" \
+		--full-name   "Reproducing Typewriter Condensed Light" \
+		--ps-name     "ReproTypewr-CondLight" \
+		--ps-weight   "Light" \
+		--os2-weight  300 \
+		--panose      2,0,4,9,3,0,-,-,-,3 \
+		"$@"
+	$(FONTUNHINT_SCRIPT) "$@"
+
+$(CODING_FONT_COND_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
+	$(FONTSVG_SCRIPT) $(FONTSVG__REGULAR) $(FONTSVG__CONDENSED) $< -o $@ `find src/chars -type f -name '*.svg'`
+	mv "$@" "$@.tmp.ttf"	# tmp file required for featfreeze to work
+	pyftfeatfreeze -f code -S -U Code "$@.tmp.ttf" "$@"
+	rm "$@.tmp.ttf"
+	$(SETFONTMETAS_SCRIPT) \
+		--family-name "Reproducing Typewriter Code" \
+		--full-name   "Reproducing Typewriter Code Condensed" \
+		--ps-name     "ReproTypewrCode-Cond" \
+		--ps-weight   "Medium" \
+		--os2-weight  400 \
+		--panose      2,0,5,9,3,0,-,-,-,3 \
+		"$@"
+	$(FONTUNHINT_SCRIPT) "$@"
+
+$(SEMI_LIGHT_CODING_FONT_COND_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
+	$(FONTSVG_SCRIPT) $(FONTSVG__SEMI_LIGHT) $(FONTSVG__CONDENSED) $< -o $@ `find src/chars -type f -name '*.svg'`
+	mv "$@" "$@.tmp.ttf"	# tmp file required for featfreeze to work
+	pyftfeatfreeze -f code -S -U Code "$@.tmp.ttf" "$@"
+	rm "$@.tmp.ttf"
+	$(SETFONTMETAS_SCRIPT) \
+		--family-name "Reproducing Typewriter Code" \
+		--full-name   "Reproducing Typewriter Code Condensed Semi-Light" \
+		--ps-name     "ReproTypewrCode-CondSemiLight" \
+		--ps-weight   "Semi-Light" \
+		--os2-weight  350 \
+		--panose      2,0,4,9,3,0,-,-,-,3 \
 		"$@"
 	$(FONTUNHINT_SCRIPT) "$@"
 
