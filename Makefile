@@ -77,8 +77,8 @@ FONTSVG__SEMI_LIGHT := --expand-stroke 72 # --translate-y -12  --scale-y 1344 --
 FONTSVG__LIGHT      := --expand-stroke 48 # --translate-y -24  --scale-y 1344 --scale-y-from 1296  --scale-x 1008 --scale-x-from 960
 #                                                                        ^^^^     ascent     ^^^^
 
-FONTSVG__SEMICONDENSED := --aspect 0.833333
-FONTSVG__CONDENSED     := --aspect 0.666666
+FONTSVG__SEMICONDENSED := --aspect 0.833333 # Pica => 12cpi
+FONTSVG__CONDENSED     := --aspect 0.606060 # 15cpi => 16.5cpi
 
 default: $(FONTS) $(CHARGRID_HTML) $(CHARLIST_HTML)
 fonts: $(FONTS)
