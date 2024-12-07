@@ -30,7 +30,11 @@ def main():
 
     svg_glyph_structs = []
     smol_glyph_structs = []
+
     generated_glyphs = []
+    stroked_glyphs = []
+    smol_glyphs = []
+    composite_glyphs = []
 
     for svg_filename in args.svg_filenames:
         (codepoint, glyphname, suffix) = parse_glyph_svg_filename(svg_filename)
@@ -39,6 +43,12 @@ def main():
         if codepoint is None and glyphname is None:
             print("%s: not an SVG character filename; skipping" % svg_filename)
             continue
+        if glyphname in font:
+            glyph = font[glyphname]
+            if len(glyph.references) and not len(glyph.foreground):
+                composite_glyphs.push(glyph)
+                continue
+
         svg_glyph_structs.append([codepoint,
                                  glyphname,
                                  suffix,
