@@ -72,6 +72,7 @@ def main():
             sm_glyph.temporary = {}
             sm_glyph.temporary["svg_filename"] = svg_filename
 
+    # Specific to Reproducing Typewriter typeface.
     generated_glyphs = []
     for glyph in font.glyphs():
         if glyph.unicode in range(0x2800, 0x2900) or glyph.unicode in range(0x2500, 0x25a0):
