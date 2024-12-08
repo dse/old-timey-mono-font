@@ -91,7 +91,7 @@ pica: $(PICA_FONTS)
 
 # update source font fron SVG files
 fontsvg: FORCE
-	$(FONTSVG_SCRIPT) --expand-stroke 96 $(FONT_SRC) `find src/chars -type f -name '*.svg'`
+	$(FONTSVG_SCRIPT) --source-file --expand-stroke 96 $(FONT_SRC) `find src/chars -type f -name '*.svg'`
 
 braille: FORCE
 	fontbraille -W 200 -f $(FONT_SRC)

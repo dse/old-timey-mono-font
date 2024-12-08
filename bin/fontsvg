@@ -26,6 +26,7 @@ def main():
     parser.add_argument('--scale-x', type=float)
     parser.add_argument('--scale-x-from', type=float)
     parser.add_argument('--aspect', '--aspect-ratio', type=float)
+    parser.add_argument('--source-file', action='store_true')
     args = parser.parse_args()
 
     print("Loading %s" % args.font_filename)
@@ -105,20 +106,21 @@ def main():
         glyph.width = orig_width
 
     # unlink references
-    for glyph in composite_glyphs:
-        # Ordinarily a glyph.unlinkRef() call would replace
-        # the refs with the contours from when the font was
-        # loaded, ignoring any changes such as the .stroke()
-        # calls.
-        orig_width = glyph.width
-        reconstitute_references(glyph)
-        glyph.unlinkRef()
-        if glyph.width != orig_width:
-            print("unlink references messed with glyph width: %s" % glyph.glyphname)
-        glyph.width = orig_width
+    if not args.source_file:
+        for glyph in composite_glyphs:
+            # Ordinarily a glyph.unlinkRef() call would replace
+            # the refs with the contours from when the font was
+            # loaded, ignoring any changes such as the .stroke()
+            # calls.
+            orig_width = glyph.width
+            reconstitute_references(glyph)
+            glyph.unlinkRef()
+            if glyph.width != orig_width:
+                print("unlink references messed with glyph width: %s" % glyph.glyphname)
+            glyph.width = orig_width
 
     # apply aspect
-    if args.aspect:
+    if (not args.source_file) and args.aspect:
         for glyph in [*smol_glyphs, *stroked_glyphs, *composite_glyphs]:
             orig_width = glyph.width
             final_width = math.floor(glyph.width * args.aspect)
