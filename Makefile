@@ -2,7 +2,7 @@ MAKEFILE := Makefile
 FONT_SRC := src/ReproTypewr.sfd
 
 FONTCONVERT_SCRIPT := bin/fontconvert
-FONTSVG_SCRIPT := bin/fontsvg
+FONTTOOL_SCRIPT := bin/fonttool
 FONTUNHINT_SCRIPT := bin/fontunhint
 SETFONTMETAS_SCRIPT := bin/setfontmetas
 
@@ -72,13 +72,13 @@ PICA_FONTS := \
 
 FONTS := $(ORIGINAL_FONTS) $(CODING_FONTS)
 
-FONTSVG__REGULAR    := --expand-stroke 96
-FONTSVG__SEMI_LIGHT := --expand-stroke 72 # --translate-y -12  --scale-y 1344 --scale-y-from 1320  --scale-x 1008 --scale-x-from 984
-FONTSVG__LIGHT      := --expand-stroke 48 # --translate-y -24  --scale-y 1344 --scale-y-from 1296  --scale-x 1008 --scale-x-from 960
+FONTTOOL__REGULAR    := --expand-stroke 96
+FONTTOOL__SEMI_LIGHT := --expand-stroke 72 # --translate-y -12  --scale-y 1344 --scale-y-from 1320  --scale-x 1008 --scale-x-from 984
+FONTTOOL__LIGHT      := --expand-stroke 48 # --translate-y -24  --scale-y 1344 --scale-y-from 1296  --scale-x 1008 --scale-x-from 960
 #                                                                        ^^^^     ascent     ^^^^
 
-FONTSVG__PICA := --aspect 0.833333 # Pica => 12cpi
-FONTSVG__NARROW     := --aspect 0.606060 # 15cpi => 16.5cpi
+FONTTOOL__PICA := --aspect 0.833333 # Pica => 12cpi
+FONTTOOL__NARROW     := --aspect 0.606060 # 15cpi => 16.5cpi
 
 default: $(FONTS) $(CHARGRID_HTML) $(CHARLIST_HTML)
 fonts: $(FONTS)
@@ -90,16 +90,16 @@ pica: $(PICA_FONTS)
 .SUFFIXES: .sfd .ttf
 
 # update source font fron SVG files
-fontsvg: FORCE
-	$(FONTSVG_SCRIPT) --source-file --expand-stroke 96 $(FONT_SRC) `find src/chars -type f -name '*.svg'`
+fonttool: FORCE
+	$(FONTTOOL_SCRIPT) --source-file --expand-stroke 96 $(FONT_SRC) `find src/chars -type f -name '*.svg'`
 
 braille: FORCE
 	fontbraille -W 200 -f $(FONT_SRC)
 boxdraw: FORCE
 	fontboxdraw -f $(FONT_SRC)
 
-$(FONT_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
-	$(FONTSVG_SCRIPT) $(FONTSVG__REGULAR) $< -o $@ `find src/chars -type f -name '*.svg'`
+$(FONT_TTF): $(FONT_SRC) $(FONTTOOL_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
+	$(FONTTOOL_SCRIPT) $(FONTTOOL__REGULAR) $< -o $@ `find src/chars -type f -name '*.svg'`
 	$(SETFONTMETAS_SCRIPT) \
 		--family-name "Repro Typewr" \
 		--full-name   "Repro Typewr" \
@@ -110,8 +110,8 @@ $(FONT_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(
 		"$@"
 	$(FONTUNHINT_SCRIPT) "$@"
 
-$(SEMI_LIGHT_FONT_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
-	$(FONTSVG_SCRIPT) $(FONTSVG__SEMI_LIGHT) $< -o $@ `find src/chars -type f -name '*.svg'`
+$(SEMI_LIGHT_FONT_TTF): $(FONT_SRC) $(FONTTOOL_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
+	$(FONTTOOL_SCRIPT) $(FONTTOOL__SEMI_LIGHT) $< -o $@ `find src/chars -type f -name '*.svg'`
 	$(SETFONTMETAS_SCRIPT) \
 		--family-name "Repro Typewr" \
 		--full-name   "Repro Typewr Semi-Light" \
@@ -122,8 +122,8 @@ $(SEMI_LIGHT_FONT_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETAS
 		"$@"
 	$(FONTUNHINT_SCRIPT) "$@"
 
-$(LIGHT_FONT_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
-	$(FONTSVG_SCRIPT) $(FONTSVG__LIGHT) $< -o $@ `find src/chars -type f -name '*.svg'`
+$(LIGHT_FONT_TTF): $(FONT_SRC) $(FONTTOOL_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
+	$(FONTTOOL_SCRIPT) $(FONTTOOL__LIGHT) $< -o $@ `find src/chars -type f -name '*.svg'`
 	$(SETFONTMETAS_SCRIPT) \
 		--family-name "Repro Typewr" \
 		--full-name   "Repro Typewr Light" \
@@ -134,8 +134,8 @@ $(LIGHT_FONT_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRI
 		"$@"
 	$(FONTUNHINT_SCRIPT) "$@"
 
-$(CODING_FONT_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
-	$(FONTSVG_SCRIPT) $(FONTSVG__REGULAR) $< -o $@ `find src/chars -type f -name '*.svg'`
+$(CODING_FONT_TTF): $(FONT_SRC) $(FONTTOOL_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
+	$(FONTTOOL_SCRIPT) $(FONTTOOL__REGULAR) $< -o $@ `find src/chars -type f -name '*.svg'`
 	mv "$@" "$@.tmp.ttf"	# tmp file required for featfreeze to work
 	pyftfeatfreeze -f code -S -U Code "$@.tmp.ttf" "$@"
 	rm "$@.tmp.ttf"
@@ -149,8 +149,8 @@ $(CODING_FONT_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCR
 		"$@"
 	$(FONTUNHINT_SCRIPT) "$@"
 
-$(SEMI_LIGHT_CODING_FONT_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
-	$(FONTSVG_SCRIPT) $(FONTSVG__SEMI_LIGHT) $< -o $@ `find src/chars -type f -name '*.svg'`
+$(SEMI_LIGHT_CODING_FONT_TTF): $(FONT_SRC) $(FONTTOOL_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
+	$(FONTTOOL_SCRIPT) $(FONTTOOL__SEMI_LIGHT) $< -o $@ `find src/chars -type f -name '*.svg'`
 	mv "$@" "$@.tmp.ttf"	# tmp file required for featfreeze to work
 	pyftfeatfreeze -f code -S -U Code "$@.tmp.ttf" "$@"
 	rm "$@.tmp.ttf"
@@ -164,8 +164,8 @@ $(SEMI_LIGHT_CODING_FONT_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFO
 		"$@"
 	$(FONTUNHINT_SCRIPT) "$@"
 
-$(LIGHT_CODING_FONT_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
-	$(FONTSVG_SCRIPT) $(FONTSVG__LIGHT) $< -o $@ `find src/chars -type f -name '*.svg'`
+$(LIGHT_CODING_FONT_TTF): $(FONT_SRC) $(FONTTOOL_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
+	$(FONTTOOL_SCRIPT) $(FONTTOOL__LIGHT) $< -o $@ `find src/chars -type f -name '*.svg'`
 	mv "$@" "$@.tmp.ttf"	# tmp file required for featfreeze to work
 	pyftfeatfreeze -f code -S -U Code "$@.tmp.ttf" "$@"
 	rm "$@.tmp.ttf"
@@ -179,8 +179,8 @@ $(LIGHT_CODING_FONT_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMET
 		"$@"
 	$(FONTUNHINT_SCRIPT) "$@"
 
-$(FONT_NARROW_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
-	$(FONTSVG_SCRIPT) $(FONTSVG__REGULAR) $(FONTSVG__NARROW) $< -o $@ `find src/chars -type f -name '*.svg'`
+$(FONT_NARROW_TTF): $(FONT_SRC) $(FONTTOOL_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
+	$(FONTTOOL_SCRIPT) $(FONTTOOL__REGULAR) $(FONTTOOL__NARROW) $< -o $@ `find src/chars -type f -name '*.svg'`
 	$(SETFONTMETAS_SCRIPT) \
 		--family-name "Repro Typewr 17 Pitch" \
 		--full-name   "Repro Typewr 17 Pitch" \
@@ -191,8 +191,8 @@ $(FONT_NARROW_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCR
 		"$@"
 	$(FONTUNHINT_SCRIPT) "$@"
 
-$(SEMI_LIGHT_FONT_NARROW_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
-	$(FONTSVG_SCRIPT) $(FONTSVG__SEMI_LIGHT) $(FONTSVG__NARROW) $< -o $@ `find src/chars -type f -name '*.svg'`
+$(SEMI_LIGHT_FONT_NARROW_TTF): $(FONT_SRC) $(FONTTOOL_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
+	$(FONTTOOL_SCRIPT) $(FONTTOOL__SEMI_LIGHT) $(FONTTOOL__NARROW) $< -o $@ `find src/chars -type f -name '*.svg'`
 	$(SETFONTMETAS_SCRIPT) \
 		--family-name "Repro Typewr 17 Pitch" \
 		--full-name   "Repro Typewr 17 Pitch Semi-Light" \
@@ -203,8 +203,8 @@ $(SEMI_LIGHT_FONT_NARROW_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFO
 		"$@"
 	$(FONTUNHINT_SCRIPT) "$@"
 
-$(LIGHT_FONT_NARROW_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
-	$(FONTSVG_SCRIPT) $(FONTSVG__LIGHT) $(FONTSVG__NARROW) $< -o $@ `find src/chars -type f -name '*.svg'`
+$(LIGHT_FONT_NARROW_TTF): $(FONT_SRC) $(FONTTOOL_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
+	$(FONTTOOL_SCRIPT) $(FONTTOOL__LIGHT) $(FONTTOOL__NARROW) $< -o $@ `find src/chars -type f -name '*.svg'`
 	$(SETFONTMETAS_SCRIPT) \
 		--family-name "Repro Typewr 17 Pitch" \
 		--full-name   "Repro Typewr 17 Pitch Light" \
@@ -215,8 +215,8 @@ $(LIGHT_FONT_NARROW_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMET
 		"$@"
 	$(FONTUNHINT_SCRIPT) "$@"
 
-$(CODING_FONT_NARROW_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
-	$(FONTSVG_SCRIPT) $(FONTSVG__REGULAR) $(FONTSVG__NARROW) $< -o $@ `find src/chars -type f -name '*.svg'`
+$(CODING_FONT_NARROW_TTF): $(FONT_SRC) $(FONTTOOL_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
+	$(FONTTOOL_SCRIPT) $(FONTTOOL__REGULAR) $(FONTTOOL__NARROW) $< -o $@ `find src/chars -type f -name '*.svg'`
 	mv "$@" "$@.tmp.ttf"	# tmp file required for featfreeze to work
 	pyftfeatfreeze -f code -S -U Code "$@.tmp.ttf" "$@"
 	rm "$@.tmp.ttf"
@@ -230,8 +230,8 @@ $(CODING_FONT_NARROW_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTME
 		"$@"
 	$(FONTUNHINT_SCRIPT) "$@"
 
-$(SEMI_LIGHT_CODING_FONT_NARROW_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
-	$(FONTSVG_SCRIPT) $(FONTSVG__SEMI_LIGHT) $(FONTSVG__NARROW) $< -o $@ `find src/chars -type f -name '*.svg'`
+$(SEMI_LIGHT_CODING_FONT_NARROW_TTF): $(FONT_SRC) $(FONTTOOL_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
+	$(FONTTOOL_SCRIPT) $(FONTTOOL__SEMI_LIGHT) $(FONTTOOL__NARROW) $< -o $@ `find src/chars -type f -name '*.svg'`
 	mv "$@" "$@.tmp.ttf"	# tmp file required for featfreeze to work
 	pyftfeatfreeze -f code -S -U Code "$@.tmp.ttf" "$@"
 	rm "$@.tmp.ttf"
@@ -245,8 +245,8 @@ $(SEMI_LIGHT_CODING_FONT_NARROW_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) 
 		"$@"
 	$(FONTUNHINT_SCRIPT) "$@"
 
-$(LIGHT_CODING_FONT_NARROW_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
-	$(FONTSVG_SCRIPT) $(FONTSVG__LIGHT) $(FONTSVG__NARROW) $< -o $@ `find src/chars -type f -name '*.svg'`
+$(LIGHT_CODING_FONT_NARROW_TTF): $(FONT_SRC) $(FONTTOOL_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
+	$(FONTTOOL_SCRIPT) $(FONTTOOL__LIGHT) $(FONTTOOL__NARROW) $< -o $@ `find src/chars -type f -name '*.svg'`
 	mv "$@" "$@.tmp.ttf"	# tmp file required for featfreeze to work
 	pyftfeatfreeze -f code -S -U Code "$@.tmp.ttf" "$@"
 	rm "$@.tmp.ttf"
@@ -260,8 +260,8 @@ $(LIGHT_CODING_FONT_NARROW_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SET
 		"$@"
 	$(FONTUNHINT_SCRIPT) "$@"
 
-$(FONT_PICA_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
-	$(FONTSVG_SCRIPT) $(FONTSVG__REGULAR) $(FONTSVG__PICA) $< -o $@ `find src/chars -type f -name '*.svg'`
+$(FONT_PICA_TTF): $(FONT_SRC) $(FONTTOOL_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
+	$(FONTTOOL_SCRIPT) $(FONTTOOL__REGULAR) $(FONTTOOL__PICA) $< -o $@ `find src/chars -type f -name '*.svg'`
 	$(SETFONTMETAS_SCRIPT) \
 		--family-name "Repro Typewr Pica" \
 		--full-name   "Repro Typewr Pica" \
@@ -272,8 +272,8 @@ $(FONT_PICA_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIP
 		"$@"
 	$(FONTUNHINT_SCRIPT) "$@"
 
-$(SEMI_LIGHT_FONT_PICA_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
-	$(FONTSVG_SCRIPT) $(FONTSVG__SEMI_LIGHT) $(FONTSVG__PICA) $< -o $@ `find src/chars -type f -name '*.svg'`
+$(SEMI_LIGHT_FONT_PICA_TTF): $(FONT_SRC) $(FONTTOOL_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
+	$(FONTTOOL_SCRIPT) $(FONTTOOL__SEMI_LIGHT) $(FONTTOOL__PICA) $< -o $@ `find src/chars -type f -name '*.svg'`
 	$(SETFONTMETAS_SCRIPT) \
 		--family-name "Repro Typewr Pica" \
 		--full-name   "Repro Typewr Pica Semi-Light" \
@@ -284,8 +284,8 @@ $(SEMI_LIGHT_FONT_PICA_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONT
 		"$@"
 	$(FONTUNHINT_SCRIPT) "$@"
 
-$(LIGHT_FONT_PICA_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
-	$(FONTSVG_SCRIPT) $(FONTSVG__LIGHT) $(FONTSVG__PICA) $< -o $@ `find src/chars -type f -name '*.svg'`
+$(LIGHT_FONT_PICA_TTF): $(FONT_SRC) $(FONTTOOL_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
+	$(FONTTOOL_SCRIPT) $(FONTTOOL__LIGHT) $(FONTTOOL__PICA) $< -o $@ `find src/chars -type f -name '*.svg'`
 	$(SETFONTMETAS_SCRIPT) \
 		--family-name "Repro Typewr Pica" \
 		--full-name   "Repro Typewr Pica Light" \
@@ -296,8 +296,8 @@ $(LIGHT_FONT_PICA_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETAS
 		"$@"
 	$(FONTUNHINT_SCRIPT) "$@"
 
-$(CODING_FONT_PICA_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
-	$(FONTSVG_SCRIPT) $(FONTSVG__REGULAR) $(FONTSVG__PICA) $< -o $@ `find src/chars -type f -name '*.svg'`
+$(CODING_FONT_PICA_TTF): $(FONT_SRC) $(FONTTOOL_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
+	$(FONTTOOL_SCRIPT) $(FONTTOOL__REGULAR) $(FONTTOOL__PICA) $< -o $@ `find src/chars -type f -name '*.svg'`
 	mv "$@" "$@.tmp.ttf"	# tmp file required for featfreeze to work
 	pyftfeatfreeze -f code -S -U Code "$@.tmp.ttf" "$@"
 	rm "$@.tmp.ttf"
@@ -311,8 +311,8 @@ $(CODING_FONT_PICA_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETA
 		"$@"
 	$(FONTUNHINT_SCRIPT) "$@"
 
-$(SEMI_LIGHT_CODING_FONT_PICA_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
-	$(FONTSVG_SCRIPT) $(FONTSVG__SEMI_LIGHT) $(FONTSVG__PICA) $< -o $@ `find src/chars -type f -name '*.svg'`
+$(SEMI_LIGHT_CODING_FONT_PICA_TTF): $(FONT_SRC) $(FONTTOOL_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
+	$(FONTTOOL_SCRIPT) $(FONTTOOL__SEMI_LIGHT) $(FONTTOOL__PICA) $< -o $@ `find src/chars -type f -name '*.svg'`
 	mv "$@" "$@.tmp.ttf"	# tmp file required for featfreeze to work
 	pyftfeatfreeze -f code -S -U Code "$@.tmp.ttf" "$@"
 	rm "$@.tmp.ttf"
@@ -326,8 +326,8 @@ $(SEMI_LIGHT_CODING_FONT_PICA_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(
 		"$@"
 	$(FONTUNHINT_SCRIPT) "$@"
 
-$(LIGHT_CODING_FONT_PICA_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
-	$(FONTSVG_SCRIPT) $(FONTSVG__LIGHT) $(FONTSVG__PICA) $< -o $@ `find src/chars -type f -name '*.svg'`
+$(LIGHT_CODING_FONT_PICA_TTF): $(FONT_SRC) $(FONTTOOL_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
+	$(FONTTOOL_SCRIPT) $(FONTTOOL__LIGHT) $(FONTTOOL__PICA) $< -o $@ `find src/chars -type f -name '*.svg'`
 	mv "$@" "$@.tmp.ttf"	# tmp file required for featfreeze to work
 	pyftfeatfreeze -f code -S -U Code "$@.tmp.ttf" "$@"
 	rm "$@.tmp.ttf"
