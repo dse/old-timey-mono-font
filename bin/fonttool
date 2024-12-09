@@ -49,9 +49,7 @@ def main():
             continue
 
     for svg_filename in args.svg_filenames:
-        (codepoint, glyphname, suffix) = parse_glyph_svg_filename(svg_filename)
-        plain_glyphname = glyphname.split('.')[0]
-        real_codepoint = fontforge.unicodeFromName(plain_glyphname)
+        (codepoint, glyphname, real_codepoint, plain_glyphname, suffix) = parse_glyph_svg_filename(svg_filename)
         if codepoint is None and glyphname is None:
             print("%s: not an SVG character filename; skipping" % svg_filename)
             continue
@@ -186,7 +184,9 @@ def parse_glyph_svg_filename(svg_filename):
         codepoint = -1
     else:
         glyphname = fontforge.nameFromUnicode(codepoint)
-    return [codepoint, glyphname, suffix]
+    plain_glyphname = glyphname.split('.')[0]
+    real_codepoint = fontforge.unicodeFromName(plain_glyphname)
+    return [codepoint, glyphname, real_codepoint, plain_glyphname, suffix]
 
 def reconstitute_references(glyph):
     # Apparently a glyph.unlinkRef() call will replace the
