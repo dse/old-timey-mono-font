@@ -22,7 +22,7 @@ OS2Version: 0
 OS2_WeightWidthSlopeOnly: 0
 OS2_UseTypoMetrics: 1
 CreationTime: 1729142792
-ModificationTime: 1733797314
+ModificationTime: 1733799778
 PfmFamily: 17
 TTFWeight: 500
 TTFWidth: 5
@@ -4140,7 +4140,7 @@ Fore
 SplineSet
 1008 570 m 1
  1008 486 l 2
- 1008 486 672 486 672 486 c 1
+ 672 486 l 1
  672 -336 l 1
  588 -336 l 1
  588 486 l 1
@@ -4286,7 +4286,7 @@ Fore
 SplineSet
 1008 570 m 1
  1008 486 l 2
- 1008 486 378 486 378 486 c 2
+ 378 486 l 2
  354.81957 486 336 504.81957 336 528 c 2
  336 1344 l 1
  420 1344 l 1
@@ -4465,7 +4465,7 @@ SplineSet
  672 570 l 1
  1008 570 l 1
  1008 486 l 2
- 1008 486 672 486 672 486 c 1
+ 672 486 l 1
  672 -336 l 1
  588 -336 l 1
 EndSplineSet
@@ -4623,7 +4623,7 @@ SplineSet
  0 570 l 1
  1008 570 l 1
  1008 486 l 2
- 1008 486 672 486 672 486 c 1
+ 672 486 l 1
  672 -336 l 1
  588 -336 l 1
  588 486 l 1
@@ -4800,7 +4800,7 @@ SplineSet
  672 570 l 1
  1008 570 l 1
  1008 486 l 2
- 1008 486 672 486 672 486 c 1
+ 672 486 l 1
  672 -336 l 1
  588 -336 l 1
  588 486 l 1
@@ -4869,7 +4869,7 @@ SplineSet
  462 440.322022949 592.038095202 570 705.6 570 c 2
  1008 570 l 1
  1008 486 l 2
- 1008 486 705.6 486 705.6 486 c 2
+ 705.6 486 l 2
 EndSplineSet
 Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
@@ -4887,7 +4887,7 @@ SplineSet
  462 -336 l 1
  462 326.4 l 2
  462 393.11164822 369.384557384 486 302.4 486 c 2
- 302.4 486 0 486 0 486 c 2
+ 0 486 l 2
  0 570 l 1
  302.4 570 l 2
 EndSplineSet
@@ -4907,7 +4907,7 @@ SplineSet
  546 1344 l 1
  546 729.6 l 2
  546 616.032824172 416.316756925 486 302.4 486 c 2
- 302.4 486 0 486 0 486 c 2
+ 0 486 l 2
  0 570 l 1
  302.4 570 l 2
 EndSplineSet
@@ -4929,7 +4929,7 @@ SplineSet
  546 662.88835178 638.615442616 570 705.6 570 c 2
  1008 570 l 1
  1008 486 l 2
- 1008 486 705.6 486 705.6 486 c 2
+ 705.6 486 l 2
 EndSplineSet
 Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
@@ -6856,16 +6856,16 @@ VStem: 176 176<1137.49 1278.51> 656 176<1137.49 1278.51>
 LayerCount: 2
 Fore
 SplineSet
-656 978 m 0
- 656 929.428710938 695.428710938 890 744 890 c 0
- 792.571289062 890 832 929.428710938 832 978 c 0
- 832 1026.57128906 792.571289062 1066 744 1066 c 0
- 695.428710938 1066 656 1026.57128906 656 978 c 0
-176 978 m 0
- 176 929.428710938 215.428710938 890 264 890 c 0
- 312.571289062 890 352 929.428710938 352 978 c 0
- 352 1026.57128906 312.571289062 1066 264 1066 c 0
- 215.428710938 1066 176 1026.57128906 176 978 c 0
+176 980 m 0
+ 176 1028.57081277 215.429187231 1068 264 1068 c 0
+ 312.570812769 1068 352 1028.57081277 352 980 c 0
+ 352 931.429187231 312.570812769 892 264 892 c 0
+ 215.429187231 892 176 931.429187231 176 980 c 0
+656 980 m 0
+ 656 1028.57081277 695.429187231 1068 744 1068 c 0
+ 792.570812769 1068 832 1028.57081277 832 980 c 0
+ 832 931.429187231 792.570812769 892 744 892 c 0
+ 695.429187231 892 656 931.429187231 656 980 c 0
 EndSplineSet
 EndChar
 
@@ -33817,7 +33817,7 @@ EndChar
 StartChar: quotesinglbase.smol
 Encoding: 65733 -1 1361
 Width: 1008
-VWidth: 42
+VWidth: 45
 Flags: HW
 LayerCount: 2
 Fore
@@ -33837,7 +33837,7 @@ EndChar
 StartChar: uni201F.smol
 Encoding: 65734 -1 1362
 Width: 1008
-VWidth: 42
+VWidth: 45
 Flags: HW
 LayerCount: 2
 Fore
@@ -33866,7 +33866,7 @@ EndChar
 StartChar: onedotenleader.smol
 Encoding: 65735 -1 1363
 Width: 1008
-VWidth: 42
+VWidth: 45
 Flags: HW
 LayerCount: 2
 Fore
@@ -33907,7 +33907,7 @@ EndChar
 StartChar: quotedblright.smol
 Encoding: 65737 -1 1365
 Width: 1008
-VWidth: 42
+VWidth: 45
 Flags: HW
 LayerCount: 2
 Fore
@@ -33936,7 +33936,7 @@ EndChar
 StartChar: quotedblbase.smol
 Encoding: 65738 -1 1366
 Width: 1008
-VWidth: 42
+VWidth: 45
 Flags: HW
 LayerCount: 2
 Fore
@@ -33965,7 +33965,7 @@ EndChar
 StartChar: quoteright.smol
 Encoding: 65739 -1 1367
 Width: 1008
-VWidth: 42
+VWidth: 45
 Flags: HW
 LayerCount: 2
 Fore
@@ -33985,7 +33985,7 @@ EndChar
 StartChar: periodcentered.smol
 Encoding: 65740 -1 1368
 Width: 1008
-VWidth: 42
+VWidth: 45
 Flags: HW
 LayerCount: 2
 Fore
@@ -34026,7 +34026,7 @@ EndChar
 StartChar: quotedblleft.smol
 Encoding: 65742 -1 1370
 Width: 1008
-VWidth: 42
+VWidth: 45
 Flags: HW
 LayerCount: 2
 Fore
@@ -34080,7 +34080,7 @@ EndChar
 StartChar: twodotenleader.smol
 Encoding: 65744 -1 1372
 Width: 1008
-VWidth: 42
+VWidth: 45
 Flags: HW
 LayerCount: 2
 Fore
@@ -34101,7 +34101,7 @@ EndChar
 StartChar: quoteleft.smol
 Encoding: 65745 -1 1373
 Width: 1008
-VWidth: 42
+VWidth: 45
 Flags: HW
 LayerCount: 2
 Fore
@@ -34121,7 +34121,7 @@ EndChar
 StartChar: ellipsis.smol
 Encoding: 65746 -1 1374
 Width: 1008
-VWidth: 42
+VWidth: 45
 Flags: HW
 LayerCount: 2
 Fore
@@ -34147,7 +34147,7 @@ EndChar
 StartChar: quotereversed.smol
 Encoding: 65747 -1 1375
 Width: 1008
-VWidth: 42
+VWidth: 45
 Flags: HW
 LayerCount: 2
 Fore
