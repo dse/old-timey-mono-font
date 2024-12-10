@@ -10,7 +10,7 @@ def parse_glyph_svg_filename(svg_filename):
     match_2 = re.search(r'^x--', svg_basename, flags=re.IGNORECASE)
     match_3 = re.search(r'--(.+)$', os.path.splitext(svg_basename)[0]) # foo--bar.svg => "bar"
     if not match_1 and not match_2:
-        return [None, None]
+        return [None, None, None, None, None]
     suffix = match_3.expand('\\1') if match_3 else None
     hex = match_1.expand('\\1') if match_1 else None
     codepoint = int(hex, 16) if hex is not None else -1
