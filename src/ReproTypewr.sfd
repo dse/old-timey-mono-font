@@ -22,7 +22,7 @@ OS2Version: 0
 OS2_WeightWidthSlopeOnly: 0
 OS2_UseTypoMetrics: 1
 CreationTime: 1729142792
-ModificationTime: 1733726871
+ModificationTime: 1733797314
 PfmFamily: 17
 TTFWeight: 500
 TTFWidth: 5
@@ -2382,6 +2382,7 @@ SplineSet
  1008 486 l 1
  0 486 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni2501
@@ -2397,6 +2398,7 @@ SplineSet
  1008 402 l 1
  0 402 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: SF110000
@@ -2412,6 +2414,7 @@ SplineSet
  546 -336 l 1
  462 -336 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni2503
@@ -2427,6 +2430,7 @@ SplineSet
  630 -336 l 1
  378 -336 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni2504
@@ -2452,6 +2456,7 @@ SplineSet
  924 486 l 1
  756 486 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni2505
@@ -2477,6 +2482,7 @@ SplineSet
  924 402 l 1
  756 402 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni2506
@@ -2502,6 +2508,7 @@ SplineSet
  546 924 l 1
  462 924 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni2507
@@ -2527,6 +2534,7 @@ SplineSet
  630 924 l 1
  378 924 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni2508
@@ -2557,6 +2565,7 @@ SplineSet
  945 486 l 1
  819 486 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni2509
@@ -2587,6 +2596,7 @@ SplineSet
  945 402 l 1
  819 402 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni250A
@@ -2617,6 +2627,7 @@ SplineSet
  546 1029 l 1
  462 1029 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni250B
@@ -2647,6 +2658,7 @@ SplineSet
  630 1029 l 1
  378 1029 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: SF010000
@@ -2664,6 +2676,7 @@ SplineSet
  462 -336 l 1
  462 570 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni250D
@@ -2681,6 +2694,7 @@ SplineSet
  462 -336 l 1
  462 612 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni250E
@@ -2698,6 +2712,7 @@ SplineSet
  420 -336 l 1
  420 570 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni250F
@@ -2715,6 +2730,7 @@ SplineSet
  420 -336 l 1
  420 612 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: SF030000
@@ -2732,6 +2748,7 @@ SplineSet
  546 -336 l 1
  546 570 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni2511
@@ -2749,6 +2766,7 @@ SplineSet
  546 -336 l 1
  546 612 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni2512
@@ -2766,6 +2784,7 @@ SplineSet
  588 -336 l 1
  588 570 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni2513
@@ -2783,6 +2802,7 @@ SplineSet
  588 -336 l 1
  588 612 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: SF020000
@@ -2800,6 +2820,7 @@ SplineSet
  462 1344 l 1
  462 486 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni2515
@@ -2817,6 +2838,7 @@ SplineSet
  462 1344 l 1
  462 444 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni2516
@@ -2834,6 +2856,7 @@ SplineSet
  420 1344 l 1
  420 486 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni2517
@@ -2851,6 +2874,7 @@ SplineSet
  420 1344 l 1
  420 444 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: SF040000
@@ -2868,6 +2892,7 @@ SplineSet
  546 1344 l 1
  546 486 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni2519
@@ -2885,6 +2910,7 @@ SplineSet
  546 1344 l 1
  546 444 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni251A
@@ -2902,6 +2928,7 @@ SplineSet
  588 1344 l 1
  588 486 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni251B
@@ -2919,6 +2946,7 @@ SplineSet
  588 1344 l 1
  588 444 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: SF080000
@@ -2938,6 +2966,7 @@ SplineSet
  462 -336 l 1
  462 1344 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni251D
@@ -2957,6 +2986,7 @@ SplineSet
  462 -336 l 1
  462 1344 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni251E
@@ -2978,6 +3008,7 @@ SplineSet
  378 486 l 1
  378 1344 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni251F
@@ -2999,6 +3030,7 @@ SplineSet
  462 570 l 1
  462 1344 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni2520
@@ -3018,6 +3050,7 @@ SplineSet
  378 -336 l 1
  378 1344 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni2521
@@ -3039,6 +3072,7 @@ SplineSet
  378 402 l 1
  378 1344 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni2522
@@ -3060,6 +3094,7 @@ SplineSet
  462 654 l 1
  462 1344 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni2523
@@ -3079,6 +3114,7 @@ SplineSet
  378 -336 l 1
  378 1344 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: SF090000
@@ -3098,6 +3134,7 @@ SplineSet
  546 -336 l 1
  546 1344 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni2525
@@ -3117,6 +3154,7 @@ SplineSet
  546 -336 l 1
  546 1344 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni2526
@@ -3138,6 +3176,7 @@ SplineSet
  630 486 l 1
  630 1344 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni2527
@@ -3159,6 +3198,7 @@ SplineSet
  546 570 l 1
  546 1344 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni2528
@@ -3178,6 +3218,7 @@ SplineSet
  630 -336 l 1
  630 1344 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni2529
@@ -3199,6 +3240,7 @@ SplineSet
  630 402 l 1
  630 1344 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni252A
@@ -3220,6 +3262,7 @@ SplineSet
  546 654 l 1
  546 1344 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni252B
@@ -3239,6 +3282,7 @@ SplineSet
  630 -336 l 1
  630 1344 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: SF060000
@@ -3258,6 +3302,7 @@ SplineSet
  0 486 l 1
  0 570 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni252D
@@ -3279,6 +3324,7 @@ SplineSet
  0 402 l 1
  0 654 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni252E
@@ -3300,6 +3346,7 @@ SplineSet
  0 486 l 1
  0 570 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni252F
@@ -3319,6 +3366,7 @@ SplineSet
  0 402 l 1
  0 654 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni2530
@@ -3338,6 +3386,7 @@ SplineSet
  0 486 l 1
  0 570 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni2531
@@ -3359,6 +3408,7 @@ SplineSet
  0 402 l 1
  0 654 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni2532
@@ -3380,6 +3430,7 @@ SplineSet
  0 486 l 1
  0 570 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni2533
@@ -3399,6 +3450,7 @@ SplineSet
  0 402 l 1
  0 654 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: SF070000
@@ -3418,6 +3470,7 @@ SplineSet
  0 570 l 1
  0 486 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni2535
@@ -3439,6 +3492,7 @@ SplineSet
  0 654 l 1
  0 402 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni2536
@@ -3460,6 +3514,7 @@ SplineSet
  0 570 l 1
  0 486 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni2537
@@ -3479,6 +3534,7 @@ SplineSet
  0 654 l 1
  0 402 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni2538
@@ -3498,6 +3554,7 @@ SplineSet
  0 570 l 1
  0 486 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni2539
@@ -3519,6 +3576,7 @@ SplineSet
  0 654 l 1
  0 402 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni253A
@@ -3540,6 +3598,7 @@ SplineSet
  0 570 l 1
  0 486 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni253B
@@ -3559,6 +3618,7 @@ SplineSet
  0 654 l 1
  0 402 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: SF050000
@@ -3582,6 +3642,7 @@ SplineSet
  462 570 l 1
  462 1344 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni253D
@@ -3605,6 +3666,7 @@ SplineSet
  462 654 l 1
  462 1344 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni253E
@@ -3628,6 +3690,7 @@ SplineSet
  462 570 l 1
  462 1344 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni253F
@@ -3651,6 +3714,7 @@ SplineSet
  462 654 l 1
  462 1344 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni2540
@@ -3674,6 +3738,7 @@ SplineSet
  378 570 l 1
  378 1344 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni2541
@@ -3697,6 +3762,7 @@ SplineSet
  462 570 l 1
  462 1344 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni2542
@@ -3720,6 +3786,7 @@ SplineSet
  378 570 l 1
  378 1344 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni2543
@@ -3743,6 +3810,7 @@ SplineSet
  378 654 l 1
  378 1344 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni2544
@@ -3766,6 +3834,7 @@ SplineSet
  378 570 l 1
  378 1344 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni2545
@@ -3789,6 +3858,7 @@ SplineSet
  462 654 l 1
  462 1344 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni2546
@@ -3812,6 +3882,7 @@ SplineSet
  462 570 l 1
  462 1344 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni2547
@@ -3835,6 +3906,7 @@ SplineSet
  378 654 l 1
  378 1344 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni2548
@@ -3858,6 +3930,7 @@ SplineSet
  462 654 l 1
  462 1344 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni2549
@@ -3881,6 +3954,7 @@ SplineSet
  378 654 l 1
  378 1344 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni254A
@@ -3904,6 +3978,7 @@ SplineSet
  378 570 l 1
  378 1344 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni254B
@@ -3927,6 +4002,7 @@ SplineSet
  378 654 l 1
  378 1344 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni254C
@@ -3947,6 +4023,7 @@ SplineSet
  882 486 l 1
  630 486 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni254D
@@ -3967,6 +4044,7 @@ SplineSet
  882 402 l 1
  630 402 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni254E
@@ -3987,6 +4065,7 @@ SplineSet
  546 714 l 1
  462 714 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni254F
@@ -4007,6 +4086,7 @@ SplineSet
  630 714 l 1
  378 714 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: SF430000
@@ -4027,6 +4107,7 @@ SplineSet
  1008 696 l 1
  1008 612 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: SF240000
@@ -4047,6 +4128,7 @@ SplineSet
  588 1344 l 1
  672 1344 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: SF510000
@@ -4058,7 +4140,7 @@ Fore
 SplineSet
 1008 570 m 1
  1008 486 l 2
- 672 486 l 1
+ 1008 486 672 486 672 486 c 1
  672 -336 l 1
  588 -336 l 1
  588 486 l 1
@@ -4069,6 +4151,7 @@ SplineSet
  336 551.18043 354.81957 570 378 570 c 0
  1008 570 1008 570 1008 570 c 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: SF520000
@@ -4091,6 +4174,7 @@ SplineSet
  1008 696 l 1
  1008 612 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: SF390000
@@ -4117,6 +4201,7 @@ SplineSet
  420 -336 l 1
  336 -336 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: SF220000
@@ -4139,6 +4224,7 @@ SplineSet
  336 486 l 1
  0 486 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: SF210000
@@ -4161,6 +4247,7 @@ SplineSet
  546 -336 546 -336 546 -336 c 1
  462 -336 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: SF250000
@@ -4187,6 +4274,7 @@ SplineSet
  672 -336 l 1
  588 -336 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: SF500000
@@ -4198,7 +4286,7 @@ Fore
 SplineSet
 1008 570 m 1
  1008 486 l 2
- 378 486 l 2
+ 1008 486 378 486 378 486 c 2
  354.81957 486 336 504.81957 336 528 c 2
  336 1344 l 1
  420 1344 l 1
@@ -4209,6 +4297,7 @@ SplineSet
  672 570 l 1
  1008 570 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: SF490000
@@ -4231,6 +4320,7 @@ SplineSet
  462 1344 462 1344 462 1344 c 1
  546 1344 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: SF380000
@@ -4257,6 +4347,7 @@ SplineSet
  336 1344 l 1
  420 1344 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: SF280000
@@ -4279,6 +4370,7 @@ SplineSet
  672 504.81957 653.18043 486 630 486 c 0
  0 486 0 486 0 486 c 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: SF270000
@@ -4301,6 +4393,7 @@ SplineSet
  0 360 l 1
  0 444 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: SF260000
@@ -4327,6 +4420,7 @@ SplineSet
  588 1344 l 1
  672 1344 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: SF360000
@@ -4350,6 +4444,7 @@ SplineSet
  1008 444 l 1
  1008 360 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: SF370000
@@ -4370,10 +4465,11 @@ SplineSet
  672 570 l 1
  1008 570 l 1
  1008 486 l 2
- 672 486 l 1
+ 1008 486 672 486 672 486 c 1
  672 -336 l 1
  588 -336 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: SF420000
@@ -4405,6 +4501,7 @@ SplineSet
  1008 444 l 1
  1008 360 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: SF190000
@@ -4428,6 +4525,7 @@ SplineSet
  462 1344 l 1
  546 1344 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: SF200000
@@ -4452,6 +4550,7 @@ SplineSet
  672 -336 l 1
  588 -336 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: SF230000
@@ -4483,6 +4582,7 @@ SplineSet
  588 1344 l 1
  672 1344 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: SF470000
@@ -4507,6 +4607,7 @@ SplineSet
  546 -336 l 1
  462 -336 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: SF480000
@@ -4522,7 +4623,7 @@ SplineSet
  0 570 l 1
  1008 570 l 1
  1008 486 l 2
- 672 486 l 1
+ 1008 486 672 486 672 486 c 1
  672 -336 l 1
  588 -336 l 1
  588 486 l 1
@@ -4530,6 +4631,7 @@ SplineSet
  420 -336 l 1
  336 -336 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: SF410000
@@ -4561,6 +4663,7 @@ SplineSet
  1008 444 l 1
  1008 360 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: SF450000
@@ -4585,6 +4688,7 @@ SplineSet
  1008 444 l 1
  1008 360 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: SF460000
@@ -4608,6 +4712,7 @@ SplineSet
  1008 570 l 1
  1008 486 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: SF400000
@@ -4639,6 +4744,7 @@ SplineSet
  588 1344 l 1
  672 1344 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: SF540000
@@ -4670,6 +4776,7 @@ SplineSet
  1008 444 l 1
  1008 360 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: SF530000
@@ -4693,7 +4800,7 @@ SplineSet
  672 570 l 1
  1008 570 l 1
  1008 486 l 2
- 672 486 l 1
+ 1008 486 672 486 672 486 c 1
  672 -336 l 1
  588 -336 l 1
  588 486 l 1
@@ -4701,6 +4808,7 @@ SplineSet
  420 -336 l 1
  336 -336 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: SF440000
@@ -4743,6 +4851,7 @@ SplineSet
  1008 444 l 1
  1008 360 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni256D
@@ -4760,8 +4869,9 @@ SplineSet
  462 440.322022949 592.038095202 570 705.6 570 c 2
  1008 570 l 1
  1008 486 l 2
- 705.6 486 l 2
+ 1008 486 705.6 486 705.6 486 c 2
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni256E
@@ -4777,10 +4887,11 @@ SplineSet
  462 -336 l 1
  462 326.4 l 2
  462 393.11164822 369.384557384 486 302.4 486 c 2
- 0 486 l 2
+ 302.4 486 0 486 0 486 c 2
  0 570 l 1
  302.4 570 l 2
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni256F
@@ -4796,10 +4907,11 @@ SplineSet
  546 1344 l 1
  546 729.6 l 2
  546 616.032824172 416.316756925 486 302.4 486 c 2
- 0 486 l 2
+ 302.4 486 0 486 0 486 c 2
  0 570 l 1
  302.4 570 l 2
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni2570
@@ -4817,8 +4929,9 @@ SplineSet
  546 662.88835178 638.615442616 570 705.6 570 c 2
  1008 570 l 1
  1008 486 l 2
- 705.6 486 l 2
+ 1008 486 705.6 486 705.6 486 c 2
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni2571
@@ -4836,6 +4949,7 @@ SplineSet
  1008 -336 l 1
  959.020297406 -336 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni2572
@@ -4853,6 +4967,7 @@ SplineSet
  0 -254.367162347 l 1
  959.020297463 1344 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni2573
@@ -4880,6 +4995,7 @@ SplineSet
  455.020297406 504 l 1
  0 1262.36716234 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni2574
@@ -4895,6 +5011,7 @@ SplineSet
  504 486 l 1
  0 486 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni2575
@@ -4910,6 +5027,7 @@ SplineSet
  546 528 l 1
  462 528 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni2576
@@ -4925,6 +5043,7 @@ SplineSet
  1008 486 l 1
  504 486 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni2577
@@ -4940,6 +5059,7 @@ SplineSet
  546 -336 l 1
  462 -336 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni2578
@@ -4955,6 +5075,7 @@ SplineSet
  504 402 l 1
  0 402 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni2579
@@ -4970,6 +5091,7 @@ SplineSet
  630 528 l 1
  378 528 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni257A
@@ -4985,6 +5107,7 @@ SplineSet
  1008 402 l 1
  504 402 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni257B
@@ -5000,6 +5123,7 @@ SplineSet
  630 -336 l 1
  378 -336 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni257C
@@ -5019,6 +5143,7 @@ SplineSet
  504 486 l 1
  0 486 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni257D
@@ -5038,6 +5163,7 @@ SplineSet
  630 -336 l 1
  378 -336 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni257E
@@ -5057,6 +5183,7 @@ SplineSet
  504 402 l 1
  0 402 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni257F
@@ -5076,6 +5203,7 @@ SplineSet
  462 528 l 1
  378 528 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: upblock
@@ -5091,6 +5219,7 @@ SplineSet
  1008 1344 l 1
  0 1344 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni2581
@@ -5106,6 +5235,7 @@ SplineSet
  1008 -336 l 1
  0 -336 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni2582
@@ -5121,6 +5251,7 @@ SplineSet
  1008 -336 l 1
  0 -336 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni2583
@@ -5136,6 +5267,7 @@ SplineSet
  1008 -336 l 1
  0 -336 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: dnblock
@@ -5151,6 +5283,7 @@ SplineSet
  1008 -336 l 1
  0 -336 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni2585
@@ -5166,6 +5299,7 @@ SplineSet
  1008 -336 l 1
  0 -336 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni2586
@@ -5181,6 +5315,7 @@ SplineSet
  1008 -336 l 1
  0 -336 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni2587
@@ -5196,6 +5331,7 @@ SplineSet
  1008 -336 l 1
  0 -336 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: block
@@ -5211,6 +5347,7 @@ SplineSet
  1008 -336 l 1
  0 -336 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni2589
@@ -5226,6 +5363,7 @@ SplineSet
  882 -336 l 1
  0 -336 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni258A
@@ -5241,6 +5379,7 @@ SplineSet
  756 -336 l 1
  0 -336 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni258B
@@ -5256,6 +5395,7 @@ SplineSet
  630 -336 l 1
  0 -336 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: lfblock
@@ -5271,6 +5411,7 @@ SplineSet
  504 -336 l 1
  0 -336 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni258D
@@ -5286,6 +5427,7 @@ SplineSet
  378 -336 l 1
  0 -336 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni258E
@@ -5301,6 +5443,7 @@ SplineSet
  252 -336 l 1
  0 -336 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni258F
@@ -5316,6 +5459,7 @@ SplineSet
  126 -336 l 1
  0 -336 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: rtblock
@@ -5331,6 +5475,7 @@ SplineSet
  504 -336 l 1
  0 -336 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: ltshade
@@ -5641,6 +5786,7 @@ SplineSet
  966 1260 l 1
  882 1260 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: shade
@@ -6177,6 +6323,7 @@ SplineSet
  1008 1260 l 1
  924 1260 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: dkshade
@@ -6486,6 +6633,7 @@ SplineSet
  798 -336 l 1
  1008 -336 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni2594
@@ -6501,6 +6649,7 @@ SplineSet
  1008 1344 l 1
  0 1344 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni2595
@@ -6516,6 +6665,7 @@ SplineSet
  1008 1344 l 1
  882 1344 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni2596
@@ -6531,6 +6681,7 @@ SplineSet
  504 -336 l 1
  0 -336 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni2597
@@ -6546,6 +6697,7 @@ SplineSet
  1008 -336 l 1
  504 -336 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni2598
@@ -6561,6 +6713,7 @@ SplineSet
  504 1344 l 1
  0 1344 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni2599
@@ -6578,6 +6731,7 @@ SplineSet
  1008 -336 l 1
  0 -336 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni259A
@@ -6598,6 +6752,7 @@ SplineSet
  504 -336 l 1
  504 504 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni259B
@@ -6615,6 +6770,7 @@ SplineSet
  1008 1344 l 1
  0 1344 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni259C
@@ -6632,6 +6788,7 @@ SplineSet
  0 1344 l 1
  1008 1344 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni259D
@@ -6647,6 +6804,7 @@ SplineSet
  1008 1344 l 1
  504 1344 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni259E
@@ -6667,6 +6825,7 @@ SplineSet
  504 1344 l 1
  504 504 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: uni259F
@@ -6684,6 +6843,7 @@ SplineSet
  0 -336 l 1
  1008 -336 l 1
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontboxdraw+ACIACgAA}"
 EndChar
 
 StartChar: dieresis
@@ -7264,6 +7424,7 @@ Encoding: 10240 10240 318
 Width: 1008
 Flags: W
 LayerCount: 2
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2801
@@ -7279,6 +7440,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2802
@@ -7294,6 +7456,7 @@ SplineSet
  263 590 218 635 218 690 c 0
  218 745 263 790 318 790 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2803
@@ -7314,6 +7477,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2804
@@ -7329,6 +7493,7 @@ SplineSet
  263 218 218 263 218 318 c 0
  218 373 263 418 318 418 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2805
@@ -7349,6 +7514,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2806
@@ -7369,6 +7535,7 @@ SplineSet
  263 590 218 635 218 690 c 0
  218 745 263 790 318 790 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2807
@@ -7394,6 +7561,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2808
@@ -7409,6 +7577,7 @@ SplineSet
  635 962 590 1007 590 1062 c 0
  590 1117 635 1162 690 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2809
@@ -7429,6 +7598,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni280A
@@ -7449,6 +7619,7 @@ SplineSet
  263 590 218 635 218 690 c 0
  218 745 263 790 318 790 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni280B
@@ -7474,6 +7645,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni280C
@@ -7494,6 +7666,7 @@ SplineSet
  263 218 218 263 218 318 c 0
  218 373 263 418 318 418 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni280D
@@ -7519,6 +7692,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni280E
@@ -7544,6 +7718,7 @@ SplineSet
  263 590 218 635 218 690 c 0
  218 745 263 790 318 790 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni280F
@@ -7574,6 +7749,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2810
@@ -7589,6 +7765,7 @@ SplineSet
  635 590 590 635 590 690 c 0
  590 745 635 790 690 790 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2811
@@ -7609,6 +7786,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2812
@@ -7629,6 +7807,7 @@ SplineSet
  263 590 218 635 218 690 c 0
  218 745 263 790 318 790 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2813
@@ -7654,6 +7833,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2814
@@ -7674,6 +7854,7 @@ SplineSet
  263 218 218 263 218 318 c 0
  218 373 263 418 318 418 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2815
@@ -7699,6 +7880,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2816
@@ -7724,6 +7906,7 @@ SplineSet
  263 590 218 635 218 690 c 0
  218 745 263 790 318 790 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2817
@@ -7754,6 +7937,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2818
@@ -7774,6 +7958,7 @@ SplineSet
  635 962 590 1007 590 1062 c 0
  590 1117 635 1162 690 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2819
@@ -7799,6 +7984,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni281A
@@ -7824,6 +8010,7 @@ SplineSet
  263 590 218 635 218 690 c 0
  218 745 263 790 318 790 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni281B
@@ -7854,6 +8041,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni281C
@@ -7879,6 +8067,7 @@ SplineSet
  263 218 218 263 218 318 c 0
  218 373 263 418 318 418 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni281D
@@ -7909,6 +8098,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni281E
@@ -7939,6 +8129,7 @@ SplineSet
  263 590 218 635 218 690 c 0
  218 745 263 790 318 790 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni281F
@@ -7974,6 +8165,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2820
@@ -7989,6 +8181,7 @@ SplineSet
  635 218 590 263 590 318 c 0
  590 373 635 418 690 418 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2821
@@ -8009,6 +8202,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2822
@@ -8029,6 +8223,7 @@ SplineSet
  263 590 218 635 218 690 c 0
  218 745 263 790 318 790 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2823
@@ -8054,6 +8249,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2824
@@ -8074,6 +8270,7 @@ SplineSet
  263 218 218 263 218 318 c 0
  218 373 263 418 318 418 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2825
@@ -8099,6 +8296,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2826
@@ -8124,6 +8322,7 @@ SplineSet
  263 590 218 635 218 690 c 0
  218 745 263 790 318 790 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2827
@@ -8154,6 +8353,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2828
@@ -8174,6 +8374,7 @@ SplineSet
  635 962 590 1007 590 1062 c 0
  590 1117 635 1162 690 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2829
@@ -8199,6 +8400,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni282A
@@ -8224,6 +8426,7 @@ SplineSet
  263 590 218 635 218 690 c 0
  218 745 263 790 318 790 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni282B
@@ -8254,6 +8457,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni282C
@@ -8279,6 +8483,7 @@ SplineSet
  263 218 218 263 218 318 c 0
  218 373 263 418 318 418 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni282D
@@ -8309,6 +8514,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni282E
@@ -8339,6 +8545,7 @@ SplineSet
  263 590 218 635 218 690 c 0
  218 745 263 790 318 790 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni282F
@@ -8374,6 +8581,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2830
@@ -8394,6 +8602,7 @@ SplineSet
  635 590 590 635 590 690 c 0
  590 745 635 790 690 790 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2831
@@ -8419,6 +8628,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2832
@@ -8444,6 +8654,7 @@ SplineSet
  263 590 218 635 218 690 c 0
  218 745 263 790 318 790 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2833
@@ -8474,6 +8685,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2834
@@ -8499,6 +8711,7 @@ SplineSet
  263 218 218 263 218 318 c 0
  218 373 263 418 318 418 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2835
@@ -8529,6 +8742,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2836
@@ -8559,6 +8773,7 @@ SplineSet
  263 590 218 635 218 690 c 0
  218 745 263 790 318 790 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2837
@@ -8594,6 +8809,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2838
@@ -8619,6 +8835,7 @@ SplineSet
  635 962 590 1007 590 1062 c 0
  590 1117 635 1162 690 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2839
@@ -8649,6 +8866,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni283A
@@ -8679,6 +8897,7 @@ SplineSet
  263 590 218 635 218 690 c 0
  218 745 263 790 318 790 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni283B
@@ -8714,6 +8933,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni283C
@@ -8744,6 +8964,7 @@ SplineSet
  263 218 218 263 218 318 c 0
  218 373 263 418 318 418 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni283D
@@ -8779,6 +9000,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni283E
@@ -8814,6 +9036,7 @@ SplineSet
  263 590 218 635 218 690 c 0
  218 745 263 790 318 790 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni283F
@@ -8854,6 +9077,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2840
@@ -8869,6 +9093,7 @@ SplineSet
  263 -154 218 -109 218 -54 c 0
  218 1 263 46 318 46 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2841
@@ -8889,6 +9114,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2842
@@ -8909,6 +9135,7 @@ SplineSet
  263 590 218 635 218 690 c 0
  218 745 263 790 318 790 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2843
@@ -8934,6 +9161,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2844
@@ -8954,6 +9182,7 @@ SplineSet
  263 218 218 263 218 318 c 0
  218 373 263 418 318 418 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2845
@@ -8979,6 +9208,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2846
@@ -9004,6 +9234,7 @@ SplineSet
  263 590 218 635 218 690 c 0
  218 745 263 790 318 790 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2847
@@ -9034,6 +9265,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2848
@@ -9054,6 +9286,7 @@ SplineSet
  635 962 590 1007 590 1062 c 0
  590 1117 635 1162 690 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2849
@@ -9079,6 +9312,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni284A
@@ -9104,6 +9338,7 @@ SplineSet
  263 590 218 635 218 690 c 0
  218 745 263 790 318 790 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni284B
@@ -9134,6 +9369,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni284C
@@ -9159,6 +9395,7 @@ SplineSet
  263 218 218 263 218 318 c 0
  218 373 263 418 318 418 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni284D
@@ -9189,6 +9426,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni284E
@@ -9219,6 +9457,7 @@ SplineSet
  263 590 218 635 218 690 c 0
  218 745 263 790 318 790 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni284F
@@ -9254,6 +9493,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2850
@@ -9274,6 +9514,7 @@ SplineSet
  635 590 590 635 590 690 c 0
  590 745 635 790 690 790 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2851
@@ -9299,6 +9540,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2852
@@ -9324,6 +9566,7 @@ SplineSet
  263 590 218 635 218 690 c 0
  218 745 263 790 318 790 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2853
@@ -9354,6 +9597,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2854
@@ -9379,6 +9623,7 @@ SplineSet
  263 218 218 263 218 318 c 0
  218 373 263 418 318 418 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2855
@@ -9409,6 +9654,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2856
@@ -9439,6 +9685,7 @@ SplineSet
  263 590 218 635 218 690 c 0
  218 745 263 790 318 790 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2857
@@ -9474,6 +9721,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2858
@@ -9499,6 +9747,7 @@ SplineSet
  635 962 590 1007 590 1062 c 0
  590 1117 635 1162 690 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2859
@@ -9529,6 +9778,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni285A
@@ -9559,6 +9809,7 @@ SplineSet
  263 590 218 635 218 690 c 0
  218 745 263 790 318 790 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni285B
@@ -9594,6 +9845,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni285C
@@ -9624,6 +9876,7 @@ SplineSet
  263 218 218 263 218 318 c 0
  218 373 263 418 318 418 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni285D
@@ -9659,6 +9912,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni285E
@@ -9694,6 +9948,7 @@ SplineSet
  263 590 218 635 218 690 c 0
  218 745 263 790 318 790 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni285F
@@ -9734,6 +9989,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2860
@@ -9754,6 +10010,7 @@ SplineSet
  635 218 590 263 590 318 c 0
  590 373 635 418 690 418 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2861
@@ -9779,6 +10036,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2862
@@ -9804,6 +10062,7 @@ SplineSet
  263 590 218 635 218 690 c 0
  218 745 263 790 318 790 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2863
@@ -9834,6 +10093,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2864
@@ -9859,6 +10119,7 @@ SplineSet
  263 218 218 263 218 318 c 0
  218 373 263 418 318 418 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2865
@@ -9889,6 +10150,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2866
@@ -9919,6 +10181,7 @@ SplineSet
  263 590 218 635 218 690 c 0
  218 745 263 790 318 790 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2867
@@ -9954,6 +10217,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2868
@@ -9979,6 +10243,7 @@ SplineSet
  635 962 590 1007 590 1062 c 0
  590 1117 635 1162 690 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2869
@@ -10009,6 +10274,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni286A
@@ -10039,6 +10305,7 @@ SplineSet
  263 590 218 635 218 690 c 0
  218 745 263 790 318 790 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni286B
@@ -10074,6 +10341,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni286C
@@ -10104,6 +10372,7 @@ SplineSet
  263 218 218 263 218 318 c 0
  218 373 263 418 318 418 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni286D
@@ -10139,6 +10408,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni286E
@@ -10174,6 +10444,7 @@ SplineSet
  263 590 218 635 218 690 c 0
  218 745 263 790 318 790 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni286F
@@ -10214,6 +10485,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2870
@@ -10239,6 +10511,7 @@ SplineSet
  635 590 590 635 590 690 c 0
  590 745 635 790 690 790 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2871
@@ -10269,6 +10542,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2872
@@ -10299,6 +10573,7 @@ SplineSet
  263 590 218 635 218 690 c 0
  218 745 263 790 318 790 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2873
@@ -10334,6 +10609,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2874
@@ -10364,6 +10640,7 @@ SplineSet
  263 218 218 263 218 318 c 0
  218 373 263 418 318 418 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2875
@@ -10399,6 +10676,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2876
@@ -10434,6 +10712,7 @@ SplineSet
  263 590 218 635 218 690 c 0
  218 745 263 790 318 790 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2877
@@ -10474,6 +10753,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2878
@@ -10504,6 +10784,7 @@ SplineSet
  635 962 590 1007 590 1062 c 0
  590 1117 635 1162 690 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2879
@@ -10539,6 +10820,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni287A
@@ -10574,6 +10856,7 @@ SplineSet
  263 590 218 635 218 690 c 0
  218 745 263 790 318 790 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni287B
@@ -10614,6 +10897,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni287C
@@ -10649,6 +10933,7 @@ SplineSet
  263 218 218 263 218 318 c 0
  218 373 263 418 318 418 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni287D
@@ -10689,6 +10974,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni287E
@@ -10729,6 +11015,7 @@ SplineSet
  263 590 218 635 218 690 c 0
  218 745 263 790 318 790 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni287F
@@ -10774,6 +11061,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2880
@@ -10789,6 +11077,7 @@ SplineSet
  635 -154 590 -109 590 -54 c 0
  590 1 635 46 690 46 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2881
@@ -10809,6 +11098,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2882
@@ -10829,6 +11119,7 @@ SplineSet
  263 590 218 635 218 690 c 0
  218 745 263 790 318 790 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2883
@@ -10854,6 +11145,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2884
@@ -10874,6 +11166,7 @@ SplineSet
  263 218 218 263 218 318 c 0
  218 373 263 418 318 418 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2885
@@ -10899,6 +11192,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2886
@@ -10924,6 +11218,7 @@ SplineSet
  263 590 218 635 218 690 c 0
  218 745 263 790 318 790 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2887
@@ -10954,6 +11249,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2888
@@ -10974,6 +11270,7 @@ SplineSet
  635 962 590 1007 590 1062 c 0
  590 1117 635 1162 690 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2889
@@ -10999,6 +11296,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni288A
@@ -11024,6 +11322,7 @@ SplineSet
  263 590 218 635 218 690 c 0
  218 745 263 790 318 790 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni288B
@@ -11054,6 +11353,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni288C
@@ -11079,6 +11379,7 @@ SplineSet
  263 218 218 263 218 318 c 0
  218 373 263 418 318 418 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni288D
@@ -11109,6 +11410,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni288E
@@ -11139,6 +11441,7 @@ SplineSet
  263 590 218 635 218 690 c 0
  218 745 263 790 318 790 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni288F
@@ -11174,6 +11477,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2890
@@ -11194,6 +11498,7 @@ SplineSet
  635 590 590 635 590 690 c 0
  590 745 635 790 690 790 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2891
@@ -11219,6 +11524,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2892
@@ -11244,6 +11550,7 @@ SplineSet
  263 590 218 635 218 690 c 0
  218 745 263 790 318 790 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2893
@@ -11274,6 +11581,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2894
@@ -11299,6 +11607,7 @@ SplineSet
  263 218 218 263 218 318 c 0
  218 373 263 418 318 418 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2895
@@ -11329,6 +11638,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2896
@@ -11359,6 +11669,7 @@ SplineSet
  263 590 218 635 218 690 c 0
  218 745 263 790 318 790 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2897
@@ -11394,6 +11705,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2898
@@ -11419,6 +11731,7 @@ SplineSet
  635 962 590 1007 590 1062 c 0
  590 1117 635 1162 690 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni2899
@@ -11449,6 +11762,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni289A
@@ -11479,6 +11793,7 @@ SplineSet
  263 590 218 635 218 690 c 0
  218 745 263 790 318 790 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni289B
@@ -11514,6 +11829,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni289C
@@ -11544,6 +11860,7 @@ SplineSet
  263 218 218 263 218 318 c 0
  218 373 263 418 318 418 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni289D
@@ -11579,6 +11896,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni289E
@@ -11614,6 +11932,7 @@ SplineSet
  263 590 218 635 218 690 c 0
  218 745 263 790 318 790 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni289F
@@ -11654,6 +11973,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28A0
@@ -11674,6 +11994,7 @@ SplineSet
  635 218 590 263 590 318 c 0
  590 373 635 418 690 418 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28A1
@@ -11699,6 +12020,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28A2
@@ -11724,6 +12046,7 @@ SplineSet
  263 590 218 635 218 690 c 0
  218 745 263 790 318 790 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28A3
@@ -11754,6 +12077,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28A4
@@ -11779,6 +12103,7 @@ SplineSet
  263 218 218 263 218 318 c 0
  218 373 263 418 318 418 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28A5
@@ -11809,6 +12134,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28A6
@@ -11839,6 +12165,7 @@ SplineSet
  263 590 218 635 218 690 c 0
  218 745 263 790 318 790 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28A7
@@ -11874,6 +12201,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28A8
@@ -11899,6 +12227,7 @@ SplineSet
  635 962 590 1007 590 1062 c 0
  590 1117 635 1162 690 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28A9
@@ -11929,6 +12258,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28AA
@@ -11959,6 +12289,7 @@ SplineSet
  263 590 218 635 218 690 c 0
  218 745 263 790 318 790 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28AB
@@ -11994,6 +12325,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28AC
@@ -12024,6 +12356,7 @@ SplineSet
  263 218 218 263 218 318 c 0
  218 373 263 418 318 418 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28AD
@@ -12059,6 +12392,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28AE
@@ -12094,6 +12428,7 @@ SplineSet
  263 590 218 635 218 690 c 0
  218 745 263 790 318 790 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28AF
@@ -12134,6 +12469,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28B0
@@ -12159,6 +12495,7 @@ SplineSet
  635 590 590 635 590 690 c 0
  590 745 635 790 690 790 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28B1
@@ -12189,6 +12526,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28B2
@@ -12219,6 +12557,7 @@ SplineSet
  263 590 218 635 218 690 c 0
  218 745 263 790 318 790 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28B3
@@ -12254,6 +12593,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28B4
@@ -12284,6 +12624,7 @@ SplineSet
  263 218 218 263 218 318 c 0
  218 373 263 418 318 418 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28B5
@@ -12319,6 +12660,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28B6
@@ -12354,6 +12696,7 @@ SplineSet
  263 590 218 635 218 690 c 0
  218 745 263 790 318 790 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28B7
@@ -12394,6 +12737,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28B8
@@ -12424,6 +12768,7 @@ SplineSet
  635 962 590 1007 590 1062 c 0
  590 1117 635 1162 690 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28B9
@@ -12459,6 +12804,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28BA
@@ -12494,6 +12840,7 @@ SplineSet
  263 590 218 635 218 690 c 0
  218 745 263 790 318 790 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28BB
@@ -12534,6 +12881,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28BC
@@ -12569,6 +12917,7 @@ SplineSet
  263 218 218 263 218 318 c 0
  218 373 263 418 318 418 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28BD
@@ -12609,6 +12958,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28BE
@@ -12649,6 +12999,7 @@ SplineSet
  263 590 218 635 218 690 c 0
  218 745 263 790 318 790 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28BF
@@ -12694,6 +13045,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28C0
@@ -12714,6 +13066,7 @@ SplineSet
  263 -154 218 -109 218 -54 c 0
  218 1 263 46 318 46 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28C1
@@ -12739,6 +13092,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28C2
@@ -12764,6 +13118,7 @@ SplineSet
  263 590 218 635 218 690 c 0
  218 745 263 790 318 790 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28C3
@@ -12794,6 +13149,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28C4
@@ -12819,6 +13175,7 @@ SplineSet
  263 218 218 263 218 318 c 0
  218 373 263 418 318 418 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28C5
@@ -12849,6 +13206,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28C6
@@ -12879,6 +13237,7 @@ SplineSet
  263 590 218 635 218 690 c 0
  218 745 263 790 318 790 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28C7
@@ -12914,6 +13273,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28C8
@@ -12939,6 +13299,7 @@ SplineSet
  635 962 590 1007 590 1062 c 0
  590 1117 635 1162 690 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28C9
@@ -12969,6 +13330,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28CA
@@ -12999,6 +13361,7 @@ SplineSet
  263 590 218 635 218 690 c 0
  218 745 263 790 318 790 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28CB
@@ -13034,6 +13397,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28CC
@@ -13064,6 +13428,7 @@ SplineSet
  263 218 218 263 218 318 c 0
  218 373 263 418 318 418 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28CD
@@ -13099,6 +13464,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28CE
@@ -13134,6 +13500,7 @@ SplineSet
  263 590 218 635 218 690 c 0
  218 745 263 790 318 790 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28CF
@@ -13174,6 +13541,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28D0
@@ -13199,6 +13567,7 @@ SplineSet
  635 590 590 635 590 690 c 0
  590 745 635 790 690 790 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28D1
@@ -13229,6 +13598,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28D2
@@ -13259,6 +13629,7 @@ SplineSet
  263 590 218 635 218 690 c 0
  218 745 263 790 318 790 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28D3
@@ -13294,6 +13665,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28D4
@@ -13324,6 +13696,7 @@ SplineSet
  263 218 218 263 218 318 c 0
  218 373 263 418 318 418 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28D5
@@ -13359,6 +13732,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28D6
@@ -13394,6 +13768,7 @@ SplineSet
  263 590 218 635 218 690 c 0
  218 745 263 790 318 790 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28D7
@@ -13434,6 +13809,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28D8
@@ -13464,6 +13840,7 @@ SplineSet
  635 962 590 1007 590 1062 c 0
  590 1117 635 1162 690 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28D9
@@ -13499,6 +13876,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28DA
@@ -13534,6 +13912,7 @@ SplineSet
  263 590 218 635 218 690 c 0
  218 745 263 790 318 790 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28DB
@@ -13574,6 +13953,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28DC
@@ -13609,6 +13989,7 @@ SplineSet
  263 218 218 263 218 318 c 0
  218 373 263 418 318 418 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28DD
@@ -13649,6 +14030,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28DE
@@ -13689,6 +14071,7 @@ SplineSet
  263 590 218 635 218 690 c 0
  218 745 263 790 318 790 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28DF
@@ -13734,6 +14117,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28E0
@@ -13759,6 +14143,7 @@ SplineSet
  635 218 590 263 590 318 c 0
  590 373 635 418 690 418 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28E1
@@ -13789,6 +14174,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28E2
@@ -13819,6 +14205,7 @@ SplineSet
  263 590 218 635 218 690 c 0
  218 745 263 790 318 790 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28E3
@@ -13854,6 +14241,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28E4
@@ -13884,6 +14272,7 @@ SplineSet
  263 218 218 263 218 318 c 0
  218 373 263 418 318 418 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28E5
@@ -13919,6 +14308,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28E6
@@ -13954,6 +14344,7 @@ SplineSet
  263 590 218 635 218 690 c 0
  218 745 263 790 318 790 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28E7
@@ -13994,6 +14385,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28E8
@@ -14024,6 +14416,7 @@ SplineSet
  635 962 590 1007 590 1062 c 0
  590 1117 635 1162 690 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28E9
@@ -14059,6 +14452,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28EA
@@ -14094,6 +14488,7 @@ SplineSet
  263 590 218 635 218 690 c 0
  218 745 263 790 318 790 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28EB
@@ -14134,6 +14529,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28EC
@@ -14169,6 +14565,7 @@ SplineSet
  263 218 218 263 218 318 c 0
  218 373 263 418 318 418 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28ED
@@ -14209,6 +14606,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28EE
@@ -14249,6 +14647,7 @@ SplineSet
  263 590 218 635 218 690 c 0
  218 745 263 790 318 790 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28EF
@@ -14294,6 +14693,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28F0
@@ -14324,6 +14724,7 @@ SplineSet
  635 590 590 635 590 690 c 0
  590 745 635 790 690 790 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28F1
@@ -14359,6 +14760,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28F2
@@ -14394,6 +14796,7 @@ SplineSet
  263 590 218 635 218 690 c 0
  218 745 263 790 318 790 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28F3
@@ -14434,6 +14837,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28F4
@@ -14469,6 +14873,7 @@ SplineSet
  263 218 218 263 218 318 c 0
  218 373 263 418 318 418 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28F5
@@ -14509,6 +14914,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28F6
@@ -14549,6 +14955,7 @@ SplineSet
  263 590 218 635 218 690 c 0
  218 745 263 790 318 790 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28F7
@@ -14594,6 +15001,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28F8
@@ -14629,6 +15037,7 @@ SplineSet
  635 962 590 1007 590 1062 c 0
  590 1117 635 1162 690 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28F9
@@ -14669,6 +15078,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28FA
@@ -14709,6 +15119,7 @@ SplineSet
  263 590 218 635 218 690 c 0
  218 745 263 790 318 790 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28FB
@@ -14754,6 +15165,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28FC
@@ -14794,6 +15206,7 @@ SplineSet
  263 218 218 263 218 318 c 0
  218 373 263 418 318 418 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28FD
@@ -14839,6 +15252,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28FE
@@ -14884,6 +15298,7 @@ SplineSet
  263 590 218 635 218 690 c 0
  218 745 263 790 318 790 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: uni28FF
@@ -14934,6 +15349,7 @@ SplineSet
  263 962 218 1007 218 1062 c 0
  218 1117 263 1162 318 1162 c 0
 EndSplineSet
+Comment: "{+AAoA    +ACIA__space__+ACIA: +ACIA-com.webonastick.fontcomment+ACIA,+AAoA    +ACIA-generator+ACIA: +ACIA-fontbraille+ACIACgAA}"
 EndChar
 
 StartChar: exclam
