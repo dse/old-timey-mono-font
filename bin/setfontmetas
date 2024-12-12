@@ -76,6 +76,7 @@ def main():
     if not changed:
         raise Exception("Font not changed")
     if args.dry_run:
+        print("DRY RUN: not changing")
         return
     if (os.path.splitext(args.filename))[1] == '.sfd':
         font.save(args.filename)
