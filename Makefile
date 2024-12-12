@@ -96,248 +96,67 @@ braille: FORCE
 boxdraw: FORCE
 	fontboxdraw -f $(FONT_SRC)
 
-$(FONT_TTF): $(FONT_SRC) $(FONTTOOL_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
-	$(FONTTOOL_SCRIPT) $(FONTTOOL__REGULAR) $< -o $@ `find src/chars -type f -name '*.svg'`
-	$(SETFONTMETAS_SCRIPT) \
-		--family-name "Repro Typewr" \
-		--full-name   "Repro Typewr" \
-		--ps-name     "ReproTypewr" \
-		--ps-weight   "Medium" \
-		--os2-weight  400 \
-		--panose      2,0,5,9,3,0,-,-,-,3 \
+src/build/ReproTypewr.stage1.sfd: src/ReproTypewr.sfd Makefile bin/importsvg
+	mkdir -p src/build
+	bin/importsvg "$<" -o "$@" src/chars/*.svg
+	bin/setfontmetas -v \
+		--family-name 'Repro Typewr' \
+		--full-name 'Repro Typewr' \
+		--ps-name 'ReproTypewr' \
+		--ps-weight 'Medium' \
+		--os2-weight 400 \
+		--panose=2,0,5,9,3,0,-,-,-,3 \
 		"$@"
-	$(FONTUNHINT_SCRIPT) "$@"
-
-$(SEMI_LIGHT_FONT_TTF): $(FONT_SRC) $(FONTTOOL_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
-	$(FONTTOOL_SCRIPT) $(FONTTOOL__SEMI_LIGHT) $< -o $@ `find src/chars -type f -name '*.svg'`
-	$(SETFONTMETAS_SCRIPT) \
-		--family-name "Repro Typewr" \
-		--full-name   "Repro Typewr Semi-Light" \
-		--ps-name     "ReproTypewr-SemiLight" \
-		--ps-weight   "Semi-Light" \
-		--os2-weight  350 \
-		--panose      2,0,4,9,3,0,-,-,-,3 \
+src/build/ReproTypewr.stage2.sfd: src/build/ReproTypewr.stage1.sfd Makefile bin/fontunref
+	mkdir -p src/build
+	bin/fontunref "$<" -o "$@"
+src/build/ReproTypewrPica.stage2.sfd: src/build/ReproTypewr.stage2.sfd Makefile bin/fontaspect
+	mkdir -p src/build
+	bin/fontaspect --aspect 0.833333333333 "$<" -o "$@"
+	bin/setfontmetas -v \
+		--family-name 's/Repro Typewr/Repro Typewr Pica/' \
+		--full-name 's/Repro Typewr/Repro Typewr Pica/' \
+		--ps-name 's/ReproTypewr/ReproTypewrPica/' \
 		"$@"
-	$(FONTUNHINT_SCRIPT) "$@"
-
-$(LIGHT_FONT_TTF): $(FONT_SRC) $(FONTTOOL_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
-	$(FONTTOOL_SCRIPT) $(FONTTOOL__LIGHT) $< -o $@ `find src/chars -type f -name '*.svg'`
-	$(SETFONTMETAS_SCRIPT) \
-		--family-name "Repro Typewr" \
-		--full-name   "Repro Typewr Light" \
-		--ps-name     "ReproTypewr-Light" \
-		--ps-weight   "Light" \
-		--os2-weight  300 \
-		--panose      2,0,3,9,3,0,-,-,-,3 \
+src/build/ReproTypewr17Pitch.stage2.sfd: src/build/ReproTypewr.stage2.sfd Makefile bin/fontaspect
+	mkdir -p src/build
+	bin/fontaspect --aspect 0.606060606060 "$<" -o "$@"
+	bin/setfontmetas -v \
+		--family-name 's/Repro Typewr/Repro Typewr 17 Pitch/' \
+		--full-name 's/Repro Typewr/Repro Typewr 17 Pitch/' \
+		--ps-name 's/ReproTypewr/ReproTypewr17Pitch/' \
 		"$@"
-	$(FONTUNHINT_SCRIPT) "$@"
-
-$(CODING_FONT_TTF): $(FONT_SRC) $(FONTTOOL_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
-	$(FONTTOOL_SCRIPT) $(FONTTOOL__REGULAR) $< -o $@ `find src/chars -type f -name '*.svg'`
-	mv "$@" "$@.tmp.ttf"	# tmp file required for featfreeze to work
-	pyftfeatfreeze -f code -S -U Code "$@.tmp.ttf" "$@"
-	rm "$@.tmp.ttf"
-	$(SETFONTMETAS_SCRIPT) \
-		--family-name "Repro Typewr Code" \
-		--full-name   "Repro Typewr Code" \
-		--ps-name     "ReproTypewrCode" \
-		--ps-weight   "Medium" \
-		--os2-weight  400 \
-		--panose      2,0,5,9,3,0,-,-,-,3 \
+dist/ttf/%.ttf: src/build/%.stage2.sfd Makefile bin/expandstrokes
+	bin/expandstrokes -x 96 "$<" -o "$@"
+	bin/setfontmetas -v \
+		--ps-weight "Medium" \
+		--os2-weight 400 \
 		"$@"
-	$(FONTUNHINT_SCRIPT) "$@"
-
-$(SEMI_LIGHT_CODING_FONT_TTF): $(FONT_SRC) $(FONTTOOL_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
-	$(FONTTOOL_SCRIPT) $(FONTTOOL__SEMI_LIGHT) $< -o $@ `find src/chars -type f -name '*.svg'`
-	mv "$@" "$@.tmp.ttf"	# tmp file required for featfreeze to work
-	pyftfeatfreeze -f code -S -U Code "$@.tmp.ttf" "$@"
-	rm "$@.tmp.ttf"
-	$(SETFONTMETAS_SCRIPT) \
-		--family-name "Repro Typewr Code" \
-		--full-name   "Repro Typewr Code Semi-Light" \
-		--ps-name     "ReproTypewrCode-SemiLight" \
-		--ps-weight   "Semi-Light" \
-		--os2-weight  350 \
-		--panose      2,0,4,9,3,0,-,-,-,3 \
+dist/ttf/%-SemiLight.ttf: src/build/%.stage2.sfd Makefile bin/expandstrokes
+	bin/expandstrokes -x 72 "$<" -o "$@"
+	bin/setfontmetas -v \
+		--full-name '+ Semi-Light' \
+		--ps-name '+-SemiLight' \
+		--ps-weight "Semi-Light" \
+		--os2-weight 350 \
+		--panose=-,-,4,-,-,-,-,-,-,- \
 		"$@"
-	$(FONTUNHINT_SCRIPT) "$@"
-
-$(LIGHT_CODING_FONT_TTF): $(FONT_SRC) $(FONTTOOL_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
-	$(FONTTOOL_SCRIPT) $(FONTTOOL__LIGHT) $< -o $@ `find src/chars -type f -name '*.svg'`
-	mv "$@" "$@.tmp.ttf"	# tmp file required for featfreeze to work
-	pyftfeatfreeze -f code -S -U Code "$@.tmp.ttf" "$@"
-	rm "$@.tmp.ttf"
-	$(SETFONTMETAS_SCRIPT) \
-		--family-name "Repro Typewr Code" \
-		--full-name   "Repro Typewr Code Light" \
-		--ps-name     "ReproTypewrCode-Light" \
-		--ps-weight   "Light" \
-		--os2-weight  300 \
-		--panose      2,0,3,9,3,0,-,-,-,3 \
+dist/ttf/%-Light.ttf: src/build/%.stage2.sfd Makefile bin/expandstrokes
+	bin/expandstrokes -x 48 "$<" -o "$@"
+	bin/setfontmetas -v \
+		--full-name '+ Light' \
+		--ps-name '+-Light' \
+		--ps-weight "Light" \
+		--os2-weight 300 \
+		--panose=-,-,3,-,-,-,-,-,-,- \
 		"$@"
-	$(FONTUNHINT_SCRIPT) "$@"
-
-$(FONT_NARROW_TTF): $(FONT_SRC) $(FONTTOOL_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
-	$(FONTTOOL_SCRIPT) $(FONTTOOL__REGULAR) $(FONTTOOL__NARROW) $< -o $@ `find src/chars -type f -name '*.svg'`
-	$(SETFONTMETAS_SCRIPT) \
-		--family-name "Repro Typewr 17 Pitch" \
-		--full-name   "Repro Typewr 17 Pitch" \
-		--ps-name     "ReproTypewr17Pitch" \
-		--ps-weight   "Medium" \
-		--os2-weight  400 \
-		--panose      2,0,5,9,3,0,-,-,-,3 \
+dist/ttf/ReproTypewrCode%ttf: dist/ttf/ReproTypewr%ttf Makefile
+	pyftfeatfreeze -f code "$<" "$@" # -U "" because we do that later
+	bin/setfontmetas -v \
+		--family-name 's/Repro Typewr/Repro Typewr Code/' \
+		--full-name   's/Repro Typewr/Repro Typewr Code/' \
+		--ps-name     's/ReproTypewr/ReproTypewrCode/' \
 		"$@"
-	$(FONTUNHINT_SCRIPT) "$@"
-
-$(SEMI_LIGHT_FONT_NARROW_TTF): $(FONT_SRC) $(FONTTOOL_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
-	$(FONTTOOL_SCRIPT) $(FONTTOOL__SEMI_LIGHT) $(FONTTOOL__NARROW) $< -o $@ `find src/chars -type f -name '*.svg'`
-	$(SETFONTMETAS_SCRIPT) \
-		--family-name "Repro Typewr 17 Pitch" \
-		--full-name   "Repro Typewr 17 Pitch Semi-Light" \
-		--ps-name     "ReproTypewr17Pitch-SemiLight" \
-		--ps-weight   "Semi-Light" \
-		--os2-weight  350 \
-		--panose      2,0,4,9,3,0,-,-,-,3 \
-		"$@"
-	$(FONTUNHINT_SCRIPT) "$@"
-
-$(LIGHT_FONT_NARROW_TTF): $(FONT_SRC) $(FONTTOOL_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
-	$(FONTTOOL_SCRIPT) $(FONTTOOL__LIGHT) $(FONTTOOL__NARROW) $< -o $@ `find src/chars -type f -name '*.svg'`
-	$(SETFONTMETAS_SCRIPT) \
-		--family-name "Repro Typewr 17 Pitch" \
-		--full-name   "Repro Typewr 17 Pitch Light" \
-		--ps-name     "ReproTypewr17Pitch-Light" \
-		--ps-weight   "Light" \
-		--os2-weight  300 \
-		--panose      2,0,3,9,3,0,-,-,-,3 \
-		"$@"
-	$(FONTUNHINT_SCRIPT) "$@"
-
-$(CODING_FONT_NARROW_TTF): $(FONT_SRC) $(FONTTOOL_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
-	$(FONTTOOL_SCRIPT) $(FONTTOOL__REGULAR) $(FONTTOOL__NARROW) $< -o $@ `find src/chars -type f -name '*.svg'`
-	mv "$@" "$@.tmp.ttf"	# tmp file required for featfreeze to work
-	pyftfeatfreeze -f code -S -U Code "$@.tmp.ttf" "$@"
-	rm "$@.tmp.ttf"
-	$(SETFONTMETAS_SCRIPT) \
-		--family-name "Repro Typewr Code 17 Pitch" \
-		--full-name   "Repro Typewr Code 17 Pitch" \
-		--ps-name     "ReproTypewrCode17Pitch" \
-		--ps-weight   "Medium" \
-		--os2-weight  400 \
-		--panose      2,0,5,9,3,0,-,-,-,3 \
-		"$@"
-	$(FONTUNHINT_SCRIPT) "$@"
-
-$(SEMI_LIGHT_CODING_FONT_NARROW_TTF): $(FONT_SRC) $(FONTTOOL_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
-	$(FONTTOOL_SCRIPT) $(FONTTOOL__SEMI_LIGHT) $(FONTTOOL__NARROW) $< -o $@ `find src/chars -type f -name '*.svg'`
-	mv "$@" "$@.tmp.ttf"	# tmp file required for featfreeze to work
-	pyftfeatfreeze -f code -S -U Code "$@.tmp.ttf" "$@"
-	rm "$@.tmp.ttf"
-	$(SETFONTMETAS_SCRIPT) \
-		--family-name "Repro Typewr Code 17 Pitch" \
-		--full-name   "Repro Typewr Code 17 Pitch Semi-Light" \
-		--ps-name     "ReproTypewrCode17Pitch-SemiLight" \
-		--ps-weight   "Semi-Light" \
-		--os2-weight  350 \
-		--panose      2,0,4,9,3,0,-,-,-,3 \
-		"$@"
-	$(FONTUNHINT_SCRIPT) "$@"
-
-$(LIGHT_CODING_FONT_NARROW_TTF): $(FONT_SRC) $(FONTTOOL_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
-	$(FONTTOOL_SCRIPT) $(FONTTOOL__LIGHT) $(FONTTOOL__NARROW) $< -o $@ `find src/chars -type f -name '*.svg'`
-	mv "$@" "$@.tmp.ttf"	# tmp file required for featfreeze to work
-	pyftfeatfreeze -f code -S -U Code "$@.tmp.ttf" "$@"
-	rm "$@.tmp.ttf"
-	$(SETFONTMETAS_SCRIPT) \
-		--family-name "Repro Typewr Code 17 Pitch" \
-		--full-name   "Repro Typewr Code 17 Pitch Light" \
-		--ps-name     "ReproTypewrCode17Pitch-Light" \
-		--ps-weight   "Light" \
-		--os2-weight  300 \
-		--panose      2,0,3,9,3,0,-,-,-,3 \
-		"$@"
-	$(FONTUNHINT_SCRIPT) "$@"
-
-$(FONT_PICA_TTF): $(FONT_SRC) $(FONTTOOL_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
-	$(FONTTOOL_SCRIPT) $(FONTTOOL__REGULAR) $(FONTTOOL__PICA) $< -o $@ `find src/chars -type f -name '*.svg'`
-	$(SETFONTMETAS_SCRIPT) \
-		--family-name "Repro Typewr Pica" \
-		--full-name   "Repro Typewr Pica" \
-		--ps-name     "ReproTypewrPica" \
-		--ps-weight   "Medium" \
-		--os2-weight  400 \
-		--panose      2,0,5,9,3,0,-,-,-,3 \
-		"$@"
-	$(FONTUNHINT_SCRIPT) "$@"
-
-$(SEMI_LIGHT_FONT_PICA_TTF): $(FONT_SRC) $(FONTTOOL_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
-	$(FONTTOOL_SCRIPT) $(FONTTOOL__SEMI_LIGHT) $(FONTTOOL__PICA) $< -o $@ `find src/chars -type f -name '*.svg'`
-	$(SETFONTMETAS_SCRIPT) \
-		--family-name "Repro Typewr Pica" \
-		--full-name   "Repro Typewr Pica Semi-Light" \
-		--ps-name     "ReproTypewrPica-SemiLight" \
-		--ps-weight   "Semi-Light" \
-		--os2-weight  350 \
-		--panose      2,0,4,9,3,0,-,-,-,3 \
-		"$@"
-	$(FONTUNHINT_SCRIPT) "$@"
-
-$(LIGHT_FONT_PICA_TTF): $(FONT_SRC) $(FONTTOOL_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
-	$(FONTTOOL_SCRIPT) $(FONTTOOL__LIGHT) $(FONTTOOL__PICA) $< -o $@ `find src/chars -type f -name '*.svg'`
-	$(SETFONTMETAS_SCRIPT) \
-		--family-name "Repro Typewr Pica" \
-		--full-name   "Repro Typewr Pica Light" \
-		--ps-name     "ReproTypewrPica-Light" \
-		--ps-weight   "Light" \
-		--os2-weight  300 \
-		--panose      2,0,3,9,3,0,-,-,-,3 \
-		"$@"
-	$(FONTUNHINT_SCRIPT) "$@"
-
-$(CODING_FONT_PICA_TTF): $(FONT_SRC) $(FONTTOOL_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
-	$(FONTTOOL_SCRIPT) $(FONTTOOL__REGULAR) $(FONTTOOL__PICA) $< -o $@ `find src/chars -type f -name '*.svg'`
-	mv "$@" "$@.tmp.ttf"	# tmp file required for featfreeze to work
-	pyftfeatfreeze -f code -S -U Code "$@.tmp.ttf" "$@"
-	rm "$@.tmp.ttf"
-	$(SETFONTMETAS_SCRIPT) \
-		--family-name "Repro Typewr Code Pica" \
-		--full-name   "Repro Typewr Code Pica" \
-		--ps-name     "ReproTypewrCodePica" \
-		--ps-weight   "Medium" \
-		--os2-weight  400 \
-		--panose      2,0,5,9,3,0,-,-,-,3 \
-		"$@"
-	$(FONTUNHINT_SCRIPT) "$@"
-
-$(SEMI_LIGHT_CODING_FONT_PICA_TTF): $(FONT_SRC) $(FONTTOOL_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
-	$(FONTTOOL_SCRIPT) $(FONTTOOL__SEMI_LIGHT) $(FONTTOOL__PICA) $< -o $@ `find src/chars -type f -name '*.svg'`
-	mv "$@" "$@.tmp.ttf"	# tmp file required for featfreeze to work
-	pyftfeatfreeze -f code -S -U Code "$@.tmp.ttf" "$@"
-	rm "$@.tmp.ttf"
-	$(SETFONTMETAS_SCRIPT) \
-		--family-name "Repro Typewr Code Pica" \
-		--full-name   "Repro Typewr Code Pica Semi-Light" \
-		--ps-name     "ReproTypewrCodePica-SemiLight" \
-		--ps-weight   "Semi-Light" \
-		--os2-weight  350 \
-		--panose      2,0,4,9,3,0,-,-,-,3 \
-		"$@"
-	$(FONTUNHINT_SCRIPT) "$@"
-
-$(LIGHT_CODING_FONT_PICA_TTF): $(FONT_SRC) $(FONTTOOL_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
-	$(FONTTOOL_SCRIPT) $(FONTTOOL__LIGHT) $(FONTTOOL__PICA) $< -o $@ `find src/chars -type f -name '*.svg'`
-	mv "$@" "$@.tmp.ttf"	# tmp file required for featfreeze to work
-	pyftfeatfreeze -f code -S -U Code "$@.tmp.ttf" "$@"
-	rm "$@.tmp.ttf"
-	$(SETFONTMETAS_SCRIPT) \
-		--family-name "Repro Typewr Code Pica" \
-		--full-name   "Repro Typewr Code Pica Light" \
-		--ps-name     "ReproTypewrCodePica-Light" \
-		--ps-weight   "Light" \
-		--os2-weight  300 \
-		--panose      2,0,3,9,3,0,-,-,-,3 \
-		"$@"
-	$(FONTUNHINT_SCRIPT) "$@"
 
 chargrid: FORCE $(CHARGRID_HTML)
 charlist: FORCE $(CHARLIST_HTML)
@@ -355,6 +174,7 @@ $(CHARLIST_HTML): $(FONT_SRC) $(CHARLIST_TPL) $(MAKEFILE)
 clean: FORCE
 	/bin/rm $(FONTS) $(CHARGRID_HTML) $(CHARLIST_HTML) || true
 	find . -type f \( -name '*.tmp' -o -name '*.tmp.*' -o -name '*.featfreeze.otf' -o -name '*~' -o -name '#*#' \) -exec rm {} + || true
+	/bin/rm -fr src/build || true
 
 .PHONY: FORCE
 
