@@ -8,6 +8,7 @@ import sys
 
 sys.path.append(os.getenv("HOME") + "/git/dse.d/fontforge-utilities/lib")
 import mixedjsontext
+import silence
 
 def main():
     global args
@@ -22,6 +23,7 @@ def main():
     font = fontforge.open(args.font_filename)
     write_font_filename = args.save_as if args.save_as is not None else args.font_filename
 
+    silence.on()
     for glyph in font.glyphs():
         if mixedjsontext.fontcomment_says_generated(glyph.comment):
             continue
@@ -30,6 +32,7 @@ def main():
             glyph.stroke("circular", args.expand_stroke, "round", "round")
         glyph.removeOverlap()
         glyph.width = orig_width
+    silence.off()
 
     if os.path.splitext(write_font_filename)[1] == '.sfd':
         print("Saving %s" % write_font_filename)
