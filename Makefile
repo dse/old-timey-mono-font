@@ -118,7 +118,7 @@ $(SEMI_LIGHT_FONT_TTF): $(FONT_SRC) $(FONTTOOL_SCRIPT) $(MAKEFILE) $(SETFONTMETA
 		--ps-name     "ReproTypewr-SemiLight" \
 		--ps-weight   "Semi-Light" \
 		--os2-weight  350 \
-		--panose      2,0,3,9,3,0,-,-,-,3 \
+		--panose      2,0,4,9,3,0,-,-,-,3 \
 		"$@"
 	$(FONTUNHINT_SCRIPT) "$@"
 
@@ -130,7 +130,7 @@ $(LIGHT_FONT_TTF): $(FONT_SRC) $(FONTTOOL_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCR
 		--ps-name     "ReproTypewr-Light" \
 		--ps-weight   "Light" \
 		--os2-weight  300 \
-		--panose      2,0,4,9,3,0,-,-,-,3 \
+		--panose      2,0,3,9,3,0,-,-,-,3 \
 		"$@"
 	$(FONTUNHINT_SCRIPT) "$@"
 
@@ -199,7 +199,7 @@ $(SEMI_LIGHT_FONT_NARROW_TTF): $(FONT_SRC) $(FONTTOOL_SCRIPT) $(MAKEFILE) $(SETF
 		--ps-name     "ReproTypewr17Pitch-SemiLight" \
 		--ps-weight   "Semi-Light" \
 		--os2-weight  350 \
-		--panose      2,0,3,9,3,0,-,-,-,3 \
+		--panose      2,0,4,9,3,0,-,-,-,3 \
 		"$@"
 	$(FONTUNHINT_SCRIPT) "$@"
 
@@ -211,7 +211,7 @@ $(LIGHT_FONT_NARROW_TTF): $(FONT_SRC) $(FONTTOOL_SCRIPT) $(MAKEFILE) $(SETFONTME
 		--ps-name     "ReproTypewr17Pitch-Light" \
 		--ps-weight   "Light" \
 		--os2-weight  300 \
-		--panose      2,0,4,9,3,0,-,-,-,3 \
+		--panose      2,0,3,9,3,0,-,-,-,3 \
 		"$@"
 	$(FONTUNHINT_SCRIPT) "$@"
 
@@ -280,7 +280,7 @@ $(SEMI_LIGHT_FONT_PICA_TTF): $(FONT_SRC) $(FONTTOOL_SCRIPT) $(MAKEFILE) $(SETFON
 		--ps-name     "ReproTypewrPica-SemiLight" \
 		--ps-weight   "Semi-Light" \
 		--os2-weight  350 \
-		--panose      2,0,3,9,3,0,-,-,-,3 \
+		--panose      2,0,4,9,3,0,-,-,-,3 \
 		"$@"
 	$(FONTUNHINT_SCRIPT) "$@"
 
@@ -292,7 +292,7 @@ $(LIGHT_FONT_PICA_TTF): $(FONT_SRC) $(FONTTOOL_SCRIPT) $(MAKEFILE) $(SETFONTMETA
 		--ps-name     "ReproTypewrPica-Light" \
 		--ps-weight   "Light" \
 		--os2-weight  300 \
-		--panose      2,0,4,9,3,0,-,-,-,3 \
+		--panose      2,0,3,9,3,0,-,-,-,3 \
 		"$@"
 	$(FONTUNHINT_SCRIPT) "$@"
 
