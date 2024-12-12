@@ -24,6 +24,7 @@ def main():
     parser.add_argument('--os2-weight', type=int, help='100 to 900')
     parser.add_argument('--panose', type=str, help='10 values, each either "-" or non-neg integer')
     parser.add_argument('--dry-run', action='store_true')
+    parser.add_argument('--verbose', '-v', action='count', default=0)
     args = parser.parse_args()
 
     font = fontforge.open(args.filename)
@@ -67,7 +68,7 @@ def main():
             font_panose[i] = panose_values[i]
         if panose_changed:
             font.os2_panose = tuple(font_panose)
-        if args.dry_run:
+        if args.dry_run or args.verbose:
             if panose_changed:
                 print("panose: %s => %s" % (repr(orig_panose), repr(font.os2_panose)))
             else:
@@ -116,7 +117,7 @@ def change(orig, spec, what):
         result = re.sub(pat, repl, orig)
     else:
         result = spec
-    if args.dry_run:
+    if args.dry_run or args.verbose:
         print("%s: %s => %s" % (what, orig, result))
     return result
 
