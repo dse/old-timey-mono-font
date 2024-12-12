@@ -12,20 +12,18 @@ LIGHT_FONT_TTF				:= dist/ttf/ReproTypewr-Light.ttf
 LIGHT_CODING_FONT_TTF			:= dist/ttf/ReproTypewrCode-Light.ttf
 SEMI_LIGHT_FONT_TTF			:= dist/ttf/ReproTypewr-SemiLight.ttf
 SEMI_LIGHT_CODING_FONT_TTF		:= dist/ttf/ReproTypewrCode-SemiLight.ttf
-
 FONT_NARROW_TTF				:= dist/ttf/ReproTypewr17Pitch.ttf
 CODING_FONT_NARROW_TTF			:= dist/ttf/ReproTypewrCode17Pitch.ttf
 LIGHT_FONT_NARROW_TTF			:= dist/ttf/ReproTypewr17Pitch-Light.ttf
 LIGHT_CODING_FONT_NARROW_TTF		:= dist/ttf/ReproTypewrCode17Pitch-Light.ttf
 SEMI_LIGHT_FONT_NARROW_TTF		:= dist/ttf/ReproTypewr17Pitch-SemiLight.ttf
-SEMI_LIGHT_CODING_FONT_NARROW_TTF		:= dist/ttf/ReproTypewrCode17Pitch-SemiLight.ttf
-
-FONT_PICA_TTF			:= dist/ttf/ReproTypewrPica.ttf
-CODING_FONT_PICA_TTF		:= dist/ttf/ReproTypewrCodePica.ttf
+SEMI_LIGHT_CODING_FONT_NARROW_TTF	:= dist/ttf/ReproTypewrCode17Pitch-SemiLight.ttf
+FONT_PICA_TTF				:= dist/ttf/ReproTypewrPica.ttf
+CODING_FONT_PICA_TTF			:= dist/ttf/ReproTypewrCodePica.ttf
 LIGHT_FONT_PICA_TTF			:= dist/ttf/ReproTypewrPica-Light.ttf
 LIGHT_CODING_FONT_PICA_TTF		:= dist/ttf/ReproTypewrCodePica-Light.ttf
 SEMI_LIGHT_FONT_PICA_TTF		:= dist/ttf/ReproTypewrPica-SemiLight.ttf
-SEMI_LIGHT_CODING_FONT_PICA_TTF	:= dist/ttf/ReproTypewrCodePica-SemiLight.ttf
+SEMI_LIGHT_CODING_FONT_PICA_TTF		:= dist/ttf/ReproTypewrCodePica-SemiLight.ttf
 
 CHARGRID_TPL := website/chargrid.mustache
 CHARGRID_HTML := website/chargrid.html
