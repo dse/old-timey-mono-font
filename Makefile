@@ -113,7 +113,7 @@ src/build/ReproTypewr.stage1.sfd: src/ReproTypewr.sfd Makefile bin/importsvg
 		--ps-name 'ReproTypewr' \
 		--ps-weight 'Medium' \
 		--os2-weight 400 \
-		--panose=2,0,5,9,3,0,-,-,-,3 \
+		--panose 2,0,5,9,3,0,_,_,_,3 \
 		"$@"
 
 # Stage 2: unroll references
@@ -153,7 +153,7 @@ dist/ttf/%-SemiLight.ttf: src/build/%.stage2.sfd Makefile bin/expandstrokes
 		--ps-name '+-SemiLight' \
 		--ps-weight "Semi-Light" \
 		--os2-weight 350 \
-		--panose=-,-,4,-,-,-,-,-,-,- \
+		--panose _,_,4,_,_,_,_,_,_,_ \
 		"$@"
 dist/ttf/%-Light.ttf: src/build/%.stage2.sfd Makefile bin/expandstrokes
 	bin/expandstrokes -x 48 "$<" -o "$@"
@@ -162,7 +162,7 @@ dist/ttf/%-Light.ttf: src/build/%.stage2.sfd Makefile bin/expandstrokes
 		--ps-name '+-Light' \
 		--ps-weight "Light" \
 		--os2-weight 300 \
-		--panose=-,-,3,-,-,-,-,-,-,- \
+		--panose _,_,3,_,_,_,_,_,_,_ \
 		"$@"
 
 # Stage 5: make code variants

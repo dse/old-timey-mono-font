@@ -56,8 +56,8 @@ def main():
         if len(panose_strings) > 10:
             raise Exception("panose contains too many values: %s" % args.panose)
         if len([value for value in panose_strings if not re.search(r'^(-|\d+)$', value)]) > 0:
-            raise Exception("all panose values must be '-' or non-neg integer: %s" % args.panose)
-        panose_values = [None if value == '-' else int(value) for value in panose_strings]
+            raise Exception("all panose values must be '-' or '_' or non-neg integer: %s" % args.panose)
+        panose_values = [None if (value == '-' or value == '_') else int(value) for value in panose_strings]
         for i in range(0, 10):
             if i >= len(panose_values):
                 break
