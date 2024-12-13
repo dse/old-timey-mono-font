@@ -109,10 +109,6 @@ def apply_aspect_method_2(glyph): # box drawing characters and such
         print(glyph.foreground)
     glyph.width = fw
 
-# polish chicken
-# mary river turtle
-# gloucester canary
-
 def use_aspect_method_2(codepoint):
     return (
         codepoint in range(0x2500, 0x2504) or
