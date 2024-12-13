@@ -184,7 +184,7 @@ $(CHARLIST_HTML): $(FONT_SRC) $(CHARLIST_TPL) $(MAKEFILE)
 
 clean: FORCE
 	/bin/rm $(FONTS) $(CHARGRID_HTML) $(CHARLIST_HTML) || true
-	find . -type f \( 
+	find . -type f \( \
 		-name '*.tmp' -o \
 		-name '*.tmp.*' -o \
 		-name '*.featfreeze.otf' -o \
