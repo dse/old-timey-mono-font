@@ -1,24 +1,27 @@
 MAKEFILE := Makefile
 FONT_SRC := src/ReproTypewr.sfd
 
-FONT_TTF                                := dist/ttf/ReproTypewr.ttf
-CODING_FONT_TTF                         := dist/ttf/ReproTypewrCode.ttf
-LIGHT_FONT_TTF                          := dist/ttf/ReproTypewr-Light.ttf
-LIGHT_CODING_FONT_TTF                   := dist/ttf/ReproTypewrCode-Light.ttf
-SEMI_LIGHT_FONT_TTF                     := dist/ttf/ReproTypewr-SemiLight.ttf
-SEMI_LIGHT_CODING_FONT_TTF              := dist/ttf/ReproTypewrCode-SemiLight.ttf
-FONT_NARROW_TTF                         := dist/ttf/ReproTypewr17Pitch.ttf
-CODING_FONT_NARROW_TTF                  := dist/ttf/ReproTypewrCode17Pitch.ttf
-LIGHT_FONT_NARROW_TTF                   := dist/ttf/ReproTypewr17Pitch-Light.ttf
-LIGHT_CODING_FONT_NARROW_TTF            := dist/ttf/ReproTypewrCode17Pitch-Light.ttf
-SEMI_LIGHT_FONT_NARROW_TTF              := dist/ttf/ReproTypewr17Pitch-SemiLight.ttf
-SEMI_LIGHT_CODING_FONT_NARROW_TTF       := dist/ttf/ReproTypewrCode17Pitch-SemiLight.ttf
-FONT_PICA_TTF                           := dist/ttf/ReproTypewrPica.ttf
-CODING_FONT_PICA_TTF                    := dist/ttf/ReproTypewrCodePica.ttf
-LIGHT_FONT_PICA_TTF                     := dist/ttf/ReproTypewrPica-Light.ttf
-LIGHT_CODING_FONT_PICA_TTF              := dist/ttf/ReproTypewrCodePica-Light.ttf
-SEMI_LIGHT_FONT_PICA_TTF                := dist/ttf/ReproTypewrPica-SemiLight.ttf
-SEMI_LIGHT_CODING_FONT_PICA_TTF         := dist/ttf/ReproTypewrCodePica-SemiLight.ttf
+FONT_FAMILY := Repro Typewr
+PS_FONT_FAMILY := ReproTypewr
+
+FONT_TTF                                := dist/ttf/$(PS_FONT_FAMILY).ttf
+CODING_FONT_TTF                         := dist/ttf/$(PS_FONT_FAMILY)Code.ttf
+LIGHT_FONT_TTF                          := dist/ttf/$(PS_FONT_FAMILY)-Light.ttf
+LIGHT_CODING_FONT_TTF                   := dist/ttf/$(PS_FONT_FAMILY)Code-Light.ttf
+SEMI_LIGHT_FONT_TTF                     := dist/ttf/$(PS_FONT_FAMILY)-SemiLight.ttf
+SEMI_LIGHT_CODING_FONT_TTF              := dist/ttf/$(PS_FONT_FAMILY)Code-SemiLight.ttf
+FONT_NARROW_TTF                         := dist/ttf/$(PS_FONT_FAMILY)17Pitch.ttf
+CODING_FONT_NARROW_TTF                  := dist/ttf/$(PS_FONT_FAMILY)Code17Pitch.ttf
+LIGHT_FONT_NARROW_TTF                   := dist/ttf/$(PS_FONT_FAMILY)17Pitch-Light.ttf
+LIGHT_CODING_FONT_NARROW_TTF            := dist/ttf/$(PS_FONT_FAMILY)Code17Pitch-Light.ttf
+SEMI_LIGHT_FONT_NARROW_TTF              := dist/ttf/$(PS_FONT_FAMILY)17Pitch-SemiLight.ttf
+SEMI_LIGHT_CODING_FONT_NARROW_TTF       := dist/ttf/$(PS_FONT_FAMILY)Code17Pitch-SemiLight.ttf
+FONT_PICA_TTF                           := dist/ttf/$(PS_FONT_FAMILY)Pica.ttf
+CODING_FONT_PICA_TTF                    := dist/ttf/$(PS_FONT_FAMILY)CodePica.ttf
+LIGHT_FONT_PICA_TTF                     := dist/ttf/$(PS_FONT_FAMILY)Pica-Light.ttf
+LIGHT_CODING_FONT_PICA_TTF              := dist/ttf/$(PS_FONT_FAMILY)CodePica-Light.ttf
+SEMI_LIGHT_FONT_PICA_TTF                := dist/ttf/$(PS_FONT_FAMILY)Pica-SemiLight.ttf
+SEMI_LIGHT_CODING_FONT_PICA_TTF         := dist/ttf/$(PS_FONT_FAMILY)CodePica-SemiLight.ttf
 
 CHARGRID_TPL := website/chargrid.mustache
 CHARGRID_HTML := website/chargrid.html
@@ -98,39 +101,39 @@ boxdraw: FORCE
 	fontboxdraw -f $(FONT_SRC)
 
 # Stage 1: import SVGs and set basic metas
-src/build/ReproTypewr.stage1.sfd: src/ReproTypewr.sfd Makefile bin/importsvg bin/setfontmetas
+src/build/$(PS_FONT_FAMILY).stage1.sfd: src/$(PS_FONT_FAMILY).sfd Makefile bin/importsvg bin/setfontmetas
 	mkdir -p src/build
 	bin/importsvg "$<" -o "$@" src/chars/*.svg
 	bin/setfontmetas -v \
-		--family-name 'Repro Typewr' \
-		--full-name 'Repro Typewr' \
-		--ps-name 'ReproTypewr' \
+		--family-name '$(FONT_FAMILY)' \
+		--full-name '$(FONT_FAMILY)' \
+		--ps-name '$(PS_FONT_FAMILY)' \
 		--ps-weight 'Medium' \
 		--os2-weight 400 \
 		--panose 2,0,5,9,3,0,_,_,_,3 \
 		"$@"
 
 # Stage 2: unroll references
-src/build/ReproTypewr.stage2.sfd: src/build/ReproTypewr.stage1.sfd Makefile bin/fontunref
+src/build/$(PS_FONT_FAMILY).stage2.sfd: src/build/$(PS_FONT_FAMILY).stage1.sfd Makefile bin/fontunref
 	mkdir -p src/build
 	bin/fontunref "$<" -o "$@"
 
 # Stage 3: make Pica and 17Pitch outlines
-src/build/ReproTypewrPica.stage2.sfd: src/build/ReproTypewr.stage2.sfd Makefile bin/fontaspect bin/setfontmetas
+src/build/$(PS_FONT_FAMILY)Pica.stage2.sfd: src/build/$(PS_FONT_FAMILY).stage2.sfd Makefile bin/fontaspect bin/setfontmetas
 	mkdir -p src/build
 	bin/fontaspect --aspect 0.833333333333 "$<" -o "$@"
 	bin/setfontmetas -v \
-		--family-name 's/Repro Typewr/Repro Typewr Pica/' \
-		--full-name 's/Repro Typewr/Repro Typewr Pica/' \
-		--ps-name 's/ReproTypewr/ReproTypewrPica/' \
+		--family-name 's/$(FONT_FAMILY)/$(FONT_FAMILY) Pica/' \
+		--full-name 's/$(FONT_FAMILY)/$(FONT_FAMILY) Pica/' \
+		--ps-name 's/$(PS_FONT_FAMILY)/$(PS_FONT_FAMILY)Pica/' \
 		"$@"
-src/build/ReproTypewr17Pitch.stage2.sfd: src/build/ReproTypewr.stage2.sfd Makefile bin/fontaspect bin/setfontmetas
+src/build/$(PS_FONT_FAMILY)17Pitch.stage2.sfd: src/build/$(PS_FONT_FAMILY).stage2.sfd Makefile bin/fontaspect bin/setfontmetas
 	mkdir -p src/build
 	bin/fontaspect --aspect 0.606060606060 "$<" -o "$@"
 	bin/setfontmetas -v \
-		--family-name 's/Repro Typewr/Repro Typewr 17 Pitch/' \
-		--full-name 's/Repro Typewr/Repro Typewr 17 Pitch/' \
-		--ps-name 's/ReproTypewr/ReproTypewr17Pitch/' \
+		--family-name 's/$(FONT_FAMILY)/$(FONT_FAMILY) 17 Pitch/' \
+		--full-name 's/$(FONT_FAMILY)/$(FONT_FAMILY) 17 Pitch/' \
+		--ps-name 's/$(PS_FONT_FAMILY)/$(PS_FONT_FAMILY)17Pitch/' \
 		"$@"
 
 # Stage 4: make weights
@@ -161,12 +164,12 @@ dist/ttf/%-Light.ttf: src/build/%.stage2.sfd Makefile bin/expandstrokes bin/setf
 
 # Stage 5: make code variants
 # NOTE: can't use %.ttf because % cannot match zero characters.
-dist/ttf/ReproTypewrCode%ttf: dist/ttf/ReproTypewr%ttf Makefile bin/setfontmetas
+dist/ttf/$(PS_FONT_FAMILY)Code%ttf: dist/ttf/$(PS_FONT_FAMILY)%ttf Makefile bin/setfontmetas
 	pyftfeatfreeze -f code "$<" "$@" # -U "" because we do that later
 	bin/setfontmetas -v \
-		--family-name 's/Repro Typewr/Repro Typewr Code/' \
-		--full-name   's/Repro Typewr/Repro Typewr Code/' \
-		--ps-name     's/ReproTypewr/ReproTypewrCode/' \
+		--family-name 's/$(FONT_FAMILY)/$(FONT_FAMILY) Code/' \
+		--full-name   's/$(FONT_FAMILY)/$(FONT_FAMILY) Code/' \
+		--ps-name     's/$(PS_FONT_FAMILY)/$(PS_FONT_FAMILY)Code/' \
 		"$@"
 
 chargrid: FORCE $(CHARGRID_HTML)
