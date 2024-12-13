@@ -88,8 +88,15 @@ pica: $(PICA_FONTS)
 .SUFFIXES: .sfd .ttf
 
 # update source font fron SVG files
+update: FORCE
+	bin/importsvg $(FONT_SRC) `find src/chars -type f -name '*.svg'`
+	bin/expandstrokes --expand-stroke 96 $(FONT_SRC)
 fonttool: FORCE
-	$(FONTTOOL_SCRIPT) --source-file --expand-stroke 96 $(FONT_SRC) `find src/chars -type f -name '*.svg'`
+	echo "use 'make update', dingus." >&2
+	false
+fontsvg: FORCE
+	echo "use 'make update', dingus." >&2
+	false
 
 braille: FORCE
 	fontbraille -W 200 -f $(FONT_SRC)
