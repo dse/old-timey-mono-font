@@ -160,6 +160,7 @@ dist/ttf/%-Light.ttf: src/build/%.stage2.sfd Makefile bin/expandstrokes
 		"$@"
 
 # Stage 5: make code variants
+# NOTE: can't use %.ttf because % cannot match zero characters.
 dist/ttf/ReproTypewrCode%ttf: dist/ttf/ReproTypewr%ttf Makefile
 	pyftfeatfreeze -f code "$<" "$@" # -U "" because we do that later
 	bin/setfontmetas -v \
