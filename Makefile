@@ -98,7 +98,7 @@ boxdraw: FORCE
 	fontboxdraw -f $(FONT_SRC)
 
 # Stage 1: import SVGs and set basic metas
-src/build/ReproTypewr.stage1.sfd: src/ReproTypewr.sfd Makefile bin/importsvg
+src/build/ReproTypewr.stage1.sfd: src/ReproTypewr.sfd Makefile bin/importsvg bin/setfontmetas
 	mkdir -p src/build
 	bin/importsvg "$<" -o "$@" src/chars/*.svg
 	bin/setfontmetas -v \
@@ -116,7 +116,7 @@ src/build/ReproTypewr.stage2.sfd: src/build/ReproTypewr.stage1.sfd Makefile bin/
 	bin/fontunref "$<" -o "$@"
 
 # Stage 3: make Pica and 17Pitch outlines
-src/build/ReproTypewrPica.stage2.sfd: src/build/ReproTypewr.stage2.sfd Makefile bin/fontaspect
+src/build/ReproTypewrPica.stage2.sfd: src/build/ReproTypewr.stage2.sfd Makefile bin/fontaspect bin/setfontmetas
 	mkdir -p src/build
 	bin/fontaspect --aspect 0.833333333333 "$<" -o "$@"
 	bin/setfontmetas -v \
@@ -124,7 +124,7 @@ src/build/ReproTypewrPica.stage2.sfd: src/build/ReproTypewr.stage2.sfd Makefile 
 		--full-name 's/Repro Typewr/Repro Typewr Pica/' \
 		--ps-name 's/ReproTypewr/ReproTypewrPica/' \
 		"$@"
-src/build/ReproTypewr17Pitch.stage2.sfd: src/build/ReproTypewr.stage2.sfd Makefile bin/fontaspect
+src/build/ReproTypewr17Pitch.stage2.sfd: src/build/ReproTypewr.stage2.sfd Makefile bin/fontaspect bin/setfontmetas
 	mkdir -p src/build
 	bin/fontaspect --aspect 0.606060606060 "$<" -o "$@"
 	bin/setfontmetas -v \
@@ -134,13 +134,13 @@ src/build/ReproTypewr17Pitch.stage2.sfd: src/build/ReproTypewr.stage2.sfd Makefi
 		"$@"
 
 # Stage 4: make weights
-dist/ttf/%.ttf: src/build/%.stage2.sfd Makefile bin/expandstrokes
+dist/ttf/%.ttf: src/build/%.stage2.sfd Makefile bin/expandstrokes bin/setfontmetas
 	bin/expandstrokes -x 96 "$<" -o "$@"
 	bin/setfontmetas -v \
 		--ps-weight "Medium" \
 		--os2-weight 400 \
 		"$@"
-dist/ttf/%-SemiLight.ttf: src/build/%.stage2.sfd Makefile bin/expandstrokes
+dist/ttf/%-SemiLight.ttf: src/build/%.stage2.sfd Makefile bin/expandstrokes bin/setfontmetas
 	bin/expandstrokes -x 72 "$<" -o "$@"
 	bin/setfontmetas -v \
 		--full-name '+ Semi-Light' \
@@ -149,7 +149,7 @@ dist/ttf/%-SemiLight.ttf: src/build/%.stage2.sfd Makefile bin/expandstrokes
 		--os2-weight 350 \
 		--panose _,_,4,_,_,_,_,_,_,_ \
 		"$@"
-dist/ttf/%-Light.ttf: src/build/%.stage2.sfd Makefile bin/expandstrokes
+dist/ttf/%-Light.ttf: src/build/%.stage2.sfd Makefile bin/expandstrokes bin/setfontmetas
 	bin/expandstrokes -x 48 "$<" -o "$@"
 	bin/setfontmetas -v \
 		--full-name '+ Light' \
@@ -161,7 +161,7 @@ dist/ttf/%-Light.ttf: src/build/%.stage2.sfd Makefile bin/expandstrokes
 
 # Stage 5: make code variants
 # NOTE: can't use %.ttf because % cannot match zero characters.
-dist/ttf/ReproTypewrCode%ttf: dist/ttf/ReproTypewr%ttf Makefile
+dist/ttf/ReproTypewrCode%ttf: dist/ttf/ReproTypewr%ttf Makefile bin/setfontmetas
 	pyftfeatfreeze -f code "$<" "$@" # -U "" because we do that later
 	bin/setfontmetas -v \
 		--family-name 's/Repro Typewr/Repro Typewr Code/' \
