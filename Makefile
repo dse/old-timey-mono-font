@@ -1,11 +1,6 @@
 MAKEFILE := Makefile
 FONT_SRC := src/ReproTypewr.sfd
 
-FONTCONVERT_SCRIPT := bin/fontconvert
-FONTTOOL_SCRIPT := bin/fonttool
-FONTUNHINT_SCRIPT := bin/fontunhint
-SETFONTMETAS_SCRIPT := bin/setfontmetas
-
 FONT_TTF                                := dist/ttf/ReproTypewr.ttf
 CODING_FONT_TTF                         := dist/ttf/ReproTypewrCode.ttf
 LIGHT_FONT_TTF                          := dist/ttf/ReproTypewr-Light.ttf
