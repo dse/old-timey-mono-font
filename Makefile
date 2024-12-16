@@ -4,6 +4,18 @@ FONT_SRC := src/ReproTypewr.sfd
 FONT_FAMILY := Repro Typewr
 PS_FONT_FAMILY := ReproTypewr
 
+IMPORTSVG_PROG     := bin/importsvg
+FONTUNREF_PROG     := bin/fontunref
+EXPANDSTROKES_PROG := bin/expandstrokes
+FONTASPECT_PROG    := bin/fontaspect
+SETFONTMETAS_PROG  := bin/setfontmetas
+
+IMPORTSVG     := $(IMPORTSVG_PROG) -v
+FONTUNREF     := $(FONTUNREF_PROG) -v
+EXPANDSTROKES := $(EXPANDSTROKES_PROG) -v
+FONTASPECT    := $(FONTASPECT_PROG) -v
+SETFONTMETAS  := $(SETFONTMETAS_PROG) -v
+
 FONT_TTF                                := dist/ttf/$(PS_FONT_FAMILY).ttf
 CODING_FONT_TTF                         := dist/ttf/$(PS_FONT_FAMILY)Code.ttf
 LIGHT_FONT_TTF                          := dist/ttf/$(PS_FONT_FAMILY)-Light.ttf
@@ -86,8 +98,8 @@ pica: $(PICA_FONTS)
 
 # update source font fron SVG files
 update: FORCE
-	bin/importsvg $(FONT_SRC) `find src/chars -type f -name '*.svg'`
-	bin/expandstrokes --expand-stroke 96 $(FONT_SRC)
+	$(IMPORTSVG) $(FONT_SRC) `find src/chars -type f -name '*.svg'`
+	$(EXPANDSTROKES) --expand-stroke 96 $(FONT_SRC)
 fonttool: FORCE
 	echo "use 'make update', dingus." >&2
 	false
@@ -101,10 +113,10 @@ boxdraw: FORCE
 	fontboxdraw -f $(FONT_SRC)
 
 # Stage 1: import SVGs and set basic metas
-src/build/$(PS_FONT_FAMILY).stage1.sfd: src/$(PS_FONT_FAMILY).sfd Makefile bin/importsvg bin/setfontmetas
+src/build/$(PS_FONT_FAMILY).stage1.sfd: src/$(PS_FONT_FAMILY).sfd Makefile $(IMPORTSVG_PROG) $(SETFONTMETAS_PROG)
 	mkdir -p src/build
-	bin/importsvg "$<" -o "$@" src/chars/*.svg
-	bin/setfontmetas -v \
+	$(IMPORTSVG) "$<" -o "$@" src/chars/*.svg
+	$(SETFONTMETAS) \
 		--family-name '$(FONT_FAMILY)' \
 		--full-name '$(FONT_FAMILY)' \
 		--ps-name '$(PS_FONT_FAMILY)' \
@@ -114,63 +126,71 @@ src/build/$(PS_FONT_FAMILY).stage1.sfd: src/$(PS_FONT_FAMILY).sfd Makefile bin/i
 		"$@"
 
 # Stage 2: unroll references
-src/build/$(PS_FONT_FAMILY).stage2.sfd: src/build/$(PS_FONT_FAMILY).stage1.sfd Makefile bin/fontunref
+src/build/$(PS_FONT_FAMILY).stage2.sfd: src/build/$(PS_FONT_FAMILY).stage1.sfd Makefile $(FONTUNREF_PROG)
 	mkdir -p src/build
-	bin/fontunref "$<" -o "$@"
+	$(FONTUNREF) "$<" -o "$@"
 
 # Stage 3: make Pica and 17Pitch outlines
-src/build/$(PS_FONT_FAMILY)Pica.stage2.sfd: src/build/$(PS_FONT_FAMILY).stage2.sfd Makefile bin/fontaspect bin/setfontmetas
+src/build/$(PS_FONT_FAMILY)Pica.stage2.sfd: src/build/$(PS_FONT_FAMILY).stage2.sfd Makefile $(FONTASPECT_PROG) $(SETFONTMETAS_PROG)
 	mkdir -p src/build
-	bin/fontaspect --aspect 0.833333333333 "$<" -o "$@"
-	bin/setfontmetas -v \
+	$(FONTASPECT) --aspect 0.833333333333 "$<" -o "$@"
+	$(SETFONTMETAS) \
 		--family-name 's/$(FONT_FAMILY)/$(FONT_FAMILY) Pica/' \
 		--full-name 's/$(FONT_FAMILY)/$(FONT_FAMILY) Pica/' \
 		--ps-name 's/$(PS_FONT_FAMILY)/$(PS_FONT_FAMILY)Pica/' \
 		"$@"
-src/build/$(PS_FONT_FAMILY)17Pitch.stage2.sfd: src/build/$(PS_FONT_FAMILY).stage2.sfd Makefile bin/fontaspect bin/setfontmetas
+src/build/$(PS_FONT_FAMILY)17Pitch.stage2.sfd: src/build/$(PS_FONT_FAMILY).stage2.sfd Makefile $(FONTASPECT_PROG) $(SETFONTMETAS_PROG)
 	mkdir -p src/build
-	bin/fontaspect --aspect 0.606060606060 "$<" -o "$@"
-	bin/setfontmetas -v \
+	$(FONTASPECT) --aspect 0.606060606060 "$<" -o "$@"
+	$(SETFONTMETAS) \
 		--family-name 's/$(FONT_FAMILY)/$(FONT_FAMILY) 17 Pitch/' \
 		--full-name 's/$(FONT_FAMILY)/$(FONT_FAMILY) 17 Pitch/' \
 		--ps-name 's/$(PS_FONT_FAMILY)/$(PS_FONT_FAMILY)17Pitch/' \
 		"$@"
 
 # Stage 4: make weights
-dist/ttf/%.ttf: src/build/%.stage2.sfd Makefile bin/expandstrokes bin/setfontmetas
-	bin/expandstrokes -x 96 "$<" -o "$@"
-	bin/setfontmetas -v \
+dist/ttf/%.ttf: src/build/%.stage2.sfd Makefile $(EXPANDSTROKES_PROG) $(SETFONTMETAS_PROG)
+	$(EXPANDSTROKES) -x 96 "$<" -o "$@"
+	bin/fontfix "$@"
+	$(SETFONTMETAS) \
 		--ps-weight "Medium" \
 		--os2-weight 400 \
 		"$@"
-dist/ttf/%-SemiLight.ttf: src/build/%.stage2.sfd Makefile bin/expandstrokes bin/setfontmetas
-	bin/expandstrokes -x 72 "$<" -o "$@"
-	bin/setfontmetas -v \
+	bin/fontfix "$@"
+dist/ttf/%-SemiLight.ttf: src/build/%.stage2.sfd Makefile $(EXPANDSTROKES_PROG) $(SETFONTMETAS_PROG)
+	$(EXPANDSTROKES) -x 72 "$<" -o "$@"
+	bin/fontfix "$@"
+	$(SETFONTMETAS) \
 		--full-name '+ Semi-Light' \
 		--ps-name '+-SemiLight' \
 		--ps-weight "Semi-Light" \
 		--os2-weight 350 \
 		--panose _,_,4,_,_,_,_,_,_,_ \
 		"$@"
-dist/ttf/%-Light.ttf: src/build/%.stage2.sfd Makefile bin/expandstrokes bin/setfontmetas
-	bin/expandstrokes -x 48 "$<" -o "$@"
-	bin/setfontmetas -v \
+	bin/fontfix "$@"
+dist/ttf/%-Light.ttf: src/build/%.stage2.sfd Makefile $(EXPANDSTROKES_PROG) $(SETFONTMETAS_PROG)
+	$(EXPANDSTROKES) -x 48 "$<" -o "$@"
+	bin/fontfix "$@"
+	$(SETFONTMETAS) \
 		--full-name '+ Light' \
 		--ps-name '+-Light' \
 		--ps-weight "Light" \
 		--os2-weight 300 \
 		--panose _,_,3,_,_,_,_,_,_,_ \
 		"$@"
+	bin/fontfix "$@"
 
 # Stage 5: make code variants
 # NOTE: can't use %.ttf because % cannot match zero characters.
-dist/ttf/$(PS_FONT_FAMILY)Code%ttf: dist/ttf/$(PS_FONT_FAMILY)%ttf Makefile bin/setfontmetas
+dist/ttf/$(PS_FONT_FAMILY)Code%ttf: dist/ttf/$(PS_FONT_FAMILY)%ttf Makefile $(SETFONTMETAS_PROG)
 	pyftfeatfreeze -f code "$<" "$@" # -U "" because we do that later
-	bin/setfontmetas -v \
+	bin/fontfix "$@"
+	$(SETFONTMETAS) \
 		--family-name 's/$(FONT_FAMILY)/$(FONT_FAMILY) Code/' \
 		--full-name   's/$(FONT_FAMILY)/$(FONT_FAMILY) Code/' \
 		--ps-name     's/$(PS_FONT_FAMILY)/$(PS_FONT_FAMILY)Code/' \
 		"$@"
+	bin/fontfix "$@"
 
 chargrid: FORCE $(CHARGRID_HTML)
 charlist: FORCE $(CHARLIST_HTML)

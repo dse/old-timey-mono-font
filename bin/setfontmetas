@@ -27,6 +27,8 @@ def main():
     parser.add_argument('--verbose', '-v', action='count', default=0)
     args = parser.parse_args()
 
+    if args.verbose:
+        print("setfontmetas: Loading %s" % args.filename)
     font = fontforge.open(args.filename)
     changed = False
 
@@ -70,18 +72,22 @@ def main():
             font.os2_panose = tuple(font_panose)
         if args.dry_run or args.verbose:
             if panose_changed:
-                print("panose: %s => %s" % (repr(orig_panose), repr(font.os2_panose)))
+                print("setfontmetas %s: panose: %s => %s" % (args.filename, repr(orig_panose), repr(font.os2_panose)))
             else:
-                print("panose: not changed")
+                print("setfontmetas %s: panose: not changed" % args.filename)
 
     if not changed:
-        raise Exception("Font not changed")
+        raise Exception("Font not changed" % args.filename)
     if args.dry_run:
-        print("DRY RUN: not changing")
+        print("setfontmetas %s: DRY RUN: not changing" % args.filename)
         return
     if (os.path.splitext(args.filename))[1] == '.sfd':
+        if args.verbose:
+            print("setfontmetas: Saving %s" % args.filename)
         font.save(args.filename)
     else:
+        if args.verbose:
+            print("setfontmetas: Generating %s" % args.filename)
         font.generate(args.filename)
 
 def trim_norm_space(str):
