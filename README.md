@@ -1,77 +1,68 @@
 # Reproducing Typewriter
 
-This is a digital revival of Reproducing Typewriter, a "typewriter"
-monospace typeface designed to be readable at smaller point sizes from
-over a century ago.  You may have seen this typeface used in the
-product manual that shipped with Turbo Pascal 3.0.
+This is the first digital clean revival of Reproducing Typewriter.
 
-This is the first digitally available verison of Reproducing
-Typewriter.  It is a clean and somewhat* accurate reproduction, not a
-"grungy" typeface like Trixie.  It is intended to provide an
-aesthetic, but above all it is meant to be used for some of your
-everyday needs, not just novelty projects.
+Reproducing Typewriter is a monospace typeface created over a century
+ago for use with mechanical typesetting machines in use at the time.
+It was designed for creating simulacra of typewritten letters in
+smaller point sizes for advertisements, catalogs, and other printed
+materials.
 
-## Original and Coding Variants
+Typefaces were also available to simulate the fonts used by actual
+contemporaneous typewriters such as Remington, Smith, and Underwood;
+but Reproducing Typewriter is more readable at smaller point sizes
+than those.
 
-Reproducing Typewriter comes in two font families:
+You may have seen this typeface used in the [Turbo Pascal 3.0](turbo)
+product manual.
 
-**Reproducing Typewriter** is to a great extent the original typeface.
+At a size of 12pt (6 lines per inch), Reproducing Typewriter is a pica
+font, or 10 characters per inch, like Courier.  It **should** be
+suitable for screenplay writing!
 
-**Reproducing Typewriter Code** makes the following changes:
+## Download All The Fonts
 
--   The digits `0` and `1` are modified for disambiguity with the
-    capital letter `O` and small letter `l`.
+[ReproTypewr.zip](dist/ReproTypewr.zip)
 
--   The period, comma, and other selected punctuation marks are made
-    larger for better visibility.
+## Download Individual Fonts
 
-## 18 Fonts
+-   Reproducing Typewriter
+    -   Pica (10 pitch)
+        -   [Light](dist/ttf/ReproTypewr-Light.ttf)
+        -   [Semi-Light](dist/ttf/ReproTypewr-SemiLight.ttf)
+        -   [Regular](dist/ttf/ReproTypewr.ttf)
+    -   Elite (12 pitch)
+        -   [Light](dist/ttf/ReproTypewrElite-Light.ttf)
+        -   [Semi-Light](dist/ttf/ReproTypewrElite-SemiLight.ttf)
+        -   [Regular](dist/ttf/ReproTypewrElite.ttf)
+    -   17 pitch
+        -   [Light](dist/ttf/ReproTypewr17Pitch-Light.ttf)
+        -   [Semi-Light](dist/ttf/ReproTypewr17Pitch-SemiLight.ttf)
+        -   [Regular](dist/ttf/ReproTypewr17Pitch.ttf)
 
--   Font families:
+-   Reproducing Typewriter Code
+    -   Pica (10 pitch)
+        -   [Light](dist/ttf/ReproTypewrCode-Light.ttf)
+        -   [Semi-Light](dist/ttf/ReproTypewrCode-SemiLight.ttf)
+        -   [Regular](dist/ttf/ReproTypewrCode.ttf)
+    -   Elite (12 pitch)
+        -   [Light](dist/ttf/ReproTypewrCodeElite-Light.ttf)
+        -   [Semi-Light](dist/ttf/ReproTypewrCodeElite-SemiLight.ttf)
+        -   [Regular](dist/ttf/ReproTypewrCodeElite.ttf)
+    -   17 pitch
+        -   [Light](dist/ttf/ReproTypewrCode17Pitch-Light.ttf)
+        -   [Semi-Light](dist/ttf/ReproTypewrCode17Pitch-SemiLight.ttf)
+        -   [Regular](dist/ttf/ReproTypewrCode17Pitch.ttf)
 
-    -   Reproducing Typewriter
-    -   Reproducing Typewriter Code
+## Reproducing Typewriter Code
 
--   Weights:
+Reproducing Typewriter Code makes the following changes:
 
-    -   Light
-    -   Semi-Light
-    -   Regular
-    
-    It's the same font, just with different stroke widths.
+-   Distinguishes the digit `0` from the uppercase letter `O`.
 
--   Aspects: (à la aspect ratios)
+-   Distinguishes the digit `1` from the lowercase letter `l`.
 
-    -   Regular (10 pitch, or 10 characters per inch, same as Courier)
-    -   Elite (12 pitch, same as Prestige)
-    -   17 pitch (16.5 characters per inch, for printing 132 columns
-        where Courier would give you 80.)
-    
-    It's the same font, just compressed to varying degrees.  The elite
-    and 17 pitch variants are compressed just a little above 10/12 and
-    10/16.5 to keep characters from unwantedly joining.
-        
-That's 2 × 3 × 3 = 18 fonts total.
-    
-## What is Reproducing Typewriter
-    
-Reproducing Typewriter is one of many early 20th-century typefaces
-used for simulating typewritten letters on hot metal and/or mechanical
-typesetting equipment.  As opposed to typefaces resembling those of
-typewriter manufacturers such as Remington and Smith, Reproducing
-Typewriter was designed for better readability at smaller point sizes
-and/or when reproduced by mimeograph machines and whatnots.
-
-According to the American Type Founders [Line Book][linebook] of 1908:
-
-> A specialty has also been made of Reproducing Typewriter faces, to
-> meet the constantly increasing demand for facsimile letters in
-> reduced size.
-
-Its main differentiating characteristic from other contemporaneous
-typewriter styles is that most serifs are shorter.  Where the serifs
-of other typefaces might bleed together, the capital H, for example,
-continues to look more like a capital H.
+-   Certain punctuation marks are made larger for better visibility.
 
 ## Unicode Coverage
 
@@ -104,3 +95,5 @@ continues to look more like a capital H.
 ## Footnotes
 
 [linebook]: https://www.google.com/books/edition/American_Line_Type_Book/WadRAAAAYAAJ?hl=en&gbpv=1&pg=PP5&printsec=frontcover
+
+[turbo]: https://bitsavers.trailing-edge.com/pdf/borland/turbo_pascal/Turbo_Pascal_Version_3.0_Reference_Manual_1986.pdf
