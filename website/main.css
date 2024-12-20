@@ -10,12 +10,111 @@
     font-weight: 400;
     font-style: normal;
 }
+@font-face {
+    src: url('fonts/ttf/ReproTypewr-SemiLight.ttf?v=1');
+    font-family: 'Reproducing Typewriter';
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    src: url('fonts/ttf/ReproTypewrCode-SemiLight.ttf?v=1');
+    font-family: 'Reproducing Typewriter Code';
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    src: url('fonts/ttf/ReproTypewr-Light.ttf?v=1');
+    font-family: 'Reproducing Typewriter';
+    font-weight: 200;
+    font-style: normal;
+}
+@font-face {
+    src: url('fonts/ttf/ReproTypewrCode-Light.ttf?v=1');
+    font-family: 'Reproducing Typewriter Code';
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    src: url('fonts/ttf/ReproTypewrElite.ttf?v=1');
+    font-family: 'Reproducing Typewriter Elite';
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    src: url('fonts/ttf/ReproTypewrCodeElite.ttf?v=1');
+    font-family: 'Reproducing Typewriter Code Elite';
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    src: url('fonts/ttf/ReproTypewrElite-SemiLight.ttf?v=1');
+    font-family: 'Reproducing Typewriter Elite';
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    src: url('fonts/ttf/ReproTypewrCodeElite-SemiLight.ttf?v=1');
+    font-family: 'Reproducing Typewriter Code Elite';
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    src: url('fonts/ttf/ReproTypewrElite-Light.ttf?v=1');
+    font-family: 'Reproducing Typewriter Elite';
+    font-weight: 200;
+    font-style: normal;
+}
+@font-face {
+    src: url('fonts/ttf/ReproTypewrCodeElite-Light.ttf?v=1');
+    font-family: 'Reproducing Typewriter Code Elite';
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    src: url('fonts/ttf/ReproTypewr17Pitch.ttf?v=1');
+    font-family: 'Reproducing Typewriter 17 Pitch';
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    src: url('fonts/ttf/ReproTypewrCode17Pitch.ttf?v=1');
+    font-family: 'Reproducing Typewriter Code 17 Pitch';
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    src: url('fonts/ttf/ReproTypewr17Pitch-SemiLight.ttf?v=1');
+    font-family: 'Reproducing Typewriter 17 Pitch';
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    src: url('fonts/ttf/ReproTypewrCode17Pitch-SemiLight.ttf?v=1');
+    font-family: 'Reproducing Typewriter Code 17 Pitch';
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    src: url('fonts/ttf/ReproTypewr17Pitch-Light.ttf?v=1');
+    font-family: 'Reproducing Typewriter 17 Pitch';
+    font-weight: 200;
+    font-style: normal;
+}
+@font-face {
+    src: url('fonts/ttf/ReproTypewrCode17Pitch-Light.ttf?v=1');
+    font-family: 'Reproducing Typewriter Code 17 Pitch';
+    font-weight: 200;
+    font-style: normal;
+}
+
 html {
     font-size: 16px;
 }
 @media (min-width: 768px) {
     html {
-        font-size: calc(1.8519vw + 1.7778px); /* 24px at 1200px */
+        font-size: calc(1.8519vw + 1.7778px); /* 16px at 768px, and 24px at 1200px */
     }
 }
 @media (min-width: 1200px) {
