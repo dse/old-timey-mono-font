@@ -58,9 +58,11 @@ suitable for screenplay writing!
 
 Reproducing Typewriter Code makes the following changes:
 
--   Distinguishes the digit `0` from the uppercase letter `O`.
+-   A modified digit `0` to be better distinguishable from the
+    uppercase letter `O`.
 
--   Distinguishes the digit `1` from the lowercase letter `l`.
+-   A modified digit `1` to be better distinguishable from the
+    lowercase letter `l`.
 
 -   Certain punctuation marks are made larger for better visibility.
 
@@ -78,15 +80,13 @@ Reproducing Typewriter Code makes the following changes:
 
 -   U+2800–U+28FF Braille Patterns in its entirety.
 
-### In Progress
+-   All Cyrillic used in Russia and Ukraine.
 
--   A lot of extended Latin symbols.
-
--   Some Greek and Cyrillic symbols.  All Cyrillic used in Russia and
-    Ukraine is complete.
+-   All modern uppercase Greek.  Lowercase to come.
 
 -   Plenty of additional punctuation marks, mathematical operators,
-    geometric shapes, and basic arrows from U+2000 on up.
+    geometric shapes, and basic arrows from U+2000 on up.  More to
+    come, probably.
     
 ## License
 
