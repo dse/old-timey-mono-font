@@ -28,12 +28,12 @@ LIGHT_FONT_NARROW_TTF                   := dist/ttf/$(PS_FONT_FAMILY)17Pitch-Lig
 LIGHT_CODING_FONT_NARROW_TTF            := dist/ttf/$(PS_FONT_FAMILY)Code17Pitch-Light.ttf
 SEMI_LIGHT_FONT_NARROW_TTF              := dist/ttf/$(PS_FONT_FAMILY)17Pitch-SemiLight.ttf
 SEMI_LIGHT_CODING_FONT_NARROW_TTF       := dist/ttf/$(PS_FONT_FAMILY)Code17Pitch-SemiLight.ttf
-FONT_PICA_TTF                           := dist/ttf/$(PS_FONT_FAMILY)Pica.ttf
-CODING_FONT_PICA_TTF                    := dist/ttf/$(PS_FONT_FAMILY)CodePica.ttf
-LIGHT_FONT_PICA_TTF                     := dist/ttf/$(PS_FONT_FAMILY)Pica-Light.ttf
-LIGHT_CODING_FONT_PICA_TTF              := dist/ttf/$(PS_FONT_FAMILY)CodePica-Light.ttf
-SEMI_LIGHT_FONT_PICA_TTF                := dist/ttf/$(PS_FONT_FAMILY)Pica-SemiLight.ttf
-SEMI_LIGHT_CODING_FONT_PICA_TTF         := dist/ttf/$(PS_FONT_FAMILY)CodePica-SemiLight.ttf
+FONT_ELITE_TTF                           := dist/ttf/$(PS_FONT_FAMILY)Elite.ttf
+CODING_FONT_ELITE_TTF                    := dist/ttf/$(PS_FONT_FAMILY)CodeElite.ttf
+LIGHT_FONT_ELITE_TTF                     := dist/ttf/$(PS_FONT_FAMILY)Elite-Light.ttf
+LIGHT_CODING_FONT_ELITE_TTF              := dist/ttf/$(PS_FONT_FAMILY)CodeElite-Light.ttf
+SEMI_LIGHT_FONT_ELITE_TTF                := dist/ttf/$(PS_FONT_FAMILY)Elite-SemiLight.ttf
+SEMI_LIGHT_CODING_FONT_ELITE_TTF         := dist/ttf/$(PS_FONT_FAMILY)CodeElite-SemiLight.ttf
 
 CHARGRID_TPL := website/chargrid.mustache
 CHARGRID_HTML := website/chargrid.html
@@ -47,9 +47,9 @@ ORIGINAL_FONTS := \
 	$(FONT_NARROW_TTF) \
 	$(LIGHT_FONT_NARROW_TTF) \
 	$(SEMI_LIGHT_FONT_NARROW_TTF) \
-	$(FONT_PICA_TTF) \
-	$(LIGHT_FONT_PICA_TTF) \
-	$(SEMI_LIGHT_FONT_PICA_TTF) 
+	$(FONT_ELITE_TTF) \
+	$(LIGHT_FONT_ELITE_TTF) \
+	$(SEMI_LIGHT_FONT_ELITE_TTF) 
 
 CODING_FONTS := \
 	$(CODING_FONT_TTF) \
@@ -58,9 +58,9 @@ CODING_FONTS := \
 	$(CODING_FONT_NARROW_TTF) \
 	$(LIGHT_CODING_FONT_NARROW_TTF) \
 	$(SEMI_LIGHT_CODING_FONT_NARROW_TTF) \
-	$(CODING_FONT_PICA_TTF) \
-	$(LIGHT_CODING_FONT_PICA_TTF) \
-	$(SEMI_LIGHT_CODING_FONT_PICA_TTF)
+	$(CODING_FONT_ELITE_TTF) \
+	$(LIGHT_CODING_FONT_ELITE_TTF) \
+	$(SEMI_LIGHT_CODING_FONT_ELITE_TTF)
 
 NARROW_FONTS := \
 	$(FONT_NARROW_TTF) \
@@ -70,13 +70,13 @@ NARROW_FONTS := \
 	$(SEMI_LIGHT_FONT_NARROW_TTF) \
 	$(SEMI_LIGHT_CODING_FONT_NARROW_TTF)
 
-PICA_FONTS := \
-	$(FONT_PICA_TTF) \
-	$(CODING_FONT_PICA_TTF) \
-	$(LIGHT_FONT_PICA_TTF) \
-	$(LIGHT_CODING_FONT_PICA_TTF) \
-	$(SEMI_LIGHT_FONT_PICA_TTF) \
-	$(SEMI_LIGHT_CODING_FONT_PICA_TTF)
+ELITE_FONTS := \
+	$(FONT_ELITE_TTF) \
+	$(CODING_FONT_ELITE_TTF) \
+	$(LIGHT_FONT_ELITE_TTF) \
+	$(LIGHT_CODING_FONT_ELITE_TTF) \
+	$(SEMI_LIGHT_FONT_ELITE_TTF) \
+	$(SEMI_LIGHT_CODING_FONT_ELITE_TTF)
 
 FONTS := $(ORIGINAL_FONTS) $(CODING_FONTS)
 
@@ -84,7 +84,7 @@ FONTTOOL__REGULAR    := --expand-stroke 96
 FONTTOOL__SEMI_LIGHT := --expand-stroke 72 # --translate-y -12  --scale-y 1344 --scale-y-from 1320  --scale-x 1008 --scale-x-from 984
 FONTTOOL__LIGHT      := --expand-stroke 48 # --translate-y -24  --scale-y 1344 --scale-y-from 1296  --scale-x 1008 --scale-x-from 960
 
-FONTTOOL__PICA       := --aspect 0.833333 # Pica => 12cpi
+FONTTOOL__ELITE       := --aspect 0.833333 # Elite => 12cpi
 FONTTOOL__NARROW     := --aspect 0.606060 # 15cpi => 16.5cpi
 
 default: $(FONTS) $(CHARGRID_HTML) $(CHARLIST_HTML)
@@ -92,7 +92,7 @@ fonts: $(FONTS)
 original: $(ORIGINAL_FONTS)
 coding: $(CODING_FONTS)
 narrow: $(NARROW_FONTS)
-pica: $(PICA_FONTS)
+elite: $(ELITE_FONTS)
 
 .SUFFIXES: .sfd .ttf
 
@@ -130,14 +130,14 @@ src/build/$(PS_FONT_FAMILY).stage2.sfd: src/build/$(PS_FONT_FAMILY).stage1.sfd M
 	mkdir -p src/build
 	$(FONTUNREF) "$<" -o "$@"
 
-# Stage 3: make Pica and 17Pitch outlines
-src/build/$(PS_FONT_FAMILY)Pica.stage2.sfd: src/build/$(PS_FONT_FAMILY).stage2.sfd Makefile $(FONTASPECT_PROG) $(SETFONTMETAS_PROG)
+# Stage 3: make Elite and 17Pitch outlines
+src/build/$(PS_FONT_FAMILY)Elite.stage2.sfd: src/build/$(PS_FONT_FAMILY).stage2.sfd Makefile $(FONTASPECT_PROG) $(SETFONTMETAS_PROG)
 	mkdir -p src/build
 	$(FONTASPECT) --aspect 0.833333333333 "$<" -o "$@"
 	$(SETFONTMETAS) \
-		--family-name 's/$(FONT_FAMILY)/$(FONT_FAMILY) Pica/' \
-		--full-name 's/$(FONT_FAMILY)/$(FONT_FAMILY) Pica/' \
-		--ps-name 's/$(PS_FONT_FAMILY)/$(PS_FONT_FAMILY)Pica/' \
+		--family-name 's/$(FONT_FAMILY)/$(FONT_FAMILY) Elite/' \
+		--full-name 's/$(FONT_FAMILY)/$(FONT_FAMILY) Elite/' \
+		--ps-name 's/$(PS_FONT_FAMILY)/$(PS_FONT_FAMILY)Elite/' \
 		"$@"
 src/build/$(PS_FONT_FAMILY)17Pitch.stage2.sfd: src/build/$(PS_FONT_FAMILY).stage2.sfd Makefile $(FONTASPECT_PROG) $(SETFONTMETAS_PROG)
 	mkdir -p src/build
