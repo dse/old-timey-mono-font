@@ -20,10 +20,38 @@ Reproducing Typewriter comes in two font families:
 **Reproducing Typewriter Code** makes the following changes:
 
 -   The digits `0` and `1` are modified for disambiguity with the
-    capital `O` and small `l`.
+    capital letter `O` and small letter `l`.
 
 -   The period, comma, and other selected punctuation marks are made
     larger for better visibility.
+
+## 18 Fonts
+
+-   Font families:
+
+    -   Reproducing Typewriter
+    -   Reproducing Typewriter Code
+
+-   Weights:
+
+    -   Light
+    -   Semi-Light
+    -   Regular
+    
+    It's the same font, just with different stroke widths.
+
+-   Aspects: (à la aspect ratios)
+
+    -   Regular (10 pitch, or 10 characters per inch, same as Courier)
+    -   Elite (12 pitch, same as Prestige)
+    -   17 pitch (16.5 characters per inch, for printing 132 columns
+        where Courier would give you 80.)
+    
+    It's the same font, just compressed to varying degrees.  The elite
+    and 17 pitch variants are compressed just a little above 10/12 and
+    10/16.5 to keep characters from unwantedly joining.
+        
+That's 2 × 3 × 3 = 18 fonts total.
     
 ## What is Reproducing Typewriter
     
