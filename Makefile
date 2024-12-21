@@ -78,6 +78,8 @@ ELITE_FONTS := \
 	$(SEMI_LIGHT_FONT_ELITE_TTF) \
 	$(SEMI_LIGHT_CODING_FONT_ELITE_TTF)
 
+ZIP_FILE = dist/ReproTypewr.zip
+
 FONTS := $(ORIGINAL_FONTS) $(CODING_FONTS)
 
 FONTTOOL__REGULAR    := --expand-stroke 96
@@ -93,6 +95,7 @@ original: $(ORIGINAL_FONTS)
 coding: $(CODING_FONTS)
 narrow: $(NARROW_FONTS)
 elite: $(ELITE_FONTS)
+zip: $(ZIP_FILE)
 
 .SUFFIXES: .sfd .ttf
 
@@ -111,6 +114,9 @@ braille: FORCE
 	fontbraille -W 200 -f $(FONT_SRC)
 boxdraw: FORCE
 	fontboxdraw -f $(FONT_SRC)
+
+$(ZIP_FILE): $(FONTS) Makefile
+	( cd dist && zip -r ReproTypewr.zip ttf )
 
 # Stage 1: import SVGs and set basic metas
 src/build/$(PS_FONT_FAMILY).stage1.sfd: src/$(PS_FONT_FAMILY).sfd Makefile $(IMPORTSVG_PROG) $(SETFONTMETAS_PROG)
