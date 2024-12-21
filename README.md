@@ -87,6 +87,32 @@ Reproducing Typewriter Code makes the following changes:
 -   Plenty of additional punctuation marks, mathematical operators,
     geometric shapes, and basic arrows from U+2000 on up.  More to
     come, probably.
+
+## You May Also Like
+
+I made these:
+
+-   [DSE Typewriter](https://webonastick.com/fonts/dse-typewriter/)
+-   [DSE Typewriter Bitmap](https://github.com/dse/dse-typewriter-bitmap-font)
+
+Free:
+
+-   [TT2020](https://ctrlcctrlv.github.io/TT2020/docs/)
+-   [CMU Typewriter](https://fontlibrary.org/en/font/cmu-typewriter)
+
+Paid:
+
+-   [LTC Remington Typewriter](https://p22.com/family-Remington_Typewriter)
+-   [Bitstream Pica 10 Pitch](https://www.myfonts.com/fonts/bitstream/pica-10-pitch/)
+-   [Italian Typewriter](https://www.myfonts.com/fonts/flanker/italian-typewriter/)
+-   [Typist Slab](https://www.myfonts.com/fonts/vanderKeur/typist-slab/)
+-   [FF Elementa](https://www.myfonts.com/fonts/fontfont/elementa-pro/)
+-   [EF Techno Script](https://www.myfonts.com/fonts/ef/techno-script-ef/)
+-   [Pitch](https://klim.co.nz/retail-fonts/pitch/)
+
+## I Also Made:
+
+-   [Router Gothic](https://webonastick.com/fonts/routed-gothic/)
     
 ## License
 
