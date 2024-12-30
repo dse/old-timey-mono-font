@@ -101,7 +101,7 @@ zip: $(ZIP_FILE)
 
 # update source font fron SVG files
 update: FORCE
-	$(IMPORTSVG) $(FONT_SRC) `find src/chars -type f -name '*.svg'`
+	$(IMPORTSVG) $(FONT_SRC) `find src/chars \! \( -type d -name \*italic\* -prune \) -type f -name '*.svg'`
 	$(EXPANDSTROKES) --expand-stroke 96 $(FONT_SRC)
 fonttool: FORCE
 	echo "use 'make update', dingus." >&2
