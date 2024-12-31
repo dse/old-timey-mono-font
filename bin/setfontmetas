@@ -37,6 +37,11 @@ def main():
     font = fontforge.open(args.filename)
     changed = False
 
+    orig_fontname   = font.fontname
+    orig_familyname = font.familyname
+    orig_weight     = font.weight
+    orig_fullname   = font.fullname
+
     if args.ps_name is not None:
         changed = True
         font.fontname = change(font.fontname, args.ps_name, "fontname")
@@ -81,13 +86,40 @@ def main():
             else:
                 print("setfontmetas %s: panose: not changed" % args.filename)
     if args.sfnt_names_family is not None:
-        font.appendSFNTName('English (US)', 'Family', args.sfnt_names_family)
+        font.appendSFNTName('English (US)', 'Family',
+                            change(
+                                coalesce(
+                                    get_sfnt_name(font, 'Family'),
+                                    orig_familyname
+                                ),
+                                args.sfnt_names_family
+                            ))
     if args.sfnt_names_subfamily is not None:
-        font.appendSFNTName('English (US)', 'SubFamily', args.sfnt_names_subfamily)
+        font.appendSFNTName('English (US)', 'SubFamily',
+                            change(
+                                coalesce(
+                                    get_sfnt_name(font, 'SubFamily')
+                                ),
+                                args.sfnt_names_subfamily
+                            ))
     if args.sfnt_names_fullname is not None:
-        font.appendSFNTName('English (US)', 'FullName', args.sfnt_names_fullname)
+        font.appendSFNTName('English (US)', 'Fullname',
+                            change(
+                                coalesce(
+                                    get_sfnt_name(font, 'Fullname'),
+                                    orig_fullname,
+                                ),
+                                args.sfnt_names_fullname
+                            ))
     if args.sfnt_names_postscriptname is not None:
-        font.appendSFNTName('English (US)', 'PostScriptName', args.sfnt_names_postscriptname)
+        font.appendSFNTName('English (US)', 'PostScriptName',
+                            change(
+                                coalesce(
+                                    get_sfnt_name(font, 'PostScriptName'),
+                                    orig_fontname,
+                                ),
+                                args.sfnt_names_postscriptname
+                            ))
 
     if not changed:
         raise Exception("Font not changed" % args.filename)
@@ -102,6 +134,12 @@ def main():
         if args.verbose:
             print("setfontmetas: Generating %s" % args.filename)
         font.generate(args.filename)
+
+def get_sfnt_name(font, strid):
+    tuples = [tuple[2] for tuple in font.sfnt_names if tuple[1] == strid]
+    if len(tuples):
+        return tuples[0]
+    return None
 
 def trim_norm_space(str):
     result = str
@@ -139,5 +177,17 @@ def change(orig, spec, what):
     if args.dry_run or args.verbose:
         print("%s: %s => %s" % (what, orig, result))
     return result
+
+def coalesce(*values):
+    for value in values:
+        if value is not None:
+            return value
+    return None
+
+def get_sfnt_name(font, id):
+    values = [tuple[2] for tuple in font.sfnt_names where tuple[1] == id]
+    if len(values):
+        return values[0]
+    return None
 
 main()
