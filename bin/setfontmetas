@@ -15,16 +15,21 @@ def main():
         epilog="† accepts \"+appendthis\", \"prependthis+\", and \"s/this/that/\" type parameters",
         formatter_class=formatter
     )
-    parser.add_argument('filename', help='font filename')
-    parser.add_argument('--ps-name', type=str, help='e.g., "ComicSans", "ComicSans-Italic" †')
-    parser.add_argument('--family-name', type=str, help='e.g., "Comic Sans" †')
-    parser.add_argument('--ps-weight', type=str, help='e.g., "Bold" (italic not specified here) †')
-    parser.add_argument('--full-name', type=str, help='e.g., "Comic Sans Italic" †')
-    parser.add_argument('--italic-angle', type=int, help='neg = normal italic, pos = reverse italic')
-    parser.add_argument('--os2-weight', type=int, help='100 to 900')
-    parser.add_argument('--panose', type=str, help='10 values, each either "-" or non-neg integer')
-    parser.add_argument('--dry-run', action='store_true')
+    parser.add_argument('filename',        help='font filename')
+    parser.add_argument('--ps-name',       type=str, help='e.g., "ComicSans", "ComicSans-Italic" †')
+    parser.add_argument('--family-name',   type=str, help='e.g., "Comic Sans" †')
+    parser.add_argument('--ps-weight',     type=str, help='e.g., "Bold" (italic not specified here) †')
+    parser.add_argument('--full-name',     type=str, help='e.g., "Comic Sans Italic" †')
+    parser.add_argument('--italic-angle',  type=int, help='neg = normal italic, pos = reverse italic')
+    parser.add_argument('--os2-weight',    type=int, help='100 to 900')
+    parser.add_argument('--panose',        type=str, help='10 values, each either "-" or non-neg integer')
+    parser.add_argument('--dry-run',       action='store_true')
     parser.add_argument('--verbose', '-v', action='count', default=0)
+    parser.add_argument('--sfnt-names-family',         type=str)
+    parser.add_argument('--sfnt-names-subfamily',      type=str)
+    parser.add_argument('--sfnt-names-fullname',       type=str)
+    parser.add_argument('--sfnt-names-postscriptname', type=str)
+    # font.appendSFNTName(language, strid, string)
     args = parser.parse_args()
 
     if args.verbose:
@@ -75,6 +80,14 @@ def main():
                 print("setfontmetas %s: panose: %s => %s" % (args.filename, repr(orig_panose), repr(font.os2_panose)))
             else:
                 print("setfontmetas %s: panose: not changed" % args.filename)
+    if args.sfnt_names_family is not None:
+        font.appendSFNTName('English (US)', 'Family', args.sfnt_names_family)
+    if args.sfnt_names_subfamily is not None:
+        font.appendSFNTName('English (US)', 'SubFamily', args.sfnt_names_subfamily)
+    if args.sfnt_names_fullname is not None:
+        font.appendSFNTName('English (US)', 'FullName', args.sfnt_names_fullname)
+    if args.sfnt_names_postscriptname is not None:
+        font.appendSFNTName('English (US)', 'PostScriptName', args.sfnt_names_postscriptname)
 
     if not changed:
         raise Exception("Font not changed" % args.filename)
