@@ -18,78 +18,78 @@ EXPANDSTROKES := $(EXPANDSTROKES_PROG)
 FONTASPECT    := $(FONTASPECT_PROG)
 SETFONTMETAS  := $(SETFONTMETAS_PROG)
 
-FONT_TTF                                := dist/ttf/$(PS_FONT_FAMILY).ttf
-CODING_FONT_TTF                         := dist/ttf/$(PS_FONT_FAMILY)Code.ttf
-LIGHT_FONT_TTF                          := dist/ttf/$(PS_FONT_FAMILY)-Light.ttf
-LIGHT_CODING_FONT_TTF                   := dist/ttf/$(PS_FONT_FAMILY)Code-Light.ttf
-SEMI_LIGHT_FONT_TTF                     := dist/ttf/$(PS_FONT_FAMILY)-SemiLight.ttf
-SEMI_LIGHT_CODING_FONT_TTF              := dist/ttf/$(PS_FONT_FAMILY)Code-SemiLight.ttf
-FONT_NARROW_TTF                         := dist/ttf/$(PS_FONT_FAMILY)17Pitch.ttf
-CODING_FONT_NARROW_TTF                  := dist/ttf/$(PS_FONT_FAMILY)Code17Pitch.ttf
-LIGHT_FONT_NARROW_TTF                   := dist/ttf/$(PS_FONT_FAMILY)17Pitch-Light.ttf
-LIGHT_CODING_FONT_NARROW_TTF            := dist/ttf/$(PS_FONT_FAMILY)Code17Pitch-Light.ttf
-SEMI_LIGHT_FONT_NARROW_TTF              := dist/ttf/$(PS_FONT_FAMILY)17Pitch-SemiLight.ttf
-SEMI_LIGHT_CODING_FONT_NARROW_TTF       := dist/ttf/$(PS_FONT_FAMILY)Code17Pitch-SemiLight.ttf
-FONT_ELITE_TTF                           := dist/ttf/$(PS_FONT_FAMILY)Elite.ttf
-CODING_FONT_ELITE_TTF                    := dist/ttf/$(PS_FONT_FAMILY)CodeElite.ttf
-LIGHT_FONT_ELITE_TTF                     := dist/ttf/$(PS_FONT_FAMILY)Elite-Light.ttf
-LIGHT_CODING_FONT_ELITE_TTF              := dist/ttf/$(PS_FONT_FAMILY)CodeElite-Light.ttf
-SEMI_LIGHT_FONT_ELITE_TTF                := dist/ttf/$(PS_FONT_FAMILY)Elite-SemiLight.ttf
-SEMI_LIGHT_CODING_FONT_ELITE_TTF         := dist/ttf/$(PS_FONT_FAMILY)CodeElite-SemiLight.ttf
+FONT_TTF                        := dist/ttf/$(PS_FONT_FAMILY).ttf
+CODING_FONT_TTF                 := dist/ttf/$(PS_FONT_FAMILY)Code.ttf
+THIN_FONT_TTF                   := dist/ttf/$(PS_FONT_FAMILY)-Thin.ttf
+THIN_CODING_FONT_TTF            := dist/ttf/$(PS_FONT_FAMILY)Code-Thin.ttf
+LIGHT_FONT_TTF                  := dist/ttf/$(PS_FONT_FAMILY)-Light.ttf
+LIGHT_CODING_FONT_TTF           := dist/ttf/$(PS_FONT_FAMILY)Code-Light.ttf
+FONT_NARROW_TTF                 := dist/ttf/$(PS_FONT_FAMILY)17Pitch.ttf
+CODING_FONT_NARROW_TTF          := dist/ttf/$(PS_FONT_FAMILY)Code17Pitch.ttf
+THIN_FONT_NARROW_TTF            := dist/ttf/$(PS_FONT_FAMILY)17Pitch-Thin.ttf
+THIN_CODING_FONT_NARROW_TTF     := dist/ttf/$(PS_FONT_FAMILY)Code17Pitch-Thin.ttf
+LIGHT_FONT_NARROW_TTF           := dist/ttf/$(PS_FONT_FAMILY)17Pitch-Light.ttf
+LIGHT_CODING_FONT_NARROW_TTF    := dist/ttf/$(PS_FONT_FAMILY)Code17Pitch-Light.ttf
+FONT_ELITE_TTF                  := dist/ttf/$(PS_FONT_FAMILY)Elite.ttf
+CODING_FONT_ELITE_TTF           := dist/ttf/$(PS_FONT_FAMILY)CodeElite.ttf
+THIN_FONT_ELITE_TTF             := dist/ttf/$(PS_FONT_FAMILY)Elite-Thin.ttf
+THIN_CODING_FONT_ELITE_TTF      := dist/ttf/$(PS_FONT_FAMILY)CodeElite-Thin.ttf
+LIGHT_FONT_ELITE_TTF            := dist/ttf/$(PS_FONT_FAMILY)Elite-Light.ttf
+LIGHT_CODING_FONT_ELITE_TTF     := dist/ttf/$(PS_FONT_FAMILY)CodeElite-Light.ttf
 
-CHARGRID_TPL := website/chargrid.mustache
-CHARGRID_HTML := website/chargrid.html
-CHARLIST_TPL := website/charlist.mustache
-CHARLIST_HTML := website/charlist.html
+CHARGRID_TPL	:= website/chargrid.mustache
+CHARGRID_HTML	:= website/chargrid.html
+CHARLIST_TPL	:= website/charlist.mustache
+CHARLIST_HTML	:= website/charlist.html
 
 ORIGINAL_FONTS := \
 	$(FONT_TTF) \
+	$(THIN_FONT_TTF) \
 	$(LIGHT_FONT_TTF) \
-	$(SEMI_LIGHT_FONT_TTF) \
 	$(FONT_NARROW_TTF) \
+	$(THIN_FONT_NARROW_TTF) \
 	$(LIGHT_FONT_NARROW_TTF) \
-	$(SEMI_LIGHT_FONT_NARROW_TTF) \
 	$(FONT_ELITE_TTF) \
-	$(LIGHT_FONT_ELITE_TTF) \
-	$(SEMI_LIGHT_FONT_ELITE_TTF) 
+	$(THIN_FONT_ELITE_TTF) \
+	$(LIGHT_FONT_ELITE_TTF) 
 
 CODING_FONTS := \
 	$(CODING_FONT_TTF) \
+	$(THIN_CODING_FONT_TTF) \
 	$(LIGHT_CODING_FONT_TTF) \
-	$(SEMI_LIGHT_CODING_FONT_TTF) \
 	$(CODING_FONT_NARROW_TTF) \
+	$(THIN_CODING_FONT_NARROW_TTF) \
 	$(LIGHT_CODING_FONT_NARROW_TTF) \
-	$(SEMI_LIGHT_CODING_FONT_NARROW_TTF) \
 	$(CODING_FONT_ELITE_TTF) \
-	$(LIGHT_CODING_FONT_ELITE_TTF) \
-	$(SEMI_LIGHT_CODING_FONT_ELITE_TTF)
+	$(THIN_CODING_FONT_ELITE_TTF) \
+	$(LIGHT_CODING_FONT_ELITE_TTF)
 
 NARROW_FONTS := \
 	$(FONT_NARROW_TTF) \
 	$(CODING_FONT_NARROW_TTF) \
+	$(THIN_FONT_NARROW_TTF) \
+	$(THIN_CODING_FONT_NARROW_TTF) \
 	$(LIGHT_FONT_NARROW_TTF) \
-	$(LIGHT_CODING_FONT_NARROW_TTF) \
-	$(SEMI_LIGHT_FONT_NARROW_TTF) \
-	$(SEMI_LIGHT_CODING_FONT_NARROW_TTF)
+	$(LIGHT_CODING_FONT_NARROW_TTF)
 
 ELITE_FONTS := \
 	$(FONT_ELITE_TTF) \
 	$(CODING_FONT_ELITE_TTF) \
+	$(THIN_FONT_ELITE_TTF) \
+	$(THIN_CODING_FONT_ELITE_TTF) \
 	$(LIGHT_FONT_ELITE_TTF) \
-	$(LIGHT_CODING_FONT_ELITE_TTF) \
-	$(SEMI_LIGHT_FONT_ELITE_TTF) \
-	$(SEMI_LIGHT_CODING_FONT_ELITE_TTF)
+	$(LIGHT_CODING_FONT_ELITE_TTF)
 
 ZIP_FILE = dist/ReproTypewr.zip
 
 FONTS := $(ORIGINAL_FONTS) $(CODING_FONTS)
 
-FONTTOOL__REGULAR    := --expand-stroke 96
-FONTTOOL__SEMI_LIGHT := --expand-stroke 72 # --translate-y -12  --scale-y 1344 --scale-y-from 1320  --scale-x 1008 --scale-x-from 984
-FONTTOOL__LIGHT      := --expand-stroke 48 # --translate-y -24  --scale-y 1344 --scale-y-from 1296  --scale-x 1008 --scale-x-from 960
+FONTTOOL__REGULAR	:= --expand-stroke 96
+FONTTOOL__LIGHT		:= --expand-stroke 72 # --translate-y -12  --scale-y 1344 --scale-y-from 1320  --scale-x 1008 --scale-x-from 984
+FONTTOOL__THIN		:= --expand-stroke 48 # --translate-y -24  --scale-y 1344 --scale-y-from 1296  --scale-x 1008 --scale-x-from 960
 
-FONTTOOL__ELITE       := --aspect 0.833333 # Elite => 12cpi
-FONTTOOL__NARROW     := --aspect 0.606060 # 15cpi => 16.5cpi
+FONTTOOL__ELITE		:= --aspect 0.833333 # Elite => 12cpi
+FONTTOOL__NARROW	:= --aspect 0.606060 # 15cpi => 16.5cpi
 
 default: $(FONTS) $(CHARGRID_HTML) $(CHARLIST_HTML)
 fonts: $(FONTS)
@@ -165,19 +165,8 @@ dist/ttf/%.ttf: src/build/%.stage2.sfd Makefile $(EXPANDSTROKES_PROG) $(SETFONTM
 		--os2-weight 400 \
 		"$@"
 	bin/fontfix "$@"
-dist/ttf/%-SemiLight.ttf: src/build/%.stage2.sfd Makefile $(EXPANDSTROKES_PROG) $(SETFONTMETAS_PROG)
-	$(EXPANDSTROKES) -x 72 "$<" -o "$@"
-	bin/fontfix "$@"
-	$(SETFONTMETAS) \
-		--full-name '+ Semi-Light' \
-		--ps-name '+-SemiLight' \
-		--ps-weight "Semi-Light" \
-		--os2-weight 350 \
-		--panose _,_,4,_,_,_,_,_,_,_ \
-		"$@"
-	bin/fontfix "$@"
 dist/ttf/%-Light.ttf: src/build/%.stage2.sfd Makefile $(EXPANDSTROKES_PROG) $(SETFONTMETAS_PROG)
-	$(EXPANDSTROKES) -x 48 "$<" -o "$@"
+	$(EXPANDSTROKES) -x 72 "$<" -o "$@"
 	bin/fontfix "$@"
 	$(SETFONTMETAS) \
 		--full-name '+ Light' \
@@ -185,6 +174,17 @@ dist/ttf/%-Light.ttf: src/build/%.stage2.sfd Makefile $(EXPANDSTROKES_PROG) $(SE
 		--ps-weight "Light" \
 		--os2-weight 300 \
 		--panose _,_,3,_,_,_,_,_,_,_ \
+		"$@"
+	bin/fontfix "$@"
+dist/ttf/%-Thin.ttf: src/build/%.stage2.sfd Makefile $(EXPANDSTROKES_PROG) $(SETFONTMETAS_PROG)
+	$(EXPANDSTROKES) -x 48 "$<" -o "$@"
+	bin/fontfix "$@"
+	$(SETFONTMETAS) \
+		--full-name '+ Thin' \
+		--ps-name '+-Thin' \
+		--ps-weight "Thin" \
+		--os2-weight 100 \
+		--panose _,_,1,_,_,_,_,_,_,_ \
 		"$@"
 	bin/fontfix "$@"
 
