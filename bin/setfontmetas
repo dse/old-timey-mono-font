@@ -155,12 +155,20 @@ def rm_space(str):
 def change(orig, spec, psname=False):
     global args
     substituter_fmt = r's%s(?P<pat>.*?)%s(?P<repl>.*)%s'
-    if re.fullmatch(r'\+.*\+', spec):
+    if re.fullmatch(r'\+.*\+', spec): # e.g., +blah+
         result = spec
     elif spec[0] == '=':          # e.g., =blah
         result = spec[1:]
     elif spec[0] == '+':          # e.g., +blah
-        result = orig + spec[1:]
+        if psname:
+            if orig.find('-') < 0:
+                # ComicSansMS +Bold => ComicSansMS-Bold
+                result = orig + '-' + spec[1:]
+            else:
+                # ComicSansMS-Bold +Italic => ComicSansMS-BoldItalic
+                result = orig + spec[1:]
+        else:
+            result = orig + spec[1:]
     elif spec[-1] == '+':         # e.g., blah+
         result = spec[:-1] + orig
     elif match := (re.fullmatch(substituter_fmt % (r'<',  r'><',   r'>' ), spec) or
