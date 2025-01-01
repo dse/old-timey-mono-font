@@ -20,6 +20,7 @@ def main():
     global args
     parser = argparse.ArgumentParser()
     parser.add_argument('filenames', nargs='+', help='font filename')
+    parser.add_argument('--verbose', '-v', action='count', default=0)
     args = parser.parse_args()
     for filename in args.filenames:
         font = fontforge.open(filename)
@@ -139,14 +140,15 @@ def main():
         panose[2] = panose_2
         font.os2_panose = tuple(panose)
 
-        print("font.familyname = %s" % font.familyname)
-        print("pure family name = %s" % font_family_name)
-        print("full name = %s" % font.fullname)
-        print("ps name = %s" % font.fontname)
-        print("weight = %s" % font.weight)
-        print("os2_weight = %d" % font.os2_weight)
-        print("styles = %s" % styles)
-        print("panose = %s" % list(font.os2_panose))
+        if args.verbose >= 1:
+            print("font.familyname = %s" % font.familyname)
+            print("pure family name = %s" % font_family_name)
+            print("full name = %s" % font.fullname)
+            print("ps name = %s" % font.fontname)
+            print("weight = %s" % font.weight)
+            print("os2_weight = %d" % font.os2_weight)
+            print("styles = %s" % styles)
+            print("panose = %s" % list(font.os2_panose))
 
         if filename.endswith(".sfd"):
             font.save(filename)
