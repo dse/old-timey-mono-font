@@ -86,41 +86,13 @@ def main():
             else:
                 print("setfontmetas %s: panose: not changed" % args.filename)
     if args.sfnt_names_family is not None:
-        font.appendSFNTName('English (US)', 'Family',
-                            change(
-                                coalesce(
-                                    get_sfnt_name(font, 'Family'),
-                                    orig_familyname
-                                ),
-                                args.sfnt_names_family
-                            ))
+        font.appendSFNTName('English (US)', 'Family', change(coalesce(get_sfnt_name(font, 'Family'), orig_familyname), args.sfnt_names_family))
     if args.sfnt_names_subfamily is not None:
-        font.appendSFNTName('English (US)', 'SubFamily',
-                            change(
-                                coalesce(
-                                    get_sfnt_name(font, 'SubFamily')
-                                ),
-                                args.sfnt_names_subfamily
-                            ))
+        font.appendSFNTName('English (US)', 'SubFamily', change(coalesce(get_sfnt_name(font, 'SubFamily')), args.sfnt_names_subfamily))
     if args.sfnt_names_fullname is not None:
-        font.appendSFNTName('English (US)', 'Fullname',
-                            change(
-                                coalesce(
-                                    get_sfnt_name(font, 'Fullname'),
-                                    orig_fullname,
-                                ),
-                                args.sfnt_names_fullname
-                            ))
+        font.appendSFNTName('English (US)', 'Fullname', change(coalesce(get_sfnt_name(font, 'Fullname'), orig_fullname), args.sfnt_names_fullname))
     if args.sfnt_names_postscriptname is not None:
-        font.appendSFNTName('English (US)', 'PostScriptName',
-                            change(
-                                coalesce(
-                                    get_sfnt_name(font, 'PostScriptName'),
-                                    orig_fontname,
-                                ),
-                                args.sfnt_names_postscriptname,
-                                psname=True
-                            ))
+        font.appendSFNTName('English (US)', 'PostScriptName', change(coalesce(get_sfnt_name(font, 'PostScriptName'), orig_fontname), args.sfnt_names_postscriptname, psname=True))
 
     if not changed:
         raise Exception("Font not changed" % args.filename)
