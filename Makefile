@@ -20,24 +20,28 @@ FONTASPECT    := $(FONTASPECT_PROG)
 SETFONTMETAS  := $(SETFONTMETAS_PROG)
 SETRTMETAS    := $(SETRTMETAS_PROG)
 
-FONT_TTF                        := dist/ttf/$(PS_FONT_FAMILY).ttf
-CODING_FONT_TTF                 := dist/ttf/$(PS_FONT_FAMILY)Code.ttf
-THIN_FONT_TTF                   := dist/ttf/$(PS_FONT_FAMILY)-Thin.ttf
-THIN_CODING_FONT_TTF            := dist/ttf/$(PS_FONT_FAMILY)Code-Thin.ttf
-LIGHT_FONT_TTF                  := dist/ttf/$(PS_FONT_FAMILY)-Light.ttf
-LIGHT_CODING_FONT_TTF           := dist/ttf/$(PS_FONT_FAMILY)Code-Light.ttf
-FONT_NARROW_TTF                 := dist/ttf/$(PS_FONT_FAMILY)17Pitch.ttf
-CODING_FONT_NARROW_TTF          := dist/ttf/$(PS_FONT_FAMILY)Code17Pitch.ttf
-THIN_FONT_NARROW_TTF            := dist/ttf/$(PS_FONT_FAMILY)17Pitch-Thin.ttf
-THIN_CODING_FONT_NARROW_TTF     := dist/ttf/$(PS_FONT_FAMILY)Code17Pitch-Thin.ttf
-LIGHT_FONT_NARROW_TTF           := dist/ttf/$(PS_FONT_FAMILY)17Pitch-Light.ttf
-LIGHT_CODING_FONT_NARROW_TTF    := dist/ttf/$(PS_FONT_FAMILY)Code17Pitch-Light.ttf
-FONT_ELITE_TTF                  := dist/ttf/$(PS_FONT_FAMILY)Elite.ttf
-CODING_FONT_ELITE_TTF           := dist/ttf/$(PS_FONT_FAMILY)CodeElite.ttf
-THIN_FONT_ELITE_TTF             := dist/ttf/$(PS_FONT_FAMILY)Elite-Thin.ttf
-THIN_CODING_FONT_ELITE_TTF      := dist/ttf/$(PS_FONT_FAMILY)CodeElite-Thin.ttf
-LIGHT_FONT_ELITE_TTF            := dist/ttf/$(PS_FONT_FAMILY)Elite-Light.ttf
-LIGHT_CODING_FONT_ELITE_TTF     := dist/ttf/$(PS_FONT_FAMILY)CodeElite-Light.ttf
+DISTDIR := dist/ttf
+
+FONT_TTF                        := $(DISTDIR)/$(PS_FONT_FAMILY).ttf
+CODING_FONT_TTF                 := $(DISTDIR)/$(PS_FONT_FAMILY)Code.ttf
+THIN_FONT_TTF                   := $(DISTDIR)/$(PS_FONT_FAMILY)-Thin.ttf
+THIN_CODING_FONT_TTF            := $(DISTDIR)/$(PS_FONT_FAMILY)Code-Thin.ttf
+LIGHT_FONT_TTF                  := $(DISTDIR)/$(PS_FONT_FAMILY)-Light.ttf
+LIGHT_CODING_FONT_TTF           := $(DISTDIR)/$(PS_FONT_FAMILY)Code-Light.ttf
+FONT_NARROW_TTF                 := $(DISTDIR)/$(PS_FONT_FAMILY)17Pitch.ttf
+CODING_FONT_NARROW_TTF          := $(DISTDIR)/$(PS_FONT_FAMILY)Code17Pitch.ttf
+THIN_FONT_NARROW_TTF            := $(DISTDIR)/$(PS_FONT_FAMILY)17Pitch-Thin.ttf
+THIN_CODING_FONT_NARROW_TTF     := $(DISTDIR)/$(PS_FONT_FAMILY)Code17Pitch-Thin.ttf
+LIGHT_FONT_NARROW_TTF           := $(DISTDIR)/$(PS_FONT_FAMILY)17Pitch-Light.ttf
+LIGHT_CODING_FONT_NARROW_TTF    := $(DISTDIR)/$(PS_FONT_FAMILY)Code17Pitch-Light.ttf
+FONT_ELITE_TTF                  := $(DISTDIR)/$(PS_FONT_FAMILY)Elite.ttf
+CODING_FONT_ELITE_TTF           := $(DISTDIR)/$(PS_FONT_FAMILY)CodeElite.ttf
+THIN_FONT_ELITE_TTF             := $(DISTDIR)/$(PS_FONT_FAMILY)Elite-Thin.ttf
+THIN_CODING_FONT_ELITE_TTF      := $(DISTDIR)/$(PS_FONT_FAMILY)CodeElite-Thin.ttf
+LIGHT_FONT_ELITE_TTF            := $(DISTDIR)/$(PS_FONT_FAMILY)Elite-Light.ttf
+LIGHT_CODING_FONT_ELITE_TTF     := $(DISTDIR)/$(PS_FONT_FAMILY)CodeElite-Light.ttf
+
+TIMESTAMP := $(shell date +%s)
 
 CHARGRID_TPL	:= website/chargrid.mustache
 CHARGRID_HTML	:= website/chargrid.html
@@ -104,6 +108,10 @@ zip: $(ZIP_FILE)
 .SUFFIXES: .sfd .ttf
 
 # update source font fron SVG files
+testfonts: FORCE
+	make fonts FONT_FAMILY="RT$(TIMESTAMP)" \
+	           PS_FONT_FAMILY="RT$(TIMESTAMP)" \
+	           DISTDIR="test-dist/RT$(TIMESTAMP)"
 update: FORCE
 	$(IMPORTSVG) $(FONT_SRC) `find src/chars \! \( -type d -name \*italic\* -prune \) \! \( -type d -name greek-lc -prune \) -type f -name '*.svg'`
 	$(EXPANDSTROKES) --expand-stroke 96 $(FONT_SRC)
@@ -123,7 +131,7 @@ $(ZIP_FILE): $(FONTS) Makefile
 	( cd dist && zip -r ReproTypewr.zip ttf )
 
 # Stage 1: import SVGs and set basic metas
-src/build/$(PS_FONT_FAMILY).stage1.sfd: src/$(PS_FONT_FAMILY).sfd Makefile $(IMPORTSVG_PROG) $(SETRTMETAS_PROG)
+src/build/$(PS_FONT_FAMILY).stage1.sfd: $(FONT_SRC) Makefile $(IMPORTSVG_PROG) $(SETRTMETAS_PROG)
 	mkdir -p src/build
 	$(IMPORTSVG) "$<" -o "$@" src/chars/*.svg
 
@@ -141,22 +149,22 @@ src/build/$(PS_FONT_FAMILY)17Pitch.stage2.sfd: src/build/$(PS_FONT_FAMILY).stage
 	$(FONTASPECT) --aspect 0.606060606060 "$<" -o "$@"
 
 # Stage 4: make weights
-dist/ttf/%.ttf: src/build/%.stage2.sfd Makefile $(EXPANDSTROKES_PROG) $(SETRTMETAS_PROG)
+$(DISTDIR)/%.ttf: src/build/%.stage2.sfd Makefile $(EXPANDSTROKES_PROG) $(SETRTMETAS_PROG)
 	$(EXPANDSTROKES) -x 96 "$<" -o "$@"
 	bin/fontfix "$@"
 	$(SETRTMETAS) "$@"
-dist/ttf/%-Light.ttf: src/build/%.stage2.sfd Makefile $(EXPANDSTROKES_PROG) $(SETRTMETAS_PROG)
+$(DISTDIR)/%-Light.ttf: src/build/%.stage2.sfd Makefile $(EXPANDSTROKES_PROG) $(SETRTMETAS_PROG)
 	$(EXPANDSTROKES) -x 72 "$<" -o "$@"
 	bin/fontfix "$@"
 	$(SETRTMETAS) "$@"
-dist/ttf/%-Thin.ttf: src/build/%.stage2.sfd Makefile $(EXPANDSTROKES_PROG) $(SETRTMETAS_PROG)
+$(DISTDIR)/%-Thin.ttf: src/build/%.stage2.sfd Makefile $(EXPANDSTROKES_PROG) $(SETRTMETAS_PROG)
 	$(EXPANDSTROKES) -x 48 "$<" -o "$@"
 	bin/fontfix "$@"
 	$(SETRTMETAS) "$@"
 
 # Stage 5: make code variants
 # NOTE: can't use %.ttf because % cannot match zero characters.
-dist/ttf/$(PS_FONT_FAMILY)Code%ttf: dist/ttf/$(PS_FONT_FAMILY)%ttf Makefile $(SETRTMETAS_PROG)
+$(DISTDIR)/$(PS_FONT_FAMILY)Code%ttf: $(DISTDIR)/$(PS_FONT_FAMILY)%ttf Makefile $(SETRTMETAS_PROG)
 	pyftfeatfreeze -f code "$<" "$@" # -U "" because we do that later
 	bin/fontfix "$@"
 	$(SETRTMETAS) "$@"
