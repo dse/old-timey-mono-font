@@ -41,7 +41,7 @@ THIN_CODING_FONT_ELITE_TTF      := $(DISTDIR)/$(PS_FONT_FAMILY)CodeElite-Thin.tt
 LIGHT_FONT_ELITE_TTF            := $(DISTDIR)/$(PS_FONT_FAMILY)Elite-Light.ttf
 LIGHT_CODING_FONT_ELITE_TTF     := $(DISTDIR)/$(PS_FONT_FAMILY)CodeElite-Light.ttf
 
-TIMESTAMP := $(shell date +%s)
+TIMESTAMP := $(shell date +%m%d%H%M%S)
 
 CHARGRID_TPL	:= website/chargrid.mustache
 CHARGRID_HTML	:= website/chargrid.html
