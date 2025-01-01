@@ -1,6 +1,7 @@
 #!/usr/bin/env -S fontforge -quiet
 # -*- mode: python; coding: utf-8 -*-
 
+import re
 import os
 import fontforge
 import argparse
@@ -23,16 +24,23 @@ def main():
     for filename in args.filenames:
         font = fontforge.open(filename)
         basename = os.path.basename(filename)
-        is_code = basename.startswith("ReproTypewrCode")
+        is_code = basename.find("Code") >= 0
 
         # compute styles from filename
         #----------------------------------------------------------------------
 
-        font_family_name = "Repro Typewr"
-        ps_family_name = "ReproTypewr"
-        if is_code:
-            font_family_name = "Repro Typewr Code"
-            ps_family_name = "ReproTypewrCode"
+        if match := re.match(r'RT\d+', basename):
+            font_family_name = match.group(0)
+            ps_family_name = match.group(0)
+            if is_code:
+                font_family_name += " Code"
+                ps_family_name += "Code"
+        else:
+            font_family_name = "Repro Typewr"
+            ps_family_name = "ReproTypewr"
+            if is_code:
+                font_family_name = "Repro Typewr Code"
+                ps_family_name = "ReproTypewrCode"
 
         weight = WEIGHT_NORMAL
         panose_2 = 5
