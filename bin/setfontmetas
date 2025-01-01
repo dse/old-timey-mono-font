@@ -185,7 +185,7 @@ def coalesce(*values):
     return None
 
 def get_sfnt_name(font, id):
-    values = [tuple[2] for tuple in font.sfnt_names where tuple[1] == id]
+    values = [tuple[2] for tuple in font.sfnt_names if tuple[1] == id and tuple[0] == "English (US)"]
     if len(values):
         return values[0]
     return None
