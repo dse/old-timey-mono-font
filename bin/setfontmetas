@@ -44,16 +44,16 @@ def main():
 
     if args.ps_name is not None:
         changed = True
-        font.fontname = change(font.fontname, args.ps_name, "fontname")
+        font.fontname = change(font.fontname, args.ps_name, psname=True)
     if args.family_name is not None:
         changed = True
-        font.familyname = change(font.familyname, args.family_name, "familyname")
+        font.familyname = change(font.familyname, args.family_name)
     if args.ps_weight is not None:
         changed = True
-        font.weight = change(font.weight, args.ps_weight, "weight")
+        font.weight = change(font.weight, args.ps_weight)
     if args.full_name is not None:
         changed = True
-        font.fullname = change(font.fullname, args.full_name, "fullname")
+        font.fullname = change(font.fullname, args.full_name)
     if args.italic_angle is not None:
         changed = True
         font.italicangle = args.italic_angle
@@ -118,7 +118,8 @@ def main():
                                     get_sfnt_name(font, 'PostScriptName'),
                                     orig_fontname,
                                 ),
-                                args.sfnt_names_postscriptname
+                                args.sfnt_names_postscriptname,
+                                psname=True
                             ))
 
     if not changed:
@@ -151,7 +152,7 @@ def trim_norm_space(str):
 def rm_space(str):
     return re.sub(r'\s+', '', str)
 
-def change(orig, spec, what):
+def change(orig, spec, psname=False):
     global args
     substituter_fmt = r's%s(?P<pat>.*?)%s(?P<repl>.*)%s'
     if re.fullmatch(r'\+.*\+', spec):
