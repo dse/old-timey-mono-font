@@ -150,14 +150,17 @@ src/build/$(PS_FONT_FAMILY)17Pitch.stage2.sfd: src/build/$(PS_FONT_FAMILY).stage
 
 # Stage 4: make weights
 $(DISTDIR)/%.ttf: src/build/%.stage2.sfd Makefile $(EXPANDSTROKES_PROG) $(SETRTMETAS_PROG)
+	mkdir -p "$(DISTDIR)"
 	$(EXPANDSTROKES) -x 96 "$<" -o "$@"
 	bin/fontfix "$@"
 	$(SETRTMETAS) "$@"
 $(DISTDIR)/%-Light.ttf: src/build/%.stage2.sfd Makefile $(EXPANDSTROKES_PROG) $(SETRTMETAS_PROG)
+	mkdir -p "$(DISTDIR)"
 	$(EXPANDSTROKES) -x 72 "$<" -o "$@"
 	bin/fontfix "$@"
 	$(SETRTMETAS) "$@"
 $(DISTDIR)/%-Thin.ttf: src/build/%.stage2.sfd Makefile $(EXPANDSTROKES_PROG) $(SETRTMETAS_PROG)
+	mkdir -p "$(DISTDIR)"
 	$(EXPANDSTROKES) -x 48 "$<" -o "$@"
 	bin/fontfix "$@"
 	$(SETRTMETAS) "$@"
