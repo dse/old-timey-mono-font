@@ -9,6 +9,7 @@ FONTUNREF_PROG     := bin/fontunref
 EXPANDSTROKES_PROG := bin/expandstrokes
 FONTASPECT_PROG    := bin/fontaspect
 SETFONTMETAS_PROG  := bin/setfontmetas
+SETRTMETAS_PROG    := bin/setrtmetas
 
 OPT_VERBOSE :=
 
@@ -17,6 +18,7 @@ FONTUNREF     := $(FONTUNREF_PROG)
 EXPANDSTROKES := $(EXPANDSTROKES_PROG)
 FONTASPECT    := $(FONTASPECT_PROG)
 SETFONTMETAS  := $(SETFONTMETAS_PROG)
+SETRTMETAS    := $(SETRTMETAS_PROG)
 
 FONT_TTF                        := dist/ttf/$(PS_FONT_FAMILY).ttf
 CODING_FONT_TTF                 := dist/ttf/$(PS_FONT_FAMILY)Code.ttf
@@ -121,17 +123,9 @@ $(ZIP_FILE): $(FONTS) Makefile
 	( cd dist && zip -r ReproTypewr.zip ttf )
 
 # Stage 1: import SVGs and set basic metas
-src/build/$(PS_FONT_FAMILY).stage1.sfd: src/$(PS_FONT_FAMILY).sfd Makefile $(IMPORTSVG_PROG) $(SETFONTMETAS_PROG)
+src/build/$(PS_FONT_FAMILY).stage1.sfd: src/$(PS_FONT_FAMILY).sfd Makefile $(IMPORTSVG_PROG) $(SETRTMETAS_PROG)
 	mkdir -p src/build
 	$(IMPORTSVG) "$<" -o "$@" src/chars/*.svg
-	$(SETFONTMETAS) \
-		--family-name '$(FONT_FAMILY)' \
-		--full-name '$(FONT_FAMILY)' \
-		--ps-name '$(PS_FONT_FAMILY)' \
-		--ps-weight 'Medium' \
-		--os2-weight 400 \
-		--panose 2,0,5,9,3,0,_,_,_,3 \
-		"$@"
 
 # Stage 2: unroll references
 src/build/$(PS_FONT_FAMILY).stage2.sfd: src/build/$(PS_FONT_FAMILY).stage1.sfd Makefile $(FONTUNREF_PROG)
@@ -139,66 +133,33 @@ src/build/$(PS_FONT_FAMILY).stage2.sfd: src/build/$(PS_FONT_FAMILY).stage1.sfd M
 	$(FONTUNREF) "$<" -o "$@"
 
 # Stage 3: make Elite and 17Pitch outlines
-src/build/$(PS_FONT_FAMILY)Elite.stage2.sfd: src/build/$(PS_FONT_FAMILY).stage2.sfd Makefile $(FONTASPECT_PROG) $(SETFONTMETAS_PROG)
+src/build/$(PS_FONT_FAMILY)Elite.stage2.sfd: src/build/$(PS_FONT_FAMILY).stage2.sfd Makefile $(FONTASPECT_PROG)
 	mkdir -p src/build
 	$(FONTASPECT) --aspect 0.833333333333 "$<" -o "$@"
-	$(SETFONTMETAS) \
-		--family-name 's/$(FONT_FAMILY)/$(FONT_FAMILY) Elite/' \
-		--full-name 's/$(FONT_FAMILY)/$(FONT_FAMILY) Elite/' \
-		--ps-name 's/$(PS_FONT_FAMILY)/$(PS_FONT_FAMILY)Elite/' \
-		"$@"
-src/build/$(PS_FONT_FAMILY)17Pitch.stage2.sfd: src/build/$(PS_FONT_FAMILY).stage2.sfd Makefile $(FONTASPECT_PROG) $(SETFONTMETAS_PROG)
+src/build/$(PS_FONT_FAMILY)17Pitch.stage2.sfd: src/build/$(PS_FONT_FAMILY).stage2.sfd Makefile $(FONTASPECT_PROG)
 	mkdir -p src/build
 	$(FONTASPECT) --aspect 0.606060606060 "$<" -o "$@"
-	$(SETFONTMETAS) \
-		--family-name 's/$(FONT_FAMILY)/$(FONT_FAMILY) 17 Pitch/' \
-		--full-name 's/$(FONT_FAMILY)/$(FONT_FAMILY) 17 Pitch/' \
-		--ps-name 's/$(PS_FONT_FAMILY)/$(PS_FONT_FAMILY)17Pitch/' \
-		"$@"
 
 # Stage 4: make weights
-dist/ttf/%.ttf: src/build/%.stage2.sfd Makefile $(EXPANDSTROKES_PROG) $(SETFONTMETAS_PROG)
+dist/ttf/%.ttf: src/build/%.stage2.sfd Makefile $(EXPANDSTROKES_PROG) $(SETRTMETAS_PROG)
 	$(EXPANDSTROKES) -x 96 "$<" -o "$@"
 	bin/fontfix "$@"
-	$(SETFONTMETAS) \
-		--ps-weight "Medium" \
-		--os2-weight 400 \
-		"$@"
-	bin/fontfix "$@"
-dist/ttf/%-Light.ttf: src/build/%.stage2.sfd Makefile $(EXPANDSTROKES_PROG) $(SETFONTMETAS_PROG)
+	$(SETRTMETAS) "$@"
+dist/ttf/%-Light.ttf: src/build/%.stage2.sfd Makefile $(EXPANDSTROKES_PROG) $(SETRTMETAS_PROG)
 	$(EXPANDSTROKES) -x 72 "$<" -o "$@"
 	bin/fontfix "$@"
-	$(SETFONTMETAS) \
-		--full-name '+ Light' \
-		--ps-name '+-Light' \
-		--ps-weight "Light" \
-		--os2-weight 300 \
-		--panose _,_,3,_,_,_,_,_,_,_ \
-		"$@"
-	bin/fontfix "$@"
-dist/ttf/%-Thin.ttf: src/build/%.stage2.sfd Makefile $(EXPANDSTROKES_PROG) $(SETFONTMETAS_PROG)
+	$(SETRTMETAS) "$@"
+dist/ttf/%-Thin.ttf: src/build/%.stage2.sfd Makefile $(EXPANDSTROKES_PROG) $(SETRTMETAS_PROG)
 	$(EXPANDSTROKES) -x 48 "$<" -o "$@"
 	bin/fontfix "$@"
-	$(SETFONTMETAS) \
-		--full-name '+ Thin' \
-		--ps-name '+-Thin' \
-		--ps-weight "Thin" \
-		--os2-weight 100 \
-		--panose _,_,1,_,_,_,_,_,_,_ \
-		"$@"
-	bin/fontfix "$@"
+	$(SETRTMETAS) "$@"
 
 # Stage 5: make code variants
 # NOTE: can't use %.ttf because % cannot match zero characters.
-dist/ttf/$(PS_FONT_FAMILY)Code%ttf: dist/ttf/$(PS_FONT_FAMILY)%ttf Makefile $(SETFONTMETAS_PROG)
+dist/ttf/$(PS_FONT_FAMILY)Code%ttf: dist/ttf/$(PS_FONT_FAMILY)%ttf Makefile $(SETRTMETAS_PROG)
 	pyftfeatfreeze -f code "$<" "$@" # -U "" because we do that later
 	bin/fontfix "$@"
-	$(SETFONTMETAS) \
-		--family-name 's/$(FONT_FAMILY)/$(FONT_FAMILY) Code/' \
-		--full-name   's/$(FONT_FAMILY)/$(FONT_FAMILY) Code/' \
-		--ps-name     's/$(PS_FONT_FAMILY)/$(PS_FONT_FAMILY)Code/' \
-		"$@"
-	bin/fontfix "$@"
+	$(SETRTMETAS) "$@"
 
 chargrid: FORCE $(CHARGRID_HTML)
 charlist: FORCE $(CHARLIST_HTML)
