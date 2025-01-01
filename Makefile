@@ -28,18 +28,18 @@ THIN_FONT_TTF                   := $(DISTDIR)/$(PS_FONT_FAMILY)-Thin.ttf
 THIN_CODING_FONT_TTF            := $(DISTDIR)/$(PS_FONT_FAMILY)Code-Thin.ttf
 LIGHT_FONT_TTF                  := $(DISTDIR)/$(PS_FONT_FAMILY)-Light.ttf
 LIGHT_CODING_FONT_TTF           := $(DISTDIR)/$(PS_FONT_FAMILY)Code-Light.ttf
-FONT_NARROW_TTF                 := $(DISTDIR)/$(PS_FONT_FAMILY)17Pitch.ttf
-CODING_FONT_NARROW_TTF          := $(DISTDIR)/$(PS_FONT_FAMILY)Code17Pitch.ttf
-THIN_FONT_NARROW_TTF            := $(DISTDIR)/$(PS_FONT_FAMILY)17Pitch-Thin.ttf
-THIN_CODING_FONT_NARROW_TTF     := $(DISTDIR)/$(PS_FONT_FAMILY)Code17Pitch-Thin.ttf
-LIGHT_FONT_NARROW_TTF           := $(DISTDIR)/$(PS_FONT_FAMILY)17Pitch-Light.ttf
-LIGHT_CODING_FONT_NARROW_TTF    := $(DISTDIR)/$(PS_FONT_FAMILY)Code17Pitch-Light.ttf
-FONT_ELITE_TTF                  := $(DISTDIR)/$(PS_FONT_FAMILY)Elite.ttf
-CODING_FONT_ELITE_TTF           := $(DISTDIR)/$(PS_FONT_FAMILY)CodeElite.ttf
-THIN_FONT_ELITE_TTF             := $(DISTDIR)/$(PS_FONT_FAMILY)Elite-Thin.ttf
-THIN_CODING_FONT_ELITE_TTF      := $(DISTDIR)/$(PS_FONT_FAMILY)CodeElite-Thin.ttf
-LIGHT_FONT_ELITE_TTF            := $(DISTDIR)/$(PS_FONT_FAMILY)Elite-Light.ttf
-LIGHT_CODING_FONT_ELITE_TTF     := $(DISTDIR)/$(PS_FONT_FAMILY)CodeElite-Light.ttf
+FONT_COMP_TTF			:= $(DISTDIR)/$(PS_FONT_FAMILY)Comp.ttf
+CODING_FONT_COMP_TTF		:= $(DISTDIR)/$(PS_FONT_FAMILY)CodeComp.ttf
+THIN_FONT_COMP_TTF		:= $(DISTDIR)/$(PS_FONT_FAMILY)Comp-Thin.ttf
+THIN_CODING_FONT_COMP_TTF	:= $(DISTDIR)/$(PS_FONT_FAMILY)CodeComp-Thin.ttf
+LIGHT_FONT_COMP_TTF		:= $(DISTDIR)/$(PS_FONT_FAMILY)Comp-Light.ttf
+LIGHT_CODING_FONT_COMP_TTF	:= $(DISTDIR)/$(PS_FONT_FAMILY)CodeComp-Light.ttf
+FONT_COND_TTF			:= $(DISTDIR)/$(PS_FONT_FAMILY)Cond.ttf
+CODING_FONT_COND_TTF		:= $(DISTDIR)/$(PS_FONT_FAMILY)CodeCond.ttf
+THIN_FONT_COND_TTF		:= $(DISTDIR)/$(PS_FONT_FAMILY)Cond-Thin.ttf
+THIN_CODING_FONT_COND_TTF	:= $(DISTDIR)/$(PS_FONT_FAMILY)CodeCond-Thin.ttf
+LIGHT_FONT_COND_TTF		:= $(DISTDIR)/$(PS_FONT_FAMILY)Cond-Light.ttf
+LIGHT_CODING_FONT_COND_TTF	:= $(DISTDIR)/$(PS_FONT_FAMILY)CodeCond-Light.ttf
 
 TIMESTAMP := $(shell date +%m%d%H%M%S)
 
@@ -52,39 +52,39 @@ ORIGINAL_FONTS := \
 	$(FONT_TTF) \
 	$(THIN_FONT_TTF) \
 	$(LIGHT_FONT_TTF) \
-	$(FONT_NARROW_TTF) \
-	$(THIN_FONT_NARROW_TTF) \
-	$(LIGHT_FONT_NARROW_TTF) \
-	$(FONT_ELITE_TTF) \
-	$(THIN_FONT_ELITE_TTF) \
-	$(LIGHT_FONT_ELITE_TTF) 
+	$(FONT_COMP_TTF) \
+	$(THIN_FONT_COMP_TTF) \
+	$(LIGHT_FONT_COMP_TTF) \
+	$(FONT_COND_TTF) \
+	$(THIN_FONT_COND_TTF) \
+	$(LIGHT_FONT_COND_TTF) 
 
 CODING_FONTS := \
 	$(CODING_FONT_TTF) \
 	$(THIN_CODING_FONT_TTF) \
 	$(LIGHT_CODING_FONT_TTF) \
-	$(CODING_FONT_NARROW_TTF) \
-	$(THIN_CODING_FONT_NARROW_TTF) \
-	$(LIGHT_CODING_FONT_NARROW_TTF) \
-	$(CODING_FONT_ELITE_TTF) \
-	$(THIN_CODING_FONT_ELITE_TTF) \
-	$(LIGHT_CODING_FONT_ELITE_TTF)
+	$(CODING_FONT_COMP_TTF) \
+	$(THIN_CODING_FONT_COMP_TTF) \
+	$(LIGHT_CODING_FONT_COMP_TTF) \
+	$(CODING_FONT_COND_TTF) \
+	$(THIN_CODING_FONT_COND_TTF) \
+	$(LIGHT_CODING_FONT_COND_TTF)
 
-NARROW_FONTS := \
-	$(FONT_NARROW_TTF) \
-	$(CODING_FONT_NARROW_TTF) \
-	$(THIN_FONT_NARROW_TTF) \
-	$(THIN_CODING_FONT_NARROW_TTF) \
-	$(LIGHT_FONT_NARROW_TTF) \
-	$(LIGHT_CODING_FONT_NARROW_TTF)
+COMP_FONTS := \
+	$(FONT_COMP_TTF) \
+	$(CODING_FONT_COMP_TTF) \
+	$(THIN_FONT_COMP_TTF) \
+	$(THIN_CODING_FONT_COMP_TTF) \
+	$(LIGHT_FONT_COMP_TTF) \
+	$(LIGHT_CODING_FONT_COMP_TTF)
 
-ELITE_FONTS := \
-	$(FONT_ELITE_TTF) \
-	$(CODING_FONT_ELITE_TTF) \
-	$(THIN_FONT_ELITE_TTF) \
-	$(THIN_CODING_FONT_ELITE_TTF) \
-	$(LIGHT_FONT_ELITE_TTF) \
-	$(LIGHT_CODING_FONT_ELITE_TTF)
+COND_FONTS := \
+	$(FONT_COND_TTF) \
+	$(CODING_FONT_COND_TTF) \
+	$(THIN_FONT_COND_TTF) \
+	$(THIN_CODING_FONT_COND_TTF) \
+	$(LIGHT_FONT_COND_TTF) \
+	$(LIGHT_CODING_FONT_COND_TTF)
 
 ZIP_FILE = dist/ReproTypewr.zip
 
@@ -94,15 +94,15 @@ FONTTOOL__REGULAR	:= --expand-stroke 96
 FONTTOOL__LIGHT		:= --expand-stroke 72 # --translate-y -12  --scale-y 1344 --scale-y-from 1320  --scale-x 1008 --scale-x-from 984
 FONTTOOL__THIN		:= --expand-stroke 48 # --translate-y -24  --scale-y 1344 --scale-y-from 1296  --scale-x 1008 --scale-x-from 960
 
-FONTTOOL__ELITE		:= --aspect 0.833333 # Elite => 12cpi
-FONTTOOL__NARROW	:= --aspect 0.606060 # 15cpi => 16.5cpi
+FONTTOOL__COND		:= --aspect 0.833333 # 12cpi
+FONTTOOL__COMP		:= --aspect 0.606060 # 16.5cpi
 
 default: $(FONTS) $(CHARGRID_HTML) $(CHARLIST_HTML)
 fonts: $(FONTS)
 original: $(ORIGINAL_FONTS)
 coding: $(CODING_FONTS)
-narrow: $(NARROW_FONTS)
-elite: $(ELITE_FONTS)
+compressed: $(COMP_FONTS)
+condensed: $(COND_FONTS)
 zip: $(ZIP_FILE)
 
 .SUFFIXES: .sfd .ttf
@@ -140,11 +140,11 @@ src/build/$(PS_FONT_FAMILY).stage2.sfd: src/build/$(PS_FONT_FAMILY).stage1.sfd M
 	mkdir -p src/build
 	$(FONTUNREF) "$<" -o "$@"
 
-# Stage 3: make Elite and 17Pitch outlines
-src/build/$(PS_FONT_FAMILY)Elite.stage2.sfd: src/build/$(PS_FONT_FAMILY).stage2.sfd Makefile $(FONTASPECT_PROG)
+# Stage 3: make condensed and compressed outlines
+src/build/$(PS_FONT_FAMILY)Cond.stage2.sfd: src/build/$(PS_FONT_FAMILY).stage2.sfd Makefile $(FONTASPECT_PROG)
 	mkdir -p src/build
 	$(FONTASPECT) --aspect 0.833333333333 "$<" -o "$@"
-src/build/$(PS_FONT_FAMILY)17Pitch.stage2.sfd: src/build/$(PS_FONT_FAMILY).stage2.sfd Makefile $(FONTASPECT_PROG)
+src/build/$(PS_FONT_FAMILY)Comp.stage2.sfd: src/build/$(PS_FONT_FAMILY).stage2.sfd Makefile $(FONTASPECT_PROG)
 	mkdir -p src/build
 	$(FONTASPECT) --aspect 0.606060606060 "$<" -o "$@"
 
