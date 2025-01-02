@@ -3,3 +3,4 @@
 *.featfreeze.otf
 __pycache__/
 src/build/
+test-dist/
