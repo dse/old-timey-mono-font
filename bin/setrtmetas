@@ -137,7 +137,13 @@ def main():
         font.appendSFNTName(LANG, "WWS Subfamily", " ".join(styles))
 
         panose = list(font.os2_panose)
-        panose[2] = panose_2
+        panose[0] = 2           # Latin Text
+        panose[2] = panose_2    # Weight: 3=Light [1], 4=Thin [1], 5=Book
+        # [1] PANOSE documtn reverses the diffnc between Thin and Light
+        # compared to other systems.
+        panose[3] = 9           # Proportion: Monospace
+        panose[4] = 2           # Contrast: None
+        panose[5] = 2           # Stroke Variation: None
         font.os2_panose = tuple(panose)
 
         if args.verbose >= 1:
