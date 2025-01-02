@@ -29,6 +29,10 @@ def main():
     parser.add_argument('--sfnt-names-subfamily',      type=str)
     parser.add_argument('--sfnt-names-fullname',       type=str)
     parser.add_argument('--sfnt-names-postscriptname', type=str)
+    parser.add_argument('--sfnt-names-pref-family',    type=str)
+    parser.add_argument('--sfnt-names-pref-styles',    type=str)
+    parser.add_argument('--sfnt-names-wws-family',     type=str)
+    parser.add_argument('--sfnt-names-wws-subfamily',  type=str)
     # font.appendSFNTName(language, strid, string)
     args = parser.parse_args()
 
@@ -93,6 +97,15 @@ def main():
         font.appendSFNTName('English (US)', 'Fullname', change(coalesce(get_sfnt_name(font, 'Fullname'), orig_fullname), args.sfnt_names_fullname))
     if args.sfnt_names_postscriptname is not None:
         font.appendSFNTName('English (US)', 'PostScriptName', change(coalesce(get_sfnt_name(font, 'PostScriptName'), orig_fontname), args.sfnt_names_postscriptname, psname=True))
+    if args.sfnt_names_pref_family is not None:
+        font.appendSFNTName('English (US)', 'Preferred Family', change(coalesce(get_sfnt_name(font, 'Preferred Family'), orig_familyname), args.sfnt_names_family))
+    if args.sfnt_names_pref_styles is not None:
+        font.appendSFNTName('English (US)', 'Preferred Styles', change(coalesce(get_sfnt_name(font, 'Preferred Styles')), args.sfnt_names_family))
+    if args.sfnt_names_wws_family is not None:
+        font.appendSFNTName('English (US)', 'WWS Family', change(coalesce(get_sfnt_name(font, 'WWS Family'), orig_familyname), args.sfnt_names_family))
+    if args.sfnt_names_wws_subfamily is not None:
+        font.appendSFNTName('English (US)', 'WWS Subfamily', change(coalesce(get_sfnt_name(font, 'WWS Subfamily'), orig_familyname), args.sfnt_names_family))
+
 
     if not changed:
         raise Exception("Font not changed" % args.filename)
