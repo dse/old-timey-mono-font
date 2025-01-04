@@ -20,26 +20,26 @@ FONTASPECT    := $(FONTASPECT_PROG)
 SETFONTMETAS  := $(SETFONTMETAS_PROG)
 SETRTMETAS    := $(SETRTMETAS_PROG)
 
-DISTDIR := dist/ttf
+DISTDIR := dist
 
-FONT_TTF                        := $(DISTDIR)/$(PS_FONT_FAMILY).ttf
-CODING_FONT_TTF                 := $(DISTDIR)/$(PS_FONT_FAMILY)Code.ttf
-THIN_FONT_TTF                   := $(DISTDIR)/$(PS_FONT_FAMILY)-Thin.ttf
-THIN_CODING_FONT_TTF            := $(DISTDIR)/$(PS_FONT_FAMILY)Code-Thin.ttf
-LIGHT_FONT_TTF                  := $(DISTDIR)/$(PS_FONT_FAMILY)-Light.ttf
-LIGHT_CODING_FONT_TTF           := $(DISTDIR)/$(PS_FONT_FAMILY)Code-Light.ttf
-FONT_COMP_TTF			:= $(DISTDIR)/$(PS_FONT_FAMILY)Comp.ttf
-CODING_FONT_COMP_TTF		:= $(DISTDIR)/$(PS_FONT_FAMILY)CodeComp.ttf
-THIN_FONT_COMP_TTF		:= $(DISTDIR)/$(PS_FONT_FAMILY)Comp-Thin.ttf
-THIN_CODING_FONT_COMP_TTF	:= $(DISTDIR)/$(PS_FONT_FAMILY)CodeComp-Thin.ttf
-LIGHT_FONT_COMP_TTF		:= $(DISTDIR)/$(PS_FONT_FAMILY)Comp-Light.ttf
-LIGHT_CODING_FONT_COMP_TTF	:= $(DISTDIR)/$(PS_FONT_FAMILY)CodeComp-Light.ttf
-FONT_COND_TTF			:= $(DISTDIR)/$(PS_FONT_FAMILY)Cond.ttf
-CODING_FONT_COND_TTF		:= $(DISTDIR)/$(PS_FONT_FAMILY)CodeCond.ttf
-THIN_FONT_COND_TTF		:= $(DISTDIR)/$(PS_FONT_FAMILY)Cond-Thin.ttf
-THIN_CODING_FONT_COND_TTF	:= $(DISTDIR)/$(PS_FONT_FAMILY)CodeCond-Thin.ttf
-LIGHT_FONT_COND_TTF		:= $(DISTDIR)/$(PS_FONT_FAMILY)Cond-Light.ttf
-LIGHT_CODING_FONT_COND_TTF	:= $(DISTDIR)/$(PS_FONT_FAMILY)CodeCond-Light.ttf
+FONT_TTF                        := $(DISTDIR)/ttf/$(PS_FONT_FAMILY).ttf
+CODING_FONT_TTF                 := $(DISTDIR)/ttf/$(PS_FONT_FAMILY)Code.ttf
+THIN_FONT_TTF                   := $(DISTDIR)/ttf/$(PS_FONT_FAMILY)-Thin.ttf
+THIN_CODING_FONT_TTF            := $(DISTDIR)/ttf/$(PS_FONT_FAMILY)Code-Thin.ttf
+LIGHT_FONT_TTF                  := $(DISTDIR)/ttf/$(PS_FONT_FAMILY)-Light.ttf
+LIGHT_CODING_FONT_TTF           := $(DISTDIR)/ttf/$(PS_FONT_FAMILY)Code-Light.ttf
+FONT_COMP_TTF			:= $(DISTDIR)/ttf/$(PS_FONT_FAMILY)Comp.ttf
+CODING_FONT_COMP_TTF		:= $(DISTDIR)/ttf/$(PS_FONT_FAMILY)CodeComp.ttf
+THIN_FONT_COMP_TTF		:= $(DISTDIR)/ttf/$(PS_FONT_FAMILY)Comp-Thin.ttf
+THIN_CODING_FONT_COMP_TTF	:= $(DISTDIR)/ttf/$(PS_FONT_FAMILY)CodeComp-Thin.ttf
+LIGHT_FONT_COMP_TTF		:= $(DISTDIR)/ttf/$(PS_FONT_FAMILY)Comp-Light.ttf
+LIGHT_CODING_FONT_COMP_TTF	:= $(DISTDIR)/ttf/$(PS_FONT_FAMILY)CodeComp-Light.ttf
+FONT_COND_TTF			:= $(DISTDIR)/ttf/$(PS_FONT_FAMILY)Cond.ttf
+CODING_FONT_COND_TTF		:= $(DISTDIR)/ttf/$(PS_FONT_FAMILY)CodeCond.ttf
+THIN_FONT_COND_TTF		:= $(DISTDIR)/ttf/$(PS_FONT_FAMILY)Cond-Thin.ttf
+THIN_CODING_FONT_COND_TTF	:= $(DISTDIR)/ttf/$(PS_FONT_FAMILY)CodeCond-Thin.ttf
+LIGHT_FONT_COND_TTF		:= $(DISTDIR)/ttf/$(PS_FONT_FAMILY)Cond-Light.ttf
+LIGHT_CODING_FONT_COND_TTF	:= $(DISTDIR)/ttf/$(PS_FONT_FAMILY)CodeCond-Light.ttf
 
 TIMESTAMP := $(shell date +%m%d%H%M%S)
 
@@ -112,6 +112,7 @@ testfonts: FORCE
 	make fonts FONT_FAMILY="RT$(TIMESTAMP)" \
 	           PS_FONT_FAMILY="RT$(TIMESTAMP)" \
 	           DISTDIR="test-dist/RT$(TIMESTAMP)"
+	ln -n -f -s "RT$(TIMESTAMP)" test-dist/latest
 update: FORCE
 	$(IMPORTSVG) $(FONT_SRC) `find src/chars \! \( -type d -name \*italic\* -prune \) \! \( -type d -name greek-lc -prune \) -type f -name '*.svg'`
 	$(EXPANDSTROKES) --expand-stroke 96 $(FONT_SRC)
@@ -149,25 +150,25 @@ src/build/$(PS_FONT_FAMILY)Comp.stage2.sfd: src/build/$(PS_FONT_FAMILY).stage2.s
 	$(FONTASPECT) --aspect 0.606060606060 "$<" -o "$@"
 
 # Stage 4: make weights
-$(DISTDIR)/%.ttf: src/build/%.stage2.sfd Makefile $(EXPANDSTROKES_PROG) $(SETRTMETAS_PROG)
-	mkdir -p "$(DISTDIR)"
+$(DISTDIR)/ttf/%.ttf: src/build/%.stage2.sfd Makefile $(EXPANDSTROKES_PROG) $(SETRTMETAS_PROG)
+	mkdir -p "$(DISTDIR)/ttf"
 	$(EXPANDSTROKES) -x 96 "$<" -o "$@"
 	bin/fontfix "$@"
 	$(SETRTMETAS) "$@"
-$(DISTDIR)/%-Light.ttf: src/build/%.stage2.sfd Makefile $(EXPANDSTROKES_PROG) $(SETRTMETAS_PROG)
-	mkdir -p "$(DISTDIR)"
+$(DISTDIR)/ttf/%-Light.ttf: src/build/%.stage2.sfd Makefile $(EXPANDSTROKES_PROG) $(SETRTMETAS_PROG)
+	mkdir -p "$(DISTDIR)/ttf"
 	$(EXPANDSTROKES) -x 72 "$<" -o "$@"
 	bin/fontfix "$@"
 	$(SETRTMETAS) "$@"
-$(DISTDIR)/%-Thin.ttf: src/build/%.stage2.sfd Makefile $(EXPANDSTROKES_PROG) $(SETRTMETAS_PROG)
-	mkdir -p "$(DISTDIR)"
+$(DISTDIR)/ttf/%-Thin.ttf: src/build/%.stage2.sfd Makefile $(EXPANDSTROKES_PROG) $(SETRTMETAS_PROG)
+	mkdir -p "$(DISTDIR)/ttf"
 	$(EXPANDSTROKES) -x 48 "$<" -o "$@"
 	bin/fontfix "$@"
 	$(SETRTMETAS) "$@"
 
 # Stage 5: make code variants
 # NOTE: can't use %.ttf because % cannot match zero characters.
-$(DISTDIR)/$(PS_FONT_FAMILY)Code%ttf: $(DISTDIR)/$(PS_FONT_FAMILY)%ttf Makefile $(SETRTMETAS_PROG)
+$(DISTDIR)/ttf/$(PS_FONT_FAMILY)Code%ttf: $(DISTDIR)/ttf/$(PS_FONT_FAMILY)%ttf Makefile $(SETRTMETAS_PROG)
 	pyftfeatfreeze -f code "$<" "$@" # -U "" because we do that later
 	bin/fontfix "$@"
 	$(SETRTMETAS) "$@"
