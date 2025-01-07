@@ -1,0 +1,87 @@
+#!/usr/bin/env -S fontforge -quiet
+# -*- mode: python; coding: utf-8 -*-
+
+import fontforge
+import argparse
+import os
+import sys
+
+sys.path.append(os.path.dirname(__file__) + "/../lib")
+from parseglyphsvgfilename import parse_glyph_svg_filename
+
+sys.path.append(os.getenv("HOME") + "/git/dse.d/fontforge-utilities/lib")
+import mixedjsontext
+
+STROKE_WIDTH_BASIS = 96
+
+def main():
+    global args
+    parser = argparse.ArgumentParser()
+    parser.add_argument('font_filename', help="font filename")
+    parser.add_argument('svg_filenames', nargs='+', help="svg characters")
+    parser.add_argument('-o', '--save-as', '--output', type=str,
+                        help="after editing, save as new file, converts if file extension is different")
+    parser.add_argument('--verbose', '-v', action='count', default=0)
+    args = parser.parse_args()
+
+    if args.verbose:
+        print("importsvg: Loading %s" % args.font_filename)
+    font = fontforge.open(args.font_filename)
+    write_font_filename = args.save_as if args.save_as is not None else args.font_filename
+
+    for svg_filename in args.svg_filenames:
+        (codepoint, glyphname, real_codepoint, plain_glyphname, suffix) = parse_glyph_svg_filename(svg_filename)
+        if codepoint is None and glyphname is None:
+            if args.verbose:
+                print("importsvg %s: %s: not an SVG character filename; skipping" % (args.font_filename, svg_filename))
+            continue
+        if glyphname in font:
+            glyph = font[glyphname]
+            if len(glyph.references):
+                continue
+        glyph = font.createChar(codepoint, glyphname)
+
+        glyph.foreground = fontforge.layer()
+        orig_width = glyph.width
+        font.strokedfont = True
+        if args.verbose:
+            print("importsvg %s: glyph width of %s is originally %d" % (args.font_filename, glyph.glyphname, glyph.width))
+        if args.verbose:
+            print("importsvg %s: Importing %s into %s" % (args.font_filename, svg_filename, glyph.glyphname))
+        glyph.importOutlines(svg_filename)
+        if args.verbose:
+            print("importsvg %s: glyph width of %s is now %d" % (args.font_filename, glyph.glyphname, glyph.width))
+        font.strokedfont = False
+        glyph.width = orig_width
+
+        if (codepoint in range(33, 127)) or suffix == 'orig':
+            sm_glyphname = plain_glyphname + '.smol'
+            sm_glyph = font.createChar(-1, sm_glyphname)
+
+            sm_glyph.foreground = fontforge.layer()
+            orig_width = sm_glyph.width
+            font.strokedfont = True
+            if args.verbose:
+                print("importsvg %s: glyph width of %s is originally %d" % (args.font_filename, sm_glyph.glyphname, glyph.width))
+            if args.verbose:
+                print("importsvg %s: Importing %s into %s" % (args.font_filename, svg_filename, sm_glyph.glyphname))
+            sm_glyph.importOutlines(svg_filename)
+            if args.verbose:
+                print("importsvg %s: glyph width of %s is now %d" % (args.font_filename, sm_glyph.glyphname, glyph.width))
+            font.strokedfont = False
+            if args.verbose:
+                print("importsvg %s: Resizing %s" % (args.font_filename, sm_glyphname))
+            sm_glyph.transform(psMat.scale(0.5))
+            sm_glyph.transform(psMat.translate(orig_width / 4, STROKE_WIDTH_BASIS / 4))
+            sm_glyph.width = orig_width
+
+    if os.path.splitext(write_font_filename)[1] == '.sfd':
+        if args.verbose:
+            print("importsvg: Saving %s" % write_font_filename)
+        font.save(write_font_filename)
+    else:
+        if args.verbose:
+            print("importsvg: Generating %s" % write_font_filename)
+        font.generate(write_font_filename)
+
+main()

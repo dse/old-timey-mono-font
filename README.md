@@ -1,48 +1,70 @@
 # Reproducing Typewriter
 
-This is a digital revival of Reproducing Typewriter, a "typewriter"
-monospace typeface designed to be readable at smaller point sizes from
-over a century ago.  You may have seen this typeface used in the
-product manual that shipped with Turbo Pascal 3.0.
+This is the first digital clean revival of Reproducing Typewriter.
 
-This is the first digitally available verison of Reproducing
-Typewriter.  It is a clean and somewhat* accurate reproduction, not a
-"grungy" typeface like Trixie.  It is intended to provide an
-aesthetic, but above all it is meant to be used.
+Reproducing Typewriter is a monospace typeface created over a century
+ago for use with mechanical typesetting machines in use at the time.
+It was designed for creating simulacra of typewritten letters in
+smaller point sizes for advertisements, catalogs, and other printed
+materials.
 
-## Original and Coding Variants
+Typefaces were also available to simulate the fonts used by actual
+contemporaneous typewriters such as Remington, Smith, and Underwood;
+but Reproducing Typewriter is more readable at smaller point sizes
+than those.
 
-Reproducing Typewriter comes in two font families:
+You may have seen this typeface used in the [Turbo Pascal 3.0](turbo)
+product manual.
 
-**Reproducing Typewriter** is to a great extent the original typeface.
+At a size of 12pt (6 lines per inch), Reproducing Typewriter is a pica
+font, or 10 characters per inch, like Courier.  It **should** be
+suitable for screenplay writing!
 
-**Reproducing Typewriter Code** makes the following changes:
+## Download All The Fonts
 
--   The digits `0` and `1` are modified for disambiguity with the
-    capital `O` and small `l`.
+[ReproTypewr.zip](dist/ReproTypewr.zip)
 
--   The period, comma, and other selected punctuation marks are made
-    larger for better visibility.
-    
-## What is Reproducing Typewriter
-    
-Reproducing Typewriter is one of many early 20th-century typefaces
-used for simulating typewritten letters on hot metal and/or mechanical
-typesetting equipment.  As opposed to typefaces resembling those of
-typewriter manufacturers such as Remington and Smith, Reproducing
-Typewriter was designed for better readability at smaller point sizes
-and/or when reproduced by mimeograph machines and whatnots.
+## Download Individual Fonts
 
-According to the American Type Founders [Line Book][linebook] of 1908:
+-   Reproducing Typewriter
+    -   Pica (10 pitch)
+        -   [Light](dist/ttf/ReproTypewr-Light.ttf)
+        -   [Semi-Light](dist/ttf/ReproTypewr-SemiLight.ttf)
+        -   [Regular](dist/ttf/ReproTypewr.ttf)
+    -   Elite (12 pitch)
+        -   [Light](dist/ttf/ReproTypewrElite-Light.ttf)
+        -   [Semi-Light](dist/ttf/ReproTypewrElite-SemiLight.ttf)
+        -   [Regular](dist/ttf/ReproTypewrElite.ttf)
+    -   17 pitch
+        -   [Light](dist/ttf/ReproTypewr17Pitch-Light.ttf)
+        -   [Semi-Light](dist/ttf/ReproTypewr17Pitch-SemiLight.ttf)
+        -   [Regular](dist/ttf/ReproTypewr17Pitch.ttf)
 
-> A specialty has also been made of Reproducing Typewriter faces, to
-> meet the constantly increasing demand for facsimile letters in
-> reduced size.
+-   Reproducing Typewriter Code
+    -   Pica (10 pitch)
+        -   [Light](dist/ttf/ReproTypewrCode-Light.ttf)
+        -   [Semi-Light](dist/ttf/ReproTypewrCode-SemiLight.ttf)
+        -   [Regular](dist/ttf/ReproTypewrCode.ttf)
+    -   Elite (12 pitch)
+        -   [Light](dist/ttf/ReproTypewrCodeElite-Light.ttf)
+        -   [Semi-Light](dist/ttf/ReproTypewrCodeElite-SemiLight.ttf)
+        -   [Regular](dist/ttf/ReproTypewrCodeElite.ttf)
+    -   17 pitch
+        -   [Light](dist/ttf/ReproTypewrCode17Pitch-Light.ttf)
+        -   [Semi-Light](dist/ttf/ReproTypewrCode17Pitch-SemiLight.ttf)
+        -   [Regular](dist/ttf/ReproTypewrCode17Pitch.ttf)
 
-Its main differentiating characteristic from other contemporaneous
-typewriter styles is that most serifs are shorter.  Where the serifs
-of other typefaces might bleed together, the capital H, for example,
-continues to look more like a capital H.
+## Reproducing Typewriter Code
+
+Reproducing Typewriter Code makes the following changes:
+
+-   A modified digit `0` to be better distinguishable from the
+    uppercase letter `O`.
+
+-   A modified digit `1` to be better distinguishable from the
+    lowercase letter `l`.
+
+-   Certain punctuation marks are made larger for better visibility.
 
 ## Unicode Coverage
 
@@ -58,15 +80,39 @@ continues to look more like a capital H.
 
 -   U+2800–U+28FF Braille Patterns in its entirety.
 
-### In Progress
+-   All Cyrillic used in Russia and Ukraine.
 
--   A lot of extended Latin symbols.
-
--   Some Greek and Cyrillic symbols.  All Cyrillic used in Russia and
-    Ukraine is complete.
+-   All modern uppercase Greek.  Lowercase to come.
 
 -   Plenty of additional punctuation marks, mathematical operators,
-    geometric shapes, and basic arrows from U+2000 on up.
+    geometric shapes, and basic arrows from U+2000 on up.  More to
+    come, probably.
+
+## You May Also Like
+
+I made these:
+
+-   [DSE Typewriter](https://webonastick.com/fonts/dse-typewriter/)
+-   [DSE Typewriter Bitmap](https://github.com/dse/dse-typewriter-bitmap-font)
+
+Free:
+
+-   [TT2020](https://ctrlcctrlv.github.io/TT2020/docs/)
+-   [CMU Typewriter](https://fontlibrary.org/en/font/cmu-typewriter)
+
+Paid:
+
+-   [LTC Remington Typewriter](https://p22.com/family-Remington_Typewriter)
+-   [Bitstream Pica 10 Pitch](https://www.myfonts.com/fonts/bitstream/pica-10-pitch/)
+-   [Italian Typewriter](https://www.myfonts.com/fonts/flanker/italian-typewriter/)
+-   [Typist Slab](https://www.myfonts.com/fonts/vanderKeur/typist-slab/)
+-   [FF Elementa](https://www.myfonts.com/fonts/fontfont/elementa-pro/)
+-   [EF Techno Script](https://www.myfonts.com/fonts/ef/techno-script-ef/)
+-   [Pitch](https://klim.co.nz/retail-fonts/pitch/)
+
+## I Also Made:
+
+-   [Router Gothic](https://webonastick.com/fonts/routed-gothic/)
     
 ## License
 
@@ -75,3 +121,5 @@ continues to look more like a capital H.
 ## Footnotes
 
 [linebook]: https://www.google.com/books/edition/American_Line_Type_Book/WadRAAAAYAAJ?hl=en&gbpv=1&pg=PP5&printsec=frontcover
+
+[turbo]: https://bitsavers.trailing-edge.com/pdf/borland/turbo_pascal/Turbo_Pascal_Version_3.0_Reference_Manual_1986.pdf

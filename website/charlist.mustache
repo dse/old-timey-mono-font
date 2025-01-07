@@ -1,0 +1,50 @@
+<!-- -*- mode: web -*- -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+        <title>Characters in Reproducing Typewriter</title>
+        <link rel="stylesheet" href="main.css?v=1">
+        <script src="main.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <h1>
+                Characters in Reproducing Typewriter
+            </h1>
+        </div>
+        <div class="container container--sticky">
+            <header class="top-header">
+                <p class="top-header__checkbox">
+                    <label>
+                        <input class="fancy-checkbox__checkbox" id="code-checkbox" type="checkbox" name="code" value="1"><span class="fancy-checkbox"></span>
+                        Show Reproducing Typewriter Code
+                    </label>
+                </p>
+                <p class="top-header__toggle">
+                    <a href="chargrid.html">Grid</a> | List
+                </p>
+            </header>
+        </div>
+        <div class="container">
+            <div id="whole-char-list">
+                {{#blocks}}
+                    <h2>
+                        {{name}}
+                    </h2>
+                    <ul class="char-list">
+                        {{#chars}}
+                            <li class="char-list__item">
+                                <div class="char-list__codepoint">{{uhex}}</div>
+                                <div class="char-list__char">{{char}}</div>
+                                <div class="char-list__charname">{{name}}</div>
+                            </li>
+                        {{/chars}}
+                    </ul>
+                {{/blocks}}
+            </div>
+        </div>
+    </body>
+</html>

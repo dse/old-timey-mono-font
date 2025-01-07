@@ -9,7 +9,7 @@
    id="svg5"
    xml:space="preserve"
    inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
-   sodipodi:docname="u+0035-digit-five--small.svg"
+   sodipodi:docname="0035-five--small.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -25,7 +25,7 @@
      inkscape:document-units="px"
      showgrid="false"
      inkscape:zoom="0.32"
-     inkscape:cx="267.1875"
+     inkscape:cx="-34.375"
      inkscape:cy="609.375"
      inkscape:window-width="1908"
      inkscape:window-height="1017"
@@ -118,11 +118,11 @@
      inkscape:groupmode="layer"
      id="layer1"
      style="display:inline"><path
-       id="path1505"
-       style="display:inline;fill:none;stroke:#000000;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2.61313;stroke-dasharray:none"
-       d="m 21.499879,74.125002 c 0,4.375004 4.804899,7.499998 9.999998,7.499998 5.624999,0 10.038099,-5.323959 9.999999,-11.249998 -0.0355,-5.506614 -4.375,-9.749998 -9.999999,-9.749998 -5.624999,0 -7.925748,2.459639 -8.999998,4.250004"
-       sodipodi:nodetypes="csszc" /><path
-       style="display:inline;fill:none;stroke:#000000;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
-       d="M 22.499879,64.875008 22.749879,51 l 17.749997,1e-5"
-       id="path55"
+       id="path1505-7"
+       style="display:inline;fill:none;stroke:#000000;stroke-width:0.375;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2.61313;stroke-dasharray:none"
+       d="m 21.500002,74.125001 c 0,4.375005 4.804899,7.499999 9.999995,7.499999 5.51871,0 10,-4.705363 10,-10.499998 0,-5.794634 -4.4813,-10.499999 -10,-10.499999 -6.299746,0 -8.999995,4.250005 -8.999995,4.250005"
+       sodipodi:nodetypes="cszsc" /><path
+       style="display:inline;fill:none;stroke:#000000;stroke-width:0.375;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+       d="M 22.500002,64.875008 22.750002,51 l 17.749995,1e-5"
+       id="path55-5"
        sodipodi:nodetypes="ccc" /></g></svg>

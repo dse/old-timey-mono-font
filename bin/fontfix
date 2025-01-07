@@ -1,0 +1,43 @@
+#!/usr/bin/env -S fontforge -quiet
+# -*- mode: python; coding: utf-8 -*-
+
+import os
+import fontforge
+import statistics
+import argparse
+
+def main():
+    global args
+    parser = argparse.ArgumentParser()
+    parser.add_argument('font_filename', help="font filename")
+    parser.add_argument('-o', '--save-as', '--output', type=str,
+                        help="after editing, save as new file, converts if file extension is different")
+    parser.add_argument('--verbose', '-v', action='count', default=0)
+    args = parser.parse_args()
+    if args.verbose:
+        print("fontfix: Loading %s" % args.font_filename)
+    font = fontforge.open(args.font_filename)
+    write_font_filename = args.save_as if args.save_as is not None else args.font_filename
+
+    common_glyph_width = statistics.mode([glyph.width for glyph in font.glyphs()])
+    for glyph in font.glyphs():
+        if glyph.glyphname == ".notdef":
+            print("fontfix %s: resetting %s glyph width to 0" % (args.font_filename, glyph.glyphname))
+            glyph.width = common_glyph_width
+        elif glyph.glyphname == "nonmarkingreturn":
+            print("fontfix %s: resetting %s glyph width to 0" % (args.font_filename, glyph.glyphname))
+            glyph.width = common_glyph_width
+        elif glyph.width != common_glyph_width and glyph.width != 0:
+            print("fontfix %s: %s width is not %d; it's %d" % (args.font_filename, glyph.glyphname, common_glyph_width, glyph.width))
+            glyph.width = common_glyph_width
+
+    if os.path.splitext(write_font_filename)[1] == '.sfd':
+        if args.verbose:
+            print("fontfix: Saving %s" % write_font_filename)
+        font.save(write_font_filename)
+    else:
+        if args.verbose:
+            print("fontfix: Generating %s" % write_font_filename)
+        font.generate(write_font_filename)
+
+main()

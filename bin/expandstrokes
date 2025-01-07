@@ -1,0 +1,67 @@
+#!/usr/bin/env -S fontforge -quiet
+# -*- mode: python; coding: utf-8 -*-
+
+import fontforge
+import argparse
+import os
+import sys
+import statistics
+
+sys.path.append(os.getenv("HOME") + "/git/dse.d/fontforge-utilities/lib")
+import mixedjsontext
+import silence
+
+def main():
+    global args
+    parser = argparse.ArgumentParser()
+    parser.add_argument('font_filename', help="font filename")
+    parser.add_argument('--expand-stroke', '-x', type=int, help="number of pixels to expand stroke", default=96)
+    parser.add_argument('-o', '--save-as', '--output', type=str,
+                        help="after editing, save as new file, converts if file extension is different")
+    parser.add_argument('--verbose', '-v', action='count', default=0)
+    args = parser.parse_args()
+
+    if args.verbose:
+        print("expandstrokes: Loading %s" % args.font_filename)
+    font = fontforge.open(args.font_filename)
+    write_font_filename = args.save_as if args.save_as is not None else args.font_filename
+
+    # MONOSPACE
+    common_glyph_width = statistics.mode([glyph.width for glyph in font.glyphs()])
+
+    silence.on()
+    for glyph in font.glyphs():
+        if len(glyph.foreground) == 0 and len(glyph.references) == 0:
+            if args.verbose:
+                print("expandstrokes %s: %s is blank" % (args.font_filename, glyph.glyphname))
+            continue
+        if mixedjsontext.fontcomment_says_generated(glyph.comment):
+            if args.verbose:
+                print("expandstrokes %s: Skipping %s" % (args.font_filename, glyph.glyphname))
+            continue
+        orig_width = glyph.width
+        if args.expand_stroke is not None:
+            if args.verbose:
+                print("expandstrokes %s: Expanding strokes on %s" % (args.font_filename, glyph.glyphname))
+            glyph.stroke("circular", args.expand_stroke, "round", "round")
+        if args.verbose:
+            print("expandstrokes %s: Removing overlaps on %s" % (args.font_filename, glyph.glyphname))
+        glyph.removeOverlap()
+        if args.verbose:
+            print("expandstrokes %s: glyph width on %s: %d => %d" % (args.font_filename, glyph.glyphname, orig_width, glyph.width))
+        if orig_width != 0:
+            glyph.width = orig_width
+        else:
+            glyph.width = common_glyph_width # MONOSPACE
+    silence.off()
+
+    if os.path.splitext(write_font_filename)[1] == '.sfd':
+        if args.verbose:
+            print("expandstrokes: Saving %s" % write_font_filename)
+        font.save(write_font_filename)
+    else:
+        if args.verbose:
+            print("expandstrokes: Generating %s" % write_font_filename)
+        font.generate(write_font_filename)
+
+main()        

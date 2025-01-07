@@ -1,162 +1,200 @@
 MAKEFILE := Makefile
 FONT_SRC := src/ReproTypewr.sfd
 
-FONTCONVERT_SCRIPT := bin/fontconvert
-FONTSVG_SCRIPT := bin/fontsvg
-FONTUNHINT_SCRIPT := bin/fontunhint
-SETFONTMETAS_SCRIPT := bin/setfontmetas
+FONT_FAMILY := Repro Typewr
+PS_FONT_FAMILY := ReproTypewr
 
-FONT_TTF := dist/ttf/ReproTypewr.ttf
-CODING_FONT_TTF := dist/ttf/ReproTypewrCode.ttf
-LIGHT_FONT_TTF := dist/ttf/ReproTypewr-Light.ttf
-LIGHT_CODING_FONT_TTF := dist/ttf/ReproTypewrCode-Light.ttf
-SEMI_LIGHT_FONT_TTF := dist/ttf/ReproTypewr-SemiLight.ttf
-SEMI_LIGHT_CODING_FONT_TTF := dist/ttf/ReproTypewrCode-SemiLight.ttf
+IMPORTSVG_PROG     := bin/importsvg
+FONTUNREF_PROG     := bin/fontunref
+EXPANDSTROKES_PROG := bin/expandstrokes
+FONTASPECT_PROG    := bin/fontaspect
+SETFONTMETAS_PROG  := bin/setfontmetas
+SETRTMETAS_PROG    := bin/setrtmetas
 
-FONTS := \
-	$(FONT_TTF) \
-	$(LIGHT_FONT_TTF) \
-	$(CODING_FONT_TTF) \
-	$(LIGHT_CODING_FONT_TTF) \
-	$(SEMI_LIGHT_FONT_TTF) \
-	$(SEMI_LIGHT_CODING_FONT_TTF)
+OPT_VERBOSE :=
+
+IMPORTSVG     := $(IMPORTSVG_PROG)
+FONTUNREF     := $(FONTUNREF_PROG)
+EXPANDSTROKES := $(EXPANDSTROKES_PROG)
+FONTASPECT    := $(FONTASPECT_PROG)
+SETFONTMETAS  := $(SETFONTMETAS_PROG)
+SETRTMETAS    := $(SETRTMETAS_PROG)
+
+DISTDIR := dist/ttf
+
+FONT_TTF                        := $(DISTDIR)/$(PS_FONT_FAMILY).ttf
+CODING_FONT_TTF                 := $(DISTDIR)/$(PS_FONT_FAMILY)Code.ttf
+THIN_FONT_TTF                   := $(DISTDIR)/$(PS_FONT_FAMILY)-Thin.ttf
+THIN_CODING_FONT_TTF            := $(DISTDIR)/$(PS_FONT_FAMILY)Code-Thin.ttf
+LIGHT_FONT_TTF                  := $(DISTDIR)/$(PS_FONT_FAMILY)-Light.ttf
+LIGHT_CODING_FONT_TTF           := $(DISTDIR)/$(PS_FONT_FAMILY)Code-Light.ttf
+FONT_COMP_TTF			:= $(DISTDIR)/$(PS_FONT_FAMILY)Comp.ttf
+CODING_FONT_COMP_TTF		:= $(DISTDIR)/$(PS_FONT_FAMILY)CodeComp.ttf
+THIN_FONT_COMP_TTF		:= $(DISTDIR)/$(PS_FONT_FAMILY)Comp-Thin.ttf
+THIN_CODING_FONT_COMP_TTF	:= $(DISTDIR)/$(PS_FONT_FAMILY)CodeComp-Thin.ttf
+LIGHT_FONT_COMP_TTF		:= $(DISTDIR)/$(PS_FONT_FAMILY)Comp-Light.ttf
+LIGHT_CODING_FONT_COMP_TTF	:= $(DISTDIR)/$(PS_FONT_FAMILY)CodeComp-Light.ttf
+FONT_COND_TTF			:= $(DISTDIR)/$(PS_FONT_FAMILY)Cond.ttf
+CODING_FONT_COND_TTF		:= $(DISTDIR)/$(PS_FONT_FAMILY)CodeCond.ttf
+THIN_FONT_COND_TTF		:= $(DISTDIR)/$(PS_FONT_FAMILY)Cond-Thin.ttf
+THIN_CODING_FONT_COND_TTF	:= $(DISTDIR)/$(PS_FONT_FAMILY)CodeCond-Thin.ttf
+LIGHT_FONT_COND_TTF		:= $(DISTDIR)/$(PS_FONT_FAMILY)Cond-Light.ttf
+LIGHT_CODING_FONT_COND_TTF	:= $(DISTDIR)/$(PS_FONT_FAMILY)CodeCond-Light.ttf
+
+TIMESTAMP := $(shell date +%m%d%H%M%S)
+
+CHARGRID_TPL	:= website/chargrid.mustache
+CHARGRID_HTML	:= website/chargrid.html
+CHARLIST_TPL	:= website/charlist.mustache
+CHARLIST_HTML	:= website/charlist.html
 
 ORIGINAL_FONTS := \
 	$(FONT_TTF) \
+	$(THIN_FONT_TTF) \
 	$(LIGHT_FONT_TTF) \
-	$(SEMI_LIGHT_FONT_TTF)
+	$(FONT_COMP_TTF) \
+	$(THIN_FONT_COMP_TTF) \
+	$(LIGHT_FONT_COMP_TTF) \
+	$(FONT_COND_TTF) \
+	$(THIN_FONT_COND_TTF) \
+	$(LIGHT_FONT_COND_TTF) 
 
 CODING_FONTS := \
 	$(CODING_FONT_TTF) \
+	$(THIN_CODING_FONT_TTF) \
 	$(LIGHT_CODING_FONT_TTF) \
-	$(SEMI_LIGHT_CODING_FONT_TTF)
+	$(CODING_FONT_COMP_TTF) \
+	$(THIN_CODING_FONT_COMP_TTF) \
+	$(LIGHT_CODING_FONT_COMP_TTF) \
+	$(CODING_FONT_COND_TTF) \
+	$(THIN_CODING_FONT_COND_TTF) \
+	$(LIGHT_CODING_FONT_COND_TTF)
 
-FONTSVG__REGULAR    := --expand-stroke 96
-FONTSVG__SEMI_LIGHT := --expand-stroke 72 # --translate-y -12  --scale-y 1344 --scale-y-from 1320  --scale-x 1008 --scale-x-from 984
-FONTSVG__LIGHT      := --expand-stroke 48 # --translate-y -24  --scale-y 1344 --scale-y-from 1296  --scale-x 1008 --scale-x-from 960
-#                                                                        ^^^^     ascent     ^^^^
+COMP_FONTS := \
+	$(FONT_COMP_TTF) \
+	$(CODING_FONT_COMP_TTF) \
+	$(THIN_FONT_COMP_TTF) \
+	$(THIN_CODING_FONT_COMP_TTF) \
+	$(LIGHT_FONT_COMP_TTF) \
+	$(LIGHT_CODING_FONT_COMP_TTF)
 
-default: $(FONTS)
+COND_FONTS := \
+	$(FONT_COND_TTF) \
+	$(CODING_FONT_COND_TTF) \
+	$(THIN_FONT_COND_TTF) \
+	$(THIN_CODING_FONT_COND_TTF) \
+	$(LIGHT_FONT_COND_TTF) \
+	$(LIGHT_CODING_FONT_COND_TTF)
+
+ZIP_FILE = dist/ReproTypewr.zip
+
+FONTS := $(ORIGINAL_FONTS) $(CODING_FONTS)
+
+FONTTOOL__REGULAR	:= --expand-stroke 96
+FONTTOOL__LIGHT		:= --expand-stroke 72 # --translate-y -12  --scale-y 1344 --scale-y-from 1320  --scale-x 1008 --scale-x-from 984
+FONTTOOL__THIN		:= --expand-stroke 48 # --translate-y -24  --scale-y 1344 --scale-y-from 1296  --scale-x 1008 --scale-x-from 960
+
+FONTTOOL__COND		:= --aspect 0.833333 # 12cpi
+FONTTOOL__COMP		:= --aspect 0.606060 # 16.5cpi
+
+default: $(FONTS) $(CHARGRID_HTML) $(CHARLIST_HTML)
+fonts: $(FONTS)
 original: $(ORIGINAL_FONTS)
 coding: $(CODING_FONTS)
+compressed: $(COMP_FONTS)
+condensed: $(COND_FONTS)
+zip: $(ZIP_FILE)
 
 .SUFFIXES: .sfd .ttf
 
-# dist/ttf/%.ttf: src/%.sfd $(FONTCONVERT_SCRIPT) $(MAKEFILE) $(FONTUNHINT_SCRIPT) $(SETFONTMETAS_SCRIPT)
-#	$(FONTCONVERT_SCRIPT) "$<" "$@"
-#	$(SETFONTMETAS_SCRIPT) \
-#		--family-name "Reproducing Typewriter" \
-#		--full-name   "Reproducing Typewriter" \
-#		--ps-name     "ReproTypewr" \
-#		--ps-weight   "Medium" \
-#		--os2-weight  400 \
-#		--panose      2,0,5,9,3,0,-,-,-,3 \
-#		"$@"
-#	$(FONTUNHINT_SCRIPT) "$@"
-
 # update source font fron SVG files
+testfonts: FORCE
+	make fonts FONT_FAMILY="RT$(TIMESTAMP)" \
+	           PS_FONT_FAMILY="RT$(TIMESTAMP)" \
+	           DISTDIR="test-dist/RT$(TIMESTAMP)"
+update: FORCE
+	$(IMPORTSVG) $(FONT_SRC) `find src/chars \! \( -type d -name \*italic\* -prune \) \! \( -type d -name greek-lc -prune \) -type f -name '*.svg'`
+	$(EXPANDSTROKES) --expand-stroke 96 $(FONT_SRC)
+fonttool: FORCE
+	echo "use 'make update', dingus." >&2
+	false
 fontsvg: FORCE
-	$(FONTSVG_SCRIPT) --expand-stroke 96 $(FONT_SRC) `find src/chars -type f -name '*.svg'`
+	echo "use 'make update', dingus." >&2
+	false
 
 braille: FORCE
 	fontbraille -W 200 -f $(FONT_SRC)
 boxdraw: FORCE
 	fontboxdraw -f $(FONT_SRC)
 
-$(FONT_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
-	$(FONTSVG_SCRIPT) $(FONTSVG__REGULAR) $< -o $@ `find src/chars -type f -name '*.svg'`
-	$(SETFONTMETAS_SCRIPT) \
-		--family-name "Reproducing Typewriter" \
-		--full-name   "Reproducing Typewriter" \
-		--ps-name     "ReproTypewr" \
-		--ps-weight   "Medium" \
-		--os2-weight  400 \
-		--panose      2,0,5,9,3,0,-,-,-,3 \
-		"$@"
-	$(FONTUNHINT_SCRIPT) "$@"
+$(ZIP_FILE): $(FONTS) Makefile
+	( cd dist && zip -r ReproTypewr.zip ttf )
 
-$(SEMI_LIGHT_FONT_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
-	$(FONTSVG_SCRIPT) $(FONTSVG__SEMI_LIGHT) $< -o $@ `find src/chars -type f -name '*.svg'`
-	$(SETFONTMETAS_SCRIPT) \
-		--family-name "Reproducing Typewriter" \
-		--full-name   "Reproducing Typewriter Semi-Light" \
-		--ps-name     "ReproTypewr-SemiLight" \
-		--ps-weight   "Semi-Light" \
-		--os2-weight  350 \
-		--panose      2,0,3,9,3,0,-,-,-,3 \
-		"$@"
-	$(FONTUNHINT_SCRIPT) "$@"
+# Stage 1: import SVGs and set basic metas
+src/build/$(PS_FONT_FAMILY).stage1.sfd: $(FONT_SRC) Makefile $(IMPORTSVG_PROG) $(SETRTMETAS_PROG)
+	mkdir -p src/build
+	$(IMPORTSVG) "$<" -o "$@" src/chars/*.svg
 
-$(LIGHT_FONT_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
-	$(FONTSVG_SCRIPT) $(FONTSVG__LIGHT) $< -o $@ `find src/chars -type f -name '*.svg'`
-	$(SETFONTMETAS_SCRIPT) \
-		--family-name "Reproducing Typewriter" \
-		--full-name   "Reproducing Typewriter Light" \
-		--ps-name     "ReproTypewr-Light" \
-		--ps-weight   "Light" \
-		--os2-weight  300 \
-		--panose      2,0,4,9,3,0,-,-,-,3 \
-		"$@"
-	$(FONTUNHINT_SCRIPT) "$@"
+# Stage 2: unroll references
+src/build/$(PS_FONT_FAMILY).stage2.sfd: src/build/$(PS_FONT_FAMILY).stage1.sfd Makefile $(FONTUNREF_PROG)
+	mkdir -p src/build
+	$(FONTUNREF) "$<" -o "$@"
 
-$(CODING_FONT_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
-	$(FONTSVG_SCRIPT) $(FONTSVG__REGULAR) $< -o $@ `find src/chars -type f -name '*.svg'`
-	mv "$@" "$@.tmp.ttf"	# tmp file required for featfreeze to work
-	pyftfeatfreeze -f code -S -U Code "$@.tmp.ttf" "$@"
-	rm "$@.tmp.ttf"
-	$(SETFONTMETAS_SCRIPT) \
-		--family-name "Reproducing Typewriter Code" \
-		--full-name   "Reproducing Typewriter Code" \
-		--ps-name     "ReproTypewrCode" \
-		--ps-weight   "Medium" \
-		--os2-weight  400 \
-		--panose      2,0,5,9,3,0,-,-,-,3 \
-		"$@"
-	$(FONTUNHINT_SCRIPT) "$@"
+# Stage 3: make condensed and compressed outlines
+src/build/$(PS_FONT_FAMILY)Cond.stage2.sfd: src/build/$(PS_FONT_FAMILY).stage2.sfd Makefile $(FONTASPECT_PROG)
+	mkdir -p src/build
+	$(FONTASPECT) --aspect 0.833333333333 "$<" -o "$@"
+src/build/$(PS_FONT_FAMILY)Comp.stage2.sfd: src/build/$(PS_FONT_FAMILY).stage2.sfd Makefile $(FONTASPECT_PROG)
+	mkdir -p src/build
+	$(FONTASPECT) --aspect 0.606060606060 "$<" -o "$@"
 
-$(SEMI_LIGHT_CODING_FONT_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
-	$(FONTSVG_SCRIPT) $(FONTSVG__SEMI_LIGHT) $< -o $@ `find src/chars -type f -name '*.svg'`
-	mv "$@" "$@.tmp.ttf"	# tmp file required for featfreeze to work
-	pyftfeatfreeze -f code -S -U Code "$@.tmp.ttf" "$@"
-	rm "$@.tmp.ttf"
-	$(SETFONTMETAS_SCRIPT) \
-		--family-name "Reproducing Typewriter Code" \
-		--full-name   "Reproducing Typewriter Code Semi-Light" \
-		--ps-name     "ReproTypewrCode-SemiLight" \
-		--ps-weight   "Semi-Light" \
-		--os2-weight  350 \
-		--panose      2,0,4,9,3,0,-,-,-,3 \
-		"$@"
-	$(FONTUNHINT_SCRIPT) "$@"
+# Stage 4: make weights
+$(DISTDIR)/%.ttf: src/build/%.stage2.sfd Makefile $(EXPANDSTROKES_PROG) $(SETRTMETAS_PROG)
+	mkdir -p "$(DISTDIR)"
+	$(EXPANDSTROKES) -x 96 "$<" -o "$@"
+	bin/fontfix "$@"
+	$(SETRTMETAS) "$@"
+$(DISTDIR)/%-Light.ttf: src/build/%.stage2.sfd Makefile $(EXPANDSTROKES_PROG) $(SETRTMETAS_PROG)
+	mkdir -p "$(DISTDIR)"
+	$(EXPANDSTROKES) -x 72 "$<" -o "$@"
+	bin/fontfix "$@"
+	$(SETRTMETAS) "$@"
+$(DISTDIR)/%-Thin.ttf: src/build/%.stage2.sfd Makefile $(EXPANDSTROKES_PROG) $(SETRTMETAS_PROG)
+	mkdir -p "$(DISTDIR)"
+	$(EXPANDSTROKES) -x 48 "$<" -o "$@"
+	bin/fontfix "$@"
+	$(SETRTMETAS) "$@"
 
-$(LIGHT_CODING_FONT_TTF): $(FONT_SRC) $(FONTSVG_SCRIPT) $(MAKEFILE) $(SETFONTMETAS_SCRIPT) $(FONTUNHINT_SCRIPT)
-	$(FONTSVG_SCRIPT) $(FONTSVG__LIGHT) $< -o $@ `find src/chars -type f -name '*.svg'`
-	mv "$@" "$@.tmp.ttf"	# tmp file required for featfreeze to work
-	pyftfeatfreeze -f code -S -U Code "$@.tmp.ttf" "$@"
-	rm "$@.tmp.ttf"
-	$(SETFONTMETAS_SCRIPT) \
-		--family-name "Reproducing Typewriter Code" \
-		--full-name   "Reproducing Typewriter Code Light" \
-		--ps-name     "ReproTypewrCode-Light" \
-		--ps-weight   "Light" \
-		--os2-weight  300 \
-		--panose      2,0,3,9,3,0,-,-,-,3 \
-		"$@"
-	$(FONTUNHINT_SCRIPT) "$@"
-
-CHARGRID_TPL := website/chargrid.mustache
-CHARGRID_HTML := website/chargrid.html
+# Stage 5: make code variants
+# NOTE: can't use %.ttf because % cannot match zero characters.
+$(DISTDIR)/$(PS_FONT_FAMILY)Code%ttf: $(DISTDIR)/$(PS_FONT_FAMILY)%ttf Makefile $(SETRTMETAS_PROG)
+	pyftfeatfreeze -f code "$<" "$@" # -U "" because we do that later
+	bin/fontfix "$@"
+	$(SETRTMETAS) "$@"
 
 chargrid: FORCE $(CHARGRID_HTML)
+charlist: FORCE $(CHARLIST_HTML)
 
 $(CHARGRID_HTML): $(FONT_SRC) $(CHARGRID_TPL) $(MAKEFILE)
 	bin/fontdata $(FONT_SRC) > temp.json
 	chevron -d temp.json $(CHARGRID_TPL) > $@
 	rm temp.json
 
+$(CHARLIST_HTML): $(FONT_SRC) $(CHARLIST_TPL) $(MAKEFILE)
+	bin/fontdata $(FONT_SRC) > temp2.json
+	chevron -d temp2.json $(CHARLIST_TPL) > $@
+	rm temp2.json
+
 clean: FORCE
-	/bin/rm $(FONT_TTF) $(CODING_FONT_TTF) $(LIGHT_FONT_TTF) $(LIGHT_CODING_FONT_TTF) || true
-	find . -type f \( -name '*.tmp' -o -name '*.tmp.*' -o -name '*.featfreeze.otf' -o -name '*~' -o -name '#*#' \) -exec rm {} + || true
+	/bin/rm $(FONTS) $(CHARGRID_HTML) $(CHARLIST_HTML) || true
+	find . -type f \( \
+		-name '*.tmp' -o \
+		-name '*.tmp.*' -o \
+		-name '*.featfreeze.otf' -o \
+		-name '*~' -o \
+		-name '#*#' \
+	\) -exec rm {} + || true
+	/bin/rm -fr src/build || true
 
 .PHONY: FORCE
 
