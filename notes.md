@@ -1,5 +1,12 @@
 # Notes
 
+-   scans/7/img008.png
+    -   3475 * 21890
+    -   666 characters per line
+    -   { 21890 / 666 * 2016 = 66261.6216216216 }
+
+
+
 ## Foreign Typewriter Samples/Specimens
 
 Greek
