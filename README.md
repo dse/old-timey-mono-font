@@ -27,32 +27,32 @@ suitable for screenplay writing!
 ## Download Individual Fonts
 
 -   Reproducing Typewriter
-    -   Pica (10 pitch)
+    -   Regular - Pica (10 pitch)
+        -   [Thin](dist/ttf/ReproTypewr-Thin.ttf)
         -   [Light](dist/ttf/ReproTypewr-Light.ttf)
-        -   [Semi-Light](dist/ttf/ReproTypewr-SemiLight.ttf)
         -   [Regular](dist/ttf/ReproTypewr.ttf)
-    -   Elite (12 pitch)
-        -   [Light](dist/ttf/ReproTypewrElite-Light.ttf)
-        -   [Semi-Light](dist/ttf/ReproTypewrElite-SemiLight.ttf)
-        -   [Regular](dist/ttf/ReproTypewrElite.ttf)
-    -   17 pitch
-        -   [Light](dist/ttf/ReproTypewr17Pitch-Light.ttf)
-        -   [Semi-Light](dist/ttf/ReproTypewr17Pitch-SemiLight.ttf)
-        -   [Regular](dist/ttf/ReproTypewr17Pitch.ttf)
+    -   Condensed - Elite (12 pitch)
+        -   [Thin](dist/ttf/ReproTypewrCond-Thin.ttf)
+        -   [Light](dist/ttf/ReproTypewrCond-Light.ttf)
+        -   [Regular](dist/ttf/ReproTypewrCond.ttf)
+    -   Compressed (16.5 characters per inch)
+        -   [Thin](dist/ttf/ReproTypewrComp-Thin.ttf)
+        -   [Light](dist/ttf/ReproTypewrComp-Light.ttf)
+        -   [Regular](dist/ttf/ReproTypewrComp.ttf)
 
 -   Reproducing Typewriter Code
-    -   Pica (10 pitch)
+    -   Regular - Pica (10 pitch)
+        -   [Thin](dist/ttf/ReproTypewrCode-Thin.ttf)
         -   [Light](dist/ttf/ReproTypewrCode-Light.ttf)
-        -   [Semi-Light](dist/ttf/ReproTypewrCode-SemiLight.ttf)
         -   [Regular](dist/ttf/ReproTypewrCode.ttf)
-    -   Elite (12 pitch)
-        -   [Light](dist/ttf/ReproTypewrCodeElite-Light.ttf)
-        -   [Semi-Light](dist/ttf/ReproTypewrCodeElite-SemiLight.ttf)
-        -   [Regular](dist/ttf/ReproTypewrCodeElite.ttf)
-    -   17 pitch
-        -   [Light](dist/ttf/ReproTypewrCode17Pitch-Light.ttf)
-        -   [Semi-Light](dist/ttf/ReproTypewrCode17Pitch-SemiLight.ttf)
-        -   [Regular](dist/ttf/ReproTypewrCode17Pitch.ttf)
+    -   Condensed - Elite (12 pitch)
+        -   [Thin](dist/ttf/ReproTypewrCodeCond-Thin.ttf)
+        -   [Light](dist/ttf/ReproTypewrCodeCond-Light.ttf)
+        -   [Regular](dist/ttf/ReproTypewrCodeCond.ttf)
+    -   Compressed (16.5 characters per inch)
+        -   [Thin](dist/ttf/ReproTypewrCodeComp-Thin.ttf)
+        -   [Light](dist/ttf/ReproTypewrCodeComp-Light.ttf)
+        -   [Regular](dist/ttf/ReproTypewrCodeComp.ttf)
 
 ## Reproducing Typewriter Code
 
