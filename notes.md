@@ -1,10 +1,20 @@
-# Notes
+# More Notes
 
 -   scans/7/img008.png
     -   3475 * 21890
-    -   666 characters per line
+    -   666 pixels per line
     -   { 21890 / 666 * 2016 = 66261.6216216216 }
+    -   resize maintaining aspect to **66261.621621621621** px
+    -   at 16% zoom press Alt+[ 14 times to rotate a teensy weensy bit
+        withershins.
+    -   resize **vertically** to **67671.443358** px
 
+-   scans/7/img009.png
+    -   5062 * 21890
+    -   666 pixels per line, same as above
+    -   resize maintaining aspect ratio to **66261.621621621621** px, same as above
+    -   at 8% zoom press Alt+[ 26 times to rotate withershins
+    -   position at x = -13154.457
 
 
 ## Foreign Typewriter Samples/Specimens
