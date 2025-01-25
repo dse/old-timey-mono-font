@@ -1,3 +1,5 @@
+VERSION := 0.5.0
+
 MAKEFILE := Makefile
 FONT_SRC := src/ReproTypewr.sfd
 
@@ -97,8 +99,12 @@ FONTTOOL__THIN		:= --expand-stroke 48 # --translate-y -24  --scale-y 1344 --scal
 FONTTOOL__COND		:= --aspect 0.833333 # 12cpi
 FONTTOOL__COMP		:= --aspect 0.606060 # 16.5cpi
 
-default: $(FONTS) $(CHARGRID_HTML) $(CHARLIST_HTML)
-fonts: $(FONTS)
+default: $(FONTS) setversion setcopyright $(CHARGRID_HTML) $(CHARLIST_HTML)
+fonts: $(FONTS) setversion setcopyright
+setversion: FORCE
+	bin/setversion $(VERSION) $(FONTS)
+setcopyright: FORCE
+	bin/setcopyright $(FONTS)
 original: $(ORIGINAL_FONTS)
 coding: $(CODING_FONTS)
 compressed: $(COMP_FONTS)
