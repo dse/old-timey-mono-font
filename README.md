@@ -88,6 +88,19 @@ Reproducing Typewriter Code makes the following changes:
     geometric shapes, and basic arrows from U+2000 on up.  More to
     come, probably.
 
+## Not Exactly The Same as the Original.
+
+-   The initial version of this font was created with baseline and
+    cap-height dimensions based on low-resolution scans, which don't
+    turn out to match higher-resolution scans very closely.
+
+-   The percent sign had to be modified to stay within the character
+    cell without modifying the baseline, cap-height, ascent, descent,
+    and other dimensions.
+
+-   No scanned source provided me with U+007E TILDE or U+0060 GRAVE
+    ACCENT (backtick).
+
 ## You May Also Like
 
 I made these:
