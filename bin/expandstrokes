@@ -31,13 +31,19 @@ def main():
 
     silence.on()
     for glyph in font.glyphs():
+        if args.verbose:
+            print("<start %s %s>" % (u(glyph.unicode), glyph.glyphname))
         if len(glyph.foreground) == 0 and len(glyph.references) == 0:
             if args.verbose:
                 print("expandstrokes %s: %s is blank" % (args.font_filename, glyph.glyphname))
             continue
         if mixedjsontext.fontcomment_says_generated(glyph.comment):
             if args.verbose:
-                print("expandstrokes %s: Skipping %s" % (args.font_filename, glyph.glyphname))
+                print("expandstrokes %s: Skipping %s; indicated as generated" % (args.font_filename, glyph.glyphname))
+            continue
+        if len(glyph.references):
+            if args.verbose:
+                print("expandstrokes %s: Skipping %s; contains references" % (args.font_filename, glyph.glyphname))
             continue
         orig_width = glyph.width
         if args.expand_stroke is not None:
@@ -53,6 +59,8 @@ def main():
             glyph.width = orig_width
         else:
             glyph.width = common_glyph_width # MONOSPACE
+        if args.verbose:
+            print("<end %s %s>" % (u(glyph.unicode), glyph.glyphname))
     silence.off()
 
     if os.path.splitext(write_font_filename)[1] == '.sfd':
@@ -63,5 +71,10 @@ def main():
         if args.verbose:
             print("expandstrokes: Generating %s" % write_font_filename)
         font.generate(write_font_filename)
+
+def u(codepoint):
+    if codepoint < 0:
+        return ("%d" % codepoint)
+    return ("U+%04X" % codepoint)
 
 main()        
