@@ -18,21 +18,21 @@
 
 -   capital and small eth and thorn
 
--   dotless small i and j
+-   U+01B7 LATIN CAPITAL LETTER EZH
 
--   U+018E
+-   U+01B8 LATIN CAPITAL LETTER EZH REVERSED
 
--   U+0187
+-   U+018E LATIN CAPITAL LETTER REVERSED E
 
--   U+01B8
+-   U+0187 LATIN CAPITAL LETTER C WITH HOOK
 
--   U+01B9
+-   U+0292 LATIN SMALL LETTER EZH
+
+-   U+01B9 LATIN SMALL LETTER EZH REVERSED
 
 -   U+0245 (turned V)
 
 -   U+0258 (reversed e)
-
--   U+0292
 
 -   U+203D INTERROBANG
 
