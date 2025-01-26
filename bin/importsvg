@@ -38,6 +38,7 @@ def main():
         if glyphname in font:
             glyph = font[glyphname]
             if len(glyph.references):
+                print("WARNING: glyph %s U+%04X contains references but %s is present" % (glyphname, glyph.unicode, svg_filename))
                 continue
         glyph = font.createChar(codepoint, glyphname)
 
