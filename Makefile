@@ -11,14 +11,14 @@ FONTASPECT_PROG    := bin/fontaspect
 SETFONTMETAS_PROG  := bin/setfontmetas
 SETRTMETAS_PROG    := bin/setrtmetas
 
-OPT_VERBOSE :=
+OPT_VERBOSE := -v -v
 
-IMPORTSVG     := $(IMPORTSVG_PROG)
-FONTUNREF     := $(FONTUNREF_PROG)
-EXPANDSTROKES := $(EXPANDSTROKES_PROG)
-FONTASPECT    := $(FONTASPECT_PROG)
-SETFONTMETAS  := $(SETFONTMETAS_PROG)
-SETRTMETAS    := $(SETRTMETAS_PROG)
+IMPORTSVG     := $(IMPORTSVG_PROG) $(OPT_VERBOSE)
+FONTUNREF     := $(FONTUNREF_PROG) $(OPT_VERBOSE)
+EXPANDSTROKES := $(EXPANDSTROKES_PROG) $(OPT_VERBOSE)
+FONTASPECT    := $(FONTASPECT_PROG) $(OPT_VERBOSE)
+SETFONTMETAS  := $(SETFONTMETAS_PROG) $(OPT_VERBOSE)
+SETRTMETAS    := $(SETRTMETAS_PROG) $(OPT_VERBOSE)
 
 DISTDIR := dist
 
@@ -105,6 +105,8 @@ compressed: $(COMP_FONTS)
 condensed: $(COND_FONTS)
 zip: $(ZIP_FILE)
 
+SRC_SVGS := `find src/chars \! \( -type d -name scans -prune \) \! \( -type d -name \*italic\* -prune \) \! \( -type d -name greek-lc -prune \) -type f -name '*.svg'`
+
 .SUFFIXES: .sfd .ttf
 
 # update source font fron SVG files
@@ -114,7 +116,7 @@ testfonts: FORCE
 	           DISTDIR="test-dist/RT$(TIMESTAMP)"
 	ln -n -f -s "RT$(TIMESTAMP)" test-dist/latest
 update: FORCE
-	$(IMPORTSVG) $(FONT_SRC) `find src/chars \! \( -type d -name \*italic\* -prune \) \! \( -type d -name greek-lc -prune \) -type f -name '*.svg'`
+	$(IMPORTSVG) $(FONT_SRC) $(SRC_SVGS)
 	$(EXPANDSTROKES) --expand-stroke 96 $(FONT_SRC)
 fonttool: FORCE
 	echo "use 'make update', dingus." >&2
