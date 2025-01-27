@@ -58,26 +58,29 @@ def main():
         font.strokedfont = False
         glyph.width = orig_width
 
-        if (codepoint in range(33, 127)) or suffix == 'orig':
-            sm_glyphname = plain_glyphname + '.smol'
-            sm_glyph = font.createChar(-1, sm_glyphname)
+    for codepoint in range(33, 127):
+        plain_glyphname = fontforge.nameFromUnicode(codepoint)
+        simpl_glyphname = fontforge.nameFromUnicode(codepoint) + ".simpl"
+        glyphname = None
+        if simpl_glyphname in font:
+            glyphname = simpl_glyphname
+        elif plain_glyphname in font:
+            glyphname = plain_glyphname
+        else:
+            continue
+        glyph = font[glyphname]
 
-            sm_glyph.foreground = fontforge.layer() # clear out any existing contours
-            orig_width = sm_glyph.width
-            font.strokedfont = True
-            if args.verbose:
-                print("importsvg %s: glyph width of %s is originally %d" % (args.font_filename, sm_glyph.glyphname, glyph.width))
-            if args.verbose:
-                print("importsvg %s: Importing %s into %s" % (args.font_filename, svg_filename, sm_glyph.glyphname))
-            sm_glyph.importOutlines(svg_filename)
-            if args.verbose:
-                print("importsvg %s: glyph width of %s is now %d" % (args.font_filename, sm_glyph.glyphname, glyph.width))
-            font.strokedfont = False
-            if args.verbose:
-                print("importsvg %s: Resizing %s" % (args.font_filename, sm_glyphname))
-            sm_glyph.transform(psMat.scale(0.5))
-            sm_glyph.transform(psMat.translate(orig_width / 4, STROKE_WIDTH_BASIS / 4))
-            sm_glyph.width = orig_width
+        sm_glyphname = plain_glyphname + '.smol'
+        sm_glyph = font.createChar(-1, sm_glyphname)
+        sm_glyph.foreground = fontforge.layer() # clear out any existing contours
+
+        pen = sm_glyph.glyphPen() # pen to draw into smol glyph
+        glyph.draw(pen)
+        pen = None
+
+        sm_glyph.transform(psMat.scale(0.5))
+        sm_glyph.transform(psMat.translate(orig_width / 4, STROKE_WIDTH_BASIS / 4))
+        sm_glyph.width = glyph.width
 
     if os.path.splitext(write_font_filename)[1] == '.sfd':
         if args.verbose:
@@ -87,5 +90,6 @@ def main():
         if args.verbose:
             print("importsvg: Generating %s" % write_font_filename)
         font.generate(write_font_filename)
+    font.close()
 
 main()
