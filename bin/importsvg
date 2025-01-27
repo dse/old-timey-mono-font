@@ -62,7 +62,7 @@ def main():
             sm_glyphname = plain_glyphname + '.smol'
             sm_glyph = font.createChar(-1, sm_glyphname)
 
-            sm_glyph.foreground = fontforge.layer()
+            sm_glyph.foreground = fontforge.layer() # clear out any existing contours
             orig_width = sm_glyph.width
             font.strokedfont = True
             if args.verbose:
