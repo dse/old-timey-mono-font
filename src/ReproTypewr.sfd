@@ -22,7 +22,7 @@ OS2Version: 0
 OS2_WeightWidthSlopeOnly: 0
 OS2_UseTypoMetrics: 1
 CreationTime: 1729142792
-ModificationTime: 1737952075
+ModificationTime: 1738190691
 PfmFamily: 17
 TTFWeight: 500
 TTFWidth: 5
@@ -56,7 +56,7 @@ NameList: AGL For New Fonts
 DisplaySize: -48
 AntiAlias: 1
 FitToEm: 0
-WinInfo: 858 39 14
+WinInfo: 0 39 14
 BeginPrivate: 0
 EndPrivate
 Grid
@@ -1404,8 +1404,6 @@ Fore
 Refer: 774 -1 S 1 0 0 1 0 -300 2
 Refer: 769 -1 N 1 0 0 1 0 480 2
 Refer: 81 -1 N 1 0 0 1 0 0 2
-Refer: -1 -1 N 1 0 0 1 0 480 2
-Refer: -1 -1 N 1 0 0 1 0 -299 2
 EndChar
 
 StartChar: onehalf
@@ -1418,8 +1416,6 @@ Fore
 Refer: 771 -1 S 1 0 0 1 0 -300 2
 Refer: 769 -1 N 1 0 0 1 0 480 2
 Refer: 81 -1 N 1 0 0 1 0 0 2
-Refer: -1 -1 N 1 0 0 1 0 -300 2
-Refer: -1 -1 N 1 0 0 1 0 480 2
 EndChar
 
 StartChar: threequarters
@@ -1432,8 +1428,6 @@ Fore
 Refer: 774 -1 S 1 0 0 1 0 -300 2
 Refer: 773 -1 N 1 0 0 1 0 480 2
 Refer: 81 -1 N 1 0 0 1 0 0 2
-Refer: -1 -1 N 1 0 0 1 0 480 2
-Refer: -1 -1 N 1 0 0 1 0 -299 2
 EndChar
 
 StartChar: fractiondash
@@ -1461,7 +1455,6 @@ Flags: HW
 LayerCount: 2
 Fore
 Refer: 771 -1 S 1 0 0 1 0 660 2
-Refer: -1 -1 N 1 0 0 1 0 660 2
 EndChar
 
 StartChar: uni00B9
@@ -1472,7 +1465,6 @@ Flags: HW
 LayerCount: 2
 Fore
 Refer: 769 -1 S 1 0 0 1 0 660 2
-Refer: -1 -1 N 1 0 0 1 0 660 2
 EndChar
 
 StartChar: uni00B3
@@ -1483,7 +1475,6 @@ Flags: HW
 LayerCount: 2
 Fore
 Refer: 773 -1 S 1 0 0 1 0 660 2
-Refer: -1 -1 N 1 0 0 1 0 660 2
 EndChar
 
 StartChar: yen
@@ -18115,10 +18106,10 @@ EndChar
 StartChar: ordfeminine
 Encoding: 170 170 656
 Width: 1008
-Flags: HW
+Flags: HWO
 LayerCount: 2
 Fore
-Refer: 821 -1 S 1 0 0 1 -10 630 2
+Refer: 821 -1 S 1 0 0 1 -26 630 2
 Refer: 737 -1 N 1 0 0 1 0 0 2
 EndChar
 
@@ -20822,7 +20813,6 @@ Width: 1008
 Flags: HW
 LayerCount: 2
 Fore
-Refer: -1 -1 N 1 0 0 1 -252 660 2
 Refer: 743 8730 N 1 0 0 1 0 0 2
 EndChar
 
@@ -20832,7 +20822,6 @@ Width: 1008
 Flags: HW
 LayerCount: 2
 Fore
-Refer: -1 -1 N 1 0 0 1 -253 661 2
 Refer: 743 8730 N 1 0 0 1 0 0 2
 EndChar
 
@@ -30621,8 +30610,6 @@ LayerCount: 2
 Fore
 Refer: 766 -1 S 1 0 0 1 0 630 2
 Refer: 773 -1 S 1 0 0 1 0 -150 2
-Refer: -1 -1 S 1 0 0 1 0 -150 2
-Refer: -1 -1 S 1 0 0 1 0 630 2
 Refer: 81 -1 S 1 0 0 1 0 150 2
 EndChar
 
@@ -30634,8 +30621,6 @@ LayerCount: 2
 Fore
 Refer: 778 -1 S 1 0 0 1 0 -150 2
 Refer: 769 -1 S 1 0 0 1 0 630 2
-Refer: -1 -1 S 1 0 0 1 0 -150 2
-Refer: -1 -1 S 1 0 0 1 0 630 2
 Refer: 81 -1 S 1 0 0 1 0 150 2
 EndChar
 
@@ -30647,8 +30632,6 @@ LayerCount: 2
 Fore
 Refer: 780 -1 S 1 0 0 1 0 -150 2
 Refer: 769 -1 S 1 0 0 1 0 630 2
-Refer: -1 -1 S 1 0 0 1 0 -150 2
-Refer: -1 -1 S 1 0 0 1 0 630 2
 Refer: 81 -1 S 1 0 0 1 0 150 2
 EndChar
 
@@ -30661,9 +30644,6 @@ Fore
 Refer: 766 -1 S 1 0 0 1 252 -150 2
 Refer: 769 -1 S 1 0 0 1 -250 -150 2
 Refer: 769 -1 S 1 0 0 1 0 630 2
-Refer: -1 -1 S 1 0 0 1 252 -150 2
-Refer: -1 -1 S 1 0 0 1 -252 -150 2
-Refer: -1 -1 S 1 0 0 1 0 630 2
 Refer: 81 -1 S 1 0 0 1 0 150 2
 EndChar
 
@@ -30675,8 +30655,6 @@ LayerCount: 2
 Fore
 Refer: 773 -1 S 1 0 0 1 0 -150 2
 Refer: 769 -1 S 1 0 0 1 0 630 2
-Refer: -1 -1 S 1 0 0 1 0 -150 2
-Refer: -1 -1 S 1 0 0 1 0 630 2
 Refer: 81 -1 S 1 0 0 1 0 150 2
 EndChar
 
@@ -30688,8 +30666,6 @@ LayerCount: 2
 Fore
 Refer: 773 -1 S 1 0 0 1 0 -150 2
 Refer: 771 -1 S 1 0 0 1 0 630 2
-Refer: -1 -1 S 1 0 0 1 0 -150 2
-Refer: -1 -1 S 1 0 0 1 0 630 2
 Refer: 81 -1 S 1 0 0 1 0 150 2
 EndChar
 
@@ -30701,8 +30677,6 @@ LayerCount: 2
 Fore
 Refer: 776 -1 S 1 0 0 1 0 -150 2
 Refer: 769 -1 S 1 0 0 1 0 630 2
-Refer: -1 -1 S 1 0 0 1 0 -150 2
-Refer: -1 -1 S 1 0 0 1 0 630 2
 Refer: 81 -1 S 1 0 0 1 0 150 2
 EndChar
 
@@ -30714,8 +30688,6 @@ LayerCount: 2
 Fore
 Refer: 776 -1 S 1 0 0 1 0 -150 2
 Refer: 771 -1 S 1 0 0 1 0 630 2
-Refer: -1 -1 S 1 0 0 1 0 -150 2
-Refer: -1 -1 S 1 0 0 1 0 630 2
 Refer: 81 -1 S 1 0 0 1 0 150 2
 EndChar
 
@@ -30727,8 +30699,6 @@ LayerCount: 2
 Fore
 Refer: 776 -1 S 1 0 0 1 0 -150 2
 Refer: 773 -1 S 1 0 0 1 0 630 2
-Refer: -1 -1 S 1 0 0 1 0 -150 2
-Refer: -1 -1 S 1 0 0 1 0 630 2
 Refer: 81 -1 S 1 0 0 1 0 150 2
 EndChar
 
@@ -30740,8 +30710,6 @@ LayerCount: 2
 Fore
 Refer: 776 -1 S 1 0 0 1 0 -150 2
 Refer: 774 -1 S 1 0 0 1 0 630 2
-Refer: -1 -1 S 1 0 0 1 0 -150 2
-Refer: -1 -1 S 1 0 0 1 0 630 2
 Refer: 81 -1 S 1 0 0 1 0 150 2
 EndChar
 
@@ -30753,8 +30721,6 @@ LayerCount: 2
 Fore
 Refer: 777 -1 S 1 0 0 1 0 -150 2
 Refer: 769 -1 S 1 0 0 1 0 630 2
-Refer: -1 -1 S 1 0 0 1 0 -150 2
-Refer: -1 -1 S 1 0 0 1 0 630 2
 Refer: 81 -1 S 1 0 0 1 0 150 2
 EndChar
 
@@ -30766,8 +30732,6 @@ LayerCount: 2
 Fore
 Refer: 777 -1 S 1 0 0 1 0 -150 2
 Refer: 776 -1 S 1 0 0 1 0 630 2
-Refer: -1 -1 S 1 0 0 1 0 -150 2
-Refer: -1 -1 S 1 0 0 1 0 630 2
 Refer: 81 -1 S 1 0 0 1 0 150 2
 EndChar
 
@@ -30779,8 +30743,6 @@ LayerCount: 2
 Fore
 Refer: 779 -1 S 1 0 0 1 0 -150 2
 Refer: 769 -1 S 1 0 0 1 0 630 2
-Refer: -1 -1 S 1 0 0 1 0 -150 2
-Refer: -1 -1 S 1 0 0 1 0 630 2
 Refer: 81 -1 S 1 0 0 1 0 150 2
 EndChar
 
@@ -30792,8 +30754,6 @@ LayerCount: 2
 Fore
 Refer: 779 -1 S 1 0 0 1 0 -150 2
 Refer: 773 -1 S 1 0 0 1 0 630 2
-Refer: -1 -1 S 1 0 0 1 0 -150 2
-Refer: -1 -1 S 1 0 0 1 0 630 2
 Refer: 81 -1 S 1 0 0 1 0 150 2
 EndChar
 
@@ -30805,8 +30765,6 @@ LayerCount: 2
 Fore
 Refer: 779 -1 S 1 0 0 1 0 -150 2
 Refer: 776 -1 S 1 0 0 1 0 630 2
-Refer: -1 -1 S 1 0 0 1 0 -150 2
-Refer: -1 -1 S 1 0 0 1 0 630 2
 Refer: 81 -1 S 1 0 0 1 0 150 2
 Refer: 81 -1 S 1 0 0 1 0 150 2
 EndChar
@@ -30819,8 +30777,6 @@ LayerCount: 2
 Fore
 Refer: 779 -1 S 1 0 0 1 0 -150 2
 Refer: 778 -1 S 1 0 0 1 0 630 2
-Refer: -1 -1 S 1 0 0 1 0 -150 2
-Refer: -1 -1 S 1 0 0 1 0 630 2
 Refer: 81 -1 S 1 0 0 1 0 150 2
 EndChar
 
@@ -30831,7 +30787,6 @@ Flags: HW
 LayerCount: 2
 Fore
 Refer: 769 -1 S 1 0 0 1 0 630 2
-Refer: -1 -1 S 1 0 0 1 0 630 2
 Refer: 81 -1 S 1 0 0 1 0 150 2
 EndChar
 

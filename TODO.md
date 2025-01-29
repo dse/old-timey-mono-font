@@ -6,8 +6,6 @@
 
 ## Redraw
 
--   feminine ordinal (^a) misaligned
-
 -   U+00B5 MICRO SIGN
 
 -   capital and small eth and thorn
