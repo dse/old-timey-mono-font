@@ -18,3 +18,4 @@
 
 -   In code variant, reversed semicolon does not get bigger.
 
+    -   reversed ; should be reference to ;
