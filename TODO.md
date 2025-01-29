@@ -8,17 +8,9 @@
 
 -   feminine ordinal (^a) misaligned
 
--   C.small, R.small, S.small, M.small, T.small
-
-    for (C), (R), (SM), (TM) symbols.
-
 -   U+00B5 MICRO SIGN
 
 -   capital and small eth and thorn
-
--   U+203D INTERROBANG
-
--   U+2045, U+2046 quill brackets
 
 -   Euro
 
