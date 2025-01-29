@@ -78,6 +78,10 @@ def main():
         glyph.draw(pen)
         pen = None
 
+        if len(sm_glyph.references):
+            reconstitute_references(sm_glyph)
+            sm_glyph.unlinkRef()
+
         sm_glyph.transform(psMat.scale(0.5))
         sm_glyph.transform(psMat.translate(orig_width / 4, STROKE_WIDTH_BASIS / 4))
         sm_glyph.width = glyph.width
@@ -91,5 +95,14 @@ def main():
             print("importsvg: Generating %s" % write_font_filename)
         font.generate(write_font_filename)
     font.close()
+
+def reconstitute_references(glyph):
+    # Apparently a glyph.unlinkRef() call will replace the
+    # references with the contours from when the font was
+    # loaded, ignoring any changes we make to the glyph.
+    references = glyph.references
+    glyph.references = []
+    for reference in references:
+        glyph.addReference(reference[0], reference[1])
 
 main()
