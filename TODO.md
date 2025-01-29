@@ -1,9 +1,5 @@
 # TODO
 
-## Bugs
-
--   U+0073 LATIN SMALL LETTER S after conversion to fontforge
-
 ## Redraw
 
 -   non-copied Greeks and Cyrillics
