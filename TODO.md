@@ -10,8 +10,6 @@
 
 -   small eth
 
--   capital thorn
-
 -   U+2114 (lb struck)
 
 -   l.coding
