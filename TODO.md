@@ -8,8 +8,6 @@
 
 -   capital and small eth and thorn
 
--   Euro
-
 -   U+2114 (lb struck)
 
 -   l.coding
