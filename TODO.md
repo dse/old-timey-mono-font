@@ -8,8 +8,6 @@
 
 -   U+2114 (lb struck)
 
--   l.coding
-
 -   non-copied Greeks and Cyrillics
 
 ## Low Priority
