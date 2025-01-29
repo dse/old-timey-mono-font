@@ -10,6 +10,6 @@
 
 ## Low Priority
 
--   In code variant, reversed semicolon does not get bigger.
+-   In code variant, U+204F REVERSED SEMICOLON does not get bigger.
 
-    -   reversed ; should be reference to ;
+    -   reversed is a reference to ; so make sure this is still true.
