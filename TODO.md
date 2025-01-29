@@ -6,8 +6,6 @@
 
 ## Redraw
 
--   small eth
-
 -   U+2114 (lb struck)
 
 -   l.coding
