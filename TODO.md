@@ -6,7 +6,11 @@
 
 ## Redraw
 
--   capital and small eth and thorn
+-   capital eth
+
+-   small eth
+
+-   capital thorn
 
 -   U+2114 (lb struck)
 
