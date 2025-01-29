@@ -6,8 +6,6 @@
 
 ## Redraw
 
--   U+2114 (lb struck)
-
 -   non-copied Greeks and Cyrillics
 
 ## Low Priority
