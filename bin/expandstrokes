@@ -50,9 +50,10 @@ def main():
             if args.verbose:
                 print("expandstrokes %s: Expanding strokes on %s by %d" % (args.font_filename, glyph.glyphname, args.expand_stroke))
             glyph.stroke("circular", args.expand_stroke)
-        if args.verbose:
-            print("expandstrokes %s: Removing overlaps on %s" % (args.font_filename, glyph.glyphname))
-        glyph.removeOverlap()
+        # glyph.stroke() already removes overlaps.
+        # if args.verbose:
+        #     print("expandstrokes %s: Removing overlaps on %s" % (args.font_filename, glyph.glyphname))
+        # glyph.removeOverlap()
         if args.verbose:
             print("expandstrokes %s: glyph width on %s: %d => %d" % (args.font_filename, glyph.glyphname, orig_width, glyph.width))
         if orig_width != 0:
