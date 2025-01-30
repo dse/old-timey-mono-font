@@ -49,7 +49,7 @@ def main():
         if args.expand_stroke is not None:
             if args.verbose:
                 print("expandstrokes %s: Expanding strokes on %s by %d" % (args.font_filename, glyph.glyphname, args.expand_stroke))
-            glyph.stroke("circular", args.expand_stroke, "round", "round")
+            glyph.stroke("circular", args.expand_stroke)
         if args.verbose:
             print("expandstrokes %s: Removing overlaps on %s" % (args.font_filename, glyph.glyphname))
         glyph.removeOverlap()
