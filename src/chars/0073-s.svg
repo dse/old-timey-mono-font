@@ -8,7 +8,7 @@
    version="1.1"
    id="svg5"
    xml:space="preserve"
-   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25)"
    sodipodi:docname="0073-s.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -26,13 +26,13 @@
    inkscape:document-units="px"
    showgrid="false"
    inkscape:zoom="0.32"
-   inkscape:cx="160.9375"
-   inkscape:cy="1093.75"
-   inkscape:window-width="1908"
-   inkscape:window-height="1017"
-   inkscape:window-x="2256"
-   inkscape:window-y="418"
-   inkscape:window-maximized="1"
+   inkscape:cx="159.375"
+   inkscape:cy="1092.1875"
+   inkscape:window-width="1440"
+   inkscape:window-height="900"
+   inkscape:window-x="0"
+   inkscape:window-y="0"
+   inkscape:window-maximized="0"
    inkscape:current-layer="layer1"
    showguides="false"
    inkscape:lockguides="false">
@@ -45,7 +45,7 @@
    originx="0"
    originy="0"
    units="px"
-   visible="true" />
+   visible="false" />
     <sodipodi:guide
    position="0,21"
    orientation="0,-1"
@@ -162,12 +162,12 @@
    style="display:inline">
     <path
    style="fill:none;stroke:#030303;stroke-width:6;stroke-linecap:round;stroke-linejoin:round"
-   d="m 13.200437,73.648905 c 8.302,6.250938 14.598773,8.601095 24.513659,8.601095 8.815364,0 15.467961,-4.33557 15.467961,-11.376114 0,-7.49177 -6.879945,-10.739817 -20.682874,-12.075976 -13.303751,-1.287834 -18.296387,-3.926294 -18.296387,-10.363067 0,-5.475639 5.220746,-9.934842 13.87697,-9.934842 8.931482,0 16.156703,1.840657 24.200043,8.178402 l 0.05498,2.846524 L 52.158009,39.75"
+   d="m 11.512926,73.648905 c 8.302,6.250938 14.598773,8.601095 24.513659,8.601095 8.815364,0 15.467961,-4.33557 15.467961,-11.376114 0,-7.49177 -6.879945,-10.739817 -20.682874,-12.075976 -13.303751,-1.287834 -18.296387,-3.926294 -18.296387,-10.363067 0,-5.475639 5.220746,-9.934842 13.87697,-9.934842 8.931482,0 16.156703,1.840657 24.200043,8.178402 l 0.05498,2.846524 L 50.470498,39.75"
    id="path1975"
    sodipodi:nodetypes="csssssc" />
     <path
    style="fill:none;stroke:#030303;stroke-width:6;stroke-linecap:round;stroke-linejoin:round"
-   d="M 13.318913,81 13.142136,70.347837"
+   d="M 11.631402,81 11.454625,70.347837"
    id="path1977"
    sodipodi:nodetypes="cc" />
     
