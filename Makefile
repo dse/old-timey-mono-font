@@ -199,6 +199,9 @@ clean: FORCE
 	\) -exec rm {} + || true
 	/bin/rm -fr src/build || true
 
+diffs.txt: FORCE
+	fontcmp ./ReproTypewr-0.5.0.sfd src/ReproTypewr.sfd > diffs.txt
+
 .PHONY: FORCE
 
 # resetting DisplaySize: ___ doesn't break
