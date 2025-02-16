@@ -8,7 +8,7 @@ import fontforge
 import argparse
 import os
 sys.path.append(os.path.dirname(__file__) + "/../lib")
-from parseglyphsvgfilename import parse_glyph_svg_filename
+from my_font_utils import parse_glyph_svg_filename
 def main():
     global args
     parser = argparse.ArgumentParser()
