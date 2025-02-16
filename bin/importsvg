@@ -8,6 +8,7 @@ import sys
 
 sys.path.append(os.path.dirname(__file__) + "/../lib")
 from parseglyphsvgfilename import parse_glyph_svg_filename
+from my_font_utils import reconstitute_references
 
 sys.path.append(os.getenv("HOME") + "/git/dse.d/fontforge-utilities/lib")
 import mixedjsontext
@@ -79,14 +80,5 @@ def main():
     else:
         font.generate(write_font_filename)
     font.close()
-
-def reconstitute_references(glyph):
-    # Apparently a glyph.unlinkRef() call will replace the
-    # references with the contours from when the font was
-    # loaded, ignoring any changes we make to the glyph.
-    references = glyph.references
-    glyph.references = []
-    for reference in references:
-        glyph.addReference(reference[0], reference[1])
 
 main()
