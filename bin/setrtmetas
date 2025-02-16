@@ -132,7 +132,6 @@ def main():
         font.os2_weight = weight
 
         font.appendSFNTName(LANG, "SubFamily", "Regular") # no bolds or italics here
-
         font.appendSFNTName(LANG, "Preferred Styles", " ".join(styles))
         font.appendSFNTName(LANG, "WWS Subfamily", " ".join(styles))
 
@@ -145,16 +144,6 @@ def main():
         panose[4] = 2           # Contrast: None
         panose[5] = 2           # Stroke Variation: None
         font.os2_panose = tuple(panose)
-
-        if args.verbose >= 1:
-            print("font.familyname = %s" % font.familyname)
-            print("pure family name = %s" % font_family_name)
-            print("full name = %s" % font.fullname)
-            print("ps name = %s" % font.fontname)
-            print("weight = %s" % font.weight)
-            print("os2_weight = %d" % font.os2_weight)
-            print("styles = %s" % styles)
-            print("panose = %s" % list(font.os2_panose))
 
         if filename.endswith(".sfd"):
             font.save(filename)

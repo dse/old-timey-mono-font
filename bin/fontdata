@@ -22,10 +22,8 @@ def main():
         glyphs = list(font.glyphs())
         glyphs = [glyph for glyph in glyphs if glyph.unicode >= 0]
         glyphs.sort(key=lambda glyph: glyph.unicode)
-
         blocks = [unicodeblocks.blocks[block] for block in unicodeblocks.blocks]
         blocks.sort(key=lambda block: block.start)
-
         for block in blocks:
             block_data = {
                 "name": block.name,

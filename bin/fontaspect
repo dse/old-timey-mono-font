@@ -23,21 +23,15 @@ def main():
     parser.add_argument('--verbose', '-v', action='count', default=0)
     args = parser.parse_args()
 
-    if args.verbose:
-        print("fontaspect: Loading %s" % args.font_filename)
     font = fontforge.open(args.font_filename)
     write_font_filename = args.save_as if args.save_as is not None else args.font_filename
 
     for glyph in font.glyphs():
         if mixedjsontext.fontcomment_says_generated(glyph.comment):
             if use_aspect_method_2(glyph.unicode):
-                if args.verbose:
-                    print("fontaspect %s: Resizing %s" % (args.font_filename, glyph.glyphname))
                 apply_aspect_method_2(glyph)
             else:
                 final_width = math.floor(glyph.width * args.aspect)
-                if args.verbose:
-                    print("fontaspect %s: Resizing %s" % (args.font_filename, glyph.glyphname))
                 glyph.transform(psMat.scale(args.aspect, 1))
                 glyph.width = final_width
             continue
@@ -47,20 +41,14 @@ def main():
             continue
         if args.aspect > 1:
             final_width = math.floor(glyph.width * args.aspect)
-            if args.verbose:
-                print("fontaspect %s: Resizing %s" % (args.font_filename, glyph.glyphname))
             glyph.transform(psMat.scale(args.aspect, 1))
             glyph.width = final_width
             continue
         apply_aspect_method_1(glyph)
 
     if os.path.splitext(write_font_filename)[1] == '.sfd':
-        if args.verbose:
-            print("Saving %s" % write_font_filename)
         font.save(write_font_filename)
     else:
-        if args.verbose:
-            print("Generating %s" % write_font_filename)
         font.generate(write_font_filename)
 
 def apply_aspect_method_1(glyph): # normal characters

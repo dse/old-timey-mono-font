@@ -23,7 +23,6 @@ def main():
     parser.add_argument('--italic-angle',  type=int, help='neg = normal italic, pos = reverse italic')
     parser.add_argument('--os2-weight',    type=int, help='100 to 900')
     parser.add_argument('--panose',        type=str, help='10 values, each either "-" or non-neg integer')
-    parser.add_argument('--dry-run',       action='store_true')
     parser.add_argument('--verbose', '-v', action='count', default=0)
     parser.add_argument('--sfnt-names-family',         type=str)
     parser.add_argument('--sfnt-names-subfamily',      type=str)
@@ -33,11 +32,8 @@ def main():
     parser.add_argument('--sfnt-names-pref-styles',    type=str)
     parser.add_argument('--sfnt-names-wws-family',     type=str)
     parser.add_argument('--sfnt-names-wws-subfamily',  type=str)
-    # font.appendSFNTName(language, strid, string)
     args = parser.parse_args()
 
-    if args.verbose:
-        print("setfontmetas: Loading %s" % args.filename)
     font = fontforge.open(args.filename)
     changed = False
 
@@ -84,11 +80,6 @@ def main():
             font_panose[i] = panose_values[i]
         if panose_changed:
             font.os2_panose = tuple(font_panose)
-        if args.dry_run or args.verbose:
-            if panose_changed:
-                print("setfontmetas %s: panose: %s => %s" % (args.filename, repr(orig_panose), repr(font.os2_panose)))
-            else:
-                print("setfontmetas %s: panose: not changed" % args.filename)
     if args.sfnt_names_family is not None:
         font.appendSFNTName('English (US)', 'Family', change(coalesce(get_sfnt_name(font, 'Family'), orig_familyname), args.sfnt_names_family))
     if args.sfnt_names_subfamily is not None:
@@ -106,19 +97,11 @@ def main():
     if args.sfnt_names_wws_subfamily is not None:
         font.appendSFNTName('English (US)', 'WWS Subfamily', change(coalesce(get_sfnt_name(font, 'WWS Subfamily'), orig_familyname), args.sfnt_names_family))
 
-
     if not changed:
         raise Exception("Font not changed" % args.filename)
-    if args.dry_run:
-        print("setfontmetas %s: DRY RUN: not changing" % args.filename)
-        return
     if (os.path.splitext(args.filename))[1] == '.sfd':
-        if args.verbose:
-            print("setfontmetas: Saving %s" % args.filename)
         font.save(args.filename)
     else:
-        if args.verbose:
-            print("setfontmetas: Generating %s" % args.filename)
         font.generate(args.filename)
 
 def get_sfnt_name(font, strid):
@@ -168,8 +151,6 @@ def change(orig, spec, psname=False):
         result = re.sub(pat, repl, orig)
     else:
         result = spec
-    if args.dry_run or args.verbose:
-        print("%s: %s => %s" % (what, orig, result))
     return result
 
 def coalesce(*values):
