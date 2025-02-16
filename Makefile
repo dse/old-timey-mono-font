@@ -11,14 +11,16 @@ FONTASPECT_PROG    := bin/fontaspect
 SETFONTMETAS_PROG  := bin/setfontmetas
 SETRTMETAS_PROG    := bin/setrtmetas
 
+SETRTMETAS_ARGS    :=
+
 OPT_VERBOSE := -v -v
 
-IMPORTSVG     := $(IMPORTSVG_PROG) $(OPT_VERBOSE)
-FONTUNREF     := $(FONTUNREF_PROG) $(OPT_VERBOSE)
-EXPANDSTROKES := $(EXPANDSTROKES_PROG) $(OPT_VERBOSE)
-FONTASPECT    := $(FONTASPECT_PROG) $(OPT_VERBOSE)
-SETFONTMETAS  := $(SETFONTMETAS_PROG) $(OPT_VERBOSE)
-SETRTMETAS    := $(SETRTMETAS_PROG) $(OPT_VERBOSE)
+IMPORTSVG     := $(IMPORTSVG_PROG)
+FONTUNREF     := $(FONTUNREF_PROG)
+EXPANDSTROKES := $(EXPANDSTROKES_PROG)
+FONTASPECT    := $(FONTASPECT_PROG)
+SETFONTMETAS  := $(SETFONTMETAS_PROG)
+SETRTMETAS    := $(SETRTMETAS_PROG) $(SETRTMETAS_ARGS)
 
 DISTDIR := dist
 
@@ -112,6 +114,7 @@ SRC_SVGS := `find src/chars \! \( -type d -name scans -prune \) \! \( -type d -n
 # update source font fron SVG files
 testfonts: FORCE
 	make fonts FONT_FAMILY="RT$(TIMESTAMP)" \
+	           SETRTMETAS_ARGS="--ffn='ReproTypewr $(TIMESTAMP)' --psfn='ReproTypewr$(TIMESTAMP)'" \
 	           PS_FONT_FAMILY="RT$(TIMESTAMP)" \
 	           DISTDIR="test-dist/RT$(TIMESTAMP)"
 	ln -n -f -s "RT$(TIMESTAMP)" test-dist/latest

@@ -20,6 +20,8 @@ def main():
     global args
     parser = argparse.ArgumentParser()
     parser.add_argument('filenames', nargs='+', help='font filename')
+    parser.add_argument('--ps-family-name', '--psfn')
+    parser.add_argument('--font-family-name', '--family-name', '--ffn')
     parser.add_argument('--verbose', '-v', action='count', default=0)
     args = parser.parse_args()
     for filename in args.filenames:
@@ -30,18 +32,23 @@ def main():
         # compute styles from filename
         #----------------------------------------------------------------------
 
-        if match := re.match(r'RT\d+', basename):
+        if args.font_family_name is not None:
+            font_family_name = args.font_family_name
+        elif match := re.match(r'RT\d+', basename):
             font_family_name = match.group(0)
-            ps_family_name = match.group(0)
-            if is_code:
-                font_family_name += " Code"
-                ps_family_name += "Code"
         else:
             font_family_name = "Repro Typewr"
+        if is_code:
+            font_family_name += " Code"
+
+        if args.ps_family_name is not None:
+            ps_family_name = args.ps_family_name
+        elif match := re.match(r'RT\d+', basename):
+            ps_family_name = match.group(0)
+        else:
             ps_family_name = "ReproTypewr"
-            if is_code:
-                font_family_name = "Repro Typewr Code"
-                ps_family_name = "ReproTypewrCode"
+        if is_code:
+            ps_family_name += "Code"
 
         weight = WEIGHT_NORMAL
         panose_2 = 5
