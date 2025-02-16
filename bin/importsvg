@@ -75,7 +75,7 @@ def main():
         sm_glyph.transform(psMat.translate(orig_width / 4, STROKE_WIDTH_BASIS / 4))
         sm_glyph.width = glyph.width
 
-    if os.path.splitext(write_font_filename)[1] == '.sfd':
+    if write_font_filename.endswith('.sfd'):
         font.save(write_font_filename)
     else:
         font.generate(write_font_filename)

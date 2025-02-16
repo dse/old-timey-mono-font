@@ -46,7 +46,7 @@ def main():
             continue
         apply_aspect_method_1(glyph)
 
-    if os.path.splitext(write_font_filename)[1] == '.sfd':
+    if write_font_filename.endswith('.sfd'):
         font.save(write_font_filename)
     else:
         font.generate(write_font_filename)

@@ -30,7 +30,7 @@ def main():
             print("fontfix %s: %s width is not %d; it's %d" % (args.font_filename, glyph.glyphname, common_glyph_width, glyph.width))
             glyph.width = common_glyph_width
 
-    if os.path.splitext(write_font_filename)[1] == '.sfd':
+    if write_font_filename.endswith('.sfd'):
         font.save(write_font_filename)
     else:
         font.generate(write_font_filename)

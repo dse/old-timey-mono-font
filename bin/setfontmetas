@@ -99,7 +99,7 @@ def main():
 
     if not changed:
         raise Exception("Font not changed" % args.filename)
-    if (os.path.splitext(args.filename))[1] == '.sfd':
+    if args.filename.endswith('.sfd'):
         font.save(args.filename)
     else:
         font.generate(args.filename)

@@ -18,8 +18,7 @@ def main():
     for dest_filename in args.dest_filename:
         if re.search(r'^\.[A-Za-z0-9]+$', dest_filename): # dest_filename is just an extension, i.e., '.ttf'
             dest_filename = source_base + dest_filename
-        (base, ext) = os.path.splitext(dest_filename)
-        if ext == '.sfd':
+        if dest_filename.endswith('.sfd'):
             font.save(dest_filename)
         else:
             font.generate(dest_filename)

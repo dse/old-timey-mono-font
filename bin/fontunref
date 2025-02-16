@@ -34,7 +34,7 @@ def main():
         glyph.unlinkRef()
         glyph.width = orig_width
 
-    if os.path.splitext(write_font_filename)[1] == '.sfd':
+    if write_font_filename.endswith('.sfd'):
         font.save(write_font_filename)
     else:
         font.generate(write_font_filename)
