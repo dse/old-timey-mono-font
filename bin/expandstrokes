@@ -38,8 +38,6 @@ def main():
         orig_width = glyph.width
         if args.expand_stroke is not None:
             glyph.stroke("circular", args.expand_stroke)
-        # glyph.stroke() already removes overlaps.
-        # glyph.removeOverlap()
         if orig_width != 0:
             glyph.width = orig_width
         else:
