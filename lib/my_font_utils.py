@@ -59,9 +59,12 @@ STROKE_WIDTH_BASIS = 96
 def create_smol_glyph(font, codepoint):
     plain_glyphname = fontforge.nameFromUnicode(codepoint)
     simpl_glyphname = fontforge.nameFromUnicode(codepoint) + ".simpl"
+    orig_glyphname = fontforge.nameFromUnicode(codepoint) + ".orig"
     glyphname = None
     if simpl_glyphname in font:
         glyphname = simpl_glyphname
+    elif orig_glyphname in font:
+        glyphname = orig_glyphname
     elif plain_glyphname in font:
         glyphname = plain_glyphname
     else:
