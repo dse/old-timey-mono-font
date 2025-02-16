@@ -133,8 +133,8 @@ boxdraw: FORCE
 $(ZIP_FILE): $(FONTS) Makefile
 	( cd dist && zip -r ReproTypewr.zip ttf )
 
-# Stage 1: import SVGs and set basic metas
-src/build/$(PS_FONT_FAMILY).stage1.sfd: $(FONT_SRC) Makefile $(IMPORTSVG_PROG) $(SETRTMETAS_PROG)
+# Stage 1: import SVGs
+src/build/$(PS_FONT_FAMILY).stage1.sfd: $(FONT_SRC) Makefile $(IMPORTSVG_PROG)
 	mkdir -p src/build
 	$(IMPORTSVG) "$<" -o "$@" src/chars/*.svg
 
