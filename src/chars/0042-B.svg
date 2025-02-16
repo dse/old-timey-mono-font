@@ -8,7 +8,7 @@
    version="1.1"
    id="svg5"
    xml:space="preserve"
-   inkscape:version="1.3.2 (091e20e, 2023-11-25)"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
    sodipodi:docname="0042-B.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -26,12 +26,12 @@
    inkscape:document-units="px"
    showgrid="false"
    inkscape:zoom="0.64"
-   inkscape:cx="-162.5"
-   inkscape:cy="628.90625"
+   inkscape:cx="214.0625"
+   inkscape:cy="630.46875"
    inkscape:window-width="1440"
    inkscape:window-height="900"
-   inkscape:window-x="0"
-   inkscape:window-y="0"
+   inkscape:window-x="-32"
+   inkscape:window-y="-32"
    inkscape:window-maximized="0"
    inkscape:current-layer="layer1"
    showguides="true"
@@ -150,15 +150,8 @@
    d="m 9.1249981,80.999997 24.6110869,-10e-6"
    id="path20"
    sodipodi:nodetypes="cc" />
-    <path
-   style="display:inline;fill:none;stroke:#000099;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-   d="M 32.874998,19.749999 Z"
-   id="path23" />
-    <path
-   style="display:inline;fill:none;stroke:#000099;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-   d="M 34.691408,21.026041 H 9.1249981"
-   id="path24"
-   sodipodi:nodetypes="cc" />
+    
+    
     <path
    style="display:inline;fill:none;stroke:#000099;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
    d="M 15.874998,80.744799 V 21.153645"
@@ -167,7 +160,7 @@
     <path
    id="path1776"
    style="fill:none;stroke:#000099;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-   d="m 34.691408,21.026041 c 9.636828,0 15.612974,5.594841 15.612974,12.097377 0,8.296968 -7.200027,14.699497 -16.003601,14.699497"
+   d="m 34.300781,47.822915 c 8.803574,0 16.003601,-6.402529 16.003601,-14.699497 0,-6.502536 -5.976146,-12.097377 -15.612974,-12.097377 H 9.1249981"
    sodipodi:nodetypes="csc" />
     <path
    id="path1779"
