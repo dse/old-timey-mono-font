@@ -10,10 +10,11 @@ EXPANDSTROKES_PROG := bin/expandstrokes
 FONTASPECT_PROG    := bin/fontaspect
 SETFONTMETAS_PROG  := bin/setfontmetas
 SETRTMETAS_PROG    := bin/setrtmetas
+FONTNOTDEF_PROG    := bin/fontnotdef
 
-SETRTMETAS_ARGS    :=
+SETRTMETAS_ARGS :=
 
-OPT_VERBOSE := -v -v
+OPT_VERBOSE :=
 
 IMPORTSVG     := $(IMPORTSVG_PROG)
 FONTUNREF     := $(FONTUNREF_PROG)
@@ -21,6 +22,7 @@ EXPANDSTROKES := $(EXPANDSTROKES_PROG)
 FONTASPECT    := $(FONTASPECT_PROG)
 SETFONTMETAS  := $(SETFONTMETAS_PROG)
 SETRTMETAS    := $(SETRTMETAS_PROG) $(SETRTMETAS_ARGS)
+FONTNOTDEF    := $(FONTNOTDEF_PROG)
 
 DISTDIR := dist
 
@@ -121,6 +123,7 @@ testfonts: FORCE
 update: FORCE
 	$(IMPORTSVG) $(FONT_SRC) $(SRC_SVGS)
 	$(EXPANDSTROKES) --expand-stroke 96 $(FONT_SRC)
+	$(FONTNOTDEF) $(FONT_SRC)
 fonttool: FORCE
 	echo "use 'make update', dingus." >&2
 	false
