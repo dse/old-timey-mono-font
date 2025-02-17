@@ -20,10 +20,7 @@ def main():
     # fix glyph widths to ensure they're all the same
     common_glyph_width = statistics.mode([glyph.width for glyph in font.glyphs()])
     for glyph in font.glyphs():
-        if glyph.glyphname == ".notdef":
-            print("fontfix %s: resetting %s glyph width to 0" % (args.font_filename, glyph.glyphname))
-            glyph.width = common_glyph_width
-        elif glyph.glyphname == "nonmarkingreturn":
+        if glyph.glyphname == "nonmarkingreturn":
             print("fontfix %s: resetting %s glyph width to 0" % (args.font_filename, glyph.glyphname))
             glyph.width = common_glyph_width
         elif glyph.width != common_glyph_width and glyph.width != 0:
