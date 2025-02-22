@@ -139,6 +139,8 @@ boxdraw: FORCE
 $(ZIP_FILE): $(FONTS) Makefile
 	( cd dist && zip -r ReproTypewr.zip ttf )
 
+stage1: src/build/$(PS_FONT_FAMILY).stage1.sfd
+
 # Stage 1: import SVGs
 src/build/$(PS_FONT_FAMILY).stage1.sfd: $(FONT_SRC) Makefile $(IMPORTSVG_PROG)
 	mkdir -p src/build
