@@ -147,7 +147,8 @@ src/build/$(PS_FONT_FAMILY).stage1.sfd: $(FONT_SRC) Makefile $(IMPORTSVG_PROG)
 # Stage 2: unroll references
 src/build/$(PS_FONT_FAMILY).stage2.sfd: src/build/$(PS_FONT_FAMILY).stage1.sfd Makefile $(FONTUNREF_PROG)
 	mkdir -p src/build
-	$(FONTUNREF) "$<" -o "$@"
+#	$(FONTUNREF) "$<" -o "$@"
+	cp "$<" "$@"
 
 # Stage 3: make condensed and compressed outlines
 src/build/$(PS_FONT_FAMILY)Cond.stage2.sfd: src/build/$(PS_FONT_FAMILY).stage2.sfd Makefile $(FONTASPECT_PROG)

@@ -32,16 +32,17 @@ def main():
                 apply_aspect_method_2(glyph)
             else:
                 final_width = math.floor(glyph.width * args.aspect)
-                glyph.transform(psMat.scale(args.aspect, 1))
+                glyph.transform(psMat.scale(args.aspect, 1), ("partialRefs",))
                 glyph.width = final_width
             continue
         if len(glyph.references):
+            glyph.transform(psMat.scale(args.aspect, 1), ("partialRefs",))
             continue
-        if not args.aspect:
+        if not args.aspect: # how does this even occur?
             continue
         if args.aspect > 1:
             final_width = math.floor(glyph.width * args.aspect)
-            glyph.transform(psMat.scale(args.aspect, 1))
+            glyph.transform(psMat.scale(args.aspect, 1), ("partialRefs",))
             glyph.width = final_width
             continue
         apply_aspect_method_1(glyph)
@@ -62,7 +63,7 @@ def apply_aspect_method_1(glyph): # normal characters
     final_width_2 = final_width - STROKE_WIDTH_BASIS
     xform = psMat.compose(xform, psMat.scale(final_width_2 / orig_width_2, 1))
     xform = psMat.compose(xform, psMat.translate(final_width / 2, 0))
-    glyph.transform(xform)
+    glyph.transform(xform, ("partialRefs",))
     glyph.width = final_width
 
 def apply_aspect_method_2(glyph): # box drawing characters and such
