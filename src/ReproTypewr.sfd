@@ -22,7 +22,7 @@ OS2Version: 0
 OS2_WeightWidthSlopeOnly: 0
 OS2_UseTypoMetrics: 1
 CreationTime: 1729142792
-ModificationTime: 1740718528
+ModificationTime: 1740719167
 PfmFamily: 17
 TTFWeight: 500
 TTFWidth: 5
@@ -55,7 +55,7 @@ NameList: AGL For New Fonts
 DisplaySize: -48
 AntiAlias: 1
 FitToEm: 1
-WinInfo: 8000 16 26
+WinInfo: 8048 16 26
 BeginPrivate: 0
 EndPrivate
 Grid
@@ -116,7 +116,7 @@ Grid
  504 3072 l 25
 EndSplineSet
 AnchorClass2: "tonos" "'mark' Mark Positioning lookup 0-1" "cedilla" "'mark' Mark Positioning lookup 0-1" "ogonek" "'mark' Mark Positioning lookup 0-1" "bottom" "'mark' Mark Positioning lookup 0-1" "top" "'mark' Mark Positioning lookup 0-1"
-BeginChars: 65781 1894
+BeginChars: 65781 1905
 
 StartChar: cedilla
 Encoding: 184 184 0
@@ -42332,6 +42332,118 @@ SplineSet
  242.899847479 856.197969882 236.585363452 852.685672011 215.50693625 843.404196562 c 1
  228.387360617 856.284620929 243.884576257 857.167887762 244.202836193 857.167887762 c 1
 EndSplineSet
+EndChar
+
+StartChar: uni207A
+Encoding: 8314 8314 1894
+Width: 1008
+VWidth: 864
+Flags: HW
+LayerCount: 2
+Fore
+Refer: 757 -1 S 1 0 0 1 0 750 2
+EndChar
+
+StartChar: uni207B
+Encoding: 8315 8315 1895
+Width: 1008
+VWidth: 864
+Flags: HW
+LayerCount: 2
+Fore
+Refer: 759 -1 N 1 0 0 1 0 750 2
+EndChar
+
+StartChar: uni207C
+Encoding: 8316 8316 1896
+Width: 1008
+VWidth: 864
+Flags: HW
+LayerCount: 2
+Fore
+Refer: 759 -1 S 1 0 0 1 0 630 2
+Refer: 759 -1 N 1 0 0 1 0 870 2
+EndChar
+
+StartChar: uni208A
+Encoding: 8330 8330 1897
+Width: 1008
+VWidth: 864
+Flags: HW
+LayerCount: 2
+Fore
+Refer: 757 -1 S 1 0 0 1 0 -270 2
+EndChar
+
+StartChar: uni208B
+Encoding: 8331 8331 1898
+Width: 1008
+VWidth: 864
+Flags: HW
+LayerCount: 2
+Fore
+Refer: 759 -1 S 1 0 0 1 0 -270 2
+EndChar
+
+StartChar: uni208C
+Encoding: 8332 8332 1899
+Width: 1008
+VWidth: 864
+Flags: HW
+LayerCount: 2
+Fore
+Refer: 759 -1 S 1 0 0 1 0 -390 2
+Refer: 759 -1 N 1 0 0 1 0 -150 2
+EndChar
+
+StartChar: uni207D
+Encoding: 8317 8317 1900
+Width: 1008
+VWidth: 864
+Flags: HW
+LayerCount: 2
+Fore
+Refer: 754 -1 N 1 0 0 1 0 750 2
+EndChar
+
+StartChar: uni207E
+Encoding: 8318 8318 1901
+Width: 1008
+VWidth: 864
+Flags: HW
+LayerCount: 2
+Fore
+Refer: 755 -1 N 1 0 0 1 0 750 2
+EndChar
+
+StartChar: uni208D
+Encoding: 8333 8333 1902
+Width: 1008
+VWidth: 864
+Flags: HW
+LayerCount: 2
+Fore
+Refer: 754 -1 N 1 0 0 1 0 -300 2
+EndChar
+
+StartChar: uni208E
+Encoding: 8334 8334 1903
+Width: 1008
+VWidth: 864
+Flags: HW
+LayerCount: 2
+Fore
+Refer: 755 -1 N 1 0 0 1 0 -300 2
+EndChar
+
+StartChar: uni2099
+Encoding: 8345 8345 1904
+Width: 1008
+VWidth: 864
+Flags: HW
+LayerCount: 2
+Fore
+Refer: 831 -1 N 1 0 0 1 0 -300 2
 EndChar
 EndChars
 EndSplineFont
