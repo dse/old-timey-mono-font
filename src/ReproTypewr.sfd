@@ -22,7 +22,7 @@ OS2Version: 0
 OS2_WeightWidthSlopeOnly: 0
 OS2_UseTypoMetrics: 1
 CreationTime: 1729142792
-ModificationTime: 1740795730
+ModificationTime: 1740796013
 PfmFamily: 17
 TTFWeight: 500
 TTFWidth: 5
@@ -55,7 +55,7 @@ NameList: AGL For New Fonts
 DisplaySize: -48
 AntiAlias: 1
 FitToEm: 1
-WinInfo: 8816 16 26
+WinInfo: 8384 16 9
 BeginPrivate: 0
 EndPrivate
 Grid
@@ -116,7 +116,7 @@ Grid
  504 3072 l 25
 EndSplineSet
 AnchorClass2: "tonos" "'mark' Mark Positioning lookup 0-1" "cedilla" "'mark' Mark Positioning lookup 0-1" "ogonek" "'mark' Mark Positioning lookup 0-1" "bottom" "'mark' Mark Positioning lookup 0-1" "top" "'mark' Mark Positioning lookup 0-1"
-BeginChars: 65784 1956
+BeginChars: 65784 1957
 
 StartChar: cedilla
 Encoding: 184 184 0
@@ -43606,6 +43606,20 @@ SplineSet
  96 554.49192 117.50808 576 144 576 c 2
  864 576 l 2
 EndSplineSet
+EndChar
+
+StartChar: uni2117
+Encoding: 8471 8471 1956
+Width: 1008
+VWidth: 0
+Flags: HW
+LayerCount: 2
+Fore
+SplineSet
+667 1590 m 1049
+EndSplineSet
+Refer: 800 -1 S 1 0 0 1 0 240 2
+Refer: 733 -1 N 1 0 0 1 0 0 2
 EndChar
 EndChars
 EndSplineFont
