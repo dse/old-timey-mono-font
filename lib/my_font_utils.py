@@ -9,6 +9,8 @@ def parse_codepoint_argument(str):
     # 0x1f4a9
     if (match := re.fullmatch(r'(?:0?x|u\+?)([0-9A-Fa-f]+)', str, flags=re.IGNORECASE)):
         return int(match.group(1), 16)
+    if len(str) == 1:
+        return ord(str)
     if (match := re.fullmatch(r'[0-9]+', str, flags=re.IGNORECASE)):
         return int(match.group(0))
     return None
