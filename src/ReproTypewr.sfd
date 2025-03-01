@@ -22,7 +22,7 @@ OS2Version: 0
 OS2_WeightWidthSlopeOnly: 0
 OS2_UseTypoMetrics: 1
 CreationTime: 1729142792
-ModificationTime: 1740719167
+ModificationTime: 1740782147
 PfmFamily: 17
 TTFWeight: 500
 TTFWidth: 5
@@ -55,7 +55,7 @@ NameList: AGL For New Fonts
 DisplaySize: -48
 AntiAlias: 1
 FitToEm: 1
-WinInfo: 8048 16 26
+WinInfo: 0 16 26
 BeginPrivate: 0
 EndPrivate
 Grid
@@ -116,7 +116,7 @@ Grid
  504 3072 l 25
 EndSplineSet
 AnchorClass2: "tonos" "'mark' Mark Positioning lookup 0-1" "cedilla" "'mark' Mark Positioning lookup 0-1" "ogonek" "'mark' Mark Positioning lookup 0-1" "bottom" "'mark' Mark Positioning lookup 0-1" "top" "'mark' Mark Positioning lookup 0-1"
-BeginChars: 65781 1905
+BeginChars: 65782 1906
 
 StartChar: cedilla
 Encoding: 184 184 0
@@ -653,7 +653,7 @@ HStem: -20 96<383.724 624.273> 0.000976563 21G<210.755 232.849> 980 96<383.727 6
 VStem: 136 96<280.075 775.929> 776 96<280.073 775.922>
 LayerCount: 2
 Fore
-Refer: 702 -1 S 1 0 0 1 0 0 2
+Refer: 1905 -1 S 1 0 0 1 0 0 2
 Refer: 606 79 N 1 0 0 1 0 0 2
 EndChar
 
@@ -1165,12 +1165,12 @@ EndChar
 StartChar: oslash
 Encoding: 248 248 67
 Width: 1008
-Flags: HW
+Flags: HWO
 HStem: -149.999 21G<210.755 232.849> -20 96<375.89 632.108> 680 96<375.892 632.11> 885.999 20G<775.151 797.245>
 VStem: 144 96<219.455 536.548> 768 96<219.452 536.545>
 LayerCount: 2
 Fore
-Refer: 702 -1 S 1 0 0 1 0 -150 2
+Refer: 1905 -1 S 1 0 0 1 0 -150 2
 Refer: 636 111 N 1 0 0 1 0 0 2
 EndChar
 
@@ -42444,6 +42444,26 @@ Flags: HW
 LayerCount: 2
 Fore
 Refer: 831 -1 N 1 0 0 1 0 -300 2
+EndChar
+
+StartChar: stroke.45
+Encoding: 65781 -1 1905
+Width: 1008
+VWidth: 0
+Flags: HW
+LayerCount: 2
+Fore
+SplineSet
+96 72 m 0
+ 69.50808 72 48 93.50808 48 120 c 0
+ 48 133.24596 53.37702 145.24596 62.06553 153.93447 c 2
+ 878.06553 969.93447 l 2
+ 886.75404 978.62298 898.75404 984 912 984 c 0
+ 938.49192 984 960 962.49192 960 936 c 0
+ 960 922.75404 954.62298 910.75404 945.93447 902.06553 c 2
+ 129.93447 86.06553 l 2
+ 121.24596 77.37702 109.24596 72 96 72 c 0
+EndSplineSet
 EndChar
 EndChars
 EndSplineFont
