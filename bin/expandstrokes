@@ -11,6 +11,9 @@ sys.path.append(os.getenv("HOME") + "/git/dse.d/fontforge-utilities/lib")
 import mixedjsontext
 import silence
 
+sys.path.append(os.path.dirname(__file__) + "/../lib")
+from my_font_utils import u
+
 def main():
     global args
     parser = argparse.ArgumentParser()
@@ -28,7 +31,9 @@ def main():
     common_glyph_width = statistics.mode([glyph.width for glyph in font.glyphs()])
 
     silence.on()
+    print("Expanding strokes...")
     for glyph in font.glyphs():
+        print("    %s  %s" % (u(glyph.unicode, True), glyph.glyphname))
         if len(glyph.foreground) == 0 and len(glyph.references) == 0:
             continue
         if mixedjsontext.fontcomment_says_generated(glyph.comment):
@@ -44,14 +49,10 @@ def main():
             glyph.width = common_glyph_width # MONOSPACE
     silence.off()
 
+    print("Writing %s..." % write_font_filename)
     if write_font_filename.endswith('.sfd'):
         font.save(write_font_filename)
     else:
         font.generate(write_font_filename)
-
-def u(codepoint):
-    if codepoint < 0:
-        return ("%d" % codepoint)
-    return ("U+%04X" % codepoint)
 
 main()        
