@@ -16,6 +16,7 @@ sys.path.append(os.getenv("HOME") + "/git/dse.d/fontforge-utilities/lib")
 import mixedjsontext
 
 STROKE_WIDTH_BASIS = 96
+LATIN_SMALL_LETTER_SCHWA = 0x0259
 
 def main():
     global args
@@ -33,7 +34,7 @@ def main():
     for svg_filename in args.svg_filenames:
         import_svg_glyph(font, svg_filename)
 
-    for codepoint in range(33, 127):
+    for codepoint in [*range(33, 127), LATIN_SMALL_LETTER_SCHWA]:
         create_smol_glyph(font, codepoint)
 
     if write_font_filename.endswith('.sfd'):
