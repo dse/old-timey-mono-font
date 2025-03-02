@@ -212,6 +212,12 @@ clean: FORCE
 diffs.txt: FORCE
 	fontcmp ./ReproTypewr-0.5.0.sfd src/ReproTypewr.sfd > diffs.txt
 
+todo.txt: FORCE
+	wgl4.py --missing $(FONT_SRC) >wgl4.txt
+	aglfn.py --missing $(FONT_SRC) >aglfn.txt
+	diff -u100 aglfn.txt wgl4.txt >todo.txt || true
+
+
 .PHONY: FORCE
 
 # resetting DisplaySize: ___ doesn't break
