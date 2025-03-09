@@ -22,7 +22,7 @@ OS2Version: 0
 OS2_WeightWidthSlopeOnly: 0
 OS2_UseTypoMetrics: 1
 CreationTime: 1729142792
-ModificationTime: 1741314884
+ModificationTime: 1741503598
 PfmFamily: 17
 TTFWeight: 500
 TTFWidth: 5
@@ -50,12 +50,13 @@ Lookup: 260 0 0 "'mark' Mark Positioning lookup 0" { "'mark' Mark Positioning lo
 MarkAttachClasses: 1
 DEI: 91125
 Encoding: UnicodeBmp
+Compacted: 1
 UnicodeInterp: none
 NameList: AGL For New Fonts
 DisplaySize: -96
 AntiAlias: 1
 FitToEm: 1
-WinInfo: 8784 16 7
+WinInfo: 96 16 7
 BeginPrivate: 0
 EndPrivate
 Grid
@@ -1461,12 +1462,12 @@ StartChar: copyright
 Encoding: 169 169 84
 Width: 1008
 VWidth: 0
-Flags: HW
+Flags: HWO
 HStem: 24 96<339.222 668.778> 230 96<446.159 587.877> 580 236<621.094 711.488> 730 96<439.094 579.397> 936 96<339.222 668.778>
 VStem: 0 96<363.222 692.778> 301 96<377.762 684.382> 618.72 94.2797<354.502 454.48 581.512 691.474> 912 96<363.222 692.778>
 LayerCount: 2
 Fore
-Refer: 787 -1 S 1 0 0 1 0 240 2
+Refer: 787 -1 S 1 0 0 1 -28 240 2
 Refer: 733 -1 N 1 0 0 1 0 0 2
 EndChar
 
@@ -33567,7 +33568,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: uni0000.test3
+StartChar: xtestx.test3
 Encoding: 65732 -1 1338
 Width: 1008
 VWidth: 0
@@ -33594,7 +33595,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: uni0000.test1
+StartChar: xtestx.test1
 Encoding: 65736 -1 1339
 Width: 1008
 VWidth: 0
@@ -33621,7 +33622,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: uni0000.test4
+StartChar: xtestx.test4
 Encoding: 65741 -1 1340
 Width: 1008
 VWidth: 0
@@ -33648,7 +33649,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: uni0000.test2
+StartChar: xtestx.test2
 Encoding: 65743 -1 1341
 Width: 1008
 VWidth: 0
@@ -46045,7 +46046,7 @@ EndChar
 StartChar: uni2289
 Encoding: 8841 8841 2043
 Width: 1008
-Flags: HWO
+Flags: HW
 LayerCount: 2
 Fore
 Refer: 574 47 S 1 0 0 1 0 0 2
