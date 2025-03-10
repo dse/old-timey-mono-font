@@ -12,6 +12,31 @@ from functools import cmp_to_key
 sys.path.append(os.environ["HOME"] + "/.venv/lib/python3.12/site-packages")
 import unicodeblocks
 
+CHAR_TYPES = [
+    "Latin",
+    "Digits",
+    "Greek",
+    "Cyrillic",
+    "IPA",
+    "Combining Marks",
+    "Punctuation",
+    "Currency",
+    "Mathematics",
+    "Superscripts and Subscripts",
+    "Arrows",
+    "Block Elements",
+    "Box Drawing",
+    "Braille",
+    "Dingbats",
+    "Enclosed",
+    "Letterlike",
+    "Shapes",
+    "Symbols",
+    "Technical",
+    "Spaces",
+    "Other",
+]
+
 def main():
     global args
     parser = argparse.ArgumentParser();
@@ -43,33 +68,9 @@ def get_font_data_by_type(font):
     all_glyphs.sort(key=cmp_to_key(glyph_cmp))
     unicode_glyphs = [glyph for glyph in all_glyphs if glyph.unicode > 0]
     set_substitutions(font)
-    type_name_list = [
-        "Latin",
-        "Digits",
-        "Greek",
-        "Cyrillic",
-        "IPA",
-        "Combining Marks",
-        "Punctuation",
-        "Currency",
-        "Mathematics",
-        "Superscripts and Subscripts",
-        "Arrows",
-        "Block Elements",
-        "Box Drawing",
-        "Braille",
-        "Dingbats",
-        "Enclosed",
-        "Letterlike",
-        "Shapes",
-        "Symbols",
-        "Technical",
-        "Spaces",
-        "Other",
-    ]
     for glyph in all_glyphs:
         glyph.temporary["glyph_type"] = get_glyph_type_name(glyph)
-    for type_name in type_name_list:
+    for type_name in CHAR_TYPES:
         type_data = {
             "name": type_name,
             "glyphs": [],
