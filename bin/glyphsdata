@@ -30,6 +30,8 @@ def main():
     font.close()
 
 def get_font_data_by_type(font):
+    """Used for a page that classifies characters according to an ad-hoc
+    system I whipped up instead of Unicode blocks."""
     font_data = {
         "fontInfo": get_font_info(font),
         "types": [],
@@ -134,52 +136,6 @@ def get_font_data_by_char(font):
     
     return font_data
 
-def get_font_data(font):
-
-
-    if args.by_block:
-        for block in blocks:
-            characters_data = []
-            block_data = {
-                "info": {
-                    "name": block.name,
-                    "start": block.start,
-                    "end": block.end,
-                },
-                "characters": characters_data,
-            }
-            blocks_data.append(block_data)
-            for codepoint in block_codepoints:
-                glyphs_data = []
-                normal_codepoint = get_normal_codepoint(glyph)
-                character_data = {
-                    "codepoint": normal_codepoint,
-                    "codepoint_hex": u(normal_codepoint),
-                    "info": get_codepoint_info(normal_codepoint),
-                    "char": chr(normal_codepoint),
-                    "glyphs": glyphs_data,
-                }
-                characters_data.append(character_data)
-                character_glyphs = [glyph for glyph in unicode_glyphs if glyph.unicode == normal_codepoint]
-                for glyph in character_glyphs:
-                    glyphs_data.append(get_glyph_info(glyph))
-        for glyph in special_glyphs:
-            specials_data.append(get_glyph_info(glyph))
-        return font_data
-    else:
-        for glyph in unicode_glyphs:
-            normal_codepoint = get_normal_codepoint(glyph)
-            just_glyphs_data.append({
-                "unicode": glyph.unicode,
-                "codepoint": normal_codepoint,
-                "codepoint_hex": u(normal_codepoint),
-                "info": get_codepoint_info(normal_codepoint),
-                "data": get_glyph_info(glyph)
-            })
-        for glyph in special_glyphs:
-            glyph_data = get_glyph_info(glyph)
-            just_glyphs_data.append(glyph_data)
-        return font_data
 def get_glyphs_data(font):
     glyphs = list(font.glyphs())
     glyphs_data = []
@@ -193,6 +149,7 @@ def get_glyphs_data(font):
         glyph_data = get_glyph_info(glyph)
         glyphs_data.append(glyph_data)
     return glyphs_data
+
 def get_glyph_info(glyph):
     codepoint = glyph.unicode
     if codepoint >= 0:
@@ -238,6 +195,7 @@ def get_glyph_info(glyph):
     if "substitutionsToThis" in glyph.temporary:
         glyph_info["substitutionsToThis"] = glyph.temporary["substitutionsToThis"]
     return glyph_info
+
 def get_font_info(font):
     return {
         "ascent": font.ascent,
@@ -258,17 +216,20 @@ def get_font_info(font):
         "weight": font.weight,
         "exHeight": font.xHeight,
     }
+
 def get_normal_codepoint(glyph):
     if glyph.unicode >= 0:
         return glyph.unicode
     if match := re.search(r'^(.*?)\.(.*)$', glyph.glyphname):
         return fontforge.unicodeFromName(match.group(1))
     return None
+
 def get_normal_glyphname(glyph):
     cp = get_normal_codepoint(glyph)
     if cp is not None and cp >= 0:
         return fontforge.nameFromUnicode(cp)
     return None
+
 def get_suffix(glyph):
     codepoint = get_normal_codepoint(glyph)
     if codepoint is None or codepoint < 0:
@@ -276,6 +237,7 @@ def get_suffix(glyph):
     if match := re.search(r'^(.*?)\.(.*)$', glyph.glyphname):
         return match.group(2)
     return None
+
 def glyph_cmp(glyph_a, glyph_b):
     cp_a = glyph_a.temporary["codepoint"]
     cp_b = glyph_b.temporary["codepoint"]
@@ -310,6 +272,7 @@ def glyph_cmp(glyph_a, glyph_b):
     if name_a > name_b:
         return 1
     return 0
+
 def get_codepoint_info(codepoint):
     if codepoint is None or codepoint < 0:
         return None
@@ -323,17 +286,20 @@ def get_codepoint_info(codepoint):
         info["blockName"] = block.name
     info["adobeName"] = fontforge.nameFromUnicode(codepoint)
     return info
+
 def dict_get_or_create(dict, key, default_value):
     if key in dict:
         return dict[key]
     dict[key] = default_value
     return dict[key]
+
 def u(codepoint):
     if codepoint is None:
         return None
     if codepoint < 0:
         return "%d" % codepoint
     return "U+%04X" % codepoint
+
 def set_glyph_temp_info(glyph):
     glyph.temporary = {
         "codepoint": get_normal_codepoint(glyph),
@@ -341,6 +307,7 @@ def set_glyph_temp_info(glyph):
         "isPrimary": glyph.unicode is not None and glyph.unicode >= 0,
         "suffix": get_suffix(glyph),
     }
+
 def set_substitutions(font):
     for source_glyph in font.glyphs():
         for lookup_name in font.gsub_lookups:
