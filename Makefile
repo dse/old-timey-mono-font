@@ -198,6 +198,38 @@ $(CHARLIST_HTML): $(FONT_SRC) $(CHARLIST_TPL) $(MAKEFILE)
 	chevron -d temp2.json $(CHARLIST_TPL) > $@
 	rm temp2.json
 
+GLYPH_DATA_BY_TYPE  := data/glyph-data-by-type.json
+GLYPH_DATA_BY_BLOCK := data/glyph-data-by-block.json
+GLYPH_DATA_BY_CHAR  := data/glyph-data-by-char.json
+GLYPH_HTML_BY_TYPE  := website/glyphs-by-type.html
+GLYPH_HTML_BY_BLOCK := website/glyphs-by-block.html
+GLYPH_HTML_BY_CHAR  := website/glyphs-by-char.html
+TEMPLATE_BY_TYPE    := website/glyphs-by-type.mustache
+TEMPLATE_BY_BLOCK   := website/glyphs-by-block.mustache
+TEMPLATE_BY_CHAR    := website/glyphs-by-char.mustache
+GLYPHSDATA_BIN := bin/glyphsdata
+
+html2: $(GLYPH_HTML_BY_TYPE) $(GLYPH_HTML_BY_BLOCK) $(GLYPH_HTML_BY_CHAR)
+
+$(GLYPH_DATA_BY_CHAR): $(FONT_SRC) $(GLYPHSDATA_BIN)
+	$(GLYPHSDATA_BIN) "$<" >"$@.tmp"
+	mv "$@.tmp" "$@"
+$(GLYPH_DATA_BY_TYPE): $(FONT_SRC) $(GLYPHSDATA_BIN)
+	$(GLYPHSDATA_BIN) --by-type "$<" >"$@.tmp"
+	mv "$@.tmp" "$@"
+$(GLYPH_DATA_BY_BLOCK): $(FONT_SRC) $(GLYPHSDATA_BIN)
+	$(GLYPHSDATA_BIN) --by-block "$<" >"$@.tmp"
+	mv "$@.tmp" "$@"
+$(GLYPH_HTML_BY_TYPE): $(GLYPH_DATA_BY_TYPE) $(TEMPLATE_BY_TYPE)
+	chevron -d $(GLYPH_DATA_BY_TYPE) $(TEMPLATE_BY_TYPE) > "$@.tmp"
+	mv "$@.tmp" "$@"
+$(GLYPH_HTML_BY_BLOCK): $(GLYPH_DATA_BY_BLOCK) $(TEMPLATE_BY_BLOCK)
+	chevron -d $(GLYPH_DATA_BY_BLOCK) $(TEMPLATE_BY_BLOCK) > "$@.tmp"
+	mv "$@.tmp" "$@"
+$(GLYPH_HTML_BY_CHAR): $(GLYPH_DATA_BY_CHAR) $(TEMPLATE_BY_CHAR)
+	chevron -d $(GLYPH_DATA_BY_CHAR) $(TEMPLATE_BY_CHAR) > "$@.tmp"
+	mv "$@.tmp" "$@"
+
 clean: FORCE
 	/bin/rm $(FONTS) $(CHARGRID_HTML) $(CHARLIST_HTML) || true
 	find . -type f \( \
@@ -216,7 +248,6 @@ todo.txt: FORCE
 	wgl4.py --missing $(FONT_SRC) >wgl4.txt
 	aglfn.py --missing $(FONT_SRC) >aglfn.txt
 	( echo "- AGLFN only; + WGL4 only"; diff -u100 aglfn.txt wgl4.txt || true) >todo.txt
-
 
 .PHONY: FORCE
 
