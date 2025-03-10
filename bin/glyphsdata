@@ -1,0 +1,528 @@
+#!/usr/bin/env -S fontforge -quiet
+# -*- mode: python; coding: utf-8 -*-
+import os
+import sys
+import argparse
+import fontforge
+import unicodedata
+import json
+import re
+from functools import cmp_to_key
+
+sys.path.append(os.environ["HOME"] + "/.venv/lib/python3.12/site-packages")
+import unicodeblocks
+
+def main():
+    global args
+    parser = argparse.ArgumentParser();
+    parser.add_argument('filename')
+    parser.add_argument('-b', '--by-block', action='store_true')
+    parser.add_argument('-t', '--by-type', action='store_true')
+    args = parser.parse_args()
+    font = fontforge.open(args.filename)
+    if args.by_type:
+        font_data = get_font_data_by_type(font)
+    elif args.by_block:
+        font_data = get_font_data_by_block(font)
+    else:
+        font_data = get_font_data_by_char(font)
+    print(json.dumps(font_data, indent=4))
+    font.close()
+
+def get_font_data_by_type(font):
+    font_data = {
+        "fontInfo": get_font_info(font),
+        "types": [],
+        "specials": [],
+    }
+    all_glyphs = list(font.glyphs())
+    for glyph in all_glyphs:
+        set_glyph_temp_info(glyph)
+    all_glyphs.sort(key=cmp_to_key(glyph_cmp))
+    set_substitutions(font)
+    type_name_list = [
+        "Latin",
+        "Digits",
+        "Greek",
+        "Cyrillic",
+        "IPA",
+        "Combining Marks",
+        "Punctuation",
+        "Currency",
+        "Mathematics",
+        "Superscripts and Subscripts",
+        "Arrows",
+        "Block Elements",
+        "Box Drawing",
+        "Braille",
+        "Dingbats",
+        "Enclosed",
+        "Letterlike",
+        "Shapes",
+        "Symbols",
+        "Technical",
+        "Spaces",
+        "Other",
+    ]
+    for glyph in all_glyphs:
+        glyph.temporary["glyph_type"] = get_glyph_type_name(glyph)
+    for type_name in type_name_list:
+        type_data = {
+            "name": type_name,
+            "glyphs": [],
+        }
+        font_data["types"].append(type_data)
+        glyphs = [glyph for glyph in all_glyphs if glyph.temporary["glyph_type"] == type_name]
+        for glyph in glyphs:
+            type_data["glyphs"].append(get_glyph_info(glyph))
+    return font_data
+
+def get_font_data_by_block(font):
+    blocks_data = []
+    specials_data = []
+    font_data = {
+        "fontInfo": get_font_info(font),
+        "blocks": blocks_data,
+        "specials": specials_data,
+    }
+    all_blocks = [unicodeblocks.blocks[block] for block in unicodeblocks.blocks]
+    all_blocks.sort(key=lambda block: block.start)
+    all_glyphs = list(font.glyphs())
+    for glyph in all_glyphs:
+        set_glyph_temp_info(glyph)
+    all_glyphs.sort(key=cmp_to_key(glyph_cmp))
+    set_substitutions(font)
+    unicode_glyphs = extract_unicode_glyphs(all_glyphs)
+    special_glyphs = extract_special_glyphs(all_glyphs)
+    codepoints = list(set([glyph.unicode for glyph in unicode_glyphs]))
+    codepoints.sort()
+    for block in all_blocks:
+        block_codepoints = list(set(glyph.unicode for glyph in unicode_glyphs]))
+        block_codepoints = [cp for cp in block_codepoints if cp is not None and cp >= 0 and cp in range(block.start, block.end + 1)]
+        if not len(block_codepoints):
+            continue
+        glyphs_data = []
+        block_info = { "name": block.name, "start": block.start, "end": block.end }
+        block_data = {
+            "info": block_info,
+            "glyphs": glyphs_data,
+        }
+        blocks_data.append(block_data)
+        glyphs = [glyph for glyph in unicode_glyphs
+                  if glyph.unicode in range(block.start, block.end + 1)]
+        for glyph in glyphs:
+            glyphs_data.append(get_glyph_info(glyph))
+    for glyph in special_glyphs:
+        specials_data.append(get_glyph_info(glyph))
+    return font_data
+
+def get_font_data_by_char(font):
+    glyphs_data = []
+    font_data = {
+        "fontInfo": get_font_info(font),
+        "glyphs": glyphs_data,
+    }
+    all_glyphs = list(font.glyphs())
+    for glyph in all_glyphs:
+        set_glyph_temp_info(glyph)
+    all_glyphs.sort(key=cmp_to_key(glyph_cmp))
+    set_substitutions(font)
+    for glyph in all_glyphs:
+        glyphs_data.append(get_glyph_info(glyph))
+    
+    return font_data
+
+def get_font_data(font):
+
+
+    if args.by_block:
+        for block in blocks:
+            characters_data = []
+            block_data = {
+                "info": {
+                    "name": block.name,
+                    "start": block.start,
+                    "end": block.end,
+                },
+                "characters": characters_data,
+            }
+            blocks_data.append(block_data)
+            for codepoint in block_codepoints:
+                glyphs_data = []
+                normal_codepoint = get_normal_codepoint(glyph)
+                character_data = {
+                    "codepoint": normal_codepoint,
+                    "codepoint_hex": u(normal_codepoint),
+                    "info": get_codepoint_info(normal_codepoint),
+                    "char": chr(normal_codepoint),
+                    "glyphs": glyphs_data,
+                }
+                characters_data.append(character_data)
+                character_glyphs = [glyph for glyph in unicode_glyphs if glyph.unicode == normal_codepoint]
+                for glyph in character_glyphs:
+                    glyphs_data.append(get_glyph_info(glyph))
+        for glyph in special_glyphs:
+            specials_data.append(get_glyph_info(glyph))
+        return font_data
+    else:
+        for glyph in unicode_glyphs:
+            normal_codepoint = get_normal_codepoint(glyph)
+            just_glyphs_data.append({
+                "unicode": glyph.unicode,
+                "codepoint": normal_codepoint,
+                "codepoint_hex": u(normal_codepoint),
+                "info": get_codepoint_info(normal_codepoint),
+                "data": get_glyph_info(glyph)
+            })
+        for glyph in special_glyphs:
+            glyph_data = get_glyph_info(glyph)
+            just_glyphs_data.append(glyph_data)
+        return font_data
+def get_glyphs_data(font):
+    glyphs = list(font.glyphs())
+    glyphs_data = []
+    for glyph in glyphs:
+        glyph.temporary = {
+            "codepoint": get_normal_codepoint(glyph),
+            "codepoint_hex": u(get_normal_codepoint(glyph)),
+            "isPrimary": glyph.unicode >= 0,
+            "suffix": get_suffix(glyph),
+        }
+        glyph_data = get_glyph_info(glyph)
+        glyphs_data.append(glyph_data)
+    return glyphs_data
+def get_glyph_info(glyph):
+    codepoint = glyph.unicode
+    if codepoint >= 0:
+        try:
+            normal_glyphname = fontforge.nameFromUnicode(codepoint)
+        except TypeError:
+            normal_glyphname = None
+    else:
+        normal_glyphname = None
+    (xmin, ymin, xmax, ymax) = glyph.boundingBox()
+    normal_glyphname = get_normal_glyphname(glyph)
+    normal_codepoint = get_normal_codepoint(glyph)
+    isPrimary = normal_codepoint is not None and re.search(r'\.[^.]+$', glyph.glyphname) is not None
+    isSpecial = normal_codepoint is None or normal_codepoint < 0
+    isPrintable = normal_codepoint is not None and (
+        normal_codepoint in range(32, 127) or
+        normal_codepoint >= 160
+    )
+    glyph_info = {
+        "codepoint": normal_codepoint,
+        "codepoint_hex": u(normal_codepoint),
+        "isPrimary": isPrimary,
+        "isSpecial": isSpecial,
+        "isPrintable": isPrintable,
+        "glyphName": glyph.glyphname,
+        "normalAdobeName": normal_glyphname,
+        "boundingBox": {
+            "xmin": xmin,
+            "xmax": xmax,
+            "ymin": ymin,
+            "ymax": ymax,
+        },
+        "altuni": glyph.altuni,
+        "comment": glyph.comment,
+        "glyphClass": glyph.glyphclass,
+        "leftSideBearing": glyph.left_side_bearing,
+        "rightSideBearing": glyph.right_side_bearing,
+        "width": glyph.width,
+        "char": chr(normal_codepoint) if isPrintable else None
+    }
+    if "substitutionsFromThis" in glyph.temporary:
+        glyph_info["substitutionsFromThis"] = glyph.temporary["substitutionsFromThis"]
+    if "substitutionsToThis" in glyph.temporary:
+        glyph_info["substitutionsToThis"] = glyph.temporary["substitutionsToThis"]
+    return glyph_info
+def get_font_info(font):
+    return {
+        "ascent": font.ascent,
+        "capHeight": font.capHeight,
+        "comment": font.comment,
+        "copyright": font.copyright,
+        "descent": font.descent,
+        "designSize": font.design_size,
+        "em": font.em,
+        "familyName": font.familyname,
+        "fontName": font.fontname,
+        "fullName": font.fullname,
+        "italicAngle": font.italicangle,
+        "uniqueId": font.uniqueid,
+        "underlinePosition": font.upos,
+        "underlineWidth": font.uwidth,
+        "version": font.version,
+        "weight": font.weight,
+        "exHeight": font.xHeight,
+    }
+def get_normal_codepoint(glyph):
+    if glyph.unicode >= 0:
+        return glyph.unicode
+    if match := re.search(r'^(.*?)\.(.*)$', glyph.glyphname):
+        return fontforge.unicodeFromName(match.group(1))
+    return None
+def get_normal_glyphname(glyph):
+    cp = get_normal_codepoint(glyph)
+    if cp is not None and cp >= 0:
+        return fontforge.nameFromUnicode(cp)
+    return None
+def get_suffix(glyph):
+    codepoint = get_normal_codepoint(glyph)
+    if codepoint is None or codepoint < 0:
+        return None
+    if match := re.search(r'^(.*?)\.(.*)$', glyph.glyphname):
+        return match.group(2)
+    return None
+def glyph_cmp(glyph_a, glyph_b):
+    cp_a = glyph_a.temporary["codepoint"]
+    cp_b = glyph_b.temporary["codepoint"]
+    if cp_a is None or cp_a < 1: # unassignable and U+0000 glyphs go after assignable ones
+        cp_a = float('inf')
+    if cp_b is None or cp_b < 1:
+        cp_b = float('inf')
+    if cp_a < 32 or cp_a in range(127, 160):
+        cp_a = float('inf')
+    if cp_b < 32 or cp_b in range(127, 160):
+        cp_b = float('inf')
+    if cp_a < cp_b:
+        return -1
+    if cp_a > cp_b:
+        return 1
+    # codepoints being equal...
+    prim_a = 1 if glyph_a.temporary["isPrimary"] else 0
+    prim_b = 1 if glyph_b.temporary["isPrimary"] else 0
+    if prim_a < prim_b:         # only prim_b is true
+        return 1
+    if prim_a > prim_b:         # only prim_a is true
+        return -1
+    # primarinesses being equal...
+    name_a = glyph_a.glyphname
+    name_b = glyph_b.glyphname
+    if name_a is None:
+        name_a = ""
+    if name_b is None:
+        name_b = ""
+    if name_a < name_b:
+        return -1
+    if name_a > name_b:
+        return 1
+    return 0
+def get_codepoint_info(codepoint):
+    if codepoint is None or codepoint < 0:
+        return None
+    info = {}
+    try:
+        info["name"] = unicodedata.name(chr(codepoint))
+    except ValueError:
+        info["name"] = None
+    block = unicodeblocks.blockof(chr(codepoint))
+    if block is not None:
+        info["blockName"] = block.name
+    info["adobeName"] = fontforge.nameFromUnicode(codepoint)
+    return info
+def dict_get_or_create(dict, key, default_value):
+    if key in dict:
+        return dict[key]
+    dict[key] = default_value
+    return dict[key]
+def u(codepoint):
+    if codepoint is None:
+        return None
+    if codepoint < 0:
+        return "%d" % codepoint
+    return "U+%04X" % codepoint
+def set_glyph_temp_info(glyph):
+    glyph.temporary = {
+        "codepoint": get_normal_codepoint(glyph),
+        "codepoint_hex": u(get_normal_codepoint(glyph)),
+        "isPrimary": glyph.unicode is not None and glyph.unicode >= 0,
+        "suffix": get_suffix(glyph),
+    }
+def set_substitutions(font):
+    for source_glyph in font.glyphs():
+        for lookup_name in font.gsub_lookups:
+            lookup_info = font.getLookupInfo(lookup_name)
+            feature = lookup_info[2][0][0] # e.g., "code"
+            for subtable_name in font.getLookupSubtables(lookup_name):
+                for substitution in source_glyph.getPosSub(subtable_name):
+                    (subtable_name, lookup_type, dest_glyph_name) = substitution
+                    if (lookup_type == 'Substitution'):
+                        dest_glyph = font[dest_glyph_name]
+                        source_temp = source_glyph.temporary
+                        dest_temp = dest_glyph.temporary
+                        substnsFromThis = dict_get_or_create(source_temp, "substitutionsFromThis", {})
+                        substnsToThis = dict_get_or_create(dest_temp, "substitutionsToThis", {})
+                        substnsFromThis[feature] = dest_glyph.glyphname
+                        featureToThis = dict_get_or_create(substnsToThis, feature, [])
+                        featureFromThis = dest_glyph.glyphname
+                        featureToThis.append(source_glyph.glyphname)
+    
+def get_glyph_type_name(glyph):
+    codepoint = glyph.temporary["codepoint"]
+    if codepoint is None or codepoint < 0:
+        return None
+    char = chr(codepoint)
+    block = unicodeblocks.blockof(chr(codepoint))
+    block_name = None if block is None else block.name
+    if codepoint < 32 or codepoint in range(127, 160):
+        return None
+    if block_name == "Basic Latin":
+        if codepoint in range(65, 91):
+            return "Latin"
+        elif codepoint in range(97, 123):
+            return "Latin"
+        elif codepoint in range(48, 58):
+            return "Digits"
+        elif codepoint == 32:
+            return "Spaces"
+        elif char == '$':
+            return "Currency"
+        else:
+            return "Punctuation"
+    elif block_name == "Latin-1 Supplement":
+        if codepoint == 160:
+            return "Spaces"
+        elif codepoint in [0x00b1, 0x00d7, 0x00f7]:
+            return "Mathematics"
+        elif codepoint in range(0x00c0, 0x0100):
+            return "Latin"
+        elif codepoint in [0x00a2, 0x00a3, 0x00a4, 0x00a5]:
+            return "Currency"
+        elif codepoint in [0x00bc, 0x00bd, 0x00be]:
+            return "Mathematics"
+        else:
+            return "Punctuation"
+    elif block_name == "Latin Extended-A":
+        return "Latin"
+    elif block_name == "Latin Extended-B":
+        return "Latin"
+    elif block_name == "IPA Extensions":
+        return "IPA"
+    elif block_name == "Spacing Modifier Letters":
+        return "Other"
+    elif block_name == "Combining Diacritical Marks":
+        return "Combining Marks"
+    elif block_name == "Greek and Coptic":
+        if codepoint in range(0x03e2, 0x03f0):
+            pass # coptics
+        else:
+            return "Greek"
+    elif block_name == "Cyrillic":
+        return "Cyrillic"
+    elif block_name == "Cyrillic Supplement":
+        return "Cyrillic"
+    elif block_name == "Combining Diacritical Marks Extended":
+        return "Combining Marks"
+    elif block_name == "Cyrillic Extended-C":
+        return "Cyrillic"
+    elif block_name == "Phonetic Extensions":
+        return "Other"
+    elif block_name == "Phonetic Extensions Supplement":
+        return "Other"
+    elif block_name == "Combining Diacritical Marks Supplement":
+        return "Combining Marks"
+    elif block_name == "Latin Extended Additional":
+        return "Latin"
+    elif block_name == "Greek Extended":
+        return "Greek"
+    elif block_name == "General Punctuation":
+        return "Punctuation"
+    elif block_name == "Superscripts and Subscripts":
+        return "Superscripts and Subscripts"
+    elif block_name == "Currency Symbols":
+        return "Currency"
+    elif block_name == "Combining Diacritical Marks for Symbols":
+        return "Combining Marks"
+    elif block_name == "Letterlike Symbols":
+        return "Letterlike"
+    elif block_name == "Number Forms":
+        return "Other"
+    elif block_name == "Arrows":
+        return "Arrows"
+    elif block_name == "Mathematical Operators":
+        return "Mathematics"
+    elif block_name == "Miscellaneous Technical":
+        return "Technical"
+    elif block_name == "Control Pictures":
+        return "Other"
+    elif block_name == "Optical Character Recognition":
+        return "Other"
+    elif block_name == "Enclosed Alphanumerics":
+        return "Enclosed"
+    elif block_name == "Box Drawing":
+        return "Box Drawing"
+    elif block_name == "Block Elements":
+        return "Block Elements"
+    elif block_name == "Geometric Shapes":
+        return "Shapes"
+    elif block_name == "Miscellaneous Symbols":
+        return "Symbols"
+    elif block_name == "Dingbats":
+        return "Dingbats"
+    elif block_name == "Miscellaneous Mathematical Symbols-A":
+        return "Mathematics"
+    elif block_name == "Supplemental Arrows-A":
+        return "Arrows"
+    elif block_name == "Braille Patterns":
+        return "Braille"
+    elif block_name == "Supplemental Arrows-B":
+        return "Arrows"
+    elif block_name == "Miscellaneous Mathematical Symbols-B":
+        return "Mathematics"
+    elif block_name == "Supplemental Mathematical Operators":
+        return "Mathematics"
+    elif block_name == "Miscellaneous Symbols and Arrows":
+        if re.search('ARROW', unicodedata.name(char)):
+            return "Arrows"
+        else:
+            return "Symbols"
+    elif block_name == "Latin Extended-C":
+        return "Latin"
+    elif block_name == "Cyrillic Extended-A":
+        return "Cyrillic"
+    elif block_name == "Supplemental Punctuation":
+        return "Punctuation"
+    elif block_name == "Cyrillic Extended-B":
+        return "Cyrillic"
+    elif block_name == "Latin Extended-D":
+        return "Latin"
+    elif block_name == "Latin Extended-E":
+        return "Latin"
+    elif block_name == "Alphabetic Presentation Forms":
+        return "Letterlike"
+    elif block_name == "Combining Half Marks":
+        return "Combining Marks"
+    elif block_name == "Halfwidth and Fullwidth Forms":
+        return "Other"
+    elif block_name == "Latin Extended-F":
+        return "Latin"
+    elif block_name == "Mathematical Alphanumeric Symbols":
+        return "Mathematics"
+    elif block_name == "Latin Extended-G":
+        return "Latin"
+    elif block_name == "Cyrillic Extended-D":
+        return "Latin"
+    elif block_name == "Supplemental Arrows-C":
+        return "Arrows"
+    elif block_name == "Supplemental Symbols and Pictographs":
+        return "Symbols"
+    elif block_name == "Chess Symbols":
+        return "Symbols"
+    elif block_name == "Symbols and Pictographs Extended-A":
+        return "Symbols"
+    elif block_name == "Symbols for Legacy Computing":
+        return "Symbols"
+    else:
+        return "Other"
+
+def extract_unicode_glyphs(all_glyphs):
+    return [glyph for glyph in all_glyphs if (glyph.unicode is not None and # exclude unassignable glyphs
+                                              glyph.unicode not in range(0, 32) and # exclude ASCII controls
+                                              glyph.unicode not in range(127, 160))] # exclude ISO controls
+
+def extract_special_glyphs(all_glyphs):
+    return [glyph for glyph in all_glyphs if (glyph.unicode is None or # include unassignable glyphs
+                                              glyph.unicode in range(0, 32) or # and ASCII controls
+                                              glyph.unicode in range(127, 160))] # and ISO controls
+main()

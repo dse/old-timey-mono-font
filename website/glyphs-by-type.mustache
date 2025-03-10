@@ -1,0 +1,53 @@
+<!-- -*- mode: web -*- -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+        <title>Characters in Reproducing Typewriter</title>
+        <link rel="stylesheet" href="main.css?v=1">
+        <script src="main.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <h1>
+                Glyphs
+            </h1>   
+        </div>
+        <div class="container container--sticky">
+            <header class="top-header">
+                <p class="top-header__checkbox">
+                    <label>
+                        <input class="fancy-checkbox__checkbox" id="code-checkbox" type="checkbox" name="code" value="1"><span class="fancy-checkbox"></span>
+                        Show Reproducing Typewriter Code
+                    </label>
+                </p>
+                <p class="top-header__toggle">
+                    <a href="chargrid.html">Grid</a> | List
+                </p>
+            </header>
+        </div>
+        <div class="container">
+            <div id="glyph-list-by-block">
+                {{#types}}
+                    <h2>{{name}}</h2>
+                    <ul class="glyph-list">
+                        {{#glyphs}}
+                            <li class="glyph-list__item">
+                                <div class="glyph-list__codepoint">{{codepoint_hex}}</div>
+                                <div class="glyph-list__char">{{char}}</div>
+                                {{#info}}
+                                    <div class="glyph-list__name">{{name}}</div>
+                                {{/info}}
+                                {{#data}}
+                                    <div class="glyph-list__adobe-name">{{normalAdobeName}}</div>
+                                {{/data}}
+                            </li>
+                        {{/glyphs}}
+                    </ul>
+                {{/types}}
+            </div>
+        </div>
+    </body>
+</html>
