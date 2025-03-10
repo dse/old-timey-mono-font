@@ -144,7 +144,6 @@ def get_glyphs_data(font):
         glyph.temporary = {
             "codepoint": get_normal_codepoint(glyph),
             "codepoint_hex": u(get_normal_codepoint(glyph)),
-            "isPrimary": glyph.unicode >= 0,
             "suffix": get_suffix(glyph),
         }
         glyph_data = get_glyph_info(glyph)
@@ -163,7 +162,6 @@ def get_glyph_info(glyph):
     (xmin, ymin, xmax, ymax) = glyph.boundingBox()
     normal_glyphname = get_normal_glyphname(glyph)
     normal_codepoint = get_normal_codepoint(glyph)
-    isPrimary = normal_codepoint is not None and re.search(r'\.[^.]+$', glyph.glyphname) is not None
     isSpecial = normal_codepoint is None or normal_codepoint < 0
     isPrintable = normal_codepoint is not None and (
         normal_codepoint in range(32, 127) or
@@ -172,7 +170,6 @@ def get_glyph_info(glyph):
     glyph_info = {
         "codepoint": normal_codepoint,
         "codepoint_hex": u(normal_codepoint),
-        "isPrimary": isPrimary,
         "isSpecial": isSpecial,
         "isPrintable": isPrintable,
         "glyphName": glyph.glyphname,
@@ -254,14 +251,6 @@ def glyph_cmp(glyph_a, glyph_b):
         return -1
     if cp_a > cp_b:
         return 1
-    # codepoints being equal...
-    prim_a = 1 if glyph_a.temporary["isPrimary"] else 0
-    prim_b = 1 if glyph_b.temporary["isPrimary"] else 0
-    if prim_a < prim_b:         # only prim_b is true
-        return 1
-    if prim_a > prim_b:         # only prim_a is true
-        return -1
-    # primarinesses being equal...
     name_a = glyph_a.glyphname
     name_b = glyph_b.glyphname
     if name_a is None:
@@ -305,7 +294,6 @@ def set_glyph_temp_info(glyph):
     glyph.temporary = {
         "codepoint": get_normal_codepoint(glyph),
         "codepoint_hex": u(get_normal_codepoint(glyph)),
-        "isPrimary": glyph.unicode is not None and glyph.unicode >= 0,
         "suffix": get_suffix(glyph),
     }
 
