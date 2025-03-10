@@ -97,7 +97,7 @@ def get_font_data_by_block(font):
     all_glyphs.sort(key=cmp_to_key(glyph_cmp))
     set_substitutions(font)
     unicode_glyphs = [glyph for glyph in all_glyphs if glyph.unicode > 0]
-    special_glyphs = extract_special_glyphs(all_glyphs)
+    special_glyphs = [glyph for glyph in all_glyphs if glyph.unicode <= 0]
     codepoints = list(set([glyph.unicode for glyph in unicode_glyphs]))
     codepoints.sort()
     for block in all_blocks:
@@ -460,13 +460,4 @@ def get_glyph_type_name(glyph):
     else:
         return "Other"
 
-def extract_unicode_glyphs(all_glyphs):
-    return [glyph for glyph in all_glyphs if (glyph.unicode is not None and # exclude unassignable glyphs
-                                              glyph.unicode not in range(0, 32) and # exclude ASCII controls
-                                              glyph.unicode not in range(127, 160))] # exclude ISO controls
-
-def extract_special_glyphs(all_glyphs):
-    return [glyph for glyph in all_glyphs if (glyph.unicode is None or # include unassignable glyphs
-                                              glyph.unicode in range(0, 32) or # and ASCII controls
-                                              glyph.unicode in range(127, 160))] # and ISO controls
 main()
