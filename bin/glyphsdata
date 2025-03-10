@@ -263,20 +263,6 @@ def glyph_cmp(glyph_a, glyph_b):
         return 1
     return 0
 
-def get_codepoint_info(codepoint):
-    if codepoint is None or codepoint < 0:
-        return None
-    info = {}
-    try:
-        info["name"] = unicodedata.name(chr(codepoint))
-    except ValueError:
-        info["name"] = None
-    block = unicodeblocks.blockof(chr(codepoint))
-    if block is not None:
-        info["blockName"] = block.name
-    info["adobeName"] = fontforge.nameFromUnicode(codepoint)
-    return info
-
 def dict_get_or_create(dict, key, default_value):
     if key in dict:
         return dict[key]
