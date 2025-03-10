@@ -1,110 +1,110 @@
 @font-face {
-    src: url('fonts/ttf/ReproTypewr.ttf?v=1');
+    src: url('../dist/ttf/ReproTypewr.ttf?v=1');
     font-family: 'Reproducing Typewriter';
     font-weight: 400;
     font-style: normal;
 }
 @font-face {
-    src: url('fonts/ttf/ReproTypewrCode.ttf?v=1');
+    src: url('../dist/ttf/ReproTypewrCode.ttf?v=1');
     font-family: 'Reproducing Typewriter Code';
     font-weight: 400;
     font-style: normal;
 }
 @font-face {
-    src: url('fonts/ttf/ReproTypewr-SemiLight.ttf?v=1');
+    src: url('../dist/ttf/ReproTypewr-Light.ttf?v=1');
     font-family: 'Reproducing Typewriter';
     font-weight: 300;
     font-style: normal;
 }
 @font-face {
-    src: url('fonts/ttf/ReproTypewrCode-SemiLight.ttf?v=1');
+    src: url('../dist/ttf/ReproTypewrCode-Light.ttf?v=1');
     font-family: 'Reproducing Typewriter Code';
     font-weight: 300;
     font-style: normal;
 }
 @font-face {
-    src: url('fonts/ttf/ReproTypewr-Light.ttf?v=1');
+    src: url('../dist/ttf/ReproTypewr-Thin.ttf?v=1');
     font-family: 'Reproducing Typewriter';
     font-weight: 200;
     font-style: normal;
 }
 @font-face {
-    src: url('fonts/ttf/ReproTypewrCode-Light.ttf?v=1');
+    src: url('../dist/ttf/ReproTypewrCode-Thin.ttf?v=1');
     font-family: 'Reproducing Typewriter Code';
     font-weight: 200;
     font-style: normal;
 }
 
 @font-face {
-    src: url('fonts/ttf/ReproTypewrElite.ttf?v=1');
-    font-family: 'Reproducing Typewriter Elite';
+    src: url('../dist/ttf/ReproTypewrCond.ttf?v=1');
+    font-family: 'Reproducing Typewriter Cond';
     font-weight: 400;
     font-style: normal;
 }
 @font-face {
-    src: url('fonts/ttf/ReproTypewrCodeElite.ttf?v=1');
-    font-family: 'Reproducing Typewriter Code Elite';
+    src: url('../dist/ttf/ReproTypewrCodeCond.ttf?v=1');
+    font-family: 'Reproducing Typewriter Code Cond';
     font-weight: 400;
     font-style: normal;
 }
 @font-face {
-    src: url('fonts/ttf/ReproTypewrElite-SemiLight.ttf?v=1');
-    font-family: 'Reproducing Typewriter Elite';
+    src: url('../dist/ttf/ReproTypewrCond-Light.ttf?v=1');
+    font-family: 'Reproducing Typewriter Cond';
     font-weight: 300;
     font-style: normal;
 }
 @font-face {
-    src: url('fonts/ttf/ReproTypewrCodeElite-SemiLight.ttf?v=1');
-    font-family: 'Reproducing Typewriter Code Elite';
+    src: url('../dist/ttf/ReproTypewrCodeCond-Light.ttf?v=1');
+    font-family: 'Reproducing Typewriter Code Cond';
     font-weight: 300;
     font-style: normal;
 }
 @font-face {
-    src: url('fonts/ttf/ReproTypewrElite-Light.ttf?v=1');
-    font-family: 'Reproducing Typewriter Elite';
+    src: url('../dist/ttf/ReproTypewrCond-Thin.ttf?v=1');
+    font-family: 'Reproducing Typewriter Cond';
     font-weight: 200;
     font-style: normal;
 }
 @font-face {
-    src: url('fonts/ttf/ReproTypewrCodeElite-Light.ttf?v=1');
-    font-family: 'Reproducing Typewriter Code Elite';
+    src: url('../dist/ttf/ReproTypewrCodeCond-Thin.ttf?v=1');
+    font-family: 'Reproducing Typewriter Code Cond';
     font-weight: 200;
     font-style: normal;
 }
 
 @font-face {
-    src: url('fonts/ttf/ReproTypewr17Pitch.ttf?v=1');
-    font-family: 'Reproducing Typewriter 17 Pitch';
+    src: url('../dist/ttf/ReproTypewrComp.ttf?v=1');
+    font-family: 'Reproducing Typewriter Compressed';
     font-weight: 400;
     font-style: normal;
 }
 @font-face {
-    src: url('fonts/ttf/ReproTypewrCode17Pitch.ttf?v=1');
-    font-family: 'Reproducing Typewriter Code 17 Pitch';
+    src: url('../dist/ttf/ReproTypewrCodeComp.ttf?v=1');
+    font-family: 'Reproducing Typewriter Code Compressed';
     font-weight: 400;
     font-style: normal;
 }
 @font-face {
-    src: url('fonts/ttf/ReproTypewr17Pitch-SemiLight.ttf?v=1');
-    font-family: 'Reproducing Typewriter 17 Pitch';
+    src: url('../dist/ttf/ReproTypewrComp-Light.ttf?v=1');
+    font-family: 'Reproducing Typewriter Compressed';
     font-weight: 300;
     font-style: normal;
 }
 @font-face {
-    src: url('fonts/ttf/ReproTypewrCode17Pitch-SemiLight.ttf?v=1');
-    font-family: 'Reproducing Typewriter Code 17 Pitch';
+    src: url('../dist/ttf/ReproTypewrCodeComp-Light.ttf?v=1');
+    font-family: 'Reproducing Typewriter Code Compressed';
     font-weight: 300;
     font-style: normal;
 }
 @font-face {
-    src: url('fonts/ttf/ReproTypewr17Pitch-Light.ttf?v=1');
-    font-family: 'Reproducing Typewriter 17 Pitch';
+    src: url('../dist/ttf/ReproTypewrComp-Thin.ttf?v=1');
+    font-family: 'Reproducing Typewriter Compressed';
     font-weight: 200;
     font-style: normal;
 }
 @font-face {
-    src: url('fonts/ttf/ReproTypewrCode17Pitch-Light.ttf?v=1');
-    font-family: 'Reproducing Typewriter Code 17 Pitch';
+    src: url('../dist/ttf/ReproTypewrCodeComp-Thin.ttf?v=1');
+    font-family: 'Reproducing Typewriter Code Compressed';
     font-weight: 200;
     font-style: normal;
 }
@@ -227,7 +227,8 @@ ul > li::before {
     content: none;
 }
 
-.char-grid {
+.char-grid,
+body.has-glyph-list-type-A .glyph-list {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -235,17 +236,21 @@ ul > li::before {
     row-gap: 1em;
     margin-bottom: 1em;
 }
-.char-grid__item {
+.char-grid__item,
+body.has-glyph-list-type-A .glyph-list__item {
     width: 7ch;
     flex: 0 0 7ch;
 }
-.char-grid__item::before {
+.char-grid__item::before,
+body.has-glyph-list-type-A .glyph-list__item::before {
     content: none;
 }
-.char-grid__codepoint {
+.char-grid__codepoint,
+body.has-glyph-list-type-A .glyph-list__codepoint {
     font-size: 100%;
 }
-.char-grid__char {
+.char-grid__char,
+body.has-glyph-list-type-A .glyph-list__char {
     margin-top: 0.25em; /* room for excessive diacriticals */
     margin-bottom: 0.25em; /* room for below the bottom */
     width: 1ch;
@@ -254,9 +259,52 @@ ul > li::before {
     border: 1px solid #eee;
     background-color: #ffffee;
 }
-.char-grid__charname {
+.char-grid__charname,
+body.has-glyph-list-type-A .glyph-list__charname {
     font-size: 50%;
 }
+
+
+body.has-glyph-list-type-B .glyph-list {
+    margin-left: 0;
+    padding-left: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 0.75em;
+    row-gap: 0;
+    margin-bottom: 1em;
+}
+body.has-glyph-list-type-B .glyph-list__item {
+    width: 3ch;
+    flex: 0 0 3ch;
+}
+body.has-glyph-list-type-B .glyph-list__item::before {
+    content: none;
+}
+body.has-glyph-list-type-B .glyph-list__codepoint {
+    font-size: 50%;
+}
+body.has-glyph-list-type-B .glyph-list__char {
+    margin-top: 0.25em; /* room for excessive diacriticals */
+    margin-bottom: 0.25em; /* room for below the bottom */
+    width: 1ch;
+    font-size: 250%;
+    text-align: center;
+    border: 1px solid #eee;
+    background-color: #ffffee;
+}
+body.has-glyph-list-type-B .glyph-list__name {
+    display: none;
+}
+body.has-glyph-list-type-B .glyph-list__codepoint {
+    display: none;
+}
+body.has-glyph-list-type-B .glyph-list__adobe-name {
+    display: none;
+}
+
+
 
 .fancy-checkbox__checkbox {
     display: none;
