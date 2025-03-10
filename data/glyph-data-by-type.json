@@ -45,28 +45,6 @@
                     "char": "A"
                 },
                 {
-                    "codepoint": 65,
-                    "codepoint_hex": "U+0041",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "A.smol",
-                    "normalAdobeName": "A",
-                    "boundingBox": {
-                        "xmin": 266.0,
-                        "xmax": 742.0,
-                        "ymin": 0.0,
-                        "ymax": 576.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 266.0,
-                    "rightSideBearing": 266.0,
-                    "width": 1008,
-                    "char": "A"
-                },
-                {
                     "codepoint": 66,
                     "codepoint_hex": "U+0042",
                     "isPrimary": false,
@@ -85,28 +63,6 @@
                     "glyphClass": "automatic",
                     "leftSideBearing": 98.0,
                     "rightSideBearing": 97.665039062,
-                    "width": 1008,
-                    "char": "B"
-                },
-                {
-                    "codepoint": 66,
-                    "codepoint_hex": "U+0042",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "B.smol",
-                    "normalAdobeName": "B",
-                    "boundingBox": {
-                        "xmin": 277.0,
-                        "xmax": 731.16796875,
-                        "ymin": 0.0,
-                        "ymax": 575.791015625
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 277.0,
-                    "rightSideBearing": 276.83203125,
                     "width": 1008,
                     "char": "B"
                 },
@@ -133,28 +89,6 @@
                     "char": "C"
                 },
                 {
-                    "codepoint": 67,
-                    "codepoint_hex": "U+0043",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "C.smol",
-                    "normalAdobeName": "C",
-                    "boundingBox": {
-                        "xmin": 301.0,
-                        "xmax": 714.8125,
-                        "ymin": -10.0,
-                        "ymax": 586.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 301.0,
-                    "rightSideBearing": 293.1875,
-                    "width": 1008,
-                    "char": "C"
-                },
-                {
                     "codepoint": 68,
                     "codepoint_hex": "U+0044",
                     "isPrimary": false,
@@ -173,28 +107,6 @@
                     "glyphClass": "automatic",
                     "leftSideBearing": 86.0,
                     "rightSideBearing": 78.265625,
-                    "width": 1008,
-                    "char": "D"
-                },
-                {
-                    "codepoint": 68,
-                    "codepoint_hex": "U+0044",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "D.smol",
-                    "normalAdobeName": "D",
-                    "boundingBox": {
-                        "xmin": 271.0,
-                        "xmax": 740.8671875,
-                        "ymin": -0.00195312100367,
-                        "ymax": 566.607421875
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 271.0,
-                    "rightSideBearing": 267.1328125,
                     "width": 1008,
                     "char": "D"
                 },
@@ -221,28 +133,6 @@
                     "char": "E"
                 },
                 {
-                    "codepoint": 69,
-                    "codepoint_hex": "U+0045",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "E.smol",
-                    "normalAdobeName": "E",
-                    "boundingBox": {
-                        "xmin": 276.0,
-                        "xmax": 736.84375,
-                        "ymin": 0.0,
-                        "ymax": 576.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 276.0,
-                    "rightSideBearing": 271.15625,
-                    "width": 1008,
-                    "char": "E"
-                },
-                {
                     "codepoint": 70,
                     "codepoint_hex": "U+0046",
                     "isPrimary": false,
@@ -261,28 +151,6 @@
                     "glyphClass": "automatic",
                     "leftSideBearing": 89.0,
                     "rightSideBearing": 88.452148438,
-                    "width": 1008,
-                    "char": "F"
-                },
-                {
-                    "codepoint": 70,
-                    "codepoint_hex": "U+0046",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "F.smol",
-                    "normalAdobeName": "F",
-                    "boundingBox": {
-                        "xmin": 272.5,
-                        "xmax": 735.7734375,
-                        "ymin": 0.0,
-                        "ymax": 576.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 272.5,
-                    "rightSideBearing": 272.2265625,
                     "width": 1008,
                     "char": "F"
                 },
@@ -309,28 +177,6 @@
                     "char": "G"
                 },
                 {
-                    "codepoint": 71,
-                    "codepoint_hex": "U+0047",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "G.smol",
-                    "normalAdobeName": "G",
-                    "boundingBox": {
-                        "xmin": 272.0,
-                        "xmax": 735.65625,
-                        "ymin": 0.0,
-                        "ymax": 586.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 272.0,
-                    "rightSideBearing": 272.34375,
-                    "width": 1008,
-                    "char": "G"
-                },
-                {
                     "codepoint": 72,
                     "codepoint_hex": "U+0048",
                     "isPrimary": false,
@@ -349,28 +195,6 @@
                     "glyphClass": "automatic",
                     "leftSideBearing": 81.0,
                     "rightSideBearing": 81.0,
-                    "width": 1008,
-                    "char": "H"
-                },
-                {
-                    "codepoint": 72,
-                    "codepoint_hex": "U+0048",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "H.smol",
-                    "normalAdobeName": "H",
-                    "boundingBox": {
-                        "xmin": 268.5,
-                        "xmax": 739.5,
-                        "ymin": 0.0,
-                        "ymax": 576.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 268.5,
-                    "rightSideBearing": 268.5,
                     "width": 1008,
                     "char": "H"
                 },
@@ -397,28 +221,6 @@
                     "char": "I"
                 },
                 {
-                    "codepoint": 73,
-                    "codepoint_hex": "U+0049",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "I.smol",
-                    "normalAdobeName": "I",
-                    "boundingBox": {
-                        "xmin": 313.171875,
-                        "xmax": 694.828125,
-                        "ymin": 0.0,
-                        "ymax": 576.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 313.171875,
-                    "rightSideBearing": 313.171875,
-                    "width": 1008,
-                    "char": "I"
-                },
-                {
                     "codepoint": 74,
                     "codepoint_hex": "U+004A",
                     "isPrimary": false,
@@ -437,28 +239,6 @@
                     "glyphClass": "automatic",
                     "leftSideBearing": 144.380859375,
                     "rightSideBearing": 82.467773438,
-                    "width": 1008,
-                    "char": "J"
-                },
-                {
-                    "codepoint": 74,
-                    "codepoint_hex": "U+004A",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "J.smol",
-                    "normalAdobeName": "J",
-                    "boundingBox": {
-                        "xmin": 300.190429688,
-                        "xmax": 738.765625,
-                        "ymin": -10.0,
-                        "ymax": 576.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 300.190429688,
-                    "rightSideBearing": 269.234375,
                     "width": 1008,
                     "char": "J"
                 },
@@ -485,28 +265,6 @@
                     "char": "K"
                 },
                 {
-                    "codepoint": 75,
-                    "codepoint_hex": "U+004B",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "K.smol",
-                    "normalAdobeName": "K",
-                    "boundingBox": {
-                        "xmin": 262.0,
-                        "xmax": 749.734375,
-                        "ymin": 0.0,
-                        "ymax": 576.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 262.0,
-                    "rightSideBearing": 258.265625,
-                    "width": 1008,
-                    "char": "K"
-                },
-                {
                     "codepoint": 76,
                     "codepoint_hex": "U+004C",
                     "isPrimary": false,
@@ -525,28 +283,6 @@
                     "glyphClass": "automatic",
                     "leftSideBearing": 92.0,
                     "rightSideBearing": 83.9959982418219,
-                    "width": 1008,
-                    "char": "L"
-                },
-                {
-                    "codepoint": 76,
-                    "codepoint_hex": "U+004C",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "L.smol",
-                    "normalAdobeName": "L",
-                    "boundingBox": {
-                        "xmin": 274.0,
-                        "xmax": 738.0040017581781,
-                        "ymin": 0.0,
-                        "ymax": 576.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 274.0,
-                    "rightSideBearing": 269.9959982418219,
                     "width": 1008,
                     "char": "L"
                 },
@@ -573,28 +309,6 @@
                     "char": "M"
                 },
                 {
-                    "codepoint": 77,
-                    "codepoint_hex": "U+004D",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "M.smol",
-                    "normalAdobeName": "M",
-                    "boundingBox": {
-                        "xmin": 258.0,
-                        "xmax": 750.0,
-                        "ymin": 0.0,
-                        "ymax": 578.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 258.0,
-                    "rightSideBearing": 258.0,
-                    "width": 1008,
-                    "char": "M"
-                },
-                {
                     "codepoint": 78,
                     "codepoint_hex": "U+004E",
                     "isPrimary": false,
@@ -613,28 +327,6 @@
                     "glyphClass": "automatic",
                     "leftSideBearing": 76.006835938,
                     "rightSideBearing": 76.006835938,
-                    "width": 1008,
-                    "char": "N"
-                },
-                {
-                    "codepoint": 78,
-                    "codepoint_hex": "U+004E",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "N.smol",
-                    "normalAdobeName": "N",
-                    "boundingBox": {
-                        "xmin": 266.00390625,
-                        "xmax": 741.99609375,
-                        "ymin": 0.00390625,
-                        "ymax": 575.995117188
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 266.00390625,
-                    "rightSideBearing": 266.00390625,
                     "width": 1008,
                     "char": "N"
                 },
@@ -661,28 +353,6 @@
                     "char": "O"
                 },
                 {
-                    "codepoint": 79,
-                    "codepoint_hex": "U+004F",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "O.smol",
-                    "normalAdobeName": "O",
-                    "boundingBox": {
-                        "xmin": 296.0,
-                        "xmax": 712.0,
-                        "ymin": -10.0,
-                        "ymax": 586.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 296.0,
-                    "rightSideBearing": 296.0,
-                    "width": 1008,
-                    "char": "O"
-                },
-                {
                     "codepoint": 80,
                     "codepoint_hex": "U+0050",
                     "isPrimary": false,
@@ -701,28 +371,6 @@
                     "glyphClass": "automatic",
                     "leftSideBearing": 139.0625,
                     "rightSideBearing": 98.938476562,
-                    "width": 1008,
-                    "char": "P"
-                },
-                {
-                    "codepoint": 80,
-                    "codepoint_hex": "U+0050",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "P.smol",
-                    "normalAdobeName": "P",
-                    "boundingBox": {
-                        "xmin": 297.53125,
-                        "xmax": 730.53125,
-                        "ymin": 0.0,
-                        "ymax": 576.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 297.53125,
-                    "rightSideBearing": 277.46875,
                     "width": 1008,
                     "char": "P"
                 },
@@ -749,28 +397,6 @@
                     "char": "Q"
                 },
                 {
-                    "codepoint": 81,
-                    "codepoint_hex": "U+0051",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "Q.smol",
-                    "normalAdobeName": "Q",
-                    "boundingBox": {
-                        "xmin": 296.0,
-                        "xmax": 749.999023438,
-                        "ymin": -123.366210938,
-                        "ymax": 586.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 296.0,
-                    "rightSideBearing": 258.000976562,
-                    "width": 1008,
-                    "char": "Q"
-                },
-                {
                     "codepoint": 82,
                     "codepoint_hex": "U+0052",
                     "isPrimary": false,
@@ -789,28 +415,6 @@
                     "glyphClass": "automatic",
                     "leftSideBearing": 63.142578125,
                     "rightSideBearing": 55.970703125,
-                    "width": 1008,
-                    "char": "R"
-                },
-                {
-                    "codepoint": 82,
-                    "codepoint_hex": "U+0052",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "R.smol",
-                    "normalAdobeName": "R",
-                    "boundingBox": {
-                        "xmin": 259.571289062,
-                        "xmax": 752.014648438,
-                        "ymin": 0.0,
-                        "ymax": 576.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 259.571289062,
-                    "rightSideBearing": 255.985351562,
                     "width": 1008,
                     "char": "R"
                 },
@@ -837,28 +441,6 @@
                     "char": "S"
                 },
                 {
-                    "codepoint": 83,
-                    "codepoint_hex": "U+0053",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "S.smol",
-                    "normalAdobeName": "S",
-                    "boundingBox": {
-                        "xmin": 294.258789062,
-                        "xmax": 734.209960938,
-                        "ymin": -10.0,
-                        "ymax": 586.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 294.258789062,
-                    "rightSideBearing": 273.790039062,
-                    "width": 1008,
-                    "char": "S"
-                },
-                {
                     "codepoint": 84,
                     "codepoint_hex": "U+0054",
                     "isPrimary": false,
@@ -877,28 +459,6 @@
                     "glyphClass": "automatic",
                     "leftSideBearing": 102.0,
                     "rightSideBearing": 102.0,
-                    "width": 1008,
-                    "char": "T"
-                },
-                {
-                    "codepoint": 84,
-                    "codepoint_hex": "U+0054",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "T.smol",
-                    "normalAdobeName": "T",
-                    "boundingBox": {
-                        "xmin": 279.0,
-                        "xmax": 729.0,
-                        "ymin": 0.0,
-                        "ymax": 576.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 279.0,
-                    "rightSideBearing": 279.0,
                     "width": 1008,
                     "char": "T"
                 },
@@ -925,28 +485,6 @@
                     "char": "U"
                 },
                 {
-                    "codepoint": 85,
-                    "codepoint_hex": "U+0055",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "U.smol",
-                    "normalAdobeName": "U",
-                    "boundingBox": {
-                        "xmin": 257.998046875,
-                        "xmax": 749.998046875,
-                        "ymin": -9.9052734375,
-                        "ymax": 575.997070312
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 257.998046875,
-                    "rightSideBearing": 258.001953125,
-                    "width": 1008,
-                    "char": "U"
-                },
-                {
                     "codepoint": 86,
                     "codepoint_hex": "U+0056",
                     "isPrimary": false,
@@ -965,28 +503,6 @@
                     "glyphClass": "automatic",
                     "leftSideBearing": 71.997070312,
                     "rightSideBearing": 72.002929688,
-                    "width": 1008,
-                    "char": "V"
-                },
-                {
-                    "codepoint": 86,
-                    "codepoint_hex": "U+0056",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "V.smol",
-                    "normalAdobeName": "V",
-                    "boundingBox": {
-                        "xmin": 263.998046875,
-                        "xmax": 743.998046875,
-                        "ymin": 0.0,
-                        "ymax": 575.997070312
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 263.998046875,
-                    "rightSideBearing": 264.001953125,
                     "width": 1008,
                     "char": "V"
                 },
@@ -1013,28 +529,6 @@
                     "char": "W"
                 },
                 {
-                    "codepoint": 87,
-                    "codepoint_hex": "U+0057",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "W.smol",
-                    "normalAdobeName": "W",
-                    "boundingBox": {
-                        "xmin": 261.0,
-                        "xmax": 747.0,
-                        "ymin": 0.0,
-                        "ymax": 576.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 261.0,
-                    "rightSideBearing": 261.0,
-                    "width": 1008,
-                    "char": "W"
-                },
-                {
                     "codepoint": 88,
                     "codepoint_hex": "U+0058",
                     "isPrimary": false,
@@ -1053,28 +547,6 @@
                     "glyphClass": "automatic",
                     "leftSideBearing": 60.0,
                     "rightSideBearing": 60.0,
-                    "width": 1008,
-                    "char": "X"
-                },
-                {
-                    "codepoint": 88,
-                    "codepoint_hex": "U+0058",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "X.smol",
-                    "normalAdobeName": "X",
-                    "boundingBox": {
-                        "xmin": 258.0,
-                        "xmax": 750.0,
-                        "ymin": 0.0,
-                        "ymax": 576.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 258.0,
-                    "rightSideBearing": 258.0,
                     "width": 1008,
                     "char": "X"
                 },
@@ -1101,28 +573,6 @@
                     "char": "Y"
                 },
                 {
-                    "codepoint": 89,
-                    "codepoint_hex": "U+0059",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "Y.smol",
-                    "normalAdobeName": "Y",
-                    "boundingBox": {
-                        "xmin": 258.0,
-                        "xmax": 750.0,
-                        "ymin": 0.0,
-                        "ymax": 576.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 258.0,
-                    "rightSideBearing": 258.0,
-                    "width": 1008,
-                    "char": "Y"
-                },
-                {
                     "codepoint": 90,
                     "codepoint_hex": "U+005A",
                     "isPrimary": false,
@@ -1141,28 +591,6 @@
                     "glyphClass": "automatic",
                     "leftSideBearing": 88.0,
                     "rightSideBearing": 92.0,
-                    "width": 1008,
-                    "char": "Z"
-                },
-                {
-                    "codepoint": 90,
-                    "codepoint_hex": "U+005A",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "Z.smol",
-                    "normalAdobeName": "Z",
-                    "boundingBox": {
-                        "xmin": 272.0,
-                        "xmax": 734.0,
-                        "ymin": 0.0,
-                        "ymax": 576.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 272.0,
-                    "rightSideBearing": 274.0,
                     "width": 1008,
                     "char": "Z"
                 },
@@ -1192,99 +620,6 @@
                     }
                 },
                 {
-                    "codepoint": 97,
-                    "codepoint_hex": "U+0061",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "a.code",
-                    "normalAdobeName": "a",
-                    "boundingBox": {
-                        "xmin": 118.626953125,
-                        "xmax": 930.0,
-                        "ymin": -20.0,
-                        "ymax": 776.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 118.626953125,
-                    "rightSideBearing": 78.0,
-                    "width": 1008,
-                    "char": "a",
-                    "substitutionsToThis": {
-                        "code": [
-                            "a"
-                        ]
-                    }
-                },
-                {
-                    "codepoint": 97,
-                    "codepoint_hex": "U+0061",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "a.orig",
-                    "normalAdobeName": "a",
-                    "boundingBox": {
-                        "xmin": 118.626953125,
-                        "xmax": 930.0,
-                        "ymin": -20.0,
-                        "ymax": 776.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 118.626953125,
-                    "rightSideBearing": 78.0,
-                    "width": 1008,
-                    "char": "a"
-                },
-                {
-                    "codepoint": 97,
-                    "codepoint_hex": "U+0061",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "a.simpl",
-                    "normalAdobeName": "a",
-                    "boundingBox": {
-                        "xmin": 118.626953125,
-                        "xmax": 930.0,
-                        "ymin": -20.0,
-                        "ymax": 776.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 118.626953125,
-                    "rightSideBearing": 78.0,
-                    "width": 1008,
-                    "char": "a"
-                },
-                {
-                    "codepoint": 97,
-                    "codepoint_hex": "U+0061",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "a.smol",
-                    "normalAdobeName": "a",
-                    "boundingBox": {
-                        "xmin": 287.313476562,
-                        "xmax": 741.0,
-                        "ymin": -10.0,
-                        "ymax": 436.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 287.313476562,
-                    "rightSideBearing": 267.0,
-                    "width": 1008,
-                    "char": "a"
-                },
-                {
                     "codepoint": 98,
                     "codepoint_hex": "U+0062",
                     "isPrimary": false,
@@ -1303,28 +638,6 @@
                     "glyphClass": "automatic",
                     "leftSideBearing": 81.75390625,
                     "rightSideBearing": 97.5,
-                    "width": 1008,
-                    "char": "b"
-                },
-                {
-                    "codepoint": 98,
-                    "codepoint_hex": "U+0062",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "b.smol",
-                    "normalAdobeName": "b",
-                    "boundingBox": {
-                        "xmin": 268.876953125,
-                        "xmax": 731.25,
-                        "ymin": -13.5322265625,
-                        "ymax": 576.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 268.876953125,
-                    "rightSideBearing": 276.75,
                     "width": 1008,
                     "char": "b"
                 },
@@ -1354,77 +667,6 @@
                     }
                 },
                 {
-                    "codepoint": 99,
-                    "codepoint_hex": "U+0063",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "c.code",
-                    "normalAdobeName": "c",
-                    "boundingBox": {
-                        "xmin": 157.0,
-                        "xmax": 852.797851562,
-                        "ymin": -19.998046875,
-                        "ymax": 776.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 157.0,
-                    "rightSideBearing": 155.202148438,
-                    "width": 1008,
-                    "char": "c",
-                    "substitutionsToThis": {
-                        "code": [
-                            "c"
-                        ]
-                    }
-                },
-                {
-                    "codepoint": 99,
-                    "codepoint_hex": "U+0063",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "c.orig",
-                    "normalAdobeName": "c",
-                    "boundingBox": {
-                        "xmin": 157.0,
-                        "xmax": 852.797851562,
-                        "ymin": -19.998046875,
-                        "ymax": 776.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 157.0,
-                    "rightSideBearing": 155.202148438,
-                    "width": 1008,
-                    "char": "c"
-                },
-                {
-                    "codepoint": 99,
-                    "codepoint_hex": "U+0063",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "c.smol",
-                    "normalAdobeName": "c",
-                    "boundingBox": {
-                        "xmin": 306.5,
-                        "xmax": 702.3984375,
-                        "ymin": -9.9990234375,
-                        "ymax": 436.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 306.5,
-                    "rightSideBearing": 305.6015625,
-                    "width": 1008,
-                    "char": "c"
-                },
-                {
                     "codepoint": 100,
                     "codepoint_hex": "U+0064",
                     "isPrimary": false,
@@ -1443,28 +685,6 @@
                     "glyphClass": "automatic",
                     "leftSideBearing": 107.500976562,
                     "rightSideBearing": 87.002929688,
-                    "width": 1008,
-                    "char": "d"
-                },
-                {
-                    "codepoint": 100,
-                    "codepoint_hex": "U+0064",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "d.smol",
-                    "normalAdobeName": "d",
-                    "boundingBox": {
-                        "xmin": 281.75,
-                        "xmax": 736.498046875,
-                        "ymin": -10.0,
-                        "ymax": 575.995117188
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 281.75,
-                    "rightSideBearing": 271.501953125,
                     "width": 1008,
                     "char": "d"
                 },
@@ -1494,99 +714,6 @@
                     }
                 },
                 {
-                    "codepoint": 101,
-                    "codepoint_hex": "U+0065",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "e.code",
-                    "normalAdobeName": "e",
-                    "boundingBox": {
-                        "xmin": 152.3125,
-                        "xmax": 855.78125,
-                        "ymin": -20.0,
-                        "ymax": 776.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 152.3125,
-                    "rightSideBearing": 152.21875,
-                    "width": 1008,
-                    "char": "e",
-                    "substitutionsToThis": {
-                        "code": [
-                            "e"
-                        ]
-                    }
-                },
-                {
-                    "codepoint": 101,
-                    "codepoint_hex": "U+0065",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "e.orig",
-                    "normalAdobeName": "e",
-                    "boundingBox": {
-                        "xmin": 152.3125,
-                        "xmax": 855.78125,
-                        "ymin": -20.0,
-                        "ymax": 776.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 152.3125,
-                    "rightSideBearing": 152.21875,
-                    "width": 1008,
-                    "char": "e"
-                },
-                {
-                    "codepoint": 101,
-                    "codepoint_hex": "U+0065",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "e.simpl",
-                    "normalAdobeName": "e",
-                    "boundingBox": {
-                        "xmin": 152.3125,
-                        "xmax": 855.78125,
-                        "ymin": -18.466796875,
-                        "ymax": 776.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 152.3125,
-                    "rightSideBearing": 152.21875,
-                    "width": 1008,
-                    "char": "e"
-                },
-                {
-                    "codepoint": 101,
-                    "codepoint_hex": "U+0065",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "e.smol",
-                    "normalAdobeName": "e",
-                    "boundingBox": {
-                        "xmin": 304.15625,
-                        "xmax": 703.890625,
-                        "ymin": -9.2333984375,
-                        "ymax": 436.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 304.15625,
-                    "rightSideBearing": 304.109375,
-                    "width": 1008,
-                    "char": "e"
-                },
-                {
                     "codepoint": 102,
                     "codepoint_hex": "U+0066",
                     "isPrimary": false,
@@ -1605,28 +732,6 @@
                     "glyphClass": "automatic",
                     "leftSideBearing": 189.109375,
                     "rightSideBearing": 128.484375,
-                    "width": 1008,
-                    "char": "f"
-                },
-                {
-                    "codepoint": 102,
-                    "codepoint_hex": "U+0066",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "f.smol",
-                    "normalAdobeName": "f",
-                    "boundingBox": {
-                        "xmin": 322.5546875,
-                        "xmax": 715.7578125,
-                        "ymin": 0.0,
-                        "ymax": 585.990234375
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 322.5546875,
-                    "rightSideBearing": 292.2421875,
                     "width": 1008,
                     "char": "f"
                 },
@@ -1653,28 +758,6 @@
                     "char": "g"
                 },
                 {
-                    "codepoint": 103,
-                    "codepoint_hex": "U+0067",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "g.smol",
-                    "normalAdobeName": "g",
-                    "boundingBox": {
-                        "xmin": 286.125,
-                        "xmax": 722.282226562,
-                        "ymin": -160.00000002,
-                        "ymax": 436.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 286.125,
-                    "rightSideBearing": 285.717773438,
-                    "width": 1008,
-                    "char": "g"
-                },
-                {
                     "codepoint": 104,
                     "codepoint_hex": "U+0068",
                     "isPrimary": false,
@@ -1693,28 +776,6 @@
                     "glyphClass": "automatic",
                     "leftSideBearing": 111.0,
                     "rightSideBearing": 111.0,
-                    "width": 1008,
-                    "char": "h"
-                },
-                {
-                    "codepoint": 104,
-                    "codepoint_hex": "U+0068",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "h.smol",
-                    "normalAdobeName": "h",
-                    "boundingBox": {
-                        "xmin": 283.5,
-                        "xmax": 724.5,
-                        "ymin": 0.0,
-                        "ymax": 576.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 283.5,
-                    "rightSideBearing": 283.5,
                     "width": 1008,
                     "char": "h"
                 },
@@ -1741,28 +802,6 @@
                     "char": "i"
                 },
                 {
-                    "codepoint": 105,
-                    "codepoint_hex": "U+0069",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "i.smol",
-                    "normalAdobeName": "i",
-                    "boundingBox": {
-                        "xmin": 323.5,
-                        "xmax": 684.5,
-                        "ymin": 0.0,
-                        "ymax": 583.43359375
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 323.5,
-                    "rightSideBearing": 323.5,
-                    "width": 1008,
-                    "char": "i"
-                },
-                {
                     "codepoint": 106,
                     "codepoint_hex": "U+006A",
                     "isPrimary": false,
@@ -1781,28 +820,6 @@
                     "glyphClass": "automatic",
                     "leftSideBearing": 210.521484375,
                     "rightSideBearing": 289.955078125,
-                    "width": 1008,
-                    "char": "j"
-                },
-                {
-                    "codepoint": 106,
-                    "codepoint_hex": "U+006A",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "j.smol",
-                    "normalAdobeName": "j",
-                    "boundingBox": {
-                        "xmin": 333.260742188,
-                        "xmax": 635.022460938,
-                        "ymin": -160.0,
-                        "ymax": 583.43359375
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 333.260742188,
-                    "rightSideBearing": 372.977539062,
                     "width": 1008,
                     "char": "j"
                 },
@@ -1829,28 +846,6 @@
                     "char": "k"
                 },
                 {
-                    "codepoint": 107,
-                    "codepoint_hex": "U+006B",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "k.smol",
-                    "normalAdobeName": "k",
-                    "boundingBox": {
-                        "xmin": 262.892578125,
-                        "xmax": 744.619140625,
-                        "ymin": 0.0,
-                        "ymax": 576.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 262.892578125,
-                    "rightSideBearing": 263.380859375,
-                    "width": 1008,
-                    "char": "k"
-                },
-                {
                     "codepoint": 108,
                     "codepoint_hex": "U+006C",
                     "isPrimary": false,
@@ -1869,94 +864,6 @@
                     "glyphClass": "automatic",
                     "leftSideBearing": 173.66796875,
                     "rightSideBearing": 173.7978515625,
-                    "width": 1008,
-                    "char": "l"
-                },
-                {
-                    "codepoint": 108,
-                    "codepoint_hex": "U+006C",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "l.cod2",
-                    "normalAdobeName": "l",
-                    "boundingBox": {
-                        "xmin": 205.119140625,
-                        "xmax": 876.0,
-                        "ymin": 0.0,
-                        "ymax": 1056.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 205.119140625,
-                    "rightSideBearing": 132.0,
-                    "width": 1008,
-                    "char": "l"
-                },
-                {
-                    "codepoint": 108,
-                    "codepoint_hex": "U+006C",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "l.code",
-                    "normalAdobeName": "l",
-                    "boundingBox": {
-                        "xmin": 203.119140625,
-                        "xmax": 824.0,
-                        "ymin": 0.0,
-                        "ymax": 1056.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 203.119140625,
-                    "rightSideBearing": 184.0,
-                    "width": 1008,
-                    "char": "l"
-                },
-                {
-                    "codepoint": 108,
-                    "codepoint_hex": "U+006C",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "l.orig",
-                    "normalAdobeName": "l",
-                    "boundingBox": {
-                        "xmin": 173.66796875,
-                        "xmax": 834.202148438,
-                        "ymin": 0.0,
-                        "ymax": 1056.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 173.66796875,
-                    "rightSideBearing": 173.797851562,
-                    "width": 1008,
-                    "char": "l"
-                },
-                {
-                    "codepoint": 108,
-                    "codepoint_hex": "U+006C",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "l.smol",
-                    "normalAdobeName": "l",
-                    "boundingBox": {
-                        "xmin": 314.833984375,
-                        "xmax": 693.1015625,
-                        "ymin": 0.0,
-                        "ymax": 576.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 314.833984375,
-                    "rightSideBearing": 314.8984375,
                     "width": 1008,
                     "char": "l"
                 },
@@ -1983,28 +890,6 @@
                     "char": "m"
                 },
                 {
-                    "codepoint": 109,
-                    "codepoint_hex": "U+006D",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "m.smol",
-                    "normalAdobeName": "m",
-                    "boundingBox": {
-                        "xmin": 265.5,
-                        "xmax": 742.5,
-                        "ymin": -1.0092878301776977,
-                        "ymax": 436.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 265.5,
-                    "rightSideBearing": 265.5,
-                    "width": 1008,
-                    "char": "m"
-                },
-                {
                     "codepoint": 110,
                     "codepoint_hex": "U+006E",
                     "isPrimary": false,
@@ -2023,28 +908,6 @@
                     "glyphClass": "automatic",
                     "leftSideBearing": 105.840820312,
                     "rightSideBearing": 105.24609375,
-                    "width": 1008,
-                    "char": "n"
-                },
-                {
-                    "codepoint": 110,
-                    "codepoint_hex": "U+006E",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "n.smol",
-                    "normalAdobeName": "n",
-                    "boundingBox": {
-                        "xmin": 280.919921875,
-                        "xmax": 727.376953125,
-                        "ymin": 0.0,
-                        "ymax": 436.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 280.919921875,
-                    "rightSideBearing": 280.623046875,
                     "width": 1008,
                     "char": "n"
                 },
@@ -2071,28 +934,6 @@
                     "char": "o"
                 },
                 {
-                    "codepoint": 111,
-                    "codepoint_hex": "U+006F",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "o.smol",
-                    "normalAdobeName": "o",
-                    "boundingBox": {
-                        "xmin": 300.0,
-                        "xmax": 708.0,
-                        "ymin": -10.0,
-                        "ymax": 436.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 300.0,
-                    "rightSideBearing": 300.0,
-                    "width": 1008,
-                    "char": "o"
-                },
-                {
                     "codepoint": 112,
                     "codepoint_hex": "U+0070",
                     "isPrimary": false,
@@ -2111,28 +952,6 @@
                     "glyphClass": "automatic",
                     "leftSideBearing": 93.220703125,
                     "rightSideBearing": 91.331054688,
-                    "width": 1008,
-                    "char": "p"
-                },
-                {
-                    "codepoint": 112,
-                    "codepoint_hex": "U+0070",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "p.smol",
-                    "normalAdobeName": "p",
-                    "boundingBox": {
-                        "xmin": 274.610351562,
-                        "xmax": 734.333984375,
-                        "ymin": -150.0,
-                        "ymax": 436.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 274.610351562,
-                    "rightSideBearing": 273.666015625,
                     "width": 1008,
                     "char": "p"
                 },
@@ -2159,28 +978,6 @@
                     "char": "q"
                 },
                 {
-                    "codepoint": 113,
-                    "codepoint_hex": "U+0071",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "q.smol",
-                    "normalAdobeName": "q",
-                    "boundingBox": {
-                        "xmin": 292.6875,
-                        "xmax": 756.619140625,
-                        "ymin": -150.0,
-                        "ymax": 436.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 292.6875,
-                    "rightSideBearing": 251.380859375,
-                    "width": 1008,
-                    "char": "q"
-                },
-                {
                     "codepoint": 114,
                     "codepoint_hex": "U+0072",
                     "isPrimary": false,
@@ -2199,28 +996,6 @@
                     "glyphClass": "automatic",
                     "leftSideBearing": 159.78515625,
                     "rightSideBearing": 160.31640625,
-                    "width": 1008,
-                    "char": "r"
-                },
-                {
-                    "codepoint": 114,
-                    "codepoint_hex": "U+0072",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "r.smol",
-                    "normalAdobeName": "r",
-                    "boundingBox": {
-                        "xmin": 307.892578125,
-                        "xmax": 699.841796875,
-                        "ymin": 0.0,
-                        "ymax": 435.791163045
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 307.892578125,
-                    "rightSideBearing": 308.158203125,
                     "width": 1008,
                     "char": "r"
                 },
@@ -2250,99 +1025,6 @@
                     }
                 },
                 {
-                    "codepoint": 115,
-                    "codepoint_hex": "U+0073",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "s.code",
-                    "normalAdobeName": "s",
-                    "boundingBox": {
-                        "xmin": 136.20703125,
-                        "xmax": 871.913085938,
-                        "ymin": -20.0,
-                        "ymax": 776.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 136.20703125,
-                    "rightSideBearing": 136.086914062,
-                    "width": 1008,
-                    "char": "s",
-                    "substitutionsToThis": {
-                        "code": [
-                            "s"
-                        ]
-                    }
-                },
-                {
-                    "codepoint": 115,
-                    "codepoint_hex": "U+0073",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "s.orig",
-                    "normalAdobeName": "s",
-                    "boundingBox": {
-                        "xmin": 135.274414062,
-                        "xmax": 871.913085938,
-                        "ymin": -20.0,
-                        "ymax": 776.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 135.274414062,
-                    "rightSideBearing": 136.086914062,
-                    "width": 1008,
-                    "char": "s"
-                },
-                {
-                    "codepoint": 115,
-                    "codepoint_hex": "U+0073",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "s.simpl",
-                    "normalAdobeName": "s",
-                    "boundingBox": {
-                        "xmin": 136.20703125,
-                        "xmax": 871.9130859375,
-                        "ymin": -20.0,
-                        "ymax": 776.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 136.20703125,
-                    "rightSideBearing": 136.0869140625,
-                    "width": 1008,
-                    "char": "s"
-                },
-                {
-                    "codepoint": 115,
-                    "codepoint_hex": "U+0073",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "s.smol",
-                    "normalAdobeName": "s",
-                    "boundingBox": {
-                        "xmin": 296.103515625,
-                        "xmax": 711.95703125,
-                        "ymin": -10.0,
-                        "ymax": 436.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 296.103515625,
-                    "rightSideBearing": 296.04296875,
-                    "width": 1008,
-                    "char": "s"
-                },
-                {
                     "codepoint": 116,
                     "codepoint_hex": "U+0074",
                     "isPrimary": false,
@@ -2361,28 +1043,6 @@
                     "glyphClass": "automatic",
                     "leftSideBearing": 147.73046875,
                     "rightSideBearing": 187.856445312,
-                    "width": 1008,
-                    "char": "t"
-                },
-                {
-                    "codepoint": 116,
-                    "codepoint_hex": "U+0074",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "t.smol",
-                    "normalAdobeName": "t",
-                    "boundingBox": {
-                        "xmin": 301.865234375,
-                        "xmax": 686.072265625,
-                        "ymin": -10.0,
-                        "ymax": 576.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 301.865234375,
-                    "rightSideBearing": 321.927734375,
                     "width": 1008,
                     "char": "t"
                 },
@@ -2409,28 +1069,6 @@
                     "char": "u"
                 },
                 {
-                    "codepoint": 117,
-                    "codepoint_hex": "U+0075",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "u.smol",
-                    "normalAdobeName": "u",
-                    "boundingBox": {
-                        "xmin": 276.0,
-                        "xmax": 736.0,
-                        "ymin": -10.0,
-                        "ymax": 426.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 276.0,
-                    "rightSideBearing": 272.0,
-                    "width": 1008,
-                    "char": "u"
-                },
-                {
                     "codepoint": 118,
                     "codepoint_hex": "U+0076",
                     "isPrimary": false,
@@ -2449,28 +1087,6 @@
                     "glyphClass": "automatic",
                     "leftSideBearing": 82.0,
                     "rightSideBearing": 80.0,
-                    "width": 1008,
-                    "char": "v"
-                },
-                {
-                    "codepoint": 118,
-                    "codepoint_hex": "U+0076",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "v.smol",
-                    "normalAdobeName": "v",
-                    "boundingBox": {
-                        "xmin": 269.0,
-                        "xmax": 740.0,
-                        "ymin": 0.0,
-                        "ymax": 426.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 269.0,
-                    "rightSideBearing": 268.0,
                     "width": 1008,
                     "char": "v"
                 },
@@ -2497,28 +1113,6 @@
                     "char": "w"
                 },
                 {
-                    "codepoint": 119,
-                    "codepoint_hex": "U+0077",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "w.smol",
-                    "normalAdobeName": "w",
-                    "boundingBox": {
-                        "xmin": 262.0,
-                        "xmax": 747.0,
-                        "ymin": 0.0,
-                        "ymax": 426.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 262.0,
-                    "rightSideBearing": 261.0,
-                    "width": 1008,
-                    "char": "w"
-                },
-                {
                     "codepoint": 120,
                     "codepoint_hex": "U+0078",
                     "isPrimary": false,
@@ -2537,28 +1131,6 @@
                     "glyphClass": "automatic",
                     "leftSideBearing": 74.0,
                     "rightSideBearing": 74.0,
-                    "width": 1008,
-                    "char": "x"
-                },
-                {
-                    "codepoint": 120,
-                    "codepoint_hex": "U+0078",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "x.smol",
-                    "normalAdobeName": "x",
-                    "boundingBox": {
-                        "xmin": 265.0,
-                        "xmax": 743.0,
-                        "ymin": 0.0,
-                        "ymax": 426.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 265.0,
-                    "rightSideBearing": 265.0,
                     "width": 1008,
                     "char": "x"
                 },
@@ -2585,28 +1157,6 @@
                     "char": "y"
                 },
                 {
-                    "codepoint": 121,
-                    "codepoint_hex": "U+0079",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "y.smol",
-                    "normalAdobeName": "y",
-                    "boundingBox": {
-                        "xmin": 274.0,
-                        "xmax": 734.0,
-                        "ymin": -159.5,
-                        "ymax": 426.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 274.0,
-                    "rightSideBearing": 274.0,
-                    "width": 1008,
-                    "char": "y"
-                },
-                {
                     "codepoint": 122,
                     "codepoint_hex": "U+007A",
                     "isPrimary": false,
@@ -2625,28 +1175,6 @@
                     "glyphClass": "automatic",
                     "leftSideBearing": 105.999023438,
                     "rightSideBearing": 115.999023438,
-                    "width": 1008,
-                    "char": "z"
-                },
-                {
-                    "codepoint": 122,
-                    "codepoint_hex": "U+007A",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "z.smol",
-                    "normalAdobeName": "z",
-                    "boundingBox": {
-                        "xmin": 281.0,
-                        "xmax": 722.0,
-                        "ymin": 0.0,
-                        "ymax": 426.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 281.0,
-                    "rightSideBearing": 286.0,
                     "width": 1008,
                     "char": "z"
                 },
@@ -14385,143 +12913,6 @@
                     }
                 },
                 {
-                    "codepoint": 48,
-                    "codepoint_hex": "U+0030",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "zero.bigdot",
-                    "normalAdobeName": "zero",
-                    "boundingBox": {
-                        "xmin": 136.0,
-                        "xmax": 872.0,
-                        "ymin": -20.0,
-                        "ymax": 1076.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 136.0,
-                    "rightSideBearing": 136.0,
-                    "width": 1008,
-                    "char": "0"
-                },
-                {
-                    "codepoint": 48,
-                    "codepoint_hex": "U+0030",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "zero.orig",
-                    "normalAdobeName": "zero",
-                    "boundingBox": {
-                        "xmin": 136.0,
-                        "xmax": 872.0,
-                        "ymin": -20.0,
-                        "ymax": 1076.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 136.0,
-                    "rightSideBearing": 136.0,
-                    "width": 1008,
-                    "char": "0"
-                },
-                {
-                    "codepoint": 48,
-                    "codepoint_hex": "U+0030",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "zero.simpl",
-                    "normalAdobeName": "zero",
-                    "boundingBox": {
-                        "xmin": 136.0,
-                        "xmax": 872.0,
-                        "ymin": -20.0,
-                        "ymax": 1076.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 136.0,
-                    "rightSideBearing": 136.0,
-                    "width": 1008,
-                    "char": "0"
-                },
-                {
-                    "codepoint": 48,
-                    "codepoint_hex": "U+0030",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "zero.slash",
-                    "normalAdobeName": "zero",
-                    "boundingBox": {
-                        "xmin": 136.0,
-                        "xmax": 872.0,
-                        "ymin": -48.0,
-                        "ymax": 1104.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 136.0,
-                    "rightSideBearing": 136.0,
-                    "width": 1008,
-                    "char": "0",
-                    "substitutionsToThis": {
-                        "code": [
-                            "zero"
-                        ]
-                    }
-                },
-                {
-                    "codepoint": 48,
-                    "codepoint_hex": "U+0030",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "zero.smalldot",
-                    "normalAdobeName": "zero",
-                    "boundingBox": {
-                        "xmin": 136.0,
-                        "xmax": 872.0,
-                        "ymin": -20.0,
-                        "ymax": 1076.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 136.0,
-                    "rightSideBearing": 136.0,
-                    "width": 1008,
-                    "char": "0"
-                },
-                {
-                    "codepoint": 48,
-                    "codepoint_hex": "U+0030",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "zero.smol",
-                    "normalAdobeName": "zero",
-                    "boundingBox": {
-                        "xmin": 296.0,
-                        "xmax": 712.0,
-                        "ymin": -10.0,
-                        "ymax": 586.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 296.0,
-                    "rightSideBearing": 296.0,
-                    "width": 1008,
-                    "char": "0"
-                },
-                {
                     "codepoint": 49,
                     "codepoint_hex": "U+0031",
                     "isPrimary": false,
@@ -14547,121 +12938,6 @@
                     }
                 },
                 {
-                    "codepoint": 49,
-                    "codepoint_hex": "U+0031",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "one.code",
-                    "normalAdobeName": "one",
-                    "boundingBox": {
-                        "xmin": 204.0,
-                        "xmax": 860.0,
-                        "ymin": 0.0,
-                        "ymax": 1056.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 204.0,
-                    "rightSideBearing": 148.0,
-                    "width": 1008,
-                    "char": "1",
-                    "substitutionsToThis": {
-                        "code": [
-                            "one"
-                        ]
-                    }
-                },
-                {
-                    "codepoint": 49,
-                    "codepoint_hex": "U+0031",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "one.default",
-                    "normalAdobeName": "one",
-                    "boundingBox": {
-                        "xmin": 224.0,
-                        "xmax": 880.0,
-                        "ymin": 0.0,
-                        "ymax": 1056.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 224.0,
-                    "rightSideBearing": 128.0,
-                    "width": 1008,
-                    "char": "1"
-                },
-                {
-                    "codepoint": 49,
-                    "codepoint_hex": "U+0031",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "one.orig",
-                    "normalAdobeName": "one",
-                    "boundingBox": {
-                        "xmin": 224.0,
-                        "xmax": 880.0,
-                        "ymin": 0.0,
-                        "ymax": 1056.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 224.0,
-                    "rightSideBearing": 128.0,
-                    "width": 1008,
-                    "char": "1"
-                },
-                {
-                    "codepoint": 49,
-                    "codepoint_hex": "U+0031",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "one.simpl",
-                    "normalAdobeName": "one",
-                    "boundingBox": {
-                        "xmin": 224.0,
-                        "xmax": 880.0,
-                        "ymin": 0.0,
-                        "ymax": 1056.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 224.0,
-                    "rightSideBearing": 128.0,
-                    "width": 1008,
-                    "char": "1"
-                },
-                {
-                    "codepoint": 49,
-                    "codepoint_hex": "U+0031",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "one.smol",
-                    "normalAdobeName": "one",
-                    "boundingBox": {
-                        "xmin": 340.0,
-                        "xmax": 716.0,
-                        "ymin": 0.0,
-                        "ymax": 576.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 340.0,
-                    "rightSideBearing": 292.0,
-                    "width": 1008,
-                    "char": "1"
-                },
-                {
                     "codepoint": 50,
                     "codepoint_hex": "U+0032",
                     "isPrimary": false,
@@ -14680,50 +12956,6 @@
                     "glyphClass": "automatic",
                     "leftSideBearing": 113.588867188,
                     "rightSideBearing": 107.588867188,
-                    "width": 1008,
-                    "char": "2"
-                },
-                {
-                    "codepoint": 50,
-                    "codepoint_hex": "U+0032",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "two.simpl",
-                    "normalAdobeName": "two",
-                    "boundingBox": {
-                        "xmin": 113.588867188,
-                        "xmax": 900.411132812,
-                        "ymin": -18.275390625,
-                        "ymax": 1076.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 113.588867188,
-                    "rightSideBearing": 107.588867188,
-                    "width": 1008,
-                    "char": "2"
-                },
-                {
-                    "codepoint": 50,
-                    "codepoint_hex": "U+0032",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "two.smol",
-                    "normalAdobeName": "two",
-                    "boundingBox": {
-                        "xmin": 284.794921875,
-                        "xmax": 726.205078125,
-                        "ymin": -9.1376953125,
-                        "ymax": 586.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 284.794921875,
-                    "rightSideBearing": 281.794921875,
                     "width": 1008,
                     "char": "2"
                 },
@@ -14750,50 +12982,6 @@
                     "char": "3"
                 },
                 {
-                    "codepoint": 51,
-                    "codepoint_hex": "U+0033",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "three.simpl",
-                    "normalAdobeName": "three",
-                    "boundingBox": {
-                        "xmin": 110.532226562,
-                        "xmax": 888.62890625,
-                        "ymin": -20.0,
-                        "ymax": 1056.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 110.532226562,
-                    "rightSideBearing": 119.37109375,
-                    "width": 1008,
-                    "char": "3"
-                },
-                {
-                    "codepoint": 51,
-                    "codepoint_hex": "U+0033",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "three.smol",
-                    "normalAdobeName": "three",
-                    "boundingBox": {
-                        "xmin": 283.265625,
-                        "xmax": 720.314453125,
-                        "ymin": -10.0,
-                        "ymax": 576.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 283.265625,
-                    "rightSideBearing": 287.685546875,
-                    "width": 1008,
-                    "char": "3"
-                },
-                {
                     "codepoint": 52,
                     "codepoint_hex": "U+0034",
                     "isPrimary": false,
@@ -14812,28 +13000,6 @@
                     "glyphClass": "automatic",
                     "leftSideBearing": 63.497070312,
                     "rightSideBearing": 63.497070312000005,
-                    "width": 1008,
-                    "char": "4"
-                },
-                {
-                    "codepoint": 52,
-                    "codepoint_hex": "U+0034",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "four.smol",
-                    "normalAdobeName": "four",
-                    "boundingBox": {
-                        "xmin": 259.748046875,
-                        "xmax": 748.251953125,
-                        "ymin": 0.001953125,
-                        "ymax": 576.001953125
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 259.748046875,
-                    "rightSideBearing": 259.748046875,
                     "width": 1008,
                     "char": "4"
                 },
@@ -14860,50 +13026,6 @@
                     "char": "5"
                 },
                 {
-                    "codepoint": 53,
-                    "codepoint_hex": "U+0035",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "five.simpl",
-                    "normalAdobeName": "five",
-                    "boundingBox": {
-                        "xmin": 144.0,
-                        "xmax": 903.4375,
-                        "ymin": -20.0,
-                        "ymax": 1056.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 144.0,
-                    "rightSideBearing": 104.5625,
-                    "width": 1008,
-                    "char": "5"
-                },
-                {
-                    "codepoint": 53,
-                    "codepoint_hex": "U+0035",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "five.smol",
-                    "normalAdobeName": "five",
-                    "boundingBox": {
-                        "xmin": 300.0,
-                        "xmax": 727.71875,
-                        "ymin": -10.0,
-                        "ymax": 576.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 300.0,
-                    "rightSideBearing": 280.28125,
-                    "width": 1008,
-                    "char": "5"
-                },
-                {
                     "codepoint": 54,
                     "codepoint_hex": "U+0036",
                     "isPrimary": false,
@@ -14922,28 +13044,6 @@
                     "glyphClass": "automatic",
                     "leftSideBearing": 103.8984375,
                     "rightSideBearing": 112.603515625,
-                    "width": 1008,
-                    "char": "6"
-                },
-                {
-                    "codepoint": 54,
-                    "codepoint_hex": "U+0036",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "six.smol",
-                    "normalAdobeName": "six",
-                    "boundingBox": {
-                        "xmin": 279.94921875,
-                        "xmax": 723.698242188,
-                        "ymin": -10.0,
-                        "ymax": 586.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 279.94921875,
-                    "rightSideBearing": 284.301757812,
                     "width": 1008,
                     "char": "6"
                 },
@@ -14970,28 +13070,6 @@
                     "char": "7"
                 },
                 {
-                    "codepoint": 55,
-                    "codepoint_hex": "U+0037",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "seven.smol",
-                    "normalAdobeName": "seven",
-                    "boundingBox": {
-                        "xmin": 282.5859375,
-                        "xmax": 757.6015625,
-                        "ymin": 0.0,
-                        "ymax": 586.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 282.5859375,
-                    "rightSideBearing": 250.3984375,
-                    "width": 1008,
-                    "char": "7"
-                },
-                {
                     "codepoint": 56,
                     "codepoint_hex": "U+0038",
                     "isPrimary": false,
@@ -15014,28 +13092,6 @@
                     "char": "8"
                 },
                 {
-                    "codepoint": 56,
-                    "codepoint_hex": "U+0038",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "eight.smol",
-                    "normalAdobeName": "eight",
-                    "boundingBox": {
-                        "xmin": 273.65625,
-                        "xmax": 734.34375,
-                        "ymin": -10.0,
-                        "ymax": 586.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 273.65625,
-                    "rightSideBearing": 273.65625,
-                    "width": 1008,
-                    "char": "8"
-                },
-                {
                     "codepoint": 57,
                     "codepoint_hex": "U+0039",
                     "isPrimary": false,
@@ -15054,28 +13110,6 @@
                     "glyphClass": "automatic",
                     "leftSideBearing": 112.603515625,
                     "rightSideBearing": 103.897460938,
-                    "width": 1008,
-                    "char": "9"
-                },
-                {
-                    "codepoint": 57,
-                    "codepoint_hex": "U+0039",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "nine.smol",
-                    "normalAdobeName": "nine",
-                    "boundingBox": {
-                        "xmin": 284.301757812,
-                        "xmax": 728.05078125,
-                        "ymin": -10.0,
-                        "ymax": 586.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 284.301757812,
-                    "rightSideBearing": 279.94921875,
                     "width": 1008,
                     "char": "9"
                 }
@@ -25105,72 +23139,6 @@
                     "char": "\u0259"
                 },
                 {
-                    "codepoint": 601,
-                    "codepoint_hex": "U+0259",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "schwa.code",
-                    "normalAdobeName": "uni0259",
-                    "boundingBox": {
-                        "xmin": 152.30859375,
-                        "xmax": 855.77734375,
-                        "ymin": -20.0,
-                        "ymax": 776.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 152.30859375,
-                    "rightSideBearing": 152.22265625,
-                    "width": 1008,
-                    "char": "\u0259"
-                },
-                {
-                    "codepoint": 601,
-                    "codepoint_hex": "U+0259",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "uni0259.simpl",
-                    "normalAdobeName": "uni0259",
-                    "boundingBox": {
-                        "xmin": 152.30859375,
-                        "xmax": 855.77734375,
-                        "ymin": -18.466796875,
-                        "ymax": 776.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 152.30859375,
-                    "rightSideBearing": 152.22265625,
-                    "width": 1008,
-                    "char": "\u0259"
-                },
-                {
-                    "codepoint": 601,
-                    "codepoint_hex": "U+0259",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "uni0259.smol",
-                    "normalAdobeName": "uni0259",
-                    "boundingBox": {
-                        "xmin": 304.154296875,
-                        "xmax": 703.888671875,
-                        "ymin": -9.2333984375,
-                        "ymax": 436.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 304.154296875,
-                    "rightSideBearing": 304.111328125,
-                    "width": 1008,
-                    "char": "\u0259"
-                },
-                {
                     "codepoint": 658,
                     "codepoint_hex": "U+0292",
                     "isPrimary": false,
@@ -26853,28 +24821,6 @@
                     "char": "!"
                 },
                 {
-                    "codepoint": 33,
-                    "codepoint_hex": "U+0021",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "exclam.smol",
-                    "normalAdobeName": "exclam",
-                    "boundingBox": {
-                        "xmin": 431.0,
-                        "xmax": 577.0,
-                        "ymin": -10.0,
-                        "ymax": 576.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 431.0,
-                    "rightSideBearing": 431.0,
-                    "width": 1008,
-                    "char": "!"
-                },
-                {
                     "codepoint": 34,
                     "codepoint_hex": "U+0022",
                     "isPrimary": false,
@@ -26893,28 +24839,6 @@
                     "glyphClass": "automatic",
                     "leftSideBearing": 216.0,
                     "rightSideBearing": 216.0,
-                    "width": 1008,
-                    "char": "\""
-                },
-                {
-                    "codepoint": 34,
-                    "codepoint_hex": "U+0022",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "quotedbl.smol",
-                    "normalAdobeName": "quotedbl",
-                    "boundingBox": {
-                        "xmin": 336.0,
-                        "xmax": 672.0,
-                        "ymin": 280.0,
-                        "ymax": 576.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 336.0,
-                    "rightSideBearing": 336.0,
                     "width": 1008,
                     "char": "\""
                 },
@@ -26941,72 +24865,6 @@
                     "char": "#"
                 },
                 {
-                    "codepoint": 35,
-                    "codepoint_hex": "U+0023",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "numbersign.orig",
-                    "normalAdobeName": "numbersign",
-                    "boundingBox": {
-                        "xmin": 96.0,
-                        "xmax": 912.0,
-                        "ymin": -320.0,
-                        "ymax": 1076.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 96.0,
-                    "rightSideBearing": 96.0,
-                    "width": 1008,
-                    "char": "#"
-                },
-                {
-                    "codepoint": 35,
-                    "codepoint_hex": "U+0023",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "numbersign.short",
-                    "normalAdobeName": "numbersign",
-                    "boundingBox": {
-                        "xmin": 76.0,
-                        "xmax": 932.0,
-                        "ymin": 0.0,
-                        "ymax": 1056.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 76.0,
-                    "rightSideBearing": 76.0,
-                    "width": 1008,
-                    "char": "#"
-                },
-                {
-                    "codepoint": 35,
-                    "codepoint_hex": "U+0023",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "numbersign.smol",
-                    "normalAdobeName": "numbersign",
-                    "boundingBox": {
-                        "xmin": 276.0,
-                        "xmax": 732.0,
-                        "ymin": -160.0,
-                        "ymax": 586.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 276.0,
-                    "rightSideBearing": 276.0,
-                    "width": 1008,
-                    "char": "#"
-                },
-                {
                     "codepoint": 37,
                     "codepoint_hex": "U+0025",
                     "isPrimary": false,
@@ -27025,28 +24883,6 @@
                     "glyphClass": "automatic",
                     "leftSideBearing": 53.0215906079,
                     "rightSideBearing": 53.01866092099999,
-                    "width": 1008,
-                    "char": "%"
-                },
-                {
-                    "codepoint": 37,
-                    "codepoint_hex": "U+0025",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "percent.smol",
-                    "normalAdobeName": "percent",
-                    "boundingBox": {
-                        "xmin": 254.510682855,
-                        "xmax": 753.49066954,
-                        "ymin": -165.0,
-                        "ymax": 591.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 254.510682855,
-                    "rightSideBearing": 254.50933046,
                     "width": 1008,
                     "char": "%"
                 },
@@ -27073,28 +24909,6 @@
                     "char": "&"
                 },
                 {
-                    "codepoint": 38,
-                    "codepoint_hex": "U+0026",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "ampersand.smol",
-                    "normalAdobeName": "ampersand",
-                    "boundingBox": {
-                        "xmin": 262.25,
-                        "xmax": 749.65625,
-                        "ymin": -10.0,
-                        "ymax": 586.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 262.25,
-                    "rightSideBearing": 258.34375,
-                    "width": 1008,
-                    "char": "&"
-                },
-                {
                     "codepoint": 39,
                     "codepoint_hex": "U+0027",
                     "isPrimary": false,
@@ -27113,28 +24927,6 @@
                     "glyphClass": "automatic",
                     "leftSideBearing": 416.000976562,
                     "rightSideBearing": 416.000976562,
-                    "width": 1008,
-                    "char": "'"
-                },
-                {
-                    "codepoint": 39,
-                    "codepoint_hex": "U+0027",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "quotesingle.smol",
-                    "normalAdobeName": "quotesingle",
-                    "boundingBox": {
-                        "xmin": 436.0,
-                        "xmax": 572.0,
-                        "ymin": 280.005859375,
-                        "ymax": 576.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 436.0,
-                    "rightSideBearing": 436.0,
                     "width": 1008,
                     "char": "'"
                 },
@@ -27161,28 +24953,6 @@
                     "char": "("
                 },
                 {
-                    "codepoint": 40,
-                    "codepoint_hex": "U+0028",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "parenleft.smol",
-                    "normalAdobeName": "parenleft",
-                    "boundingBox": {
-                        "xmin": 411.0,
-                        "xmax": 597.0,
-                        "ymin": -168.0,
-                        "ymax": 594.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 411.0,
-                    "rightSideBearing": 411.0,
-                    "width": 1008,
-                    "char": "("
-                },
-                {
                     "codepoint": 41,
                     "codepoint_hex": "U+0029",
                     "isPrimary": false,
@@ -27201,28 +24971,6 @@
                     "glyphClass": "automatic",
                     "leftSideBearing": 366.0,
                     "rightSideBearing": 366.0,
-                    "width": 1008,
-                    "char": ")"
-                },
-                {
-                    "codepoint": 41,
-                    "codepoint_hex": "U+0029",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "parenright.smol",
-                    "normalAdobeName": "parenright",
-                    "boundingBox": {
-                        "xmin": 411.0,
-                        "xmax": 597.0,
-                        "ymin": -168.0,
-                        "ymax": 608.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 411.0,
-                    "rightSideBearing": 411.0,
                     "width": 1008,
                     "char": ")"
                 },
@@ -27249,28 +24997,6 @@
                     "char": "*"
                 },
                 {
-                    "codepoint": 42,
-                    "codepoint_hex": "U+002A",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "asterisk.smol",
-                    "normalAdobeName": "asterisk",
-                    "boundingBox": {
-                        "xmin": 306.0,
-                        "xmax": 702.0,
-                        "ymin": 210.095703125,
-                        "ymax": 565.904296875
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 306.0,
-                    "rightSideBearing": 306.0,
-                    "width": 1008,
-                    "char": "*"
-                },
-                {
                     "codepoint": 43,
                     "codepoint_hex": "U+002B",
                     "isPrimary": false,
@@ -27289,28 +25015,6 @@
                     "glyphClass": "automatic",
                     "leftSideBearing": 136.0,
                     "rightSideBearing": 136.001953125,
-                    "width": 1008,
-                    "char": "+"
-                },
-                {
-                    "codepoint": 43,
-                    "codepoint_hex": "U+002B",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "plus.smol",
-                    "normalAdobeName": "plus",
-                    "boundingBox": {
-                        "xmin": 296.0,
-                        "xmax": 711.999023438,
-                        "ymin": 5.0,
-                        "ymax": 421.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 296.0,
-                    "rightSideBearing": 296.000976562,
                     "width": 1008,
                     "char": "+"
                 },
@@ -27340,77 +25044,6 @@
                     }
                 },
                 {
-                    "codepoint": 44,
-                    "codepoint_hex": "U+002C",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "comma.larger",
-                    "normalAdobeName": "comma",
-                    "boundingBox": {
-                        "xmin": 291.0,
-                        "xmax": 627.0,
-                        "ymin": -290.0,
-                        "ymax": 226.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 291.0,
-                    "rightSideBearing": 381.0,
-                    "width": 1008,
-                    "char": ",",
-                    "substitutionsToThis": {
-                        "code": [
-                            "comma"
-                        ]
-                    }
-                },
-                {
-                    "codepoint": 44,
-                    "codepoint_hex": "U+002C",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "comma.orig",
-                    "normalAdobeName": "comma",
-                    "boundingBox": {
-                        "xmin": 346.0,
-                        "xmax": 602.0,
-                        "ymin": -200.0,
-                        "ymax": 176.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 346.0,
-                    "rightSideBearing": 406.0,
-                    "width": 1008,
-                    "char": ","
-                },
-                {
-                    "codepoint": 44,
-                    "codepoint_hex": "U+002C",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "comma.smol",
-                    "normalAdobeName": "comma",
-                    "boundingBox": {
-                        "xmin": 401.0,
-                        "xmax": 577.0,
-                        "ymin": -100.0,
-                        "ymax": 136.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 401.0,
-                    "rightSideBearing": 431.0,
-                    "width": 1008,
-                    "char": ","
-                },
-                {
                     "codepoint": 45,
                     "codepoint_hex": "U+002D",
                     "isPrimary": false,
@@ -27429,28 +25062,6 @@
                     "glyphClass": "automatic",
                     "leftSideBearing": 136.000976562,
                     "rightSideBearing": 136.000976562,
-                    "width": 1008,
-                    "char": "-"
-                },
-                {
-                    "codepoint": 45,
-                    "codepoint_hex": "U+002D",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "hyphen.smol",
-                    "normalAdobeName": "hyphen",
-                    "boundingBox": {
-                        "xmin": 296.0,
-                        "xmax": 712.0,
-                        "ymin": 165.0,
-                        "ymax": 261.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 296.0,
-                    "rightSideBearing": 296.0,
                     "width": 1008,
                     "char": "-"
                 },
@@ -27480,77 +25091,6 @@
                     }
                 },
                 {
-                    "codepoint": 46,
-                    "codepoint_hex": "U+002E",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "period.larger",
-                    "normalAdobeName": "period",
-                    "boundingBox": {
-                        "xmin": 381.0,
-                        "xmax": 627.0,
-                        "ymin": -20.0,
-                        "ymax": 226.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 381.0,
-                    "rightSideBearing": 381.0,
-                    "width": 1008,
-                    "char": ".",
-                    "substitutionsToThis": {
-                        "code": [
-                            "period"
-                        ]
-                    }
-                },
-                {
-                    "codepoint": 46,
-                    "codepoint_hex": "U+002E",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "period.orig",
-                    "normalAdobeName": "period",
-                    "boundingBox": {
-                        "xmin": 406.0,
-                        "xmax": 602.0,
-                        "ymin": -20.0,
-                        "ymax": 176.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 406.0,
-                    "rightSideBearing": 406.0,
-                    "width": 1008,
-                    "char": "."
-                },
-                {
-                    "codepoint": 46,
-                    "codepoint_hex": "U+002E",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "period.smol",
-                    "normalAdobeName": "period",
-                    "boundingBox": {
-                        "xmin": 431.0,
-                        "xmax": 577.0,
-                        "ymin": -10.0,
-                        "ymax": 136.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 431.0,
-                    "rightSideBearing": 431.0,
-                    "width": 1008,
-                    "char": "."
-                },
-                {
                     "codepoint": 47,
                     "codepoint_hex": "U+002F",
                     "isPrimary": false,
@@ -27569,72 +25109,6 @@
                     "glyphClass": "automatic",
                     "leftSideBearing": 96.0,
                     "rightSideBearing": 96.0,
-                    "width": 1008,
-                    "char": "/"
-                },
-                {
-                    "codepoint": 47,
-                    "codepoint_hex": "U+002F",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "slash.orig",
-                    "normalAdobeName": "slash",
-                    "boundingBox": {
-                        "xmin": 96.0,
-                        "xmax": 912.0,
-                        "ymin": -320.0,
-                        "ymax": 1076.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 96.0,
-                    "rightSideBearing": 96.0,
-                    "width": 1008,
-                    "char": "/"
-                },
-                {
-                    "codepoint": 47,
-                    "codepoint_hex": "U+002F",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "slash.short",
-                    "normalAdobeName": "slash",
-                    "boundingBox": {
-                        "xmin": 176.000976562,
-                        "xmax": 831.999023438,
-                        "ymin": 0.000976562500007,
-                        "ymax": 1055.99902344
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 176.000976562,
-                    "rightSideBearing": 176.000976562,
-                    "width": 1008,
-                    "char": "/"
-                },
-                {
-                    "codepoint": 47,
-                    "codepoint_hex": "U+002F",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "slash.smol",
-                    "normalAdobeName": "slash",
-                    "boundingBox": {
-                        "xmin": 276.0,
-                        "xmax": 732.0,
-                        "ymin": -160.0,
-                        "ymax": 586.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 276.0,
-                    "rightSideBearing": 276.0,
                     "width": 1008,
                     "char": "/"
                 },
@@ -27664,77 +25138,6 @@
                     }
                 },
                 {
-                    "codepoint": 58,
-                    "codepoint_hex": "U+003A",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "colon.larger",
-                    "normalAdobeName": "colon",
-                    "boundingBox": {
-                        "xmin": 381.0,
-                        "xmax": 627.0,
-                        "ymin": -20.0,
-                        "ymax": 776.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 381.0,
-                    "rightSideBearing": 381.0,
-                    "width": 1008,
-                    "char": ":",
-                    "substitutionsToThis": {
-                        "code": [
-                            "colon"
-                        ]
-                    }
-                },
-                {
-                    "codepoint": 58,
-                    "codepoint_hex": "U+003A",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "colon.orig",
-                    "normalAdobeName": "colon",
-                    "boundingBox": {
-                        "xmin": 406.0,
-                        "xmax": 602.0,
-                        "ymin": -20.0,
-                        "ymax": 776.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 406.0,
-                    "rightSideBearing": 406.0,
-                    "width": 1008,
-                    "char": ":"
-                },
-                {
-                    "codepoint": 58,
-                    "codepoint_hex": "U+003A",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "colon.smol",
-                    "normalAdobeName": "colon",
-                    "boundingBox": {
-                        "xmin": 431.0,
-                        "xmax": 577.0,
-                        "ymin": -10.0,
-                        "ymax": 436.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 431.0,
-                    "rightSideBearing": 431.0,
-                    "width": 1008,
-                    "char": ":"
-                },
-                {
                     "codepoint": 59,
                     "codepoint_hex": "U+003B",
                     "isPrimary": false,
@@ -27760,77 +25163,6 @@
                     }
                 },
                 {
-                    "codepoint": 59,
-                    "codepoint_hex": "U+003B",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "semicolon.larger",
-                    "normalAdobeName": "semicolon",
-                    "boundingBox": {
-                        "xmin": 291.0,
-                        "xmax": 627.0,
-                        "ymin": -290.0,
-                        "ymax": 776.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 291.0,
-                    "rightSideBearing": 381.0,
-                    "width": 1008,
-                    "char": ";",
-                    "substitutionsToThis": {
-                        "code": [
-                            "semicolon"
-                        ]
-                    }
-                },
-                {
-                    "codepoint": 59,
-                    "codepoint_hex": "U+003B",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "semicolon.orig",
-                    "normalAdobeName": "semicolon",
-                    "boundingBox": {
-                        "xmin": 346.0,
-                        "xmax": 602.0,
-                        "ymin": -201.333984375,
-                        "ymax": 776.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 346.0,
-                    "rightSideBearing": 406.0,
-                    "width": 1008,
-                    "char": ";"
-                },
-                {
-                    "codepoint": 59,
-                    "codepoint_hex": "U+003B",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "semicolon.smol",
-                    "normalAdobeName": "semicolon",
-                    "boundingBox": {
-                        "xmin": 401.0,
-                        "xmax": 577.0,
-                        "ymin": -100.666992188,
-                        "ymax": 436.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 401.0,
-                    "rightSideBearing": 431.0,
-                    "width": 1008,
-                    "char": ";"
-                },
-                {
                     "codepoint": 60,
                     "codepoint_hex": "U+003C",
                     "isPrimary": false,
@@ -27849,28 +25181,6 @@
                     "glyphClass": "automatic",
                     "leftSideBearing": 72.0,
                     "rightSideBearing": 72.0,
-                    "width": 1008,
-                    "char": "<"
-                },
-                {
-                    "codepoint": 60,
-                    "codepoint_hex": "U+003C",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "less.smol",
-                    "normalAdobeName": "less",
-                    "boundingBox": {
-                        "xmin": 264.0,
-                        "xmax": 744.0,
-                        "ymin": -24.0,
-                        "ymax": 444.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 264.0,
-                    "rightSideBearing": 264.0,
                     "width": 1008,
                     "char": "<"
                 },
@@ -27900,77 +25210,6 @@
                     }
                 },
                 {
-                    "codepoint": 61,
-                    "codepoint_hex": "U+003D",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "equal.code",
-                    "normalAdobeName": "equal",
-                    "boundingBox": {
-                        "xmin": 136.000976562,
-                        "xmax": 871.999023438,
-                        "ymin": 180.0,
-                        "ymax": 576.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 136.000976562,
-                    "rightSideBearing": 136.000976562,
-                    "width": 1008,
-                    "char": "=",
-                    "substitutionsToThis": {
-                        "code": [
-                            "equal"
-                        ]
-                    }
-                },
-                {
-                    "codepoint": 61,
-                    "codepoint_hex": "U+003D",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "equal.orig",
-                    "normalAdobeName": "equal",
-                    "boundingBox": {
-                        "xmin": 136.000976562,
-                        "xmax": 871.999023438,
-                        "ymin": 220.0,
-                        "ymax": 536.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 136.000976562,
-                    "rightSideBearing": 136.000976562,
-                    "width": 1008,
-                    "char": "="
-                },
-                {
-                    "codepoint": 61,
-                    "codepoint_hex": "U+003D",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "equal.smol",
-                    "normalAdobeName": "equal",
-                    "boundingBox": {
-                        "xmin": 296.0,
-                        "xmax": 712.0,
-                        "ymin": 110.0,
-                        "ymax": 316.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 296.0,
-                    "rightSideBearing": 296.0,
-                    "width": 1008,
-                    "char": "="
-                },
-                {
                     "codepoint": 62,
                     "codepoint_hex": "U+003E",
                     "isPrimary": false,
@@ -27989,28 +25228,6 @@
                     "glyphClass": "automatic",
                     "leftSideBearing": 72.0,
                     "rightSideBearing": 72.0,
-                    "width": 1008,
-                    "char": ">"
-                },
-                {
-                    "codepoint": 62,
-                    "codepoint_hex": "U+003E",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "greater.smol",
-                    "normalAdobeName": "greater",
-                    "boundingBox": {
-                        "xmin": 264.0,
-                        "xmax": 744.0,
-                        "ymin": -24.0,
-                        "ymax": 444.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 264.0,
-                    "rightSideBearing": 264.0,
                     "width": 1008,
                     "char": ">"
                 },
@@ -28037,28 +25254,6 @@
                     "char": "?"
                 },
                 {
-                    "codepoint": 63,
-                    "codepoint_hex": "U+003F",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "question.smol",
-                    "normalAdobeName": "question",
-                    "boundingBox": {
-                        "xmin": 338.662109375,
-                        "xmax": 676.9375,
-                        "ymin": -10.0,
-                        "ymax": 577.717773438
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 338.662109375,
-                    "rightSideBearing": 331.0625,
-                    "width": 1008,
-                    "char": "?"
-                },
-                {
                     "codepoint": 64,
                     "codepoint_hex": "U+0040",
                     "isPrimary": false,
@@ -28077,72 +25272,6 @@
                     "glyphClass": "automatic",
                     "leftSideBearing": 63.0712890625,
                     "rightSideBearing": 63.0712890625,
-                    "width": 1008,
-                    "char": "@"
-                },
-                {
-                    "codepoint": 64,
-                    "codepoint_hex": "U+0040",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "at.alt",
-                    "normalAdobeName": "at",
-                    "boundingBox": {
-                        "xmin": 86.0,
-                        "xmax": 922.0,
-                        "ymin": -224.651500306,
-                        "ymax": 1076.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 86.0,
-                    "rightSideBearing": 86.0,
-                    "width": 1008,
-                    "char": "@"
-                },
-                {
-                    "codepoint": 64,
-                    "codepoint_hex": "U+0040",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "at.orig",
-                    "normalAdobeName": "at",
-                    "boundingBox": {
-                        "xmin": 63.0717579062,
-                        "xmax": 944.928710938,
-                        "ymin": -194.334960938,
-                        "ymax": 1006.84960938
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 63.0717579062,
-                    "rightSideBearing": 63.071289062000005,
-                    "width": 1008,
-                    "char": "@"
-                },
-                {
-                    "codepoint": 64,
-                    "codepoint_hex": "U+0040",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "at.smol",
-                    "normalAdobeName": "at",
-                    "boundingBox": {
-                        "xmin": 259.535875868,
-                        "xmax": 748.46484375,
-                        "ymin": -97.16796875,
-                        "ymax": 551.424804688
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 259.535875868,
-                    "rightSideBearing": 259.53515625,
                     "width": 1008,
                     "char": "@"
                 },
@@ -28169,28 +25298,6 @@
                     "char": "["
                 },
                 {
-                    "codepoint": 91,
-                    "codepoint_hex": "U+005B",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "bracketleft.smol",
-                    "normalAdobeName": "bracketleft",
-                    "boundingBox": {
-                        "xmin": 396.000976562,
-                        "xmax": 600.0,
-                        "ymin": -150.0,
-                        "ymax": 576.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 396.000976562,
-                    "rightSideBearing": 408.0,
-                    "width": 1008,
-                    "char": "["
-                },
-                {
                     "codepoint": 92,
                     "codepoint_hex": "U+005C",
                     "isPrimary": false,
@@ -28209,50 +25316,6 @@
                     "glyphClass": "automatic",
                     "leftSideBearing": 96.0,
                     "rightSideBearing": 96.0,
-                    "width": 1008,
-                    "char": "\\"
-                },
-                {
-                    "codepoint": 92,
-                    "codepoint_hex": "U+005C",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "backslash.short",
-                    "normalAdobeName": "backslash",
-                    "boundingBox": {
-                        "xmin": 176.000976562,
-                        "xmax": 831.999023438,
-                        "ymin": 0.0009765625,
-                        "ymax": 1055.99902344
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 176.000976562,
-                    "rightSideBearing": 176.000976562,
-                    "width": 1008,
-                    "char": "\\"
-                },
-                {
-                    "codepoint": 92,
-                    "codepoint_hex": "U+005C",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "backslash.smol",
-                    "normalAdobeName": "backslash",
-                    "boundingBox": {
-                        "xmin": 276.0,
-                        "xmax": 732.0,
-                        "ymin": -160.0,
-                        "ymax": 586.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 276.0,
-                    "rightSideBearing": 276.0,
                     "width": 1008,
                     "char": "\\"
                 },
@@ -28279,28 +25342,6 @@
                     "char": "]"
                 },
                 {
-                    "codepoint": 93,
-                    "codepoint_hex": "U+005D",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "bracketright.smol",
-                    "normalAdobeName": "bracketright",
-                    "boundingBox": {
-                        "xmin": 408.0,
-                        "xmax": 612.0,
-                        "ymin": -150.0,
-                        "ymax": 576.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 408.0,
-                    "rightSideBearing": 396.0,
-                    "width": 1008,
-                    "char": "]"
-                },
-                {
                     "codepoint": 94,
                     "codepoint_hex": "U+005E",
                     "isPrimary": false,
@@ -28319,28 +25360,6 @@
                     "glyphClass": "automatic",
                     "leftSideBearing": 256.002929688,
                     "rightSideBearing": 256.004882812,
-                    "width": 1008,
-                    "char": "^"
-                },
-                {
-                    "codepoint": 94,
-                    "codepoint_hex": "U+005E",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "asciicircum.smol",
-                    "normalAdobeName": "asciicircum",
-                    "boundingBox": {
-                        "xmin": 356.001953125,
-                        "xmax": 651.998046875,
-                        "ymin": 300.00390625,
-                        "ymax": 576.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 356.001953125,
-                    "rightSideBearing": 356.001953125,
                     "width": 1008,
                     "char": "^"
                 },
@@ -28367,28 +25386,6 @@
                     "char": "_"
                 },
                 {
-                    "codepoint": 95,
-                    "codepoint_hex": "U+005F",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "underscore.smol",
-                    "normalAdobeName": "underscore",
-                    "boundingBox": {
-                        "xmin": 236.0,
-                        "xmax": 772.0,
-                        "ymin": -150.0,
-                        "ymax": -54.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 236.0,
-                    "rightSideBearing": 236.0,
-                    "width": 1008,
-                    "char": "_"
-                },
-                {
                     "codepoint": 96,
                     "codepoint_hex": "U+0060",
                     "isPrimary": false,
@@ -28407,50 +25404,6 @@
                     "glyphClass": "automatic",
                     "leftSideBearing": 276.009765625,
                     "rightSideBearing": 275.990234375,
-                    "width": 1008,
-                    "char": "`"
-                },
-                {
-                    "codepoint": 96,
-                    "codepoint_hex": "U+0060",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "grave.plain",
-                    "normalAdobeName": "grave",
-                    "boundingBox": {
-                        "xmin": 256.000976562,
-                        "xmax": 751.999023438,
-                        "ymin": 560.0,
-                        "ymax": 1056.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 256.000976562,
-                    "rightSideBearing": 256.000976562,
-                    "width": 1008,
-                    "char": "`"
-                },
-                {
-                    "codepoint": 96,
-                    "codepoint_hex": "U+0060",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "grave.smol",
-                    "normalAdobeName": "grave",
-                    "boundingBox": {
-                        "xmin": 366.004882812,
-                        "xmax": 642.004882812,
-                        "ymin": 280.0,
-                        "ymax": 576.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 366.004882812,
-                    "rightSideBearing": 365.995117188,
                     "width": 1008,
                     "char": "`"
                 },
@@ -28477,28 +25430,6 @@
                     "char": "{"
                 },
                 {
-                    "codepoint": 123,
-                    "codepoint_hex": "U+007B",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "braceleft.smol",
-                    "normalAdobeName": "braceleft",
-                    "boundingBox": {
-                        "xmin": 356.0,
-                        "xmax": 652.0,
-                        "ymin": -150.0,
-                        "ymax": 576.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 356.0,
-                    "rightSideBearing": 356.0,
-                    "width": 1008,
-                    "char": "{"
-                },
-                {
                     "codepoint": 124,
                     "codepoint_hex": "U+007C",
                     "isPrimary": false,
@@ -28511,28 +25442,6 @@
                         "xmax": 552.0,
                         "ymin": -320.0,
                         "ymax": 1076.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 456.0,
-                    "rightSideBearing": 456.0,
-                    "width": 1008,
-                    "char": "|"
-                },
-                {
-                    "codepoint": 124,
-                    "codepoint_hex": "U+007C",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "bar.smol",
-                    "normalAdobeName": "bar",
-                    "boundingBox": {
-                        "xmin": 456.0,
-                        "xmax": 552.0,
-                        "ymin": -160.0,
-                        "ymax": 586.0
                     },
                     "altuni": null,
                     "comment": "",
@@ -28565,28 +25474,6 @@
                     "char": "}"
                 },
                 {
-                    "codepoint": 125,
-                    "codepoint_hex": "U+007D",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "braceright.smol",
-                    "normalAdobeName": "braceright",
-                    "boundingBox": {
-                        "xmin": 356.0,
-                        "xmax": 652.0,
-                        "ymin": -150.0,
-                        "ymax": 576.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 356.0,
-                    "rightSideBearing": 356.0,
-                    "width": 1008,
-                    "char": "}"
-                },
-                {
                     "codepoint": 126,
                     "codepoint_hex": "U+007E",
                     "isPrimary": false,
@@ -28605,28 +25492,6 @@
                     "glyphClass": "automatic",
                     "leftSideBearing": 135.999023438,
                     "rightSideBearing": 135.999023438,
-                    "width": 1008,
-                    "char": "~"
-                },
-                {
-                    "codepoint": 126,
-                    "codepoint_hex": "U+007E",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "asciitilde.smol",
-                    "normalAdobeName": "asciitilde",
-                    "boundingBox": {
-                        "xmin": 296.0,
-                        "xmax": 712.0,
-                        "ymin": 125.0,
-                        "ymax": 301.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 296.0,
-                    "rightSideBearing": 296.0,
                     "width": 1008,
                     "char": "~"
                 },
@@ -29030,55 +25895,6 @@
                     }
                 },
                 {
-                    "codepoint": 183,
-                    "codepoint_hex": "U+00B7",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "periodcentered.larger",
-                    "normalAdobeName": "periodcentered",
-                    "boundingBox": {
-                        "xmin": 381.0,
-                        "xmax": 627.0,
-                        "ymin": 255.0,
-                        "ymax": 501.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 381.0,
-                    "rightSideBearing": 381.0,
-                    "width": 1008,
-                    "char": "\u00b7",
-                    "substitutionsToThis": {
-                        "code": [
-                            "periodcentered"
-                        ]
-                    }
-                },
-                {
-                    "codepoint": 183,
-                    "codepoint_hex": "U+00B7",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "periodcentered.orig",
-                    "normalAdobeName": "periodcentered",
-                    "boundingBox": {
-                        "xmin": 406.0,
-                        "xmax": 602.0,
-                        "ymin": 280.0,
-                        "ymax": 476.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 406.0,
-                    "rightSideBearing": 406.0,
-                    "width": 1008,
-                    "char": "\u00b7"
-                },
-                {
                     "codepoint": 184,
                     "codepoint_hex": "U+00B8",
                     "isPrimary": false,
@@ -29390,55 +26206,6 @@
                     }
                 },
                 {
-                    "codepoint": 8216,
-                    "codepoint_hex": "U+2018",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "quoteleft.larger",
-                    "normalAdobeName": "quoteleft",
-                    "boundingBox": {
-                        "xmin": 381.0,
-                        "xmax": 717.0,
-                        "ymin": 560.0,
-                        "ymax": 1076.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 381.0,
-                    "rightSideBearing": 291.0,
-                    "width": 1008,
-                    "char": "\u2018",
-                    "substitutionsToThis": {
-                        "code": [
-                            "quoteleft"
-                        ]
-                    }
-                },
-                {
-                    "codepoint": 8216,
-                    "codepoint_hex": "U+2018",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "quoteleft.orig",
-                    "normalAdobeName": "quoteleft",
-                    "boundingBox": {
-                        "xmin": 406.0,
-                        "xmax": 662.0,
-                        "ymin": 700.0,
-                        "ymax": 1076.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 406.0,
-                    "rightSideBearing": 346.0,
-                    "width": 1008,
-                    "char": "\u2018"
-                },
-                {
                     "codepoint": 8217,
                     "codepoint_hex": "U+2019",
                     "isPrimary": false,
@@ -29462,55 +26229,6 @@
                     "substitutionsFromThis": {
                         "code": "quoteright.larger"
                     }
-                },
-                {
-                    "codepoint": 8217,
-                    "codepoint_hex": "U+2019",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "quoteright.larger",
-                    "normalAdobeName": "quoteright",
-                    "boundingBox": {
-                        "xmin": 291.0,
-                        "xmax": 627.0,
-                        "ymin": 560.0,
-                        "ymax": 1076.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 291.0,
-                    "rightSideBearing": 381.0,
-                    "width": 1008,
-                    "char": "\u2019",
-                    "substitutionsToThis": {
-                        "code": [
-                            "quoteright"
-                        ]
-                    }
-                },
-                {
-                    "codepoint": 8217,
-                    "codepoint_hex": "U+2019",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "quoteright.orig",
-                    "normalAdobeName": "quoteright",
-                    "boundingBox": {
-                        "xmin": 346.0,
-                        "xmax": 602.0,
-                        "ymin": 700.0,
-                        "ymax": 1076.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 346.0,
-                    "rightSideBearing": 406.0,
-                    "width": 1008,
-                    "char": "\u2019"
                 },
                 {
                     "codepoint": 8218,
@@ -29538,55 +26256,6 @@
                     }
                 },
                 {
-                    "codepoint": 8218,
-                    "codepoint_hex": "U+201A",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "quotesinglbase.larger",
-                    "normalAdobeName": "quotesinglbase",
-                    "boundingBox": {
-                        "xmin": 291.0,
-                        "xmax": 627.0,
-                        "ymin": -290.0,
-                        "ymax": 226.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 291.0,
-                    "rightSideBearing": 381.0,
-                    "width": 1008,
-                    "char": "\u201a",
-                    "substitutionsToThis": {
-                        "code": [
-                            "quotesinglbase"
-                        ]
-                    }
-                },
-                {
-                    "codepoint": 8218,
-                    "codepoint_hex": "U+201A",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "quotesinglbase.orig",
-                    "normalAdobeName": "quotesinglbase",
-                    "boundingBox": {
-                        "xmin": 346.0,
-                        "xmax": 602.0,
-                        "ymin": -200.0,
-                        "ymax": 176.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 346.0,
-                    "rightSideBearing": 406.0,
-                    "width": 1008,
-                    "char": "\u201a"
-                },
-                {
                     "codepoint": 8219,
                     "codepoint_hex": "U+201B",
                     "isPrimary": false,
@@ -29610,55 +26279,6 @@
                     "substitutionsFromThis": {
                         "code": "quotereversed.larger"
                     }
-                },
-                {
-                    "codepoint": 8219,
-                    "codepoint_hex": "U+201B",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "quotereversed.larger",
-                    "normalAdobeName": "quotereversed",
-                    "boundingBox": {
-                        "xmin": 381.0,
-                        "xmax": 717.0,
-                        "ymin": 560.0,
-                        "ymax": 1076.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 381.0,
-                    "rightSideBearing": 291.0,
-                    "width": 1008,
-                    "char": "\u201b",
-                    "substitutionsToThis": {
-                        "code": [
-                            "quotereversed"
-                        ]
-                    }
-                },
-                {
-                    "codepoint": 8219,
-                    "codepoint_hex": "U+201B",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "quotereversed.orig",
-                    "normalAdobeName": "quotereversed",
-                    "boundingBox": {
-                        "xmin": 406.0,
-                        "xmax": 662.0,
-                        "ymin": 700.0,
-                        "ymax": 1076.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 406.0,
-                    "rightSideBearing": 346.0,
-                    "width": 1008,
-                    "char": "\u201b"
                 },
                 {
                     "codepoint": 8220,
@@ -29686,55 +26306,6 @@
                     }
                 },
                 {
-                    "codepoint": 8220,
-                    "codepoint_hex": "U+201C",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "quotedblleft.larger",
-                    "normalAdobeName": "quotedblleft",
-                    "boundingBox": {
-                        "xmin": 181.0,
-                        "xmax": 917.0,
-                        "ymin": 560.0,
-                        "ymax": 1076.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 181.0,
-                    "rightSideBearing": 91.0,
-                    "width": 1008,
-                    "char": "\u201c",
-                    "substitutionsToThis": {
-                        "code": [
-                            "quotedblleft"
-                        ]
-                    }
-                },
-                {
-                    "codepoint": 8220,
-                    "codepoint_hex": "U+201C",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "quotedblleft.orig",
-                    "normalAdobeName": "quotedblleft",
-                    "boundingBox": {
-                        "xmin": 206.0,
-                        "xmax": 862.0,
-                        "ymin": 700.0,
-                        "ymax": 1076.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 206.0,
-                    "rightSideBearing": 146.0,
-                    "width": 1008,
-                    "char": "\u201c"
-                },
-                {
                     "codepoint": 8221,
                     "codepoint_hex": "U+201D",
                     "isPrimary": false,
@@ -29758,55 +26329,6 @@
                     "substitutionsFromThis": {
                         "code": "quotedblright.larger"
                     }
-                },
-                {
-                    "codepoint": 8221,
-                    "codepoint_hex": "U+201D",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "quotedblright.larger",
-                    "normalAdobeName": "quotedblright",
-                    "boundingBox": {
-                        "xmin": 91.0,
-                        "xmax": 827.0,
-                        "ymin": 560.0,
-                        "ymax": 1076.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 91.0,
-                    "rightSideBearing": 181.0,
-                    "width": 1008,
-                    "char": "\u201d",
-                    "substitutionsToThis": {
-                        "code": [
-                            "quotedblright"
-                        ]
-                    }
-                },
-                {
-                    "codepoint": 8221,
-                    "codepoint_hex": "U+201D",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "quotedblright.orig",
-                    "normalAdobeName": "quotedblright",
-                    "boundingBox": {
-                        "xmin": 146.0,
-                        "xmax": 802.0,
-                        "ymin": 700.0,
-                        "ymax": 1076.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 146.0,
-                    "rightSideBearing": 206.0,
-                    "width": 1008,
-                    "char": "\u201d"
                 },
                 {
                     "codepoint": 8222,
@@ -29834,55 +26356,6 @@
                     }
                 },
                 {
-                    "codepoint": 8222,
-                    "codepoint_hex": "U+201E",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "quotedblbase.larger",
-                    "normalAdobeName": "quotedblbase",
-                    "boundingBox": {
-                        "xmin": 91.0,
-                        "xmax": 827.0,
-                        "ymin": -290.0,
-                        "ymax": 226.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 91.0,
-                    "rightSideBearing": 181.0,
-                    "width": 1008,
-                    "char": "\u201e",
-                    "substitutionsToThis": {
-                        "code": [
-                            "quotedblbase"
-                        ]
-                    }
-                },
-                {
-                    "codepoint": 8222,
-                    "codepoint_hex": "U+201E",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "quotedblbase.orig",
-                    "normalAdobeName": "quotedblbase",
-                    "boundingBox": {
-                        "xmin": 146.0,
-                        "xmax": 802.0,
-                        "ymin": -200.0,
-                        "ymax": 176.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 146.0,
-                    "rightSideBearing": 206.0,
-                    "width": 1008,
-                    "char": "\u201e"
-                },
-                {
                     "codepoint": 8223,
                     "codepoint_hex": "U+201F",
                     "isPrimary": false,
@@ -29906,55 +26379,6 @@
                     "substitutionsFromThis": {
                         "code": "uni201F.larger"
                     }
-                },
-                {
-                    "codepoint": 8223,
-                    "codepoint_hex": "U+201F",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "uni201F.larger",
-                    "normalAdobeName": "uni201F",
-                    "boundingBox": {
-                        "xmin": 181.0,
-                        "xmax": 917.0,
-                        "ymin": 560.0,
-                        "ymax": 1076.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 181.0,
-                    "rightSideBearing": 91.0,
-                    "width": 1008,
-                    "char": "\u201f",
-                    "substitutionsToThis": {
-                        "code": [
-                            "uni201F"
-                        ]
-                    }
-                },
-                {
-                    "codepoint": 8223,
-                    "codepoint_hex": "U+201F",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "uni201F.orig",
-                    "normalAdobeName": "uni201F",
-                    "boundingBox": {
-                        "xmin": 206.0,
-                        "xmax": 862.0,
-                        "ymin": 700.0,
-                        "ymax": 1076.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 206.0,
-                    "rightSideBearing": 146.0,
-                    "width": 1008,
-                    "char": "\u201f"
                 },
                 {
                     "codepoint": 8224,
@@ -30070,55 +26494,6 @@
                     }
                 },
                 {
-                    "codepoint": 8228,
-                    "codepoint_hex": "U+2024",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "onedotenleader.larger",
-                    "normalAdobeName": "onedotenleader",
-                    "boundingBox": {
-                        "xmin": 381.0,
-                        "xmax": 627.0,
-                        "ymin": -20.0,
-                        "ymax": 226.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 381.0,
-                    "rightSideBearing": 381.0,
-                    "width": 1008,
-                    "char": "\u2024",
-                    "substitutionsToThis": {
-                        "code": [
-                            "onedotenleader"
-                        ]
-                    }
-                },
-                {
-                    "codepoint": 8228,
-                    "codepoint_hex": "U+2024",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "onedotenleader.orig",
-                    "normalAdobeName": "onedotenleader",
-                    "boundingBox": {
-                        "xmin": 406.0,
-                        "xmax": 602.0,
-                        "ymin": -20.0,
-                        "ymax": 176.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 406.0,
-                    "rightSideBearing": 406.0,
-                    "width": 1008,
-                    "char": "\u2024"
-                },
-                {
                     "codepoint": 8229,
                     "codepoint_hex": "U+2025",
                     "isPrimary": false,
@@ -30142,55 +26517,6 @@
                     "substitutionsFromThis": {
                         "code": "twodotenleader.larger"
                     }
-                },
-                {
-                    "codepoint": 8229,
-                    "codepoint_hex": "U+2025",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "twodotenleader.larger",
-                    "normalAdobeName": "twodotenleader",
-                    "boundingBox": {
-                        "xmin": 181.0,
-                        "xmax": 827.0,
-                        "ymin": -20.0,
-                        "ymax": 226.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 181.0,
-                    "rightSideBearing": 181.0,
-                    "width": 1008,
-                    "char": "\u2025",
-                    "substitutionsToThis": {
-                        "code": [
-                            "twodotenleader"
-                        ]
-                    }
-                },
-                {
-                    "codepoint": 8229,
-                    "codepoint_hex": "U+2025",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "twodotenleader.orig",
-                    "normalAdobeName": "twodotenleader",
-                    "boundingBox": {
-                        "xmin": 206.0,
-                        "xmax": 802.0,
-                        "ymin": -20.0,
-                        "ymax": 176.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 206.0,
-                    "rightSideBearing": 206.0,
-                    "width": 1008,
-                    "char": "\u2025"
                 },
                 {
                     "codepoint": 8230,
@@ -30218,55 +26544,6 @@
                     }
                 },
                 {
-                    "codepoint": 8230,
-                    "codepoint_hex": "U+2026",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "ellipsis.larger",
-                    "normalAdobeName": "ellipsis",
-                    "boundingBox": {
-                        "xmin": 45.0,
-                        "xmax": 963.0,
-                        "ymin": -20.0,
-                        "ymax": 226.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 45.0,
-                    "rightSideBearing": 45.0,
-                    "width": 1008,
-                    "char": "\u2026",
-                    "substitutionsToThis": {
-                        "code": [
-                            "ellipsis"
-                        ]
-                    }
-                },
-                {
-                    "codepoint": 8230,
-                    "codepoint_hex": "U+2026",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "ellipsis.orig",
-                    "normalAdobeName": "ellipsis",
-                    "boundingBox": {
-                        "xmin": 70.0,
-                        "xmax": 938.0,
-                        "ymin": -20.0,
-                        "ymax": 176.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 70.0,
-                    "rightSideBearing": 70.0,
-                    "width": 1008,
-                    "char": "\u2026"
-                },
-                {
                     "codepoint": 8231,
                     "codepoint_hex": "U+2027",
                     "isPrimary": false,
@@ -30285,50 +26562,6 @@
                     "glyphClass": "automatic",
                     "leftSideBearing": 240.0,
                     "rightSideBearing": 240.0,
-                    "width": 1008,
-                    "char": "\u2027"
-                },
-                {
-                    "codepoint": 8231,
-                    "codepoint_hex": "U+2027",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "uni2027.larger",
-                    "normalAdobeName": "uni2027",
-                    "boundingBox": {
-                        "xmin": 381.0,
-                        "xmax": 627.0,
-                        "ymin": 255.0,
-                        "ymax": 501.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 381.0,
-                    "rightSideBearing": 381.0,
-                    "width": 1008,
-                    "char": "\u2027"
-                },
-                {
-                    "codepoint": 8231,
-                    "codepoint_hex": "U+2027",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "uni2027.orig",
-                    "normalAdobeName": "uni2027",
-                    "boundingBox": {
-                        "xmin": 406.0,
-                        "xmax": 602.0,
-                        "ymin": 280.0,
-                        "ymax": 476.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 406.0,
-                    "rightSideBearing": 406.0,
                     "width": 1008,
                     "char": "\u2027"
                 },
@@ -31040,55 +27273,6 @@
                     }
                 },
                 {
-                    "codepoint": 8271,
-                    "codepoint_hex": "U+204F",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "uni204F.larger",
-                    "normalAdobeName": "uni204F",
-                    "boundingBox": {
-                        "xmin": 381.0,
-                        "xmax": 717.0,
-                        "ymin": -290.0,
-                        "ymax": 776.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 381.0,
-                    "rightSideBearing": 291.0,
-                    "width": 1008,
-                    "char": "\u204f",
-                    "substitutionsToThis": {
-                        "code": [
-                            "uni204F"
-                        ]
-                    }
-                },
-                {
-                    "codepoint": 8271,
-                    "codepoint_hex": "U+204F",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "uni204F.orig",
-                    "normalAdobeName": "uni204F",
-                    "boundingBox": {
-                        "xmin": 406.0,
-                        "xmax": 662.0,
-                        "ymin": -201.333984375,
-                        "ymax": 776.0
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 406.0,
-                    "rightSideBearing": 346.0,
-                    "width": 1008,
-                    "char": "\u204f"
-                },
-                {
                     "codepoint": 8272,
                     "codepoint_hex": "U+2050",
                     "isPrimary": false,
@@ -31288,28 +27472,6 @@
                     "glyphClass": "automatic",
                     "leftSideBearing": 103.666992188,
                     "rightSideBearing": 129.078125,
-                    "width": 1008,
-                    "char": "$"
-                },
-                {
-                    "codepoint": 36,
-                    "codepoint_hex": "U+0024",
-                    "isPrimary": true,
-                    "isSpecial": false,
-                    "isPrintable": true,
-                    "glyphName": "dollar.smol",
-                    "normalAdobeName": "dollar",
-                    "boundingBox": {
-                        "xmin": 279.833984375,
-                        "xmax": 715.4609375,
-                        "ymin": -79.4765625,
-                        "ymax": 621.192382812
-                    },
-                    "altuni": null,
-                    "comment": "",
-                    "glyphClass": "automatic",
-                    "leftSideBearing": 279.833984375,
-                    "rightSideBearing": 292.5390625,
                     "width": 1008,
                     "char": "$"
                 },

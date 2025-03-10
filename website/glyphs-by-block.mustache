@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="main.css?v=1">
         <script src="main.js"></script>
     </head>
-    <body>
+    <body class="has-glyph-list-type-B">
         <div class="container">
             <h1>
                 Glyphs
@@ -37,7 +37,7 @@
                     <ul class="glyph-list">
                         {{#characters}}
                             {{#glyphs}}
-                                <li class="glyph-list__item">
+                                <li class="glyph-list__item" title="{{codepoint_hex}} {{name}}">
                                     <div class="charlist__codepoint">{{codepoint_hex}}</div>
                                     <div class="charlist__char">{{char}}</div>
                                     {{#info}}

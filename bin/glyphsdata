@@ -39,6 +39,7 @@ def get_font_data_by_type(font):
     for glyph in all_glyphs:
         set_glyph_temp_info(glyph)
     all_glyphs.sort(key=cmp_to_key(glyph_cmp))
+    unicode_glyphs = [glyph for glyph in all_glyphs if glyph.unicode > 0]
     set_substitutions(font)
     type_name_list = [
         "Latin",
@@ -72,7 +73,7 @@ def get_font_data_by_type(font):
             "glyphs": [],
         }
         font_data["types"].append(type_data)
-        glyphs = [glyph for glyph in all_glyphs if glyph.temporary["glyph_type"] == type_name]
+        glyphs = [glyph for glyph in unicode_glyphs if glyph.temporary["glyph_type"] == type_name]
         for glyph in glyphs:
             type_data["glyphs"].append(get_glyph_info(glyph))
     return font_data
@@ -92,12 +93,12 @@ def get_font_data_by_block(font):
         set_glyph_temp_info(glyph)
     all_glyphs.sort(key=cmp_to_key(glyph_cmp))
     set_substitutions(font)
-    unicode_glyphs = extract_unicode_glyphs(all_glyphs)
+    unicode_glyphs = [glyph for glyph in all_glyphs if glyph.unicode > 0]
     special_glyphs = extract_special_glyphs(all_glyphs)
     codepoints = list(set([glyph.unicode for glyph in unicode_glyphs]))
     codepoints.sort()
     for block in all_blocks:
-        block_codepoints = list(set(glyph.unicode for glyph in unicode_glyphs]))
+        block_codepoints = list(set([glyph.unicode for glyph in unicode_glyphs]))
         block_codepoints = [cp for cp in block_codepoints if cp is not None and cp >= 0 and cp in range(block.start, block.end + 1)]
         if not len(block_codepoints):
             continue
@@ -123,11 +124,12 @@ def get_font_data_by_char(font):
         "glyphs": glyphs_data,
     }
     all_glyphs = list(font.glyphs())
+    glyphs = [glyph for glyph in all_glyphs if glyph.unicode > 0]
     for glyph in all_glyphs:
         set_glyph_temp_info(glyph)
     all_glyphs.sort(key=cmp_to_key(glyph_cmp))
     set_substitutions(font)
-    for glyph in all_glyphs:
+    for glyph in glyphs:
         glyphs_data.append(get_glyph_info(glyph))
     
     return font_data
