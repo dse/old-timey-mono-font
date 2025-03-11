@@ -142,9 +142,6 @@ def get_glyphs_data(font):
     glyphs_data = []
     for glyph in glyphs:
         glyph.temporary = {
-            "codepoint": get_normal_codepoint(glyph),
-            "codepoint_hex": u(get_normal_codepoint(glyph)),
-            "suffix": get_suffix(glyph),
         }
         glyph_data = get_glyph_info(glyph)
         glyphs_data.append(glyph_data)
@@ -228,17 +225,9 @@ def get_normal_glyphname(glyph):
         return fontforge.nameFromUnicode(cp)
     return None
 
-def get_suffix(glyph):
-    codepoint = get_normal_codepoint(glyph)
-    if codepoint is None or codepoint < 0:
-        return None
-    if match := re.search(r'^(.*?)\.(.*)$', glyph.glyphname):
-        return match.group(2)
-    return None
-
 def glyph_cmp(glyph_a, glyph_b):
-    cp_a = glyph_a.temporary["codepoint"]
-    cp_b = glyph_b.temporary["codepoint"]
+    cp_a = glyph_a.unicode
+    cp_b = glyph_b.unicode
     if cp_a is None or cp_a < 1: # unassignable and U+0000 glyphs go after assignable ones
         cp_a = float('inf')
     if cp_b is None or cp_b < 1:
@@ -277,11 +266,7 @@ def u(codepoint):
     return "U+%04X" % codepoint
 
 def set_glyph_temp_info(glyph):
-    glyph.temporary = {
-        "codepoint": get_normal_codepoint(glyph),
-        "codepoint_hex": u(get_normal_codepoint(glyph)),
-        "suffix": get_suffix(glyph),
-    }
+    glyph.temporary = {}
 
 def set_substitutions(font):
     for source_glyph in font.glyphs():
@@ -303,7 +288,7 @@ def set_substitutions(font):
                         featureToThis.append(source_glyph.glyphname)
     
 def get_glyph_type_name(glyph):
-    codepoint = glyph.temporary["codepoint"]
+    codepoint = glyph.unicode
     if codepoint is None or codepoint < 0:
         return None
     char = chr(codepoint)
@@ -322,6 +307,10 @@ def get_glyph_type_name(glyph):
             return "Spaces"
         elif char == '$':
             return "Currency"
+        elif char in ['=', '+', '<', '=', '>']:
+            return "Mathematics"
+        elif codepoint in [0x00ac, 0x2310, 0x2319]: 
+            return "Mathematics"
         else:
             return "Punctuation"
     elif block_name == "Latin-1 Supplement":
