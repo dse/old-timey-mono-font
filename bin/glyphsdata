@@ -22,6 +22,7 @@ CHAR_TYPES = [
     "Punctuation",
     "Currency",
     "Mathematics",
+    "Fractions",
     "Superscripts and Subscripts",
     "Arrows",
     "Block Elements",
@@ -164,19 +165,25 @@ def get_glyph_info(glyph):
         normal_codepoint in range(32, 127) or
         normal_codepoint >= 160
     )
+    if normal_codepoint is not None:
+        try:
+            char_name = unicodedata.name(chr(normal_codepoint))
+        except ValueError:
+            char_name = None
+    else:
+        char_name = None    
     glyph_info = {
         "codepoint": normal_codepoint,
         "codepoint_hex": u(normal_codepoint),
+        "name": char_name,
         "isSpecial": isSpecial,
         "isPrintable": isPrintable,
         "glyphName": glyph.glyphname,
         "normalAdobeName": normal_glyphname,
-        "boundingBox": {
-            "xmin": xmin,
-            "xmax": xmax,
-            "ymin": ymin,
-            "ymax": ymax,
-        },
+        "boundingBoxXMin": xmin,
+        "boundingBoxXMax": xmax,
+        "boundingBoxYMin": ymin,
+        "boundingBoxYMax": ymax,
         "altuni": glyph.altuni,
         "comment": glyph.comment,
         "glyphClass": glyph.glyphclass,
@@ -296,7 +303,7 @@ def get_glyph_type_name(glyph):
     block_name = None if block is None else block.name
     if codepoint < 32 or codepoint in range(127, 160):
         return None
-    if block_name == "Basic Latin":
+    if block_name == "Basic Latin": # 0x0000-0x007f
         if codepoint in range(65, 91):
             return "Latin"
         elif codepoint in range(97, 123):
@@ -309,11 +316,9 @@ def get_glyph_type_name(glyph):
             return "Currency"
         elif char in ['=', '+', '<', '=', '>']:
             return "Mathematics"
-        elif codepoint in [0x00ac, 0x2310, 0x2319]: 
-            return "Mathematics"
         else:
             return "Punctuation"
-    elif block_name == "Latin-1 Supplement":
+    elif block_name == "Latin-1 Supplement": # 0x0080-0x00ff
         if codepoint == 160:
             return "Spaces"
         elif codepoint in [0x00b1, 0x00d7, 0x00f7]:
@@ -322,129 +327,135 @@ def get_glyph_type_name(glyph):
             return "Latin"
         elif codepoint in [0x00a2, 0x00a3, 0x00a4, 0x00a5]:
             return "Currency"
-        elif codepoint in [0x00bc, 0x00bd, 0x00be]:
+        elif codepoint in [0x00ac, 0x00bc, 0x00bd, 0x00be]:
             return "Mathematics"
+        elif codepoint in [0x00b2, 0x00b3, 0x00b9]:
+            return "Superscripts and Subscripts"
         else:
             return "Punctuation"
-    elif block_name == "Latin Extended-A":
+    elif block_name == "Latin Extended-A": # U+0100 - U+017F
         return "Latin"
-    elif block_name == "Latin Extended-B":
+    elif block_name == "Latin Extended-B": # U+0180 - U+024F
         return "Latin"
-    elif block_name == "IPA Extensions":
+    elif block_name == "IPA Extensions": # U+0250 - U+02AF
         return "IPA"
-    elif block_name == "Spacing Modifier Letters":
+    elif block_name == "Spacing Modifier Letters": # U+02B0 - U+02FF
         return "Other"
-    elif block_name == "Combining Diacritical Marks":
+    elif block_name == "Combining Diacritical Marks": # U+0300 - U+036F
         return "Combining Marks"
-    elif block_name == "Greek and Coptic":
+    elif block_name == "Greek and Coptic": # U+0370 - U+03FF
         if codepoint in range(0x03e2, 0x03f0):
             pass # coptics
         else:
             return "Greek"
-    elif block_name == "Cyrillic":
+    elif block_name == "Cyrillic": # U+0400 - U+04FF
         return "Cyrillic"
-    elif block_name == "Cyrillic Supplement":
+    elif block_name == "Cyrillic Supplement": # U+0500 - U+052F
         return "Cyrillic"
-    elif block_name == "Combining Diacritical Marks Extended":
+    elif block_name == "Combining Diacritical Marks Extended": # U+1AB0 - U+1AFF
         return "Combining Marks"
-    elif block_name == "Cyrillic Extended-C":
+    elif block_name == "Cyrillic Extended-C": # U+1C80 - U+1C8F
         return "Cyrillic"
-    elif block_name == "Phonetic Extensions":
+    elif block_name == "Phonetic Extensions": # U+1D00 - U+1D7F
         return "Other"
-    elif block_name == "Phonetic Extensions Supplement":
+    elif block_name == "Phonetic Extensions Supplement": # U+1D80 - U+1DBF
         return "Other"
-    elif block_name == "Combining Diacritical Marks Supplement":
+    elif block_name == "Combining Diacritical Marks Supplement": # U+1DC0 - U+1DFF
         return "Combining Marks"
-    elif block_name == "Latin Extended Additional":
+    elif block_name == "Latin Extended Additional": # U+1E00 - U+1EFF
         return "Latin"
-    elif block_name == "Greek Extended":
+    elif block_name == "Greek Extended": # U+1F00 - U+1FFF
         return "Greek"
-    elif block_name == "General Punctuation":
+    elif block_name == "General Punctuation": # U+2000 - U+206F
         return "Punctuation"
-    elif block_name == "Superscripts and Subscripts":
+    elif block_name == "Superscripts and Subscripts": # U+2070 - U+209F
         return "Superscripts and Subscripts"
-    elif block_name == "Currency Symbols":
+    elif block_name == "Currency Symbols": # U+20A0 - U+20CF
         return "Currency"
-    elif block_name == "Combining Diacritical Marks for Symbols":
+    elif block_name == "Combining Diacritical Marks for Symbols": # U+20D0 - U+20FF
         return "Combining Marks"
-    elif block_name == "Letterlike Symbols":
+    elif block_name == "Letterlike Symbols": # U+2100 - U+214F
         return "Letterlike"
-    elif block_name == "Number Forms":
+    elif block_name == "Number Forms": # U+2150 - U+218F
+        if codepoint in range(0x2150, 0x2160) or codepoint == 0x2180:
+            return "Fractions"
         return "Other"
-    elif block_name == "Arrows":
+    elif block_name == "Arrows": # U+2190 - U+21FF
         return "Arrows"
-    elif block_name == "Mathematical Operators":
+    elif block_name == "Mathematical Operators": # U+2200 - U+22FF
         return "Mathematics"
-    elif block_name == "Miscellaneous Technical":
+    elif block_name == "Miscellaneous Technical": # U+2300 - U+23FF
+        if codepoint in [0x2310, 0x2319]: 
+            return "Mathematics"
         return "Technical"
-    elif block_name == "Control Pictures":
+    elif block_name == "Control Pictures": # U+2400 - U+243F
         return "Other"
-    elif block_name == "Optical Character Recognition":
+    elif block_name == "Optical Character Recognition": # U+2440 - U+245F
         return "Other"
-    elif block_name == "Enclosed Alphanumerics":
+    elif block_name == "Enclosed Alphanumerics": # U+2460 - U+24FF
         return "Enclosed"
-    elif block_name == "Box Drawing":
+    elif block_name == "Box Drawing": # U+2500 - U+257F
         return "Box Drawing"
-    elif block_name == "Block Elements":
+    elif block_name == "Block Elements": # U+2580 - U+259F
         return "Block Elements"
-    elif block_name == "Geometric Shapes":
+    elif block_name == "Geometric Shapes": # U+25A0 - U+25FF
         return "Shapes"
-    elif block_name == "Miscellaneous Symbols":
+    elif block_name == "Miscellaneous Symbols": # U+2600 - U+26FF
         return "Symbols"
-    elif block_name == "Dingbats":
+    elif block_name == "Dingbats": # U+2700 - U+27BF
         return "Dingbats"
-    elif block_name == "Miscellaneous Mathematical Symbols-A":
+    elif block_name == "Miscellaneous Mathematical Symbols-A": # U+27C0 - U+27EF
         return "Mathematics"
-    elif block_name == "Supplemental Arrows-A":
+    elif block_name == "Supplemental Arrows-A": # U+27F0 - U+27FF
         return "Arrows"
-    elif block_name == "Braille Patterns":
+    elif block_name == "Braille Patterns": # U+2800 - U+28FF
         return "Braille"
-    elif block_name == "Supplemental Arrows-B":
+    elif block_name == "Supplemental Arrows-B": # U+2900 - U+297F
         return "Arrows"
-    elif block_name == "Miscellaneous Mathematical Symbols-B":
+    elif block_name == "Miscellaneous Mathematical Symbols-B": # U+2980 - U+29FF
         return "Mathematics"
-    elif block_name == "Supplemental Mathematical Operators":
+    elif block_name == "Supplemental Mathematical Operators": # U+2A00 - U+2AFF
         return "Mathematics"
-    elif block_name == "Miscellaneous Symbols and Arrows":
+    elif block_name == "Miscellaneous Symbols and Arrows": # U+2B00 - U+2BFF
         if re.search('ARROW', unicodedata.name(char)):
             return "Arrows"
         else:
             return "Symbols"
-    elif block_name == "Latin Extended-C":
+    elif block_name == "Latin Extended-C": # U+2C60 - U+2C7F
         return "Latin"
-    elif block_name == "Cyrillic Extended-A":
+    elif block_name == "Cyrillic Extended-A": # U+2DE0 - U+2DFF
         return "Cyrillic"
-    elif block_name == "Supplemental Punctuation":
+    elif block_name == "Supplemental Punctuation": # U+2E00 - U+2E7F
         return "Punctuation"
-    elif block_name == "Cyrillic Extended-B":
+    elif block_name == "Cyrillic Extended-B": # U+A640 - U+A69F
         return "Cyrillic"
-    elif block_name == "Latin Extended-D":
+    elif block_name == "Latin Extended-D": # U+A720 - U+A7FF
         return "Latin"
-    elif block_name == "Latin Extended-E":
+    elif block_name == "Latin Extended-E": # U+AB30 - U+AB6F
         return "Latin"
-    elif block_name == "Alphabetic Presentation Forms":
+    elif block_name == "Alphabetic Presentation Forms": # U+FB00 - U+FB4F
         return "Letterlike"
-    elif block_name == "Combining Half Marks":
+    elif block_name == "Combining Half Marks": # U+FE20 - U+FE2F
         return "Combining Marks"
-    elif block_name == "Halfwidth and Fullwidth Forms":
+    elif block_name == "Halfwidth and Fullwidth Forms": # U+FF00 - U+FFEF
         return "Other"
-    elif block_name == "Latin Extended-F":
+    elif block_name == "Latin Extended-F": # U+10780 - U+107BF
         return "Latin"
-    elif block_name == "Mathematical Alphanumeric Symbols":
+    elif block_name == "Mathematical Alphanumeric Symbols": # U+1D400 - U+1D7FF
         return "Mathematics"
-    elif block_name == "Latin Extended-G":
+    elif block_name == "Latin Extended-G": # U+1DF00 - U+1DFFF
         return "Latin"
-    elif block_name == "Cyrillic Extended-D":
+    elif block_name == "Cyrillic Extended-D": # U+1E030 - U+1E08F
         return "Latin"
-    elif block_name == "Supplemental Arrows-C":
+    elif block_name == "Supplemental Arrows-C": # U+1F800 - U+1F8FF
         return "Arrows"
-    elif block_name == "Supplemental Symbols and Pictographs":
+    elif block_name == "Supplemental Symbols and Pictographs": # U+1F900 - U+1F9FF
         return "Symbols"
-    elif block_name == "Chess Symbols":
+    elif block_name == "Chess Symbols": # U+1FA00 - U+1FA6F
         return "Symbols"
-    elif block_name == "Symbols and Pictographs Extended-A":
+    elif block_name == "Symbols and Pictographs Extended-A": # U+1FA70 - U+1FAFF
         return "Symbols"
-    elif block_name == "Symbols for Legacy Computing":
+    elif block_name == "Symbols for Legacy Computing": # U+1FB00 - U+1FBFF
         return "Symbols"
     else:
         return "Other"
