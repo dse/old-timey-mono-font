@@ -2,16 +2,14 @@
 
 This is the first digital clean revival of Reproducing Typewriter.
 
-Reproducing Typewriter is a monospace typeface created over a century
-ago for use with mechanical typesetting machines in use at the time.
-It was designed for creating simulacra of typewritten letters in
-smaller point sizes for advertisements, catalogs, and other printed
-materials.
+Reproducing Typewriter is a monospace typeface from as early as 1906
+for use with mechanical typesetting machines.  It was designed for
+simulating typewritten letters in smaller point sizes for
+advertisements, catalogs, and other printed materials.
 
 Typefaces were also available to simulate the fonts used by actual
-contemporaneous typewriters such as Remington, Smith, and Underwood;
-but Reproducing Typewriter is more readable at smaller point sizes
-than those.
+typewriters like Remington, Smith, and Underwood; but Reproducing
+Typewriter is more readable at smaller point sizes than those.
 
 You may have seen this typeface used in the [Turbo Pascal 3.0](turbo)
 product manual.
@@ -68,11 +66,11 @@ Reproducing Typewriter Code makes the following changes:
 
 ## Unicode Coverage
 
--   U+0000–U+007F Basic Latin: all printable ASCII characters.  No
-    control characters, obviously.
+-   WGL4 coverage is almost complete, except for a few math operators
+    and symbols.
 
--   U+0080–U+00FF Latin-1 Supplement: all printable ISO-8859-1
-    characters.  Again, no control characters.
+-   Adobe Glyph List for New Fonts is almost complete, except for a
+    few math operators and symbols.
 
 -   U+2500–U+257F Box Drawing in its entirety.
 
@@ -80,26 +78,21 @@ Reproducing Typewriter Code makes the following changes:
 
 -   U+2800–U+28FF Braille Patterns in its entirety.
 
--   All Cyrillic used in Russia and Ukraine.
-
--   All modern uppercase Greek.  Lowercase to come.
-
--   Plenty of additional punctuation marks, mathematical operators,
-    geometric shapes, and basic arrows from U+2000 on up.  More to
-    come, probably.
+-   A few surprises, just for fun.
 
 ## Not Exactly The Same as the Original.
 
--   The initial version of this font was created with baseline and
-    cap-height dimensions based on low-resolution scans, which don't
-    turn out to match higher-resolution scans very closely.
+-   The percent sign had to be shifted up a bit to stay within the
+    character cell without modifying the baseline, cap-height, ascent,
+    descent, and other dimensions.
 
--   The percent sign had to be modified to stay within the character
-    cell without modifying the baseline, cap-height, ascent, descent,
-    and other dimensions.
+-   These are monoline fonts whereas the originals weren't, but they
+    were close to it.
 
--   No scanned source provided me with U+007E TILDE or U+0060 GRAVE
-    ACCENT (backtick).
+-   Cap height is slightly different.
+
+-   Not all characters in this typeface are original to Reproducing
+    Typewriter.
 
 ## You May Also Like
 
@@ -107,6 +100,8 @@ I made these:
 
 -   [DSE Typewriter](https://webonastick.com/fonts/dse-typewriter/)
 -   [DSE Typewriter Bitmap](https://github.com/dse/dse-typewriter-bitmap-font)
+-   [Canton Typewriter Bitmap](https://github.com/dse/font-canton-typewriter-bitmap/tree/master),
+    a bitmap font inspired by Caxton.
 
 Free:
 
@@ -122,6 +117,8 @@ Paid:
 -   [FF Elementa](https://www.myfonts.com/fonts/fontfont/elementa-pro/)
 -   [EF Techno Script](https://www.myfonts.com/fonts/ef/techno-script-ef/)
 -   [Pitch](https://klim.co.nz/retail-fonts/pitch/)
+-   [Vintage Type](https://luc.devroye.org/fonts-27181.html)
+    Pro Screenwriter Fonts, if you can find them.
 
 ## I Also Made:
 
