@@ -119,6 +119,10 @@ update: FORCE
 	$(IMPORTSVG) $(FONT_SRC) $(SRC_SVGS)
 	$(EXPANDSTROKES) --expand-stroke 96 $(FONT_SRC)
 	$(FONTNOTDEF) $(FONT_SRC)
+update2: FORCE
+	$(IMPORTSVG) $(FONT_SRC) $(SRC_SVGS)
+	$(EXPANDSTROKES) --expand-stroke 168 $(FONT_SRC)
+	$(FONTNOTDEF) $(FONT_SRC)
 fonttool: FORCE
 	echo "use 'make update', dingus." >&2
 	false

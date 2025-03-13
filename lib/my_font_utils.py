@@ -136,6 +136,6 @@ def check_glyph_bounds(glyph, width=None):
     if ymax > glyph.font.ascent + height/2:
         sides.append('top')
     if len(sides):
-        print("    %s %-24s => %s" % (u(codepoint, True),
+        print("    %s %-24s => %s" % (u(glyph.unicode, True),
                                       glyph.glyphname,
                                       ', '.join(sides)))
