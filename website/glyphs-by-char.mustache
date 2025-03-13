@@ -32,11 +32,11 @@
             <div id="glyph-list">
                 <ul class="glyph-list">
                     {{#glyphs}}
-                        <li class="glyph-list__item">
+                        <li class="glyph-list__item" title="{{codepoint_hex}} {{name}}">
                             <div class="glyph-list__codepoint">{{codepoint_hex}}</div>
                             <div class="glyph-list__char">{{char}}</div>
                             {{#info}}
-                                <div class="glyph-list__charname">{{name}}</div>
+                                <div class="glyph-list__name">{{name}}</div>
                             {{/info}}
                             {{#data}}
                                 <div class="glyph-list__adobe-name">{{normalAdobeName}}</div>

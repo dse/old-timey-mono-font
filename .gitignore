@@ -4,3 +4,4 @@
 __pycache__/
 src/build/
 test-dist/
+website/fonts/ttf/*.ttf
