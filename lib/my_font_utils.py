@@ -63,7 +63,7 @@ def import_svg_glyph(font, svg_filename, width):
     if glyphname in font:
         glyph = font[glyphname]
         if len(glyph.references):
-            print("WARNING: glyph %s U+%04X contains references but %s is present" % (glyphname, glyph.unicode, svg_filename))
+            print("import_svg_glyph: WARNING: glyph %s U+%04X contains references but %s is present" % (glyphname, glyph.unicode, svg_filename))
             return
     glyph = font.createChar(codepoint, glyphname)
     glyph.foreground = fontforge.layer()
@@ -87,16 +87,29 @@ def create_smol_glyph(font, codepoint):
     simpl_glyphname = fontforge.nameFromUnicode(codepoint) + ".simpl"
     orig_glyphname = fontforge.nameFromUnicode(codepoint) + ".orig"
     glyphname = None
-    if simpl_glyphname in font:
+    if plain_glyphname == 'equal':
+        glyphname = 'equal.code'
+    elif plain_glyphname == 'comma':
+        glyphname = 'comma.larger'
+    elif plain_glyphname == 'period':
+        glyphname = 'period.larger'
+    elif plain_glyphname == 'colon':
+        glyphname = 'colon.larger'
+    elif plain_glyphname == 'semicolon':
+        glyphname = 'semicolon.larger'
+    elif simpl_glyphname in font:
         glyphname = simpl_glyphname
     elif orig_glyphname in font:
         glyphname = orig_glyphname
     elif plain_glyphname in font:
         glyphname = plain_glyphname
     else:
+        print("create_smol_glyph: not creating %s.smol" % plain_glyphname)
         return
     glyph = font[glyphname]
     orig_width = glyph.width
+
+    print("create_smol_glyph: creating %s.smol from %s" % (plain_glyphname, glyph.glyphname))
 
     sm_glyphname = plain_glyphname + '.smol'
     sm_glyph = font.createChar(-1, sm_glyphname)
@@ -123,19 +136,15 @@ def check_all_glyph_bounds(font, width=None):
 
 def check_glyph_bounds(glyph, width=None):
     [xmin, ymin, xmax, ymax] = glyph.boundingBox()
-    sides = []
+    print("check_all_glyph_bounds: %s %s; xmin = %d; xmax = %d; ymin = %d; ymax = %d" % (u(glyph.unicode), glyph.glyphname, xmin, xmax, ymin, ymax))
     height = glyph.font.ascent + glyph.font.descent
     if width is None:
         width = glyph.width
     if xmin < -width/2:
-        sides.append('left')
+        print("check_all_glyph_bounds:     left")
     if xmax > width*3/2:
-        sides.append('right')
+        print("check_all_glyph_bounds:     right")
     if ymin < (-glyph.font.descent - height/2):
-        sides.append('bottom')
+        print("check_all_glyph_bounds:     bottom")
     if ymax > glyph.font.ascent + height/2:
-        sides.append('top')
-    if len(sides):
-        print("    %s %-24s => %s" % (u(glyph.unicode, True),
-                                      glyph.glyphname,
-                                      ', '.join(sides)))
+        print("check_all_glyph_bounds:     top")
