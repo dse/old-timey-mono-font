@@ -1,11 +1,15 @@
 #!/usr/bin/env -S fontforge -quiet
 # -*- mode: python; coding: utf-8 -*-
-import fontforge, psMat, argparse
+import fontforge, psMat, argparse, unicodedata, os
 
-xlate_superscript = psMat.translate(0, 486)
-xlate_subscript = psMat.translate(0, -306)
-xlate_numerator = psMat.translate(0, 486)
-xlate_denominator = psMat.translate(0, -306)
+xlate_superscript = psMat.translate(0, 636)
+xlate_subscript   = psMat.translate(0, -156)
+xlate_numerator   = psMat.translate(0, 561)
+xlate_fraction    = psMat.translate(0, 75)
+xlate_denominator = psMat.translate(0, -231)
+
+sys.path.append(os.path.dirname(__file__) + "/../lib")
+from my_font_chars import UNICODE
 
 def main():
     global args
@@ -45,6 +49,35 @@ def main():
     supersubscript(font, 0x208C, '=', xlate_subscript) #    SUBSCRIPT EQUALS SIGN
     supersubscript(font, 0x208D, '(', xlate_subscript) #    SUBSCRIPT LEFT PARENTHESIS
     supersubscript(font, 0x208E, ')', xlate_subscript) #    SUBSCRIPT RIGHT PARENTHESIS
+
+    supersubscript(font, 0x2090, 'a', xlate_subscript)
+    supersubscript(font, 0x2091, 'e', xlate_subscript)
+    supersubscript(font, 0x2092, 'o', xlate_subscript)
+    supersubscript(font, 0x2093, 'x', xlate_subscript)
+    supersubscript(font, 0x2095, 'h', xlate_subscript)
+    supersubscript(font, 0x2096, 'k', xlate_subscript)
+    supersubscript(font, 0x2097, 'l', xlate_subscript)
+    supersubscript(font, 0x2098, 'm', xlate_subscript)
+    supersubscript(font, 0x2099, 'n', xlate_subscript)
+    supersubscript(font, 0x209a, 'p', xlate_subscript)
+    supersubscript(font, 0x209b, 's', xlate_subscript)
+    supersubscript(font, 0x209c, 't', xlate_subscript)
+    supersubscript(font, 0x1D62, 'i', xlate_subscript)
+    supersubscript(font, 0x1D63, 'r', xlate_subscript)
+    supersubscript(font, 0x1D64, 'u', xlate_subscript)
+    supersubscript(font, 0x1D65, 'v', xlate_subscript)
+    supersubscript(font, 0x2090, 'a', xlate_subscript)
+    supersubscript(font, 0x2091, 'e', xlate_subscript)
+    supersubscript(font, 0x2092, 'o', xlate_subscript)
+    supersubscript(font, 0x2093, 'x', xlate_subscript)
+    supersubscript(font, 0x2C7C, 'j', xlate_subscript)
+    supersubscript(font, 0x2094, chr(UNICODE["LATIN_SMALL_LETTER_SCHWA"]), xlate_subscript)
+    supersubscript(font, 0x1d66, chr(0x03b2), xlate_subscript) # l/c beta
+    supersubscript(font, 0x1d67, chr(0x03b3), xlate_subscript) # l/c gamma
+    supersubscript(font, 0x1d68, chr(0x03c1), xlate_subscript) # l/c rho
+    supersubscript(font, 0x1d69, chr(0x03c6), xlate_subscript) # l/c phi
+    supersubscript(font, 0x1d6a, chr(0x03c7), xlate_subscript) # l/c chi
+
     fraction(font, 0x00bc, 1, 4)
     fraction(font, 0x00bd, 1, 2)
     fraction(font, 0x00be, 3, 4)
@@ -91,6 +124,8 @@ def supersubscript(font, codepoint, num, xlate):
             xlate = psMat.compose(xlate, digit_xlate(idx, len(num)))
         references.append((glyphname, xlate))
     glyph.references = tuple(references)
+    (xmin, ymin, xmax, ymax) = glyph.boundingBox()
+    print("%s %s: %f, %f, %f, %f" % (glyph.glyphname, unicodedata.name(chr(codepoint)), xmin, ymin, xmax, ymax))
 
 def fraction(font, codepoint, numer, denom):
     glyph = font.createChar(codepoint)
@@ -99,7 +134,7 @@ def fraction(font, codepoint, numer, denom):
     references = []
     if type(numer) == int:
         numer = str(numer)
-    references.append(('fractiondash',))
+    references.append(('fractiondash', xlate_fraction))
     if type(numer) == int:
         numer = str(numer)
     if type(denom) == int:

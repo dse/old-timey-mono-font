@@ -31,6 +31,7 @@ def main():
     parser.add_argument('--verbose', '-v', action='count', default=0)
     args = parser.parse_args()
 
+    print("Opening %s ..." % args.font_filename)
     font = fontforge.open(args.font_filename)
     write_font_filename = args.save_as if args.save_as is not None else args.font_filename
 
