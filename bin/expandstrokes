@@ -31,9 +31,8 @@ def main():
     common_glyph_width = statistics.mode([glyph.width for glyph in font.glyphs()])
 
     silence.on()
-    print("Expanding strokes...")
     for glyph in font.glyphs():
-        print("    %s  %s" % (u(glyph.unicode, True), glyph.glyphname))
+        print("expandstrokes: Expanding strokes on %s %s" % (u(glyph.unicode), glyph.glyphname))
         if len(glyph.foreground) == 0 and len(glyph.references) == 0:
             continue
         if mixedjsontext.fontcomment_says_generated(glyph.comment):
