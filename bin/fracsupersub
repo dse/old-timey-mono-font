@@ -75,6 +75,7 @@ def digit_xlate(idx, length):
     return psMat.translate(-252 * (length - 1) + 504 * idx, 0)
 
 def supersubscript(font, codepoint, num, xlate):
+    print("supersubscript: creating U+%04X" % codepoint)
     glyph = font.createChar(codepoint)
     glyph.width = 1008
     glyph.foreground = fontforge.layer()
@@ -83,7 +84,9 @@ def supersubscript(font, codepoint, num, xlate):
         num = str(num)
     for idx in range(0, len(num)):
         char = num[idx]
+        print("supersubscript: char[%d] = '%s'" % (idx, char))
         glyphname = fontforge.nameFromUnicode(ord(char)) + '.smol'
+        print("supersubscript: inserting %s" % glyphname)
         if len(num) > 1:
             xlate = psMat.compose(xlate, digit_xlate(idx, len(num)))
         references.append((glyphname, xlate))
