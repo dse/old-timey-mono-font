@@ -114,13 +114,14 @@ SRC_SVGS := `find src/chars -type f -name '*.svg'`
 
 .SUFFIXES: .sfd .ttf
 
-# update source font fron SVG files
 testfonts: FORCE
 	make fonts FONT_FAMILY="RT$(TIMESTAMP)" \
 	           SETRTMETAS_ARGS="--ffn='ReproTypewr $(TIMESTAMP)' --psfn='ReproTypewr$(TIMESTAMP)'" \
 	           PS_FONT_FAMILY="RT$(TIMESTAMP)" \
 	           DISTDIR="test-dist/RT$(TIMESTAMP)"
 	ln -n -f -s "RT$(TIMESTAMP)" test-dist/latest
+
+# update source font fron SVG files
 update: FORCE
 	$(IMPORTSVG) $(FONT_SRC) $(SRC_SVGS)
 	$(BOUNDS_PY) $(FONT_SRC)
@@ -128,6 +129,9 @@ update: FORCE
 	$(SMOL_PY) $(FONT_SRC)
 	$(EXPANDSTROKES) --expand-stroke 96 $(FONT_SRC)
 	$(FONTNOTDEF) $(FONT_SRC)
+
+# update source font fron SVG files, for testing if referenced glyphs
+# are too close. (accented letters mostly)
 update2: FORCE
 	$(IMPORTSVG) $(FONT_SRC) $(SRC_SVGS)
 	$(BOUNDS_PY) $(FONT_SRC)
@@ -135,6 +139,7 @@ update2: FORCE
 	$(SMOL_PY) $(FONT_SRC)
 	$(EXPANDSTROKES) --expand-stroke 168 $(FONT_SRC)
 	$(FONTNOTDEF) $(FONT_SRC)
+
 fonttool: FORCE
 	echo "use 'make update', dingus." >&2
 	false
@@ -142,8 +147,11 @@ fontsvg: FORCE
 	echo "use 'make update', dingus." >&2
 	false
 
+# generate braille characters
 braille: FORCE
 	fontbraille -W 200 -f $(FONT_SRC)
+
+# generate box drawing characters
 boxdraw: FORCE
 	fontboxdraw -f $(FONT_SRC)
 
@@ -160,7 +168,6 @@ src/build/$(PS_FONT_FAMILY).stage1.sfd: $(FONT_SRC) Makefile $(IMPORTSVG_PROG)
 # Stage 2: unroll references
 src/build/$(PS_FONT_FAMILY).stage2.sfd: src/build/$(PS_FONT_FAMILY).stage1.sfd Makefile $(FONTUNREF_PROG)
 	mkdir -p src/build
-#	$(FONTUNREF) "$<" -o "$@"
 	cp "$<" "$@"
 
 # Stage 3: make condensed and compressed outlines
