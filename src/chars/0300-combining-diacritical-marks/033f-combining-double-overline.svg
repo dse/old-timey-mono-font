@@ -222,7 +222,7 @@
    inkscape:locked="false"
    inkscape:color="rgb(143,240,164)" />
     <sodipodi:guide
-   position="0,97.5"
+   position="0,96"
    orientation="0,1"
    id="guide856"
    inkscape:locked="false"
@@ -247,14 +247,16 @@
    inkscape:groupmode="layer"
    id="layer1"
    style="display:inline">
-    <path
-   style="fill:none;stroke:#040404;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2.61313;stroke-dasharray:none"
-   d="m 4,3 55,2.84e-5"
-   id="path1504"
-   sodipodi:nodetypes="cc" />
-  <path
-   style="fill:none;stroke:#040404;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2.61313;stroke-dasharray:none"
-   d="m 4,15.000063 55,2.8e-5"
-   id="path6593"
-   sodipodi:nodetypes="cc" /></g>
+    
+  <g
+   id="g12045"
+   transform="translate(0,0.68354835)"><path
+     style="fill:none;stroke:#040404;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2.61313;stroke-dasharray:none"
+     d="m 4,2.3164063 55,2.84e-5"
+     id="path1504"
+     sodipodi:nodetypes="cc" /><path
+     style="fill:none;stroke:#040404;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2.61313;stroke-dasharray:none"
+     d="m 4,14.316469 55,2.8e-5"
+     id="path6593"
+     sodipodi:nodetypes="cc" /></g></g>
 </svg>

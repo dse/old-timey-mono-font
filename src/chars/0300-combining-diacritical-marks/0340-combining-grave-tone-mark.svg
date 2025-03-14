@@ -24,10 +24,10 @@
    inkscape:pagecheckerboard="0"
    inkscape:deskcolor="#d1d1d1"
    inkscape:document-units="px"
-   showgrid="true"
+   showgrid="false"
    inkscape:zoom="0.90509668"
-   inkscape:cx="462.93397"
-   inkscape:cy="403.27184"
+   inkscape:cx="464.03883"
+   inkscape:cy="404.37669"
    inkscape:window-width="1908"
    inkscape:window-height="1017"
    inkscape:window-x="2256"
@@ -222,7 +222,7 @@
    inkscape:locked="false"
    inkscape:color="rgb(143,240,164)" />
     <sodipodi:guide
-   position="0,97.5"
+   position="0,96"
    orientation="0,1"
    id="guide856"
    inkscape:locked="false"
@@ -249,7 +249,7 @@
    style="display:inline">
     <path
    style="display:inline;fill:none;stroke:#000000;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
-   d="M 37.5,12 25.5,3"
+   d="m 37.5,13.5 -12,-9"
    id="path9"
    sodipodi:nodetypes="cc" />
   </g>

@@ -9,7 +9,7 @@
    id="svg5"
    xml:space="preserve"
    inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
-   sodipodi:docname="0303-comb-tilde.svg"
+   sodipodi:docname="0342-combining-greek-perispomeni.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -24,7 +24,7 @@
    inkscape:pagecheckerboard="0"
    inkscape:deskcolor="#d1d1d1"
    inkscape:document-units="px"
-   showgrid="true"
+   showgrid="false"
    inkscape:zoom="0.7071068"
    inkscape:cx="325.26911"
    inkscape:cy="57.982755"
@@ -222,7 +222,7 @@
    inkscape:locked="false"
    inkscape:color="rgb(143,240,164)" />
     <sodipodi:guide
-   position="0,97.5"
+   position="0,96"
    orientation="0,1"
    id="guide856"
    inkscape:locked="false"
@@ -249,7 +249,7 @@
    style="display:inline">
     <path
    style="display:inline;fill:none;stroke:#000000;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-   d="M 19.5,9.9999894 C 21,7.5 23.25,5 26.6875,5 30.75,5 32.25,10 36.3125,10 39.75,10 42,7.5 43.5,5"
+   d="M 19.5,11.499989 C 21,9 23.25,6.5 26.6875,6.5 c 4.0625,0 5.5625,5 9.625,5 C 39.75,11.5 42,9 43.5,6.5"
    id="path271-0"
    sodipodi:nodetypes="cssc" />
   </g>

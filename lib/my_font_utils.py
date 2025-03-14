@@ -3,13 +3,25 @@ import re
 import os
 import psMat
 
+def u(codepoint, pad=False):
+    result = None
+    if codepoint < 0:
+        result = "%d" % codepoint
+    else:
+        result = "U+%04X" % codepoint
+    if pad:
+        result = "%-8s" % result
+    return result
+
 def parse_codepoint_argument(str):
     # U+1F4A9
     # 128169
     # 0x1f4a9
-    if (match := re.fullmatch('(?:0?x|u\+?)([0-9A-Fa-f]+)', str, flags=re.IGNORECASE)):
+    if (match := re.fullmatch(r'(?:0?x|u\+?)([0-9A-Fa-f]+)', str, flags=re.IGNORECASE)):
         return int(match.group(1), 16)
-    if (match := re.fullmatch('[0-9]+', str, flags=re.IGNORECASE)):
+    if len(str) == 1:
+        return ord(str)
+    if (match := re.fullmatch(r'[0-9]+', str, flags=re.IGNORECASE)):
         return int(match.group(0))
     return None
 
@@ -43,7 +55,7 @@ def parse_glyph_svg_filename(svg_filename):
     real_codepoint = fontforge.unicodeFromName(plain_glyphname)
     return [codepoint, glyphname, real_codepoint, plain_glyphname, suffix]
 
-def import_svg_glyph(font, svg_filename):
+def import_svg_glyph(font, svg_filename, width):
     (codepoint, glyphname, real_codepoint, plain_glyphname, suffix) = parse_glyph_svg_filename(svg_filename)
     if codepoint is None and glyphname is None:
         return
@@ -55,11 +67,15 @@ def import_svg_glyph(font, svg_filename):
             return
     glyph = font.createChar(codepoint, glyphname)
     glyph.foreground = fontforge.layer()
-    orig_width = glyph.width
+    if width is None:
+        orig_width = glyph.width
     font.strokedfont = True
     glyph.importOutlines(svg_filename)
     font.strokedfont = False
-    glyph.width = orig_width
+    if width is None:
+        glyph.width = orig_width
+    else:
+        glyph.width = width
 
     # WIP: outlines in background
     # glyph.background = glyph.foreground
@@ -100,3 +116,26 @@ def create_smol_glyph(font, codepoint):
 
     # WIP: outlines in background
     # glyph.background = glyph.foreground
+
+def check_all_glyph_bounds(font, width=None):
+    for glyph in font.glyphs():
+        check_glyph_bounds(glyph, width)
+
+def check_glyph_bounds(glyph, width=None):
+    [xmin, ymin, xmax, ymax] = glyph.boundingBox()
+    sides = []
+    height = glyph.font.ascent + glyph.font.descent
+    if width is None:
+        width = glyph.width
+    if xmin < -width/2:
+        sides.append('left')
+    if xmax > width*3/2:
+        sides.append('right')
+    if ymin < (-glyph.font.descent - height/2):
+        sides.append('bottom')
+    if ymax > glyph.font.ascent + height/2:
+        sides.append('top')
+    if len(sides):
+        print("    %s %-24s => %s" % (u(glyph.unicode, True),
+                                      glyph.glyphname,
+                                      ', '.join(sides)))
