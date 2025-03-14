@@ -196,7 +196,7 @@ $(DISTDIR)/ttf/%-Thin.ttf: src/build/%.stage2.sfd Makefile $(EXPANDSTROKES_PROG)
 	$(SETRTMETAS) "$@"
 
 # Stage 5: make code variants
-# NOTE: can't use %.ttf because % cannot match zero characters.
+# NOTE: can't use %.ttf because '%' cannot match less than one character.
 #                                   vvvv
 $(DISTDIR)/ttf/$(PS_FONT_FAMILY)Code%ttf: $(DISTDIR)/ttf/$(PS_FONT_FAMILY)%ttf Makefile $(SETRTMETAS_PROG)
 	pyftfeatfreeze -f code "$<" "$@"
