@@ -38,10 +38,6 @@ def main():
     for svg_filename in args.svg_filenames:
         import_svg_glyph(font, svg_filename, args.width)
 
-    print("Creating small glyphs...")
-    for codepoint in [*range(33, 127), LATIN_SMALL_LETTER_SCHWA]:
-        create_smol_glyph(font, codepoint)
-
     print("Checking glyph bounds...")
     check_all_glyph_bounds(font, args.width)
 
