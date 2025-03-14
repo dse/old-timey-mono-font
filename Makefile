@@ -110,6 +110,10 @@ SRC_SVGS := `find src/chars -type f -name '*.svg'`
 
 .SUFFIXES: .sfd .ttf
 
+testfontsweb: FORCE
+	rm -fr website/fonts/ttf/*
+	make fonts DISTDIR="website/fonts"
+
 testfonts: FORCE
 	make fonts FONT_FAMILY="RT$(TIMESTAMP)" \
 	           SETRTMETAS_ARGS="--ffn='ReproTypewr $(TIMESTAMP)' --psfn='ReproTypewr$(TIMESTAMP)'" \
@@ -237,6 +241,8 @@ GLYPH_DATA		:= $(GLYPH_DATA_BY_TYPE) $(GLYPH_DATA_BY_BLOCK) $(GLYPH_DATA_BY_CHAR
 GLYPH_HTML		:= $(GLYPH_HTML_BY_TYPE) $(GLYPH_HTML_BY_BLOCK) $(GLYPH_HTML_BY_CHAR)
 
 website: copy-fonts $(GLYPH_DATA) $(GLYPH_HTML) $(CHARGRID_HTML) $(CHARLIST_HTML)
+
+html: $(GLYPH_DATA) $(GLYPH_HTML) $(CHARGRID_HTML) $(CHARLIST_HTML)
 
 chargrid: FORCE $(CHARGRID_HTML)
 charlist: FORCE $(CHARLIST_HTML)
