@@ -96,8 +96,8 @@ ZIP_FILE = dist/ReproTypewr.zip
 FONTS := $(ORIGINAL_FONTS) $(CODING_FONTS)
 
 FONTTOOL__REGULAR	:= --expand-stroke 96
-FONTTOOL__LIGHT		:= --expand-stroke 72 # --translate-y -12  --scale-y 1344 --scale-y-from 1320  --scale-x 1008 --scale-x-from 984
-FONTTOOL__THIN		:= --expand-stroke 48 # --translate-y -24  --scale-y 1344 --scale-y-from 1296  --scale-x 1008 --scale-x-from 960
+FONTTOOL__LIGHT		:= --expand-stroke 72
+FONTTOOL__THIN		:= --expand-stroke 48
 
 FONTTOOL__COND		:= --aspect 0.833333 # 12cpi
 FONTTOOL__COMP		:= --aspect 0.606060 # 16.5cpi
