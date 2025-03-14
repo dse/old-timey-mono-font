@@ -5,7 +5,6 @@ FONT_FAMILY := Repro Typewr
 PS_FONT_FAMILY := ReproTypewr
 
 IMPORTSVG_PROG		:= bin/importsvg
-FONTUNREF_PROG		:= bin/fontunref
 EXPANDSTROKES_PROG	:= bin/expandstrokes
 FONTASPECT_PROG		:= bin/fontaspect
 SETRTMETAS_PROG		:= bin/setrtmetas
@@ -19,7 +18,6 @@ SETRTMETAS_ARGS :=
 OPT_VERBOSE :=
 
 IMPORTSVG	:= $(IMPORTSVG_PROG)
-FONTUNREF	:= $(FONTUNREF_PROG)
 EXPANDSTROKES	:= $(EXPANDSTROKES_PROG)
 FONTASPECT	:= $(FONTASPECT_PROG)
 SETRTMETAS	:= $(SETRTMETAS_PROG) $(SETRTMETAS_ARGS)
@@ -164,7 +162,7 @@ src/build/$(PS_FONT_FAMILY).stage1.sfd: $(FONT_SRC) Makefile $(IMPORTSVG_PROG)
 	$(IMPORTSVG) "$<" -o "$@" $(SRC_SVGS)
 
 # Stage 2: unroll references
-src/build/$(PS_FONT_FAMILY).stage2.sfd: src/build/$(PS_FONT_FAMILY).stage1.sfd Makefile $(FONTUNREF_PROG)
+src/build/$(PS_FONT_FAMILY).stage2.sfd: src/build/$(PS_FONT_FAMILY).stage1.sfd Makefile
 	mkdir -p src/build
 	cp "$<" "$@"
 
