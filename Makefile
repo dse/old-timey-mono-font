@@ -110,7 +110,7 @@ compressed: $(COMP_FONTS)
 condensed: $(COND_FONTS)
 zip: $(ZIP_FILE)
 
-SRC_SVGS := `find src/chars \! \( -type d -name scans -prune \) \! \( -type d -name \*italic\* -prune \) \! \( -type d -name greek-lc -prune \) -type f -name '*.svg'`
+SRC_SVGS := `find src/chars -type f -name '*.svg'`
 
 .SUFFIXES: .sfd .ttf
 
