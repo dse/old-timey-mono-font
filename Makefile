@@ -4,14 +4,14 @@ FONT_SRC := src/ReproTypewr.sfd
 FONT_FAMILY := Repro Typewr
 PS_FONT_FAMILY := ReproTypewr
 
-IMPORTSVG_PROG		:= bin/importsvg
-EXPANDSTROKES_PROG	:= bin/expandstrokes
-FONTASPECT_PROG		:= bin/fontaspect
-SETRTMETAS_PROG		:= bin/setrtmetas
-FONTNOTDEF_PROG		:= bin/fontnotdef
+IMPORTSVG_PROG		:= bin/svg.py
+EXPANDSTROKES_PROG	:= bin/strokes.py
+FONTASPECT_PROG		:= bin/aspect.py
+SETRTMETAS_PROG		:= bin/metas.py
+FONTNOTDEF_PROG		:= bin/notdef.py
 SMOL_PY_PROG		:= bin/smol.py
 BOUNDS_PY_PROG		:= bin/bounds.py
-FRACSUPERSUB_PROG	:= bin/fracsupersub
+FRACSUPERSUB_PROG	:= bin/supersub.py
 
 SETRTMETAS_ARGS :=
 
