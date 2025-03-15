@@ -4,25 +4,27 @@ FONT_SRC := src/ReproTypewr.sfd
 FONT_FAMILY := Repro Typewr
 PS_FONT_FAMILY := ReproTypewr
 
-IMPORTSVG_PROG     := bin/importsvg
-FONTUNREF_PROG     := bin/fontunref
-EXPANDSTROKES_PROG := bin/expandstrokes
-FONTASPECT_PROG    := bin/fontaspect
-SETFONTMETAS_PROG  := bin/setfontmetas
-SETRTMETAS_PROG    := bin/setrtmetas
-FONTNOTDEF_PROG    := bin/fontnotdef
+SVG_PY_PROG		:= bin/svg.py
+STROKES_PY_PROG	:= bin/strokes.py
+ASPECT_PY_PROG		:= bin/aspect.py
+METAS_PY_PROG		:= bin/metas.py
+NOTDEF_PY_PROG		:= bin/notdef.py
+SMOL_PY_PROG		:= bin/smol.py
+BOUNDS_PY_PROG		:= bin/bounds.py
+SUPERSUB_PY_PROG	:= bin/supersub.py
 
-SETRTMETAS_ARGS :=
+METAS_PY_ARGS :=
 
 OPT_VERBOSE :=
 
-IMPORTSVG     := $(IMPORTSVG_PROG)
-FONTUNREF     := $(FONTUNREF_PROG)
-EXPANDSTROKES := $(EXPANDSTROKES_PROG)
-FONTASPECT    := $(FONTASPECT_PROG)
-SETFONTMETAS  := $(SETFONTMETAS_PROG)
-SETRTMETAS    := $(SETRTMETAS_PROG) $(SETRTMETAS_ARGS)
-FONTNOTDEF    := $(FONTNOTDEF_PROG)
+SVG_PY	:= $(SVG_PY_PROG)
+STROKES_PY	:= $(STROKES_PY_PROG)
+ASPECT_PY	:= $(ASPECT_PY_PROG)
+METAS_PY	:= $(METAS_PY_PROG) $(METAS_PY_ARGS)
+NOTDEF_PY	:= $(NOTDEF_PY_PROG)
+SMOL_PY		:= $(SMOL_PY_PROG)
+BOUNDS_PY	:= $(BOUNDS_PY_PROG)
+SUPERSUB_PY	:= $(SUPERSUB_PY_PROG)
 
 DISTDIR := dist
 
@@ -90,8 +92,8 @@ ZIP_FILE = dist/ReproTypewr.zip
 FONTS := $(ORIGINAL_FONTS) $(CODING_FONTS)
 
 FONTTOOL__REGULAR	:= --expand-stroke 96
-FONTTOOL__LIGHT		:= --expand-stroke 72 # --translate-y -12  --scale-y 1344 --scale-y-from 1320  --scale-x 1008 --scale-x-from 984
-FONTTOOL__THIN		:= --expand-stroke 48 # --translate-y -24  --scale-y 1344 --scale-y-from 1296  --scale-x 1008 --scale-x-from 960
+FONTTOOL__LIGHT		:= --expand-stroke 72
+FONTTOOL__THIN		:= --expand-stroke 48
 
 FONTTOOL__COND		:= --aspect 0.833333 # 12cpi
 FONTTOOL__COMP		:= --aspect 0.606060 # 16.5cpi
@@ -104,34 +106,52 @@ compressed: $(COMP_FONTS)
 condensed: $(COND_FONTS)
 zip: $(ZIP_FILE)
 
-SRC_SVGS := `find src/chars \! \( -type d -name scans -prune \) \! \( -type d -name \*italic\* -prune \) \! \( -type d -name greek-lc -prune \) -type f -name '*.svg'`
+SRC_SVGS := `find src/chars -type f -name '*.svg'`
 
 .SUFFIXES: .sfd .ttf
 
-# update source font fron SVG files
+testfontsweb: FORCE
+	rm -fr website/fonts/ttf/*
+	make fonts DISTDIR="website/fonts"
+
 testfonts: FORCE
 	make fonts FONT_FAMILY="RT$(TIMESTAMP)" \
-	           SETRTMETAS_ARGS="--ffn='ReproTypewr $(TIMESTAMP)' --psfn='ReproTypewr$(TIMESTAMP)'" \
+	           METAS_PY_ARGS="--ffn='ReproTypewr $(TIMESTAMP)' --psfn='ReproTypewr$(TIMESTAMP)'" \
 	           PS_FONT_FAMILY="RT$(TIMESTAMP)" \
 	           DISTDIR="test-dist/RT$(TIMESTAMP)"
 	ln -n -f -s "RT$(TIMESTAMP)" test-dist/latest
+
+# update source font fron SVG files
 update: FORCE
-	$(IMPORTSVG) $(FONT_SRC) $(SRC_SVGS)
-	$(EXPANDSTROKES) --expand-stroke 96 $(FONT_SRC)
-	$(FONTNOTDEF) $(FONT_SRC)
+	$(SVG_PY) $(FONT_SRC) $(SRC_SVGS)
+	$(BOUNDS_PY) $(FONT_SRC)
+	$(SMOL_PY) $(FONT_SRC)
+	$(SUPERSUB_PY) $(FONT_SRC)
+	$(STROKES_PY) --expand-stroke 96 $(FONT_SRC)
+	$(NOTDEF_PY) $(FONT_SRC)
+
+# update source font fron SVG files, for testing if referenced glyphs
+# are too close. (accented letters mostly)
 update2: FORCE
-	$(IMPORTSVG) $(FONT_SRC) $(SRC_SVGS)
-	$(EXPANDSTROKES) --expand-stroke 168 $(FONT_SRC)
-	$(FONTNOTDEF) $(FONT_SRC)
+	$(SVG_PY) $(FONT_SRC) $(SRC_SVGS)
+	$(BOUNDS_PY) $(FONT_SRC)
+	$(SMOL_PY) $(FONT_SRC)
+	$(SUPERSUB_PY) $(FONT_SRC)
+	$(STROKES_PY) --expand-stroke 168 $(FONT_SRC)
+	$(NOTDEF_PY) $(FONT_SRC)
+
 fonttool: FORCE
-	echo "use 'make update', dingus." >&2
+	@echo "use 'make update', dingus." >&2
 	false
 fontsvg: FORCE
-	echo "use 'make update', dingus." >&2
+	@echo "use 'make update', dingus." >&2
 	false
 
+# generate braille characters
 braille: FORCE
 	fontbraille -W 200 -f $(FONT_SRC)
+
+# generate box drawing characters
 boxdraw: FORCE
 	fontboxdraw -f $(FONT_SRC)
 
@@ -141,49 +161,58 @@ $(ZIP_FILE): $(FONTS) Makefile
 stage1: src/build/$(PS_FONT_FAMILY).stage1.sfd
 
 # Stage 1: import SVGs
-src/build/$(PS_FONT_FAMILY).stage1.sfd: $(FONT_SRC) Makefile $(IMPORTSVG_PROG)
+src/build/$(PS_FONT_FAMILY).stage1.sfd: $(FONT_SRC) Makefile $(SVG_PY_PROG)
+	@echo "stage 1"
 	mkdir -p src/build
-	$(IMPORTSVG) "$<" -o "$@" $(SRC_SVGS)
+	$(SVG_PY) "$<" -o "$@" $(SRC_SVGS)
+	$(BOUNDS_PY) "$@"
+	$(SMOL_PY) "$@"
+	$(SUPERSUB_PY) "$@"
 
-# Stage 2: unroll references
-src/build/$(PS_FONT_FAMILY).stage2.sfd: src/build/$(PS_FONT_FAMILY).stage1.sfd Makefile $(FONTUNREF_PROG)
+# Stage 2: does nothing
+src/build/$(PS_FONT_FAMILY).stage2.sfd: src/build/$(PS_FONT_FAMILY).stage1.sfd Makefile
+	@echo "stage 2"
 	mkdir -p src/build
-#	$(FONTUNREF) "$<" -o "$@"
 	cp "$<" "$@"
 
 # Stage 3: make condensed and compressed outlines
-src/build/$(PS_FONT_FAMILY)Cond.stage2.sfd: src/build/$(PS_FONT_FAMILY).stage2.sfd Makefile $(FONTASPECT_PROG)
+src/build/$(PS_FONT_FAMILY)Cond.stage2.sfd: src/build/$(PS_FONT_FAMILY).stage2.sfd Makefile $(ASPECT_PY_PROG)
+	@echo "stage 3"
 	mkdir -p src/build
-	$(FONTASPECT) --aspect 0.833333333333 "$<" -o "$@"
-src/build/$(PS_FONT_FAMILY)Comp.stage2.sfd: src/build/$(PS_FONT_FAMILY).stage2.sfd Makefile $(FONTASPECT_PROG)
+	$(ASPECT_PY) --aspect 0.833333333333 "$<" -o "$@"
+src/build/$(PS_FONT_FAMILY)Comp.stage2.sfd: src/build/$(PS_FONT_FAMILY).stage2.sfd Makefile $(ASPECT_PY_PROG)
+	@echo "stage 3"
 	mkdir -p src/build
-	$(FONTASPECT) --aspect 0.606060606060 "$<" -o "$@"
+	$(ASPECT_PY) --aspect 0.606060606060 "$<" -o "$@"
 
 # Stage 4: make weights
-$(DISTDIR)/ttf/%.ttf: src/build/%.stage2.sfd Makefile $(EXPANDSTROKES_PROG) $(SETRTMETAS_PROG)
+$(DISTDIR)/ttf/%.ttf: src/build/%.stage2.sfd Makefile $(STROKES_PY_PROG) $(METAS_PY_PROG)
+	@echo "stage 4"
 	mkdir -p "$(DISTDIR)/ttf"
-	$(EXPANDSTROKES) -x 96 "$<" -o "$@"
+	$(STROKES_PY) -x 96 "$<" -o "$@"
 	bin/fontfix "$@"
-	$(SETRTMETAS) "$@"
-$(DISTDIR)/ttf/%-Light.ttf: src/build/%.stage2.sfd Makefile $(EXPANDSTROKES_PROG) $(SETRTMETAS_PROG)
+	$(METAS_PY) "$@"
+$(DISTDIR)/ttf/%-Light.ttf: src/build/%.stage2.sfd Makefile $(STROKES_PY_PROG) $(METAS_PY_PROG)
+	@echo "stage 4"
 	mkdir -p "$(DISTDIR)/ttf"
-	$(EXPANDSTROKES) -x 72 "$<" -o "$@"
+	$(STROKES_PY) -x 72 "$<" -o "$@"
 	bin/fontfix "$@"
-	$(SETRTMETAS) "$@"
-$(DISTDIR)/ttf/%-Thin.ttf: src/build/%.stage2.sfd Makefile $(EXPANDSTROKES_PROG) $(SETRTMETAS_PROG)
+	$(METAS_PY) "$@"
+$(DISTDIR)/ttf/%-Thin.ttf: src/build/%.stage2.sfd Makefile $(STROKES_PY_PROG) $(METAS_PY_PROG)
+	@echo "stage 4"
 	mkdir -p "$(DISTDIR)/ttf"
-	$(EXPANDSTROKES) -x 48 "$<" -o "$@"
+	$(STROKES_PY) -x 48 "$<" -o "$@"
 	bin/fontfix "$@"
-	$(SETRTMETAS) "$@"
+	$(METAS_PY) "$@"
 
 # Stage 5: make code variants
-# NOTE: can't use %.ttf because % cannot match zero characters.
+# NOTE: can't use %.ttf because '%' cannot match less than one character.
 #                                   vvvv
-$(DISTDIR)/ttf/$(PS_FONT_FAMILY)Code%ttf: $(DISTDIR)/ttf/$(PS_FONT_FAMILY)%ttf Makefile $(SETRTMETAS_PROG)
+$(DISTDIR)/ttf/$(PS_FONT_FAMILY)Code%ttf: $(DISTDIR)/ttf/$(PS_FONT_FAMILY)%ttf Makefile $(METAS_PY_PROG)
+	@echo "stage 5"
 	pyftfeatfreeze -f code "$<" "$@"
 	bin/fontfix "$@"
-	$(SETRTMETAS) "$@"
-
+	$(METAS_PY) "$@"
 
 clean: FORCE
 	/bin/rm $(FONTS) $(CHARGRID_HTML) $(CHARLIST_HTML) || true
@@ -222,6 +251,8 @@ GLYPH_DATA		:= $(GLYPH_DATA_BY_TYPE) $(GLYPH_DATA_BY_BLOCK) $(GLYPH_DATA_BY_CHAR
 GLYPH_HTML		:= $(GLYPH_HTML_BY_TYPE) $(GLYPH_HTML_BY_BLOCK) $(GLYPH_HTML_BY_CHAR)
 
 website: copy-fonts $(GLYPH_DATA) $(GLYPH_HTML) $(CHARGRID_HTML) $(CHARLIST_HTML)
+
+html: $(GLYPH_DATA) $(GLYPH_HTML) $(CHARGRID_HTML) $(CHARLIST_HTML)
 
 chargrid: FORCE $(CHARGRID_HTML)
 charlist: FORCE $(CHARLIST_HTML)

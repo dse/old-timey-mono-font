@@ -31,19 +31,13 @@ def main():
     parser.add_argument('--verbose', '-v', action='count', default=0)
     args = parser.parse_args()
 
+    print("Opening %s ..." % args.font_filename)
     font = fontforge.open(args.font_filename)
     write_font_filename = args.save_as if args.save_as is not None else args.font_filename
 
     print("Importing glyphs...")
     for svg_filename in args.svg_filenames:
         import_svg_glyph(font, svg_filename, args.width)
-
-    print("Creating small glyphs...")
-    for codepoint in [*range(33, 127), LATIN_SMALL_LETTER_SCHWA]:
-        create_smol_glyph(font, codepoint)
-
-    print("Checking glyph bounds...")
-    check_all_glyph_bounds(font, args.width)
 
     print("Writing %s" % write_font_filename)
     if write_font_filename.endswith('.sfd'):
