@@ -231,7 +231,7 @@ diffs.txt: FORCE
 	fontcmp ./ReproTypewr-0.5.0.sfd src/ReproTypewr.sfd > diffs.txt
 
 todo.txt: FORCE
-	( wgl4.py --missing $(FONT_SRC) ; aglfn.py --missing $(FONT_SRC) ) | grep -F 'U+' | sort | uniq >"$@"
+	fontcoverage --missing $(FONT_SRC) | tee "$@"
 
 CHARGRID_TPL		:= website/chargrid.mustache
 CHARGRID_HTML		:= website/chargrid.html
