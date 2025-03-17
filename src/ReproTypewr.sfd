@@ -22,7 +22,7 @@ OS2Version: 0
 OS2_WeightWidthSlopeOnly: 0
 OS2_UseTypoMetrics: 1
 CreationTime: 1729142792
-ModificationTime: 1742194419
+ModificationTime: 1742194915
 PfmFamily: 17
 TTFWeight: 500
 TTFWidth: 5
@@ -167,7 +167,7 @@ Grid
  504 3072 l 25
 EndSplineSet
 AnchorClass2: "tonos" "'mark' Mark Positioning lookup 0-1" "cedilla" "'mark' Mark Positioning lookup 0-1" "ogonek" "'mark' Mark Positioning lookup 0-1" "bottom" "'mark' Mark Positioning lookup 0-1" "top" "'mark' Mark Positioning lookup 0-1"
-BeginChars: 65817 2102
+BeginChars: 65817 2104
 
 StartChar: cedilla
 Encoding: 184 184 0
@@ -47830,6 +47830,52 @@ SplineSet
  132 322.534957763 298.531338238 156 504 156 c 0
  709.465044715 156 876 322.531338567 876 528 c 0
  876 733.465042237 709.468661762 900 504 900 c 0
+EndSplineSet
+EndChar
+
+StartChar: invbullet
+Encoding: 9688 9688 2102
+Width: 1008
+VWidth: 0
+Flags: HW
+LayerCount: 2
+Fore
+SplineSet
+192 48 m 2
+ 192 1008 l 2
+ 192 1034.49192 213.50808 1056 240 1056 c 2
+ 768 1056 l 2
+ 794.49192 1056 816 1034.49192 816 1008 c 2
+ 816 48 l 2
+ 816 21.50808 794.49192 0 768 0 c 2
+ 240 0 l 2
+ 213.50808 0 192 21.50808 192 48 c 2
+504 708 m 0
+ 404.647401108 708 324.00000754 627.508014575 324 528 c 0
+ 324 428.494053849 404.645337366 348.00000087 504 348 c 0
+ 603.352598892 348 683.99999246 428.491985425 684 528 c 0
+ 684 627.505946151 603.354662634 707.99999913 504 708 c 0
+EndSplineSet
+EndChar
+
+StartChar: openbullet
+Encoding: 9702 9702 2103
+Width: 1008
+VWidth: 0
+Flags: HW
+LayerCount: 2
+Fore
+SplineSet
+408 528 m 0
+ 408 474.94999543 450.94999543 432 504 432 c 0
+ 557.05000457 432 600 474.94999543 600 528 c 0
+ 600 581.05000457 557.05000457 624 504 624 c 0
+ 450.94999543 624 408 581.05000457 408 528 c 0
+312 528 m 0
+ 312 634.00858918 397.99141082 720 504 720 c 0
+ 610.00858918 720 696 634.00858918 696 528 c 0
+ 696 421.99141082 610.00858918 336 504 336 c 0
+ 397.99141082 336 312 421.99141082 312 528 c 0
 EndSplineSet
 EndChar
 EndChars
