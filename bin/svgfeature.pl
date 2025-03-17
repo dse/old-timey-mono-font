@@ -6,37 +6,6 @@ use XML::LibXML::XPathContext;
 use Getopt::Long;
 use Carp::Always;
 
-our $in_place = 0;
-
-Getopt::Long::Configure('gnu_getopt');
-Getopt::Long::GetOptions('i|in-place' => \$in_place) or die(":-(");
-
-local $/ = undef;
-my $doc;
-my $thingy;
-while (<>) {
-    printf STDERR ("Read $ARGV\n");
-    $thingy = My::Thingy->new();
-    $thingy->load_xml($_);
-    $thingy->move_or_create_horizontal_guide('accentcenter', 1536);
-    $thingy->move_or_create_horizontal_guide('accentbelowcenter', 1536);
-    $thingy->move_or_create_horizontal_guide('descender', 1644);
-    $thingy->move_or_create_horizontal_guide(undef, 1644 - 48);
-    $thingy->move_or_create_horizontal_guide(undef, 1644 - 96);
-} continue {
-    if (eof && $in_place && $ARGV ne '-') {
-        my $fh;
-        my $ARGVTMP = $ARGV . ".tmp";
-        open($fh, '>', $ARGVTMP) or die("$ARGVTMP: $!\n");
-        print $fh $doc->toString(1) or die("$ARGVTMP: $!\n");
-        close($fh) or die("$ARGVTMP: $!\n");
-        rename($ARGVTMP, $ARGV) or die("$ARGV => $ARGVTMP: $!\n");
-        print STDERR ("Wrote $ARGV\n");
-    } else {
-        print $thingy->to_string();
-    }
-}
-
 our %NS;
 our $GREEN;
 our $BLUE;
@@ -52,6 +21,38 @@ BEGIN {
     $BLUE = "rgb(0,134,229)";
     $BLACK = "rgb(0,0,0)";
     $BROWN = "rgb(152,106,68)";
+}
+
+our $in_place = 0;
+
+Getopt::Long::Configure('gnu_getopt');
+Getopt::Long::GetOptions('i|in-place' => \$in_place) or die(":-(");
+
+local $/ = undef;
+my $thingy;
+while (<>) {
+    printf STDERR ("Read $ARGV\n");
+    $thingy = My::Thingy->new();
+    $thingy->load_xml($_);
+    $thingy->move_or_create_horizontal_guide('accentcenter', 1536);
+    $thingy->move_or_create_horizontal_guide('accentbelowcenter', 192);
+
+    $thingy->move_or_create_horizontal_guide('descender', 36);
+    $thingy->move_or_create_horizontal_guide(undef, 84);
+    $thingy->move_or_create_horizontal_guide(undef, 64, $GREEN);
+    $thingy->move_or_create_horizontal_guide(undef, 132);
+} continue {
+    if (eof && $in_place && $ARGV ne '-') {
+        my $fh;
+        my $ARGVTMP = $ARGV . ".tmp";
+        open($fh, '>', $ARGVTMP) or die("$ARGVTMP: $!\n");
+        print $fh $thingy->to_string() or die("$ARGVTMP: $!\n");
+        close($fh) or die("$ARGVTMP: $!\n");
+        rename($ARGVTMP, $ARGV) or die("$ARGV => $ARGVTMP: $!\n");
+        print STDERR ("Wrote $ARGV\n");
+    } else {
+        print $thingy->to_string();
+    }
 }
 
 package My::Thingy {
@@ -90,32 +91,46 @@ package My::Thingy {
         $self->move_horizontal_guide($guide_name, $new_pos_y, $color) or
           $self->create_horizontal_guide($guide_name, $new_pos_y, $color);
     }
+    sub list_horizontal_guides {
+        my ($self) = @_;
+        foreach my $guide ($self->{xpc}->findnodes("//sodipodi:guide")) {
+            my $pos = $guide->getAttribute("position");
+            my ($pos_x, $pos_y) = split(/\s*,\s*/, $pos);
+            my $pos_y_svg = $self->y_view_box_to_svg($pos_y);
+            my $pos_x_svg = $self->x_view_box_to_svg($pos_x);
+            print("$pos_x, $pos_y => $pos_x_svg, $pos_y_svg\n");
+        }
+    }
     sub move_horizontal_guide {
-        my ($self, $guide_name, $new_pos_y, $color) = @_;
-        my $new_pos_y_vbox = $self->y_svg_to_view_box($new_pos_y);
-        printf("%f => %f\n", $new_pos_y, $new_pos_y_vbox);
+        my ($self, $guide_name, $new_pos_y_svg, $color) = @_;
+        my $new_pos_y_vbox = $self->y_svg_to_view_box($new_pos_y_svg);
         my $guide;
         if (defined $guide_name) {
             ($guide) = $self->{xpc}->findnodes("//sodipodi:guide[\@inkscape:label='$guide_name']");
         } else {
-            ($guide) = $self->{xpc}->findnodes("//sodipodi:guide[\@position='0,$new_pos_y_vbox']");
+            my @guides = $self->{xpc}->findnodes("//sodipodi:guide");
+            foreach my $g (@guides) {
+                my $pos = $g->getAttribute("position");
+                my ($pos_x_vbox, $pos_y_vbox) = split(/\s*,\s*/, $pos);
+                if (abs($pos_x_vbox - 0) < 0.001 && abs($pos_y_vbox - $new_pos_y_vbox) < 0.001) {
+                    $guide = $g;
+                    last;
+                }
+            }
         }
         if (!$guide) {
             return;
         }
         my $position = $guide->getAttribute('position');
-        my ($pos_x, $pos_y) = split(/\s*,\s*/, $position);
+        my ($pos_x_vbox, $pos_y_vbox) = split(/\s*,\s*/, $position);
         my $orientation = $guide->getAttribute('orientation');
         my ($orientn_x, $orientn_y) = split(/\s*,\s*/, $orientation);
-        my $is_horizontal_guide = !$orientn_x && $orientn_y;
-        my $is_vertical_guide = $orientn_x && !$orientn_y;
+        my $is_horizontal_guide = !$orientn_x && $orientn_y; # 0,1
+        my $is_vertical_guide = $orientn_x && !$orientn_y;   # 1,0
         my $height = $self->{height};
         my $width = $self->{width};
         if ($is_horizontal_guide) {
-            my $guideline_x = convert($pos_x, $self->{view_box_xmin}, $self->{view_box_xmax}, 0, $self->{height});
-            my $guideline_y = $new_pos_y;
-            $pos_y = $self->convert($guideline_y, 0, $self->{height}, $self->{view_box_ymin}, $self->{view_box_ymax});
-            $guide->setAttribute('position', "${pos_x},${pos_y}");
+            $guide->setAttribute('position', "${pos_x_vbox},${new_pos_y_vbox}");
             if (defined $color) {
                 $guide->setAttribute("inkscape:color", $color);
             }
@@ -123,9 +138,9 @@ package My::Thingy {
         return 1;
     }
     sub create_horizontal_guide {
-        my ($self, $guide_name, $new_pos_y, $color) = @_;
+        my ($self, $guide_name, $new_pos_y_svg, $color) = @_;
         $color //= $BLUE;
-        my $new_pos_y_vbox = $self->y_svg_to_view_box($new_pos_y);
+        my $new_pos_y_vbox = $self->y_svg_to_view_box($new_pos_y_svg);
         my $guide = $self->{doc}->createElement("sodipodi:guide");
         $guide->setAttribute('position', sprintf("%f,%f", 0, $new_pos_y_vbox));
         $guide->setAttribute("inkscape:locked", "false");
@@ -133,6 +148,7 @@ package My::Thingy {
             $guide->setAttribute("inkscape:label", $guide_name);
         }
         $guide->setAttribute("inkscape:color", $color);
+        $guide->setAttribute("orientation", "0,1");
         my ($namedview) = $self->{xpc}->findnodes("//sodipodi:namedview");
         if (!$namedview) {
             die("no namedview element\n");
@@ -150,6 +166,14 @@ package My::Thingy {
     sub y_view_box_to_svg {
         my ($self, $coord) = @_;
         return $self->convert($coord, $self->{view_box_ymin}, $self->{view_box_ymax}, 0, $self->{height});
+    }
+    sub x_svg_to_view_box {
+        my ($self, $coord) = @_;
+        return $self->convert($coord, 0, $self->{width}, $self->{view_box_xmin}, $self->{view_box_xmax});
+    }
+    sub x_view_box_to_svg {
+        my ($self, $coord) = @_;
+        return $self->convert($coord, $self->{view_box_xmin}, $self->{view_box_xmax}, 0, $self->{width});
     }
     sub convert {
         my ($self, $coord, $from_1, $from_2, $to_1, $to_2) = @_;
