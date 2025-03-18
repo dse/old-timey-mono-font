@@ -11,7 +11,7 @@ typewriters like Remington, Smith, and Underwood; but Reproducing
 Typewriter is more readable at smaller point sizes than those.
 
 I believe this also makes Reproducing Typewriter a good basis for a
-coding font with an antique aesthetic.
+coding font with an antique aesthetic, that being this font.
 
 You may have seen this typeface used in the [Turbo Pascal 3.0](turbo)
 product manual.
