@@ -12,6 +12,7 @@ NOTDEF_PY_PROG		:= bin/notdef.py
 SMOL_PY_PROG		:= bin/smol.py
 BOUNDS_PY_PROG		:= bin/bounds.py
 SUPERSUB_PY_PROG	:= bin/supersub.py
+UNDERLINE_PY_PROG	:= bin/underline.py
 
 METAS_PY_ARGS :=
 
@@ -25,6 +26,7 @@ NOTDEF_PY	:= $(NOTDEF_PY_PROG)
 SMOL_PY		:= $(SMOL_PY_PROG)
 BOUNDS_PY	:= $(BOUNDS_PY_PROG)
 SUPERSUB_PY	:= $(SUPERSUB_PY_PROG)
+UNDERLINE_PY	:= $(UNDERLINE_PY_PROG)
 
 DISTDIR := dist
 
@@ -106,7 +108,7 @@ compressed: $(COMP_FONTS)
 condensed: $(COND_FONTS)
 zip: $(ZIP_FILE)
 
-SRC_SVGS := `find src/chars -type f -name '*.svg'`
+SRC_SVGS := $(shell find src/chars -type f -name '*.svg')
 
 .SUFFIXES: .sfd .ttf
 
@@ -161,7 +163,7 @@ $(ZIP_FILE): $(FONTS) Makefile
 stage1: src/build/$(PS_FONT_FAMILY).stage1.sfd
 
 # Stage 1: import SVGs
-src/build/$(PS_FONT_FAMILY).stage1.sfd: $(FONT_SRC) Makefile $(SVG_PY_PROG)
+src/build/$(PS_FONT_FAMILY).stage1.sfd: $(FONT_SRC) $(SRC_SVGS) Makefile $(SVG_PY_PROG) $(BOUNDS_PY_PROG) $(SMOL_PY_PROG) $(SUPERSUB_PY_PROG)
 	@echo "stage 1"
 	mkdir -p src/build
 	$(SVG_PY) "$<" -o "$@" $(SRC_SVGS)
@@ -186,29 +188,32 @@ src/build/$(PS_FONT_FAMILY)Comp.stage2.sfd: src/build/$(PS_FONT_FAMILY).stage2.s
 	$(ASPECT_PY) --aspect 0.606060606060 "$<" -o "$@"
 
 # Stage 4: make weights
-$(DISTDIR)/ttf/%.ttf: src/build/%.stage2.sfd Makefile $(STROKES_PY_PROG) $(METAS_PY_PROG)
+$(DISTDIR)/ttf/%.ttf: src/build/%.stage2.sfd Makefile $(STROKES_PY_PROG) $(METAS_PY_PROG) $(UNDERLINE_PY_PROG)
 	@echo "stage 4"
 	mkdir -p "$(DISTDIR)/ttf"
 	$(STROKES_PY) -x 96 "$<" -o "$@"
 	bin/fontfix "$@"
 	$(METAS_PY) "$@"
-$(DISTDIR)/ttf/%-Light.ttf: src/build/%.stage2.sfd Makefile $(STROKES_PY_PROG) $(METAS_PY_PROG)
+	$(UNDERLINE_PY) -156 96 "$@"
+$(DISTDIR)/ttf/%-Light.ttf: src/build/%.stage2.sfd Makefile $(STROKES_PY_PROG) $(METAS_PY_PROG) $(UNDERLINE_PY_PROG)
 	@echo "stage 4"
 	mkdir -p "$(DISTDIR)/ttf"
 	$(STROKES_PY) -x 72 "$<" -o "$@"
 	bin/fontfix "$@"
 	$(METAS_PY) "$@"
-$(DISTDIR)/ttf/%-Thin.ttf: src/build/%.stage2.sfd Makefile $(STROKES_PY_PROG) $(METAS_PY_PROG)
+	$(UNDERLINE_PY) -156 72 "$@"
+$(DISTDIR)/ttf/%-Thin.ttf: src/build/%.stage2.sfd Makefile $(STROKES_PY_PROG) $(METAS_PY_PROG) $(UNDERLINE_PY_PROG)
 	@echo "stage 4"
 	mkdir -p "$(DISTDIR)/ttf"
 	$(STROKES_PY) -x 48 "$<" -o "$@"
 	bin/fontfix "$@"
 	$(METAS_PY) "$@"
+	$(UNDERLINE_PY) -156 48 "$@"
 
 # Stage 5: make code variants
 # NOTE: can't use %.ttf because '%' cannot match less than one character.
 #                                   vvvv
-$(DISTDIR)/ttf/$(PS_FONT_FAMILY)Code%ttf: $(DISTDIR)/ttf/$(PS_FONT_FAMILY)%ttf Makefile $(METAS_PY_PROG)
+$(DISTDIR)/ttf/$(PS_FONT_FAMILY)Code%ttf: $(DISTDIR)/ttf/$(PS_FONT_FAMILY)%ttf Makefile $(METAS_PY_PROG) bin/fontfix
 	@echo "stage 5"
 	pyftfeatfreeze -f code "$<" "$@"
 	bin/fontfix "$@"
