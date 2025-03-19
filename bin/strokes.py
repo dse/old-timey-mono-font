@@ -33,6 +33,10 @@ def main():
     silence.on()
     for glyph in font.glyphs():
         print("expandstrokes: Expanding strokes on %s %s" % (u(glyph.unicode), glyph.glyphname))
+        if glyph.unicode in range(0x2500, 0x25a0):
+            continue
+        if glyph.unicode in range(0x2800, 0x2900):
+            continue
         if len(glyph.foreground) == 0 and len(glyph.references) == 0:
             continue
         if mixedjsontext.fontcomment_says_generated(glyph.comment):
