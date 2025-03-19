@@ -20,7 +20,7 @@ def main():
         data = {}
         data["blocks"] = []
         glyphs = list(font.glyphs())
-        glyphs = [glyph for glyph in glyphs if glyph.unicode >= 0]
+        glyphs = [glyph for glyph in glyphs if glyph.unicode >= 0 and glyph.unicode < 0x10000]
         glyphs.sort(key=lambda glyph: glyph.unicode)
         blocks = [unicodeblocks.blocks[block] for block in unicodeblocks.blocks]
         blocks.sort(key=lambda block: block.start)
