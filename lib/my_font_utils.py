@@ -53,7 +53,7 @@ def parse_glyph_svg_filename(svg_filename):
     return [codepoint, glyphname, real_codepoint, plain_glyphname, suffix]
 
 def import_svg_glyph(font, svg_filename, width):
-
+    font_path = os.path.relpath(font.path)
     (codepoint, glyphname, real_codepoint, plain_glyphname, suffix) = parse_glyph_svg_filename(svg_filename)
     if codepoint is None and glyphname is None:
         return
@@ -61,11 +61,11 @@ def import_svg_glyph(font, svg_filename, width):
     if glyphname in font:
         glyph = font[glyphname]
         if len(glyph.references):
-            print("import_svg_glyph: WARNING: glyph %s %s contains references but %s is present" % (glyphname, u(glyph.unicode), svg_filename))
-            print("import_svg_glyph:     not importing %s" % svg_filename)
+            print("import_svg_glyph %s: WARNING: glyph %s %s contains references but %s is present" % (font_path, glyphname, u(glyph.unicode), svg_filename))
+            print("import_svg_glyph %s:     not importing %s" % (font_path, svg_filename))
             return
     glyph = font.createChar(codepoint, glyphname)
-    print("import_svg_glyph: importing SVG %s to %s %s" % (svg_filename, glyphname, u(glyph.unicode)))
+    print("import_svg_glyph %s: importing SVG %s to %s %s" % (font_path, svg_filename, glyphname, u(glyph.unicode)))
     glyph.foreground = fontforge.layer()
     if width is None:
         orig_width = glyph.width
@@ -83,6 +83,7 @@ def import_svg_glyph(font, svg_filename, width):
 STROKE_WIDTH_BASIS = 96
 
 def create_smol_glyph(font, codepoint):
+    font_path = os.path.relpath(font.path)
     plain_glyphname = fontforge.nameFromUnicode(codepoint)
     simpl_glyphname = fontforge.nameFromUnicode(codepoint) + ".simpl"
     orig_glyphname = fontforge.nameFromUnicode(codepoint) + ".orig"
@@ -109,12 +110,12 @@ def create_smol_glyph(font, codepoint):
     elif plain_glyphname in font:
         glyphname = plain_glyphname
     else:
-        print("create_smol_glyph: not creating %s.smol" % plain_glyphname)
+        print("create_smol_glyph %s: not creating %s.smol" % (font_path, plain_glyphname))
         return
     glyph = font[glyphname]
     orig_width = glyph.width
 
-    print("create_smol_glyph: creating %s.smol from %s" % (plain_glyphname, glyph.glyphname))
+    print("create_smol_glyph %s: creating %s.smol from %s" % (font_path, plain_glyphname, glyph.glyphname))
 
     sm_glyphname = plain_glyphname + '.smol'
     sm_glyph = font.createChar(-1, sm_glyphname)
@@ -140,6 +141,7 @@ def check_all_glyph_bounds(font, width=None):
         check_glyph_bounds(glyph, width)
 
 def check_glyph_bounds(glyph, width=None):
+    font_path = os.path.relpath(glyph.font.path)
     [xmin, ymin, xmax, ymax] = glyph.boundingBox()
     if glyph.unicode < 0:
         unicodename = "%d" % glyph.unicode
@@ -148,15 +150,16 @@ def check_glyph_bounds(glyph, width=None):
             unicodename = unicodedata.name(chr(glyph.unicode))
         except ValueError:
             unicodename = "(no name)"
-    print("check_all_glyph_bounds: %s - %s %s - xmin = %d; xmax = %d; ymin = %d; ymax = %d" % (glyph.glyphname, u(glyph.unicode), unicodename, xmin, xmax, ymin, ymax))
+    print("check_all_glyph_bounds %s: %s - %s %s - xmin = %d; xmax = %d; ymin = %d; ymax = %d" %
+          (font_path, glyph.glyphname, u(glyph.unicode), unicodename, xmin, xmax, ymin, ymax))
     height = glyph.font.ascent + glyph.font.descent
     if width is None:
         width = glyph.width
     if xmin < -width/2:
-        print("check_all_glyph_bounds:     left")
+        print("check_all_glyph_bounds %s:     left" % font_path)
     if xmax > width*3/2:
-        print("check_all_glyph_bounds:     right")
+        print("check_all_glyph_bounds %s:     right" % font_path)
     if ymin < (-glyph.font.descent - height/2):
-        print("check_all_glyph_bounds:     bottom")
+        print("check_all_glyph_bounds %s:     bottom" % font_path)
     if ymax > glyph.font.ascent + height/2:
-        print("check_all_glyph_bounds:     top")
+        print("check_all_glyph_bounds %s:     top" % font_path)

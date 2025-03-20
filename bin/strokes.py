@@ -32,7 +32,7 @@ def main():
 
     silence.on()
     for glyph in font.glyphs():
-        print("expandstrokes: Expanding strokes on %s %s" % (u(glyph.unicode), glyph.glyphname))
+        print("strokes.py %s: Expanding strokes on %s %s" % (args.font_filename, u(glyph.unicode), glyph.glyphname))
         if glyph.unicode in range(0x2500, 0x25a0):
             continue
         if glyph.unicode in range(0x2800, 0x2900):
@@ -52,10 +52,11 @@ def main():
             glyph.width = common_glyph_width # MONOSPACE
     silence.off()
 
-    print("Writing %s..." % write_font_filename)
     if write_font_filename.endswith('.sfd'):
+        print("strokes.py %s: Saving %s..." % (args.font_filename, write_font_filename))
         font.save(write_font_filename)
     else:
+        print("strokes.py %s: Generating %s..." % (args.font_filename, write_font_filename))
         font.generate(write_font_filename)
 
 main()        

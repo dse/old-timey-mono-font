@@ -18,10 +18,11 @@ def main():
     parser.add_argument('--verbose', '-v', action='count', default=0)
     args = parser.parse_args()
 
+    print("smol.py %s: Opening and reading..." % args.font_filename)
     font = fontforge.open(args.font_filename)
     write_font_filename = args.save_as if args.save_as is not None else args.font_filename
 
-    print("Creating small glyphs...")
+    print("smol.py %s: Creating small glyphs..." % args.font_filename)
     for codepoint in [*range(33, 127),
                       UNICODE["LATIN_SMALL_LETTER_SCHWA"],
                       UNICODE["GREEK_SMALL_LETTER_BETA"],
@@ -31,10 +32,11 @@ def main():
                       UNICODE["GREEK_SMALL_LETTER_CHI"]]:
         create_smol_glyph(font, codepoint)
 
-    print("Writing %s" % write_font_filename)
     if write_font_filename.endswith('.sfd'):
+        print("smol.py %s: Saving %s..." % (args.font_filename, write_font_filename))
         font.save(write_font_filename)
     else:
+        print("smol.py %s: Generating %s..." % (args.font_filename, write_font_filename))
         font.generate(write_font_filename)
     font.close()
 
