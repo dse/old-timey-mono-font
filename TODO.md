@@ -1,6 +1,43 @@
 # TODO
 
--   `.notdef` needs to be an actual glyph a la replacement character.
+-   U+0250 to U+02AF - IPA Extensions block
+-   U+2139 INFORMATION SOURCE (Information)
+-   U+21E7 UPWARDS WHITE ARROW (symbol for shift key)
+-   U+2318 PLACE OF INTEREST SIGN (COMMAND KEY)
+-   U+2325 OPTION KEY (Option)
+-   U+2386 ENTER SYMBOL
+-   U+2387 ALTERNATE KEY SYMBOL (Alt)
+-   U+2388 HELM SYMBOL (official but rarely used symbol for control)
+-   U+2389 CIRCLED HORIZONTAL BAR WITH NOTCH
+-   U+238A CIRCLED TRIANGLE DOWN
+-   U+238B BROKEN CIRCLE WITH NORTHWEST ARROW
+-   U+23CE RETURN SYMBOL
+-   U+23CF EJECT
+-   U+23E9 (Fast Forward)
+-   U+23EA (Rewind)
+-   U+23ED (Skip Forward)
+-   U+23EE (Skip Backward)
+-   U+23EF (Play/Pause Toggle)
+-   U+23F4 (Reverse)
+-   U+23F5 (Play)
+-   U+23F8 (Pause)
+-   U+23F9 BLACK SQUARE FOR STOP
+-   U+23FA BLACK CIRCLE FOR RECORD
+-   U+23FB POWER SYMBOL
+-   U+23FC POWER ON-OFF SYMBOL
+-   U+23FD POWER ON SYMBOL
+-   U+23FE POWER SLEEP SYMBOL
+-   U+2604 COMET
+-   U+2605 BLACK STAR
+-   U+2606 WHITE STAR
+-   U+2610 BALLOT BOX
+-   U+2611 BALLOT BOX WITH CHECK
+-   U+2612 BALLOT BOX WITH X
+-   U+2620 SKULL AND CROSS BONES
+-   U+2622 RADIOACTIVE SIGN
+-   U+2623 BIOHAZARD SIGN
+-   U+262E PEACE SYMBOL
+-   U+2B58 HEAVY CIRCLE (Power Off)
+-   U+1F500 (Shuffle)
+-   U+1F501 (Repeat)
 
-    https://www.figma.com/blog/when-fonts-fall/
-    
