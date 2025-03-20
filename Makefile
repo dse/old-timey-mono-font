@@ -194,21 +194,21 @@ $(DISTDIR)/ttf/%.ttf: src/build/%.stage2.sfd Makefile $(STROKES_PY_PROG) $(METAS
 	$(STROKES_PY) -x 96 "$<" -o "$@"
 	bin/fontfix "$@"
 	$(METAS_PY) "$@"
-	$(UNDERLINE_PY) -156 96 "$@"
+	$(UNDERLINE_PY) -102 96 "$@"
 $(DISTDIR)/ttf/%-Light.ttf: src/build/%.stage2.sfd Makefile $(STROKES_PY_PROG) $(METAS_PY_PROG) $(UNDERLINE_PY_PROG)
 	@echo "stage 4"
 	mkdir -p "$(DISTDIR)/ttf"
 	$(STROKES_PY) -x 72 "$<" -o "$@"
 	bin/fontfix "$@"
 	$(METAS_PY) "$@"
-	$(UNDERLINE_PY) -156 72 "$@"
+	$(UNDERLINE_PY) -102 72 "$@"
 $(DISTDIR)/ttf/%-Thin.ttf: src/build/%.stage2.sfd Makefile $(STROKES_PY_PROG) $(METAS_PY_PROG) $(UNDERLINE_PY_PROG)
 	@echo "stage 4"
 	mkdir -p "$(DISTDIR)/ttf"
 	$(STROKES_PY) -x 48 "$<" -o "$@"
 	bin/fontfix "$@"
 	$(METAS_PY) "$@"
-	$(UNDERLINE_PY) -156 48 "$@"
+	$(UNDERLINE_PY) -102 48 "$@"
 
 # Stage 5: make code variants
 # NOTE: can't use %.ttf because '%' cannot match less than one character.
