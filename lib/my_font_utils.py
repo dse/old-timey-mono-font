@@ -31,30 +31,58 @@ def reconstitute_references(glyph):
     for reference in references:
         glyph.addReference(reference[0], reference[1])
 
-def parse_glyph_svg_filename(svg_filename):
-    (svg_dirname, svg_basename) = os.path.split(svg_filename)
-    match_1 = re.search(r'^(?:u\+|0x)?([0-9a-f]+)(?=-|\.)', svg_basename, flags=re.IGNORECASE)
-    match_2 = re.search(r'^x--', svg_basename, flags=re.IGNORECASE)
-    match_3 = re.search(r'--(.+)$', os.path.splitext(svg_basename)[0]) # foo--bar.svg => "bar"
-    if not match_1 and not match_2:
+def parse_glyph_svg_filename(filename):
+    (dirname, basename) = os.path.split(filename) # "/home/dse"; "foo.svg"
+    (stem, ext) = os.path.splitext(basename)      # "foo"; ".svg"
+    codepoint = None            # -1 for variants or specials; 0+ for normal glyphs
+    glyphname = None            # glyphname with optional suffix
+    real_codepoint = None       # -1 for specials; 0+ for variants or normal glyphs
+    plain_glyphname = None      # glyphname without suffix
+    suffix = None               # suffix without "." or "--" prefix, or None
+    stem_copy = stem
+    while len(stem_copy):
+        if match := re.search(r'^(?:u\+|0x)?([0-9A-Fa-f]+)(?:$|(?=[-.]))-?', stem_copy, flags=re.IGNORECASE):
+            codepoint = int(match.group(1), 16)
+            real_codepoint = codepoint
+            stem_copy = stem_copy[match.end(0):]
+            continue
+        if match := re.search(r'^x--', stem_copy, flags=re.IGNORECASE):
+            codepoint = -1
+            real_codepoint = None
+            stem_copy = stem_copy[match.end(0):]
+            continue
+        if match := re.search(r'--(.+)$', stem_copy, flags=re.IGNORECASE):
+            suffix = match.group(1)
+            stem_copy = stem_copy[0:match.start()]
+            continue
+        if match := re.search(r'\.(.+)$', stem_copy, flags=re.IGNORECASE):
+            suffix = match.group(1)
+            stem_copy = stem_copy[0:match.start()]
+            continue
+        break
+    if codepoint is None:
         return [None, None, None, None, None]
-    suffix = match_3.expand('\\1') if match_3 else None
-    hex = match_1.expand('\\1') if match_1 else None
-    codepoint = int(hex, 16) if hex is not None else -1
     if codepoint < 0:
-        glyphname = suffix
-    elif suffix is not None:
-        glyphname = fontforge.nameFromUnicode(codepoint) + "." + suffix
+        plain_glyphname = stem_copy
+        glyphname = stem_copy
+        if suffix is not None:
+            glyphname += ("." + suffix)
+        real_codepoint = fontforge.unicodeFromName(plain_glyphname)
+        return [codepoint, glyphname, real_codepoint, plain_glyphname]
+    if suffix is not None:
+        plain_glyphname = fontforge.nameFromUnicode(codepoint)
+        glyphname = (plain_glyphname + "." + suffix)
+        real_codepoint = codepoint
         codepoint = -1
-    else:
-        glyphname = fontforge.nameFromUnicode(codepoint)
-    plain_glyphname = glyphname.split('.')[0]
-    real_codepoint = fontforge.unicodeFromName(plain_glyphname)
-    return [codepoint, glyphname, real_codepoint, plain_glyphname, suffix]
+        return [codepoint, glyphname, real_codepoint, plain_glyphname]
+    plain_glyphname = fontforge.nameFromUnicode(codepoint)
+    glyphname = fontforge.nameFromUnicode(codepoint)
+    real_codepoint = codepoint
+    return [codepoint, glyphname, real_codepoint, plain_glyphname]
 
 def import_svg_glyph(font, svg_filename, width):
     font_path = os.path.relpath(font.path)
-    (codepoint, glyphname, real_codepoint, plain_glyphname, suffix) = parse_glyph_svg_filename(svg_filename)
+    (codepoint, glyphname, real_codepoint, plain_glyphname) = parse_glyph_svg_filename(svg_filename)
     if codepoint is None and glyphname is None:
         return
     glyph = None

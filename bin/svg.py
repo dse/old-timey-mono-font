@@ -7,7 +7,6 @@ import os
 import sys
 
 sys.path.append(os.path.dirname(__file__) + "/../lib")
-from my_font_utils import parse_glyph_svg_filename
 from my_font_utils import reconstitute_references
 from my_font_utils import import_svg_glyph
 from my_font_utils import create_smol_glyph
