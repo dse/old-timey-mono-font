@@ -39,6 +39,7 @@ def parse_glyph_svg_filename(filename):
     real_codepoint = None       # -1 for specials; 0+ for variants or normal glyphs
     plain_glyphname = None      # glyphname without suffix
     suffix = None               # suffix without "." or "--" prefix, or None
+    stroke_width = None         # int if stroke width specified in SVG file; None otherwise
     stem_copy = stem
     while len(stem_copy):
         if match := re.search(r'^(?:u\+|0x)?([0-9A-Fa-f]+)(?:$|(?=[-.]))-?', stem_copy, flags=re.IGNORECASE):
@@ -51,6 +52,10 @@ def parse_glyph_svg_filename(filename):
             real_codepoint = None
             stem_copy = stem_copy[match.end(0):]
             continue
+        if match := re.search(r'--([0-9]+)$', stem_copy, flags=re.IGNORECASE):
+            stroke_width = int(match.group(1))
+            stem_copy = stem_copy[0:match.start()]
+            continue
         if match := re.search(r'--(.+)$', stem_copy, flags=re.IGNORECASE):
             suffix = match.group(1)
             stem_copy = stem_copy[0:match.start()]
@@ -61,28 +66,28 @@ def parse_glyph_svg_filename(filename):
             continue
         break
     if codepoint is None:
-        return [None, None, None, None]
+        return [None, None, None, None, None]
     if codepoint < 0:
         plain_glyphname = stem_copy
         glyphname = stem_copy
         if suffix is not None:
             glyphname += ("." + suffix)
         real_codepoint = fontforge.unicodeFromName(plain_glyphname)
-        return [codepoint, glyphname, real_codepoint, plain_glyphname]
+        return [codepoint, glyphname, real_codepoint, plain_glyphname, stroke_width]
     if suffix is not None:
         plain_glyphname = fontforge.nameFromUnicode(codepoint)
         glyphname = (plain_glyphname + "." + suffix)
         real_codepoint = codepoint
         codepoint = -1
-        return [codepoint, glyphname, real_codepoint, plain_glyphname]
+        return [codepoint, glyphname, real_codepoint, plain_glyphname, stroke_width]
     plain_glyphname = fontforge.nameFromUnicode(codepoint)
     glyphname = fontforge.nameFromUnicode(codepoint)
     real_codepoint = codepoint
-    return [codepoint, glyphname, real_codepoint, plain_glyphname]
+    return [codepoint, glyphname, real_codepoint, plain_glyphname, stroke_width]
 
 def import_svg_glyph(font, svg_filename, width):
     font_path = os.path.relpath(font.path)
-    (codepoint, glyphname, real_codepoint, plain_glyphname) = parse_glyph_svg_filename(svg_filename)
+    (codepoint, glyphname, real_codepoint, plain_glyphname, stroke_width) = parse_glyph_svg_filename(svg_filename)
     if codepoint is None and glyphname is None:
         return
     glyph = None
@@ -97,16 +102,32 @@ def import_svg_glyph(font, svg_filename, width):
     glyph.foreground = fontforge.layer()
     if width is None:
         orig_width = glyph.width
-    font.strokedfont = True
-    glyph.importOutlines(svg_filename)
-    font.strokedfont = False
+    if codepoint == 0x2055 or real_codepoint == 0x2055:
+        glyph.importOutlines(svg_filename, correctdir=True)
+    else:
+        font.strokedfont = True
+        glyph.importOutlines(svg_filename)
+        font.strokedfont = False
     if width is None:
         glyph.width = orig_width
     else:
         glyph.width = width
 
-    # WIP: outlines in background
-    # glyph.background = glyph.foreground
+    data = None
+    try:
+        data = json.loads(glyph.comment)
+    except json.decoder.JSONDecodeError:
+        data = glyph.comment
+    if type(data) == str and not re.search(r'\S', data):
+        data = { }
+    elif data is not None and type(data) != dict:
+        data = { "data": data }
+    if stroke_width is None:
+        if "stroke_width" in data:
+            del data["stroke_width"]
+    else:
+        data["stroke_width"] = stroke_width
+    glyph.comment = json.dumps(data, indent=4)
 
 STROKE_WIDTH_BASIS = 96
 
@@ -160,9 +181,6 @@ def create_smol_glyph(font, codepoint):
     sm_glyph.transform(psMat.scale(0.5))
     sm_glyph.transform(psMat.translate(orig_width / 4, STROKE_WIDTH_BASIS / 4))
     sm_glyph.width = glyph.width
-
-    # WIP: outlines in background
-    # glyph.background = glyph.foreground
 
 def check_all_glyph_bounds(font, width=None):
     for glyph in font.glyphs():
