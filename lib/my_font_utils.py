@@ -61,7 +61,7 @@ def parse_glyph_svg_filename(filename):
             continue
         break
     if codepoint is None:
-        return [None, None, None, None, None]
+        return [None, None, None, None]
     if codepoint < 0:
         plain_glyphname = stem_copy
         glyphname = stem_copy
