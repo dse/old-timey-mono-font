@@ -9,6 +9,7 @@ import statistics
 import time
 import re
 import unicodedata
+import json
 
 sys.path.append(os.getenv("HOME") + "/git/dse.d/fontforge-utilities/lib")
 import mixedjsontext
@@ -37,6 +38,15 @@ def main():
     fh = open('strokes.log', 'w', encoding='utf-8') if args.log else None
 
     for glyph in font.glyphs():
+        data = None
+        try:
+            data = json.loads(glyph.comment)
+        except json.decoder.JSONDecodeError:
+            data = glyph.comment
+        stroke_width = None
+        if type(data) == dict and "stroke_width" in data:
+            stroke_width = data["stroke_width"]
+
         print("strokes.py %s: Expanding strokes on %s %s" % (args.font_filename, u(glyph.unicode), glyph.glyphname))
         if glyph.unicode in range(0x2500, 0x25a0):
             continue
@@ -51,7 +61,14 @@ def main():
         orig_width = glyph.width
         if args.expand_stroke is not None:
             time_start = time.time()
-            glyph.stroke("circular", args.expand_stroke)
+            if stroke_width is not None:
+                print("strokes.py %s: marked as already having stroke width of %d; expanding by %d" % (args.font_filename,
+                                                                                                       stroke_width,
+                                                                                                       args.expand_stroke - stroke_width))
+                glyph.stroke("circular", args.expand_stroke - stroke_width,
+                             removeinternal=True)
+            else:
+                glyph.stroke("circular", args.expand_stroke)
             time_end = time.time()
             if fh is not None:
                 fh.write("%8.6f  %s\n" % ((time_end - time_start), charname(glyph)))

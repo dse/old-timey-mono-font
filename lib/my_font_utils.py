@@ -1,4 +1,4 @@
-import fontforge, re, os, psMat, unicodedata
+import fontforge, re, os, psMat, unicodedata, json
 
 def u(codepoint, pad=False):
     result = None
@@ -102,7 +102,7 @@ def import_svg_glyph(font, svg_filename, width):
     glyph.foreground = fontforge.layer()
     if width is None:
         orig_width = glyph.width
-    if codepoint == 0x2055 or real_codepoint == 0x2055:
+    if stroke_width is not None:
         glyph.importOutlines(svg_filename, correctdir=True)
     else:
         font.strokedfont = True
