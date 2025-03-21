@@ -18,7 +18,7 @@ def main():
     args = parser.parse_args()
     font = fontforge.open(args.font_filename)
     for svg_filename in args.svg_filenames:
-        (codepoint, glyphname, real_codepoint, plain_glyphname, suffix) = parse_glyph_svg_filename(svg_filename)
+        (codepoint, glyphname, real_codepoint, plain_glyphname) = parse_glyph_svg_filename(svg_filename)
         if codepoint is None and glyphname is None:
             print("INFO: coexist %s: %s: will not use" % (args.font_filename, svg_filename))
             continue

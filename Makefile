@@ -129,7 +129,7 @@ update: FORCE
 	$(BOUNDS_PY) $(FONT_SRC)
 	$(SMOL_PY) $(FONT_SRC)
 	$(SUPERSUB_PY) $(FONT_SRC)
-	$(STROKES_PY) --expand-stroke 96 $(FONT_SRC)
+	$(STROKES_PY) --log --expand-stroke 96 $(FONT_SRC)
 	$(NOTDEF_PY) $(FONT_SRC)
 
 # update source font fron SVG files, for testing if referenced glyphs
@@ -139,7 +139,7 @@ update2: FORCE
 	$(BOUNDS_PY) $(FONT_SRC)
 	$(SMOL_PY) $(FONT_SRC)
 	$(SUPERSUB_PY) $(FONT_SRC)
-	$(STROKES_PY) --expand-stroke 168 $(FONT_SRC)
+	$(STROKES_PY) --log --expand-stroke 168 $(FONT_SRC)
 	$(NOTDEF_PY) $(FONT_SRC)
 
 fonttool: FORCE
