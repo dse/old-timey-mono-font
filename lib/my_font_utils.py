@@ -103,7 +103,9 @@ def import_svg_glyph(font, svg_filename, width):
     if width is None:
         orig_width = glyph.width
     if stroke_width is not None:
+        font.strokedfont = True
         glyph.importOutlines(svg_filename, correctdir=True)
+        font.strokedfont = False
     else:
         font.strokedfont = True
         glyph.importOutlines(svg_filename)
