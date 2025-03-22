@@ -48,6 +48,8 @@ def main():
             stroke_width = data["stroke_width"]
 
         print("strokes.py %s: Expanding strokes on %s %s" % (args.font_filename, u(glyph.unicode), glyph.glyphname))
+        if glyph.unicode == 0x269b: # ATOM SYMBOL
+            continue
         if glyph.unicode == 0x2620: # SKULL AND CROSS BONES
             continue
         if glyph.unicode == 0x2622: # RADIOACTIVE SIGN
