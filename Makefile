@@ -131,6 +131,7 @@ update: FORCE
 	$(SUPERSUB_PY) $(FONT_SRC)
 	$(STROKES_PY) --log --expand-stroke 96 $(FONT_SRC)
 	$(NOTDEF_PY) $(FONT_SRC)
+	sort -n strokes.log | sponge strokes.log
 
 # update source font fron SVG files, for testing if referenced glyphs
 # are too close. (accented letters mostly)
@@ -141,6 +142,7 @@ update2: FORCE
 	$(SUPERSUB_PY) $(FONT_SRC)
 	$(STROKES_PY) --log --expand-stroke 168 $(FONT_SRC)
 	$(NOTDEF_PY) $(FONT_SRC)
+	sort -n strokes.log | sponge strokes.log
 
 fonttool: FORCE
 	@echo "use 'make update', dingus." >&2
