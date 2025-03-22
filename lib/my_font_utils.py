@@ -52,7 +52,7 @@ def parse_glyph_svg_filename(filename):
             real_codepoint = None
             stem_copy = stem_copy[match.end(0):]
             continue
-        if match := re.search(r'--([0-9]+)$', stem_copy, flags=re.IGNORECASE):
+        if match := re.search(r'--(?:([0-9]+)(?:px)?)$', stem_copy, flags=re.IGNORECASE):
             stroke_width = int(match.group(1))
             stem_copy = stem_copy[0:match.start()]
             continue
