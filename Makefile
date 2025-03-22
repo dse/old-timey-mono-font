@@ -135,12 +135,36 @@ update: FORCE
 
 # update source font fron SVG files, for testing if referenced glyphs
 # are too close. (accented letters mostly)
-update2: FORCE
+update-168: FORCE
 	$(SVG_PY) $(FONT_SRC) $(SRC_SVGS)
 	$(BOUNDS_PY) $(FONT_SRC)
 	$(SMOL_PY) $(FONT_SRC)
 	$(SUPERSUB_PY) $(FONT_SRC)
 	$(STROKES_PY) --log --expand-stroke 168 $(FONT_SRC)
+	$(NOTDEF_PY) $(FONT_SRC)
+	sort -n strokes.log | sponge strokes.log
+update-24: FORCE
+	$(SVG_PY) $(FONT_SRC) $(SRC_SVGS)
+	$(BOUNDS_PY) $(FONT_SRC)
+	$(SMOL_PY) $(FONT_SRC)
+	$(SUPERSUB_PY) $(FONT_SRC)
+	$(STROKES_PY) --log --expand-stroke 24 $(FONT_SRC)
+	$(NOTDEF_PY) $(FONT_SRC)
+	sort -n strokes.log | sponge strokes.log
+update-48: FORCE
+	$(SVG_PY) $(FONT_SRC) $(SRC_SVGS)
+	$(BOUNDS_PY) $(FONT_SRC)
+	$(SMOL_PY) $(FONT_SRC)
+	$(SUPERSUB_PY) $(FONT_SRC)
+	$(STROKES_PY) --log --expand-stroke 48 $(FONT_SRC)
+	$(NOTDEF_PY) $(FONT_SRC)
+	sort -n strokes.log | sponge strokes.log
+update-72: FORCE
+	$(SVG_PY) $(FONT_SRC) $(SRC_SVGS)
+	$(BOUNDS_PY) $(FONT_SRC)
+	$(SMOL_PY) $(FONT_SRC)
+	$(SUPERSUB_PY) $(FONT_SRC)
+	$(STROKES_PY) --log --expand-stroke 72 $(FONT_SRC)
 	$(NOTDEF_PY) $(FONT_SRC)
 	sort -n strokes.log | sponge strokes.log
 
