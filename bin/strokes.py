@@ -48,6 +48,12 @@ def main():
             stroke_width = data["stroke_width"]
 
         print("strokes.py %s: Expanding strokes on %s %s" % (args.font_filename, u(glyph.unicode), glyph.glyphname))
+        if glyph.unicode == 0x2620: # SKULL AND CROSS BONES
+            continue
+        if glyph.unicode == 0x2622: # RADIOACTIVE SIGN
+            continue
+        if glyph.unicode == 0x2623: # BIOHAZARD SIGN
+            continue
         if glyph.unicode in range(0x2500, 0x25a0):
             continue
         if glyph.unicode in range(0x2800, 0x2900):

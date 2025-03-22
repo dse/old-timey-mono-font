@@ -22,7 +22,7 @@ OS2Version: 0
 OS2_WeightWidthSlopeOnly: 0
 OS2_UseTypoMetrics: 1
 CreationTime: 1729142792
-ModificationTime: 1742612204
+ModificationTime: 1742684413
 PfmFamily: 17
 TTFWeight: 500
 TTFWidth: 5
@@ -55,7 +55,7 @@ NameList: AGL For New Fonts
 DisplaySize: -96
 AntiAlias: 1
 FitToEm: 1
-WinInfo: 8232 14 6
+WinInfo: 9730 14 6
 BeginPrivate: 0
 EndPrivate
 Grid
@@ -164,7 +164,7 @@ Grid
  504 3072 l 25
 EndSplineSet
 AnchorClass2: "tonos" "'mark' Mark Positioning lookup 0-1" "cedilla" "'mark' Mark Positioning lookup 0-1" "ogonek" "'mark' Mark Positioning lookup 0-1" "bottom" "'mark' Mark Positioning lookup 0-1" "top" "'mark' Mark Positioning lookup 0-1"
-BeginChars: 65818 2154
+BeginChars: 65726 2163
 
 StartChar: cedilla
 Encoding: 184 184 0
@@ -200,7 +200,7 @@ Comment: "{}"
 EndChar
 
 StartChar: slash.orig
-Encoding: 65538 -1 1
+Encoding: 65536 -1 1
 Width: 1008
 VWidth: 4000
 Flags: HW
@@ -222,7 +222,7 @@ Comment: "{}"
 EndChar
 
 StartChar: numbersign.orig
-Encoding: 65540 -1 2
+Encoding: 65537 -1 2
 Width: 1008
 VWidth: 4000
 Flags: HW
@@ -282,7 +282,7 @@ Comment: "{}"
 EndChar
 
 StartChar: one.code
-Encoding: 65544 -1 3
+Encoding: 65538 -1 3
 Width: 1008
 VWidth: 4000
 Flags: HW
@@ -1158,7 +1158,7 @@ Refer: 646 121 N 1 0 0 1 0 0 3
 EndChar
 
 StartChar: l.code
-Encoding: 65556 -1 65
+Encoding: 65539 -1 65
 Width: 1008
 VWidth: 4000
 Flags: HW
@@ -1238,7 +1238,7 @@ LayerCount: 2
 EndChar
 
 StartChar: zero.slash
-Encoding: 65558 -1 69
+Encoding: 65540 -1 69
 Width: 1008
 VWidth: 4000
 Flags: HW
@@ -1279,7 +1279,7 @@ Comment: "{}"
 EndChar
 
 StartChar: zero.orig
-Encoding: 65559 -1 70
+Encoding: 65541 -1 70
 Width: 1008
 VWidth: 4000
 Flags: HW
@@ -1303,7 +1303,7 @@ Comment: "{}"
 EndChar
 
 StartChar: one.orig
-Encoding: 65560 -1 71
+Encoding: 65542 -1 71
 Width: 1008
 VWidth: 4000
 Flags: HW
@@ -1452,7 +1452,7 @@ Refer: 79 -1 N 1 0 0 1 0 75 2
 EndChar
 
 StartChar: fractiondash
-Encoding: 65571 -1 79
+Encoding: 65543 -1 79
 Width: 1008
 Flags: HW
 HStem: 330 96<65.5123 942.488>
@@ -7058,7 +7058,7 @@ Refer: 569 42 N 1 0 0 1 0 -399 2
 EndChar
 
 StartChar: colon.orig
-Encoding: 65578 -1 277
+Encoding: 65544 -1 277
 Width: 1008
 VWidth: 4000
 Flags: HW
@@ -7082,7 +7082,7 @@ Comment: "{}"
 EndChar
 
 StartChar: comma.orig
-Encoding: 65576 -1 278
+Encoding: 65545 -1 278
 Width: 1008
 VWidth: 4000
 Flags: HW
@@ -7105,7 +7105,7 @@ Comment: "{}"
 EndChar
 
 StartChar: semicolon.orig
-Encoding: 65579 -1 279
+Encoding: 65546 -1 279
 Width: 1008
 VWidth: 4000
 Flags: HW
@@ -7133,7 +7133,7 @@ Comment: "{}"
 EndChar
 
 StartChar: period.orig
-Encoding: 65577 -1 280
+Encoding: 65547 -1 280
 Width: 1008
 VWidth: 4000
 Flags: HW
@@ -20695,7 +20695,7 @@ Comment: "{}"
 EndChar
 
 StartChar: numbersign.short
-Encoding: 65584 -1 701
+Encoding: 65548 -1 701
 Width: 1008
 VWidth: 0
 Flags: HW
@@ -20755,7 +20755,7 @@ Comment: "{}"
 EndChar
 
 StartChar: slash.short
-Encoding: 65585 -1 702
+Encoding: 65549 -1 702
 Width: 1008
 VWidth: 0
 Flags: HW
@@ -20777,7 +20777,7 @@ Comment: "{}"
 EndChar
 
 StartChar: zero.bigdot
-Encoding: 65586 -1 703
+Encoding: 65550 -1 703
 Width: 1008
 VWidth: 0
 Flags: HW
@@ -20807,7 +20807,7 @@ Comment: "{}"
 EndChar
 
 StartChar: zero.smalldot
-Encoding: 65587 -1 704
+Encoding: 65551 -1 704
 Width: 1008
 VWidth: 0
 Flags: HW
@@ -20837,7 +20837,7 @@ Comment: "{}"
 EndChar
 
 StartChar: at.alt
-Encoding: 65588 -1 705
+Encoding: 65552 -1 705
 Width: 1008
 VWidth: 0
 Flags: HW
@@ -20896,7 +20896,7 @@ Comment: "{}"
 EndChar
 
 StartChar: at.orig
-Encoding: 65589 -1 706
+Encoding: 65553 -1 706
 Width: 1008
 VWidth: 0
 Flags: HW
@@ -20948,7 +20948,7 @@ Comment: "{}"
 EndChar
 
 StartChar: backslash.short
-Encoding: 65590 -1 707
+Encoding: 65554 -1 707
 Width: 1008
 VWidth: 0
 Flags: HW
@@ -20970,7 +20970,7 @@ Comment: "{}"
 EndChar
 
 StartChar: grave.plain
-Encoding: 65591 -1 708
+Encoding: 65555 -1 708
 Width: 1008
 VWidth: 0
 Flags: HW
@@ -21214,7 +21214,7 @@ Comment: "{}"
 EndChar
 
 StartChar: quoteleft.orig
-Encoding: 65592 -1 718
+Encoding: 65556 -1 718
 Width: 1008
 VWidth: 0
 Flags: HW
@@ -21237,7 +21237,7 @@ Comment: "{}"
 EndChar
 
 StartChar: quoteright.orig
-Encoding: 65593 -1 719
+Encoding: 65557 -1 719
 Width: 1008
 VWidth: 0
 Flags: HW
@@ -21260,7 +21260,7 @@ Comment: "{}"
 EndChar
 
 StartChar: quotedblleft.orig
-Encoding: 65594 -1 720
+Encoding: 65558 -1 720
 Width: 1008
 VWidth: 0
 Flags: HW
@@ -21292,7 +21292,7 @@ Comment: "{}"
 EndChar
 
 StartChar: quotedblright.orig
-Encoding: 65595 -1 721
+Encoding: 65559 -1 721
 Width: 1008
 VWidth: 0
 Flags: HW
@@ -21653,7 +21653,7 @@ Comment: "{}"
 EndChar
 
 StartChar: xcirclex.copyright
-Encoding: 65598 -1 733
+Encoding: 65560 -1 733
 Width: 1008
 VWidth: 0
 Flags: HW
@@ -21677,7 +21677,7 @@ Comment: "{}"
 EndChar
 
 StartChar: periodcentered.orig
-Encoding: 65599 -1 734
+Encoding: 65561 -1 734
 Width: 1008
 VWidth: 0
 Flags: HW
@@ -21696,7 +21696,7 @@ Comment: "{}"
 EndChar
 
 StartChar: ordinalindicator
-Encoding: 65602 -1 735
+Encoding: 65562 -1 735
 Width: 1008
 VWidth: 0
 Flags: HW
@@ -22006,7 +22006,7 @@ Comment: "{}"
 EndChar
 
 StartChar: exclam.smol
-Encoding: 65606 -1 747
+Encoding: 65563 -1 747
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -22035,7 +22035,7 @@ EndSplineSet
 EndChar
 
 StartChar: quotedbl.smol
-Encoding: 65607 -1 748
+Encoding: 65564 -1 748
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -22062,7 +22062,7 @@ EndSplineSet
 EndChar
 
 StartChar: numbersign.smol
-Encoding: 65608 -1 749
+Encoding: 65565 -1 749
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -22119,7 +22119,7 @@ EndSplineSet
 EndChar
 
 StartChar: dollar.smol
-Encoding: 65609 -1 750
+Encoding: 65566 -1 750
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -22165,7 +22165,7 @@ EndSplineSet
 EndChar
 
 StartChar: percent.smol
-Encoding: 65610 -1 751
+Encoding: 65567 -1 751
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -22184,7 +22184,7 @@ SplineSet
  457.491277347 447.628571313 437.112070879 471.786162369 413.171306637 471.786162369 c 0
 254.510682855 390.124368125 m 0
  254.510682855 483.253599627 324.078360452 567.786162369 413.171306637 567.786162369 c 0
- 441.543547446 567.786162369 445.16989308 559.827657504 495.288720421 559.827655992 c 0
+ 441.543547485 567.786162369 445.169893042 559.827657504 495.288720421 559.827655992 c 0
  526.172861655 559.827655992 562.212754326 563.313370966 593.629580063 569.308960676 c 0
  650.547221215 580.17112818 654.522664632 591 674 591 c 0
  700.49192 591 722 569.49192 722 543 c 0
@@ -22209,7 +22209,7 @@ EndSplineSet
 EndChar
 
 StartChar: ampersand.smol
-Encoding: 65611 -1 752
+Encoding: 65568 -1 752
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -22258,7 +22258,7 @@ EndSplineSet
 EndChar
 
 StartChar: quotesingle.smol
-Encoding: 65612 -1 753
+Encoding: 65569 -1 753
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -22277,7 +22277,7 @@ EndSplineSet
 EndChar
 
 StartChar: parenleft.smol
-Encoding: 65613 -1 754
+Encoding: 65570 -1 754
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -22300,7 +22300,7 @@ EndSplineSet
 EndChar
 
 StartChar: parenright.smol
-Encoding: 65614 -1 755
+Encoding: 65571 -1 755
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -22323,7 +22323,7 @@ EndSplineSet
 EndChar
 
 StartChar: asterisk.smol
-Encoding: 65615 -1 756
+Encoding: 65572 -1 756
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -22363,7 +22363,7 @@ EndSplineSet
 EndChar
 
 StartChar: plus.smol
-Encoding: 65616 -1 757
+Encoding: 65573 -1 757
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -22391,7 +22391,7 @@ EndSplineSet
 EndChar
 
 StartChar: comma.smol
-Encoding: 65617 -1 758
+Encoding: 65574 -1 758
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -22411,7 +22411,7 @@ EndSplineSet
 EndChar
 
 StartChar: hyphen.smol
-Encoding: 65618 -1 759
+Encoding: 65575 -1 759
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -22429,7 +22429,7 @@ EndSplineSet
 EndChar
 
 StartChar: period.smol
-Encoding: 65619 -1 760
+Encoding: 65576 -1 760
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -22450,7 +22450,7 @@ EndSplineSet
 EndChar
 
 StartChar: slash.smol
-Encoding: 65620 -1 761
+Encoding: 65577 -1 761
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -22470,7 +22470,7 @@ EndSplineSet
 EndChar
 
 StartChar: zero.simpl
-Encoding: 65622 -1 762
+Encoding: 65578 -1 762
 Width: 1008
 VWidth: 0
 Flags: HW
@@ -22494,7 +22494,7 @@ Comment: "{}"
 EndChar
 
 StartChar: zero.smol
-Encoding: 65623 -1 763
+Encoding: 65579 -1 763
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -22519,7 +22519,7 @@ EndSplineSet
 EndChar
 
 StartChar: one.default
-Encoding: 65624 -1 764
+Encoding: 65580 -1 764
 Width: 1008
 VWidth: 0
 Flags: HW
@@ -22548,7 +22548,7 @@ Comment: "{}"
 EndChar
 
 StartChar: one.simpl
-Encoding: 65625 -1 765
+Encoding: 65581 -1 765
 Width: 1008
 VWidth: 0
 Flags: HW
@@ -22577,7 +22577,7 @@ Comment: "{}"
 EndChar
 
 StartChar: one.smol
-Encoding: 65626 -1 766
+Encoding: 65582 -1 766
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -22603,7 +22603,7 @@ EndSplineSet
 EndChar
 
 StartChar: two.simpl
-Encoding: 65627 -1 767
+Encoding: 65583 -1 767
 Width: 1008
 VWidth: 0
 Flags: HW
@@ -22640,7 +22640,7 @@ Comment: "{}"
 EndChar
 
 StartChar: two.smol
-Encoding: 65628 -1 768
+Encoding: 65584 -1 768
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -22676,7 +22676,7 @@ EndSplineSet
 EndChar
 
 StartChar: three.simpl
-Encoding: 65629 -1 769
+Encoding: 65585 -1 769
 Width: 1008
 VWidth: 0
 Flags: HW
@@ -22714,7 +22714,7 @@ Comment: "{}"
 EndChar
 
 StartChar: three.smol
-Encoding: 65630 -1 770
+Encoding: 65586 -1 770
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -22750,7 +22750,7 @@ EndSplineSet
 EndChar
 
 StartChar: four.smol
-Encoding: 65631 -1 771
+Encoding: 65587 -1 771
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -22786,7 +22786,7 @@ EndSplineSet
 EndChar
 
 StartChar: five.simpl
-Encoding: 65632 -1 772
+Encoding: 65588 -1 772
 Width: 1008
 VWidth: 0
 Flags: HW
@@ -22820,7 +22820,7 @@ Comment: "{}"
 EndChar
 
 StartChar: five.smol
-Encoding: 65633 -1 773
+Encoding: 65589 -1 773
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -22851,7 +22851,7 @@ EndSplineSet
 EndChar
 
 StartChar: six.smol
-Encoding: 65634 -1 774
+Encoding: 65590 -1 774
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -22883,7 +22883,7 @@ EndSplineSet
 EndChar
 
 StartChar: seven.smol
-Encoding: 65635 -1 775
+Encoding: 65591 -1 775
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -22912,7 +22912,7 @@ EndSplineSet
 EndChar
 
 StartChar: eight.smol
-Encoding: 65636 -1 776
+Encoding: 65592 -1 776
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -22948,7 +22948,7 @@ EndSplineSet
 EndChar
 
 StartChar: nine.smol
-Encoding: 65637 -1 777
+Encoding: 65593 -1 777
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -22980,7 +22980,7 @@ EndSplineSet
 EndChar
 
 StartChar: colon.smol
-Encoding: 65638 -1 778
+Encoding: 65594 -1 778
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -23001,7 +23001,7 @@ EndSplineSet
 EndChar
 
 StartChar: semicolon.smol
-Encoding: 65639 -1 779
+Encoding: 65595 -1 779
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -23026,7 +23026,7 @@ EndSplineSet
 EndChar
 
 StartChar: less.smol
-Encoding: 65640 -1 780
+Encoding: 65596 -1 780
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -23050,7 +23050,7 @@ EndSplineSet
 EndChar
 
 StartChar: equal.smol
-Encoding: 65641 -1 781
+Encoding: 65597 -1 781
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -23075,7 +23075,7 @@ EndSplineSet
 EndChar
 
 StartChar: greater.smol
-Encoding: 65642 -1 782
+Encoding: 65598 -1 782
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -23099,7 +23099,7 @@ EndSplineSet
 EndChar
 
 StartChar: question.smol
-Encoding: 65643 -1 783
+Encoding: 65599 -1 783
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -23129,7 +23129,7 @@ EndSplineSet
 EndChar
 
 StartChar: at.smol
-Encoding: 65644 -1 784
+Encoding: 65600 -1 784
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -23176,7 +23176,7 @@ EndSplineSet
 EndChar
 
 StartChar: A.smol
-Encoding: 65645 -1 785
+Encoding: 65601 -1 785
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -23212,7 +23212,7 @@ EndSplineSet
 EndChar
 
 StartChar: B.smol
-Encoding: 65646 -1 786
+Encoding: 65602 -1 786
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -23249,7 +23249,7 @@ EndSplineSet
 EndChar
 
 StartChar: C.smol
-Encoding: 65647 -1 787
+Encoding: 65603 -1 787
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -23279,7 +23279,7 @@ EndSplineSet
 EndChar
 
 StartChar: D.smol
-Encoding: 65648 -1 788
+Encoding: 65604 -1 788
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -23308,7 +23308,7 @@ EndSplineSet
 EndChar
 
 StartChar: E.smol
-Encoding: 65649 -1 789
+Encoding: 65605 -1 789
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -23352,7 +23352,7 @@ EndSplineSet
 EndChar
 
 StartChar: F.smol
-Encoding: 65650 -1 790
+Encoding: 65606 -1 790
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -23394,7 +23394,7 @@ EndSplineSet
 EndChar
 
 StartChar: G.smol
-Encoding: 65651 -1 791
+Encoding: 65607 -1 791
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -23428,7 +23428,7 @@ EndSplineSet
 EndChar
 
 StartChar: H.smol
-Encoding: 65652 -1 792
+Encoding: 65608 -1 792
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -23468,7 +23468,7 @@ EndSplineSet
 EndChar
 
 StartChar: I.smol
-Encoding: 65653 -1 793
+Encoding: 65609 -1 793
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -23496,7 +23496,7 @@ EndSplineSet
 EndChar
 
 StartChar: J.smol
-Encoding: 65654 -1 794
+Encoding: 65610 -1 794
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -23525,7 +23525,7 @@ EndSplineSet
 EndChar
 
 StartChar: K.smol
-Encoding: 65655 -1 795
+Encoding: 65611 -1 795
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -23571,7 +23571,7 @@ EndSplineSet
 EndChar
 
 StartChar: L.smol
-Encoding: 65656 -1 796
+Encoding: 65612 -1 796
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -23602,7 +23602,7 @@ EndSplineSet
 EndChar
 
 StartChar: M.smol
-Encoding: 65657 -1 797
+Encoding: 65613 -1 797
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -23642,7 +23642,7 @@ EndSplineSet
 EndChar
 
 StartChar: N.smol
-Encoding: 65658 -1 798
+Encoding: 65614 -1 798
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -23681,7 +23681,7 @@ EndSplineSet
 EndChar
 
 StartChar: O.smol
-Encoding: 65659 -1 799
+Encoding: 65615 -1 799
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -23706,7 +23706,7 @@ EndSplineSet
 EndChar
 
 StartChar: P.smol
-Encoding: 65660 -1 800
+Encoding: 65616 -1 800
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -23740,7 +23740,7 @@ EndSplineSet
 EndChar
 
 StartChar: Q.smol
-Encoding: 65661 -1 801
+Encoding: 65617 -1 801
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -23777,7 +23777,7 @@ EndSplineSet
 EndChar
 
 StartChar: R.smol
-Encoding: 65662 -1 802
+Encoding: 65618 -1 802
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -23818,7 +23818,7 @@ EndSplineSet
 EndChar
 
 StartChar: S.smol
-Encoding: 65663 -1 803
+Encoding: 65619 -1 803
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -23856,7 +23856,7 @@ EndSplineSet
 EndChar
 
 StartChar: T.smol
-Encoding: 65664 -1 804
+Encoding: 65620 -1 804
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -23890,7 +23890,7 @@ EndSplineSet
 EndChar
 
 StartChar: U.smol
-Encoding: 65665 -1 805
+Encoding: 65621 -1 805
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -23928,7 +23928,7 @@ EndSplineSet
 EndChar
 
 StartChar: V.smol
-Encoding: 65666 -1 806
+Encoding: 65622 -1 806
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -23961,7 +23961,7 @@ EndSplineSet
 EndChar
 
 StartChar: W.smol
-Encoding: 65667 -1 807
+Encoding: 65623 -1 807
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -24004,7 +24004,7 @@ EndSplineSet
 EndChar
 
 StartChar: X.smol
-Encoding: 65668 -1 808
+Encoding: 65624 -1 808
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -24048,7 +24048,7 @@ EndSplineSet
 EndChar
 
 StartChar: Y.smol
-Encoding: 65669 -1 809
+Encoding: 65625 -1 809
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -24085,7 +24085,7 @@ EndSplineSet
 EndChar
 
 StartChar: Z.smol
-Encoding: 65670 -1 810
+Encoding: 65626 -1 810
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -24117,7 +24117,7 @@ EndSplineSet
 EndChar
 
 StartChar: bracketleft.smol
-Encoding: 65671 -1 811
+Encoding: 65627 -1 811
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -24141,7 +24141,7 @@ EndSplineSet
 EndChar
 
 StartChar: backslash.smol
-Encoding: 65672 -1 812
+Encoding: 65628 -1 812
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -24161,7 +24161,7 @@ EndSplineSet
 EndChar
 
 StartChar: bracketright.smol
-Encoding: 65673 -1 813
+Encoding: 65629 -1 813
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -24185,7 +24185,7 @@ EndSplineSet
 EndChar
 
 StartChar: asciicircum.smol
-Encoding: 65674 -1 814
+Encoding: 65630 -1 814
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -24209,7 +24209,7 @@ EndSplineSet
 EndChar
 
 StartChar: underscore.smol
-Encoding: 65675 -1 815
+Encoding: 65631 -1 815
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -24227,7 +24227,7 @@ EndSplineSet
 EndChar
 
 StartChar: grave.smol
-Encoding: 65676 -1 816
+Encoding: 65632 -1 816
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -24248,7 +24248,7 @@ EndSplineSet
 EndChar
 
 StartChar: a.simpl
-Encoding: 65677 -1 817
+Encoding: 65633 -1 817
 Width: 1008
 VWidth: 0
 Flags: HW
@@ -24291,7 +24291,7 @@ Comment: "{}"
 EndChar
 
 StartChar: a.smol
-Encoding: 65678 -1 818
+Encoding: 65634 -1 818
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -24328,7 +24328,7 @@ EndSplineSet
 EndChar
 
 StartChar: b.smol
-Encoding: 65679 -1 819
+Encoding: 65635 -1 819
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -24358,7 +24358,7 @@ EndSplineSet
 EndChar
 
 StartChar: c.smol
-Encoding: 65680 -1 820
+Encoding: 65636 -1 820
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -24384,7 +24384,7 @@ EndSplineSet
 EndChar
 
 StartChar: d.smol
-Encoding: 65681 -1 821
+Encoding: 65637 -1 821
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -24418,7 +24418,7 @@ EndSplineSet
 EndChar
 
 StartChar: e.smol
-Encoding: 65682 -1 822
+Encoding: 65638 -1 822
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -24447,7 +24447,7 @@ EndSplineSet
 EndChar
 
 StartChar: f.smol
-Encoding: 65683 -1 823
+Encoding: 65639 -1 823
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -24485,7 +24485,7 @@ EndSplineSet
 EndChar
 
 StartChar: g.smol
-Encoding: 65684 -1 824
+Encoding: 65640 -1 824
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -24533,7 +24533,7 @@ EndSplineSet
 EndChar
 
 StartChar: h.smol
-Encoding: 65685 -1 825
+Encoding: 65641 -1 825
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -24573,7 +24573,7 @@ EndSplineSet
 EndChar
 
 StartChar: i.smol
-Encoding: 65686 -1 826
+Encoding: 65642 -1 826
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -24604,7 +24604,7 @@ EndSplineSet
 EndChar
 
 StartChar: j.smol
-Encoding: 65687 -1 827
+Encoding: 65643 -1 827
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -24636,7 +24636,7 @@ EndSplineSet
 EndChar
 
 StartChar: k.smol
-Encoding: 65688 -1 828
+Encoding: 65644 -1 828
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -24680,7 +24680,7 @@ EndSplineSet
 EndChar
 
 StartChar: l.smol
-Encoding: 65689 -1 829
+Encoding: 65645 -1 829
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -24706,7 +24706,7 @@ EndSplineSet
 EndChar
 
 StartChar: m.smol
-Encoding: 65690 -1 830
+Encoding: 65646 -1 830
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -24754,7 +24754,7 @@ EndSplineSet
 EndChar
 
 StartChar: n.smol
-Encoding: 65691 -1 831
+Encoding: 65647 -1 831
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -24794,7 +24794,7 @@ EndSplineSet
 EndChar
 
 StartChar: o.smol
-Encoding: 65692 -1 832
+Encoding: 65648 -1 832
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -24815,7 +24815,7 @@ EndSplineSet
 EndChar
 
 StartChar: p.smol
-Encoding: 65693 -1 833
+Encoding: 65649 -1 833
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -24850,7 +24850,7 @@ EndSplineSet
 EndChar
 
 StartChar: q.smol
-Encoding: 65694 -1 834
+Encoding: 65650 -1 834
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -24882,7 +24882,7 @@ EndSplineSet
 EndChar
 
 StartChar: r.smol
-Encoding: 65695 -1 835
+Encoding: 65651 -1 835
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -24918,7 +24918,7 @@ EndSplineSet
 EndChar
 
 StartChar: s.smol
-Encoding: 65696 -1 836
+Encoding: 65652 -1 836
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -24955,7 +24955,7 @@ EndSplineSet
 EndChar
 
 StartChar: t.smol
-Encoding: 65697 -1 837
+Encoding: 65653 -1 837
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -24989,7 +24989,7 @@ EndSplineSet
 EndChar
 
 StartChar: u.smol
-Encoding: 65698 -1 838
+Encoding: 65654 -1 838
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -25025,7 +25025,7 @@ EndSplineSet
 EndChar
 
 StartChar: v.smol
-Encoding: 65699 -1 839
+Encoding: 65655 -1 839
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -25058,7 +25058,7 @@ EndSplineSet
 EndChar
 
 StartChar: w.smol
-Encoding: 65700 -1 840
+Encoding: 65656 -1 840
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -25099,7 +25099,7 @@ EndSplineSet
 EndChar
 
 StartChar: x.smol
-Encoding: 65701 -1 841
+Encoding: 65657 -1 841
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -25143,7 +25143,7 @@ EndSplineSet
 EndChar
 
 StartChar: y.smol
-Encoding: 65702 -1 842
+Encoding: 65658 -1 842
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -25179,7 +25179,7 @@ EndSplineSet
 EndChar
 
 StartChar: z.smol
-Encoding: 65703 -1 843
+Encoding: 65659 -1 843
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -25211,7 +25211,7 @@ EndSplineSet
 EndChar
 
 StartChar: braceleft.smol
-Encoding: 65704 -1 844
+Encoding: 65660 -1 844
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -25243,7 +25243,7 @@ EndSplineSet
 EndChar
 
 StartChar: bar.smol
-Encoding: 65705 -1 845
+Encoding: 65661 -1 845
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -25261,7 +25261,7 @@ EndSplineSet
 EndChar
 
 StartChar: braceright.smol
-Encoding: 65706 -1 846
+Encoding: 65662 -1 846
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -25293,7 +25293,7 @@ EndSplineSet
 EndChar
 
 StartChar: asciitilde.smol
-Encoding: 65707 -1 847
+Encoding: 65663 -1 847
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -33117,7 +33117,7 @@ Comment: "{}"
 EndChar
 
 StartChar: colon.larger
-Encoding: 65708 -1 1311
+Encoding: 65664 -1 1311
 Width: 1008
 VWidth: 0
 Flags: HW
@@ -33141,7 +33141,7 @@ Comment: "{}"
 EndChar
 
 StartChar: quotesinglbase.larger
-Encoding: 65709 -1 1312
+Encoding: 65665 -1 1312
 Width: 1008
 VWidth: 0
 Flags: HW
@@ -33164,7 +33164,7 @@ Comment: "{}"
 EndChar
 
 StartChar: quotesinglbase.orig
-Encoding: 65710 -1 1313
+Encoding: 65666 -1 1313
 Width: 1008
 VWidth: 0
 Flags: HW
@@ -33187,7 +33187,7 @@ Comment: "{}"
 EndChar
 
 StartChar: uni201F.orig
-Encoding: 65711 -1 1314
+Encoding: 65667 -1 1314
 Width: 1008
 VWidth: 0
 Flags: HW
@@ -33220,7 +33220,7 @@ Comment: "{}"
 EndChar
 
 StartChar: onedotenleader.orig
-Encoding: 65712 -1 1315
+Encoding: 65668 -1 1315
 Width: 1008
 VWidth: 0
 Flags: HW
@@ -33239,7 +33239,7 @@ Comment: "{}"
 EndChar
 
 StartChar: quoteright.larger
-Encoding: 65713 -1 1316
+Encoding: 65669 -1 1316
 Width: 1008
 VWidth: 0
 Flags: HW
@@ -33262,7 +33262,7 @@ Comment: "{}"
 EndChar
 
 StartChar: quotedblbase.larger
-Encoding: 65714 -1 1317
+Encoding: 65670 -1 1317
 Width: 1008
 VWidth: 0
 Flags: HW
@@ -33294,7 +33294,7 @@ Comment: "{}"
 EndChar
 
 StartChar: onedotenleader.larger
-Encoding: 65715 -1 1318
+Encoding: 65671 -1 1318
 Width: 1008
 VWidth: 0
 Flags: HW
@@ -33313,7 +33313,7 @@ Comment: "{}"
 EndChar
 
 StartChar: quoteleft.larger
-Encoding: 65716 -1 1319
+Encoding: 65672 -1 1319
 Width: 1008
 VWidth: 0
 Flags: HW
@@ -33336,7 +33336,7 @@ Comment: "{}"
 EndChar
 
 StartChar: quotedblbase.orig
-Encoding: 65717 -1 1320
+Encoding: 65673 -1 1320
 Width: 1008
 VWidth: 0
 Flags: HW
@@ -33368,7 +33368,7 @@ Comment: "{}"
 EndChar
 
 StartChar: semicolon.larger
-Encoding: 65718 -1 1321
+Encoding: 65674 -1 1321
 Width: 1008
 VWidth: 0
 Flags: HW
@@ -33396,7 +33396,7 @@ Comment: "{}"
 EndChar
 
 StartChar: twodotenleader.larger
-Encoding: 65719 -1 1322
+Encoding: 65675 -1 1322
 Width: 1008
 VWidth: 0
 Flags: HW
@@ -33420,7 +33420,7 @@ Comment: "{}"
 EndChar
 
 StartChar: periodcentered.larger
-Encoding: 65720 -1 1323
+Encoding: 65676 -1 1323
 Width: 1008
 VWidth: 0
 Flags: HW
@@ -33439,7 +33439,7 @@ Comment: "{}"
 EndChar
 
 StartChar: ellipsis.larger
-Encoding: 65721 -1 1324
+Encoding: 65677 -1 1324
 Width: 1008
 VWidth: 0
 Flags: HW
@@ -33469,7 +33469,7 @@ Comment: "{}"
 EndChar
 
 StartChar: quotereversed.larger
-Encoding: 65722 -1 1325
+Encoding: 65678 -1 1325
 Width: 1008
 VWidth: 0
 Flags: HW
@@ -33492,7 +33492,7 @@ Comment: "{}"
 EndChar
 
 StartChar: twodotenleader.orig
-Encoding: 65723 -1 1326
+Encoding: 65679 -1 1326
 Width: 1008
 VWidth: 0
 Flags: HW
@@ -33516,7 +33516,7 @@ Comment: "{}"
 EndChar
 
 StartChar: quotedblleft.larger
-Encoding: 65724 -1 1327
+Encoding: 65680 -1 1327
 Width: 1008
 VWidth: 0
 Flags: HW
@@ -33548,7 +33548,7 @@ Comment: "{}"
 EndChar
 
 StartChar: ellipsis.orig
-Encoding: 65725 -1 1328
+Encoding: 65681 -1 1328
 Width: 1008
 VWidth: 0
 Flags: HW
@@ -33578,7 +33578,7 @@ Comment: "{}"
 EndChar
 
 StartChar: quotereversed.orig
-Encoding: 65726 -1 1329
+Encoding: 65682 -1 1329
 Width: 1008
 VWidth: 0
 Flags: HW
@@ -33602,7 +33602,7 @@ Comment: "{}"
 EndChar
 
 StartChar: uni201F.larger
-Encoding: 65727 -1 1330
+Encoding: 65683 -1 1330
 Width: 1008
 VWidth: 0
 Flags: HW
@@ -33634,7 +33634,7 @@ Comment: "{}"
 EndChar
 
 StartChar: quotedblright.larger
-Encoding: 65728 -1 1331
+Encoding: 65684 -1 1331
 Width: 1008
 VWidth: 0
 Flags: HW
@@ -33666,7 +33666,7 @@ Comment: "{}"
 EndChar
 
 StartChar: l.orig
-Encoding: 65729 -1 1332
+Encoding: 65685 -1 1332
 Width: 1008
 VWidth: 0
 Flags: HW
@@ -33695,7 +33695,7 @@ Comment: "{}"
 EndChar
 
 StartChar: comma.larger
-Encoding: 65730 -1 1333
+Encoding: 65686 -1 1333
 Width: 1008
 VWidth: 0
 Flags: HW
@@ -33718,7 +33718,7 @@ Comment: "{}"
 EndChar
 
 StartChar: period.larger
-Encoding: 65731 -1 1334
+Encoding: 65687 -1 1334
 Width: 1008
 VWidth: 0
 Flags: HW
@@ -33852,7 +33852,7 @@ Comment: "{}"
 EndChar
 
 StartChar: uni2027.larger
-Encoding: 65748 -1 1338
+Encoding: 65688 -1 1338
 Width: 1008
 VWidth: 0
 Flags: HW
@@ -33871,7 +33871,7 @@ Comment: "{}"
 EndChar
 
 StartChar: uni2027.orig
-Encoding: 65749 -1 1339
+Encoding: 65689 -1 1339
 Width: 1008
 VWidth: 0
 Flags: HW
@@ -34016,7 +34016,7 @@ Comment: "{}"
 EndChar
 
 StartChar: uni204F.orig
-Encoding: 65767 -1 1342
+Encoding: 65690 -1 1342
 Width: 1008
 VWidth: 0
 Flags: HW
@@ -34045,7 +34045,7 @@ Comment: "{}"
 EndChar
 
 StartChar: uni204F.larger
-Encoding: 65768 -1 1343
+Encoding: 65691 -1 1343
 Width: 1008
 VWidth: 0
 Flags: HW
@@ -37050,7 +37050,7 @@ Refer: 1134 937 N 1 0 0 1 0 0 2
 EndChar
 
 StartChar: e.code
-Encoding: 65769 -1 1545
+Encoding: 65692 -1 1545
 Width: 1008
 VWidth: 0
 Flags: HW
@@ -37081,7 +37081,7 @@ Comment: "{}"
 EndChar
 
 StartChar: c.code
-Encoding: 65770 -1 1546
+Encoding: 65693 -1 1546
 Width: 1008
 VWidth: 0
 Flags: HW
@@ -37110,7 +37110,7 @@ Comment: "{}"
 EndChar
 
 StartChar: c.orig
-Encoding: 65771 -1 1547
+Encoding: 65694 -1 1547
 Width: 1008
 VWidth: 0
 Flags: HW
@@ -37140,7 +37140,7 @@ Comment: "{}"
 EndChar
 
 StartChar: a.code
-Encoding: 65772 -1 1548
+Encoding: 65695 -1 1548
 Width: 1008
 VWidth: 0
 Flags: HW
@@ -37184,7 +37184,7 @@ Comment: "{}"
 EndChar
 
 StartChar: e.orig
-Encoding: 65773 -1 1549
+Encoding: 65696 -1 1549
 Width: 1008
 VWidth: 0
 Flags: HW
@@ -37215,7 +37215,7 @@ Comment: "{}"
 EndChar
 
 StartChar: a.orig
-Encoding: 65774 -1 1550
+Encoding: 65697 -1 1550
 Width: 1008
 VWidth: 0
 Flags: HW
@@ -37259,7 +37259,7 @@ Comment: "{}"
 EndChar
 
 StartChar: l.cod2
-Encoding: 65775 -1 1551
+Encoding: 65698 -1 1551
 Width: 1008
 VWidth: 0
 Flags: HW
@@ -37290,7 +37290,7 @@ Comment: "{}"
 EndChar
 
 StartChar: s.orig
-Encoding: 65776 -1 1552
+Encoding: 65699 -1 1552
 Width: 1008
 VWidth: 0
 Flags: HW
@@ -37335,7 +37335,7 @@ Comment: "{}"
 EndChar
 
 StartChar: s.code
-Encoding: 65777 -1 1553
+Encoding: 65700 -1 1553
 Width: 1008
 VWidth: 0
 Flags: HW
@@ -37378,7 +37378,7 @@ Comment: "{}"
 EndChar
 
 StartChar: equal.orig
-Encoding: 65778 -1 1554
+Encoding: 65701 -1 1554
 Width: 1008
 VWidth: 0
 Flags: HW
@@ -37405,7 +37405,7 @@ Comment: "{}"
 EndChar
 
 StartChar: equal.code
-Encoding: 65779 -1 1555
+Encoding: 65702 -1 1555
 Width: 1008
 VWidth: 0
 Flags: HW
@@ -37558,7 +37558,7 @@ Comment: "{}"
 EndChar
 
 StartChar: .notdef
-Encoding: 65780 -1 1560
+Encoding: 65703 -1 1560
 Width: 1008
 VWidth: 0
 Flags: HW
@@ -42628,7 +42628,7 @@ SplineSet
  266.949311123 148.168097218 245.444473301 139.985595703 223.985839844 139.985595703 c 0
  177.600419809 139.985595703 139.985595703 177.621368248 139.985595703 223.985839844 c 0
  139.985595703 245.444473301 148.166253686 266.94746762 164.595147531 283.375220331 c 0
- 204.166269429 322.947860343 228.101722003 295.970662003 388.13106 456 c 1
+ 204.166249459 322.947840372 228.101741974 295.970681974 388.13106 456 c 1
  384 456 l 2
  168.029979452 456 160.516399466 420 108 420 c 0
  61.6395655229 420 24 457.637201438 24 504 c 0
@@ -42767,7 +42767,7 @@ Refer: 831 -1 N 1 0 0 1 0 -156 2
 EndChar
 
 StartChar: xstrokex.45
-Encoding: 65781 -1 1901
+Encoding: 65704 -1 1901
 Width: 1008
 VWidth: 0
 Flags: HW
@@ -42921,7 +42921,7 @@ Refer: 837 -1 N 1 0 0 1 0 -156 2
 EndChar
 
 StartChar: uni0259.smol
-Encoding: 65782 -1 1913
+Encoding: 65705 -1 1913
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -42962,7 +42962,7 @@ Refer: 1913 -1 N 1 0 0 1 0 -156 2
 EndChar
 
 StartChar: schwa.code
-Encoding: 65766 -1 1915
+Encoding: 65706 -1 1915
 Width: 1008
 VWidth: 0
 Flags: HW
@@ -42974,7 +42974,7 @@ Refer: 1545 -1 S -1 0 0 -1 1008.09 756 2
 EndChar
 
 StartChar: e.simpl
-Encoding: 65783 -1 1916
+Encoding: 65707 -1 1916
 Width: 1008
 VWidth: 0
 Flags: HW
@@ -43006,7 +43006,7 @@ Comment: "{}"
 EndChar
 
 StartChar: uni0259.simpl
-Encoding: 65765 -1 1917
+Encoding: 65708 -1 1917
 Width: 1008
 VWidth: 0
 Flags: HW
@@ -43018,7 +43018,7 @@ Refer: 1916 -1 S -1 0 0 -1 1008.09 757.533 2
 EndChar
 
 StartChar: s.simpl
-Encoding: 65764 -1 1918
+Encoding: 65709 -1 1918
 Width: 1008
 VWidth: 0
 Flags: HW
@@ -43856,7 +43856,7 @@ Refer: 733 -1 N 1 0 0 1 0 0 2
 EndChar
 
 StartChar: xhorizstrokex
-Encoding: 65784 -1 1952
+Encoding: 65710 -1 1952
 Width: 1008
 VWidth: 0
 Flags: HW
@@ -43926,7 +43926,7 @@ Refer: 599 72 N 1 0 0 1 0 0 2
 EndChar
 
 StartChar: xmedhorizstrokex
-Encoding: 65785 -1 1957
+Encoding: 65711 -1 1957
 Width: 1008
 VWidth: 0
 Flags: HW
@@ -44158,7 +44158,7 @@ Refer: 633 108 N 1 0 0 1 0 0 2
 EndChar
 
 StartChar: xmedstrokex.45
-Encoding: 65786 -1 1964
+Encoding: 65712 -1 1964
 Width: 1008
 VWidth: 0
 Flags: HW
@@ -44179,7 +44179,7 @@ Comment: "{}"
 EndChar
 
 StartChar: xshortstrokex.45
-Encoding: 65787 -1 1965
+Encoding: 65713 -1 1965
 Width: 1008
 VWidth: 0
 Flags: HW
@@ -46700,7 +46700,7 @@ Refer: 2033 8839 N 1 0 0 1 0 0 2
 EndChar
 
 StartChar: xtest4x
-Encoding: 65806 -1 2040
+Encoding: 65714 -1 2040
 Width: 1008
 VWidth: 0
 Flags: HW
@@ -46728,7 +46728,7 @@ Comment: "{}"
 EndChar
 
 StartChar: xtest3x
-Encoding: 65807 -1 2041
+Encoding: 65715 -1 2041
 Width: 1008
 VWidth: 0
 Flags: HW
@@ -46756,7 +46756,7 @@ Comment: "{}"
 EndChar
 
 StartChar: xtest1x
-Encoding: 65808 -1 2042
+Encoding: 65716 -1 2042
 Width: 1008
 VWidth: 0
 Flags: HW
@@ -46784,7 +46784,7 @@ Comment: "{}"
 EndChar
 
 StartChar: xtest2x
-Encoding: 65809 -1 2043
+Encoding: 65717 -1 2043
 Width: 1008
 VWidth: 0
 Flags: HW
@@ -47175,7 +47175,7 @@ Comment: "{}"
 EndChar
 
 StartChar: beta.smol
-Encoding: 65810 -1 2056
+Encoding: 65718 -1 2056
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -47212,7 +47212,7 @@ EndSplineSet
 EndChar
 
 StartChar: gamma.smol
-Encoding: 65811 -1 2057
+Encoding: 65719 -1 2057
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -47241,7 +47241,7 @@ EndSplineSet
 EndChar
 
 StartChar: rho.smol
-Encoding: 65812 -1 2058
+Encoding: 65720 -1 2058
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -47266,7 +47266,7 @@ EndSplineSet
 EndChar
 
 StartChar: phi.smol
-Encoding: 65813 -1 2059
+Encoding: 65721 -1 2059
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -47301,7 +47301,7 @@ EndSplineSet
 EndChar
 
 StartChar: chi.smol
-Encoding: 65814 -1 2060
+Encoding: 65722 -1 2060
 Width: 1008
 VWidth: 864
 Flags: HW
@@ -47436,7 +47436,7 @@ Refer: 2060 -1 N 1 0 0 1 0 -156 2
 EndChar
 
 StartChar: numbersign.forsmall
-Encoding: 65815 -1 2071
+Encoding: 65723 -1 2071
 Width: 1008
 VWidth: 0
 Flags: HW
@@ -47494,7 +47494,7 @@ Comment: "{}"
 EndChar
 
 StartChar: dollar.forsmall
-Encoding: 65816 -1 2072
+Encoding: 65724 -1 2072
 Width: 1008
 VWidth: 0
 Flags: HW
@@ -48924,7 +48924,7 @@ Comment: "{}"
 EndChar
 
 StartChar: u1D719
-Encoding: 65817 120601 2115
+Encoding: 65725 120601 2115
 Width: 1008
 VWidth: 0
 Flags: HW
@@ -50090,6 +50090,862 @@ SplineSet
  690.62298 427.24596 696 415.24596 696 402 c 0
 470.06553 771.93447 m 0
  478.75404 780.62298 490.75404 786 504 786 c 1024
+EndSplineSet
+Comment: "{}"
+EndChar
+
+StartChar: uni2604
+Encoding: 9732 9732 2154
+Width: 1008
+Flags: HW
+LayerCount: 2
+Fore
+SplineSet
+419.80078125 196.305664062 m 0
+ 393.30886125 196.305664062 371.80078125 217.813744062 371.80078125 244.305664062 c 0
+ 371.80078125 252.703926796 373.962273524 260.601329776 377.758817249 267.471432177 c 1
+ 371.241889259 264.16060429 363.869930049 262.293945312 356.065429688 262.293945312 c 0
+ 330.451762583 262.293945312 309.496967098 282.399603502 308.135742176 307.676220962 c 1
+ 299.721207648 293.785945315 284.462427129 284.495117188 267.05078125 284.495117188 c 0
+ 240.55886125 284.495117188 219.05078125 306.003197188 219.05078125 332.495117188 c 0
+ 219.05078125 338.849199565 219.05078125 338.849199565 226.891318123 368.114373278 c 0
+ 232.375867517 388.585712597 251.070235805 403.677734375 273.26171875 403.677734375 c 0
+ 299.75363875 403.677734375 321.26171875 382.169654375 321.26171875 355.677734375 c 0
+ 321.26171875 351.37729732 320.694957742 347.208189802 319.607005489 343.147356698 c 1
+ 326.465905471 355.027074173 l 2
+ 334.763138732 369.398006423 350.292748439 379.078125 368.065429688 379.078125 c 0
+ 394.557349688 379.078125 416.065429688 357.570045 416.065429688 331.078125 c 0
+ 416.065429688 318.299081051 413.29225925 313.459432874 402.835053947 295.209853295 c 1
+ 411.523641901 303.898941254 423.524047825 309.276367188 436.770507812 309.276367188 c 0
+ 463.262427812 309.276367188 484.770507812 287.768287188 484.770507812 261.276367188 c 0
+ 484.770507812 248.030907175 479.39389373 236.031313103 470.705961677 227.342881081 c 2
+ 453.736235115 210.372177955 l 2
+ 445.047647161 201.683089996 433.047241237 196.305664062 419.80078125 196.305664062 c 0
+247.998104742 99.2199952712 m 0
+ 261.656543366 99.2199952712 272.077561602 110.356020882 272.077561602 123.165514705 c 0
+ 272.077561602 136.818046122 260.948508632 147.243906774 248.132549385 147.243906774 c 0
+ 234.477591491 147.243906774 224.053297772 136.112580803 224.053297772 123.298860207 c 0
+ 224.053297772 109.648420701 235.179946895 99.2199952712 247.998104742 99.2199952712 c 0
+368.077561602 123.165514705 m 0
+ 368.077561602 57.0348039686 314.30743658 3.2199952712 247.998104742 3.2199952712 c 0
+ 181.867630097 3.2199952712 128.053297772 56.9897575588 128.053297772 123.298860207 c 0
+ 128.053297772 189.425115014 181.818405827 243.243906774 248.132549385 243.243906774 c 0
+ 314.263810198 243.243906774 368.077561602 189.474336864 368.077561602 123.165514705 c 0
+440.9765625 933.59765625 m 0
+ 414.4846425 933.59765625 392.9765625 955.10573625 392.9765625 981.59765625 c 0
+ 392.9765625 987.952694994 392.9765625 987.952694994 400.818560191 1017.21871971 c 0
+ 406.303725662 1037.68913995 424.9976467 1052.78027344 447.188476562 1052.78027344 c 0
+ 473.680396562 1052.78027344 495.188476562 1031.27219344 495.188476562 1004.78027344 c 0
+ 495.188476562 998.425234696 495.188476562 998.425234696 487.346478871 969.15920998 c 0
+ 481.8613134 948.688789741 463.167392362 933.59765625 440.9765625 933.59765625 c 0
+397.495117188 771.322265625 m 0
+ 371.003197188 771.322265625 349.495117188 792.830345625 349.495117188 819.322265625 c 0
+ 349.495117188 825.67730437 349.495117188 825.67730437 357.337114879 854.943329083 c 0
+ 362.822280351 875.413749322 381.516201388 890.504882812 403.70703125 890.504882812 c 0
+ 430.19895125 890.504882812 451.70703125 868.996802812 451.70703125 842.504882812 c 0
+ 451.70703125 836.149844067 451.70703125 836.149844067 443.865033559 806.883819354 c 0
+ 438.379868087 786.413399115 419.68594705 771.322265625 397.495117188 771.322265625 c 0
+354.013671875 609.046875 m 0
+ 327.521751875 609.046875 306.013671875 630.554955 306.013671875 657.046875 c 0
+ 306.013671875 663.402170018 306.013671875 663.402170018 313.855799343 692.667446203 c 0
+ 319.341129891 713.13762016 338.03493108 728.228515625 360.225585938 728.228515625 c 0
+ 386.717505938 728.228515625 408.225585938 706.720435625 408.225585938 680.228515625 c 0
+ 408.225585938 673.873220607 408.225585938 673.873220607 400.38345847 644.607944422 c 0
+ 394.898127922 624.137770465 376.204326733 609.046875 354.013671875 609.046875 c 0
+310.532226562 446.771484375 m 0
+ 284.040306562 446.771484375 262.532226562 468.279564375 262.532226562 494.771484375 c 0
+ 262.532226562 501.126779393 262.532226562 501.126779393 270.37435403 530.392055578 c 0
+ 275.859684578 550.862229535 294.553485767 565.953125 316.744140625 565.953125 c 0
+ 343.236060625 565.953125 364.744140625 544.445045 364.744140625 517.953125 c 0
+ 364.744140625 511.597829982 364.744140625 511.597829982 356.902013157 482.332553797 c 0
+ 351.416682609 461.86237984 332.72288142 446.771484375 310.532226562 446.771484375 c 0
+894.9765625 671.481445312 m 0
+ 868.4846425 671.481445312 846.9765625 692.989525312 846.9765625 719.481445312 c 0
+ 846.9765625 732.726905325 852.353176582 744.726499397 861.041108635 753.414931419 c 2
+ 878.010835197 770.385634545 l 2
+ 886.699423151 779.074722504 898.699829075 784.452148438 911.946289062 784.452148438 c 0
+ 938.438209062 784.452148438 959.946289062 762.944068438 959.946289062 736.452148438 c 0
+ 959.946289062 723.206688425 954.56967498 711.207094353 945.881742927 702.518662331 c 2
+ 928.912016365 685.547959205 l 2
+ 920.223428411 676.858871246 908.223022487 671.481445312 894.9765625 671.481445312 c 0
+776.182617188 552.6875 m 0
+ 749.690697188 552.6875 728.182617188 574.19558 728.182617188 600.6875 c 0
+ 728.182617188 613.932960014 733.55923127 625.932554086 742.247163324 634.620986108 c 2
+ 759.216889886 651.591689233 l 2
+ 767.90547784 660.280777192 779.905883764 665.658203125 793.15234375 665.658203125 c 0
+ 819.64426375 665.658203125 841.15234375 644.150123125 841.15234375 617.658203125 c 0
+ 841.15234375 604.412743111 835.775729668 592.413149039 827.087797614 583.724717017 c 2
+ 810.118071052 566.754013892 l 2
+ 801.429483098 558.064925933 789.429077174 552.6875 776.182617188 552.6875 c 0
+657.388671875 433.893554688 m 0
+ 630.896751875 433.893554688 609.388671875 455.401634688 609.388671875 481.893554688 c 0
+ 609.388671875 495.139014703 614.765285958 507.138608776 623.453218013 515.827040798 c 2
+ 640.422944576 532.797743922 l 2
+ 649.11153253 541.48683188 661.111938453 546.864257812 674.358398438 546.864257812 c 0
+ 700.850318438 546.864257812 722.358398438 525.356177812 722.358398438 498.864257812 c 0
+ 722.358398438 485.618797797 716.981784355 473.619203724 708.2938523 464.930771702 c 2
+ 691.324125737 447.960068578 l 2
+ 682.635537783 439.27098062 670.63513186 433.893554688 657.388671875 433.893554688 c 0
+538.594726562 315.099609375 m 0
+ 512.102806562 315.099609375 490.594726562 336.607689375 490.594726562 363.099609375 c 0
+ 490.594726562 376.345069389 495.971340644 388.344663462 504.659272699 397.033095484 c 2
+ 521.628999262 414.003798609 l 2
+ 530.317587216 422.692886567 542.317993139 428.0703125 555.564453125 428.0703125 c 0
+ 582.056373125 428.0703125 603.564453125 406.5622325 603.564453125 380.0703125 c 0
+ 603.564453125 366.824852486 598.187839043 354.825258413 589.499906988 346.136826391 c 2
+ 572.530180425 329.166123266 l 2
+ 563.841592471 320.477035308 551.841186548 315.099609375 538.594726562 315.099609375 c 0
+692.065429688 844.262695312 m 0
+ 665.573509688 844.262695312 644.065429688 865.770775312 644.065429688 892.262695312 c 0
+ 644.065429688 900.981934063 646.395300887 909.161296392 650.465905471 916.211644485 c 2
+ 662.465905471 936.995824173 l 2
+ 670.763138732 951.366756423 686.292748439 961.046875 704.065429688 961.046875 c 0
+ 730.557349688 961.046875 752.065429688 939.538795 752.065429688 913.046875 c 0
+ 752.065429688 904.327636249 749.735558489 896.14827392 745.664953905 889.097925827 c 2
+ 733.664953905 868.313746139 l 2
+ 725.367720644 853.942813889 709.838110937 844.262695312 692.065429688 844.262695312 c 0
+608.065429688 698.770507812 m 0
+ 581.573509688 698.770507812 560.065429688 720.278587812 560.065429688 746.770507812 c 0
+ 560.065429688 755.489746563 562.395300887 763.669108892 566.465905471 770.719456985 c 2
+ 578.465905471 791.503636673 l 2
+ 586.763138732 805.874568923 602.292748439 815.5546875 620.065429688 815.5546875 c 0
+ 646.557349688 815.5546875 668.065429688 794.0466075 668.065429688 767.5546875 c 0
+ 668.065429688 758.835448749 665.735558489 750.65608642 661.664953905 743.605738327 c 2
+ 649.664953905 722.821558639 l 2
+ 641.367720644 708.450626389 625.838110937 698.770507812 608.065429688 698.770507812 c 0
+524.065429688 553.278320312 m 0
+ 497.573509688 553.278320312 476.065429688 574.786400312 476.065429688 601.278320312 c 0
+ 476.065429688 609.997559063 478.395300887 618.176921392 482.465905471 625.227269485 c 2
+ 494.465905471 646.011449173 l 2
+ 502.763138732 660.382381423 518.292748439 670.0625 536.065429688 670.0625 c 0
+ 562.557349688 670.0625 584.065429688 648.55442 584.065429688 622.0625 c 0
+ 584.065429688 613.343261249 581.735558489 605.16389892 577.664953905 598.113550827 c 2
+ 565.664953905 577.329371139 l 2
+ 557.367720644 562.958438889 541.838110937 553.278320312 524.065429688 553.278320312 c 0
+440.065429688 407.786132812 m 0
+ 413.573509688 407.786132812 392.065429688 429.294212812 392.065429688 455.786132812 c 0
+ 392.065429688 464.505371563 394.395300887 472.684733892 398.465905471 479.735081985 c 2
+ 410.465905471 500.519261673 l 2
+ 418.763138732 514.890193923 434.292748439 524.5703125 452.065429688 524.5703125 c 0
+ 478.557349688 524.5703125 500.065429688 503.0622325 500.065429688 476.5703125 c 0
+ 500.065429688 467.851073749 497.735558489 459.67171142 493.664953905 452.621363327 c 2
+ 481.664953905 431.837183639 l 2
+ 473.367720644 417.466251389 457.838110937 407.786132812 440.065429688 407.786132812 c 0
+EndSplineSet
+Comment: "{}"
+EndChar
+
+StartChar: uni2605
+Encoding: 9733 9733 2155
+Width: 1008
+Flags: HW
+LayerCount: 2
+Fore
+SplineSet
+264.18359375 110.9609375 m 0
+ 237.69167375 110.9609375 216.18359375 132.4690175 216.18359375 158.9609375 c 0
+ 216.18359375 164.134586831 217.00388627 169.118158447 218.521395654 173.788576695 c 2
+ 299.351526677 422.558385168 l 1
+ 87.7981002417 576.260514228 l 2
+ 75.7852897427 584.988307395 67.96875 599.147613669 67.96875 615.118164062 c 0
+ 67.96875 641.610084062 89.47683 663.118164062 115.96875 663.118164062 c 2
+ 377.514582189 663.118164062 l 1
+ 458.337801904 911.866701695 l 2
+ 464.590772242 931.111384508 482.681729331 945.0390625 504 945.0390625 c 0
+ 525.318270669 945.0390625 543.409227758 931.111384508 549.662198096 911.866701695 c 2
+ 630.485417811 663.118164062 l 1
+ 892.03125 663.118164062 l 2
+ 918.52317 663.118164062 940.03125 641.610084062 940.03125 615.118164062 c 0
+ 940.03125 599.147613669 932.214710257 584.988307395 920.201899758 576.260514228 c 2
+ 708.648473323 422.558385168 l 1
+ 789.478604346 173.788576695 l 2
+ 790.99611373 169.118158447 791.81640625 164.134586831 791.81640625 158.9609375 c 0
+ 791.81640625 132.4690175 770.30832625 110.9609375 743.81640625 110.9609375 c 0
+ 733.295036643 110.9609375 723.55977424 114.353433372 715.645756492 120.103287666 c 2
+ 504 273.872498251 l 1
+ 292.354243508 120.103287666 l 2
+ 284.44022576 114.353433372 274.704963357 110.9609375 264.18359375 110.9609375 c 0
+EndSplineSet
+Comment: "{+AAoA    +ACIA-stroke_width+ACIA: 0+AAoA}"
+EndChar
+
+StartChar: uni2606
+Encoding: 9734 9734 2156
+Width: 1008
+Flags: HW
+LayerCount: 2
+Fore
+SplineSet
+403.78515625 440.881835938 m 0
+ 403.78515625 435.708186607 402.96486373 430.724614991 401.447354346 426.054196743 c 2
+ 355.494951182 284.627102795 l 1
+ 475.829350242 372.054915459 l 2
+ 483.74336799 377.804769753 493.478630393 381.197265625 504 381.197265625 c 0
+ 514.521369607 381.197265625 524.25663201 377.804769753 532.170649758 372.054915459 c 2
+ 652.505048818 284.627102795 l 1
+ 606.552645654 426.054196743 l 2
+ 605.03513627 430.724614991 604.21484375 435.708186607 604.21484375 440.881835938 c 0
+ 604.21484375 456.852386331 612.031383493 471.011692605 624.044193992 479.739485772 c 2
+ 744.310965199 567.118164062 l 1
+ 595.6015625 567.118164062 l 2
+ 574.283291831 567.118164062 556.192334742 581.045842054 549.939364404 600.290524867 c 2
+ 504 741.677489598 l 1
+ 458.060635596 600.290524867 l 2
+ 451.807665258 581.045842054 433.716708169 567.118164062 412.3984375 567.118164062 c 2
+ 263.689034801 567.118164062 l 1
+ 383.955806008 479.739485772 l 2
+ 395.968616507 471.011692605 403.78515625 456.852386331 403.78515625 440.881835938 c 0
+264.18359375 110.9609375 m 0
+ 237.69167375 110.9609375 216.18359375 132.4690175 216.18359375 158.9609375 c 0
+ 216.18359375 164.134586831 217.00388627 169.118158447 218.521395654 173.788576695 c 2
+ 299.351526677 422.558385168 l 1
+ 87.7981002417 576.260514228 l 2
+ 75.7852897427 584.988307395 67.96875 599.147613669 67.96875 615.118164062 c 0
+ 67.96875 641.610084062 89.47683 663.118164062 115.96875 663.118164062 c 2
+ 377.514582189 663.118164062 l 1
+ 458.337801904 911.866701695 l 2
+ 464.590772242 931.111384508 482.681729331 945.0390625 504 945.0390625 c 0
+ 525.318270669 945.0390625 543.409227758 931.111384508 549.662198096 911.866701695 c 2
+ 630.485417811 663.118164062 l 1
+ 892.03125 663.118164062 l 2
+ 918.52317 663.118164062 940.03125 641.610084062 940.03125 615.118164062 c 0
+ 940.03125 599.147613669 932.214710257 584.988307395 920.201899758 576.260514228 c 2
+ 708.648473323 422.558385168 l 1
+ 789.478604346 173.788576695 l 2
+ 790.99611373 169.118158447 791.81640625 164.134586831 791.81640625 158.9609375 c 0
+ 791.81640625 132.4690175 770.30832625 110.9609375 743.81640625 110.9609375 c 0
+ 733.295036643 110.9609375 723.55977424 114.353433372 715.645756492 120.103287666 c 2
+ 504 273.872498251 l 1
+ 292.354243508 120.103287666 l 2
+ 284.44022576 114.353433372 274.704963357 110.9609375 264.18359375 110.9609375 c 0
+EndSplineSet
+Comment: "{}"
+EndChar
+
+StartChar: uni2610
+Encoding: 9744 9744 2157
+Width: 1008
+Flags: HW
+LayerCount: 2
+Fore
+SplineSet
+120 192 m 2
+ 120 864 l 2
+ 120 890.49192 141.50808 912 168 912 c 2
+ 840 912 l 2
+ 866.49192 912 888 890.49192 888 864 c 2
+ 888 192 l 2
+ 888 165.50808 866.49192 144 840 144 c 2
+ 168 144 l 2
+ 141.50808 144 120 165.50808 120 192 c 2
+216 816 m 1
+ 216 240 l 1
+ 792 240 l 1
+ 792 816 l 1
+ 216 816 l 1
+EndSplineSet
+Comment: "{}"
+EndChar
+
+StartChar: uni2612
+Encoding: 9746 9746 2158
+Width: 1008
+Flags: HW
+LayerCount: 2
+Fore
+SplineSet
+768 312 m 0
+ 768 285.50808 746.49192 264 720 264 c 0
+ 706.75404 264 694.75404 269.37702 686.06553 278.06553 c 2
+ 504 460.13106 l 1
+ 321.93447 278.06553 l 2
+ 313.24596 269.37702 301.24596 264 288 264 c 0
+ 261.50808 264 240 285.50808 240 312 c 0
+ 240 325.24596 245.37702 337.24596 254.06553 345.93447 c 2
+ 436.13106 528 l 1
+ 254.06553 710.06553 l 2
+ 245.37702 718.75404 240 730.75404 240 744 c 0
+ 240 770.49192 261.50808 792 288 792 c 0
+ 301.24596 792 313.24596 786.62298 321.93447 777.93447 c 2
+ 504 595.86894 l 1
+ 686.06553 777.93447 l 2
+ 694.75404 786.62298 706.75404 792 720 792 c 0
+ 746.49192 792 768 770.49192 768 744 c 0
+ 768 730.75404 762.62298 718.75404 753.93447 710.06553 c 2
+ 571.86894 528 l 1
+ 753.93447 345.93447 l 2
+ 762.62298 337.24596 768 325.24596 768 312 c 0
+120 192 m 2
+ 120 864 l 2
+ 120 890.49192 141.50808 912 168 912 c 2
+ 840 912 l 2
+ 866.49192 912 888 890.49192 888 864 c 2
+ 888 192 l 2
+ 888 165.50808 866.49192 144 840 144 c 2
+ 168 144 l 2
+ 141.50808 144 120 165.50808 120 192 c 2
+216 816 m 1
+ 216 240 l 1
+ 792 240 l 1
+ 792 816 l 1
+ 216 816 l 1
+EndSplineSet
+Comment: "{}"
+EndChar
+
+StartChar: uni2622
+Encoding: 9762 9762 2159
+Width: 1008
+Flags: HW
+LayerCount: 2
+Fore
+SplineSet
+0 1344 m 1024
+503.935546875 927.607421875 m 0
+ 503.973632812 927.607421875 504.012695312 927.607421875 504.05078125 927.607421875 c 0
+ 722.609375 927.607421875 900.05078125 750.166015625 900.05078125 531.607421875 c 0
+ 900.05078125 313.048828125 722.609375 135.607421875 504.05078125 135.607421875 c 0
+ 285.4921875 135.607421875 108.05078125 313.048828125 108.05078125 531.607421875 c 0
+ 108.05078125 640.890625 152.357421875 739.948242188 224.041992188 811.62890625 c 0
+ 295.467773438 883.29296875 394.2578125 927.666015625 503.330078125 927.666015625 c 0
+ 503.518554688 927.666015625 503.747070312 927.607421875 503.935546875 927.607421875 c 0
+151.041015625 531.736328125 m 0
+ 151.041015625 217.318359375 531.157226562 59.9150390625 753.45703125 282.21484375 c 0
+ 975.756835938 504.514648438 818.353515625 884.630859375 503.935546875 884.630859375 c 0
+ 309.037109375 884.630859375 151.041015625 726.634765625 151.041015625 531.736328125 c 0
+504.322265625 585.666015625 m 0
+ 535.998046875 585.489257812 561.66015625 559.717773438 561.66015625 528 c 0
+ 561.66015625 496.172851562 535.821289062 470.333007812 503.994140625 470.333007812 c 0
+ 472.166992188 470.333007812 446.327148438 496.172851562 446.327148438 528 c 0
+ 446.327148438 528.021484375 446.333007812 528.041992188 446.333007812 528.063476562 c 0
+ 446.368164062 559.861328125 472.194335938 585.665039062 504 585.665039062 c 0
+ 504.109375 585.665039062 504.212890625 585.666015625 504.322265625 585.666015625 c 0
+205.807617188 528.836914062 m 1
+ 211.155273438 639.982421875 260.059570312 727.030273438 355.484375 787.91796875 c 1
+ 460.379882812 603.255859375 l 1
+ 435.573242188 589.338867188 421.140625 564.596679688 417.338867188 528.836914062 c 2
+ 205.807617188 528.836914062 l 1
+653.353515625 787.209960938 m 1
+ 746.780273438 726.7734375 797.810546875 641.142578125 802.8359375 528 c 1
+ 590.209960938 529.546875 l 2
+ 590.209960938 557.9609375 576.357421875 582.83203125 547.298828125 603.965820312 c 2
+ 653.353515625 787.209960938 l 1
+654.900390625 272.267578125 m 1
+ 555.932617188 221.495117188 456.19140625 220.142578125 355.741210938 272.267578125 c 1
+ 463.21484375 455.512695312 l 1
+ 487.633789062 441.015625 516.306640625 440.88671875 549.166992188 455.512695312 c 2
+ 654.900390625 272.33203125 l 1
+ 654.900390625 272.267578125 l 1
+EndSplineSet
+Comment: "{+AAoA    +ACIA-stroke_width+ACIA: 0+AAoA}"
+EndChar
+
+StartChar: uni2611
+Encoding: 9745 9745 2160
+Width: 1008
+Flags: HW
+LayerCount: 2
+Fore
+SplineSet
+240 480 m 0
+ 240 506.49192 261.50808 528 288 528 c 0
+ 297.82564401 528 306.965706232 525.041327985 314.577115444 519.967055177 c 0
+ 354.502300786 493.35026494 383.65451532 454.789332607 405.549982669 420.139225559 c 1
+ 446.182602783 496.570735675 494.928679857 564.875704448 540.242529579 621.025474756 c 0
+ 618.397561282 717.869753171 686.786192093 778.686700585 688.132190035 779.883143187 c 0
+ 696.610880726 787.419757052 707.774774725 792 720 792 c 0
+ 746.49192 792 768 770.49192 768 744 c 0
+ 768 729.733305275 761.762342707 716.911996932 751.867809965 708.116856813 c 1
+ 751.867809965 708.116856813 543.829086668 522.307454121 452.58657393 294.201172276 c 0
+ 445.510329334 276.510560786 428.204634663 264 408 264 c 0
+ 387.795365337 264 370.489670666 276.510560786 363.41342607 294.201172276 c 0
+ 349.646972234 329.103119663 306.619885408 409.901610922 261.422884556 440.032944823 c 0
+ 248.512397826 448.639935977 240 463.33372401 240 480 c 0
+120 192 m 2
+ 120 864 l 2
+ 120 890.49192 141.50808 912 168 912 c 2
+ 840 912 l 2
+ 866.49192 912 888 890.49192 888 864 c 2
+ 888 192 l 2
+ 888 165.50808 866.49192 144 840 144 c 2
+ 168 144 l 2
+ 141.50808 144 120 165.50808 120 192 c 2
+216 816 m 1
+ 216 240 l 1
+ 792 240 l 1
+ 792 816 l 1
+ 216 816 l 1
+EndSplineSet
+Comment: "{}"
+EndChar
+
+StartChar: uni2623
+Encoding: 9763 9763 2161
+Width: 1008
+Flags: HW
+LayerCount: 2
+Fore
+SplineSet
+504.2734375 702.6484375 m 1
+ 553.983398438 702.6484375 600.107421875 686.96875 637.794921875 660.250976562 c 1
+ 637.581054688 659.969726562 637.37890625 659.688476562 637.165039062 659.407226562 c 0
+ 632.032226562 652.235351562 626.408203125 645.555664062 620.360351562 639.368164062 c 0
+ 614.313476562 633.250976562 608.055664062 627.836914062 601.516601562 622.985351562 c 0
+ 599.688476562 621.791015625 598.071289062 620.313476562 596.594726562 618.556640625 c 0
+ 596.313476562 618.208007812 595.96484375 617.780273438 595.751953125 617.431640625 c 1
+ 569.244140625 634.025390625 537.884765625 643.658203125 504.276367188 643.658203125 c 0
+ 470.948242188 643.658203125 439.80078125 634.165039062 413.43359375 617.853515625 c 0
+ 412.09765625 619.750976562 410.41015625 621.438476562 408.44140625 622.916015625 c 0
+ 401.26953125 628.188476562 394.73046875 633.884765625 388.75390625 640.001953125 c 0
+ 382.70703125 646.189453125 377.15234375 652.868164062 372.16015625 659.969726562 c 1
+ 372.16015625 659.969726562 l 1
+ 371.947265625 660.250976562 371.733398438 660.532226562 371.530273438 660.813476562 c 1
+ 409.077148438 687.180664062 454.849609375 702.649414062 504.278320312 702.649414062 c 1
+ 504.2734375 702.6484375 l 1
+734.54296875 495.651367188 m 2
+ 735.38671875 487.565429688 735.80859375 479.409179688 735.80859375 471.11328125 c 0
+ 735.80859375 378.442382812 681.387695312 298.498046875 602.708984375 261.514648438 c 0
+ 602.495117188 261.942382812 602.360351562 262.358398438 602.146484375 262.780273438 c 0
+ 598.279296875 270.584960938 595.115234375 278.670898438 592.583984375 286.967773438 c 0
+ 590.052734375 295.194335938 588.225585938 303.701171875 587.029296875 312.419921875 c 1
+ 587.029296875 312.419921875 l 1
+ 586.815429688 314.038085938 586.399414062 315.654296875 585.833984375 317.272460938 c 0
+ 585.62109375 317.767578125 585.485351562 318.18359375 585.271484375 318.678710938 c 0
+ 639.833007812 347.716796875 676.958007812 405.090820312 676.958007812 471.18359375 c 0
+ 676.958007812 474.489257812 676.887695312 477.79296875 676.676757812 481.09765625 c 0
+ 678.715820312 481.37890625 680.825195312 481.873046875 682.864257812 482.78515625 c 0
+ 690.528320312 486.08984375 698.82421875 488.90234375 707.54296875 491.151367188 c 0
+ 715.98046875 493.33203125 724.27734375 494.73828125 732.29296875 495.510742188 c 0
+ 732.990234375 495.440429688 733.768554688 495.510742188 734.54296875 495.658203125 c 1
+ 734.54296875 495.651367188 l 2
+409.352539062 259.827148438 m 1
+ 328.776367188 296.107421875 272.73828125 377.036132812 272.73828125 471.11328125 c 0
+ 272.73828125 480.393554688 273.299804688 489.534179688 274.354492188 498.534179688 c 1
+ 275.063476562 498.400390625 275.689453125 498.3203125 276.39453125 498.252929688 c 0
+ 285.112304688 497.544921875 293.690429688 496.213867188 301.987304688 494.245117188 c 0
+ 310.072265625 492.276367188 318.299804688 489.604492188 326.666992188 486.088867188 c 1
+ 326.666992188 486.159179688 l 1
+ 328.002929688 485.596679688 329.338867188 485.180664062 330.745117188 484.893554688 c 0
+ 331.240234375 484.823242188 331.65625 484.758789062 332.151367188 484.6796875 c 0
+ 331.802734375 480.250976562 331.65625 475.750976562 331.65625 471.1796875 c 0
+ 331.65625 403.540039062 370.538085938 345.041015625 427.208984375 316.706054688 c 0
+ 426.500976562 314.947265625 425.943359375 313.120117188 425.662109375 311.151367188 c 0
+ 424.466796875 302.713867188 422.498046875 294.27734375 419.897460938 285.83984375 c 0
+ 417.366210938 277.82421875 414.272460938 270.01953125 410.686523438 262.63671875 c 0
+ 410.124023438 261.725585938 409.708007812 260.80859375 409.350585938 259.82421875 c 1
+ 409.352539062 259.827148438 l 1
+879.244140625 205.8984375 m 1
+ 805.065429688 117.235351562 675.762695312 91.994140625 572.194335938 151.758789062 c 0
+ 544.772460938 167.578125 521.5703125 187.96875 503.078125 211.453125 c 1
+ 429.391601562 120.118164062 298.120117188 93.470703125 193.286132812 154.008789062 c 0
+ 174.020507812 165.1171875 156.793945312 178.546875 141.888671875 193.6640625 c 1
+ 150.536132812 186.2109375 160.028320312 179.4609375 170.293945312 173.484375 c 0
+ 259.37890625 122.016601562 373.353515625 152.602539062 424.821289062 241.686523438 c 0
+ 456.954101562 297.302734375 457.094726562 362.692382812 431.008789062 416.41015625 c 2
+ 464.829101562 437.36328125 l 2
+ 475.024414062 426.04296875 489.7890625 418.94140625 506.2421875 418.94140625 c 0
+ 521.5 418.94140625 535.350585938 425.059570312 545.405273438 435.04296875 c 2
+ 548.499023438 433.21484375 l 1
+ 582.319335938 416.059570312 l 1
+ 539.428710938 329.716796875 570.577148438 223.6875 655.232421875 174.8203125 c 0
+ 729.76171875 131.860351562 821.870117188 146.907226562 879.244140625 205.8984375 c 1
+558.061523438 454.23828125 m 2
+ 560.592773438 460.56640625 561.999023438 467.52734375 561.999023438 474.76953125 c 0
+ 561.999023438 502.612304688 541.608398438 525.604492188 515.03125 529.823242188 c 2
+ 515.03125 569.126953125 l 2
+ 575.217773438 572.501953125 632.662109375 605.197265625 665.075195312 661.305664062 c 0
+ 716.122070312 749.756835938 685.817382812 862.887695312 597.365234375 913.934570312 c 0
+ 577.749023438 925.25390625 556.936523438 932.56640625 535.772460938 936.15234375 c 1
+ 654.880859375 920.754882812 746.91796875 818.943359375 746.91796875 695.6875 c 0
+ 746.91796875 662.430664062 740.239257812 630.719726562 728.07421875 601.822265625 c 1
+ 757.74609375 597.533203125 787.135742188 587.689453125 814.698242188 571.798828125 c 0
+ 910.673828125 516.393554688 954.477539062 405.231445312 928.743164062 302.857421875 c 1
+ 941.610351562 376.754882812 908.142578125 454.16796875 839.377929688 493.823242188 c 0
+ 754.58203125 542.760742188 647.005859375 516.604492188 593.709960938 435.95703125 c 1
+ 580.913085938 442.495117188 l 1
+ 580.913085938 442.495117188 l 1
+ 558.061523438 454.23828125 l 2
+453.297851562 457.05078125 m 1
+ 419.758789062 436.30859375 l 2
+ 404.220703125 460.21484375 382.986328125 480.956054688 356.619140625 496.213867188 c 0
+ 267.53515625 547.681640625 153.559570312 517.096679688 102.091796875 428.01171875 c 0
+ 79.2412109375 388.497070312 72.5615234375 344.060546875 80.0146484375 302.365234375 c 1
+ 64.3349609375 361.989257812 71.224609375 427.58984375 104.552734375 485.245117188 c 0
+ 143.224609375 552.181640625 208.895507812 593.736328125 279.838867188 604.001953125 c 1
+ 268.30859375 632.266601562 261.91015625 663.274414062 261.91015625 695.6875 c 0
+ 261.91015625 820.419921875 356.126953125 923.21484375 477.2734375 936.64453125 c 1
+ 423.555664062 928.559570312 373.916015625 896.989257812 344.666015625 846.294921875 c 0
+ 293.620117188 757.842773438 323.924804688 644.711914062 412.375976562 593.666015625 c 0
+ 437.618164062 579.041015625 464.969726562 571.166015625 492.1796875 569.267578125 c 2
+ 492.1796875 528.698242188 l 2
+ 468.204101562 522.510742188 450.415039062 500.643554688 450.415039062 474.69921875 c 0
+ 450.415039062 468.581054688 451.47265625 462.60546875 453.296875 457.05078125 c 2
+ 453.297851562 457.05078125 l 1
+EndSplineSet
+Comment: "{}"
+EndChar
+
+StartChar: uni2620
+Encoding: 9760 9760 2162
+Width: 1008
+Flags: HW
+LayerCount: 2
+Fore
+SplineSet
+525.84375 915.5 m 0
+ 467.93359375 918.419921875 376.229492188 908.161132812 322.5625 870.01171875 c 0
+ 268.895507812 831.861328125 235.408203125 768.852539062 238.748046875 704.717773438 c 0
+ 241.829101562 647.305664062 263.568359375 594.694335938 295.890625 563.284179688 c 1
+ 298.595703125 577.658203125 l 2
+ 269.375976562 606.053710938 254.180664062 650.73046875 251.248046875 705.374023438 c 0
+ 248.159179688 764.6875 279.641601562 824.159179688 329.35546875 859.497070312 c 0
+ 379.069335938 894.833984375 469.755859375 905.8359375 506.8125 904.41796875 c 0
+ 543.870117188 903 574.790039062 898.077148438 604.405273438 890.375 c 0
+ 634.021484375 882.672851562 662.803710938 871.852539062 695.440429688 847.991210938 c 0
+ 728.078125 824.129882812 755.376953125 771.456054688 757.764648438 710.716796875 c 0
+ 760.151367188 649.977539062 741.760742188 611.221679688 710.647460938 582.553710938 c 2
+ 713.583984375 566.775390625 l 1
+ 747.083007812 597.641601562 772.763671875 646.733398438 770.259765625 711.078125 c 0
+ 767.755859375 775.421875 738.267578125 832.176757812 702.677734375 858.198242188 c 0
+ 667.087890625 884.219726562 637.927734375 894.571289062 607.5625 902.46875 c 0
+ 577.205078125 910.364257812 546.149414062 915.471679688 525.84375 915.5 c 0
+712.979492188 747.016601562 m 2
+ 703.78125 738.9375 l 1
+ 708.748046875 734.579101562 710.747070312 729.740234375 711.53125 722.1875 c 0
+ 712.315429688 714.634765625 711.430664062 704.662109375 710.3125 692.4375 c 0
+ 708.752929688 676.112304688 696.93359375 658.040039062 696.09375 638.53125 c 0
+ 691.634765625 601.196289062 702.385742188 564.890625 707.28125 536.34375 c 0
+ 710.526367188 504.166992188 700.340820312 476.5234375 690.254882812 467.478515625 c 0
+ 680.169921875 458.43359375 658.259765625 452.233398438 646.341796875 447.962890625 c 0
+ 634.423828125 443.693359375 621.85546875 435.811523438 608.809570312 424.22265625 c 0
+ 595.763671875 412.6328125 590.6640625 396.869140625 590.994140625 380.739257812 c 1
+ 603.40625 386.75 l 2
+ 603.126953125 400.421875 606.770507812 405.6796875 618.591796875 417.186523438 c 0
+ 629.079101562 425.482421875 640.635742188 432.657226562 650.7578125 436.266601562 c 0
+ 660.879882812 439.875976562 684.5078125 445.561523438 699.364257812 458.888671875 c 0
+ 714.221679688 472.216796875 723.298828125 502.39453125 718.93359375 535.178710938 c 0
+ 714.568359375 567.963867188 704.364257812 603.094726562 706.7109375 627.500976562 c 0
+ 709.056640625 651.907226562 720.801757812 670.399414062 722.350585938 686.962890625 c 0
+ 723.8984375 703.525390625 724.922851562 713.98046875 723.938476562 723.469726562 c 0
+ 722.954101562 732.958984375 716.725585938 743.729492188 712.979492188 747.016601562 c 2
+306.217773438 738.189453125 m 2
+ 301.25390625 733.846679688 299.283203125 729.020507812 298.499023438 721.470703125 c 0
+ 297.716796875 713.928710938 298.571289062 703.952148438 299.909179688 689.682617188 c 0
+ 301.248046875 675.413085938 313.147460938 657.3125 313.936523438 637.657226562 c 0
+ 318.345703125 600.435546875 307.608398438 564.189453125 302.717773438 535.657226562 c 0
+ 299.474609375 503.616210938 309.686523438 475.900390625 320.080078125 466.609375 c 0
+ 330.474609375 457.318359375 345.514648438 452.865234375 362.171875 448.137695312 c 0
+ 378.830078125 443.41015625 387.928710938 435.463867188 401.364257812 423.0078125 c 0
+ 414.799804688 410.551757812 418.999023438 396.045898438 418.65625 380.099609375 c 1
+ 406.092773438 385.78125 l 2
+ 406.389648438 399.584960938 403.950195312 403.578125 391.3125 417.248046875 c 0
+ 379.83203125 425.85546875 372.959960938 432.015625 357.473632812 436.451171875 c 0
+ 341.98828125 440.88671875 324.879882812 445.576171875 310.331054688 458.583007812 c 0
+ 295.78125 471.588867188 286.700195312 501.795898438 291.06640625 534.537109375 c 0
+ 295.432617188 567.27734375 305.66796875 602.42578125 303.305664062 626.85546875 c 0
+ 300.942382812 651.286132812 289.231445312 669.720703125 287.682617188 686.259765625 c 0
+ 286.1328125 702.797851562 285.078125 713.262695312 286.0625 722.75 c 0
+ 287.046875 732.237304688 290.50390625 741.036132812 298 747.59375 c 1
+ 306.217773438 738.189453125 l 2
+347.32421875 439.28125 m 1
+ 347.32421875 439.28125 366.903320312 394.533203125 368.094726562 365.248046875 c 2
+ 368.125976562 364.404296875 l 1
+ 367.938476562 363.591796875 l 2
+ 363.09765625 342.594726562 364.587890625 317.00390625 369.907226562 296.998046875 c 2
+ 369.907226562 296.936523438 l 1
+ 369.907226562 296.874023438 l 2
+ 376.408203125 270.666015625 403.928710938 237.1875 429.125976562 226.905273438 c 0
+ 456.966796875 216.780273438 473.514648438 214.311523438 505.063476562 214.311523438 c 1
+ 505.063476562 201.811523438 l 1
+ 472.720703125 201.811523438 453.545898438 204.678710938 424.625976562 215.217773438 c 2
+ 424.500976562 215.280273438 l 1
+ 424.407226562 215.311523438 l 2
+ 393.845703125 227.783203125 365.620117188 262.455078125 357.813476562 293.780273438 c 0
+ 357.80859375 293.799804688 357.818359375 293.82421875 357.813476562 293.842773438 c 0
+ 357.809570312 293.85546875 357.784179688 293.862304688 357.78125 293.875 c 0
+ 352.092773438 315.321289062 350.616210938 341.53515625 355.625 364.75 c 0
+ 354.565429688 390.801757812 342.961914062 417.8671875 331.755859375 444.994140625 c 1
+ 347.32421875 439.28125 l 1
+677.149414062 445.450195312 m 1
+ 665.952148438 418.34375 653.88671875 390.837890625 652.841796875 364.811523438 c 0
+ 657.87109375 341.579101562 656.354492188 315.3125 650.654296875 293.842773438 c 0
+ 642.762695312 262.44921875 614.162109375 228.73828125 583.623046875 216.311523438 c 0
+ 555.112304688 204.677734375 535.813476562 201.717773438 503.623046875 201.717773438 c 1
+ 503.623046875 214.217773438 l 1
+ 535.09765625 214.217773438 551.46875 216.6796875 578.904296875 227.874023438 c 0
+ 604.313476562 238.212890625 631.953125 270.744140625 638.529296875 296.905273438 c 2
+ 638.561523438 296.9375 l 1
+ 638.561523438 297 l 2
+ 643.881835938 317.0078125 645.370117188 342.618164062 640.530273438 363.59375 c 2
+ 640.342773438 364.40625 l 1
+ 640.375 365.25 l 2
+ 641.532226562 394.540039062 650.522460938 412.891601562 661.630859375 439.783203125 c 2
+ 677.149414062 445.450195312 l 1
+498.497070312 438.529296875 m 2
+ 486.118164062 423.416992188 477.918945312 416.6640625 471.48828125 415.860351562 c 0
+ 464.25390625 415.426757812 457.823242188 428.368164062 457.662109375 449.02734375 c 0
+ 457.645507812 455.13671875 458.819335938 466.647460938 460.426757812 474.58984375 c 0
+ 462.018554688 482.53125 467.838867188 494.34765625 470.958007812 499.412109375 c 0
+ 479.575195312 512.53125 483.047851562 516.518554688 498.642578125 528.3828125 c 1
+ 498.497070312 438.529296875 l 2
+509.912109375 528.077148438 m 1
+ 525.506835938 516.341796875 529.043945312 512.322265625 537.564453125 499.138671875 c 0
+ 540.779296875 494.155273438 546.567382812 482.2578125 548.174804688 474.380859375 c 0
+ 549.783203125 466.502929688 551.069335938 454.927734375 550.908203125 448.818359375 c 0
+ 550.908203125 428.239257812 544.31640625 415.217773438 537.243164062 415.69921875 c 0
+ 530.8125 416.50390625 522.61328125 423.255859375 510.233398438 438.368164062 c 2
+ 509.912109375 528.077148438 l 1
+366.344726562 618.912109375 m 1
+ 388.048828125 622.770507812 408.94921875 625.182617188 430.65234375 627.59375 c 0
+ 458.948242188 634.828125 473.256835938 602.513671875 465.540039062 578.077148438 c 0
+ 455.732421875 556.533203125 441.90625 537.5625 426.151367188 519.235351562 c 0
+ 413.932617188 505.409179688 399.302734375 503.319335938 385.315429688 507.981445312 c 0
+ 374.061523438 511.196289062 363.772460938 518.109375 352.518554688 534.186523438 c 0
+ 347.6953125 548.012695312 343.515625 555.247070312 337.24609375 572.2890625 c 0
+ 332.390625 588.205078125 339.978515625 611.837890625 366.666992188 619.233398438 c 1
+ 366.344726562 618.912109375 l 1
+643.350585938 619.233398438 m 2
+ 670.038085938 611.837890625 677.754882812 588.205078125 672.771484375 572.2890625 c 0
+ 666.500976562 555.247070312 662.321289062 548.012695312 657.337890625 534.186523438 c 0
+ 646.244140625 518.109375 635.793945312 511.196289062 624.541015625 507.981445312 c 0
+ 610.71484375 503.319335938 596.083984375 505.409179688 583.705078125 519.235351562 c 0
+ 567.7890625 537.5625 553.962890625 556.534179688 544.15625 578.077148438 c 0
+ 536.278320312 602.513671875 550.586914062 634.828125 578.881835938 627.59375 c 0
+ 600.424804688 625.182617188 621.486328125 622.770507812 643.029296875 618.912109375 c 2
+ 643.350585938 619.233398438 l 2
+635.868164062 429.08203125 m 2
+ 626.685546875 407.495117188 627.084960938 406.318359375 620.9296875 385.627929688 c 0
+ 614.7734375 364.938476562 612.6640625 352.581054688 609.186523438 324.404296875 c 1
+ 615.405273438 323.655273438 l 2
+ 618.868164062 351.705078125 620.866210938 363.46875 626.436523438 383.061523438 c 0
+ 633.03515625 404.4140625 635.791992188 412.25 644.936523438 433.749023438 c 1
+ 635.868164062 429.08203125 l 2
+362.903320312 434.706054688 m 1
+ 372.045898438 413.309570312 374.729492188 403.262695312 381.3125 381.875 c 0
+ 386.890625 362.26171875 388.927734375 350.529296875 392.375 322.53125 c 2
+ 398.5625 323.28125 l 1
+ 395.100585938 351.395507812 392.975585938 363.755859375 386.828125 384.458007812 c 0
+ 380.680664062 405.161132812 375.225585938 420.638671875 370.633789062 431.38671875 c 2
+ 362.903320312 434.706054688 l 1
+605.999023438 382.46875 m 2
+ 582.235351562 368.064453125 546.96484375 365.2578125 506.030273438 365.0625 c 0
+ 469.254882812 364.384765625 428.100585938 366.368164062 403.467773438 381.5 c 2
+ 406.092773438 385.78125 l 1
+ 428.7265625 371.877929688 469.43359375 369.389648438 505.936523438 370.0625 c 2
+ 505.96875 370.0625 l 2
+ 546.690429688 370.254882812 581.29296875 373.345703125 603.40625 386.75 c 1
+ 605.999023438 382.46875 l 2
+593.0703125 348.155273438 m 1
+ 568.428710938 331.376953125 541.703125 328.459960938 505.15625 327.5625 c 2
+ 505.124023438 327.5625 l 2
+ 470.08984375 326.255859375 440.482421875 331.5390625 414.919921875 347.604492188 c 1
+ 414.860351562 341.318359375 l 2
+ 441.483398438 324.586914062 469.640625 321.232421875 505.3125 322.5625 c 0
+ 542.060546875 323.466796875 567.381835938 323.874023438 593.213867188 341.462890625 c 2
+ 593.0703125 348.155273438 l 1
+398.5625 323.28125 m 2
+ 392.375 322.53125 l 1
+ 421.083007812 287.88671875 460.698242188 283.256835938 505.25 282.09375 c 0
+ 529.404296875 281.213867188 553.543945312 285.524414062 573.34375 293.125 c 0
+ 593.15234375 300.729492188 608.655273438 310.711914062 615.405273438 323.655273438 c 1
+ 609.188476562 324.421875 l 2
+ 603.65625 313.8125 590.0546875 306.248046875 571.09375 298.96875 c 0
+ 552.1328125 291.689453125 528.73046875 287.4609375 505.46875 288.3125 c 2
+ 505.436523438 288.3125 l 2
+ 457.233398438 289.375976562 433.200195312 288.40234375 398.5625 323.28125 c 2
+597.96875 378.225585938 m 1
+ 592.473632812 375.9140625 l 1
+ 593.875 310.693359375 l 1
+ 598.875 314.450195312 l 1
+ 597.96875 378.225585938 l 1
+410.1875 377.875976562 m 1
+ 409.5625 313.098632812 l 1
+ 414.5625 309.102539062 l 1
+ 415.1875 375.705078125 l 1
+ 410.1875 377.875976562 l 1
+576.1875 371.014648438 m 1
+ 571.1875 369.944335938 l 1
+ 571.5 299.125 l 1
+ 576.5 301.18359375 l 1
+ 576.1875 371.014648438 l 1
+431.9375 370.568359375 m 1
+ 431.625 301.15625 l 1
+ 436.625 299.060546875 l 1
+ 436.9375 369.493164062 l 1
+ 431.9375 370.568359375 l 1
+551.75 367.092773438 m 1
+ 546.75 366.618164062 l 1
+ 547.375 292.01171875 l 1
+ 552.375 293.153320312 l 1
+ 551.75 367.092773438 l 1
+456.0625 366.674804688 m 1
+ 455.375 293.43359375 l 1
+ 460.375 292.404296875 l 1
+ 461.0625 366.204101562 l 1
+ 456.0625 366.674804688 l 1
+477.8125 365.221679688 m 1
+ 477.46875 289.958984375 l 1
+ 482.46875 289.493164062 l 1
+ 482.8125 365.077148438 l 1
+ 477.8125 365.221679688 l 1
+530.65625 365.598632812 m 1
+ 525.65625 365.408203125 l 1
+ 525.96875 288.833007812 l 1
+ 530.96875 289.333984375 l 1
+ 530.65625 365.598632812 l 1
+502.21875 365.002929688 m 1
+ 502.124023438 288.408203125 l 1
+ 507.25 288.2578125 l 1
+ 507.217773438 365.069335938 l 1
+ 502.21875 365.002929688 l 1
+674.404296875 438.614257812 m 2
+ 715.341796875 458.913085938 742.131835938 471.5625 779 489.90625 c 0
+ 789.23046875 498.568359375 792.912109375 506.461914062 796.53125 515 c 0
+ 800.151367188 523.541015625 804.090820312 533.138671875 814.28125 541 c 0
+ 823.868164062 550.021484375 832.751953125 554.431640625 841.0625 554.28125 c 1
+ 841.061523438 554.28125 l 1
+ 849.46875 554.12890625 856.10546875 549.137695312 860.217773438 543.25 c 0
+ 860.49609375 542.850585938 860.7265625 542.420898438 860.905273438 541.96875 c 0
+ 867.165039062 526.115234375 869.803710938 509.895507812 869.436523438 493.21875 c 0
+ 885.48046875 478.334960938 895.337890625 468.596679688 905.092773438 454.15625 c 0
+ 905.709960938 453.24609375 906.076171875 452.189453125 906.155273438 451.09375 c 0
+ 906.959960938 440.075195312 901.919921875 430.885742188 894.124023438 425.65625 c 0
+ 886.473632812 420.5234375 876.662109375 418.625 866.374023438 418.4375 c 0
+ 852.770507812 416.108398438 843.5625 419.176757812 836.374023438 421.03125 c 0
+ 829.075195312 422.913085938 823.232421875 423.9921875 809.936523438 418.75 c 2
+ 809.874023438 418.75 l 1
+ 655.490234375 346.056640625 l 1
+ 653.9453125 359.0625 l 1
+ 804.90625 430.217773438 l 2
+ 805.029296875 430.2734375 805.154296875 430.326171875 805.28125 430.374023438 c 0
+ 820.697265625 436.471679688 831.26171875 435.249023438 839.5 433.124023438 c 0
+ 847.739257812 431 853.265625 428.626953125 864.65625 430.717773438 c 0
+ 864.997070312 430.77734375 865.341796875 430.809570312 865.6875 430.8125 c 0
+ 874.604492188 430.916015625 882.400390625 432.840820312 887.15625 436.03125 c 0
+ 891.494140625 438.94140625 893.155273438 442.861328125 893.125 448.9375 c 0
+ 884.14453125 461.859375 875.84765625 470.483398438 859.53125 485.5625 c 0
+ 858.169921875 486.8203125 857.4375 488.618164062 857.53125 490.46875 c 0
+ 858.362304688 506.1015625 855.344726562 521.12890625 849.4375 536.40625 c 0
+ 846.975585938 539.709960938 844.436523438 541.715820312 840.84375 541.78125 c 2
+ 840.84375 541.78125 l 2
+ 837.033203125 541.849609375 830.931640625 539.7109375 822.59375 531.78125 c 0
+ 822.424804688 531.625976562 822.248046875 531.479492188 822.0625 531.34375 c 0
+ 814.23828125 525.430664062 811.822265625 518.993164062 808.0625 510.125 c 0
+ 804.303710938 501.256835938 799.2578125 490.389648438 786.8125 480 c 0
+ 786.4375 479.693359375 786.029296875 479.430664062 785.59375 479.21875 c 0
+ 703.494140625 438.345703125 667.89453125 421.606445312 667.357421875 421.401367188 c 1
+ 674.404296875 438.614257812 l 2
+354.020507812 313.012695312 m 1
+ 354.020507812 313.012695312 285.48046875 276.420898438 244.28125 260.624023438 c 0
+ 244.045898438 260.536132812 243.806640625 260.463867188 243.5625 260.405273438 c 0
+ 225.342773438 255.858398438 214.803710938 259.354492188 206.0625 261.686523438 c 0
+ 197.65234375 263.9296875 189.3671875 264.961914062 171.125 259.186523438 c 0
+ 167.190429688 255.725585938 165.106445312 252.170898438 164.96875 248.624023438 c 0
+ 164.818359375 244.763671875 166.412109375 240.546875 170.25 236.561523438 c 0
+ 181.208984375 225.814453125 189.022460938 218.908203125 198.90625 209.186523438 c 0
+ 199.759765625 208.350585938 200.356445312 207.288085938 200.625 206.124023438 c 0
+ 203.799804688 192.051757812 204.286132812 179.965820312 205.9375 164.249023438 c 0
+ 208.818359375 155.731445312 212.197265625 153.27734375 215.71875 152.686523438 c 0
+ 219.208984375 152.100585938 224.485351562 153.877929688 229.875 157.936523438 c 0
+ 235.65625 164.9375 241.907226562 170.907226562 245.28125 176.936523438 c 2
+ 245.34375 176.999023438 l 2
+ 251.110351562 186.930664062 257.700195312 198.650390625 266.03125 208.592773438 c 0
+ 266.553710938 209.208984375 267.190429688 209.71875 267.90625 210.092773438 c 2
+ 370.5390625 264.25 l 1
+ 377.703125 253.638671875 l 1
+ 275.124023438 199.78125 l 2
+ 268.064453125 191.180664062 261.8125 180.461914062 256.155273438 170.71875 c 1
+ 256.1875 170.8125 l 1
+ 251.260742188 162.008789062 244.028320312 155.60546875 238.875 149.21875 c 0
+ 238.572265625 148.8359375 238.2265625 148.490234375 237.84375 148.1875 c 0
+ 230.659179688 142.639648438 222.306640625 138.892578125 213.65625 140.34375 c 0
+ 205.005859375 141.794921875 197.720703125 149.041015625 193.9375 160.5 c 0
+ 193.797851562 160.916015625 193.704101562 161.345703125 193.65625 161.78125 c 0
+ 191.920898438 177.877929688 191.328125 189.155273438 188.65625 201.71875 c 0
+ 179.64453125 210.508789062 172.034179688 217.322265625 161.375 227.78125 c 2
+ 161.25 227.90625 l 2
+ 155.490234375 233.888671875 152.168945312 241.409179688 152.46875 249.125 c 0
+ 152.768554688 256.840820312 156.814453125 264.356445312 163.90625 269.9375 c 0
+ 164.4765625 270.389648438 165.122070312 270.73828125 165.8125 270.96875 c 0
+ 187.428710938 278.173828125 199.791015625 276.3125 209.28125 273.78125 c 0
+ 218.6953125 271.26953125 224.639648438 268.693359375 240.28125 272.53125 c 0
+ 281.538085938 288.39453125 316.348632812 306.926757812 352.795898438 326.3125 c 1
+ 354.020507812 313.012695312 l 1
+341.112304688 421.317382812 m 1
+ 300.991210938 440.32421875 259.379882812 459.544921875 220.375 480.78125 c 0
+ 220.079101562 480.9453125 219.796875 481.133789062 219.53125 481.34375 c 0
+ 207.095703125 491.189453125 202.559570312 502.284179688 198.25 511.46875 c 0
+ 193.967773438 520.595703125 189.999023438 528.049804688 177.71875 535.5625 c 0
+ 172.154296875 538.28125 168.004882812 539.6875 165.5625 539.375 c 1
+ 165.5625 539.375976562 l 1
+ 163.135742188 539.065429688 160.296875 537.248046875 156.21875 530.500976562 c 0
+ 150.908203125 517.702148438 151.135742188 503.30078125 150.1875 488.094726562 c 0
+ 150.09375 486.661132812 149.508789062 485.303710938 148.53125 484.250976562 c 0
+ 137.016601562 471.83984375 125.47265625 465.46875 117.53125 452.594726562 c 0
+ 117.53125 452.583007812 117.53125 452.57421875 117.53125 452.5625 c 0
+ 114.790039062 448.149414062 114.151367188 445.12109375 114.25 443.1875 c 0
+ 114.348632812 441.254882812 115.021484375 440.01953125 116.46875 438.5625 c 0
+ 119.362304688 435.649414062 125.88671875 433.228515625 130.75 432.03125 c 0
+ 130.760742188 432.03125 130.770507812 432.03125 130.78125 432.03125 c 0
+ 144.576171875 428.58984375 153.1953125 429.91796875 162.875 431.625 c 0
+ 172.555664062 433.33203125 183.377929688 435.518554688 198.15625 432.5625 c 0
+ 198.65234375 432.46484375 199.135742188 432.307617188 199.59375 432.09375 c 0
+ 252.623046875 407.383789062 303.227539062 383.192382812 354.420898438 358 c 2
+ 352.896484375 344.767578125 l 1
+ 350.51953125 345.454101562 296.458984375 373.165039062 195.3125 420.313476562 c 0
+ 183.0390625 422.6796875 174.848632812 421.0390625 165.0625 419.313476562 c 0
+ 155.14453125 417.564453125 143.600585938 415.953125 127.75 419.907226562 c 1
+ 127.75 419.875 l 1
+ 122.163085938 421.25 113.803710938 423.499023438 107.59375 429.75 c 0
+ 104.489257812 432.875 102.046875 437.361328125 101.78125 442.5625 c 0
+ 101.515625 447.763671875 103.256835938 453.280273438 106.90625 459.15625 c 0
+ 116.235351562 474.280273438 128.28515625 481.374023438 138.0625 491.4375 c 0
+ 138.786132812 505.370117188 138.340820312 520.608398438 144.78125 535.78125 c 0
+ 144.880859375 536.028320312 144.995117188 536.267578125 145.125 536.5 c 0
+ 150.423828125 545.538085938 156.763671875 550.856445312 164 551.78125 c 0
+ 171.236328125 552.706054688 177.393554688 549.727539062 183.592773438 546.65625 c 0
+ 183.752929688 546.579101562 183.91015625 546.49609375 184.061523438 546.40625 c 0
+ 198.895507812 537.408203125 205.044921875 526.40625 209.561523438 516.78125 c 0
+ 214.0390625 507.239257812 217.2265625 499.306640625 227.124023438 491.375 c 0
+ 267.948242188 468.811523438 292.13671875 459.369140625 333.8359375 439.086914062 c 2
+ 341.112304688 421.317382812 l 1
+655.686523438 325.28125 m 1
+ 692.40234375 308.256835938 729.10546875 291.201171875 765.811523438 274.15625 c 2
+ 765.84375 274.15625 l 2
+ 777.669921875 269.19140625 786.193359375 270.6953125 795.65625 273.71875 c 0
+ 795.698242188 273.729492188 795.739257812 273.741210938 795.78125 273.750976562 c 0
+ 813.090820312 278.852539062 827.583007812 275.725585938 841.34375 270.188476562 c 0
+ 841.513671875 270.123046875 841.680664062 270.048828125 841.84375 269.969726562 c 0
+ 850.790039062 265.428710938 856.795898438 259.046875 858 251.250976562 c 0
+ 859.204101562 243.455078125 855.529296875 236.000976562 849.6875 229.500976562 c 0
+ 840.22265625 218.513671875 831.068359375 212.755859375 820.9375 203.375976562 c 0
+ 819.009765625 187.229492188 820.157226562 170.717773438 811.875 153.469726562 c 0
+ 811.739257812 153.1875 811.58203125 152.916015625 811.40625 152.657226562 c 0
+ 805.817382812 144.521484375 797.973632812 139.598632812 789.59375 140.625976562 c 0
+ 781.309570312 141.641601562 773.954101562 147.015625 765.46875 154.782226562 c 0
+ 756.106445312 162.120117188 752.581054688 170.440429688 749.09375 178.000976562 c 0
+ 745.619140625 185.534179688 741.767578125 193.008789062 730.75 202.688476562 c 2
+ 631.004882812 254.626953125 l 1
+ 638 264.905273438 l 2
+ 672.291992188 247.293945312 703.287109375 231.034179688 737.5 213.25 c 0
+ 737.938476562 213.018554688 738.34765625 212.735351562 738.71875 212.40625 c 0
+ 751.484375 201.301757812 756.78515625 191.236328125 760.46875 183.25 c 0
+ 764.15234375 175.263671875 766.045898438 170.046875 773.25 164.467773438 c 0
+ 773.390625 164.359375 773.524414062 164.244140625 773.65625 164.125 c 0
+ 781.540039062 156.877929688 787.640625 153.454101562 791.09375 153.03125 c 0
+ 794.404296875 152.625 796.787109375 153.948242188 800.6875 159.4375 c 0
+ 807.3828125 173.774414062 806.182617188 188.8359375 808.71875 207.1875 c 0
+ 808.913085938 208.58203125 809.57421875 209.87109375 810.59375 210.84375 c 0
+ 822.458984375 222.240234375 831.58984375 227.592773438 840.3125 237.75 c 0
+ 840.342773438 237.78125 840.375 237.813476562 840.40625 237.84375 c 0
+ 844.822265625 242.7578125 846.072265625 246.649414062 845.65625 249.34375 c 0
+ 845.245117188 252.01171875 843.009765625 255.260742188 836.28125 258.71875 c 0
+ 823.866210938 263.672851562 813.48046875 265.92578125 799.3125 261.75 c 1
+ 799.4375 261.8125 l 1
+ 788.782226562 258.408203125 775.875 256.385742188 760.96875 262.65625 c 0
+ 760.895507812 262.67578125 760.821289062 262.696289062 760.75 262.71875 c 2
+ 654 312 l 1
+ 655.686523438 325.28125 l 1
 EndSplineSet
 Comment: "{}"
 EndChar
