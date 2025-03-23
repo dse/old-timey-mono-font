@@ -13,6 +13,7 @@ SMOL_PY_PROG		:= bin/smol.py
 BOUNDS_PY_PROG		:= bin/bounds.py
 SUPERSUB_PY_PROG	:= bin/supersub.py
 UNDERLINE_PY_PROG	:= bin/underline.py
+NOTREADY_PY_PROG	:= bin/notready.py
 
 METAS_PY_ARGS :=
 
@@ -27,6 +28,7 @@ SMOL_PY		:= $(SMOL_PY_PROG)
 BOUNDS_PY	:= $(BOUNDS_PY_PROG)
 SUPERSUB_PY	:= $(SUPERSUB_PY_PROG)
 UNDERLINE_PY	:= $(UNDERLINE_PY_PROG)
+NOTREADY_PY	:= $(NOTREADY_PY_PROG)
 
 DISTDIR := dist
 
@@ -189,13 +191,14 @@ $(ZIP_FILE): $(FONTS) Makefile
 stage1: src/build/$(PS_FONT_FAMILY).stage1.sfd
 
 # Stage 1: import SVGs
-src/build/$(PS_FONT_FAMILY).stage1.sfd: $(FONT_SRC) $(SRC_SVGS) Makefile $(SVG_PY_PROG) $(BOUNDS_PY_PROG) $(SMOL_PY_PROG) $(SUPERSUB_PY_PROG)
+src/build/$(PS_FONT_FAMILY).stage1.sfd: $(FONT_SRC) $(SRC_SVGS) Makefile $(SVG_PY_PROG) $(BOUNDS_PY_PROG) $(SMOL_PY_PROG) $(SUPERSUB_PY_PROG) $(NOTREADY_PY_PROG)
 	@echo "stage 1"
 	mkdir -p src/build
 	$(SVG_PY) "$<" -o "$@" $(SRC_SVGS)
 	$(BOUNDS_PY) "$@"
 	$(SMOL_PY) "$@"
 	$(SUPERSUB_PY) "$@"
+	$(NOTREADY_PY) "$@"
 
 # Stage 2: does nothing
 src/build/$(PS_FONT_FAMILY).stage2.sfd: src/build/$(PS_FONT_FAMILY).stage1.sfd Makefile
