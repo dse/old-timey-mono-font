@@ -10,7 +10,8 @@ def main():
     print("notready.py: Opening %s" % args.filename)
     font = fontforge.open(args.filename)
     for codepoint in [
-            *range(0x0250, 0x02b0), # IPA, not finished yet
+            *range(0x0250, 0x0258), # IPA, not finished yet, with the exception of the schwa
+            *range(0x0259, 0x02b0),
             0x046c,                 # one of those "hm" lookin glyphs in Cyrillic
             0x046d,                 # the other one
     ]:
