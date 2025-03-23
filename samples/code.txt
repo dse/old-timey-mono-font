@@ -1,0 +1,88 @@
+/**
+ * The fast inverse square root algorithm, made (in)famous in
+ * the Quake III Arena source code.  It exploits characteristics
+ * of the 32-bit IEEE 754 floating-point standard.
+ */
+
+float Q_rsqrt( float number )
+{
+    long i;
+    float x2, y;
+    const float threehalfs = 1.5F;
+
+    x2 = number * 0.5F;
+    y  = number;
+    i  = * ( long * ) &y;
+    i  = 0x5f3759df - ( i >> 1 );
+    y  = * ( float * ) &i;
+    y  = y * ( threehalfs - ( x2 * y * y ) );
+//  y  = y * ( threehalfs - ( x2 * y * y ) );
+
+    return y;
+}
+
+/**
+ * Duff's device, a performance-optimized routine that transfers
+ * short values to an I/O register.
+ * https://www.lysator.liu.se/c/duffs-device.html
+ */
+
+send(to, from, count)
+register short *to, *from;
+register count;
+{
+        register n=(count+7)/8;
+        switch(count%8){
+        case 0: do{     *to = *from++;
+        case 7:         *to = *from++;
+        case 6:         *to = *from++;
+        case 5:         *to = *from++;
+        case 4:         *to = *from++;
+        case 3:         *to = *from++;
+        case 2:         *to = *from++;
+        case 1:         *to = *from++;
+                }while(--n>0);
+        }
+}
+
+/**
+ * A Regular Expression Matcher
+ * Code by Rob Pike
+ * https://www.cs.princeton.edu/courses/archive/spr09/cos333/beautiful.html
+ */
+
+/* match: search for regexp anywhere in text */
+int match(char *regexp, char *text)
+{
+    if (regexp[0] == '^')
+        return matchhere(regexp+1, text);
+    do {    /* must look even if string is empty */
+        if (matchhere(regexp, text))
+            return 1;
+    } while (*text++ != '\0');
+    return 0;
+}
+
+/* matchhere: search for regexp at beginning of text */
+int matchhere(char *regexp, char *text)
+{
+    if (regexp[0] == '\0')
+        return 1;
+    if (regexp[1] == '*')
+        return matchstar(regexp[0], regexp+2, text);
+    if (regexp[0] == '$' && regexp[1] == '\0')
+        return *text == '\0';
+    if (*text!='\0' && (regexp[0]=='.' || regexp[0]==*text))
+        return matchhere(regexp+1, text+1);
+    return 0;
+}
+
+/* matchstar: search for c*regexp at beginning of text */
+int matchstar(int c, char *regexp, char *text)
+{
+    do {    /* a * matches zero or more instances */
+        if (matchhere(regexp, text))
+            return 1;
+    } while (*text != '\0' && (*text++ == c || c == '.'));
+    return 0;
+}
