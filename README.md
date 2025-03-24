@@ -20,6 +20,10 @@ At a size of 12pt (6 lines per inch), Reproducing Typewriter is a pica
 font, or 10 characters per inch, like Courier.  It **should** be
 suitable for screenplay writing!
 
+## Mintty Users
+
+Text -> Font smoothing -> partial.
+
 ## Download All The Fonts
 
 [ReproTypewr.zip](dist/ReproTypewr.zip)
