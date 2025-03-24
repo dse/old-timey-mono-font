@@ -119,6 +119,7 @@ testfontsweb: FORCE
 	make fonts DISTDIR="website/fonts"
 
 testfonts: FORCE
+	mkdir -p test-dist
 	make fonts FONT_FAMILY="RT$(TIMESTAMP)" \
 	           METAS_PY_ARGS="--ffn='ReproTypewr $(TIMESTAMP)' --psfn='ReproTypewr$(TIMESTAMP)'" \
 	           PS_FONT_FAMILY="RT$(TIMESTAMP)" \
