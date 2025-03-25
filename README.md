@@ -77,19 +77,19 @@ Extensive Western European (Latin) coverage, as well as Cyrillic
 
 Includes in their entirety:
 
--   Windows Glyph List 4 (WGL4)
+-   Printables from ASCII and ISO-Latin-1 in their entirety.
 -   Code Page 437
 -   Code Page 850
+-   Windows Glyph List 4 (WGL4)
 -   Adobe Glyph List for New Fonts (AGLFN)
 -   Windows 1252's additional characters
 -   Mac OS Roman (except for ff, fi ligatures)
--   Printables from ASCII and ISO-Latin-1 in their entirety.
 -   U+2500–U+257F Box Drawing in its entirety.
 -   U+2580–U+259F Block Elements in its entirety.
 -   U+2800–U+28FF Braille Patterns in its entirety.
 -   U+0100–U+017F Latin Extended-A in its entirety.
 -   And then some.
--   A few extras!
+-   And then a few extras!
 
 | Glyphs | out of | percentage |   start |     end | block                             |
 |-------:|-------:|-----------:|--------:|--------:|-----------------------------------|
