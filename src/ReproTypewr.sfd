@@ -5,13 +5,14 @@ FamilyName: Reproducing Typewriter
 Weight: Medium
 Copyright: Copyright (c) 2024, Darren Embry
 UComments: "2024-10-17: Created with FontForge (http://fontforge.org)"
-Version: 001.000
+Version: 0.9.0
 ItalicAngle: 0
 UnderlinePosition: -300
 UnderlineWidth: 96
 Ascent: 1344
 Descent: 336
 InvalidEm: 0
+sfntRevision: 0x0000e666
 LayerCount: 2
 Layer: 0 0 "Back" 1
 Layer: 1 0 "Fore" 0
