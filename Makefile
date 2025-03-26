@@ -51,8 +51,6 @@ THIN_CODING_FONT_COND_TTF	:= $(DISTDIR)/ttf/$(PS_FONT_FAMILY)CodeCond-Thin.ttf
 LIGHT_FONT_COND_TTF		:= $(DISTDIR)/ttf/$(PS_FONT_FAMILY)Cond-Light.ttf
 LIGHT_CODING_FONT_COND_TTF	:= $(DISTDIR)/ttf/$(PS_FONT_FAMILY)CodeCond-Light.ttf
 
-TIMESTAMP := $(shell date +%m%d%H%M%S)
-
 ORIGINAL_FONTS := \
 	$(FONT_TTF) \
 	$(THIN_FONT_TTF) \
@@ -118,13 +116,16 @@ testfontsweb: FORCE
 	rm -fr website/fonts/ttf/*
 	make fonts DISTDIR="website/fonts"
 
+TESTFONTS_DIR := testfonts
+
 testfonts: FORCE
-	mkdir -p test-dist
-	make fonts FONT_FAMILY="RT$(TIMESTAMP)" \
-	           METAS_PY_ARGS="--ffn='ReproTypewr $(TIMESTAMP)' --psfn='ReproTypewr$(TIMESTAMP)'" \
-	           PS_FONT_FAMILY="RT$(TIMESTAMP)" \
-	           DISTDIR="test-dist/RT$(TIMESTAMP)"
-	ln -n -f -s "RT$(TIMESTAMP)" test-dist/latest
+	$(eval BUILD_NR := $(shell bin/buildnr.py))
+	mkdir -p $(TESTFONTS_DIR)
+	make fonts FONT_FAMILY="RT$(BUILD_NR)" \
+	           METAS_PY_ARGS="--ffn='ReproTypewr $(BUILD_NR)' --psfn='ReproTypewr$(BUILD_NR)'" \
+	           PS_FONT_FAMILY="RT$(BUILD_NR)" \
+	           DISTDIR="$(TESTFONTS_DIR)/RT$(BUILD_NR)"
+	ln -n -f -s "RT$(BUILD_NR)" $(TESTFONTS_DIR)/latest
 
 # update source font fron SVG files
 update: FORCE
