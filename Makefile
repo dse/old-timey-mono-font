@@ -121,8 +121,8 @@ TESTFONTS_DIR := testfonts
 testfonts: FORCE
 	$(eval BUILD_NR := $(shell bin/buildnr.py))
 	mkdir -p $(TESTFONTS_DIR)
-	make fonts FONT_FAMILY="RT$(BUILD_NR)" \
-	           METAS_PY_ARGS="--ffn='ReproTypewr $(BUILD_NR)' --psfn='ReproTypewr$(BUILD_NR)'" \
+	make fonts FONT_FAMILY="RT $(BUILD_NR)" \
+	           METAS_PY_ARGS="--ffn='RT $(BUILD_NR)' --psfn='RT$(BUILD_NR)'" \
 	           PS_FONT_FAMILY="RT$(BUILD_NR)" \
 	           DISTDIR="$(TESTFONTS_DIR)/RT$(BUILD_NR)"
 	ln -n -f -s "RT$(BUILD_NR)" $(TESTFONTS_DIR)/latest
