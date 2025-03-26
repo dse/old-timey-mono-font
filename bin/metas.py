@@ -23,6 +23,7 @@ def main():
     parser.add_argument('--ps-family-name', '--psfn')
     parser.add_argument('--font-family-name', '--family-name', '--ffn')
     parser.add_argument('--verbose', '-v', action='count', default=0)
+    parser.add_argument('--regular', action='store_true')
     args = parser.parse_args()
     for filename in args.filenames:
         font = fontforge.open(filename)
@@ -81,6 +82,8 @@ def main():
             full_name += " Condensed"
         elif aspect == ASPECT_COMPRESSED:
             full_name += " Compressed"
+        if args.regular and aspect == ASPECT_NORMAL and weight == WEIGHT_NORMAL:
+            full_name += " Regular"
 
         ps_name = ps_family_name
         ps_name_suffix = ""
@@ -92,6 +95,8 @@ def main():
             ps_name_suffix += "Cond"
         elif aspect == ASPECT_COMPRESSED:
             ps_name_suffix += "Comp"
+        if args.regular and aspect == ASPECT_NORMAL and weight == WEIGHT_NORMAL:
+            ps_name_suffix += "Regular"
         if ps_name_suffix != "":
             ps_name += "-" + ps_name_suffix
 
