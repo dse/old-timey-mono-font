@@ -5,3 +5,4 @@ __pycache__/
 src/build/
 testfonts/
 website/fonts/ttf/*.ttf
+.test-build-number.lock
