@@ -15,7 +15,7 @@ SUPERSUB_PY_PROG	:= bin/supersub.py
 UNDERLINE_PY_PROG	:= bin/underline.py
 NOTREADY_PY_PROG	:= bin/notready.py
 
-METAS_PY_ARGS :=
+METAS_PY_ARGS := --ffn='$(FONT_FAMILY)' --psfn='$(PS_FONT_FAMILY)'
 
 OPT_VERBOSE :=
 
@@ -120,12 +120,13 @@ TESTFONTS_DIR := testfonts
 
 testfonts: FORCE
 	$(eval BUILD_NR := $(shell bin/buildnr.py))
+	$(eval DISTDIR_NAME := $(PS_FONT_FAMILY)$(BUILD_NR))
 	mkdir -p $(TESTFONTS_DIR)
-	make fonts FONT_FAMILY="RT $(BUILD_NR)" \
-	           METAS_PY_ARGS="--ffn='RT $(BUILD_NR)' --psfn='RT$(BUILD_NR)'" \
-	           PS_FONT_FAMILY="RT$(BUILD_NR)" \
-	           DISTDIR="$(TESTFONTS_DIR)/RT$(BUILD_NR)"
-	ln -n -f -s "RT$(BUILD_NR)" $(TESTFONTS_DIR)/latest
+	make fonts FONT_FAMILY="$(FONT_FAMILY) $(BUILD_NR)" \
+	           PS_FONT_FAMILY="$(PS_FONT_FAMILY)$(BUILD_NR)" \
+	           DISTDIR="$(TESTFONTS_DIR)/$(DISTDIR_NAME).tmp"
+	mv "$(TESTFONTS_DIR)/$(DISTDIR_NAME).tmp" "$(TESTFONTS_DIR)/$(DISTDIR_NAME)"
+	ln -n -f -s "$(DISTDIR_NAME)/ttf" $(TESTFONTS_DIR)/latest
 
 # update source font fron SVG files
 update: FORCE
