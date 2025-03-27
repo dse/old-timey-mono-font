@@ -73,10 +73,24 @@ def main():
                 print("strokes.py %s: marked as already having stroke width of %d; expanding by %d" % (args.font_filename,
                                                                                                        stroke_width,
                                                                                                        args.expand_stroke - stroke_width))
-                glyph.stroke("circular", args.expand_stroke - stroke_width,
-                             removeinternal=True)
+                glyph.stroke(
+                    "circular", args.expand_stroke - stroke_width,
+                    # cap="butt", extendcap=0.5,
+                    # join="miter",
+                    removeinternal=True,
+                )
             else:
-                glyph.stroke("circular", args.expand_stroke)
+                glyph.stroke(
+                    # NOTE: try doing butt/miter with "6"
+                    "circular", args.expand_stroke,
+                    # cap="butt", extendcap=0.5,
+                    # join="miter",
+                )
+
+            # cap: "nib", "butt"[A], "round"[A], "bevel"
+            # join: "nib", "bevel", "miter"[B], "miterclip"[B], "round", "arcs"[B]
+            # [A] modifiable by extendcap
+            # [B] modifiable by joinlimit
             time_end = time.time()
             if fh is not None:
                 fh.write("%8.6f  %s\n" % ((time_end - time_start), charname(glyph)))
