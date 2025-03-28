@@ -1,0 +1,67 @@
+{
+    "<char>": {
+        "linecap": "butt|round|square",
+        "linejoin": "bevel|round|miter",
+        "fill": "false|true",
+        "having_stroke_width": "<int>",
+        "variant.<name>": { "<prop1>": "<value1>", "<prop2>": "<value2>" }
+    },
+    "ranges": [
+        {
+            "range": [" ", "~"],
+            "char_data": {
+                "linejoin": "miter",
+                "linecap": "square"
+            }
+        }
+    ],
+    "6": {
+        "linecap": "butt",
+        "linejoin": "miter",
+        "svg": "src/chars-linecap-butt/0036-digit-six.svg"
+    },
+    "9": {
+        "linecap": "butt",
+        "linejoin": "miter",
+        "svg": "src/chars-linecap-butt/0039-digit-nine.svg"
+    },
+    "\"": {
+        "linecap": "butt",
+        "linejoin": "miter",
+        "fill": true
+    },
+    ".": {
+        "linecap": "butt",
+        "linejoin": "miter",
+        "fill": true
+    },
+    "'": {
+        "linecap": "butt",
+        "linejoin": "miter",
+        "fill": true
+    },
+    "!": {
+        "linecap": "butt",
+        "linejoin": "miter",
+        "fill": true
+    },
+    "\u2022": { "fill": true },
+    "\u2034": { "fill": true },
+    "\u2037": { "fill": true },
+    "\u204c": { "fill": true },
+    "\u204d": { "fill": true },
+    "\u2055": { "fill": true },
+    "\u2234": { "fill": true },
+    "\u25a0": { "fill": true },
+    "\u25cf": { "fill": true },
+    "\u25d8": { "fill": true },
+    "\u25d9": { "fill": true },
+    "\u2605": { "fill": true },
+    "\u2622": { "fill": true },
+    "\u263b": { "fill": true },
+    "\u2660": { "fill": true },
+    "\u2663": { "fill": true },
+    "\u2665": { "fill": true },
+    "\u2666": { "fill": true },
+    "dummy": null
+}

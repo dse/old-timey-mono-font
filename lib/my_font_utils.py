@@ -85,7 +85,8 @@ def parse_glyph_svg_filename(filename):
     real_codepoint = codepoint
     return [codepoint, glyphname, real_codepoint, plain_glyphname, stroke_width]
 
-def import_svg_glyph(font, svg_filename, width):
+# FIXME: if allow_json_data is True, allow a ".svg" to override.
+def import_svg_glyph(font, svg_filename, width, allow_json_data=False):
     font_path = os.path.relpath(font.path)
     (codepoint, glyphname, real_codepoint, plain_glyphname, stroke_width) = parse_glyph_svg_filename(svg_filename)
     if codepoint is None and glyphname is None:
@@ -211,3 +212,51 @@ def check_glyph_bounds(glyph, width=None):
         print("check_all_glyph_bounds %s:     bottom" % font_path)
     if ymax > glyph.font.ascent + height/2:
         print("check_all_glyph_bounds %s:     top" % font_path)
+
+def get_glyph_real_codepoint(glyph):
+    if glyph.unicode >= 0:
+        return glyph.unicode
+    if (idx := glyph.glyphname.find(".")) == -1:
+        return -1
+    return fontforge.unicodeFromName(glyph.glyphname[0:idx])
+
+glyph_data = None
+def get_glyph_char_data(glyph):
+    global glyph_data
+    if glyph_data is None:
+        with open("data/glyphs.json") as fh:
+            glyph_data = json.loads(fh.read())
+    codepoint = get_glyph_real_codepoint(glyph)
+    if codepoint < 0:
+        return None
+    variant = None
+    if (idx := glyph.glyphname.find(".")) != -1:
+        variant = glyph.glyphname[idx+1:]
+    variant_key = "variant." + variant if variant is not None else None
+    range_char_data     = None
+    this_char_data      = None
+    variant_char_data   = None
+    for range_item in glyph_data["ranges"]:
+        start_cp = ord(range_item["range"][0])
+        end_cp = ord(range_item["range"][1])
+        if codepoint in range(start_cp, end_cp + 1) and "char_data" in range_item:
+            range_char_data = range_item["char_data"]
+            break
+    if chr(codepoint) in glyph_data:
+        this_char_data = glyph_data[chr(codepoint)]
+        if variant_key in this_char_data:
+            variant_char_data = this_char_data[variant_key]
+    if (range_char_data is None and
+        this_char_data is None and
+        variant_char_data is None):
+        return None
+    char_data = {}
+    if range_char_data is not None:
+        char_data = { **char_data, **range_char_data }
+    if this_char_data is not None:
+        char_data = { **char_data, **this_char_data }
+    if variant_char_data is not None:
+        char_data = { **char_data, **variant_char_data }
+    if variant_key in char_data:
+        del char_data[variant_key]
+    return char_data

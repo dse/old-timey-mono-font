@@ -142,6 +142,15 @@ update: FORCE
 	$(NOTDEF_PY) $(FONT_SRC)
 	sort -n strokes.log | sponge strokes.log
 
+update-test: FORCE
+	$(SVG_PY) $(FONT_SRC) $(SRC_SVGS)
+	$(BOUNDS_PY) $(FONT_SRC)
+	$(SMOL_PY) $(FONT_SRC)
+	$(SUPERSUB_PY) $(FONT_SRC)
+	$(STROKES_PY) --log --expand-stroke 96 --allow-json-data $(FONT_SRC)
+	$(NOTDEF_PY) $(FONT_SRC)
+	sort -n strokes.log | sponge strokes.log
+
 # update source font fron SVG files, for testing if referenced glyphs
 # are too close. (accented letters mostly)
 update-168: FORCE
