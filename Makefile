@@ -1,6 +1,10 @@
 MAKEFILE := Makefile
 FONT_SRC := src/ReproTypewr.sfd
 
+#                XXX.YZZ, typically
+SFNT_REVISION := 000.900
+VERSION       := 0.9.0
+
 FONT_FAMILY := Repro Typewr
 PS_FONT_FAMILY := ReproTypewr
 
@@ -324,6 +328,16 @@ $(GLYPH_HTML_BY_CHAR): $(GLYPH_DATA_BY_CHAR) $(TEMPLATE_BY_CHAR)
 
 copy-fonts: FORCE
 	rsync -av dist/ttf website/fonts/
+
+version: FORCE
+	bin/version.py src/ReproTypewr.sfd \
+		--sfnt-revision "$(SFNT_REVISION)" \
+		--ps-version "$(VERSION)"
+	for i in $(FONTS) ; do \
+		bin/version.py "$${i}" \
+			--sfnt-revision "$(SFNT_REVISION)" \
+			--ps-version "$(VERSION)" ; \
+	done
 
 .PHONY: FORCE
 
