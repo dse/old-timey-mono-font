@@ -204,7 +204,10 @@
                     "leftSideBearing": 366.0,
                     "rightSideBearing": 366.0,
                     "width": 1008,
-                    "char": "("
+                    "char": "(",
+                    "substitutionsFromThis": {
+                        "code": "parenleft.code"
+                    }
                 },
                 {
                     "codepoint": 41,
@@ -216,7 +219,7 @@
                     "normalAdobeName": "parenright",
                     "boundingBoxXMin": 366.0,
                     "boundingBoxXMax": 642.0,
-                    "boundingBoxYMin": -335.999023438,
+                    "boundingBoxYMin": -335.9990234375,
                     "boundingBoxYMax": 1120.0,
                     "altuni": null,
                     "comment": "{}",
@@ -224,7 +227,10 @@
                     "leftSideBearing": 366.0,
                     "rightSideBearing": 366.0,
                     "width": 1008,
-                    "char": ")"
+                    "char": ")",
+                    "substitutionsFromThis": {
+                        "code": "parenright.code"
+                    }
                 },
                 {
                     "codepoint": 42,
@@ -1245,7 +1251,10 @@
                     "leftSideBearing": 336.001953125,
                     "rightSideBearing": 360.0,
                     "width": 1008,
-                    "char": "["
+                    "char": "[",
+                    "substitutionsFromThis": {
+                        "code": "bracketleft.code"
+                    }
                 },
                 {
                     "codepoint": 92,
@@ -1285,7 +1294,10 @@
                     "leftSideBearing": 360.0,
                     "rightSideBearing": 336.0,
                     "width": 1008,
-                    "char": "]"
+                    "char": "]",
+                    "substitutionsFromThis": {
+                        "code": "bracketright.code"
+                    }
                 },
                 {
                     "codepoint": 94,
@@ -1897,7 +1909,10 @@
                     "leftSideBearing": 256.0,
                     "rightSideBearing": 256.0,
                     "width": 1008,
-                    "char": "{"
+                    "char": "{",
+                    "substitutionsFromThis": {
+                        "code": "braceleft.cod2"
+                    }
                 },
                 {
                     "codepoint": 124,
@@ -1937,7 +1952,10 @@
                     "leftSideBearing": 256.0,
                     "rightSideBearing": 256.0,
                     "width": 1008,
-                    "char": "}"
+                    "char": "}",
+                    "substitutionsFromThis": {
+                        "code": "braceright.cod2"
+                    }
                 },
                 {
                     "codepoint": 126,
@@ -41814,6 +41832,71 @@
             "name": "LEFT CURLY BRACKET",
             "isSpecial": false,
             "isPrintable": true,
+            "glyphName": "braceleft.cod2",
+            "normalAdobeName": "braceleft",
+            "boundingBoxXMin": 192.0,
+            "boundingBoxXMax": 816.0,
+            "boundingBoxYMin": -314.0,
+            "boundingBoxYMax": 1082.0,
+            "altuni": null,
+            "comment": "{}",
+            "glyphClass": "automatic",
+            "leftSideBearing": 192.0,
+            "rightSideBearing": 192.0,
+            "width": 1008,
+            "char": "{",
+            "substitutionsToThis": {
+                "code": [
+                    "braceleft"
+                ]
+            }
+        },
+        {
+            "codepoint": 123,
+            "codepoint_hex": "U+007B",
+            "name": "LEFT CURLY BRACKET",
+            "isSpecial": false,
+            "isPrintable": true,
+            "glyphName": "braceleft.code",
+            "normalAdobeName": "braceleft",
+            "boundingBoxXMin": 240.0,
+            "boundingBoxXMax": 768.0,
+            "boundingBoxYMin": -318.0,
+            "boundingBoxYMax": 1074.0,
+            "altuni": null,
+            "comment": "{}",
+            "glyphClass": "automatic",
+            "leftSideBearing": 240.0,
+            "rightSideBearing": 240.0,
+            "width": 1008,
+            "char": "{"
+        },
+        {
+            "codepoint": 123,
+            "codepoint_hex": "U+007B",
+            "name": "LEFT CURLY BRACKET",
+            "isSpecial": false,
+            "isPrintable": true,
+            "glyphName": "braceleft.orig",
+            "normalAdobeName": "braceleft",
+            "boundingBoxXMin": 256.0,
+            "boundingBoxXMax": 752.0,
+            "boundingBoxYMin": -300.0,
+            "boundingBoxYMax": 1056.0,
+            "altuni": null,
+            "comment": "{}",
+            "glyphClass": "automatic",
+            "leftSideBearing": 256.0,
+            "rightSideBearing": 256.0,
+            "width": 1008,
+            "char": "{"
+        },
+        {
+            "codepoint": 123,
+            "codepoint_hex": "U+007B",
+            "name": "LEFT CURLY BRACKET",
+            "isSpecial": false,
+            "isPrintable": true,
             "glyphName": "braceleft.smol",
             "normalAdobeName": "braceleft",
             "boundingBoxXMin": 356.0,
@@ -41827,6 +41910,71 @@
             "rightSideBearing": 356.0,
             "width": 1008,
             "char": "{"
+        },
+        {
+            "codepoint": 125,
+            "codepoint_hex": "U+007D",
+            "name": "RIGHT CURLY BRACKET",
+            "isSpecial": false,
+            "isPrintable": true,
+            "glyphName": "braceright.cod2",
+            "normalAdobeName": "braceright",
+            "boundingBoxXMin": 192.0,
+            "boundingBoxXMax": 816.0,
+            "boundingBoxYMin": -314.0,
+            "boundingBoxYMax": 1082.0,
+            "altuni": null,
+            "comment": "{}",
+            "glyphClass": "automatic",
+            "leftSideBearing": 192.0,
+            "rightSideBearing": 192.0,
+            "width": 1008,
+            "char": "}",
+            "substitutionsToThis": {
+                "code": [
+                    "braceright"
+                ]
+            }
+        },
+        {
+            "codepoint": 125,
+            "codepoint_hex": "U+007D",
+            "name": "RIGHT CURLY BRACKET",
+            "isSpecial": false,
+            "isPrintable": true,
+            "glyphName": "braceright.code",
+            "normalAdobeName": "braceright",
+            "boundingBoxXMin": 240.0,
+            "boundingBoxXMax": 768.0,
+            "boundingBoxYMin": -318.0,
+            "boundingBoxYMax": 1074.0,
+            "altuni": null,
+            "comment": "{}",
+            "glyphClass": "automatic",
+            "leftSideBearing": 240.0,
+            "rightSideBearing": 240.0,
+            "width": 1008,
+            "char": "}"
+        },
+        {
+            "codepoint": 125,
+            "codepoint_hex": "U+007D",
+            "name": "RIGHT CURLY BRACKET",
+            "isSpecial": false,
+            "isPrintable": true,
+            "glyphName": "braceright.orig",
+            "normalAdobeName": "braceright",
+            "boundingBoxXMin": 256.0,
+            "boundingBoxXMax": 752.0,
+            "boundingBoxYMin": -300.0,
+            "boundingBoxYMax": 1056.0,
+            "altuni": null,
+            "comment": "{}",
+            "glyphClass": "automatic",
+            "leftSideBearing": 256.0,
+            "rightSideBearing": 256.0,
+            "width": 1008,
+            "char": "}"
         },
         {
             "codepoint": 125,
@@ -41854,6 +42002,51 @@
             "name": "LEFT SQUARE BRACKET",
             "isSpecial": false,
             "isPrintable": true,
+            "glyphName": "bracketleft.code",
+            "normalAdobeName": "bracketleft",
+            "boundingBoxXMin": 276.001953125,
+            "boundingBoxXMax": 708.0,
+            "boundingBoxYMin": -320.0,
+            "boundingBoxYMax": 1076.0,
+            "altuni": null,
+            "comment": "{}",
+            "glyphClass": "automatic",
+            "leftSideBearing": 276.001953125,
+            "rightSideBearing": 300.0,
+            "width": 1008,
+            "char": "[",
+            "substitutionsToThis": {
+                "code": [
+                    "bracketleft"
+                ]
+            }
+        },
+        {
+            "codepoint": 91,
+            "codepoint_hex": "U+005B",
+            "name": "LEFT SQUARE BRACKET",
+            "isSpecial": false,
+            "isPrintable": true,
+            "glyphName": "bracketleft.orig",
+            "normalAdobeName": "bracketleft",
+            "boundingBoxXMin": 336.001953125,
+            "boundingBoxXMax": 648.0,
+            "boundingBoxYMin": -300.0,
+            "boundingBoxYMax": 1056.0,
+            "altuni": null,
+            "comment": "{}",
+            "glyphClass": "automatic",
+            "leftSideBearing": 336.001953125,
+            "rightSideBearing": 360.0,
+            "width": 1008,
+            "char": "["
+        },
+        {
+            "codepoint": 91,
+            "codepoint_hex": "U+005B",
+            "name": "LEFT SQUARE BRACKET",
+            "isSpecial": false,
+            "isPrintable": true,
             "glyphName": "bracketleft.smol",
             "normalAdobeName": "bracketleft",
             "boundingBoxXMin": 396.000976562,
@@ -41867,6 +42060,51 @@
             "rightSideBearing": 408.0,
             "width": 1008,
             "char": "["
+        },
+        {
+            "codepoint": 93,
+            "codepoint_hex": "U+005D",
+            "name": "RIGHT SQUARE BRACKET",
+            "isSpecial": false,
+            "isPrintable": true,
+            "glyphName": "bracketright.code",
+            "normalAdobeName": "bracketright",
+            "boundingBoxXMin": 300.0,
+            "boundingBoxXMax": 732.0,
+            "boundingBoxYMin": -320.0,
+            "boundingBoxYMax": 1076.0,
+            "altuni": null,
+            "comment": "{}",
+            "glyphClass": "automatic",
+            "leftSideBearing": 300.0,
+            "rightSideBearing": 276.0,
+            "width": 1008,
+            "char": "]",
+            "substitutionsToThis": {
+                "code": [
+                    "bracketright"
+                ]
+            }
+        },
+        {
+            "codepoint": 93,
+            "codepoint_hex": "U+005D",
+            "name": "RIGHT SQUARE BRACKET",
+            "isSpecial": false,
+            "isPrintable": true,
+            "glyphName": "bracketright.orig",
+            "normalAdobeName": "bracketright",
+            "boundingBoxXMin": 360.0,
+            "boundingBoxXMax": 672.0,
+            "boundingBoxYMin": -300.0,
+            "boundingBoxYMax": 1056.0,
+            "altuni": null,
+            "comment": "{}",
+            "glyphClass": "automatic",
+            "leftSideBearing": 360.0,
+            "rightSideBearing": 336.0,
+            "width": 1008,
+            "char": "]"
         },
         {
             "codepoint": 93,
@@ -43154,6 +43392,51 @@
             "name": "LEFT PARENTHESIS",
             "isSpecial": false,
             "isPrintable": true,
+            "glyphName": "parenleft.code",
+            "normalAdobeName": "parenleft",
+            "boundingBoxXMin": 321.252929688,
+            "boundingBoxXMax": 686.619140625,
+            "boundingBoxYMin": -320.0,
+            "boundingBoxYMax": 1076.0,
+            "altuni": null,
+            "comment": "{}",
+            "glyphClass": "automatic",
+            "leftSideBearing": 321.252929688,
+            "rightSideBearing": 321.380859375,
+            "width": 1008,
+            "char": "(",
+            "substitutionsToThis": {
+                "code": [
+                    "parenleft"
+                ]
+            }
+        },
+        {
+            "codepoint": 40,
+            "codepoint_hex": "U+0028",
+            "name": "LEFT PARENTHESIS",
+            "isSpecial": false,
+            "isPrintable": true,
+            "glyphName": "parenleft.orig",
+            "normalAdobeName": "parenleft",
+            "boundingBoxXMin": 366.0,
+            "boundingBoxXMax": 642.0,
+            "boundingBoxYMin": -336.0,
+            "boundingBoxYMax": 1092.0,
+            "altuni": null,
+            "comment": "{}",
+            "glyphClass": "automatic",
+            "leftSideBearing": 366.0,
+            "rightSideBearing": 366.0,
+            "width": 1008,
+            "char": "("
+        },
+        {
+            "codepoint": 40,
+            "codepoint_hex": "U+0028",
+            "name": "LEFT PARENTHESIS",
+            "isSpecial": false,
+            "isPrintable": true,
             "glyphName": "parenleft.smol",
             "normalAdobeName": "parenleft",
             "boundingBoxXMin": 411.0,
@@ -43167,6 +43450,51 @@
             "rightSideBearing": 411.0,
             "width": 1008,
             "char": "("
+        },
+        {
+            "codepoint": 41,
+            "codepoint_hex": "U+0029",
+            "name": "RIGHT PARENTHESIS",
+            "isSpecial": false,
+            "isPrintable": true,
+            "glyphName": "parenright.code",
+            "normalAdobeName": "parenright",
+            "boundingBoxXMin": 321.380859375,
+            "boundingBoxXMax": 686.747070312,
+            "boundingBoxYMin": -320.0,
+            "boundingBoxYMax": 1076.0,
+            "altuni": null,
+            "comment": "{}",
+            "glyphClass": "automatic",
+            "leftSideBearing": 321.380859375,
+            "rightSideBearing": 321.252929688,
+            "width": 1008,
+            "char": ")",
+            "substitutionsToThis": {
+                "code": [
+                    "parenright"
+                ]
+            }
+        },
+        {
+            "codepoint": 41,
+            "codepoint_hex": "U+0029",
+            "name": "RIGHT PARENTHESIS",
+            "isSpecial": false,
+            "isPrintable": true,
+            "glyphName": "parenright.orig",
+            "normalAdobeName": "parenright",
+            "boundingBoxXMin": 366.0,
+            "boundingBoxXMax": 642.0,
+            "boundingBoxYMin": -335.999023438,
+            "boundingBoxYMax": 1120.0,
+            "altuni": null,
+            "comment": "{}",
+            "glyphClass": "automatic",
+            "leftSideBearing": 366.0,
+            "rightSideBearing": 366.0,
+            "width": 1008,
+            "char": ")"
         },
         {
             "codepoint": 41,

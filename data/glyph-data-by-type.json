@@ -23768,7 +23768,10 @@
                     "leftSideBearing": 366.0,
                     "rightSideBearing": 366.0,
                     "width": 1008,
-                    "char": "("
+                    "char": "(",
+                    "substitutionsFromThis": {
+                        "code": "parenleft.code"
+                    }
                 },
                 {
                     "codepoint": 41,
@@ -23780,7 +23783,7 @@
                     "normalAdobeName": "parenright",
                     "boundingBoxXMin": 366.0,
                     "boundingBoxXMax": 642.0,
-                    "boundingBoxYMin": -335.999023438,
+                    "boundingBoxYMin": -335.9990234375,
                     "boundingBoxYMax": 1120.0,
                     "altuni": null,
                     "comment": "{}",
@@ -23788,7 +23791,10 @@
                     "leftSideBearing": 366.0,
                     "rightSideBearing": 366.0,
                     "width": 1008,
-                    "char": ")"
+                    "char": ")",
+                    "substitutionsFromThis": {
+                        "code": "parenright.code"
+                    }
                 },
                 {
                     "codepoint": 42,
@@ -24000,7 +24006,10 @@
                     "leftSideBearing": 336.001953125,
                     "rightSideBearing": 360.0,
                     "width": 1008,
-                    "char": "["
+                    "char": "[",
+                    "substitutionsFromThis": {
+                        "code": "bracketleft.code"
+                    }
                 },
                 {
                     "codepoint": 92,
@@ -24040,7 +24049,10 @@
                     "leftSideBearing": 360.0,
                     "rightSideBearing": 336.0,
                     "width": 1008,
-                    "char": "]"
+                    "char": "]",
+                    "substitutionsFromThis": {
+                        "code": "bracketright.code"
+                    }
                 },
                 {
                     "codepoint": 94,
@@ -24120,7 +24132,10 @@
                     "leftSideBearing": 256.0,
                     "rightSideBearing": 256.0,
                     "width": 1008,
-                    "char": "{"
+                    "char": "{",
+                    "substitutionsFromThis": {
+                        "code": "braceleft.cod2"
+                    }
                 },
                 {
                     "codepoint": 124,
@@ -24160,7 +24175,10 @@
                     "leftSideBearing": 256.0,
                     "rightSideBearing": 256.0,
                     "width": 1008,
-                    "char": "}"
+                    "char": "}",
+                    "substitutionsFromThis": {
+                        "code": "braceright.cod2"
+                    }
                 },
                 {
                     "codepoint": 126,
