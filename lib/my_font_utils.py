@@ -236,12 +236,13 @@ def get_glyph_char_data(glyph):
     range_char_data     = None
     this_char_data      = None
     variant_char_data   = None
-    for range_item in glyph_data["ranges"]:
-        start_cp = ord(range_item["range"][0])
-        end_cp = ord(range_item["range"][1])
-        if codepoint in range(start_cp, end_cp + 1) and "char_data" in range_item:
-            range_char_data = range_item["char_data"]
-            break
+    if "ranges" in glyph_data:
+        for range_item in glyph_data["ranges"]:
+            start_cp = ord(range_item["range"][0])
+            end_cp = ord(range_item["range"][1])
+            if codepoint in range(start_cp, end_cp + 1) and "char_data" in range_item:
+                range_char_data = range_item["char_data"]
+                break
     if chr(codepoint) in glyph_data:
         this_char_data = glyph_data[chr(codepoint)]
         if variant_key in this_char_data:
