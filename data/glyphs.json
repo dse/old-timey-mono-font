@@ -35,6 +35,11 @@
         "linejoin": "miter",
         "fill": true
     },
+    ":": {
+        "linecap": "butt",
+        "linejoin": "miter",
+        "fill": true
+    },
     "'": {
         "linecap": "butt",
         "linejoin": "miter",
