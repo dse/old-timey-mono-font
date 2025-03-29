@@ -6,7 +6,7 @@
         "having_stroke_width": "<int>",
         "variant.<name>": { "<prop1>": "<value1>", "<prop2>": "<value2>" }
     },
-    "ranges": [
+    "<ranges>": [
         {
             "range": [" ", "~"],
             "char_data": {
@@ -15,39 +15,26 @@
             }
         }
     ],
-    "6": {
+    "<6>": {
         "linecap": "butt",
         "linejoin": "miter",
         "svg": "src/chars-linecap-butt/0036-digit-six.svg"
     },
-    "9": {
+    "<9>": {
         "linecap": "butt",
         "linejoin": "miter",
         "svg": "src/chars-linecap-butt/0039-digit-nine.svg"
     },
     "\"": {
-        "linecap": "butt",
-        "linejoin": "miter",
         "fill": true
     },
     ".": {
-        "linecap": "butt",
-        "linejoin": "miter",
-        "fill": true
-    },
-    ":": {
-        "linecap": "butt",
-        "linejoin": "miter",
         "fill": true
     },
     "'": {
-        "linecap": "butt",
-        "linejoin": "miter",
         "fill": true
     },
     "!": {
-        "linecap": "butt",
-        "linejoin": "miter",
         "fill": true
     },
     "\u2022": { "fill": true },
