@@ -23,7 +23,7 @@ OS2Version: 0
 OS2_WeightWidthSlopeOnly: 0
 OS2_UseTypoMetrics: 1
 CreationTime: 1729142792
-ModificationTime: 1743139013
+ModificationTime: 1743224903
 PfmFamily: 17
 TTFWeight: 500
 TTFWidth: 5
@@ -57,7 +57,7 @@ NameList: AGL For New Fonts
 DisplaySize: -96
 AntiAlias: 1
 FitToEm: 1
-WinInfo: 12944 16 7
+WinInfo: 0 14 6
 BeginPrivate: 0
 EndPrivate
 Grid
@@ -16281,13 +16281,13 @@ EndChar
 StartChar: comma
 Encoding: 44 44 571
 Width: 1008
-VWidth: 0
-Flags: HW
+VWidth: 4000
+Flags: W
 HStem: -200 376<394 504>
 VStem: 406 196<7.1757 153.612>
 LayerCount: 2
 Fore
-Refer: 1313 -1 N 1 0 0 1 0 0 2
+Refer: 278 -1 N 1 0 0 1 0 0 2
 Substitution2: "'code' Coding Friendly lookup 0 subtable" comma.larger
 EndChar
 
@@ -16313,13 +16313,13 @@ EndChar
 StartChar: period
 Encoding: 46 46 573
 Width: 1008
-VWidth: 0
-Flags: HW
+VWidth: 4000
+Flags: W
 HStem: -20 196<428.388 579.612>
 VStem: 406 196<2.38822 153.612>
 LayerCount: 2
 Fore
-Refer: 1315 -1 N 1 0 0 1 0 0 2
+Refer: 280 -1 N 1 0 0 1 0 0 2
 Substitution2: "'code' Coding Friendly lookup 0 subtable" period.larger
 EndChar
 
