@@ -120,10 +120,21 @@ package My::Thingy {
         $xpc->registerNs(sodipodi => $NS{sodipodi});
         $xpc->registerNs(svg      => $NS{svg});
         my $svg = $doc->documentElement;
+
+        my $width  = $svg->getAttribute('width');
         my $height = $svg->getAttribute('height');
-        my $width = $svg->getAttribute('width');
+
         my @view_box = split(' ', $svg->getAttribute('viewBox') // '');
-        my ($view_box_xmin, $view_box_ymin, $view_box_xmax, $view_box_ymax) = @view_box;
+        my ($view_box_xmin, $view_box_ymin, $view_box_width, $view_box_height) = @view_box;
+
+        $view_box_xmin //= 0;
+        $view_box_ymin //= 0;
+        $width  //= $view_box_width  //= $width;
+        $height //= $view_box_height //= $height;
+
+        my $view_box_xmax = $view_box_xmin + $view_box_width;
+        my $view_box_ymax = $view_box_ymin + $view_box_height;
+
         $self->{doc} = $doc;
         $self->{xpc} = $xpc;
         $self->{svg} = $svg;
@@ -133,6 +144,12 @@ package My::Thingy {
         $self->{view_box_xmax} = $view_box_xmax;
         $self->{view_box_ymin} = $view_box_ymin;
         $self->{view_box_ymax} = $view_box_ymax;
+
+        printf STDERR ("viewbox start at %f, %f width %f height %f\n",
+                       $view_box_xmin, $view_box_ymin, $view_box_width, $view_box_height);
+
+        if (!$svg->hasAttribute('width')) {
+        }
     }
     sub list_guides {
         my ($self) = @_;
@@ -210,6 +227,7 @@ package My::Thingy {
     }
     sub convert {
         my ($self, $coord, $from_1, $from_2, $to_1, $to_2) = @_;
+        printf STDERR ("%f | %f %f | %f %f\n", $coord, $from_1, $from_2, $to_1, $to_2);
         my $a = ($coord - $from_1) / ($from_2 - $from_1);
         my $b = $to_1 + $a * ($to_2 - $to_1);
         return $b;
