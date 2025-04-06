@@ -8,31 +8,35 @@ VERSION       := 0.9.0
 FONT_FAMILY := Repro Typewr
 PS_FONT_FAMILY := ReproTypewr
 
-SVG_PY_PROG		:= bin/svg.py
-STROKES_PY_PROG	:= bin/strokes.py
-ASPECT_PY_PROG		:= bin/aspect.py
-METAS_PY_PROG		:= bin/metas.py
-NOTDEF_PY_PROG		:= bin/notdef.py
-SMOL_PY_PROG		:= bin/smol.py
-BOUNDS_PY_PROG		:= bin/bounds.py
-SUPERSUB_PY_PROG	:= bin/supersub.py
-UNDERLINE_PY_PROG	:= bin/underline.py
-NOTREADY_PY_PROG	:= bin/notready.py
+SVG_PY_PROG			:= bin/svg.py
+STROKES_PY_PROG			:= bin/strokes.py
+ASPECT_PY_PROG			:= bin/aspect.py
+METAS_PY_PROG			:= bin/metas.py
+NOTDEF_PY_PROG			:= bin/notdef.py
+SMOL_PY_PROG			:= bin/smol.py
+BOUNDS_PY_PROG			:= bin/bounds.py
+SUPERSUB_PY_PROG		:= bin/supersub.py
+UNDERLINE_PY_PROG		:= bin/underline.py
+NOTREADY_PY_PROG		:= bin/notready.py
+SETSUBSTITUTIONS_PY_PROG	:= bin/setsubstitutions.py
 
 METAS_PY_ARGS := --ffn='$(FONT_FAMILY)' --psfn='$(PS_FONT_FAMILY)'
 
 OPT_VERBOSE :=
 
-SVG_PY	:= $(SVG_PY_PROG)
-STROKES_PY	:= $(STROKES_PY_PROG)
-ASPECT_PY	:= $(ASPECT_PY_PROG)
-METAS_PY	:= $(METAS_PY_PROG) $(METAS_PY_ARGS)
-NOTDEF_PY	:= $(NOTDEF_PY_PROG)
-SMOL_PY		:= $(SMOL_PY_PROG)
-BOUNDS_PY	:= $(BOUNDS_PY_PROG)
-SUPERSUB_PY	:= $(SUPERSUB_PY_PROG)
-UNDERLINE_PY	:= $(UNDERLINE_PY_PROG)
-NOTREADY_PY	:= $(NOTREADY_PY_PROG)
+SVG_PY			:= $(SVG_PY_PROG)
+STROKES_PY		:= $(STROKES_PY_PROG)
+ASPECT_PY		:= $(ASPECT_PY_PROG)
+METAS_PY		:= $(METAS_PY_PROG) $(METAS_PY_ARGS)
+NOTDEF_PY		:= $(NOTDEF_PY_PROG)
+SMOL_PY			:= $(SMOL_PY_PROG)
+BOUNDS_PY		:= $(BOUNDS_PY_PROG)
+SUPERSUB_PY		:= $(SUPERSUB_PY_PROG)
+UNDERLINE_PY		:= $(UNDERLINE_PY_PROG)
+NOTREADY_PY		:= $(NOTREADY_PY_PROG)
+SETSUBSTITUTIONS_PY	:= $(SETSUBSTITUTIONS_PY_PROG)
+
+SUBSTITUTIONS_JSON	:= data/substitutions.json
 
 DISTDIR := dist
 
@@ -140,6 +144,7 @@ update: FORCE
 	$(SUPERSUB_PY) $(FONT_SRC)
 	$(STROKES_PY) --log --expand-stroke 96 $(FONT_SRC)
 	$(NOTDEF_PY) $(FONT_SRC)
+	$(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) $(FONT_SRC)
 	sort -n strokes.log | sponge strokes.log
 
 update-test: FORCE
@@ -149,6 +154,7 @@ update-test: FORCE
 	$(SUPERSUB_PY) $(FONT_SRC)
 	$(STROKES_PY) --log --expand-stroke 96 --allow-json-data $(FONT_SRC)
 	$(NOTDEF_PY) $(FONT_SRC)
+	$(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) $(FONT_SRC)
 	sort -n strokes.log | sponge strokes.log
 
 # update source font fron SVG files, for testing if referenced glyphs
@@ -160,6 +166,7 @@ update-168: FORCE
 	$(SUPERSUB_PY) $(FONT_SRC)
 	$(STROKES_PY) --log --expand-stroke 168 $(FONT_SRC)
 	$(NOTDEF_PY) $(FONT_SRC)
+	$(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) $(FONT_SRC)
 	sort -n strokes.log | sponge strokes.log
 update-24: FORCE
 	$(SVG_PY) $(FONT_SRC) $(SRC_SVGS)
@@ -168,6 +175,7 @@ update-24: FORCE
 	$(SUPERSUB_PY) $(FONT_SRC)
 	$(STROKES_PY) --log --expand-stroke 24 $(FONT_SRC)
 	$(NOTDEF_PY) $(FONT_SRC)
+	$(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) $(FONT_SRC)
 	sort -n strokes.log | sponge strokes.log
 update-48: FORCE
 	$(SVG_PY) $(FONT_SRC) $(SRC_SVGS)
@@ -176,6 +184,7 @@ update-48: FORCE
 	$(SUPERSUB_PY) $(FONT_SRC)
 	$(STROKES_PY) --log --expand-stroke 48 $(FONT_SRC)
 	$(NOTDEF_PY) $(FONT_SRC)
+	$(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) $(FONT_SRC)
 	sort -n strokes.log | sponge strokes.log
 update-72: FORCE
 	$(SVG_PY) $(FONT_SRC) $(SRC_SVGS)
@@ -184,6 +193,7 @@ update-72: FORCE
 	$(SUPERSUB_PY) $(FONT_SRC)
 	$(STROKES_PY) --log --expand-stroke 72 $(FONT_SRC)
 	$(NOTDEF_PY) $(FONT_SRC)
+	$(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) $(FONT_SRC)
 	sort -n strokes.log | sponge strokes.log
 
 fonttool: FORCE
@@ -207,13 +217,14 @@ $(ZIP_FILE): $(FONTS) Makefile
 stage1: src/build/$(PS_FONT_FAMILY).stage1.sfd
 
 # Stage 1: import SVGs
-src/build/$(PS_FONT_FAMILY).stage1.sfd: $(FONT_SRC) $(SRC_SVGS) Makefile $(SVG_PY_PROG) $(BOUNDS_PY_PROG) $(SMOL_PY_PROG) $(SUPERSUB_PY_PROG) $(NOTREADY_PY_PROG)
+src/build/$(PS_FONT_FAMILY).stage1.sfd: $(FONT_SRC) $(SRC_SVGS) Makefile $(SVG_PY_PROG) $(BOUNDS_PY_PROG) $(SMOL_PY_PROG) $(SUPERSUB_PY_PROG) $(NOTREADY_PY_PROG) $(SETSUBSTITUTIONS_PY_PROG) $(SUBSTITUTIONS_JSON)
 	@echo "stage 1"
 	mkdir -p src/build
 	$(SVG_PY) "$<" -o "$@" $(SRC_SVGS)
 	$(BOUNDS_PY) "$@"
 	$(SMOL_PY) "$@"
 	$(SUPERSUB_PY) "$@"
+	$(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) $(FONT_SRC)
 	$(NOTREADY_PY) "$@"
 
 # Stage 2: does nothing

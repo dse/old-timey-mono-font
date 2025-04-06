@@ -1,0 +1,79 @@
+{
+    "substitutions": {
+        "Code Digits Zero Slash": {
+            "features": ["code"],
+            "subtables": {
+                "Code Digits Zero Slash-1": {
+                    "zero": "zero.slash",
+                    "one": "one.code"
+                }
+            }
+        },
+        "Code Digits Zero Dot": {
+            "features": ["cod2"],
+            "subtables": {
+                "Code Digits Zero Dot-1": {
+                    "zero": "zero.smalldot",
+                    "one": "one.code"
+                }
+            }
+        },
+        "Larger Punctuation": {
+            "features": ["code", "cod2", "punc"],
+            "subtables": {
+                "Larger Punctuation-1": {
+                    "periodcentered": "periodcentered.larger",
+                    "onedotenleader": "onedotenleader.larger",
+                    "twodotenleader": "twodotenleader.larger",
+                    "ellipsis": "ellipsis.larger",
+                    "quotesinglbase": "quotesinglbase.larger",
+                    "quotereversed": "quotereversed.larger",
+                    "quotedblbase": "quotedblbase.larger",
+                    "uni201F": "uni201F.larger",
+                    "uni2027": "uni2027.larger",
+                    "uni204F": "uni204F.larger",
+                    "comma": "comma.larger",
+                    "period": "period.larger",
+                    "colon": "colon.larger",
+                    "semicolon": "semicolon.larger",
+                    "quoteleft": "quoteleft.larger",
+                    "quoteright": "quoteright.larger",
+                    "quotedblleft": "quotedblleft.larger",
+                    "quotedblright": "quotedblright.larger"
+                }
+            }
+        },
+        "Code Symbols": {
+            "features": ["code", "cod2", "symb"],
+            "subtables": {
+                "Code Symbols-1": {
+                    "equal": "equal.code"
+                }
+            }
+        },
+        "Apertured Letters": {
+            "features": ["code", "cod2", "letr"],
+            "subtables": {
+                "Apertured Letters-1": {
+                    "a": "a.code",
+                    "c": "c.code",
+                    "e": "e.code",
+                    "s": "s.code"
+                }
+            }
+        },
+        "Code Brackets": {
+            "features": ["code", "cod2", "brak"],
+            "subtables": {
+                "Code Brackets-1": {
+                    "parenleft": "parenleft.code",
+                    "parenright": "parenright.code",
+                    "bracketleft": "bracketleft.code",
+                    "bracketright": "bracketright.code",
+                    "braceleft": "braceleft.cod2",
+                    "braceright": "braceright.cod2"
+                }
+            }
+        }
+    }
+}
