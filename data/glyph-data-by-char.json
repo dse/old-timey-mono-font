@@ -5319,17 +5319,20 @@
             "isPrintable": true,
             "glyphName": "uni2027",
             "normalAdobeName": "uni2027",
-            "boundingBoxXMin": 240.0,
-            "boundingBoxXMax": 768.0,
-            "boundingBoxYMin": 330.0,
-            "boundingBoxYMax": 426.0,
+            "boundingBoxXMin": 406.0,
+            "boundingBoxXMax": 602.0,
+            "boundingBoxYMin": 280.0,
+            "boundingBoxYMax": 476.0,
             "altuni": null,
             "comment": "",
             "glyphClass": "automatic",
-            "leftSideBearing": 240.0,
-            "rightSideBearing": 240.0,
+            "leftSideBearing": 406.0,
+            "rightSideBearing": 406.0,
             "width": 1008,
-            "char": "\u2027"
+            "char": "\u2027",
+            "substitutionsFromThis": {
+                "code": "uni2027.larger"
+            }
         },
         {
             "codepoint": 8254,
@@ -11338,6 +11341,7 @@
             "width": 1008,
             "char": "0",
             "substitutionsFromThis": {
+                "cod2": "zero.smalldot",
                 "code": "zero.slash"
             }
         },
@@ -11361,6 +11365,7 @@
             "width": 1008,
             "char": "1",
             "substitutionsFromThis": {
+                "cod2": "one.code",
                 "code": "one.code"
             }
         },
