@@ -1,5 +1,60 @@
 # More Notes
 
+-   in a 4800dpi scanned image:
+    -   width of each character cell is 330px.
+    -   height of each character cell is 660px.
+    -   vertical stroke on digit 1 averages 46px wide.
+        -   { 46 / 330 * 1008 = 140.509090909091 }
+    -   horizontal stroke on digit 1 averages 39px wide.
+        -   { 39 / 660 * 2016 = 119.127272727273 }
+    -   average: { 42/660*2016 = 128.290909090909 }
+    -   if 128px you'll need to adjust these:
+        -   circle used for (C), (R), (P)
+        -   capital AE ligature may need to be moved a bit to the right or shrunken somehowelse
+        -   acute, grave, circumflex, v accents may need to be shifted down
+        -   capital IJ can be spread apart a little bit
+        -   /Lslash: slash can move a lttle to the right
+        -   /uni01E9: v can move a little right
+        -   Aring: ring can move a little down
+        -   curved ^: can mvoe a little down
+        -   /uni0210: `` can move a little right
+        -   U+0256
+        -   U+0257
+        -   U+0260
+        -   U+0273
+        -   U+0290
+        -   path on all overlines should extend to edges
+        -   path on all low lines should extend to edges
+        -   U+0310 bug
+        -   U+031B 
+        -   U+0322
+        -   U+0325
+        -   U+0326
+        -   U+0329
+        -   U+0352
+        -   keep downsized letters, like for subscrips and superscripts and whatnot, at 96px
+        -   em dash
+        -   per mille
+        -   per 10,000
+        -   fix double prime
+        -   U+2038
+        -   undertie
+        -   overtie
+        -   U+2053
+        -   small M in SM and TM may cause issues if 128
+        -   U+219A
+        -   U+219B
+        -   arrowdblboth
+        -   square root
+        -   U+2326
+        -   U+232B
+        -   U+23ED
+        -   U+23EE
+        -   /sun
+        -   U+27F5 and U+27F6
+        -   U+27F7
+        -   U+FFFD
+
 -   scans/7/img008.png
     -   3475 * 21890
     -   666 pixels per line

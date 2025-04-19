@@ -195,6 +195,15 @@ update-72: FORCE
 	$(NOTDEF_PY) $(FONT_SRC)
 	$(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) $(FONT_SRC)
 	sort -n strokes.log | sponge strokes.log
+update-128: FORCE
+	$(SVG_PY) $(FONT_SRC) $(SRC_SVGS)
+	$(BOUNDS_PY) $(FONT_SRC)
+	$(SMOL_PY) $(FONT_SRC)
+	$(SUPERSUB_PY) $(FONT_SRC)
+	$(STROKES_PY) --log --expand-stroke 128 $(FONT_SRC)
+	$(NOTDEF_PY) $(FONT_SRC)
+	$(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) $(FONT_SRC)
+	sort -n strokes.log | sponge strokes.log
 
 fonttool: FORCE
 	@echo "use 'make update', dingus." >&2
