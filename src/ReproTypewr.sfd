@@ -1458,7 +1458,7 @@ Refer: 770 -1 N 1 0 0 1 0 561 2
 Refer: 79 -1 N 1 0 0 1 0 75 2
 EndChar
 
-StartChar: fractiondash
+StartChar: x_nutfractionbar
 Encoding: 65543 -1 79
 Width: 1008
 Flags: HW
@@ -21557,7 +21557,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: xcirclex.copyright
+StartChar: x_copyrightcircle
 Encoding: 65560 -1 733
 Width: 1008
 VWidth: 0
@@ -21600,7 +21600,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: ordinalindicator
+StartChar: x_ordinalindicatorbar
 Encoding: 65562 -1 735
 Width: 1008
 VWidth: 0
@@ -42691,7 +42691,7 @@ Fore
 Refer: 831 -1 N 1 0 0 1 0 -156 2
 EndChar
 
-StartChar: xstrokex.45
+StartChar: x_longstroke45
 Encoding: 65704 -1 1901
 Width: 1008
 VWidth: 0
@@ -43780,7 +43780,7 @@ Refer: 800 -1 S 1 0 0 1 0 240 2
 Refer: 733 -1 N 1 0 0 1 0 0 2
 EndChar
 
-StartChar: xhorizstrokex
+StartChar: x_shorthorizline
 Encoding: 65710 -1 1952
 Width: 1008
 VWidth: 0
@@ -43850,7 +43850,7 @@ Refer: 853 773 S 1 0 0 1 0 -408 2
 Refer: 599 72 N 1 0 0 1 0 0 2
 EndChar
 
-StartChar: xmedhorizstrokex
+StartChar: x_mediumhorizline
 Encoding: 65711 -1 1957
 Width: 1008
 VWidth: 0
@@ -44082,7 +44082,7 @@ Refer: 1965 -1 S 1 0 0 1 16 0 2
 Refer: 633 108 N 1 0 0 1 0 0 2
 EndChar
 
-StartChar: xmedstrokex.45
+StartChar: x_mediumstroke45
 Encoding: 65712 -1 1964
 Width: 1008
 VWidth: 0
@@ -44103,7 +44103,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: xshortstrokex.45
+StartChar: x_shortstroke45
 Encoding: 65713 -1 1965
 Width: 1008
 VWidth: 0
@@ -46623,7 +46623,7 @@ Refer: 574 47 S 1 0 0 1 0 0 2
 Refer: 2033 8839 N 1 0 0 1 0 0 2
 EndChar
 
-StartChar: xtest4x
+StartChar: x_test4
 Encoding: 65714 -1 2040
 Width: 1008
 VWidth: 0
@@ -46651,7 +46651,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: xtest3x
+StartChar: x_test3
 Encoding: 65715 -1 2041
 Width: 1008
 VWidth: 0
@@ -46679,7 +46679,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: xtest1x
+StartChar: x_test1
 Encoding: 65716 -1 2042
 Width: 1008
 VWidth: 0
@@ -46707,7 +46707,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: xtest2x
+StartChar: x_test2
 Encoding: 65717 -1 2043
 Width: 1008
 VWidth: 0
