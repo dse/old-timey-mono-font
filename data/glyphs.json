@@ -15,16 +15,6 @@
             }
         }
     ],
-    "<6>": {
-        "linecap": "butt",
-        "linejoin": "miter",
-        "svg": "src/chars-linecap-butt/0036-digit-six.svg"
-    },
-    "<9>": {
-        "linecap": "butt",
-        "linejoin": "miter",
-        "svg": "src/chars-linecap-butt/0039-digit-nine.svg"
-    },
     "\"": {
         "fill": true
     },
