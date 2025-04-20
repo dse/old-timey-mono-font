@@ -23,7 +23,7 @@ OS2Version: 0
 OS2_WeightWidthSlopeOnly: 0
 OS2_UseTypoMetrics: 1
 CreationTime: 1729142792
-ModificationTime: 1743976671
+ModificationTime: 1745122438
 PfmFamily: 17
 TTFWeight: 500
 TTFWidth: 5
@@ -46,23 +46,24 @@ HheadDOffset: 0
 OS2CapHeight: 1056
 OS2XHeight: 756
 OS2Vendor: 'PfEd'
-Lookup: 1 0 0 "Code Brackets" { "Code Brackets-1"  } ['code' ('DFLT' <'dflt' > ) 'cod2' ('DFLT' <'dflt' > ) 'brak' ('DFLT' <'dflt' > ) ]
-Lookup: 1 0 0 "Apertured Letters" { "Apertured Letters-1"  } ['code' ('DFLT' <'dflt' > ) 'cod2' ('DFLT' <'dflt' > ) 'letr' ('DFLT' <'dflt' > ) ]
-Lookup: 1 0 0 "Code Symbols" { "Code Symbols-1"  } ['code' ('DFLT' <'dflt' > ) 'cod2' ('DFLT' <'dflt' > ) 'symb' ('DFLT' <'dflt' > ) ]
-Lookup: 1 0 0 "Larger Punctuation" { "Larger Punctuation-1"  } ['code' ('DFLT' <'dflt' > ) 'cod2' ('DFLT' <'dflt' > ) 'punc' ('DFLT' <'dflt' > ) ]
-Lookup: 1 0 0 "Code Digits Zero Dot" { "Code Digits Zero Dot-1"  } ['cod2' ('DFLT' <'dflt' > ) ]
-Lookup: 1 0 0 "Code Digits Zero Slash" { "Code Digits Zero Slash-1"  } ['code' ('DFLT' <'dflt' > ) ]
+Lookup: 1 0 0 "Simplified Forms for Size Reduction" { "Simplified Forms for Size Reduction-1"  } ['ss07' ('DFLT' <'dflt' > ) ]
+Lookup: 1 0 0 "Code Brackets" { "Code Brackets-1"  } ['ss01' ('DFLT' <'dflt' > ) 'ss02' ('DFLT' <'dflt' > ) ]
+Lookup: 1 0 0 "Apertured Letters" { "Apertured Letters-1"  } ['ss01' ('DFLT' <'dflt' > ) 'ss04' ('DFLT' <'dflt' > ) ]
+Lookup: 1 0 0 "Code Symbols" { "Code Symbols-1"  } ['ss01' ('DFLT' <'dflt' > ) 'ss06' ('DFLT' <'dflt' > ) ]
+Lookup: 1 0 0 "Larger Punctuation" { "Larger Punctuation-1"  } ['ss01' ('DFLT' <'dflt' > ) 'ss05' ('DFLT' <'dflt' > ) ]
+Lookup: 1 0 0 "Code Digits" { "Code Digits Zero Slash-1"  } ['ss01' ('DFLT' <'dflt' > ) 'ss03' ('DFLT' <'dflt' > ) ]
 Lookup: 260 0 0 "'mark' Mark Positioning lookup 0" { "'mark' Mark Positioning lookup 0-1"  } ['mark' ('DFLT' <'dflt' > 'brai' <'dflt' > 'latn' <'dflt' > ) ]
 MarkAttachClasses: 1
 DEI: 91125
 LangName: 1033 "" "" "" "" "" "" "" "" "" "" "" "" "" "This Font Software is licensed under the SIL Open Font License, Version 1.1.+AAoA-This license is copied below, and is also available with a FAQ at:+AAoA-http://scripts.sil.org/OFL+AAoACgAK------------------------------------------------------------+AAoA-SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007+AAoA------------------------------------------------------------+AAoACgAA-PREAMBLE+AAoA-The goals of the Open Font License (OFL) are to stimulate worldwide+AAoA-development of collaborative font projects, to support the font creation+AAoA-efforts of academic and linguistic communities, and to provide a free and+AAoA-open framework in which fonts may be shared and improved in partnership+AAoA-with others.+AAoACgAA-The OFL allows the licensed fonts to be used, studied, modified and+AAoA-redistributed freely as long as they are not sold by themselves. The+AAoA-fonts, including any derivative works, can be bundled, embedded, +AAoA-redistributed and/or sold with any software provided that any reserved+AAoA-names are not used by derivative works. The fonts and derivatives,+AAoA-however, cannot be released under any other type of license. The+AAoA-requirement for fonts to remain under this license does not apply+AAoA-to any document created using the fonts or their derivatives.+AAoACgAA-DEFINITIONS+AAoAIgAA-Font Software+ACIA refers to the set of files released by the Copyright+AAoA-Holder(s) under this license and clearly marked as such. This may+AAoA-include source files, build scripts and documentation.+AAoACgAi-Reserved Font Name+ACIA refers to any names specified as such after the+AAoA-copyright statement(s).+AAoACgAi-Original Version+ACIA refers to the collection of Font Software components as+AAoA-distributed by the Copyright Holder(s).+AAoACgAi-Modified Version+ACIA refers to any derivative made by adding to, deleting,+AAoA-or substituting -- in part or in whole -- any of the components of the+AAoA-Original Version, by changing formats or by porting the Font Software to a+AAoA-new environment.+AAoACgAi-Author+ACIA refers to any designer, engineer, programmer, technical+AAoA-writer or other person who contributed to the Font Software.+AAoACgAA-PERMISSION & CONDITIONS+AAoA-Permission is hereby granted, free of charge, to any person obtaining+AAoA-a copy of the Font Software, to use, study, copy, merge, embed, modify,+AAoA-redistribute, and sell modified and unmodified copies of the Font+AAoA-Software, subject to the following conditions:+AAoACgAA-1) Neither the Font Software nor any of its individual components,+AAoA-in Original or Modified Versions, may be sold by itself.+AAoACgAA-2) Original or Modified Versions of the Font Software may be bundled,+AAoA-redistributed and/or sold with any software, provided that each copy+AAoA-contains the above copyright notice and this license. These can be+AAoA-included either as stand-alone text files, human-readable headers or+AAoA-in the appropriate machine-readable metadata fields within text or+AAoA-binary files as long as those fields can be easily viewed by the user.+AAoACgAA-3) No Modified Version of the Font Software may use the Reserved Font+AAoA-Name(s) unless explicit written permission is granted by the corresponding+AAoA-Copyright Holder. This restriction only applies to the primary font name as+AAoA-presented to the users.+AAoACgAA-4) The name(s) of the Copyright Holder(s) or the Author(s) of the Font+AAoA-Software shall not be used to promote, endorse or advertise any+AAoA-Modified Version, except to acknowledge the contribution(s) of the+AAoA-Copyright Holder(s) and the Author(s) or with their explicit written+AAoA-permission.+AAoACgAA-5) The Font Software, modified or unmodified, in part or in whole,+AAoA-must be distributed entirely under this license, and must not be+AAoA-distributed under any other license. The requirement for fonts to+AAoA-remain under this license does not apply to any document created+AAoA-using the Font Software.+AAoACgAA-TERMINATION+AAoA-This license becomes null and void if any of the above conditions are+AAoA-not met.+AAoACgAA-DISCLAIMER+AAoA-THE FONT SOFTWARE IS PROVIDED +ACIA-AS IS+ACIA, WITHOUT WARRANTY OF ANY KIND,+AAoA-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF+AAoA-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT+AAoA-OF COPYRIGHT, PATENT, TRADEMARK, OR OTHER RIGHT. IN NO EVENT SHALL THE+AAoA-COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,+AAoA-INCLUDING ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL+AAoA-DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING+AAoA-FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM+AAoA-OTHER DEALINGS IN THE FONT SOFTWARE." "http://scripts.sil.org/OFL"
 Encoding: UnicodeBmp
+Compacted: 1
 UnicodeInterp: none
 NameList: AGL For New Fonts
 DisplaySize: -96
 AntiAlias: 1
 FitToEm: 1
-WinInfo: 8208 18 7
+WinInfo: 2124 18 7
 BeginPrivate: 0
 EndPrivate
 Grid
@@ -15998,6 +15999,7 @@ VStem: 96 93.045<-318.488 -288.607> 336 93.045<-318.488 -288.607> 578.955 93.045
 LayerCount: 2
 Fore
 Refer: 2 -1 S 1 0 0 1 0 0 2
+Substitution2: "Simplified Forms for Size Reduction-1" numbersign.ss07
 EndChar
 
 StartChar: dollar
@@ -16069,6 +16071,7 @@ SplineSet
  334.146774899 927.872466114 275.462519919 900.993464385 248.759501998 848.27613424 c 0
  240.413320706 831.799030569 236.26953125 814.723080245 236.26953125 797.080078125 c 0
 EndSplineSet
+Substitution2: "Simplified Forms for Size Reduction-1" dollar.ss07
 Comment: "{}"
 EndChar
 
@@ -16350,7 +16353,7 @@ VStem: 136 96<280.075 775.929> 776 96<280.073 775.922>
 LayerCount: 2
 Fore
 Refer: 70 -1 N 1 0 0 1 0 0 2
-Substitution2: "Code Digits Zero Dot-1" zero.cv05
+Substitution2: "Simplified Forms for Size Reduction-1" zero.ss07
 Substitution2: "Code Digits Zero Slash-1" zero.zero
 EndChar
 
@@ -16364,7 +16367,7 @@ VStem: 504 96<96 960>
 LayerCount: 2
 Fore
 Refer: 71 -1 N 1 0 0 1 0 0 2
-Substitution2: "Code Digits Zero Dot-1" one.cv01
+Substitution2: "Simplified Forms for Size Reduction-1" one.ss07
 Substitution2: "Code Digits Zero Slash-1" one.cv01
 EndChar
 
@@ -16403,6 +16406,7 @@ SplineSet
  181.56144691 714.29296875 146.609375 749.24504066 146.609375 792.29296875 c 0
  146.609375 938.36420013 305.766865632 1076 513.588867188 1076 c 0
 EndSplineSet
+Substitution2: "Simplified Forms for Size Reduction-1" two.ss07
 Comment: "{}"
 EndChar
 
@@ -16441,6 +16445,7 @@ SplineSet
  264.414352113 119.596719159 356.948015618 76 469.58203125 76 c 0
  666.892568393 76 792.62890625 188.821148098 792.62890625 326.17578125 c 0
 EndSplineSet
+Substitution2: "Simplified Forms for Size Reduction-1" three.ss07
 Comment: "{}"
 EndChar
 
@@ -16513,6 +16518,7 @@ SplineSet
  244.047928089 340.192382812 279 305.240310904 279 262.192382812 c 0
  279 232.249457148 262.089483117 206.223469883 237.306416376 193.152388045 c 1
 EndSplineSet
+Substitution2: "Simplified Forms for Size Reduction-1" five.ss07
 Comment: "{}"
 EndChar
 
@@ -17832,7 +17838,7 @@ Flags: HW
 LayerCount: 2
 Fore
 Refer: 2225 -1 N 1 0 0 1 0 0 2
-Substitution2: "Code Brackets-1" bracketleft.code
+Substitution2: "Code Brackets-1" bracketleft.ss02
 Comment: "{}"
 EndChar
 
@@ -17865,7 +17871,7 @@ Flags: HW
 LayerCount: 2
 Fore
 Refer: 2226 -1 N 1 0 0 1 0 0 2
-Substitution2: "Code Brackets-1" bracketright.code
+Substitution2: "Code Brackets-1" bracketright.ss02
 Comment: "{}"
 EndChar
 
@@ -17937,6 +17943,7 @@ SplineSet
  732.009765625 617.007450282 729.523322551 625.438743396 725.199947852 632.644367895 c 1
  729.523322551 625.438743396 732.009765625 617.007450282 732.009765625 608 c 1
 EndSplineSet
+Substitution2: "Code Symbols-1" grave.cv09
 Comment: "{}"
 EndChar
 
@@ -17950,6 +17957,7 @@ VStem: 118.627 96<114.264 285.429> 136.799 156<528.666 638.972> 640 96<148.103 3
 LayerCount: 2
 Fore
 Refer: 1550 -1 N 1 0 0 1 0 0 2
+Substitution2: "Simplified Forms for Size Reduction-1" a.ss07
 Substitution2: "Apertured Letters-1" a.ss04
 EndChar
 
@@ -47059,11 +47067,11 @@ Flags: HW
 LayerCount: 2
 Fore
 SplineSet
-416 378 m 0
- 416 426.570812769 455.429187231 466 504 466 c 0
- 552.570812769 466 592 426.570812769 592 378 c 0
- 592 329.429187231 552.570812769 290 504 290 c 0
- 455.429187231 290 416 329.429187231 416 378 c 0
+504 280 m 0
+ 450.231476126 280 406 323.548965788 406 378 c 0
+ 406 432.447881656 450.228302265 476 504 476 c 0
+ 557.768523874 476 602 432.451034212 602 378 c 0
+ 602 323.552118344 557.771697735 280 504 280 c 0
 EndSplineSet
 Comment: "{}"
 EndChar
@@ -52933,7 +52941,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: braceright.cv12
+StartChar: braceright.cv13
 Encoding: 65729 -1 2222
 Width: 1008
 VWidth: 0
@@ -53091,7 +53099,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: bracketleft.code
+StartChar: bracketleft.ss02
 Encoding: 65735 -1 2228
 Width: 1008
 VWidth: 0
@@ -53116,7 +53124,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: bracketright.code
+StartChar: bracketright.ss02
 Encoding: 65736 -1 2229
 Width: 1008
 VWidth: 0

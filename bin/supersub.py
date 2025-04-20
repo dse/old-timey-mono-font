@@ -142,7 +142,7 @@ def fraction(font, codepoint, numer, denom):
     references = []
     if type(numer) == int:
         numer = str(numer)
-    references.append(('fractiondash', xlate_fraction))
+    references.append(('x_nutfractionbar', xlate_fraction))
     if type(numer) == int:
         numer = str(numer)
     if type(denom) == int:

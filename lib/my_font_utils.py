@@ -41,6 +41,7 @@ def parse_glyph_svg_filename(filename):
     suffix = None               # suffix without "." or "--" prefix, or None
     stroke_width = None         # int if stroke width specified in SVG file; None otherwise
     stem_copy = stem
+    custom = False
     while len(stem_copy):
         if match := re.search(r'^(?:u\+|0x)?([0-9A-Fa-f]+)(?:$|(?=[-.]))-?', stem_copy, flags=re.IGNORECASE):
             codepoint = int(match.group(1), 16)
@@ -48,6 +49,7 @@ def parse_glyph_svg_filename(filename):
             stem_copy = stem_copy[match.end(0):]
             continue
         if match := re.search(r'^x--', stem_copy, flags=re.IGNORECASE):
+            custom = True
             codepoint = -1
             real_codepoint = None
             stem_copy = stem_copy[match.end(0):]
@@ -69,7 +71,7 @@ def parse_glyph_svg_filename(filename):
         return [None, None, None, None, None]
     if codepoint < 0:
         plain_glyphname = stem_copy
-        glyphname = stem_copy
+        glyphname = "x_" + stem_copy
         if suffix is not None:
             glyphname += ("." + suffix)
         real_codepoint = fontforge.unicodeFromName(plain_glyphname)
