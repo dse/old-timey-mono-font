@@ -279,7 +279,7 @@ def set_substitutions(font):
     for source_glyph in font.glyphs():
         for lookup_name in font.gsub_lookups:
             lookup_info = font.getLookupInfo(lookup_name)
-            feature = lookup_info[2][0][0] # e.g., "code"
+            feature = lookup_info[2][0][0] # e.g., "ss01"
             for subtable_name in font.getLookupSubtables(lookup_name):
                 for substitution in source_glyph.getPosSub(subtable_name):
                     (subtable_name, lookup_type, dest_glyph_name) = substitution

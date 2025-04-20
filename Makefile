@@ -280,7 +280,7 @@ $(DISTDIR)/ttf/%-Thin.ttf: src/build/%.stage2.sfd Makefile $(STROKES_PY_PROG) $(
 #                                   vvvv
 $(DISTDIR)/ttf/$(PS_FONT_FAMILY)Code%ttf: $(DISTDIR)/ttf/$(PS_FONT_FAMILY)%ttf Makefile $(METAS_PY_PROG) bin/fontfix
 	@echo "stage 5"
-	pyftfeatfreeze -f code "$<" "$@"
+	pyftfeatfreeze -f ss01 "$<" "$@"
 	bin/fontfix "$@"
 	$(METAS_PY) "$@"
 

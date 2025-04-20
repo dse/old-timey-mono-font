@@ -288,7 +288,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: one.code
+StartChar: one.cv01
 Encoding: 65538 -1 3
 Width: 1008
 VWidth: 4000
@@ -1164,7 +1164,7 @@ Refer: 715 776 N 1 0 0 1 0 -296 2
 Refer: 646 121 N 1 0 0 1 0 0 3
 EndChar
 
-StartChar: l.code
+StartChar: l.cv02
 Encoding: 65539 -1 65
 Width: 1008
 VWidth: 4000
@@ -1244,7 +1244,7 @@ Flags: W
 LayerCount: 2
 EndChar
 
-StartChar: zero.slash
+StartChar: zero.zero
 Encoding: 65540 -1 69
 Width: 1008
 VWidth: 4000
@@ -1348,7 +1348,7 @@ VStem: 406 196<302.388 453.612>
 LayerCount: 2
 Fore
 Refer: 734 -1 N 1 0 0 1 0 0 2
-Substitution2: "Larger Punctuation-1" periodcentered.larger
+Substitution2: "Larger Punctuation-1" periodcentered.ss05
 EndChar
 
 StartChar: minus
@@ -1924,7 +1924,7 @@ VStem: 406 196<2.38822 153.612>
 LayerCount: 2
 Fore
 Refer: 1315 -1 N 1 0 0 1 0 0 2
-Substitution2: "Larger Punctuation-1" onedotenleader.larger
+Substitution2: "Larger Punctuation-1" onedotenleader.ss05
 EndChar
 
 StartChar: twodotenleader
@@ -1937,7 +1937,7 @@ VStem: 206 196<2.38822 153.612> 606 196<2.38822 153.612>
 LayerCount: 2
 Fore
 Refer: 1326 -1 N 1 0 0 1 0 0 2
-Substitution2: "Larger Punctuation-1" twodotenleader.larger
+Substitution2: "Larger Punctuation-1" twodotenleader.ss05
 EndChar
 
 StartChar: ellipsis
@@ -1951,7 +1951,7 @@ CounterMasks: 1 70
 LayerCount: 2
 Fore
 Refer: 1328 -1 N 1 0 0 1 0 0 2
-Substitution2: "Larger Punctuation-1" ellipsis.larger
+Substitution2: "Larger Punctuation-1" ellipsis.ss05
 EndChar
 
 StartChar: exclamdbl
@@ -6964,7 +6964,7 @@ VStem: 240 528<331.512 424.488>
 LayerCount: 2
 Fore
 Refer: 1339 -1 N 1 0 0 1 0 0 2
-Substitution2: "Larger Punctuation-1" uni2027.larger
+Substitution2: "Larger Punctuation-1" uni2027.ss05
 EndChar
 
 StartChar: uni203E
@@ -7373,7 +7373,7 @@ VStem: 406 196<7.1757 153.612>
 LayerCount: 2
 Fore
 Refer: 1313 -1 N 1 0 0 1 0 0 2
-Substitution2: "Larger Punctuation-1" quotesinglbase.larger
+Substitution2: "Larger Punctuation-1" quotesinglbase.ss05
 EndChar
 
 StartChar: quotereversed
@@ -7386,7 +7386,7 @@ VStem: 406 196<907.177 1053.61>
 LayerCount: 2
 Fore
 Refer: 1329 -1 N 1 0 0 1 0 0 2
-Substitution2: "Larger Punctuation-1" quotereversed.larger
+Substitution2: "Larger Punctuation-1" quotereversed.ss05
 EndChar
 
 StartChar: quotedblbase
@@ -7399,7 +7399,7 @@ VStem: 206 196<7.1757 153.612> 606 196<7.1757 153.612>
 LayerCount: 2
 Fore
 Refer: 1320 -1 N 1 0 0 1 0 0 2
-Substitution2: "Larger Punctuation-1" quotedblbase.larger
+Substitution2: "Larger Punctuation-1" quotedblbase.ss05
 EndChar
 
 StartChar: uni201F
@@ -7411,7 +7411,7 @@ VStem: 206 196<907.177 1053.61> 606 196<907.177 1053.61>
 LayerCount: 2
 Fore
 Refer: 1314 -1 N 1 0 0 1 0 0 2
-Substitution2: "Larger Punctuation-1" uni201F.larger
+Substitution2: "Larger Punctuation-1" uni201F.ss05
 EndChar
 
 StartChar: uni204F
@@ -7424,7 +7424,7 @@ VStem: 406 196<5.84429 152.279 602.388 753.612>
 LayerCount: 2
 Fore
 Refer: 1342 -1 N 1 0 0 1 0 0 2
-Substitution2: "Larger Punctuation-1" uni204F.larger
+Substitution2: "Larger Punctuation-1" uni204F.ss05
 EndChar
 
 StartChar: uni0259
@@ -16197,7 +16197,7 @@ Flags: HW
 LayerCount: 2
 Fore
 Refer: 2223 -1 N 1 0 0 1 0 0 2
-Substitution2: "Code Brackets-1" parenleft.code
+Substitution2: "Code Brackets-1" parenleft.ss02
 Comment: "{}"
 EndChar
 
@@ -16209,7 +16209,7 @@ Flags: HW
 LayerCount: 2
 Fore
 Refer: 2224 -1 N 1 0 0 1 0 0 2
-Substitution2: "Code Brackets-1" parenright.code
+Substitution2: "Code Brackets-1" parenright.ss02
 Comment: "{}"
 EndChar
 
@@ -16294,7 +16294,7 @@ VStem: 406 196<7.1757 153.612>
 LayerCount: 2
 Fore
 Refer: 278 -1 N 1 0 0 1 0 0 2
-Substitution2: "Larger Punctuation-1" comma.larger
+Substitution2: "Larger Punctuation-1" comma.ss05
 EndChar
 
 StartChar: hyphen
@@ -16326,7 +16326,7 @@ VStem: 406 196<2.38822 153.612>
 LayerCount: 2
 Fore
 Refer: 280 -1 N 1 0 0 1 0 0 2
-Substitution2: "Larger Punctuation-1" period.larger
+Substitution2: "Larger Punctuation-1" period.ss05
 EndChar
 
 StartChar: slash
@@ -16350,8 +16350,8 @@ VStem: 136 96<280.075 775.929> 776 96<280.073 775.922>
 LayerCount: 2
 Fore
 Refer: 70 -1 N 1 0 0 1 0 0 2
-Substitution2: "Code Digits Zero Dot-1" zero.smalldot
-Substitution2: "Code Digits Zero Slash-1" zero.slash
+Substitution2: "Code Digits Zero Dot-1" zero.cv05
+Substitution2: "Code Digits Zero Slash-1" zero.zero
 EndChar
 
 StartChar: one
@@ -16364,8 +16364,8 @@ VStem: 504 96<96 960>
 LayerCount: 2
 Fore
 Refer: 71 -1 N 1 0 0 1 0 0 2
-Substitution2: "Code Digits Zero Dot-1" one.code
-Substitution2: "Code Digits Zero Slash-1" one.code
+Substitution2: "Code Digits Zero Dot-1" one.cv01
+Substitution2: "Code Digits Zero Slash-1" one.cv01
 EndChar
 
 StartChar: two
@@ -16669,7 +16669,7 @@ VStem: 406 196<2.38822 153.612 602.388 753.612>
 LayerCount: 2
 Fore
 Refer: 277 -1 N 1 0 0 1 0 0 2
-Substitution2: "Larger Punctuation-1" colon.larger
+Substitution2: "Larger Punctuation-1" colon.ss05
 EndChar
 
 StartChar: semicolon
@@ -16682,7 +16682,7 @@ VStem: 406 196<5.84256 152.279 602.388 753.612>
 LayerCount: 2
 Fore
 Refer: 279 -1 N 1 0 0 1 0 0 2
-Substitution2: "Larger Punctuation-1" semicolon.larger
+Substitution2: "Larger Punctuation-1" semicolon.ss05
 EndChar
 
 StartChar: less
@@ -16719,7 +16719,7 @@ HStem: 220 96<137.513 870.487> 440 96<137.513 870.487>
 LayerCount: 2
 Fore
 Refer: 1554 -1 N 1 0 0 1 0 0 2
-Substitution2: "Code Symbols-1" equal.code
+Substitution2: "Code Symbols-1" equal.cv11
 EndChar
 
 StartChar: greater
@@ -17950,7 +17950,7 @@ VStem: 118.627 96<114.264 285.429> 136.799 156<528.666 638.972> 640 96<148.103 3
 LayerCount: 2
 Fore
 Refer: 1550 -1 N 1 0 0 1 0 0 2
-Substitution2: "Apertured Letters-1" a.code
+Substitution2: "Apertured Letters-1" a.ss04
 EndChar
 
 StartChar: b
@@ -17998,7 +17998,7 @@ VStem: 157 96<235.511 534.051> 696.798 156<506.291 626.025> 755.592 95.5756<172.
 LayerCount: 2
 Fore
 Refer: 1547 -1 N 1 0 0 1 0 0 2
-Substitution2: "Apertured Letters-1" c.code
+Substitution2: "Apertured Letters-1" c.ss04
 EndChar
 
 StartChar: d
@@ -18047,7 +18047,7 @@ VStem: 152.312 96.7543<213.875 354.348 450.348 540.166> 753.786 92.6136<180.393 
 LayerCount: 2
 Fore
 Refer: 1549 -1 N 1 0 0 1 0 0 2
-Substitution2: "Apertured Letters-1" e.code
+Substitution2: "Apertured Letters-1" e.ss04
 EndChar
 
 StartChar: f
@@ -18487,7 +18487,7 @@ VStem: 135.274 95.9933<2.15951 73.236 167.996 264.922> 152.244 96<501.15 638.821
 LayerCount: 2
 Fore
 Refer: 1552 -1 N 1 0 0 1 0 0 2
-Substitution2: "Apertured Letters-1" s.code
+Substitution2: "Apertured Letters-1" s.ss04
 EndChar
 
 StartChar: t
@@ -18778,7 +18778,7 @@ Flags: HW
 LayerCount: 2
 Fore
 Refer: 2220 -1 N 1 0 0 1 0 0 2
-Substitution2: "Code Brackets-1" braceleft.cod2
+Substitution2: "Code Brackets-1" braceleft.ss02
 Comment: "{}"
 EndChar
 
@@ -18810,7 +18810,7 @@ Flags: HW
 LayerCount: 2
 Fore
 Refer: 2221 -1 N 1 0 0 1 0 0 2
-Substitution2: "Code Brackets-1" braceright.cod2
+Substitution2: "Code Brackets-1" braceright.ss02
 Comment: "{}"
 EndChar
 
@@ -19376,7 +19376,7 @@ VStem: 406 196<722.388 868.824>
 LayerCount: 2
 Fore
 Refer: 718 -1 N 1 0 0 1 0 0 2
-Substitution2: "Larger Punctuation-1" quoteleft.larger
+Substitution2: "Larger Punctuation-1" quoteleft.ss05
 EndChar
 
 StartChar: quoteright
@@ -19389,7 +19389,7 @@ VStem: 406 196<907.176 1053.61>
 LayerCount: 2
 Fore
 Refer: 719 -1 N 1 0 0 1 0 0 2
-Substitution2: "Larger Punctuation-1" quoteright.larger
+Substitution2: "Larger Punctuation-1" quoteright.ss05
 EndChar
 
 StartChar: quotedblleft
@@ -19402,7 +19402,7 @@ VStem: 206 196<722.388 868.824> 606 196<722.388 868.824>
 LayerCount: 2
 Fore
 Refer: 720 -1 N 1 0 0 1 0 0 2
-Substitution2: "Larger Punctuation-1" quotedblleft.larger
+Substitution2: "Larger Punctuation-1" quotedblleft.ss05
 EndChar
 
 StartChar: quotedblright
@@ -19415,7 +19415,7 @@ VStem: 206 196<907.176 1053.61> 606 196<907.176 1053.61>
 LayerCount: 2
 Fore
 Refer: 721 -1 N 1 0 0 1 0 0 2
-Substitution2: "Larger Punctuation-1" quotedblright.larger
+Substitution2: "Larger Punctuation-1" quotedblright.ss05
 EndChar
 
 StartChar: uni2023
@@ -20599,7 +20599,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: numbersign.short
+StartChar: numbersign.cv03
 Encoding: 65548 -1 701
 Width: 1008
 VWidth: 0
@@ -20659,7 +20659,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: slash.short
+StartChar: slash.cv04
 Encoding: 65549 -1 702
 Width: 1008
 VWidth: 0
@@ -20681,7 +20681,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: zero.bigdot
+StartChar: zero.cv06
 Encoding: 65550 -1 703
 Width: 1008
 VWidth: 0
@@ -20711,7 +20711,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: zero.smalldot
+StartChar: zero.cv05
 Encoding: 65551 -1 704
 Width: 1008
 VWidth: 0
@@ -20741,7 +20741,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: at.alt
+StartChar: at.cv07
 Encoding: 65552 -1 705
 Width: 1008
 VWidth: 0
@@ -20852,7 +20852,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: backslash.short
+StartChar: backslash.cv08
 Encoding: 65554 -1 707
 Width: 1008
 VWidth: 0
@@ -20874,7 +20874,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: grave.plain
+StartChar: grave.cv09
 Encoding: 65555 -1 708
 Width: 1008
 VWidth: 0
@@ -22374,7 +22374,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: zero.simpl
+StartChar: zero.ss07
 Encoding: 65578 -1 762
 Width: 1008
 VWidth: 0
@@ -22452,7 +22452,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: one.simpl
+StartChar: one.ss07
 Encoding: 65581 -1 765
 Width: 1008
 VWidth: 0
@@ -22507,7 +22507,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: two.simpl
+StartChar: two.ss07
 Encoding: 65583 -1 767
 Width: 1008
 VWidth: 0
@@ -22580,7 +22580,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: three.simpl
+StartChar: three.ss07
 Encoding: 65585 -1 769
 Width: 1008
 VWidth: 0
@@ -22690,7 +22690,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: five.simpl
+StartChar: five.ss07
 Encoding: 65588 -1 772
 Width: 1008
 VWidth: 0
@@ -24152,7 +24152,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: a.simpl
+StartChar: a.ss07
 Encoding: 65633 -1 817
 Width: 1008
 VWidth: 0
@@ -33041,7 +33041,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: colon.larger
+StartChar: colon.ss05
 Encoding: 65664 -1 1311
 Width: 1008
 VWidth: 0
@@ -33065,7 +33065,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: quotesinglbase.larger
+StartChar: quotesinglbase.ss05
 Encoding: 65665 -1 1312
 Width: 1008
 VWidth: 0
@@ -33163,7 +33163,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: quoteright.larger
+StartChar: quoteright.ss05
 Encoding: 65669 -1 1316
 Width: 1008
 VWidth: 0
@@ -33186,7 +33186,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: quotedblbase.larger
+StartChar: quotedblbase.ss05
 Encoding: 65670 -1 1317
 Width: 1008
 VWidth: 0
@@ -33218,7 +33218,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: onedotenleader.larger
+StartChar: onedotenleader.ss05
 Encoding: 65671 -1 1318
 Width: 1008
 VWidth: 0
@@ -33237,7 +33237,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: quoteleft.larger
+StartChar: quoteleft.ss05
 Encoding: 65672 -1 1319
 Width: 1008
 VWidth: 0
@@ -33292,7 +33292,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: semicolon.larger
+StartChar: semicolon.ss05
 Encoding: 65674 -1 1321
 Width: 1008
 VWidth: 0
@@ -33320,7 +33320,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: twodotenleader.larger
+StartChar: twodotenleader.ss05
 Encoding: 65675 -1 1322
 Width: 1008
 VWidth: 0
@@ -33344,7 +33344,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: periodcentered.larger
+StartChar: periodcentered.ss05
 Encoding: 65676 -1 1323
 Width: 1008
 VWidth: 0
@@ -33363,7 +33363,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: ellipsis.larger
+StartChar: ellipsis.ss05
 Encoding: 65677 -1 1324
 Width: 1008
 VWidth: 0
@@ -33393,7 +33393,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: quotereversed.larger
+StartChar: quotereversed.ss05
 Encoding: 65678 -1 1325
 Width: 1008
 VWidth: 0
@@ -33440,7 +33440,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: quotedblleft.larger
+StartChar: quotedblleft.ss05
 Encoding: 65680 -1 1327
 Width: 1008
 VWidth: 0
@@ -33526,7 +33526,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: uni201F.larger
+StartChar: uni201F.ss05
 Encoding: 65683 -1 1330
 Width: 1008
 VWidth: 0
@@ -33558,7 +33558,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: quotedblright.larger
+StartChar: quotedblright.ss05
 Encoding: 65684 -1 1331
 Width: 1008
 VWidth: 0
@@ -33619,7 +33619,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: comma.larger
+StartChar: comma.ss05
 Encoding: 65686 -1 1333
 Width: 1008
 VWidth: 0
@@ -33642,7 +33642,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: period.larger
+StartChar: period.ss05
 Encoding: 65687 -1 1334
 Width: 1008
 VWidth: 0
@@ -33776,7 +33776,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: uni2027.larger
+StartChar: uni2027.ss05
 Encoding: 65688 -1 1338
 Width: 1008
 VWidth: 0
@@ -33969,7 +33969,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: uni204F.larger
+StartChar: uni204F.ss05
 Encoding: 65691 -1 1343
 Width: 1008
 VWidth: 0
@@ -36974,7 +36974,7 @@ Refer: 1745 8175 S 1 0 0 1 -534 -268 2
 Refer: 1134 937 N 1 0 0 1 0 0 2
 EndChar
 
-StartChar: e.code
+StartChar: e.ss04
 Encoding: 65692 -1 1545
 Width: 1008
 VWidth: 0
@@ -37005,7 +37005,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: c.code
+StartChar: c.ss04
 Encoding: 65693 -1 1546
 Width: 1008
 VWidth: 0
@@ -37064,7 +37064,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: a.code
+StartChar: a.ss04
 Encoding: 65695 -1 1548
 Width: 1008
 VWidth: 0
@@ -37183,7 +37183,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: l.cod2
+StartChar: l.cv10
 Encoding: 65698 -1 1551
 Width: 1008
 VWidth: 0
@@ -37259,7 +37259,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: s.code
+StartChar: s.ss04
 Encoding: 65700 -1 1553
 Width: 1008
 VWidth: 0
@@ -37329,7 +37329,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: equal.code
+StartChar: equal.cv11
 Encoding: 65702 -1 1555
 Width: 1008
 VWidth: 0
@@ -42886,7 +42886,7 @@ Fore
 Refer: 1913 -1 N 1 0 0 1 0 -156 2
 EndChar
 
-StartChar: schwa.code
+StartChar: schwa.ss04
 Encoding: 65706 -1 1915
 Width: 1008
 VWidth: 0
@@ -42898,7 +42898,7 @@ Fore
 Refer: 1545 -1 S -1 0 0 -1 1008.09 756 2
 EndChar
 
-StartChar: e.simpl
+StartChar: e.ss07
 Encoding: 65707 -1 1916
 Width: 1008
 VWidth: 0
@@ -42930,7 +42930,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: uni0259.simpl
+StartChar: uni0259.ss07
 Encoding: 65708 -1 1917
 Width: 1008
 VWidth: 0
@@ -42942,7 +42942,7 @@ Fore
 Refer: 1916 -1 S -1 0 0 -1 1008.09 757.533 2
 EndChar
 
-StartChar: s.simpl
+StartChar: s.ss07
 Encoding: 65709 -1 1918
 Width: 1008
 VWidth: 0
@@ -47359,7 +47359,7 @@ Fore
 Refer: 2060 -1 N 1 0 0 1 0 -156 2
 EndChar
 
-StartChar: numbersign.forsmall
+StartChar: numbersign.ss07
 Encoding: 65723 -1 2071
 Width: 1008
 VWidth: 0
@@ -47417,7 +47417,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: dollar.forsmall
+StartChar: dollar.ss07
 Encoding: 65724 -1 2072
 Width: 1008
 VWidth: 0
@@ -52824,7 +52824,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: braceleft.code
+StartChar: braceleft.cv12
 Encoding: 65726 -1 2219
 Width: 1008
 VWidth: 0
@@ -52933,7 +52933,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: braceright.code
+StartChar: braceright.cv12
 Encoding: 65729 -1 2222
 Width: 1008
 VWidth: 0
@@ -53068,7 +53068,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: parenleft.code
+StartChar: parenleft.ss02
 Encoding: 65734 -1 2227
 Width: 1008
 VWidth: 0
@@ -53141,7 +53141,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: parenright.code
+StartChar: parenright.ss02
 Encoding: 65737 -1 2230
 Width: 1008
 VWidth: 0
@@ -53164,7 +53164,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: braceright.cod2
+StartChar: braceright.ss02
 Encoding: 65738 -1 2231
 Width: 1008
 VWidth: 0
@@ -53203,7 +53203,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: braceleft.cod2
+StartChar: braceleft.ss02
 Encoding: 65739 -1 2232
 Width: 1008
 VWidth: 0

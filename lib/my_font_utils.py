@@ -137,21 +137,21 @@ STROKE_WIDTH_BASIS = 96
 def create_smol_glyph(font, codepoint):
     font_path = os.path.relpath(font.path)
     plain_glyphname = fontforge.nameFromUnicode(codepoint)
-    simpl_glyphname = fontforge.nameFromUnicode(codepoint) + ".simpl"
+    simpl_glyphname = fontforge.nameFromUnicode(codepoint) + ".ss07"
     orig_glyphname = fontforge.nameFromUnicode(codepoint) + ".orig"
-    forsmall_glyphname = fontforge.nameFromUnicode(codepoint) + ".forsmall"
+    forsmall_glyphname = fontforge.nameFromUnicode(codepoint) + ".ss07"
     glyphname = None
 
     if plain_glyphname == 'equal':
-        glyphname = 'equal.code'
+        glyphname = 'equal.cv11'
     elif plain_glyphname == 'comma':
-        glyphname = 'comma.larger'
+        glyphname = 'comma.ss05'
     elif plain_glyphname == 'period':
-        glyphname = 'period.larger'
+        glyphname = 'period.ss05'
     elif plain_glyphname == 'colon':
-        glyphname = 'colon.larger'
+        glyphname = 'colon.ss05'
     elif plain_glyphname == 'semicolon':
-        glyphname = 'semicolon.larger'
+        glyphname = 'semicolon.ss05'
 
     elif forsmall_glyphname in font:
         glyphname = forsmall_glyphname

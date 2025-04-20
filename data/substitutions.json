@@ -1,77 +1,84 @@
 {
     "substitutions": {
-        "Code Digits Zero Slash": {
-            "features": ["code"],
+        "Code Digits": {
+            "features": ["ss01", "ss03"],
             "subtables": {
                 "Code Digits Zero Slash-1": {
-                    "zero": "zero.slash",
-                    "one": "one.code"
-                }
-            }
-        },
-        "Code Digits Zero Dot": {
-            "features": ["cod2"],
-            "subtables": {
-                "Code Digits Zero Dot-1": {
-                    "zero": "zero.smalldot",
-                    "one": "one.code"
+                    "zero": "zero.zero",
+                    "one": "one.cv01"
                 }
             }
         },
         "Larger Punctuation": {
-            "features": ["code", "cod2", "punc"],
+            "features": ["ss01", "ss05"],
             "subtables": {
                 "Larger Punctuation-1": {
-                    "periodcentered": "periodcentered.larger",
-                    "onedotenleader": "onedotenleader.larger",
-                    "twodotenleader": "twodotenleader.larger",
-                    "ellipsis": "ellipsis.larger",
-                    "quotesinglbase": "quotesinglbase.larger",
-                    "quotereversed": "quotereversed.larger",
-                    "quotedblbase": "quotedblbase.larger",
-                    "uni201F": "uni201F.larger",
-                    "uni2027": "uni2027.larger",
-                    "uni204F": "uni204F.larger",
-                    "comma": "comma.larger",
-                    "period": "period.larger",
-                    "colon": "colon.larger",
-                    "semicolon": "semicolon.larger",
-                    "quoteleft": "quoteleft.larger",
-                    "quoteright": "quoteright.larger",
-                    "quotedblleft": "quotedblleft.larger",
-                    "quotedblright": "quotedblright.larger"
+                    "periodcentered": "periodcentered.ss05",
+                    "onedotenleader": "onedotenleader.ss05",
+                    "twodotenleader": "twodotenleader.ss05",
+                    "ellipsis": "ellipsis.ss05",
+                    "quotesinglbase": "quotesinglbase.ss05",
+                    "quotereversed": "quotereversed.ss05",
+                    "quotedblbase": "quotedblbase.ss05",
+                    "uni201F": "uni201F.ss05",
+                    "uni2027": "uni2027.ss05",
+                    "uni204F": "uni204F.ss05",
+                    "comma": "comma.ss05",
+                    "period": "period.ss05",
+                    "colon": "colon.ss05",
+                    "semicolon": "semicolon.ss05",
+                    "quoteleft": "quoteleft.ss05",
+                    "quoteright": "quoteright.ss05",
+                    "quotedblleft": "quotedblleft.ss05",
+                    "quotedblright": "quotedblright.ss05"
                 }
             }
         },
         "Code Symbols": {
-            "features": ["code", "cod2", "symb"],
+            "features": ["ss01", "ss06"],
             "subtables": {
                 "Code Symbols-1": {
-                    "equal": "equal.code"
+                    "equal": "equal.cv11",
+                    "grave": "grave.cv09"
                 }
             }
         },
         "Apertured Letters": {
-            "features": ["code", "cod2", "letr"],
+            "features": ["ss01", "ss04"],
             "subtables": {
                 "Apertured Letters-1": {
-                    "a": "a.code",
-                    "c": "c.code",
-                    "e": "e.code",
-                    "s": "s.code"
+                    "a": "a.ss04",
+                    "c": "c.ss04",
+                    "e": "e.ss04",
+                    "s": "s.ss04"
                 }
             }
         },
         "Code Brackets": {
-            "features": ["code", "cod2", "brak"],
+            "features": ["ss01", "ss02"],
             "subtables": {
                 "Code Brackets-1": {
-                    "parenleft": "parenleft.code",
-                    "parenright": "parenright.code",
-                    "bracketleft": "bracketleft.code",
-                    "bracketright": "bracketright.code",
-                    "braceleft": "braceleft.cod2",
-                    "braceright": "braceright.cod2"
+                    "parenleft": "parenleft.ss02",
+                    "parenright": "parenright.ss02",
+                    "bracketleft": "bracketleft.ss02",
+                    "bracketright": "bracketright.ss02",
+                    "braceleft": "braceleft.ss02",
+                    "braceright": "braceright.ss02"
+                }
+            }
+        },
+        "Simplified Forms for Size Reduction": {
+            "features": ["ss07"],
+            "subtables": {
+                "Simplified Forms for Size Reduction-1": {
+                    "zero": "zero.ss07",
+                    "one": "one.ss07",
+                    "two": "two.ss07",
+                    "three": "three.ss07",
+                    "five": "five.ss07",
+                    "a": "a.ss07",
+                    "dollar": "dollar.ss07",
+                    "numbersign": "numbersign.ss07"
                 }
             }
         }
