@@ -142,7 +142,7 @@ update: FORCE
 	$(BOUNDS_PY) $(FONT_SRC)
 	$(SMOL_PY) $(FONT_SRC)
 	$(SUPERSUB_PY) $(FONT_SRC)
-	$(STROKES_PY) --log --expand-stroke 96 $(FONT_SRC)
+	$(STROKES_PY) --expand-stroke 96 $(FONT_SRC)
 	$(NOTDEF_PY) $(FONT_SRC)
 	$(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) $(FONT_SRC)
 	sort -n strokes.log | sponge strokes.log
@@ -152,7 +152,7 @@ update-test: FORCE
 	$(BOUNDS_PY) $(FONT_SRC)
 	$(SMOL_PY) $(FONT_SRC)
 	$(SUPERSUB_PY) $(FONT_SRC)
-	$(STROKES_PY) --log --expand-stroke 96 --allow-json-data $(FONT_SRC)
+	$(STROKES_PY) --expand-stroke 96 --allow-json-data $(FONT_SRC)
 	$(NOTDEF_PY) $(FONT_SRC)
 	$(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) $(FONT_SRC)
 	sort -n strokes.log | sponge strokes.log
@@ -164,7 +164,7 @@ update-168: FORCE
 	$(BOUNDS_PY) $(FONT_SRC)
 	$(SMOL_PY) $(FONT_SRC)
 	$(SUPERSUB_PY) $(FONT_SRC)
-	$(STROKES_PY) --log --expand-stroke 168 $(FONT_SRC)
+	$(STROKES_PY) --expand-stroke 168 $(FONT_SRC)
 	$(NOTDEF_PY) $(FONT_SRC)
 	$(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) $(FONT_SRC)
 	sort -n strokes.log | sponge strokes.log
@@ -173,7 +173,7 @@ update-24: FORCE
 	$(BOUNDS_PY) $(FONT_SRC)
 	$(SMOL_PY) $(FONT_SRC)
 	$(SUPERSUB_PY) $(FONT_SRC)
-	$(STROKES_PY) --log --expand-stroke 24 $(FONT_SRC)
+	$(STROKES_PY) --expand-stroke 24 $(FONT_SRC)
 	$(NOTDEF_PY) $(FONT_SRC)
 	$(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) $(FONT_SRC)
 	sort -n strokes.log | sponge strokes.log
@@ -182,7 +182,7 @@ update-48: FORCE
 	$(BOUNDS_PY) $(FONT_SRC)
 	$(SMOL_PY) $(FONT_SRC)
 	$(SUPERSUB_PY) $(FONT_SRC)
-	$(STROKES_PY) --log --expand-stroke 48 $(FONT_SRC)
+	$(STROKES_PY) --expand-stroke 48 $(FONT_SRC)
 	$(NOTDEF_PY) $(FONT_SRC)
 	$(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) $(FONT_SRC)
 	sort -n strokes.log | sponge strokes.log
@@ -191,7 +191,7 @@ update-72: FORCE
 	$(BOUNDS_PY) $(FONT_SRC)
 	$(SMOL_PY) $(FONT_SRC)
 	$(SUPERSUB_PY) $(FONT_SRC)
-	$(STROKES_PY) --log --expand-stroke 72 $(FONT_SRC)
+	$(STROKES_PY) --expand-stroke 72 $(FONT_SRC)
 	$(NOTDEF_PY) $(FONT_SRC)
 	$(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) $(FONT_SRC)
 	sort -n strokes.log | sponge strokes.log
@@ -200,7 +200,7 @@ update-128: FORCE
 	$(BOUNDS_PY) $(FONT_SRC)
 	$(SMOL_PY) $(FONT_SRC)
 	$(SUPERSUB_PY) $(FONT_SRC)
-	$(STROKES_PY) --log --expand-stroke 128 $(FONT_SRC)
+	$(STROKES_PY) --expand-stroke 128 $(FONT_SRC)
 	$(NOTDEF_PY) $(FONT_SRC)
 	$(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) $(FONT_SRC)
 	sort -n strokes.log | sponge strokes.log
