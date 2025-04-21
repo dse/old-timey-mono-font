@@ -44,25 +44,40 @@ def parse_glyph_svg_filename(filename):
     custom = False
     while len(stem_copy):
         if match := re.search(r'^(?:u\+|0x)?([0-9A-Fa-f]+)(?:$|(?=[-.]))-?', stem_copy, flags=re.IGNORECASE):
+            # filename without extension
+            # hex with optional "U", "U+", or "0x" prefix (case-insens.)
+            # followed by EOL, "-", or "."
             codepoint = int(match.group(1), 16)
             real_codepoint = codepoint
             stem_copy = stem_copy[match.end(0):]
             continue
         if match := re.search(r'^x--', stem_copy, flags=re.IGNORECASE):
+            # for non-Unicode characters
+            custom = True
+            codepoint = -1
+            real_codepoint = None
+            stem_copy = stem_copy[match.end(0):]
+            continue
+        if match := re.search(r'x_', stem_copy, flags=re.IGNORECASE):
+            # for non-Unicode characters
             custom = True
             codepoint = -1
             real_codepoint = None
             stem_copy = stem_copy[match.end(0):]
             continue
         if match := re.search(r'--(?:([0-9]+)(?:px)?)$', stem_copy, flags=re.IGNORECASE):
+            # I'm not actually using this meaningfully.  At least not
+            # at this time.  (04/20/2025)
             stroke_width = int(match.group(1))
             stem_copy = stem_copy[0:match.start()]
             continue
         if match := re.search(r'--(.+)$', stem_copy, flags=re.IGNORECASE):
+            # --xxx extensions for variants
             suffix = match.group(1)
             stem_copy = stem_copy[0:match.start()]
             continue
         if match := re.search(r'\.(.+)$', stem_copy, flags=re.IGNORECASE):
+            # .xxx extensions for variants
             suffix = match.group(1)
             stem_copy = stem_copy[0:match.start()]
             continue
