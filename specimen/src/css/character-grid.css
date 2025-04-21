@@ -1,0 +1,88 @@
+/* 
+charactergrid.css
+
+These styles define the character grid container css
+*/
+
+:root {
+	--character-grid-cell: 4rem;
+	--character-grid-font-zize: 2rem;
+	--character-grid-gap: 0;
+}
+
+ol {
+	margin: 0;
+	padding: 0;
+}
+
+.container-glyphs {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr;
+	gap: 1px 1px;
+	grid-template-areas: "glyphs preview";
+	position: relative;
+}
+
+/* Responsive layout styles */
+@media only screen and (max-width: 590px) {
+	.container-glyphs {
+		display: block;
+		width: 94vw;
+	}
+}
+
+.character-grid-zoom-container {
+	pointer-events: none;
+	position: sticky;
+	top: 0;
+	background: var(--background);
+	font-size: 28vw;
+	text-align: center;
+}
+
+/* Responsive layout styles */
+@media only screen and (max-width: 590px) {
+	.character-grid-zoom-container {
+		display: none;
+	}
+}
+
+.container-preview {
+	grid-area: glyphs;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+.character-grid {
+	grid-area: preview;
+}
+
+.character-grid-list {
+	list-style-type: none;
+	display: grid;
+	grid-template-columns: repeat(
+		auto-fill,
+		minmax(var(--character-grid-cell), 1fr)
+	);
+	gap: 1px;
+	font-size: var(--character-grid-font-zize);
+	background: var(--background);
+}
+
+.character-grid-list > li {
+	display: flex;
+	height: var(--character-grid-cell);
+	outline: 1px solid var(--grey-dark);
+	justify-content: center;
+	align-items: center;
+}
+
+.character-grid-list > li:hover {
+	cursor: pointer;
+	background-color: var(--text);
+	color: var(--background);
+}

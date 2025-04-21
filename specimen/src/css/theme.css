@@ -1,0 +1,559 @@
+/* --------- Global styles --------- */
+
+/* Setting up some variables first */
+:root {
+	--light: #fff;
+	--dark: #000;
+	--grey-light: #eee;
+	--grey-mid: #999;
+	--grey-dark: #666;
+	--text: var(--dark);
+	--background: var(--light);
+	--font-system: "Inter", sans-serif;
+	--specimen-fallback-font: var(--font-system);
+}
+
+/* For dark mode */
+html[data-dark-mode="true"] {
+	--text: var(--light);
+	--background: var(--dark);
+}
+
+body {
+	font-family: var(--font-system);
+	color: var(--text);
+	background-color: var(--background);
+	transition-duration: 200ms; /* This transition makes the change between light and dark mode smoother */
+	transition-property: color, background-color;
+	transition-timing-function: ease;
+}
+
+main {
+	max-width: 90rem;
+	padding: 0 3vw;
+}
+
+a {
+	color: inherit;
+}
+
+button {
+	padding: 0.5rem;
+	border: none;
+	font: inherit;
+	color: inherit;
+	background-color: transparent;
+	cursor: pointer;
+}
+
+/* --------- Utility styles --------- */
+
+/* These classes are used to change the appearance of the typography through the specimen. */
+
+/* You can use them to change the design of the speicmen to suit your needs, or simply add or amend classes in this css file. */
+
+/* You could also choose to get rid of it all together! */
+
+/* Reading direction utility classes required for reading direction. Please do not delete. */
+.ltr {
+	direction: ltr;
+}
+
+.rtl {
+	direction: rtl;
+	unicode-bidi: bidi-override;
+}
+
+.ltrttb {
+	writing-mode: vertical-lr;
+	text-orientation: upright;
+}
+
+.rtlttb {
+	writing-mode: vertical-rl;
+	text-orientation: upright;
+}
+
+/* Spacing utility classes */
+.mt-1u {
+	margin-top: 1rem;
+}
+.mt-2u {
+	margin-top: 2rem;
+}
+.mt-3u {
+	margin-top: 3rem;
+}
+.mt-4u {
+	margin-top: 4rem;
+}
+.mt-5u {
+	margin-top: 5rem;
+}
+
+.mb-1u {
+	margin-bottom: 1rem;
+}
+.mb-2u {
+	margin-bottom: 2rem;
+}
+.mb-3u {
+	margin-bottom: 3rem;
+}
+.mb-4u {
+	margin-bottom: 4rem;
+}
+.mb-5u {
+	margin-bottom: 5rem;
+}
+
+.pt-1u {
+	padding-top: 1rem;
+}
+.pt-2u {
+	padding-top: 2rem;
+}
+.pt-3u {
+	padding-top: 3rem;
+}
+.pt-4u {
+	padding-top: 4rem;
+}
+.pt-5u {
+	padding-top: 5rem;
+}
+
+.pb-1u {
+	padding-bottom: 1rem;
+}
+.pb-2u {
+	padding-bottom: 2rem;
+}
+.pb-3u {
+	padding-bottom: 3rem;
+}
+.pb-4u {
+	padding-bottom: 4rem;
+}
+.pb-5u {
+	padding-bottom: 5rem;
+}
+
+/* Typesetting utility classes */
+.italic {
+	font-style: italic;
+}
+
+/* Font sizes (relative to viewport) */
+.type-8xl {
+	font-size: clamp(5rem, 25vw, 21rem);
+	padding: 0;
+	margin: 0;
+}
+.type-7xl {
+	font-size: clamp(4rem, 17vw, 17.5rem);
+	padding: 0;
+	margin: 0;
+}
+.type-6xl {
+	font-size: clamp(3rem, 15vw, 15.5rem);
+	padding: 0;
+	margin: 0;
+}
+.type-5xl {
+	font-size: clamp(2rem, 14vw, 14rem);
+	padding: 0;
+	margin: 0;
+}
+.type-4xl {
+	font-size: clamp(1.6rem, 6vw, 8rem);
+	padding: 0;
+	margin: 0;
+}
+.type-3xl {
+	font-size: clamp(3rem, 5vw, 6.2rem);
+}
+.type-2xl {
+	font-size: clamp(1.8rem, 3vw, 3.4rem);
+}
+.type-xl {
+	font-size: clamp(1.4rem, 2vw, 2.8rem);
+}
+.type-l {
+	font-size: clamp(1.3rem, 1.6vw, 1.8rem);
+}
+.type-m {
+	font-size: clamp(1.2rem, 1.4vw, 1.6rem);
+}
+.type-s {
+	font-size: 0.8rem;
+}
+.type-xs {
+	font-size: 0.7rem;
+}
+.type-2xs {
+	font-size: 0.6rem;
+}
+.type-3xs {
+	font-size: 0.5rem;
+}
+
+/* font weights EXPERIMENTAL */
+.fw100 {
+	font-variation-settings: "wght" 100;
+}
+.fw200 {
+	font-variation-settings: "wght" 200;
+}
+.fw300 {
+	font-variation-settings: "wght" 300;
+}
+.fw400 {
+	font-variation-settings: "wght" 400;
+}
+.fw500 {
+	font-variation-settings: "wght" 500;
+}
+.fw600 {
+	font-variation-settings: "wght" 600;
+}
+.fw700 {
+	font-variation-settings: "wght" 700;
+}
+.fw800 {
+	font-variation-settings: "wght" 800;
+}
+.fw900 {
+	font-variation-settings: "wght" 900;
+}
+
+/* Line height */
+.lh08 {
+	line-height: 0.8;
+}
+.lh09 {
+	line-height: 0.9;
+}
+.lh10 {
+	line-height: 1;
+}
+.lh11 {
+	line-height: 1.1;
+}
+.lh12 {
+	line-height: 1.2;
+}
+.lh13 {
+	line-height: 1.3;
+}
+.lh14 {
+	line-height: 1.4;
+}
+
+/* Alignment */
+.align-centre {
+	text-align: center;
+}
+.align-justify {
+	text-align: justify;
+}
+.align-left {
+	text-align: left;
+}
+.align-right {
+	text-align: right;
+}
+
+/* Columns */
+.columns-2 {
+	column-count: 2;
+	column-gap: 1em;
+}
+
+.columns-3 {
+	column-count: 3;
+	column-gap: 0.8em;
+}
+
+/* --------- END Utility styles --------- */
+
+/* --------- CONTAINER styles --------- */
+
+/* These are styles for each vertically stacked container. */
+
+/* Where applicable, they override, or build on top of, styles provided the efoundation for Specimen Builder: Specimen Skeleton. */
+
+/* Global styles */
+.container {
+	border-top: 1px solid var(--text);
+	padding: 0;
+}
+
+/* CONTAINER: Masthead */
+.masthead {
+	display: grid;
+	grid-template-columns: 3fr 1fr;
+	grid-template-rows: 1fr;
+	gap: 1px 1px;
+	grid-template-areas: "title meta";
+}
+
+/* Responsive layout styles */
+@media only screen and (max-width: 590px) {
+	.masthead {
+		display: inline-block;
+	}
+}
+
+.masthead-title {
+	grid-area: title;
+}
+
+.masthead-meta {
+	grid-area: meta;
+	font-size: 0.8rem;
+	font-family: var(--font-system);
+	line-height: 1.3;
+	padding-left: 1vw;
+}
+
+.faux-button {
+	background-color: var(--text);
+	display: inline-block;
+	padding: 1em 3em;
+	margin: 2em 0 0 0;
+	color: var(--background);
+	text-decoration: none;
+	font-weight: 600;
+	border: 1px solid var(--background);
+	transition-duration: 200ms;
+	transition-property: color, background-color, border;
+	transition-timing-function: ease;
+}
+
+.faux-button:hover {
+	background-color: var(--background);
+	color: var(--text);
+	border: 1px solid var(--text);
+}
+
+/* Meta */
+.meta {
+	font-family: var(--font-system);
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 0.7em;
+	color: var(--grey-mid);
+}
+
+/* Preview layout */
+.interactive-controls {
+	display: grid;
+	grid-template-columns: 3fr 1fr;
+	grid-template-rows: 1fr;
+	gap: 1px 1px;
+	grid-template-areas: "preview controls";
+}
+
+/* Responsive layout styles */
+@media only screen and (max-width: 590px) {
+	.interactive-controls {
+		display: inline-block;
+	}
+}
+
+.controls {
+	grid-area: controls;
+	border-left: 1px solid var(--text);
+	padding-left: 1vw;
+	font-family: var(--font-system);
+}
+
+/* Responsive layout styles */
+@media only screen and (max-width: 590px) {
+	.controls {
+		border: none;
+	}
+}
+
+.interactive-controls-text {
+	grid-area: preview;
+	padding: 0 50px 0 0;
+}
+
+[contenteditable] {
+	outline: 0 solid transparent;
+}
+
+.interactive-controls label {
+	font-size: 0.8rem;
+	font-weight: 400;
+}
+
+.interactive-controls-buttons button {
+	padding: 8px 8px 5px 8px;
+	color: var(--text);
+	transition-property: color, background-color;
+	transition-timing-function: ease;
+	transition-duration: 200ms;
+}
+
+.interactive-controls-buttons button svg {
+	width: 18px;
+	fill: currentColor;
+	transition: fill 200ms ease;
+}
+
+.interactive-controls-buttons button.active {
+	background: var(--grey-mid);
+}
+
+/* Range slider */
+input[type="range"] {
+	height: 2em;
+	-webkit-appearance: none;
+	width: 100%;
+	background-color: var(--background);
+}
+input[type="range"]:focus {
+	outline: none;
+}
+
+/* Webkit styles */
+input[type="range"]::-webkit-slider-runnable-track {
+	width: 100%;
+	height: 1px;
+	cursor: pointer;
+	background: var(--text);
+	border-radius: 0;
+	border: 0 solid var(--text);
+}
+input[type="range"]::-webkit-slider-thumb {
+	box-shadow: 0 0 0 var(--text);
+	border: 3px solid var(--background);
+	height: 17px;
+	width: 17px;
+	border-radius: 12px;
+	background: var(--text);
+	cursor: pointer;
+	-webkit-appearance: none;
+	margin-top: -8px;
+}
+input[type="range"]:focus::-webkit-slider-runnable-track {
+	background: var(--text);
+}
+
+/* Moz styles */
+input[type="range"]::-moz-range-track {
+	width: 100%;
+	height: 1px;
+	cursor: pointer;
+	background: var(--text);
+}
+input[type="range"]::-moz-range-thumb {
+	border: 3px solid var(--background);
+	height: 12px;
+	width: 12px;
+	border-radius: 9px;
+	background: var(--text);
+	cursor: pointer;
+}
+
+/* IE styles */
+input[type="range"]::-ms-track {
+	width: 100%;
+	height: 4px;
+	cursor: pointer;
+	background: transparent;
+	border-color: transparent;
+	color: transparent;
+}
+
+input[type="range"]::-ms-fill-lower {
+	background: #000;
+	border: 0 solid #000;
+	border-radius: 0;
+	box-shadow: 0 0 0 #000;
+}
+input[type="range"]::-ms-fill-upper {
+	background: #000;
+	border: 0 solid #000;
+	border-radius: 0;
+	box-shadow: 0 0 0 #000;
+}
+input[type="range"]::-ms-thumb {
+	margin-top: 1px;
+	box-shadow: 0 0 0 #000;
+	border: 0 solid #000;
+	height: 20px;
+	width: 20px;
+	border-radius: 10px;
+	background: #000;
+	cursor: pointer;
+}
+input[type="range"]:focus::-ms-fill-lower {
+	background: #000;
+}
+input[type="range"]:focus::-ms-fill-upper {
+	background: #000;
+}
+
+/* END CONTAINER: Masthead */
+
+/* CONTAINER: Setting */
+.setting {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 2rem;
+}
+
+/* Responsive layout styles */
+@media only screen and (max-width: 590px) {
+	.setting {
+		display: inline-block;
+	}
+}
+
+.column-1 {
+	grid-column: 1;
+}
+
+.column-2 {
+	grid-column: 2;
+}
+
+.setting p {
+	margin: 0.6em 0 0.4em 0;
+	padding: 0;
+}
+
+/* END CONTAINER: Setting */
+
+/* CONTAINER: Character grid */
+.character-grid h3 {
+	font-family: var(--font-system);
+	font-size: 0.7rem;
+	color: var(--grey-mid);
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+/* END CONTAINER: Character grid */
+
+/* CONTAINER: Language */
+.language {
+	font-size: 0.8rem;
+	font-family: var(--font-system);
+	line-height: 1.3;
+}
+
+/* END CONTAINER: Language */
+
+/* CONTAINER: Footer */
+.footer {
+	font-size: 0.8rem;
+	font-family: var(--font-system);
+	line-height: 1.3;
+}
+
+/* END CONTAINER: Footer */

@@ -1,0 +1,31 @@
+<div class="container-glyphs pb-3u pt-3u {{ main_selector }}">
+
+	<div class="character-grid  {% include utilities/reading-direction-ltrrtl.html %} {{ font[0] }}">
+		{% for set in fonts[main_selector].charset %}
+			{% if set.category == "Separator" %}
+				{% continue %}
+			{% endif %}
+			<h3>
+				{{ set.category }}
+				{% if set.subCategory %}
+					{{ set.subCategory }}
+				{% endif %}
+				{% if set.script %}
+					{{ set.script | capitalize }}
+				{% endif %}
+			</h3>
+			<ol class="character-grid-list">
+			{% for char in set.chars %}
+				<li>&#x{{ char }};</li>
+			{% endfor %}
+			</ol>
+		{% endfor %}
+	</div>
+	<div class="container-preview">
+		<div class="character-grid-zoom-container">
+			<div class="character-grid-zoom">
+				A
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,106 @@
+<div class="interactive-controls">
+
+	<div class="controls">
+		{% if fonts[main_selector].instances.length != 0 %}
+			<div class="interactive-controls-container">
+				<label for="interactive-controls-instances-select">Instances</label>
+				<select
+					id="interactive-controls-instances-select"
+					class="interactive-controls-instances"
+				>
+					{% for instance in fonts[main_selector].instances %}
+					<option value="{{ instance.axes | json_stringify | escape }}">
+						{{ instance.name }}
+					</option>
+					{% endfor %}
+				</select>
+			</div>
+		{% endif %}
+
+		{% if fontdata.length >= 2 %}
+			<div class="interactive-controls-container">
+				<label for="interactive-controls-instances-select">Styles</label>
+				<select
+					id="interactive-controls-instances-select"
+					class="interactive-controls-styles"
+				>
+					{% for font in fontdata %}
+					<option value="{{ font.selector }}" {% if font.selector == main_selector %}selected{% endif %}>
+						{{ font.style }}
+					</option>
+					{% endfor %}
+				</select>
+			</div>
+		{% endif %}
+		
+
+		<div class="interactive-controls-container interactive-controls-buttons">
+			<button type="button" class="active" value="align-left" aria-label="Align left">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.8 21.7H.8c-.5 0-.8-.3-.8-.7s.3-.8.8-.8h21c.4 0 .8.3.8.8s-.4.7-.8.7zm-3-4.5H.8c-.4 0-.8-.3-.8-.8s.3-.8.8-.8h18c.4 0 .8.3.8.8s-.4.8-.8.8zm4.4-4.5H.8c-.5 0-.8-.3-.8-.7 0-.4.3-.8.8-.8h22.5c.4 0 .8.3.8.8-.1.4-.4.7-.9.7zm-4.4-4.5H.8c-.5 0-.8-.3-.8-.7s.3-.8.8-.8h18c.4 0 .8.3.8.8s-.4.7-.8.7zm3-4.5H.8C.3 3.7 0 3.4 0 3s.3-.8.8-.8h21c.4 0 .8.3.8.8s-.4.7-.8.7z"/></svg>
+			</button>
+
+			<button type="button" value="align-centre" aria-label="Align centre">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.7 21.7H2.2c-.4 0-.8-.3-.8-.8s.3-.8.8-.8h19.5c.4 0 .8.3.8.8s-.3.8-.8.8zm-3-4.5H5.2c-.4 0-.8-.3-.8-.8s.3-.8.8-.8h13.5c.4 0 .8.3.8.8s-.3.8-.8.8zm4.5-4.5H.7c-.4 0-.7-.3-.7-.7 0-.4.3-.8.8-.8h22.5c.4 0 .8.3.8.8-.1.4-.4.7-.9.7zm-4.5-4.5H5.2c-.4 0-.8-.3-.8-.8s.3-.8.8-.8h13.5c.4 0 .8.3.8.8s-.3.8-.8.8zm3-4.5H2.2c-.4 0-.7-.3-.7-.7s.3-.8.8-.8h19.5c.4 0 .8.3.8.8s-.4.7-.9.7z"/></svg>
+			</button>
+
+			<button type="button" value="align-right" aria-label="Align right">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2.2 3.7h21c.5 0 .8-.3.8-.7s-.3-.8-.8-.8h-21c-.4 0-.7.4-.7.8s.3.7.7.7zm21 16.5h-21c-.4 0-.8.3-.8.8s.3.8.8.8h21c.4 0 .8-.3.8-.8s-.3-.8-.8-.8zm0-13.5h-18c-.4 0-.8.3-.8.8s.3.8.8.8h18c.4 0 .8-.3.8-.8s-.3-.8-.8-.8zm0 9h-18c-.4 0-.8.3-.8.8s.3.8.8.8h18c.4 0 .8-.3.8-.8s-.3-.8-.8-.8zm0-4.5H.8c-.5 0-.8.4-.8.8s.3.7.8.7h22.5c.4 0 .8-.3.8-.7-.1-.4-.4-.8-.9-.8z"/></svg>
+			</button>
+		</div>
+
+		<ul class="interactive-controls-container interactive-controls-sliders">
+			<li>
+				<label for="interactive-controls-line-height">Line height</label>
+				<input
+					type="range"
+					min="0.8"
+					max="2"
+					value="1.1"
+					name="line-height"
+					id="interactive-controls-line-height"
+					step="0.05"
+					class="interactive-controls-slider"
+				/>
+			</li>
+			<li>
+				<label for="interactive-controls-fontsize">Size</label>
+				<input
+					type="range"
+					min="9"
+					max="92"
+					value="48"
+					name="font-size"
+					id="interactive-controls-fontsize"
+					step="any"
+					class="interactive-controls-slider"
+				/>
+			</li>
+		</ul>
+
+		{% if fonts[main_selector].axes.length != 0 %}
+			<label>Variable axis</label>
+			<ul class="interactive-controls-sliders">
+				{% for axis in fonts[main_selector].axes %}
+				<li>
+					<label for="axis-{{ axis.axis }}">{{ axis.name }}</label>
+					<input
+						type="range"
+						min="{{ axis.min }}"
+						max="{{ axis.max }}"
+						value="{{ axis.default }}"
+						name="{{ axis.axis }}"
+						id="axis-{{ axis.axis }}"
+						step="{{ axis.step | default: 0.1 }}"
+						class="interactive-controls-slider"
+					/>
+				</li>
+				{% endfor %}
+			</ul>
+		{% endif %}
+	</div>
+	<div class="interactive-controls-text {% include utilities/reading-direction.html %} {{ main_selector }}" contenteditable="true">
+		<h1>
+			{{ content.tester }}
+		</h1>
+	</div>
+</div>

@@ -1,0 +1,29 @@
+/* 
+Animation.css
+
+These are boilerplate place-holders for animations.
+The '.in-view' class is used to only show elements when
+they are visible in the user's browser viewport.
+*/
+
+.animation {
+	transition: background 4s; /* To show effect of adding .in-view class */
+	animation: example-animation 1s infinite alternate;
+	animation-play-state: paused;
+	padding: 3em;
+}
+
+.animation.in-view {
+	background: black;
+	animation-play-state: running;
+}
+
+@keyframes example-animation {
+	from {
+		color: red;
+	}
+
+	to {
+		color: lime;
+	}
+}

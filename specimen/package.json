@@ -1,0 +1,90 @@
+{
+	"name": "specimen-skeleton",
+	"private": true,
+	"version": "1.0.0",
+	"main": "index.js",
+	"license": "MIT",
+	"scripts": {
+		"clean": "rimraf ./_site",
+		"build": "cross-env NODE_ENV=production ELEVENTY_ENV=production run-s clean build:*",
+		"build:webpack": "webpack",
+		"build:eleventy": "eleventy",
+		"start": "cross-env NODE_ENV=development ELEVENTY_ENV=development npm-run-all clean build:webpack --parallel start:*",
+		"start:webpack": "webpack -w",
+		"start:eleventy": "eleventy --serve",
+		"prettier": "prettier '{src/**/*.{js,css,json,html},*.js,*.json,*.html}'",
+		"stylelint": "stylelint 'src/css/**/*.css'",
+		"eslint": "eslint .",
+		"lint": "run-s 'prettier --check' eslint stylelint",
+		"test": "run-s lint",
+		"fontdata": "node _tools/generateFontData.js"
+	},
+	"browserslist": [
+		"edge >= 17",
+		"firefox >= 62",
+		"chrome >= 66",
+		"safari >= 11",
+		"opera >= 53",
+		"ios_saf >= 11.2",
+		"samsung >= 8.2"
+	],
+	"devDependencies": {
+		"@11ty/eleventy": "^0.9.0",
+		"@babel/core": "^7.7.4",
+		"@babel/preset-env": "^7.7.4",
+		"autoprefixer": "^9.7.2",
+		"babel-eslint": "^10.0.3",
+		"babel-loader": "^8.0.6",
+		"cross-env": "^6.0.3",
+		"css-loader": "^3.2.0",
+		"cssnano": "^4.1.10",
+		"eslint": "^6.7.2",
+		"eslint-plugin-compat": "^3.3.0",
+		"eslint-plugin-node": "^11.0.0",
+		"eslint-plugin-prettier": "^3.1.1",
+		"file-loader": "^5.0.2",
+		"html-minifier": "^4.0.0",
+		"husky": "^3.1.0",
+		"lint-staged": "^9.5.0",
+		"mini-css-extract-plugin": "^0.8.0",
+		"npm-run-all": "^4.1.5",
+		"postcss": "^7.0.23",
+		"postcss-import": "^12.0.1",
+		"postcss-loader": "^3.0.0",
+		"prettier": "^1.19.1",
+		"rimraf": "^3.0.0",
+		"specimen-skeleton-support": "https://github.com/kabisa/specimen-skeleton-support.git#master",
+		"stylelint": "^12.0.0",
+		"stylelint-config-prettier": "^7.0.0",
+		"stylelint-config-standard": "^19.0.0",
+		"stylelint-no-unsupported-browser-features": "^4.0.0",
+		"svg-url-loader": "^3.0.3",
+		"url-loader": "^3.0.0",
+		"webpack": "^4.41.2",
+		"webpack-cli": "^3.3.10",
+		"webpack-manifest-plugin": "v3.0.0-rc.0"
+	},
+	"lint-staged": {
+		"*.{js,json,html,css}": [
+			"prettier --write",
+			"git add"
+		],
+		"*.js": [
+			"eslint"
+		],
+		"*.css": [
+			"stylelint"
+		]
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged"
+		}
+	},
+	"dependencies": {
+		"fontfaceobserver": "^2.1.0"
+	},
+	"engines": {
+		"node": ">=12"
+	}
+}

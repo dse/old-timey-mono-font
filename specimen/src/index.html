@@ -1,0 +1,42 @@
+---
+layout: default.html
+---
+
+<div class="loading-message">
+	<span class="loading-message-loading">Loading...</span>
+	<span class="loading-message-failed">Failed :-(</span>
+</div>
+
+<div class="variable-support-message">
+	Your browser doesn't do variable fonts :-(
+</div>
+
+<main>
+
+	{% assign main_id = 0 %}
+	{% assign main_selector = fontdata[main_id].selector %}
+
+		{% include navigation.html %}
+	<div class="container">
+		{% include masthead.html %}
+	</div>
+	<div class="container">
+		{% include interactive-controls.html %}
+	</div>
+	<div class="container">
+		{% include specimen.html %}
+	</div>
+	<div class="container">
+		{% include setting.html %}
+	</div>
+	<div class="container">
+		{% include character-grid.html %}
+	</div>
+	<div class="container">
+		{% include language.html %}
+	</div>
+
+	<div class="container">
+		{% include footer.html %}
+	</div>
+</main>

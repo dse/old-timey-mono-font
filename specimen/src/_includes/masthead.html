@@ -1,0 +1,27 @@
+<div class="masthead">
+	<div class="masthead-title {{ main_selector }}">
+		<h2 class="type-xl">{{ site.typeface }}</h2>
+		<p class="{% include utilities/reading-direction.html %} type-8xl">{{ content.poster }}</p>
+	</div>
+
+	<div class="masthead-meta">
+	{% if site.link %}
+		<a href="{{ site.link }}" class="faux-button">Get {{ site.typeface }}</a>
+	{% endif %}
+	{% if site.about %}
+		<p>{{ site.about }}</p>
+	{% endif %}
+	{% if site.published %}
+		<h3>Published</h3>
+		<p>{{ site.published }}</p>
+	{% endif %}
+	{% if site.designers %}
+		<h3>Designers</h3>
+		<p>{{ site.designers }}</p>
+	{% endif %}
+	{% if site.coverage %}
+		<h3>Coverage</h3>
+		<p><a href="#coverage">{{ site.coverage }}</a></p>
+	{% endif %}
+	</div>
+</div>

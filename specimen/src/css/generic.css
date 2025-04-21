@@ -1,0 +1,23 @@
+/* 
+generic.css
+
+Do not edit.
+*/
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	padding: 0;
+	margin: 0;
+}
+
+ol,
+ul {
+	list-style-type: none;
+	padding: 0;
+}

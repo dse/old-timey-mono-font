@@ -1,0 +1,35 @@
+.interactive-controls {
+	--label-width: 7em;
+}
+
+.interactive-controls-container {
+	margin: 1rem 0;
+}
+
+.interactive-controls-text {
+	font-size: calc(var(--font-size) * 1px);
+	line-height: var(--line-height);
+}
+
+/* Responsive layout styles */
+@media only screen and (max-width: 590px) {
+	.interactive-controls-text {
+		font-size: calc(var(--font-size) * 0.6px);
+	}
+}
+
+.interactive-controls-instances,
+.interactive-controls-sliders li {
+	display: flex;
+	align-items: center;
+}
+
+.interactive-controls label {
+	flex: none;
+	min-width: var(--label-width);
+}
+
+.interactive-controls-instances select,
+.interactive-controls-slider {
+	width: 100%;
+}

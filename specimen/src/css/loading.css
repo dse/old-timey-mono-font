@@ -1,0 +1,26 @@
+/* Show big fat loading screen, and a message when font failed to load */
+.loading-message {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #000;
+	color: #fff;
+	font-family: monospace;
+	pointer-events: none;
+	user-select: none;
+}
+
+.loading-message-failed,
+.fonts-loaded .loading-message,
+.fonts-failed .loading-message-loading {
+	display: none;
+}
+
+.fonts-failed .loading-message-failed {
+	display: inline;
+}
