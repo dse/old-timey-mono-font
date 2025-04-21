@@ -1,30 +1,36 @@
 # Reproducing Typewriter
 
-A clean digital revival of Reproducing Typewriter, a monospace
-typeface from as early as 1906.  Reproducing Typewriter was designed
-for simulating typewritten letters in smaller point sizes for
+A clean monospace typeface based on of Reproducing Typewriter, a
+monospace typeface from as early as 1906.  Reproducing Typewriter was
+designed for simulating typewritten letters in smaller point sizes for
 advertisements, catalogs, etc., where readability and/or distortion
-resulting from duplication were issues.
+resulting from duplication were issues with faces based on actual
+typewriters at the time.
 
-Typefaces were also available to simulate the fonts used by actual
-typewriters like Remington, Smith, and Underwood; whereas Reproducing
-Typewriter is more readable at smaller point sizes due to shorter
-serifs and (generally) more open arpetures.
+"Sight Saver" typewriter faces designed for readability were also
+available, though they were at larger sizes than ordinary pica or
+elite typefaces.
 
 I developed this because I believe those characteristics also make
 Reproducing Typewriter a good basis for a coding font (this one) with
-an antique aesthetic.
-
-You may have seen this typeface used in the [Turbo Pascal 3.0](turbo)
-product manual.
+an antique aesthetic.  You may have seen this typeface used in the
+[Turbo Pascal 3.0](turbo) product manual.
 
 At a size of 12pt (6 lines per inch), Reproducing Typewriter is a pica
 font, or 10 characters per inch, like Courier.  It **should** be
 suitable for screenplay writing.
 
+## Code Variant
+
+Along with the regular variant, a variant for coding is also
+available, with a slashed zero, disambiguated digit one, selected
+punctuation marks made larger, and a few certain small letters
+modified.
+
 ## Mintty Users
 
-Text -> Font Smoothing -> Partial
+Text -> Font Smoothing -> Partial.  I wish I didn't have to tell you
+to do this.
 
 ## Download All The Fonts
 
@@ -60,22 +66,6 @@ Text -> Font Smoothing -> Partial
         -   [Light](dist/ttf/ReproTypewrCodeComp-Light.ttf)
         -   [Regular](dist/ttf/ReproTypewrCodeComp.ttf)
 
-## Reproducing Typewriter Code
-
-While the regular font tries to stick to the original as much as
-possible, Reproducing Typewriter Code makes the following changes:
-
--   A modified digit `0` to be better distinguishable from the
-    uppercase letter `O`.
-
--   A modified digit `1` to be better distinguishable from the
-    lowercase letter `l`.
-
--   Certain punctuation marks are made larger for better visibility.
-
--   Certain letters, namely `a`, `c`, `e`, and `s`, are modified with
-    more open apertures for better readability.
-    
 ## Character Set Coverage
 
 Extensive Western European (Latin) coverage, as well as Cyrillic
@@ -101,17 +91,10 @@ Includes in their entirety:
 
 ## Full Disclosure
 
--   The percent sign had to be shifted up a bit to stay within the
-    character cell without modifying the baseline, cap-height, ascent,
-    descent, and other dimensions.
-
--   These are monoline fonts whereas the originals weren't, but in my
-    view this is close enough.
-
+-   Percent sign had to be altered slightly.
+-   Originals were not exactly monoline but these are.
 -   Cap height is slightly different.
-
--   Not all characters in this typeface are original to Reproducing
-    Typewriter.
+-   Not all characters are from the original typeface.
 
 ## You May Also Like
 
