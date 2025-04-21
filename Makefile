@@ -285,7 +285,7 @@ $(DISTDIR)/ttf/$(PS_FONT_FAMILY)Code%ttf: $(DISTDIR)/ttf/$(PS_FONT_FAMILY)%ttf M
 	$(METAS_PY) "$@"
 
 clean: FORCE
-	/bin/rm $(FONTS) $(CHARGRID_HTML) $(CHARLIST_HTML) || true
+	/bin/rm $(FONTS) || true
 	find . -type f \( \
 		-name '*.tmp' -o \
 		-name '*.tmp.*' -o \
@@ -294,66 +294,6 @@ clean: FORCE
 		-name '#*#' \
 	\) -exec rm {} + || true
 	/bin/rm -fr src/build || true
-	/bin/rm -fr $(GLYPH_DATA_BY_TYPE) $(GLYPH_DATA_BY_BLOCK) $(GLYPH_DATA_BY_CHAR) \
-	            $(GLYPH_HTML_BY_TYPE) $(GLYPH_HTML_BY_BLOCK) $(GLYPH_HTML_BY_CHAR) || true
-
-diffs.txt: FORCE
-	fontcmp ./ReproTypewr-0.5.0.sfd src/ReproTypewr.sfd > diffs.txt
-
-todo.txt: FORCE
-	fontcoverage --missing --no-ligatures $(FONT_SRC) | tee "$@"
-
-CHARGRID_TPL		:= website/chargrid.mustache
-CHARGRID_HTML		:= website/chargrid.html
-CHARLIST_TPL		:= website/charlist.mustache
-CHARLIST_HTML		:= website/charlist.html
-GLYPH_DATA_BY_TYPE	:= data/glyph-data-by-type.json
-GLYPH_DATA_BY_BLOCK	:= data/glyph-data-by-block.json
-GLYPH_DATA_BY_CHAR	:= data/glyph-data-by-char.json
-GLYPH_HTML_BY_TYPE	:= website/glyphs-by-type.html
-GLYPH_HTML_BY_BLOCK	:= website/glyphs-by-block.html
-GLYPH_HTML_BY_CHAR	:= website/glyphs-by-char.html
-TEMPLATE_BY_TYPE	:= website/glyphs-by-type.mustache
-TEMPLATE_BY_BLOCK	:= website/glyphs-by-block.mustache
-TEMPLATE_BY_CHAR	:= website/glyphs-by-char.mustache
-GLYPHSDATA_BIN		:= bin/glyphsdata
-GLYPH_DATA		:= $(GLYPH_DATA_BY_TYPE) $(GLYPH_DATA_BY_BLOCK) $(GLYPH_DATA_BY_CHAR)
-GLYPH_HTML		:= $(GLYPH_HTML_BY_TYPE) $(GLYPH_HTML_BY_BLOCK) $(GLYPH_HTML_BY_CHAR)
-
-website: copy-fonts $(GLYPH_DATA) $(GLYPH_HTML) $(CHARGRID_HTML) $(CHARLIST_HTML)
-
-html: $(GLYPH_DATA) $(GLYPH_HTML) $(CHARGRID_HTML) $(CHARLIST_HTML)
-
-chargrid: FORCE $(CHARGRID_HTML)
-charlist: FORCE $(CHARLIST_HTML)
-
-$(CHARGRID_HTML): $(FONT_SRC) $(CHARGRID_TPL) $(MAKEFILE)
-	bin/fontdata $(FONT_SRC) > temp.json
-	chevron -d temp.json $(CHARGRID_TPL) > $@
-	rm temp.json
-$(CHARLIST_HTML): $(FONT_SRC) $(CHARLIST_TPL) $(MAKEFILE)
-	bin/fontdata $(FONT_SRC) > temp2.json
-	chevron -d temp2.json $(CHARLIST_TPL) > $@
-	rm temp2.json
-
-$(GLYPH_DATA_BY_CHAR): $(FONT_SRC) $(GLYPHSDATA_BIN)
-	$(GLYPHSDATA_BIN) "$<" >"$@.tmp"
-	mv "$@.tmp" "$@"
-$(GLYPH_DATA_BY_TYPE): $(FONT_SRC) $(GLYPHSDATA_BIN)
-	$(GLYPHSDATA_BIN) --by-type "$<" >"$@.tmp"
-	mv "$@.tmp" "$@"
-$(GLYPH_DATA_BY_BLOCK): $(FONT_SRC) $(GLYPHSDATA_BIN)
-	$(GLYPHSDATA_BIN) --by-block "$<" >"$@.tmp"
-	mv "$@.tmp" "$@"
-$(GLYPH_HTML_BY_TYPE): $(GLYPH_DATA_BY_TYPE) $(TEMPLATE_BY_TYPE)
-	chevron -d $(GLYPH_DATA_BY_TYPE) $(TEMPLATE_BY_TYPE) > "$@.tmp"
-	mv "$@.tmp" "$@"
-$(GLYPH_HTML_BY_BLOCK): $(GLYPH_DATA_BY_BLOCK) $(TEMPLATE_BY_BLOCK)
-	chevron -d $(GLYPH_DATA_BY_BLOCK) $(TEMPLATE_BY_BLOCK) > "$@.tmp"
-	mv "$@.tmp" "$@"
-$(GLYPH_HTML_BY_CHAR): $(GLYPH_DATA_BY_CHAR) $(TEMPLATE_BY_CHAR)
-	chevron -d $(GLYPH_DATA_BY_CHAR) $(TEMPLATE_BY_CHAR) > "$@.tmp"
-	mv "$@.tmp" "$@"
 
 copy-fonts: FORCE
 	rsync -av dist/ttf website/fonts/
@@ -369,6 +309,3 @@ version: FORCE
 	done
 
 .PHONY: FORCE
-
-# resetting DisplaySize: ___ doesn't break
-# resetting Weight: Regular breaks
