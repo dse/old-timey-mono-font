@@ -9,15 +9,15 @@ def main():
     args = parser.parse_args()
     print("notready.py: Opening %s" % args.filename)
     font = fontforge.open(args.filename)
-    for codepoint in [
-            *range(0x0250, 0x0258), # IPA, not finished yet, with the exception of the schwa
-            *range(0x0259, 0x02b0),
-            0x046c,                 # one of those "hm" lookin glyphs in Cyrillic
-            0x046d,                 # the other one
-    ]:
-        if codepoint in font:
-            print("notready.py: Removing %s" % fontforge.nameFromUnicode(codepoint))
-            font.removeGlyph(codepoint)
+
+    for glyph in font.glyphs():
+        codepoint = glyph.unicode
+        idx = glyph.glyphname.find(".")
+        if codepoint < 0 and idx >= 0:
+            base_glyphname = glyph.glyphname[0:idx]
+            codepoint = fontforge.unicodeFromName(base_glyphname)
+            if codepoint in [*range(0x0250, 0x0258), *range(0x0259, 0x02b0), 0x046c, 0x046d]:
+                font.removeGlyph(glyph)
     if args.filename.endswith('.sfd'):
         print("notready.py: Saving %s" % args.filename)
         font.save(args.filename)
