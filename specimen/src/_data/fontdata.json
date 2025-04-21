@@ -1,5 +1,10 @@
 [
 	{
+		"name": "ReproTypewr",
+		"selector": "reprotypewr",
+		"style": "unknown"
+	},
+	{
 		"name": "ReproTypewr-Light",
 		"selector": "reprotypewr-light",
 		"style": "light"
@@ -10,68 +15,8 @@
 		"style": "thin"
 	},
 	{
-		"name": "ReproTypewr",
-		"selector": "reprotypewr",
-		"style": "unknown"
-	},
-	{
-		"name": "ReproTypewrCode-Light",
-		"selector": "reprotypewrcode-light",
-		"style": "light"
-	},
-	{
-		"name": "ReproTypewrCode-Thin",
-		"selector": "reprotypewrcode-thin",
-		"style": "thin"
-	},
-	{
-		"name": "ReproTypewrCode",
-		"selector": "reprotypewrcode",
-		"style": "unknown"
-	},
-	{
-		"name": "ReproTypewrCode-LightComp",
-		"selector": "reprotypewrcode-lightcomp",
-		"style": "light"
-	},
-	{
-		"name": "ReproTypewrCode-ThinComp",
-		"selector": "reprotypewrcode-thincomp",
-		"style": "thin"
-	},
-	{
-		"name": "ReproTypewrCode-Comp",
-		"selector": "reprotypewrcode-comp",
-		"style": "unknown"
-	},
-	{
-		"name": "ReproTypewrCode-LightCond",
-		"selector": "reprotypewrcode-lightcond",
-		"style": "light"
-	},
-	{
-		"name": "ReproTypewrCode-ThinCond",
-		"selector": "reprotypewrcode-thincond",
-		"style": "thin"
-	},
-	{
-		"name": "ReproTypewrCode-Cond",
-		"selector": "reprotypewrcode-cond",
-		"style": "unknown"
-	},
-	{
-		"name": "ReproTypewr-LightComp",
-		"selector": "reprotypewr-lightcomp",
-		"style": "light"
-	},
-	{
-		"name": "ReproTypewr-ThinComp",
-		"selector": "reprotypewr-thincomp",
-		"style": "thin"
-	},
-	{
-		"name": "ReproTypewr-Comp",
-		"selector": "reprotypewr-comp",
+		"name": "ReproTypewr-Cond",
+		"selector": "reprotypewr-cond",
 		"style": "unknown"
 	},
 	{
@@ -85,8 +30,63 @@
 		"style": "thin"
 	},
 	{
-		"name": "ReproTypewr-Cond",
-		"selector": "reprotypewr-cond",
+		"name": "ReproTypewr-Comp",
+		"selector": "reprotypewr-comp",
 		"style": "unknown"
+	},
+	{
+		"name": "ReproTypewr-LightComp",
+		"selector": "reprotypewr-lightcomp",
+		"style": "light"
+	},
+	{
+		"name": "ReproTypewr-ThinComp",
+		"selector": "reprotypewr-thincomp",
+		"style": "thin"
+	},
+	{
+		"name": "ReproTypewrCode",
+		"selector": "reprotypewrcode",
+		"style": "unknown"
+	},
+	{
+		"name": "ReproTypewrCode-Light",
+		"selector": "reprotypewrcode-light",
+		"style": "light"
+	},
+	{
+		"name": "ReproTypewrCode-Thin",
+		"selector": "reprotypewrcode-thin",
+		"style": "thin"
+	},
+	{
+		"name": "ReproTypewrCode-Cond",
+		"selector": "reprotypewrcode-cond",
+		"style": "unknown"
+	},
+	{
+		"name": "ReproTypewrCode-LightCond",
+		"selector": "reprotypewrcode-lightcond",
+		"style": "light"
+	},
+	{
+		"name": "ReproTypewrCode-ThinCond",
+		"selector": "reprotypewrcode-thincond",
+		"style": "thin"
+	},
+	{
+		"name": "ReproTypewrCode-Comp",
+		"selector": "reprotypewrcode-comp",
+		"style": "unknown"
+	},
+	{
+		"name": "ReproTypewrCode-LightComp",
+		"selector": "reprotypewrcode-lightcomp",
+		"style": "light"
+	},
+	{
+		"name": "ReproTypewrCode-ThinComp",
+		"selector": "reprotypewrcode-thincomp",
+		"style": "thin"
 	}
 ]
