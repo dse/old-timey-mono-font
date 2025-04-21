@@ -2,91 +2,91 @@
 	{
 		"name": "ReproTypewr",
 		"selector": "reprotypewr",
-		"style": "unknown"
+		"style": "Regular"
 	},
 	{
 		"name": "ReproTypewr-Light",
 		"selector": "reprotypewr-light",
-		"style": "light"
+		"style": "Light"
 	},
 	{
 		"name": "ReproTypewr-Thin",
 		"selector": "reprotypewr-thin",
-		"style": "thin"
+		"style": "Thin"
 	},
 	{
 		"name": "ReproTypewr-Cond",
 		"selector": "reprotypewr-cond",
-		"style": "unknown"
+		"style": "Condensed"
 	},
 	{
 		"name": "ReproTypewr-LightCond",
 		"selector": "reprotypewr-lightcond",
-		"style": "light"
+		"style": "Light Condensed"
 	},
 	{
 		"name": "ReproTypewr-ThinCond",
 		"selector": "reprotypewr-thincond",
-		"style": "thin"
+		"style": "Thin Condensed"
 	},
 	{
 		"name": "ReproTypewr-Comp",
 		"selector": "reprotypewr-comp",
-		"style": "unknown"
+		"style": "Compressed"
 	},
 	{
 		"name": "ReproTypewr-LightComp",
 		"selector": "reprotypewr-lightcomp",
-		"style": "light"
+		"style": "Light Compressed"
 	},
 	{
 		"name": "ReproTypewr-ThinComp",
 		"selector": "reprotypewr-thincomp",
-		"style": "thin"
+		"style": "Thin Compressed"
 	},
 	{
 		"name": "ReproTypewrCode",
 		"selector": "reprotypewrcode",
-		"style": "unknown"
+		"style": "Code"
 	},
 	{
 		"name": "ReproTypewrCode-Light",
 		"selector": "reprotypewrcode-light",
-		"style": "light"
+		"style": "Code Light"
 	},
 	{
 		"name": "ReproTypewrCode-Thin",
 		"selector": "reprotypewrcode-thin",
-		"style": "thin"
+		"style": "Code Thin"
 	},
 	{
 		"name": "ReproTypewrCode-Cond",
 		"selector": "reprotypewrcode-cond",
-		"style": "unknown"
+		"style": "Code Condensed"
 	},
 	{
 		"name": "ReproTypewrCode-LightCond",
 		"selector": "reprotypewrcode-lightcond",
-		"style": "light"
+		"style": "Code Light Condensed"
 	},
 	{
 		"name": "ReproTypewrCode-ThinCond",
 		"selector": "reprotypewrcode-thincond",
-		"style": "thin"
+		"style": "Code Thin Condensed"
 	},
 	{
 		"name": "ReproTypewrCode-Comp",
 		"selector": "reprotypewrcode-comp",
-		"style": "unknown"
+		"style": "Code Compressed"
 	},
 	{
 		"name": "ReproTypewrCode-LightComp",
 		"selector": "reprotypewrcode-lightcomp",
-		"style": "light"
+		"style": "Code Light Compressed"
 	},
 	{
 		"name": "ReproTypewrCode-ThinComp",
 		"selector": "reprotypewrcode-thincomp",
-		"style": "thin"
+		"style": "Code Thin Compressed"
 	}
 ]
