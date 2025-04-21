@@ -562,7 +562,8 @@
                     "width": 1008,
                     "char": "a",
                     "substitutionsFromThis": {
-                        "code": "a.code"
+                        "ss07": "a.ss07",
+                        "ss01": "a.ss04"
                     }
                 },
                 {
@@ -605,7 +606,7 @@
                     "width": 1008,
                     "char": "c",
                     "substitutionsFromThis": {
-                        "code": "c.code"
+                        "ss01": "c.ss04"
                     }
                 },
                 {
@@ -648,7 +649,7 @@
                     "width": 1008,
                     "char": "e",
                     "substitutionsFromThis": {
-                        "code": "e.code"
+                        "ss01": "e.ss04"
                     }
                 },
                 {
@@ -931,7 +932,7 @@
                     "width": 1008,
                     "char": "s",
                     "substitutionsFromThis": {
-                        "code": "s.code"
+                        "ss01": "s.ss04"
                     }
                 },
                 {
@@ -11759,8 +11760,8 @@
                     "width": 1008,
                     "char": "0",
                     "substitutionsFromThis": {
-                        "cod2": "zero.smalldot",
-                        "code": "zero.slash"
+                        "ss07": "zero.ss07",
+                        "ss01": "zero.zero"
                     }
                 },
                 {
@@ -11783,8 +11784,8 @@
                     "width": 1008,
                     "char": "1",
                     "substitutionsFromThis": {
-                        "cod2": "one.code",
-                        "code": "one.code"
+                        "ss07": "one.ss07",
+                        "ss01": "one.cv01"
                     }
                 },
                 {
@@ -11805,7 +11806,10 @@
                     "leftSideBearing": 113.588867188,
                     "rightSideBearing": 107.588867188,
                     "width": 1008,
-                    "char": "2"
+                    "char": "2",
+                    "substitutionsFromThis": {
+                        "ss07": "two.ss07"
+                    }
                 },
                 {
                     "codepoint": 51,
@@ -11825,7 +11829,10 @@
                     "leftSideBearing": 110.532226562,
                     "rightSideBearing": 119.37109375,
                     "width": 1008,
-                    "char": "3"
+                    "char": "3",
+                    "substitutionsFromThis": {
+                        "ss07": "three.ss07"
+                    }
                 },
                 {
                     "codepoint": 52,
@@ -11865,7 +11872,10 @@
                     "leftSideBearing": 123.0,
                     "rightSideBearing": 125.5625,
                     "width": 1008,
-                    "char": "5"
+                    "char": "5",
+                    "substitutionsFromThis": {
+                        "ss07": "five.ss07"
+                    }
                 },
                 {
                     "codepoint": 54,
@@ -23690,7 +23700,10 @@
                     "leftSideBearing": 96.0,
                     "rightSideBearing": 96.0,
                     "width": 1008,
-                    "char": "#"
+                    "char": "#",
+                    "substitutionsFromThis": {
+                        "ss07": "numbersign.ss07"
+                    }
                 },
                 {
                     "codepoint": 37,
@@ -23772,7 +23785,7 @@
                     "width": 1008,
                     "char": "(",
                     "substitutionsFromThis": {
-                        "code": "parenleft.code"
+                        "ss01": "parenleft.ss02"
                     }
                 },
                 {
@@ -23795,7 +23808,7 @@
                     "width": 1008,
                     "char": ")",
                     "substitutionsFromThis": {
-                        "code": "parenright.code"
+                        "ss01": "parenright.ss02"
                     }
                 },
                 {
@@ -23838,7 +23851,7 @@
                     "width": 1008,
                     "char": ",",
                     "substitutionsFromThis": {
-                        "code": "comma.larger"
+                        "ss01": "comma.ss05"
                     }
                 },
                 {
@@ -23881,7 +23894,7 @@
                     "width": 1008,
                     "char": ".",
                     "substitutionsFromThis": {
-                        "code": "period.larger"
+                        "ss01": "period.ss05"
                     }
                 },
                 {
@@ -23924,7 +23937,7 @@
                     "width": 1008,
                     "char": ":",
                     "substitutionsFromThis": {
-                        "code": "colon.larger"
+                        "ss01": "colon.ss05"
                     }
                 },
                 {
@@ -23947,7 +23960,7 @@
                     "width": 1008,
                     "char": ";",
                     "substitutionsFromThis": {
-                        "code": "semicolon.larger"
+                        "ss01": "semicolon.ss05"
                     }
                 },
                 {
@@ -24010,7 +24023,7 @@
                     "width": 1008,
                     "char": "[",
                     "substitutionsFromThis": {
-                        "code": "bracketleft.code"
+                        "ss01": "bracketleft.ss02"
                     }
                 },
                 {
@@ -24053,7 +24066,7 @@
                     "width": 1008,
                     "char": "]",
                     "substitutionsFromThis": {
-                        "code": "bracketright.code"
+                        "ss01": "bracketright.ss02"
                     }
                 },
                 {
@@ -24114,7 +24127,10 @@
                     "leftSideBearing": 276.009765625,
                     "rightSideBearing": 275.990234375,
                     "width": 1008,
-                    "char": "`"
+                    "char": "`",
+                    "substitutionsFromThis": {
+                        "ss01": "grave.cv09"
+                    }
                 },
                 {
                     "codepoint": 123,
@@ -24136,7 +24152,7 @@
                     "width": 1008,
                     "char": "{",
                     "substitutionsFromThis": {
-                        "code": "braceleft.cod2"
+                        "ss01": "braceleft.ss02"
                     }
                 },
                 {
@@ -24179,7 +24195,7 @@
                     "width": 1008,
                     "char": "}",
                     "substitutionsFromThis": {
-                        "code": "braceright.cod2"
+                        "ss01": "braceright.ss02"
                     }
                 },
                 {
@@ -24502,7 +24518,7 @@
                     "width": 1008,
                     "char": "\u00b7",
                     "substitutionsFromThis": {
-                        "code": "periodcentered.larger"
+                        "ss01": "periodcentered.ss05"
                     }
                 },
                 {
@@ -24845,7 +24861,7 @@
                     "width": 1008,
                     "char": "\u2018",
                     "substitutionsFromThis": {
-                        "code": "quoteleft.larger"
+                        "ss01": "quoteleft.ss05"
                     }
                 },
                 {
@@ -24868,7 +24884,7 @@
                     "width": 1008,
                     "char": "\u2019",
                     "substitutionsFromThis": {
-                        "code": "quoteright.larger"
+                        "ss01": "quoteright.ss05"
                     }
                 },
                 {
@@ -24891,7 +24907,7 @@
                     "width": 1008,
                     "char": "\u201a",
                     "substitutionsFromThis": {
-                        "code": "quotesinglbase.larger"
+                        "ss01": "quotesinglbase.ss05"
                     }
                 },
                 {
@@ -24914,7 +24930,7 @@
                     "width": 1008,
                     "char": "\u201b",
                     "substitutionsFromThis": {
-                        "code": "quotereversed.larger"
+                        "ss01": "quotereversed.ss05"
                     }
                 },
                 {
@@ -24937,7 +24953,7 @@
                     "width": 1008,
                     "char": "\u201c",
                     "substitutionsFromThis": {
-                        "code": "quotedblleft.larger"
+                        "ss01": "quotedblleft.ss05"
                     }
                 },
                 {
@@ -24960,7 +24976,7 @@
                     "width": 1008,
                     "char": "\u201d",
                     "substitutionsFromThis": {
-                        "code": "quotedblright.larger"
+                        "ss01": "quotedblright.ss05"
                     }
                 },
                 {
@@ -24983,7 +24999,7 @@
                     "width": 1008,
                     "char": "\u201e",
                     "substitutionsFromThis": {
-                        "code": "quotedblbase.larger"
+                        "ss01": "quotedblbase.ss05"
                     }
                 },
                 {
@@ -25006,7 +25022,7 @@
                     "width": 1008,
                     "char": "\u201f",
                     "substitutionsFromThis": {
-                        "code": "uni201F.larger"
+                        "ss01": "uni201F.ss05"
                     }
                 },
                 {
@@ -25109,7 +25125,7 @@
                     "width": 1008,
                     "char": "\u2024",
                     "substitutionsFromThis": {
-                        "code": "onedotenleader.larger"
+                        "ss01": "onedotenleader.ss05"
                     }
                 },
                 {
@@ -25132,7 +25148,7 @@
                     "width": 1008,
                     "char": "\u2025",
                     "substitutionsFromThis": {
-                        "code": "twodotenleader.larger"
+                        "ss01": "twodotenleader.ss05"
                     }
                 },
                 {
@@ -25155,7 +25171,7 @@
                     "width": 1008,
                     "char": "\u2026",
                     "substitutionsFromThis": {
-                        "code": "ellipsis.larger"
+                        "ss01": "ellipsis.ss05"
                     }
                 },
                 {
@@ -25178,7 +25194,7 @@
                     "width": 1008,
                     "char": "\u2027",
                     "substitutionsFromThis": {
-                        "code": "uni2027.larger"
+                        "ss01": "uni2027.ss05"
                     }
                 },
                 {
@@ -25821,7 +25837,7 @@
                     "width": 1008,
                     "char": "\u204f",
                     "substitutionsFromThis": {
-                        "code": "uni204F.larger"
+                        "ss01": "uni204F.ss05"
                     }
                 },
                 {
@@ -26207,7 +26223,10 @@
                     "leftSideBearing": 103.666992188,
                     "rightSideBearing": 129.078125,
                     "width": 1008,
-                    "char": "$"
+                    "char": "$",
+                    "substitutionsFromThis": {
+                        "ss07": "dollar.ss07"
+                    }
                 },
                 {
                     "codepoint": 162,
@@ -26474,7 +26493,7 @@
                     "width": 1008,
                     "char": "=",
                     "substitutionsFromThis": {
-                        "code": "equal.code"
+                        "ss01": "equal.cv11"
                     }
                 },
                 {
@@ -27765,15 +27784,15 @@
                     "isPrintable": true,
                     "glyphName": "dotmath",
                     "normalAdobeName": "dotmath",
-                    "boundingBoxXMin": 416.0,
-                    "boundingBoxXMax": 592.0,
-                    "boundingBoxYMin": 290.0,
-                    "boundingBoxYMax": 466.0,
+                    "boundingBoxXMin": 406.0,
+                    "boundingBoxXMax": 602.0,
+                    "boundingBoxYMin": 280.0,
+                    "boundingBoxYMax": 476.0,
                     "altuni": null,
                     "comment": "{}",
                     "glyphClass": "automatic",
-                    "leftSideBearing": 416.0,
-                    "rightSideBearing": 416.0,
+                    "leftSideBearing": 406.0,
+                    "rightSideBearing": 406.0,
                     "width": 1008,
                     "char": "\u22c5"
                 },
