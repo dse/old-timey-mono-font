@@ -91,7 +91,9 @@ Includes the following sets of characters in their entirety:
 
 ## Languages Supported
 
-According to https://googlefonts.github.io/shaperglot/
+According to <https://googlefonts.github.io/shaperglot/>.  As in, I
+dragged the font there and copied the list of languages it had yellow
+or green indicating full coverage.
 
 ### Latin
 
