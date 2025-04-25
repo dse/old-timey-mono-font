@@ -18,7 +18,8 @@ module.exports = {
 		"A typewriter typeface from the early 20th century designed for better visibility.",
 	designers: "Darren Embry", // And who designed it
 	coverage: "Latin, Greek, & Cyrillic", // This populates the link that anchors to the list of languages.
-	language: "Many Latin, Greek, & Cyrillic languages",
+	language:
+		"English, Spanish, French, Ukrainian, Russian, Greek, and many more.",
 
 	// More info: https://css-tricks.com/essential-meta-tags-social-media/
 	metatags: [
