@@ -97,17 +97,17 @@ According to https://googlefonts.github.io/shaperglot/
 
 -   Abua
 -   Acoli
+-   Cheyenne
 -   English
 -   Finnish
 -   French
 -   Galician
 -   Gawwada
--   Hadiyya
 -   Hanga
 -   Igbo
 -   Italian
 -   Kabuverdianu
--   Kaonde
+-   Lakota
 -   Lithuanian
 -   Lower Sorbian
 -   Luo
@@ -126,6 +126,7 @@ According to https://googlefonts.github.io/shaperglot/
 -   Adara
 -   Afar
 -   Afrikaans
+-   Ahtna
 -   Alago
 -   Albanian
 -   Alekano
@@ -143,6 +144,7 @@ According to https://googlefonts.github.io/shaperglot/
 -   Banda, West Central
 -   Bangwinji
 -   Bapuku
+-   Bari
 -   Basque
 -   Batak Toba
 -   Bedawiyet
@@ -157,6 +159,7 @@ According to https://googlefonts.github.io/shaperglot/
 -   Bislama
 -   Bokobaru
 -   Bosnian
+-   Breton
 -   Bube
 -   C’Lela
 -   Cahungwarya
@@ -201,6 +204,7 @@ According to https://googlefonts.github.io/shaperglot/
 -   Gusii
 -   Gwichʼin
 -   Gyele
+-   Hadiyya
 -   Haitian Creole
 -   Harari
 -   Herero
@@ -235,6 +239,7 @@ According to https://googlefonts.github.io/shaperglot/
 -   Kalanga
 -   Kalenjin
 -   Kamba
+-   Kaonde
 -   Karelian
 -   Kashubian
 -   Khasi
@@ -250,6 +255,7 @@ According to https://googlefonts.github.io/shaperglot/
 -   Kuanyama
 -   Kunama
 -   Kurdish (Latin)
+-   Kuria
 -   Kutep
 -   Kutu
 -   Kwere
@@ -265,6 +271,7 @@ According to https://googlefonts.github.io/shaperglot/
 -   Lombard
 -   Lomwe
 -   Longuda
+-   Lozi
 -   Luba-Lulua
 -   Luguru
 -   Lule Sami
@@ -332,6 +339,7 @@ According to https://googlefonts.github.io/shaperglot/
 -   Pökoot
 -   Portuguese
 -   Prussian
+-   Quechua
 -   Rarotongan
 -   Rendille
 -   Reshe
@@ -366,6 +374,7 @@ According to https://googlefonts.github.io/shaperglot/
 -   Shona
 -   Sicilian
 -   Sidamo
+-   Siksika
 -   Silesian
 -   Slovak
 -   Slovenian
@@ -436,6 +445,7 @@ According to https://googlefonts.github.io/shaperglot/
 -   Zaza
 -   Zigula
 -   Zulu
+-   Zuni
 
 ### Cyrillic
 
@@ -443,6 +453,7 @@ According to https://googlefonts.github.io/shaperglot/
 -   Bulgarian
 -   Russian
 -   Serbian
+-   Ukrainian
 -   Abaza
 -   Bosnian (Cyrillic)
 -   Crimean Turkish, Cyrillic
