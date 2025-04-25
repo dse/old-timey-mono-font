@@ -95,6 +95,8 @@ According to https://googlefonts.github.io/shaperglot/
 
 ### Latin
 
+Level 1:
+
 -   Abua
 -   Acoli
 -   Cheyenne
@@ -122,6 +124,9 @@ According to https://googlefonts.github.io/shaperglot/
 -   Upper Sorbian
 -   Walser
 -   Wendat
+
+Level 2:
+
 -   Achinese
 -   Adara
 -   Afar
@@ -449,11 +454,16 @@ According to https://googlefonts.github.io/shaperglot/
 
 ### Cyrillic
 
+Level 1:
+
 -   Belarusian
 -   Bulgarian
 -   Russian
 -   Serbian
 -   Ukrainian
+
+Level 2:
+
 -   Abaza
 -   Bosnian (Cyrillic)
 -   Crimean Turkish, Cyrillic
