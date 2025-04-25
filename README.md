@@ -89,6 +89,383 @@ Includes in their entirety:
 -   And then some.
 -   And a few extras!
 
+## Languages Supported
+
+According to https://googlefonts.github.io/shaperglot/
+
+### Latin
+
+-   Abua
+-   Acoli
+-   English
+-   Finnish
+-   French
+-   Galician
+-   Gawwada
+-   Hadiyya
+-   Hanga
+-   Igbo
+-   Italian
+-   Kabuverdianu
+-   Kaonde
+-   Lithuanian
+-   Lower Sorbian
+-   Luo
+-   Luxembourgish
+-   Malagasy
+-   Nupe-Nupe-Tako
+-   Polish
+-   Punu
+-   Tedaga
+-   Tsamai
+-   Turkish
+-   Upper Sorbian
+-   Walser
+-   Wendat
+-   Achinese
+-   Adara
+-   Afar
+-   Afrikaans
+-   Alago
+-   Albanian
+-   Alekano
+-   Aleut
+-   Anaang
+-   Ao Naga
+-   Arabic, Chadian Spoken
+-   Aragonese
+-   Aromanian
+-   Asturian
+-   Asu
+-   Awak
+-   Aymara
+-   Balinese
+-   Banda, West Central
+-   Bangwinji
+-   Bapuku
+-   Basque
+-   Batak Toba
+-   Bedawiyet
+-   Bekwarra
+-   Bemba
+-   Bena
+-   Bench
+-   Benga
+-   Bikol
+-   Bilen
+-   Bini
+-   Bislama
+-   Bokobaru
+-   Bosnian
+-   Bube
+-   C’Lela
+-   Cahungwarya
+-   Catalan
+-   Cebuano
+-   Chamorro
+-   Chiduruma
+-   Chiga
+-   Chimborazo Highland Quichua
+-   Chokwe
+-   Chuukese
+-   Comorian, Ngazidja
+-   Cornish
+-   Corsican
+-   Crioulo, Upper Guinea
+-   Croatian
+-   Czech
+-   Danish
+-   Dawro
+-   Delaware
+-   Dikaka
+-   Efik
+-   Ekajuk
+-   Embu
+-   Esperanto
+-   Estonian
+-   Ezaa
+-   Faroese
+-   Fijian
+-   Filipino
+-   Friulian
+-   Fuliiru
+-   Gagauz
+-   Gamo
+-   Ganda
+-   Gbaya, Sudan
+-   Gheg Albanian
+-   Gilbertese
+-   Gofa
+-   Gokana
+-   Gourmanchéma
+-   Gusii
+-   Gwichʼin
+-   Gyele
+-   Haitian Creole
+-   Harari
+-   Herero
+-   Hiligaynon
+-   Hmong
+-   Hopi
+-   Hungarian
+-   Hyam
+-   Ibani
+-   Ibibio
+-   Icelandic
+-   Igede
+-   Ika
+-   Ikwo
+-   Iloko
+-   Inari Sami
+-   Indonesian
+-   Innu
+-   Interlingua
+-   Iraqw
+-   Irish
+-   Ivbie North-Okpela-Arhe
+-   Izere
+-   Izii
+-   Jamaican Creole English
+-   Javanese
+-   Jibu
+-   Jola-Fonyi
+-   Jukun Takum
+-   Kaingang
+-   Kalaallisut
+-   Kalanga
+-   Kalenjin
+-   Kamba
+-   Karelian
+-   Kashubian
+-   Khasi
+-   Kikuyu
+-   Kimbundu
+-   Kinyarwanda
+-   Kirike
+-   Kirmanjki
+-   Kituba
+-   Kombe
+-   Kongo
+-   Konjo
+-   Kuanyama
+-   Kunama
+-   Kurdish (Latin)
+-   Kutep
+-   Kutu
+-   Kwere
+-   Kʼicheʼ
+-   Lamba
+-   Lango, Uganda
+-   Latgalian
+-   Latin
+-   Latvian
+-   Lele
+-   Ligurian
+-   Lokaa
+-   Lombard
+-   Lomwe
+-   Longuda
+-   Luba-Lulua
+-   Luguru
+-   Lule Sami
+-   Lunda
+-   Luvale
+-   Luwo
+-   Luyia
+-   Machame
+-   Madurese
+-   Makhuwa
+-   Makhuwa-Meetto
+-   Makonde
+-   Malay (Latin)
+-   Maltese
+-   Mam
+-   Mambila, Nigeria
+-   Mandinka
+-   Mandjak
+-   Mankanya
+-   Manx
+-   Manyika
+-   Maori
+-   Mapuche
+-   Masaaba
+-   Mbembe, Cross River
+-   Meru
+-   Minangkabau
+-   Mirandese
+-   Mohawk
+-   Morisyen
+-   Muscogee
+-   Mwani
+-   Nara
+-   Ndamba
+-   Ndau
+-   Ndonga
+-   Neapolitan
+-   Ngindo
+-   Ngulu
+-   Niuean
+-   North Ndebele
+-   Northern Sami
+-   Northern Sotho
+-   Norwegian
+-   Norwegian Bokmål
+-   Norwegian Nynorsk
+-   Novial
+-   Nyanja
+-   Nyankole
+-   Nyasa Tonga
+-   Nyemba
+-   Nyoro
+-   Occitan
+-   Ogbah
+-   Okiek
+-   Oromo
+-   Otuho
+-   Palauan
+-   Pampanga
+-   Papiamento
+-   Picard
+-   Piedmontese
+-   Pogolo
+-   Pohnpeian
+-   Pökoot
+-   Portuguese
+-   Prussian
+-   Rarotongan
+-   Rendille
+-   Reshe
+-   Réunion Creole French
+-   Rigwe
+-   Rinconada Bikol
+-   Romanian
+-   Romansh
+-   Romany
+-   Rombo
+-   Ronga
+-   Rundi
+-   Rwa
+-   Saho
+-   Samburu
+-   Samoan
+-   Sandawe
+-   Sango
+-   Sangu
+-   Sãotomense
+-   Sapiny
+-   Sardinian
+-   Sassarese Sardinian
+-   Scots
+-   Scottish Gaelic
+-   Sena
+-   Serbian (Latin)
+-   Seri
+-   Seselwa Creole French
+-   Shambala
+-   Shilluk
+-   Shona
+-   Sicilian
+-   Sidamo
+-   Silesian
+-   Slovak
+-   Slovenian
+-   Soga
+-   Somali
+-   South Ndebele
+-   Southern Sami
+-   Southern Sotho
+-   Spanish
+-   Sranan Tongo
+-   Suba
+-   Sukuma
+-   Sundanese
+-   Swahili
+-   Swahili, Congo
+-   Swati
+-   Swedish
+-   Swiss German
+-   Tahitian
+-   Taita
+-   Takwane
+-   Talinga-Bwisi
+-   Tedim Chin
+-   Tetum
+-   Tiv
+-   Tok Pisin
+-   Tokelau
+-   Tonga
+-   Tooro
+-   Toposa
+-   Tsonga
+-   Tsuvadi
+-   Tswana
+-   Tula
+-   Tumbuka
+-   Turkmen (Latin)
+-   Tuvalu
+-   Uab Meto
+-   Umbundu
+-   ut-Ma’in
+-   Uyghur (Latin)
+-   Venda
+-   Venetian
+-   Veps
+-   Vidunda
+-   Vietnamese
+-   Volapük
+-   Võro
+-   Vunjo
+-   Walloon
+-   Waray
+-   Warlpiri
+-   Wayuu
+-   Welsh
+-   West Albay Bikol
+-   Western Frisian
+-   Wolaytta (Latin)
+-   Wolof
+-   Xavánte
+-   Xhosa
+-   Yao
+-   Yapese
+-   Yasa
+-   Yucateco
+-   Zaghawa
+-   Zande
+-   Zayse
+-   Zaza
+-   Zigula
+-   Zulu
+
+### Cyrillic
+
+-   Belarusian
+-   Bulgarian
+-   Russian
+-   Serbian
+-   Abaza
+-   Bosnian (Cyrillic)
+-   Crimean Turkish, Cyrillic
+-   Erzya
+-   Gagauz (Cyrillic)
+-   Karachay-Balkar
+-   Komi
+-   Komi-Permyak
+-   Kumyk
+-   Macedonian
+-   Moksha
+-   Nogai
+-   Ossetic
+-   Romanian (Cyrillic)
+-   Rusyn
+-   Udmurt
+-   Western Mari
+
+### Greek
+
+-   Ancient Greek (Greek)
+-   Greek
+
 ## Full Disclosure
 
 -   Percent sign had to be altered slightly.
