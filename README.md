@@ -68,10 +68,10 @@ to do this.
 
 ## Character Set Coverage
 
-Extensive Western European (Latin) coverage, as well as Cyrillic
-(Ukraine, etc.) and Greek.
+Extensive coverage of Latin, Cyrillic, and Greek scripts.  Language
+support is detailed below.
 
-Includes in their entirety:
+Includes the following sets of characters in their entirety:
 
 -   ASCII
 -   ISO-8859-1
