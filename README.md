@@ -71,7 +71,8 @@ to do this.
 Extensive coverage of Latin, Cyrillic, and Greek scripts.  Language
 support is detailed below.
 
-Includes the following sets of characters in their entirety:
+Includes the following sets of characters in their entirety (excepting
+controls):
 
 -   ASCII
 -   ISO-8859-1
@@ -91,9 +92,9 @@ Includes the following sets of characters in their entirety:
 
 ## Languages Supported
 
-According to <https://googlefonts.github.io/shaperglot/>.  As in, I
-dragged the font there and copied the list of languages it had yellow
-or green indicating full coverage.
+At least according to <https://googlefonts.github.io/shaperglot/>.  As
+in, I dragged the font there and copied the list of languages it had
+yellow or green indicating full coverage.
 
 ### Latin
 
