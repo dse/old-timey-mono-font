@@ -14,7 +14,7 @@ elite typefaces.
 I developed this because I believe those characteristics also make
 Reproducing Typewriter a good basis for a coding font (this one) with
 an antique aesthetic.  You may have seen this typeface used in the
-[Turbo Pascal 3.0](turbo) product manual.
+[Turbo Pascal 3.0][turbo] product manual.
 
 At a size of 12pt (6 lines per inch), Reproducing Typewriter is a pica
 font, or 10 characters per inch, like Courier.  It **should** be
