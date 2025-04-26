@@ -1,6 +1,9 @@
 // Edit the variables set here to change the content of the default containers. They are ordered to match the order in the default specimen.
 // To remove a variable from the specimen, delete the whole variable not just the contents.
 
+const fs = require("fs");
+const path = require("path");
+
 module.exports = {
 	// Masthead
 	poster: "abc", // This appears as the three large glyphs at the top. Change this to a few interesting glyphs that summarise the typeface. Ψ℘ℜ
@@ -25,5 +28,129 @@ module.exports = {
 	setting5:
 		"Everyone has the right to an effective remedy by the competent national tribunals for acts violating the fundamental rights granted him by the constitution or by law. No one shall be subjected to arbitrary arrest, detention or exile. Everyone is entitled in full equality to a fair and public hearing by an independent and impartial tribunal, in the determination of his rights and obligations and of any criminal charge against him. (1) Everyone charged with a penal offence has the right to be presumed innocent until proved guilty according to law in a public trial at which he has had all the guarantees necessary for his defence. (2) No one shall be held guilty of any penal offence on account of any act or omission which did not constitute a penal offence, under national or international law, at the time when it was committed. Nor shall a heavier penalty be imposed than the one that was applicable at the time the penal offence was committed. No one shall be subjected to arbitrary interference with his privacy, family, home or correspondence, nor to attacks upon his honour and reputation. Everyone has the right to the protection of the law against such interference or attacks.",
 	setting6:
-		"Article 13. (1) Everyone has the right to freedom of movement and residence within the borders of each state. (2) Everyone has the right to leave any country, including his own, and to return to his country. Article 14. (1) Everyone has the right to seek and to enjoy in other countries asylum from persecution. (2) This right may not be invoked in the case of prosecutions genuinely arising from non-political crimes or from acts contrary to the purposes and principles of the United Nations. Article 15. (1) Everyone has the right to a nationality. (2) No one shall be arbitrarily deprived of his nationality nor denied the right to change his nationality. Article 16. (1) Men and women of full age, without any limitation due to race, nationality or religion, have the right to marry and to found a family. They are entitled to equal rights as to marriage, during marriage and at its dissolution. (2) Marriage shall be entered into only with the free and full consent of the intending spouses. (3) The family is the natural and fundamental group unit of society and is entitled to protection by society and the State. Article 17. (1) Everyone has the right to own property alone as well as in association with others. (2) No one shall be arbitrarily deprived of his property. Article 18. Everyone has the right to freedom of thought, conscience and religion; this right includes freedom to change his religion or belief, and freedom, either alone or in community with others and in public or private, to manifest his religion or belief in teaching, practice, worship and observance. Article 19. Everyone has the right to freedom of opinion and expression; this right includes freedom to hold opinions without interference and to seek, receive and impart information and ideas through any media and regardless of frontiers. Article 20. (1) Everyone has the right to freedom of peaceful assembly and association. (2) No one may be compelled to belong to an association."
+		"Article 13. (1) Everyone has the right to freedom of movement and residence within the borders of each state. (2) Everyone has the right to leave any country, including his own, and to return to his country. Article 14. (1) Everyone has the right to seek and to enjoy in other countries asylum from persecution. (2) This right may not be invoked in the case of prosecutions genuinely arising from non-political crimes or from acts contrary to the purposes and principles of the United Nations. Article 15. (1) Everyone has the right to a nationality. (2) No one shall be arbitrarily deprived of his nationality nor denied the right to change his nationality. Article 16. (1) Men and women of full age, without any limitation due to race, nationality or religion, have the right to marry and to found a family. They are entitled to equal rights as to marriage, during marriage and at its dissolution. (2) Marriage shall be entered into only with the free and full consent of the intending spouses. (3) The family is the natural and fundamental group unit of society and is entitled to protection by society and the State. Article 17. (1) Everyone has the right to own property alone as well as in association with others. (2) No one shall be arbitrarily deprived of his property. Article 18. Everyone has the right to freedom of thought, conscience and religion; this right includes freedom to change his religion or belief, and freedom, either alone or in community with others and in public or private, to manifest his religion or belief in teaching, practice, worship and observance. Article 19. Everyone has the right to freedom of opinion and expression; this right includes freedom to hold opinions without interference and to seek, receive and impart information and ideas through any media and regardless of frontiers. Article 20. (1) Everyone has the right to freedom of peaceful assembly and association. (2) No one may be compelled to belong to an association.",
+
+	universal: [
+		{
+			id: "af",
+			name: "Afrikaans",
+			text: fs
+				.readFileSync(path.join(__dirname, "universal/afrikaans.txt"))
+				.toString()
+		},
+		{
+			id: "ca",
+			name: "Catalan",
+			text: fs
+				.readFileSync(path.join(__dirname, "universal/catalan.txt"))
+				.toString()
+		},
+		{
+			id: "en",
+			name: "English",
+			text: fs
+				.readFileSync(path.join(__dirname, "universal/english.txt"))
+				.toString()
+		},
+		{
+			id: "fr",
+			name: "French",
+			text: fs
+				.readFileSync(path.join(__dirname, "universal/french.txt"))
+				.toString()
+		},
+		{
+			id: "de",
+			name: "German",
+			text: fs
+				.readFileSync(path.join(__dirname, "universal/german.txt"))
+				.toString()
+		},
+		{
+			id: "el",
+			name: "Greek",
+			text: fs
+				.readFileSync(path.join(__dirname, "universal/greek.txt"))
+				.toString()
+		},
+		{
+			id: "is",
+			name: "Icelandic",
+			text: fs
+				.readFileSync(path.join(__dirname, "universal/icelandic.txt"))
+				.toString()
+		},
+		{
+			id: "ga",
+			name: "Irish",
+			text: fs
+				.readFileSync(path.join(__dirname, "universal/irish.txt"))
+				.toString()
+		},
+		{
+			id: "pl",
+			name: "Polish",
+			text: fs
+				.readFileSync(path.join(__dirname, "universal/polish.txt"))
+				.toString()
+		},
+		{
+			id: "pt",
+			name: "Portugese",
+			text: fs
+				.readFileSync(path.join(__dirname, "universal/portugese.txt"))
+				.toString()
+		},
+		{
+			id: "ru",
+			name: "Russian",
+			text: fs
+				.readFileSync(path.join(__dirname, "universal/russian.txt"))
+				.toString()
+		},
+		{
+			id: "gd",
+			name: "Scottish Gaelic",
+			text: fs
+				.readFileSync(
+					path.join(__dirname, "universal/scottish-gaelic.txt")
+				)
+				.toString()
+		},
+		{
+			id: "es",
+			name: "Spanish",
+			text: fs
+				.readFileSync(path.join(__dirname, "universal/spanish.txt"))
+				.toString()
+		},
+		{
+			id: "sv",
+			name: "Swedish",
+			text: fs
+				.readFileSync(path.join(__dirname, "universal/swedish.txt"))
+				.toString()
+		},
+		{
+			id: "uk",
+			name: "Ukrainian",
+			text: fs
+				.readFileSync(path.join(__dirname, "universal/ukrainian.txt"))
+				.toString()
+		},
+		{
+			id: "vi",
+			name: "Vietnamese",
+			text: fs
+				.readFileSync(path.join(__dirname, "universal/vietnamese.txt"))
+				.toString()
+		},
+		{
+			id: "cy",
+			name: "Welsh",
+			text: fs
+				.readFileSync(path.join(__dirname, "universal/welsh.txt"))
+				.toString()
+		}
+	]
 };
