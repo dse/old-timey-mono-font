@@ -88,7 +88,7 @@ while (<>) {
 
     $thingy->create_guide(504, orientation => 'vertical');
 
-    $thingy->create_guide(1536, name => 'accent-center');
+    $thingy->create_guide(1548, name => 'accent-center');
 } continue {
     if (eof && $in_place && $ARGV ne '-') {
         my $fh;
