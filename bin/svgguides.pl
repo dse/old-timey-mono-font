@@ -54,19 +54,19 @@ while (<>) {
     $thingy->load_xml($_);
     $thingy->delete_guides();
 
-    $thingy->create_guide(16, color => COLOR_OVERSHOOT_GREEN);
-    $thingy->create_guide(64, color => COLOR_OVERSHOOT_GREEN);
-    $thingy->create_guide(112, color => COLOR_OVERSHOOT_GREEN);
     $thingy->create_guide(36, name => 'descender');
     $thingy->create_guide(84);
     $thingy->create_guide(132);
+    $thingy->create_guide(16, color => COLOR_OVERSHOOT_GREEN);
+    $thingy->create_guide(64, color => COLOR_OVERSHOOT_GREEN);
+    $thingy->create_guide(112, color => COLOR_OVERSHOOT_GREEN);
 
-    $thingy->create_guide(316, color => COLOR_OVERSHOOT_GREEN);
-    $thingy->create_guide(364, color => COLOR_OVERSHOOT_GREEN);
-    $thingy->create_guide(412, color => COLOR_OVERSHOOT_GREEN);
     $thingy->create_guide(336, name => 'baseline');
     $thingy->create_guide(384);
     $thingy->create_guide(432);
+    $thingy->create_guide(316, color => COLOR_OVERSHOOT_GREEN);
+    $thingy->create_guide(364, color => COLOR_OVERSHOOT_GREEN);
+    $thingy->create_guide(412, color => COLOR_OVERSHOOT_GREEN);
 
     $thingy->create_guide(864, color => COLOR_CAPCENTER_BLACK, name => 'cap-center');
 
