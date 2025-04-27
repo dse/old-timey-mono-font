@@ -15,18 +15,12 @@
             }
         }
     ],
-    "\"": {
-        "fill": true
-    },
-    ".": {
-        "fill": true
-    },
-    "'": {
-        "fill": true
-    },
-    "!": {
-        "fill": true
-    },
+    "\"": { "fill": true, "name": "QUOTATION MARK" },
+    ".":  { "fill": true, "name": "FULL STOP" },
+    "'":  { "fill": true, "name": "APOSTROPHE" },
+    "!":  { "fill": true, "name": "EXCLAMATION MARK"},
+    "\u0308": { "fill": true, "name": "COMBINING DIAERESIS" },
+    "\u0307": { "fill": true, "name": "COMBINING DOT ABOVE" },
     "\u2022": { "fill": true },
     "\u2034": { "fill": true },
     "\u2037": { "fill": true },
@@ -39,11 +33,30 @@
     "\u25d8": { "fill": true },
     "\u25d9": { "fill": true },
     "\u2605": { "fill": true },
-    "\u2622": { "fill": true },
     "\u263b": { "fill": true },
     "\u2660": { "fill": true },
     "\u2663": { "fill": true },
     "\u2665": { "fill": true },
     "\u2666": { "fill": true },
+    "\u269b": { "expandStrokes": false, "name": "ATOM SYMBOL" },
+    "\u2620": { "expandStrokes": false, "name": "SKULL AND CROSS BONES" },
+    "\u2622": { "expandStrokes": false, "name": "RADIOACTIVE SIGN" },
+    "\u2623": { "expandStrokes": false, "name": "BIOHAZARD SIGN" },
+    "ranges": [
+        {
+            "from": "\u2500",
+            "to": "\u259f",
+            "data": {
+                "expandStrokes": false
+            }
+        },
+        {
+            "from": "\u2800",
+            "to": "\u28ff",
+            "data": {
+                "expandStrokes": false
+            }
+        }
+    ],
     "dummy": null
 }

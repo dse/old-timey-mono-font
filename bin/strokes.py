@@ -20,6 +20,14 @@ from my_font_utils import u, get_glyph_real_codepoint, get_glyph_char_data
 
 SVG_LINECAP_VALUES = ["butt", "round", "square"]
 SVG_LINEJOIN_VALUES = ["arcs", "bevel", "miter", "miter-clip", "miterclip", "round"]
+# allowable linecaps                allowed linejoins
+# svg     fontforge                 svg         fontforge
+# ------  -----------------------   ----------  ----------
+# butt    butt                      arcs        arcs
+# round   round                     bevel       bevel
+# square  butt with extendcap=0.5   miter       miter
+#         bevel                     miter-clip  miterclip
+#                                   round       round
 
 def main():
     global args
@@ -36,14 +44,6 @@ def main():
     with open("data/glyphs.json") as fh:
         glyphs_data_json_text = fh.read()
     glyphs_data = json.loads(glyphs_data_json_text)
-    # allowable linecaps                allowed linejoins
-    # svg     fontforge                 svg         fontforge
-    # ------  -----------------------   ----------  ----------
-    # butt    butt                      arcs        arcs
-    # round   round                     bevel       bevel
-    # square  butt with extendcap=0.5   miter       miter
-    #         bevel                     miter-clip  miterclip
-    #                                   round       round
 
     font = fontforge.open(args.font_filename)
     write_font_filename = args.save_as if args.save_as is not None else args.font_filename
@@ -53,76 +53,65 @@ def main():
 
     fh = open('strokes.log', 'w', encoding='utf-8') if args.log else None
 
-    for glyph in font.glyphs():
-        data = None
-        try:
-            data = json.loads(glyph.comment)
-        except json.decoder.JSONDecodeError:
-            data = glyph.comment
-        stroke_width = None
-        if type(data) == dict and "stroke_width" in data:
-            stroke_width = data["stroke_width"]
-
-        print("strokes.py %s: Expanding strokes on %s %s" % (args.font_filename, u(glyph.unicode), glyph.glyphname))
-        if glyph.unicode == 0x269b: # ATOM SYMBOL
-            continue
-        if glyph.unicode == 0x2620: # SKULL AND CROSS BONES
-            continue
-        if glyph.unicode == 0x2622: # RADIOACTIVE SIGN
-            continue
-        if glyph.unicode == 0x2623: # BIOHAZARD SIGN
-            continue
-        if glyph.unicode in range(0x2500, 0x25a0):
-            continue
-        if glyph.unicode in range(0x2800, 0x2900):
-            continue
-        if len(glyph.foreground) == 0 and len(glyph.references) == 0:
-            continue
-        if mixedjsontext.fontcomment_says_generated(glyph.comment):
-            continue
-        if len(glyph.references):
-            continue
-        orig_width = glyph.width
-        real_codepoint = get_glyph_real_codepoint(glyph)
-        if args.expand_stroke is not None:
+    if args.expand_stroke is None:
+        print("strokes.py %s: --expand-stroke not specified; not expanding strokes" % args.font_filename)
+    else:
+        for glyph in font.glyphs():
             time_start = time.time()
-            #<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-            
-            if args.allow_json_data and (char_data := get_glyph_char_data(glyph)) is not None:
-                line_join = char_data["linejoin"] if "linejoin" in char_data else None
-                line_cap  = char_data["linecap"]  if "linecap"  in char_data else None
-                if line_join is not None and not (line_join in SVG_LINEJOIN_VALUES):
-                    raise Exception("invalid line join value: %s" % line_join)
-                if line_cap is not None and not (line_cap in SVG_LINECAP_VALUES):
-                    raise Exception("invalid line cap value: %s" % line_cap)
-                params = {}
-                if line_join is not None:
-                    if line_join == "miter-clip":
-                        line_join = "miterclip"
-                    params["join"] = line_join
-                if line_cap is not None:
-                    if line_cap == "square":
-                        line_cap = "butt"
-                        params["extendcap"] = 0.5
-                    params["cap"] = line_cap
-                if "fill" in char_data and char_data["fill"]:
-                    params["removeinternal"] = True
-                having_stroke_width = char_data["having_stroke_width"] if "having_stroke_width" in char_data else 0
-                glyph.stroke("circular", args.expand_stroke - having_stroke_width, **params)
-            elif stroke_width is not None:
-                print("strokes.py %s: marked as already having stroke width of %d; expanding by %d" %
-                      (args.font_filename, stroke_width, args.expand_stroke - stroke_width))
-                glyph.stroke("circular", args.expand_stroke - stroke_width, removeinternal=True)
+            #<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+            glyph_data = get_glyph_char_data(glyph) # always a dict
+            real_codepoint = get_glyph_real_codepoint(glyph)
+            fill_flag = glyph_data.get("fill", False)
+            expand_flag = glyph_data.get("expandStrokes", True)
+            if not expand_flag:
+                print("strokes.py %s: %s %s is flagged 'expandStrokes: false'; not expanding strokes" % (args.font_filename, glyph.glyphname, u(real_codepoint)))
+                continue
+            if len(glyph.foreground) == 0 and len(glyph.references) == 0:
+                print("strokes.py %s: %s %s is blank; not expanding strokes" % (args.font_filename, glyph.glyphname, u(real_codepoint)))
+                continue
+            if len(glyph.references):
+                print("strokes.py %s: %s %s has references; not expanding any strokes" % (args.font_filename, glyph.glyphname, u(real_codepoint)))
+                continue
+            orig_width = glyph.width
+            print("strokes.py %s: %s %s: expanding strokes" % (args.font_filename, glyph.glyphname, u(real_codepoint)))
+            expand_params = {}
+            line_join = glyph_data.get("linejoin")
+            line_cap = glyph_data.get("linecap")
+            if line_join is not None and not (line_join in SVG_LINEJOIN_VALUES):
+                raise Exception("invalid line join value: %s" % line_join)
+            if line_cap is not None and not (line_cap in SVG_LINECAP_VALUES):
+                raise Exception("invalid line cap value: %s" % line_cap)
+            if line_join is not None:
+                if line_join == "miter-clip":
+                    line_join = "miterclip"
+                expand_params["join"] = line_join
+            if line_cap is not None:
+                if line_cap == "square":
+                    line_cap = "butt"
+                    expand_params["extendcap"] = 0.5
+                expand_params["cap"] = line_cap
+            if fill_flag:
+                expand_params["removeinternal"] = True
+            glyph.stroke("circular", args.expand_stroke, **expand_params)
+            if orig_width != 0:
+                glyph.width = orig_width
             else:
-                glyph.stroke("circular", args.expand_stroke)
-            #>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+                glyph.width = common_glyph_width # MONOSPACE
+            #>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
             time_end = time.time()
             if fh is not None:
                 fh.write("%8.6f  %s\n" % ((time_end - time_start), charname(glyph)))
-        if orig_width != 0:
-            glyph.width = orig_width
-        else:
-            glyph.width = common_glyph_width # MONOSPACE
+
+            # #<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+            #     having_stroke_width = char_data["having_stroke_width"] if "having_stroke_width" in char_data else 0
+            #     glyph.stroke("circular", args.expand_stroke - having_stroke_width, **params)
+            # elif stroke_width is not None:
+            #     print("strokes.py %s: marked as already having stroke width of %d; expanding by %d" %
+            #           (args.font_filename, stroke_width, args.expand_stroke - stroke_width))
+            #     glyph.stroke("circular", args.expand_stroke - stroke_width, removeinternal=True)
+            # else:
+            #     glyph.stroke("circular", args.expand_stroke)
+            # #>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
     if write_font_filename.endswith('.sfd'):
         print("strokes.py %s: Saving %s..." % (args.font_filename, write_font_filename))

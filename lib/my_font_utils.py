@@ -245,7 +245,7 @@ def get_glyph_char_data(glyph):
             glyph_data = json.loads(fh.read())
     codepoint = get_glyph_real_codepoint(glyph)
     if codepoint < 0:
-        return None
+        return {}
     variant = None
     if (idx := glyph.glyphname.find(".")) != -1:
         variant = glyph.glyphname[idx+1:]
@@ -255,10 +255,10 @@ def get_glyph_char_data(glyph):
     variant_char_data   = None
     if "ranges" in glyph_data:
         for range_item in glyph_data["ranges"]:
-            start_cp = ord(range_item["range"][0])
-            end_cp = ord(range_item["range"][1])
-            if codepoint in range(start_cp, end_cp + 1) and "char_data" in range_item:
-                range_char_data = range_item["char_data"]
+            start_cp = ord(range_item["from"])
+            end_cp = ord(range_item["to"])
+            if codepoint in range(start_cp, end_cp + 1) and "data" in range_item:
+                range_char_data = range_item["data"]
                 break
     if chr(codepoint) in glyph_data:
         this_char_data = glyph_data[chr(codepoint)]
@@ -267,7 +267,7 @@ def get_glyph_char_data(glyph):
     if (range_char_data is None and
         this_char_data is None and
         variant_char_data is None):
-        return None
+        return {}
     char_data = {}
     if range_char_data is not None:
         char_data = { **char_data, **range_char_data }
