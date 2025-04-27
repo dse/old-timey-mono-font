@@ -34,8 +34,8 @@ def main():
     args = parser.parse_args()
 
     with open("data/glyphs.json") as fh:
-        glyph_data_json_text = fh.read()
-    glyph_data = json.loads(glyph_data_json_text)
+        glyphs_data_json_text = fh.read()
+    glyphs_data = json.loads(glyphs_data_json_text)
     # allowable linecaps                allowed linejoins
     # svg     fontforge                 svg         fontforge
     # ------  -----------------------   ----------  ----------
