@@ -145,7 +145,7 @@ update: FORCE
 	$(STROKES_PY) --expand-stroke 96 $(FONT_SRC)
 	$(NOTDEF_PY) $(FONT_SRC)
 	$(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) $(FONT_SRC)
-	sort -n strokes.log | sponge strokes.log
+	make fix-strokes-log
 
 update-test: FORCE
 	$(SVG_PY) $(FONT_SRC) $(SRC_SVGS)
@@ -155,7 +155,7 @@ update-test: FORCE
 	$(STROKES_PY) --expand-stroke 96 --allow-json-data $(FONT_SRC)
 	$(NOTDEF_PY) $(FONT_SRC)
 	$(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) $(FONT_SRC)
-	sort -n strokes.log | sponge strokes.log
+	make fix-strokes-log
 
 # update source font fron SVG files, for testing if referenced glyphs
 # are too close. (accented letters mostly)
@@ -167,7 +167,7 @@ update-168: FORCE
 	$(STROKES_PY) --expand-stroke 168 $(FONT_SRC)
 	$(NOTDEF_PY) $(FONT_SRC)
 	$(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) $(FONT_SRC)
-	sort -n strokes.log | sponge strokes.log
+	make fix-strokes-log
 update-24: FORCE
 	$(SVG_PY) $(FONT_SRC) $(SRC_SVGS)
 	$(BOUNDS_PY) $(FONT_SRC)
@@ -176,7 +176,7 @@ update-24: FORCE
 	$(STROKES_PY) --expand-stroke 24 $(FONT_SRC)
 	$(NOTDEF_PY) $(FONT_SRC)
 	$(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) $(FONT_SRC)
-	sort -n strokes.log | sponge strokes.log
+	make fix-strokes-log
 update-48: FORCE
 	$(SVG_PY) $(FONT_SRC) $(SRC_SVGS)
 	$(BOUNDS_PY) $(FONT_SRC)
@@ -185,7 +185,7 @@ update-48: FORCE
 	$(STROKES_PY) --expand-stroke 48 $(FONT_SRC)
 	$(NOTDEF_PY) $(FONT_SRC)
 	$(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) $(FONT_SRC)
-	sort -n strokes.log | sponge strokes.log
+	make fix-strokes-log
 update-72: FORCE
 	$(SVG_PY) $(FONT_SRC) $(SRC_SVGS)
 	$(BOUNDS_PY) $(FONT_SRC)
@@ -194,7 +194,7 @@ update-72: FORCE
 	$(STROKES_PY) --expand-stroke 72 $(FONT_SRC)
 	$(NOTDEF_PY) $(FONT_SRC)
 	$(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) $(FONT_SRC)
-	sort -n strokes.log | sponge strokes.log
+	make fix-strokes-log
 update-128: FORCE
 	$(SVG_PY) $(FONT_SRC) $(SRC_SVGS)
 	$(BOUNDS_PY) $(FONT_SRC)
@@ -203,7 +203,10 @@ update-128: FORCE
 	$(STROKES_PY) --expand-stroke 128 $(FONT_SRC)
 	$(NOTDEF_PY) $(FONT_SRC)
 	$(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) $(FONT_SRC)
-	sort -n strokes.log | sponge strokes.log
+	make fix-strokes-log
+
+fix-strokes-log:
+	if [[ -e strokes.log ]] ; then sort -n strokes.log | sponge strokes.log ; else true ; fi
 
 fonttool: FORCE
 	@echo "use 'make update', dingus." >&2

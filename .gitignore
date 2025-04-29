@@ -7,3 +7,4 @@ testfonts/
 website/fonts/ttf/*.ttf
 .test-build-number.lock
 .test-build-number.txt
+strokes.log
