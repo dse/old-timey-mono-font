@@ -49,7 +49,7 @@ def main():
         else:
             ps_family_name = "OldTimeyMono"
         if is_code:
-            ps_family_name += "OldTimeyCode"
+            ps_family_name = "OldTimeyCode"
 
         weight = WEIGHT_NORMAL
         panose_2 = 5
