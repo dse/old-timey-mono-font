@@ -1,6 +1,6 @@
-# Reproducing Typewriter
+# Old Timey Mono
 
-A clean monospace typeface based on of Reproducing Typewriter, a
+A clean monospace typeface based on Reproducing Typewriter, a
 monospace typeface from as early as 1906.  Reproducing Typewriter was
 designed for simulating typewritten letters in smaller point sizes for
 advertisements, catalogs, etc., where readability and/or distortion
@@ -11,21 +11,20 @@ typewriters at the time.
 available, though they were at larger sizes than ordinary pica or
 elite typefaces.
 
-I developed this because I believe those characteristics also make
-Reproducing Typewriter a good basis for a coding font (this one) with
-an antique aesthetic.  You may have seen this typeface used in the
+I developed Old Timey Mono because I believe those characteristics
+also make it a good basis for a coding font (this one) with an antique
+aesthetic.  You may have seen Reproducing Typewriter used in the
 [Turbo Pascal 3.0][turbo] product manual.
 
-At a size of 12pt (6 lines per inch), Reproducing Typewriter is a pica
-font, or 10 characters per inch, like Courier.  It **should** be
-suitable for screenplay writing.
+At a size of 12pt (6 lines per inch), Old Timey Mono is a pica font,
+or 10 characters per inch, like Courier.  It **should** be suitable
+for screenplay writing.
 
 ## Code Variant
 
-Along with the regular variant, a variant for coding is also
-available, with a slashed zero, disambiguated digit one, selected
-punctuation marks made larger, and a few certain small letters
-modified.
+Along with Old Timey Mono, Old Timey Code is for coding.  It has a
+slashed zero, disambiguated digit one, selected punctuation marks made
+larger, and a few certain small letters modified.
 
 ## Mintty Users
 
@@ -34,37 +33,7 @@ to do this.
 
 ## Download All The Fonts
 
-[ReproTypewr.zip](dist/ReproTypewr.zip)
-
-## Download Individual Fonts
-
--   Reproducing Typewriter
-    -   Regular - Pica (10 pitch)
-        -   [Thin](dist/ttf/ReproTypewr-Thin.ttf)
-        -   [Light](dist/ttf/ReproTypewr-Light.ttf)
-        -   [Regular](dist/ttf/ReproTypewr.ttf)
-    -   Condensed - Elite (12 pitch)
-        -   [Thin](dist/ttf/ReproTypewrCond-Thin.ttf)
-        -   [Light](dist/ttf/ReproTypewrCond-Light.ttf)
-        -   [Regular](dist/ttf/ReproTypewrCond.ttf)
-    -   Compressed (16.5 characters per inch)
-        -   [Thin](dist/ttf/ReproTypewrComp-Thin.ttf)
-        -   [Light](dist/ttf/ReproTypewrComp-Light.ttf)
-        -   [Regular](dist/ttf/ReproTypewrComp.ttf)
-
--   Reproducing Typewriter Code
-    -   Regular - Pica (10 pitch)
-        -   [Thin](dist/ttf/ReproTypewrCode-Thin.ttf)
-        -   [Light](dist/ttf/ReproTypewrCode-Light.ttf)
-        -   [Regular](dist/ttf/ReproTypewrCode.ttf)
-    -   Condensed - Elite (12 pitch)
-        -   [Thin](dist/ttf/ReproTypewrCodeCond-Thin.ttf)
-        -   [Light](dist/ttf/ReproTypewrCodeCond-Light.ttf)
-        -   [Regular](dist/ttf/ReproTypewrCodeCond.ttf)
-    -   Compressed (16.5 characters per inch)
-        -   [Thin](dist/ttf/ReproTypewrCodeComp-Thin.ttf)
-        -   [Light](dist/ttf/ReproTypewrCodeComp-Light.ttf)
-        -   [Regular](dist/ttf/ReproTypewrCodeComp.ttf)
+[OldTimeyMono.zip](dist/OldTimeyMono.zip)
 
 ## Character Set Coverage
 
