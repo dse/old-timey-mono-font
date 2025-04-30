@@ -7,6 +7,8 @@ VERSION       := 0.9.0
 
 FONT_FAMILY := Repro Typewr
 PS_FONT_FAMILY := ReproTypewr
+CODE_FONT_FAMILY := Repro Typewr Code
+PS_CODE_FONT_FAMILY := ReproTypewrCode
 
 SVG_PY_PROG			:= bin/svg.py
 STROKES_PY_PROG			:= bin/strokes.py
@@ -41,23 +43,23 @@ SUBSTITUTIONS_JSON	:= data/substitutions.json
 DISTDIR := dist
 
 FONT_TTF                        := $(DISTDIR)/ttf/$(PS_FONT_FAMILY).ttf
-CODING_FONT_TTF                 := $(DISTDIR)/ttf/$(PS_FONT_FAMILY)Code.ttf
+CODING_FONT_TTF                 := $(DISTDIR)/ttf/$(PS_CODE_FONT_FAMILY).ttf
 THIN_FONT_TTF                   := $(DISTDIR)/ttf/$(PS_FONT_FAMILY)-Thin.ttf
-THIN_CODING_FONT_TTF            := $(DISTDIR)/ttf/$(PS_FONT_FAMILY)Code-Thin.ttf
+THIN_CODING_FONT_TTF            := $(DISTDIR)/ttf/$(PS_CODE_FONT_FAMILY)-Thin.ttf
 LIGHT_FONT_TTF                  := $(DISTDIR)/ttf/$(PS_FONT_FAMILY)-Light.ttf
-LIGHT_CODING_FONT_TTF           := $(DISTDIR)/ttf/$(PS_FONT_FAMILY)Code-Light.ttf
+LIGHT_CODING_FONT_TTF           := $(DISTDIR)/ttf/$(PS_CODE_FONT_FAMILY)-Light.ttf
 FONT_COMP_TTF			:= $(DISTDIR)/ttf/$(PS_FONT_FAMILY)Comp.ttf
-CODING_FONT_COMP_TTF		:= $(DISTDIR)/ttf/$(PS_FONT_FAMILY)CodeComp.ttf
+CODING_FONT_COMP_TTF		:= $(DISTDIR)/ttf/$(PS_CODE_FONT_FAMILY)Comp.ttf
 THIN_FONT_COMP_TTF		:= $(DISTDIR)/ttf/$(PS_FONT_FAMILY)Comp-Thin.ttf
-THIN_CODING_FONT_COMP_TTF	:= $(DISTDIR)/ttf/$(PS_FONT_FAMILY)CodeComp-Thin.ttf
+THIN_CODING_FONT_COMP_TTF	:= $(DISTDIR)/ttf/$(PS_CODE_FONT_FAMILY)Comp-Thin.ttf
 LIGHT_FONT_COMP_TTF		:= $(DISTDIR)/ttf/$(PS_FONT_FAMILY)Comp-Light.ttf
-LIGHT_CODING_FONT_COMP_TTF	:= $(DISTDIR)/ttf/$(PS_FONT_FAMILY)CodeComp-Light.ttf
+LIGHT_CODING_FONT_COMP_TTF	:= $(DISTDIR)/ttf/$(PS_CODE_FONT_FAMILY)Comp-Light.ttf
 FONT_COND_TTF			:= $(DISTDIR)/ttf/$(PS_FONT_FAMILY)Cond.ttf
-CODING_FONT_COND_TTF		:= $(DISTDIR)/ttf/$(PS_FONT_FAMILY)CodeCond.ttf
+CODING_FONT_COND_TTF		:= $(DISTDIR)/ttf/$(PS_CODE_FONT_FAMILY)Cond.ttf
 THIN_FONT_COND_TTF		:= $(DISTDIR)/ttf/$(PS_FONT_FAMILY)Cond-Thin.ttf
-THIN_CODING_FONT_COND_TTF	:= $(DISTDIR)/ttf/$(PS_FONT_FAMILY)CodeCond-Thin.ttf
+THIN_CODING_FONT_COND_TTF	:= $(DISTDIR)/ttf/$(PS_CODE_FONT_FAMILY)Cond-Thin.ttf
 LIGHT_FONT_COND_TTF		:= $(DISTDIR)/ttf/$(PS_FONT_FAMILY)Cond-Light.ttf
-LIGHT_CODING_FONT_COND_TTF	:= $(DISTDIR)/ttf/$(PS_FONT_FAMILY)CodeCond-Light.ttf
+LIGHT_CODING_FONT_COND_TTF	:= $(DISTDIR)/ttf/$(PS_CODE_FONT_FAMILY)Cond-Light.ttf
 
 ORIGINAL_FONTS := \
 	$(FONT_TTF) \
@@ -281,7 +283,7 @@ $(DISTDIR)/ttf/%-Thin.ttf: src/build/%.stage2.sfd Makefile $(STROKES_PY_PROG) $(
 # Stage 5: make code variants
 # NOTE: can't use %.ttf because '%' cannot match less than one character.
 #                                   vvvv
-$(DISTDIR)/ttf/$(PS_FONT_FAMILY)Code%ttf: $(DISTDIR)/ttf/$(PS_FONT_FAMILY)%ttf Makefile $(METAS_PY_PROG) bin/fontfix
+$(DISTDIR)/ttf/$(PS_CODE_FONT_FAMILY)%ttf: $(DISTDIR)/ttf/$(PS_FONT_FAMILY)%ttf Makefile $(METAS_PY_PROG) bin/fontfix
 	@echo "stage 5"
 	pyftfeatfreeze -f ss01 "$<" "$@"
 	bin/fontfix "$@"
