@@ -1,14 +1,14 @@
 MAKEFILE := Makefile
-FONT_SRC := src/ReproTypewr.sfd
+FONT_SRC := src/OldTimeyMono.sfd
 
 #                XXX.YZZ, typically
 SFNT_REVISION := 000.900
 VERSION       := 0.9.0
 
-FONT_FAMILY := Repro Typewr
-PS_FONT_FAMILY := ReproTypewr
-CODE_FONT_FAMILY := Repro Typewr Code
-PS_CODE_FONT_FAMILY := ReproTypewrCode
+FONT_FAMILY := Old Timey Mono
+PS_FONT_FAMILY := OldTimeyMono
+CODE_FONT_FAMILY := Old Timey Code
+PS_CODE_FONT_FAMILY := OldTimeyCode
 
 SVG_PY_PROG			:= bin/svg.py
 STROKES_PY_PROG			:= bin/strokes.py
@@ -99,7 +99,7 @@ COND_FONTS := \
 	$(LIGHT_FONT_COND_TTF) \
 	$(LIGHT_CODING_FONT_COND_TTF)
 
-ZIP_FILE = dist/ReproTypewr.zip
+ZIP_FILE = dist/OldTimeyMono.zip
 
 FONTS := $(ORIGINAL_FONTS) $(CODING_FONTS)
 
@@ -226,7 +226,7 @@ boxdraw: FORCE
 	fontboxdraw -f $(FONT_SRC)
 
 $(ZIP_FILE): $(FONTS) Makefile
-	( cd dist && zip -r ReproTypewr.zip ttf )
+	( cd dist && zip -r OldTimeyMono.zip ttf )
 
 stage1: src/build/$(PS_FONT_FAMILY).stage1.sfd
 
@@ -304,7 +304,7 @@ copy-fonts: FORCE
 	rsync -av dist/ttf website/fonts/
 
 version: FORCE
-	bin/version.py src/ReproTypewr.sfd \
+	bin/version.py src/OldTimeyMono.sfd \
 		--sfnt-revision "$(SFNT_REVISION)" \
 		--ps-version "$(VERSION)"
 	for i in $(FONTS) ; do \
