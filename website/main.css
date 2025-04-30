@@ -1,110 +1,110 @@
 @font-face {
-    src: url('fonts/ttf/ReproTypewr.ttf?v=2');
-    font-family: 'Reproducing Typewriter';
+    src: url('fonts/ttf/OldTimeyMono.ttf?v=2');
+    font-family: 'Old Timey Mono';
     font-weight: 400;
     font-style: normal;
 }
 @font-face {
-    src: url('fonts/ttf/ReproTypewrCode.ttf?v=2');
-    font-family: 'Reproducing Typewriter Code';
+    src: url('fonts/ttf/OldTimeyCode.ttf?v=2');
+    font-family: 'Old Timey Code';
     font-weight: 400;
     font-style: normal;
 }
 @font-face {
-    src: url('fonts/ttf/ReproTypewr-Light.ttf?v=2');
-    font-family: 'Reproducing Typewriter';
+    src: url('fonts/ttf/OldTimeyMono-Light.ttf?v=2');
+    font-family: 'Old Timey Mono';
     font-weight: 300;
     font-style: normal;
 }
 @font-face {
-    src: url('fonts/ttf/ReproTypewrCode-Light.ttf?v=2');
-    font-family: 'Reproducing Typewriter Code';
+    src: url('fonts/ttf/OldTimeyCode-Light.ttf?v=2');
+    font-family: 'Old Timey Code';
     font-weight: 300;
     font-style: normal;
 }
 @font-face {
-    src: url('fonts/ttf/ReproTypewr-Thin.ttf?v=2');
-    font-family: 'Reproducing Typewriter';
+    src: url('fonts/ttf/OldTimeyMono-Thin.ttf?v=2');
+    font-family: 'Old Timey Mono';
     font-weight: 200;
     font-style: normal;
 }
 @font-face {
-    src: url('fonts/ttf/ReproTypewrCode-Thin.ttf?v=2');
-    font-family: 'Reproducing Typewriter Code';
-    font-weight: 200;
-    font-style: normal;
-}
-
-@font-face {
-    src: url('fonts/ttf/ReproTypewrCond.ttf?v=2');
-    font-family: 'Reproducing Typewriter Cond';
-    font-weight: 400;
-    font-style: normal;
-}
-@font-face {
-    src: url('fonts/ttf/ReproTypewrCodeCond.ttf?v=2');
-    font-family: 'Reproducing Typewriter Code Cond';
-    font-weight: 400;
-    font-style: normal;
-}
-@font-face {
-    src: url('fonts/ttf/ReproTypewrCond-Light.ttf?v=2');
-    font-family: 'Reproducing Typewriter Cond';
-    font-weight: 300;
-    font-style: normal;
-}
-@font-face {
-    src: url('fonts/ttf/ReproTypewrCodeCond-Light.ttf?v=2');
-    font-family: 'Reproducing Typewriter Code Cond';
-    font-weight: 300;
-    font-style: normal;
-}
-@font-face {
-    src: url('fonts/ttf/ReproTypewrCond-Thin.ttf?v=2');
-    font-family: 'Reproducing Typewriter Cond';
-    font-weight: 200;
-    font-style: normal;
-}
-@font-face {
-    src: url('fonts/ttf/ReproTypewrCodeCond-Thin.ttf?v=2');
-    font-family: 'Reproducing Typewriter Code Cond';
+    src: url('fonts/ttf/OldTimeyCode-Thin.ttf?v=2');
+    font-family: 'Old Timey Code';
     font-weight: 200;
     font-style: normal;
 }
 
 @font-face {
-    src: url('fonts/ttf/ReproTypewrComp.ttf?v=2');
-    font-family: 'Reproducing Typewriter Compressed';
+    src: url('fonts/ttf/OldTimeyMonoCond.ttf?v=2');
+    font-family: 'Old Timey Mono Cond';
     font-weight: 400;
     font-style: normal;
 }
 @font-face {
-    src: url('fonts/ttf/ReproTypewrCodeComp.ttf?v=2');
-    font-family: 'Reproducing Typewriter Code Compressed';
+    src: url('fonts/ttf/OldTimeyCodeCond.ttf?v=2');
+    font-family: 'Old Timey Code Cond';
     font-weight: 400;
     font-style: normal;
 }
 @font-face {
-    src: url('fonts/ttf/ReproTypewrComp-Light.ttf?v=2');
-    font-family: 'Reproducing Typewriter Compressed';
+    src: url('fonts/ttf/OldTimeyMonoCond-Light.ttf?v=2');
+    font-family: 'Old Timey Mono Cond';
     font-weight: 300;
     font-style: normal;
 }
 @font-face {
-    src: url('fonts/ttf/ReproTypewrCodeComp-Light.ttf?v=2');
-    font-family: 'Reproducing Typewriter Code Compressed';
+    src: url('fonts/ttf/OldTimeyCodeCond-Light.ttf?v=2');
+    font-family: 'Old Timey Code Cond';
     font-weight: 300;
     font-style: normal;
 }
 @font-face {
-    src: url('fonts/ttf/ReproTypewrComp-Thin.ttf?v=2');
-    font-family: 'Reproducing Typewriter Compressed';
+    src: url('fonts/ttf/OldTimeyMonoCond-Thin.ttf?v=2');
+    font-family: 'Old Timey Mono Cond';
     font-weight: 200;
     font-style: normal;
 }
 @font-face {
-    src: url('fonts/ttf/ReproTypewrCodeComp-Thin.ttf?v=2');
-    font-family: 'Reproducing Typewriter Code Compressed';
+    src: url('fonts/ttf/OldTimeyCodeCond-Thin.ttf?v=2');
+    font-family: 'Old Timey Code Cond';
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    src: url('fonts/ttf/OldTimeyMonoComp.ttf?v=2');
+    font-family: 'Old Timey Mono Compressed';
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    src: url('fonts/ttf/OldTimeyCodeComp.ttf?v=2');
+    font-family: 'Old Timey Code Compressed';
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    src: url('fonts/ttf/OldTimeyMonoComp-Light.ttf?v=2');
+    font-family: 'Old Timey Mono Compressed';
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    src: url('fonts/ttf/OldTimeyCodeComp-Light.ttf?v=2');
+    font-family: 'Old Timey Code Compressed';
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    src: url('fonts/ttf/OldTimeyMonoComp-Thin.ttf?v=2');
+    font-family: 'Old Timey Mono Compressed';
+    font-weight: 200;
+    font-style: normal;
+}
+@font-face {
+    src: url('fonts/ttf/OldTimeyCodeComp-Thin.ttf?v=2');
+    font-family: 'Old Timey Code Compressed';
     font-weight: 200;
     font-style: normal;
 }
@@ -123,7 +123,7 @@ html {
     }
 }
 html {
-    font-family: 'Reproducing Typewriter';
+    font-family: 'Old Timey Mono';
     margin: 0;
     padding: 0;
     color: black;
@@ -177,7 +177,7 @@ pre {
     font-family: inherit;
 }
 .code {
-    font-family: "Reproducing Typewriter Code";
+    font-family: "Old Timey Code";
 }
 b, strong {
     color: #ff3333;

@@ -6,17 +6,17 @@ function initCodeVariantCheckbox() {
         return;
     }
     checkbox.addEventListener("change", update);
-    var checked = JSON.parse(localStorage.getItem("reproTypewrCodeCheckboxChecked"));
+    var checked = JSON.parse(localStorage.getItem("old-timey-codeCheckboxChecked"));
     console.log(checked);
     checkbox.checked = checked;
     function update() {
         if (checkbox.checked) {
             element.classList.add("code");
-            localStorage.setItem("reproTypewrCodeCheckboxChecked", "true");
+            localStorage.setItem("old-timey-codeCheckboxChecked", "true");
             console.log("true");
         } else {
             element.classList.remove("code");
-            localStorage.setItem("reproTypewrCodeCheckboxChecked", "false");
+            localStorage.setItem("old-timey-codeCheckboxChecked", "false");
             console.log("false");
         }
     }

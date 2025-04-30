@@ -1,92 +1,92 @@
 [
 	{
-		"name": "ReproTypewr",
-		"selector": "reprotypewr",
+		"name": "OldTimeyMono",
+		"selector": "old-timey-mono",
 		"style": "Regular"
 	},
 	{
-		"name": "ReproTypewr-Light",
-		"selector": "reprotypewr-light",
+		"name": "OldTimeyMono-Light",
+		"selector": "old-timey-mono-light",
 		"style": "Light"
 	},
 	{
-		"name": "ReproTypewr-Thin",
-		"selector": "reprotypewr-thin",
+		"name": "OldTimeyMono-Thin",
+		"selector": "old-timey-mono-thin",
 		"style": "Thin"
 	},
 	{
-		"name": "ReproTypewr-Cond",
-		"selector": "reprotypewr-cond",
+		"name": "OldTimeyMono-Cond",
+		"selector": "old-timey-mono-cond",
 		"style": "Condensed"
 	},
 	{
-		"name": "ReproTypewr-LightCond",
-		"selector": "reprotypewr-lightcond",
+		"name": "OldTimeyMono-LightCond",
+		"selector": "old-timey-mono-lightcond",
 		"style": "Light Condensed"
 	},
 	{
-		"name": "ReproTypewr-ThinCond",
-		"selector": "reprotypewr-thincond",
+		"name": "OldTimeyMono-ThinCond",
+		"selector": "old-timey-mono-thincond",
 		"style": "Thin Condensed"
 	},
 	{
-		"name": "ReproTypewr-Comp",
-		"selector": "reprotypewr-comp",
+		"name": "OldTimeyMono-Comp",
+		"selector": "old-timey-mono-comp",
 		"style": "Compressed"
 	},
 	{
-		"name": "ReproTypewr-LightComp",
-		"selector": "reprotypewr-lightcomp",
+		"name": "OldTimeyMono-LightComp",
+		"selector": "old-timey-mono-lightcomp",
 		"style": "Light Compressed"
 	},
 	{
-		"name": "ReproTypewr-ThinComp",
-		"selector": "reprotypewr-thincomp",
+		"name": "OldTimeyMono-ThinComp",
+		"selector": "old-timey-mono-thincomp",
 		"style": "Thin Compressed"
 	},
 	{
-		"name": "ReproTypewrCode",
-		"selector": "reprotypewrcode",
+		"name": "OldTimeyCode",
+		"selector": "old-timey-code",
 		"style": "Code"
 	},
 	{
-		"name": "ReproTypewrCode-Light",
-		"selector": "reprotypewrcode-light",
+		"name": "OldTimeyCode-Light",
+		"selector": "old-timey-code-light",
 		"style": "Code Light"
 	},
 	{
-		"name": "ReproTypewrCode-Thin",
-		"selector": "reprotypewrcode-thin",
+		"name": "OldTimeyCode-Thin",
+		"selector": "old-timey-code-thin",
 		"style": "Code Thin"
 	},
 	{
-		"name": "ReproTypewrCode-Cond",
-		"selector": "reprotypewrcode-cond",
+		"name": "OldTimeyCode-Cond",
+		"selector": "old-timey-code-cond",
 		"style": "Code Condensed"
 	},
 	{
-		"name": "ReproTypewrCode-LightCond",
-		"selector": "reprotypewrcode-lightcond",
+		"name": "OldTimeyCode-LightCond",
+		"selector": "old-timey-code-lightcond",
 		"style": "Code Light Condensed"
 	},
 	{
-		"name": "ReproTypewrCode-ThinCond",
-		"selector": "reprotypewrcode-thincond",
+		"name": "OldTimeyCode-ThinCond",
+		"selector": "old-timey-code-thincond",
 		"style": "Code Thin Condensed"
 	},
 	{
-		"name": "ReproTypewrCode-Comp",
-		"selector": "reprotypewrcode-comp",
+		"name": "OldTimeyCode-Comp",
+		"selector": "old-timey-code-comp",
 		"style": "Code Compressed"
 	},
 	{
-		"name": "ReproTypewrCode-LightComp",
-		"selector": "reprotypewrcode-lightcomp",
+		"name": "OldTimeyCode-LightComp",
+		"selector": "old-timey-code-lightcomp",
 		"style": "Code Light Compressed"
 	},
 	{
-		"name": "ReproTypewrCode-ThinComp",
-		"selector": "reprotypewrcode-thincomp",
+		"name": "OldTimeyCode-ThinComp",
+		"selector": "old-timey-code-thincomp",
 		"style": "Code Thin Compressed"
 	}
 ]

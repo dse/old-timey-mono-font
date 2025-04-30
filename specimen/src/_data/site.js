@@ -1,5 +1,5 @@
 module.exports = {
-	title: "Reproducing Typewriter", // Edit this with the name of your type specimen
+	title: "Old Timey Mono", // Edit this with the name of your type specimen
 
 	// This determines the reading direction of the text blocks and glyph table.
 	// Options:
@@ -12,7 +12,7 @@ module.exports = {
 	description:
 		"A typewriter typeface from the early 20th century designed for better visibility.", // The description of your type specimen.
 
-	typeface: "Reproducing Typewriter", // The name of the typeface you are building
+	typeface: "Old Timey Mono", // The name of the typeface you are building
 	link: "https://www.example.com/", // This is the URL used for the button
 	about:
 		"A typewriter typeface from the early 20th century designed for better visibility.",

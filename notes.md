@@ -125,7 +125,7 @@ bulbs removed, with the goal that `zero.sm`, `one.sm`, etc. are
 generated from them instead of the regular letters.
 
 `<glyphname>.orig` are intended to duplicate symbols from the original
-Reproducing Typewriter font.
+Old Timey Mono font.
 
 ## Glyph Files
 
