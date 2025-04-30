@@ -10,12 +10,12 @@ module.exports = {
 	direction: "ltr",
 
 	description:
-		"A typewriter typeface from the early 20th century designed for better visibility.", // The description of your type specimen.
+		"A monospace based on Reproducing Typewriter. Code variant available.", // The description of your type specimen.
 
 	typeface: "Old Timey Mono", // The name of the typeface you are building
 	link: "https://www.example.com/", // This is the URL used for the button
 	about:
-		"A typewriter typeface from the early 20th century designed for better visibility.",
+		"A monospace based on Reproducing Typewriter. Code variant available.",
 	designers: "Darren Embry", // And who designed it
 	coverage: "Latin, Greek, & Cyrillic", // This populates the link that anchors to the list of languages.
 	language:
@@ -25,7 +25,7 @@ module.exports = {
 	metatags: [
 		{
 			property: "og:title",
-			content: ""
+			content: "Old Timey Mono"
 		},
 		{
 			property: "og:description",

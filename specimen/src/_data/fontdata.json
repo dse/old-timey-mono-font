@@ -1,92 +1,92 @@
 [
 	{
 		"name": "OldTimeyMono",
-		"selector": "old-timey-mono",
-		"style": "Regular"
-	},
-	{
-		"name": "OldTimeyMono-Light",
-		"selector": "old-timey-mono-light",
-		"style": "Light"
+		"selector": "oldtimeymono",
+		"style": "OldTimeyMono"
 	},
 	{
 		"name": "OldTimeyMono-Thin",
-		"selector": "old-timey-mono-thin",
-		"style": "Thin"
+		"selector": "oldtimeymono-thin",
+		"style": "OldTimeyMono-Thin"
 	},
 	{
-		"name": "OldTimeyMono-Cond",
-		"selector": "old-timey-mono-cond",
-		"style": "Condensed"
-	},
-	{
-		"name": "OldTimeyMono-LightCond",
-		"selector": "old-timey-mono-lightcond",
-		"style": "Light Condensed"
-	},
-	{
-		"name": "OldTimeyMono-ThinCond",
-		"selector": "old-timey-mono-thincond",
-		"style": "Thin Condensed"
+		"name": "OldTimeyMono-Light",
+		"selector": "oldtimeymono-light",
+		"style": "OldTimeyMono-Light"
 	},
 	{
 		"name": "OldTimeyMono-Comp",
-		"selector": "old-timey-mono-comp",
-		"style": "Compressed"
-	},
-	{
-		"name": "OldTimeyMono-LightComp",
-		"selector": "old-timey-mono-lightcomp",
-		"style": "Light Compressed"
+		"selector": "oldtimeymono-comp",
+		"style": "OldTimeyMono-Comp"
 	},
 	{
 		"name": "OldTimeyMono-ThinComp",
-		"selector": "old-timey-mono-thincomp",
-		"style": "Thin Compressed"
+		"selector": "oldtimeymono-thincomp",
+		"style": "OldTimeyMono-ThinComp"
+	},
+	{
+		"name": "OldTimeyMono-LightComp",
+		"selector": "oldtimeymono-lightcomp",
+		"style": "OldTimeyMono-LightComp"
+	},
+	{
+		"name": "OldTimeyMono-Cond",
+		"selector": "oldtimeymono-cond",
+		"style": "OldTimeyMono-Cond"
+	},
+	{
+		"name": "OldTimeyMono-ThinCond",
+		"selector": "oldtimeymono-thincond",
+		"style": "OldTimeyMono-ThinCond"
+	},
+	{
+		"name": "OldTimeyMono-LightCond",
+		"selector": "oldtimeymono-lightcond",
+		"style": "OldTimeyMono-LightCond"
 	},
 	{
 		"name": "OldTimeyCode",
-		"selector": "old-timey-code",
-		"style": "Code"
-	},
-	{
-		"name": "OldTimeyCode-Light",
-		"selector": "old-timey-code-light",
-		"style": "Code Light"
+		"selector": "oldtimeycode",
+		"style": "OldTimeyCode"
 	},
 	{
 		"name": "OldTimeyCode-Thin",
-		"selector": "old-timey-code-thin",
-		"style": "Code Thin"
+		"selector": "oldtimeycode-thin",
+		"style": "OldTimeyCode-Thin"
 	},
 	{
-		"name": "OldTimeyCode-Cond",
-		"selector": "old-timey-code-cond",
-		"style": "Code Condensed"
-	},
-	{
-		"name": "OldTimeyCode-LightCond",
-		"selector": "old-timey-code-lightcond",
-		"style": "Code Light Condensed"
-	},
-	{
-		"name": "OldTimeyCode-ThinCond",
-		"selector": "old-timey-code-thincond",
-		"style": "Code Thin Condensed"
+		"name": "OldTimeyCode-Light",
+		"selector": "oldtimeycode-light",
+		"style": "OldTimeyCode-Light"
 	},
 	{
 		"name": "OldTimeyCode-Comp",
-		"selector": "old-timey-code-comp",
-		"style": "Code Compressed"
-	},
-	{
-		"name": "OldTimeyCode-LightComp",
-		"selector": "old-timey-code-lightcomp",
-		"style": "Code Light Compressed"
+		"selector": "oldtimeycode-comp",
+		"style": "OldTimeyCode-Comp"
 	},
 	{
 		"name": "OldTimeyCode-ThinComp",
-		"selector": "old-timey-code-thincomp",
-		"style": "Code Thin Compressed"
+		"selector": "oldtimeycode-thincomp",
+		"style": "OldTimeyCode-ThinComp"
+	},
+	{
+		"name": "OldTimeyCode-LightComp",
+		"selector": "oldtimeycode-lightcomp",
+		"style": "OldTimeyCode-LightComp"
+	},
+	{
+		"name": "OldTimeyCode-Cond",
+		"selector": "oldtimeycode-cond",
+		"style": "OldTimeyCode-Cond"
+	},
+	{
+		"name": "OldTimeyCode-ThinCond",
+		"selector": "oldtimeycode-thincond",
+		"style": "OldTimeyCode-ThinCond"
+	},
+	{
+		"name": "OldTimeyCode-LightCond",
+		"selector": "oldtimeycode-lightcond",
+		"style": "OldTimeyCode-LightCond"
 	}
 ]
