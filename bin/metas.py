@@ -38,18 +38,18 @@ def main():
         elif match := re.match(r'RT\d+', basename):
             font_family_name = match.group(0)
         else:
-            font_family_name = "Repro Typewr"
+            font_family_name = "Old Timey Mono"
         if is_code:
-            font_family_name += " Code"
+            font_family_name = "Old Timey Code"
 
         if args.ps_family_name is not None:
             ps_family_name = args.ps_family_name
         elif match := re.match(r'RT\d+', basename):
             ps_family_name = match.group(0)
         else:
-            ps_family_name = "ReproTypewr"
+            ps_family_name = "OldTimeyMono"
         if is_code:
-            ps_family_name += "Code"
+            ps_family_name += "OldTimeyCode"
 
         weight = WEIGHT_NORMAL
         panose_2 = 5
