@@ -1,8 +1,18 @@
 # Old Timey Mono
 
-A clean monospace typeface based on Reproducing Typewriter, a
-monospace typeface from as early as 1906.  Reproducing Typewriter was
-designed for simulating typewritten letters in smaller point sizes for
+## DOWNLOAD
+
+https://webonastick.com/fonts/old-timey-mono/dist/OldTimeyMono-0.9.0.zip
+
+## SPECIMEN
+
+https://webonastick.com/fonts/old-timey-mono/
+
+## About
+
+A clean monospace typeface based on Reproducing Typewriter, a typeface
+from as early as 1906.  Reproducing Typewriter was designed for
+simulating typewritten letters in smaller point sizes for
 advertisements, catalogs, etc., where readability and/or distortion
 resulting from duplication were issues with faces based on actual
 typewriters at the time.
