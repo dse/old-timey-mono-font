@@ -227,6 +227,11 @@ boxdraw: FORCE
 
 $(ZIP_FILE): $(FONTS) Makefile
 	( cd dist && zip -r OldTimeyMono.zip ttf )
+	cd dist && \
+		bsdtar -c -f "OldTimeyMono-$(VERSION).zip" \
+		--format zip \
+		-s '/^ttf/OldTimeyMono-$(VERSION)/' \
+		ttf
 
 stage1: src/build/$(PS_FONT_FAMILY).stage1.sfd
 
