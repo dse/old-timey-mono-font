@@ -45,10 +45,6 @@ larger, and a few certain small letters modified.
 Text -> Font Smoothing -> Partial.  I wish I didn't have to tell you
 to do this.
 
-## Download All The Fonts
-
-[OldTimeyMono.zip](https://webonastick.com/fonts/old-timey-mono/dist/OldTimeyMono-0.9.0.zip)
-
 ## Character Set Coverage
 
 Extensive coverage of Latin, Cyrillic, and Greek scripts.  Language
