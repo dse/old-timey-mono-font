@@ -1,4 +1,7 @@
 .DS_Store
-_site/
+_site/fonts
+_site/index.html
+_site/main.*.js
+_site/styles.*.css
 node_modules/
 src/_includes/.webpack
