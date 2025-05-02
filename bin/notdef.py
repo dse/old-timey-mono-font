@@ -19,15 +19,22 @@ def main():
         notdef = font.createChar(-1, ".notdef")
         notdef.foreground = replChar.foreground
         notdef.background = replChar.background
+        notdef.dhints = replChar.dhints
+        notdef.hhints = replChar.hhints
+        notdef.vhints = replChar.vhints
     else:
         notdef = font.createChar(-1, ".notdef")
         notdef.foreground = fontforge.layer()
         notdef.background = fontforge.layer()
+        notdef.dhints = ()
+        notdef.hhints = ()
+        notdef.vhints = ()
     
     if args.filename.endswith('.sfd'):
         font.save(args.filename)
     else:
         font.generate(args.filename)
+    font.close()
     
 main()
 

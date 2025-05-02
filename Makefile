@@ -5,10 +5,10 @@ FONT_SRC := src/OldTimeyMono.sfd
 SFNT_REVISION := 000.900
 VERSION       := 0.9.0
 
-FONT_FAMILY := Old Timey Mono
-PS_FONT_FAMILY := OldTimeyMono
-CODE_FONT_FAMILY := Old Timey Code
-PS_CODE_FONT_FAMILY := OldTimeyCode
+FONT_FAMILY		= Old Timey Mono
+PS_FONT_FAMILY		= OldTimeyMono
+CODE_FONT_FAMILY	= Old Timey Code
+PS_CODE_FONT_FAMILY	= OldTimeyCode
 
 SVG_PY_PROG			:= bin/svg.py
 STROKES_PY_PROG			:= bin/strokes.py
@@ -23,7 +23,8 @@ NOTREADY_PY_PROG		:= bin/notready.py
 SETSUBSTITUTIONS_PY_PROG	:= bin/setsubstitutions.py
 FONTAUTOHINT_PY_PROG		:= bin/fontautohint.py
 
-METAS_PY_ARGS := --ffn='$(FONT_FAMILY)' --psfn='$(PS_FONT_FAMILY)'
+METAS_PY_ARGS      := --ffn='$(FONT_FAMILY)' --psfn='$(PS_FONT_FAMILY)'
+METAS_PY_CODE_ARGS := --ffn='$(CODE_FONT_FAMILY)' --psfn='$(PS_CODE_FONT_FAMILY)'
 
 OPT_VERBOSE :=
 
@@ -31,6 +32,7 @@ SVG_PY			:= $(SVG_PY_PROG)
 STROKES_PY		:= $(STROKES_PY_PROG)
 ASPECT_PY		:= $(ASPECT_PY_PROG)
 METAS_PY		:= $(METAS_PY_PROG) $(METAS_PY_ARGS)
+METAS_PY_CODE		:= $(METAS_PY_PROG) $(METAS_PY_CODE_ARGS)
 NOTDEF_PY		:= $(NOTDEF_PY_PROG)
 SMOL_PY			:= $(SMOL_PY_PROG)
 BOUNDS_PY		:= $(BOUNDS_PY_PROG)
@@ -134,11 +136,12 @@ testfonts: FORCE
 	$(eval BUILD_NR := $(shell bin/buildnr.py))
 	$(eval DISTDIR_NAME := $(PS_FONT_FAMILY)$(BUILD_NR))
 	mkdir -p $(TESTFONTS_DIR)
-	make fonts FONT_FAMILY="$(FONT_FAMILY) $(BUILD_NR)" \
-	           PS_FONT_FAMILY="$(PS_FONT_FAMILY)$(BUILD_NR)" \
-	           CODE_FONT_FAMILY="$(CODE_FONT_FAMILY) $(BUILD_NR)" \
-	           PS_CODE_FONT_FAMILY="$(PS_CODE_FONT_FAMILY)$(BUILD_NR)" \
-	           DISTDIR="$(TESTFONTS_DIR)/$(DISTDIR_NAME).tmp"
+	make fonts \
+		FONT_FAMILY="$(FONT_FAMILY) $(BUILD_NR)" \
+		PS_FONT_FAMILY="$(PS_FONT_FAMILY)$(BUILD_NR)" \
+		CODE_FONT_FAMILY="$(CODE_FONT_FAMILY) $(BUILD_NR)" \
+		PS_CODE_FONT_FAMILY="$(PS_CODE_FONT_FAMILY)$(BUILD_NR)" \
+		DISTDIR="$(TESTFONTS_DIR)/$(DISTDIR_NAME).tmp"
 	mv "$(TESTFONTS_DIR)/$(DISTDIR_NAME).tmp" "$(TESTFONTS_DIR)/$(DISTDIR_NAME)"
 	ln -n -f -s "$(DISTDIR_NAME)/ttf" $(TESTFONTS_DIR)/latest
 
@@ -266,6 +269,7 @@ $(DISTDIR)/ttf/%.ttf: src/build/%.stage1.sfd Makefile $(STROKES_PY_PROG) $(METAS
 	mkdir -p "$(DISTDIR)/ttf"
 	$(STROKES_PY) -x 96 "$<" -o "$@"
 	bin/fontfix "$@"
+	$(FONTAUTOHINT_PY) "$@"
 	$(METAS_PY) "$@"
 	$(UNDERLINE_PY) -102 96 "$@"
 $(DISTDIR)/ttf/%-Light.ttf: src/build/%.stage1.sfd Makefile $(STROKES_PY_PROG) $(METAS_PY_PROG) $(UNDERLINE_PY_PROG)
@@ -273,6 +277,7 @@ $(DISTDIR)/ttf/%-Light.ttf: src/build/%.stage1.sfd Makefile $(STROKES_PY_PROG) $
 	mkdir -p "$(DISTDIR)/ttf"
 	$(STROKES_PY) -x 72 "$<" -o "$@"
 	bin/fontfix "$@"
+	$(FONTAUTOHINT_PY) "$@"
 	$(METAS_PY) "$@"
 	$(UNDERLINE_PY) -102 72 "$@"
 $(DISTDIR)/ttf/%-Thin.ttf: src/build/%.stage1.sfd Makefile $(STROKES_PY_PROG) $(METAS_PY_PROG) $(UNDERLINE_PY_PROG)
@@ -280,6 +285,7 @@ $(DISTDIR)/ttf/%-Thin.ttf: src/build/%.stage1.sfd Makefile $(STROKES_PY_PROG) $(
 	mkdir -p "$(DISTDIR)/ttf"
 	$(STROKES_PY) -x 48 "$<" -o "$@"
 	bin/fontfix "$@"
+	$(FONTAUTOHINT_PY) "$@"
 	$(METAS_PY) "$@"
 	$(UNDERLINE_PY) -102 48 "$@"
 
@@ -290,7 +296,7 @@ $(DISTDIR)/ttf/$(PS_CODE_FONT_FAMILY)%ttf: $(DISTDIR)/ttf/$(PS_FONT_FAMILY)%ttf 
 	@echo "stage 4 code variant"
 	pyftfeatfreeze -f ss01 "$<" "$@"
 	bin/fontfix "$@"
-	$(METAS_PY) "$@"
+	$(METAS_PY_CODE) "$@"
 
 clean: FORCE
 	/bin/rm $(FONTS) || true

@@ -39,8 +39,8 @@ def main():
             font_family_name = match.group(0)
         else:
             font_family_name = "Old Timey Mono"
-        if is_code:
-            font_family_name = "Old Timey Code"
+            if is_code:
+                font_family_name = "Old Timey Code"
 
         if args.ps_family_name is not None:
             ps_family_name = args.ps_family_name
@@ -48,8 +48,8 @@ def main():
             ps_family_name = match.group(0)
         else:
             ps_family_name = "OldTimeyMono"
-        if is_code:
-            ps_family_name = "OldTimeyCode"
+            if is_code:
+                ps_family_name = "OldTimeyCode"
 
         weight = WEIGHT_NORMAL
         panose_2 = 5
