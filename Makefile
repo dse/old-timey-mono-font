@@ -21,6 +21,7 @@ SUPERSUB_PY_PROG		:= bin/supersub.py
 UNDERLINE_PY_PROG		:= bin/underline.py
 NOTREADY_PY_PROG		:= bin/notready.py
 SETSUBSTITUTIONS_PY_PROG	:= bin/setsubstitutions.py
+FONTAUTOHINT_PY_PROG		:= bin/fontautohint.py
 
 METAS_PY_ARGS := --ffn='$(FONT_FAMILY)' --psfn='$(PS_FONT_FAMILY)'
 
@@ -37,6 +38,7 @@ SUPERSUB_PY		:= $(SUPERSUB_PY_PROG)
 UNDERLINE_PY		:= $(UNDERLINE_PY_PROG)
 NOTREADY_PY		:= $(NOTREADY_PY_PROG)
 SETSUBSTITUTIONS_PY	:= $(SETSUBSTITUTIONS_PY_PROG)
+FONTAUTOHINT_PY		:= $(FONTAUTOHINT_PY_PROG)
 
 SUBSTITUTIONS_JSON	:= data/substitutions.json
 
@@ -134,6 +136,8 @@ testfonts: FORCE
 	mkdir -p $(TESTFONTS_DIR)
 	make fonts FONT_FAMILY="$(FONT_FAMILY) $(BUILD_NR)" \
 	           PS_FONT_FAMILY="$(PS_FONT_FAMILY)$(BUILD_NR)" \
+	           CODE_FONT_FAMILY="$(CODE_FONT_FAMILY) $(BUILD_NR)" \
+	           PS_CODE_FONT_FAMILY="$(PS_CODE_FONT_FAMILY)$(BUILD_NR)" \
 	           DISTDIR="$(TESTFONTS_DIR)/$(DISTDIR_NAME).tmp"
 	mv "$(TESTFONTS_DIR)/$(DISTDIR_NAME).tmp" "$(TESTFONTS_DIR)/$(DISTDIR_NAME)"
 	ln -n -f -s "$(DISTDIR_NAME)/ttf" $(TESTFONTS_DIR)/latest
