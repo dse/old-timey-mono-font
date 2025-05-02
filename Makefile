@@ -250,50 +250,44 @@ src/build/$(PS_FONT_FAMILY).stage1.sfd: $(FONT_SRC) $(SRC_SVGS) Makefile $(SVG_P
 	$(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) $(FONT_SRC)
 	$(NOTREADY_PY) "$@"
 
-# Stage 2: does nothing
-src/build/$(PS_FONT_FAMILY).stage2.sfd: src/build/$(PS_FONT_FAMILY).stage1.sfd Makefile
-	@echo "stage 2"
-	mkdir -p src/build
-	cp "$<" "$@"
-
-# Stage 3: make condensed and compressed outlines
-src/build/$(PS_FONT_FAMILY)Cond.stage2.sfd: src/build/$(PS_FONT_FAMILY).stage2.sfd Makefile $(ASPECT_PY_PROG)
-	@echo "stage 3"
+# Stage 2: make condensed and compressed outlines
+src/build/$(PS_FONT_FAMILY)Cond.stage1.sfd: src/build/$(PS_FONT_FAMILY).stage1.sfd Makefile $(ASPECT_PY_PROG)
+	@echo "stage 2 condensed"
 	mkdir -p src/build
 	$(ASPECT_PY) --aspect 0.833333333333 "$<" -o "$@"
-src/build/$(PS_FONT_FAMILY)Comp.stage2.sfd: src/build/$(PS_FONT_FAMILY).stage2.sfd Makefile $(ASPECT_PY_PROG)
-	@echo "stage 3"
+src/build/$(PS_FONT_FAMILY)Comp.stage1.sfd: src/build/$(PS_FONT_FAMILY).stage1.sfd Makefile $(ASPECT_PY_PROG)
+	@echo "stage 2 compressed"
 	mkdir -p src/build
 	$(ASPECT_PY) --aspect 0.606060606060 "$<" -o "$@"
 
-# Stage 4: make weights
-$(DISTDIR)/ttf/%.ttf: src/build/%.stage2.sfd Makefile $(STROKES_PY_PROG) $(METAS_PY_PROG) $(UNDERLINE_PY_PROG)
-	@echo "stage 4"
+# Stage 3: make weights
+$(DISTDIR)/ttf/%.ttf: src/build/%.stage1.sfd Makefile $(STROKES_PY_PROG) $(METAS_PY_PROG) $(UNDERLINE_PY_PROG)
+	@echo "stage 3 normal (weight)"
 	mkdir -p "$(DISTDIR)/ttf"
 	$(STROKES_PY) -x 96 "$<" -o "$@"
 	bin/fontfix "$@"
 	$(METAS_PY) "$@"
 	$(UNDERLINE_PY) -102 96 "$@"
-$(DISTDIR)/ttf/%-Light.ttf: src/build/%.stage2.sfd Makefile $(STROKES_PY_PROG) $(METAS_PY_PROG) $(UNDERLINE_PY_PROG)
-	@echo "stage 4"
+$(DISTDIR)/ttf/%-Light.ttf: src/build/%.stage1.sfd Makefile $(STROKES_PY_PROG) $(METAS_PY_PROG) $(UNDERLINE_PY_PROG)
+	@echo "stage 3 light"
 	mkdir -p "$(DISTDIR)/ttf"
 	$(STROKES_PY) -x 72 "$<" -o "$@"
 	bin/fontfix "$@"
 	$(METAS_PY) "$@"
 	$(UNDERLINE_PY) -102 72 "$@"
-$(DISTDIR)/ttf/%-Thin.ttf: src/build/%.stage2.sfd Makefile $(STROKES_PY_PROG) $(METAS_PY_PROG) $(UNDERLINE_PY_PROG)
-	@echo "stage 4"
+$(DISTDIR)/ttf/%-Thin.ttf: src/build/%.stage1.sfd Makefile $(STROKES_PY_PROG) $(METAS_PY_PROG) $(UNDERLINE_PY_PROG)
+	@echo "stage 3 thin"
 	mkdir -p "$(DISTDIR)/ttf"
 	$(STROKES_PY) -x 48 "$<" -o "$@"
 	bin/fontfix "$@"
 	$(METAS_PY) "$@"
 	$(UNDERLINE_PY) -102 48 "$@"
 
-# Stage 5: make code variants
+# Stage 4: make code variants
 # NOTE: can't use %.ttf because '%' cannot match less than one character.
 #                                   vvvv
 $(DISTDIR)/ttf/$(PS_CODE_FONT_FAMILY)%ttf: $(DISTDIR)/ttf/$(PS_FONT_FAMILY)%ttf Makefile $(METAS_PY_PROG) bin/fontfix
-	@echo "stage 5"
+	@echo "stage 4 code variant"
 	pyftfeatfreeze -f ss01 "$<" "$@"
 	bin/fontfix "$@"
 	$(METAS_PY) "$@"
