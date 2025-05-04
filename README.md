@@ -2,7 +2,7 @@
 
 ## DOWNLOAD
 
-https://webonastick.com/fonts/old-timey-mono/dist/OldTimeyMono-0.9.1.zip
+It will be under [Releases](https://github.com/dse/old-timey-mono-font/releases).
 
 ## SPECIMEN
 
