@@ -240,7 +240,6 @@ boxdraw: FORCE
 	fontboxdraw -f $(FONT_SRC)
 
 $(ZIP_FILE): $(FONTS) Makefile
-	( cd dist && zip -r OldTimeyMono.zip ttf )
 	cd dist && \
 		bsdtar -c -f "OldTimeyMono-$(VERSION).zip" \
 		--format zip \
