@@ -19,6 +19,8 @@
     ".":  { "fill": true, "name": "FULL STOP" },
     "'":  { "fill": true, "name": "APOSTROPHE" },
     "!":  { "fill": true, "name": "EXCLAMATION MARK"},
+    "\u00a8": { "fill": true, "name": "DIAERESIS" },
+    "\u00ba": { "fill": true, "name": "MIDDLE DOT" },
     "\u0308": { "fill": true, "name": "COMBINING DIAERESIS" },
     "\u0307": { "fill": true, "name": "COMBINING DOT ABOVE" },
     "\u0358": { "fill": true, "name": "COMBINING DOT ABOVE RIGHT" },

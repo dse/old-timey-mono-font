@@ -153,6 +153,7 @@ update: FORCE
 	$(SUPERSUB_PY) $(FONT_SRC)
 	$(STROKES_PY) --expand-stroke 96 $(FONT_SRC)
 	$(NOTDEF_PY) $(FONT_SRC)
+	$(FONTAUTOHINT_PY) $(FONT_SRC)
 	$(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) $(FONT_SRC)
 	make fix-strokes-log
 
@@ -163,6 +164,7 @@ update-test: FORCE
 	$(SUPERSUB_PY) $(FONT_SRC)
 	$(STROKES_PY) --expand-stroke 96 --allow-json-data $(FONT_SRC)
 	$(NOTDEF_PY) $(FONT_SRC)
+	$(FONTAUTOHINT_PY) $(FONT_SRC)
 	$(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) $(FONT_SRC)
 	make fix-strokes-log
 
@@ -175,6 +177,7 @@ update-168: FORCE
 	$(SUPERSUB_PY) $(FONT_SRC)
 	$(STROKES_PY) --expand-stroke 168 $(FONT_SRC)
 	$(NOTDEF_PY) $(FONT_SRC)
+	$(FONTAUTOHINT_PY) $(FONT_SRC)
 	$(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) $(FONT_SRC)
 	make fix-strokes-log
 update-24: FORCE
@@ -184,6 +187,7 @@ update-24: FORCE
 	$(SUPERSUB_PY) $(FONT_SRC)
 	$(STROKES_PY) --expand-stroke 24 $(FONT_SRC)
 	$(NOTDEF_PY) $(FONT_SRC)
+	$(FONTAUTOHINT_PY) $(FONT_SRC)
 	$(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) $(FONT_SRC)
 	make fix-strokes-log
 update-48: FORCE
@@ -193,6 +197,7 @@ update-48: FORCE
 	$(SUPERSUB_PY) $(FONT_SRC)
 	$(STROKES_PY) --expand-stroke 48 $(FONT_SRC)
 	$(NOTDEF_PY) $(FONT_SRC)
+	$(FONTAUTOHINT_PY) $(FONT_SRC)
 	$(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) $(FONT_SRC)
 	make fix-strokes-log
 update-72: FORCE
@@ -202,6 +207,7 @@ update-72: FORCE
 	$(SUPERSUB_PY) $(FONT_SRC)
 	$(STROKES_PY) --expand-stroke 72 $(FONT_SRC)
 	$(NOTDEF_PY) $(FONT_SRC)
+	$(FONTAUTOHINT_PY) $(FONT_SRC)
 	$(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) $(FONT_SRC)
 	make fix-strokes-log
 update-128: FORCE
@@ -211,11 +217,12 @@ update-128: FORCE
 	$(SUPERSUB_PY) $(FONT_SRC)
 	$(STROKES_PY) --expand-stroke 128 $(FONT_SRC)
 	$(NOTDEF_PY) $(FONT_SRC)
+	$(FONTAUTOHINT_PY) $(FONT_SRC)
 	$(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) $(FONT_SRC)
 	make fix-strokes-log
 
 fix-strokes-log:
-	if [[ -e strokes.log ]] ; then sort -n strokes.log | sponge strokes.log ; else true ; fi
+	if test -e strokes.log ; then sort -n strokes.log | sponge strokes.log ; else true ; fi
 
 fonttool: FORCE
 	@echo "use 'make update', dingus." >&2
