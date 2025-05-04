@@ -13,7 +13,7 @@ module.exports = {
 		"A monospace based on Reproducing Typewriter. Code variant available.", // The description of your type specimen.
 
 	typeface: "Old Timey Mono", // The name of the typeface you are building
-	link: "https://github.com/dse/old-timey-mono", // This is the URL used for the button
+	link: "https://github.com/dse/old-timey-mono-font", // This is the URL used for the button
 	about:
 		"A monospace based on Reproducing Typewriter. Code variant available.",
 	designers: "Darren Embry", // And who designed it
