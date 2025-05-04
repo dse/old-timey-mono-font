@@ -239,12 +239,21 @@ braille: FORCE
 boxdraw: FORCE
 	fontboxdraw -f $(FONT_SRC)
 
-$(ZIP_FILE): $(FONTS) Makefile
+$(ZIP_FILE): $(FONTS) Makefile _zip
+
+_zip: FORCE
 	cd dist && \
 		bsdtar -c -f "OldTimeyMono-$(VERSION).zip" \
 		--format zip \
 		-s '/^ttf/OldTimeyMono-$(VERSION)/' \
 		ttf
+	cp "./dist/OldTimeyMono-$(VERSION).zip" ./specimen/_site/dist
+
+_specimen: FORCE
+	rm -fr specimen/src/fonts/*.woff2 || true
+	mkdir -p specimen/src/fonts
+	for i in dist/ttf/*.ttf ; do woff2_compress "$$i" && mv "$${i%.ttf}.woff2" specimen/src/fonts ; done
+	cd specimen && yarn build
 
 stage1: src/build/$(PS_FONT_FAMILY).stage1.sfd
 
