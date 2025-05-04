@@ -2,7 +2,7 @@
 
 ## DOWNLOAD
 
-https://webonastick.com/fonts/old-timey-mono/dist/OldTimeyMono-0.9.0.zip
+https://webonastick.com/fonts/old-timey-mono/dist/OldTimeyMono-0.9.1.zip
 
 ## SPECIMEN
 
