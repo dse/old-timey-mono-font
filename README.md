@@ -10,8 +10,8 @@ https://webonastick.com/fonts/old-timey-mono/
 
 ## About
 
-A clean monospace typeface based on Reproducing Typewriter, a typeface
-from as early as 1906.  Reproducing Typewriter was designed for
+A clean monospace typeface based on Reproducing Typewriter which was
+available as early as 1906.  Reproducing Typewriter was designed for
 simulating typewritten letters in smaller point sizes for
 advertisements, catalogs, etc., where readability and/or distortion
 resulting from duplication were issues with faces based on actual
@@ -21,8 +21,8 @@ typewriters at the time.
 available, though they were at larger sizes than ordinary pica or
 elite typefaces.
 
-I developed Old Timey Mono because I believe those characteristics
-also make it a good basis for a coding font (this one) with an antique
+I developed Old Timey Mono because I thought those characteristics
+would make it a good basis for a coding font with an antique
 aesthetic.  You may have seen Reproducing Typewriter used in the
 [Turbo Pascal 3.0][turbo] product manual.
 
@@ -34,9 +34,9 @@ for screenplay writing.
 
 ## Code Variant
 
-Along with Old Timey Mono, Old Timey Code is for coding.  It has a
-slashed zero, disambiguated digit one, selected punctuation marks made
-larger, and a few certain small letters modified.
+Along with Old Timey Mono, there is Old Timey Code.  It has a slashed
+zero, disambiguated digit one, selected punctuation marks made larger,
+and a few certain small letters modified.
 
 ![Old Timey Code](images/old-timey-code.png)
 
