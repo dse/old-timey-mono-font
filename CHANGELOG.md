@@ -11,7 +11,8 @@
 2025-05-03
 
 -   fixed: some autohints were incorrect, as they were not re-done
-    after adjustments.
+    after adjustments.  Re-doing them is now part of the `make`
+    process.
 -   fixed: U+0047 'G' did not overshoot below baseline
 -   fixed: U+00A8 DIAERESIS had holes
 
