@@ -340,4 +340,7 @@ version: FORCE
 			--ps-version "$(VERSION)" ; \
 	done
 
+publish:
+	ssh dse@webonastick.com 'cd git/dse.d/fonts.d/old-timey-mono-font && git pull && cd specimen && yarn build'
+
 .PHONY: FORCE
