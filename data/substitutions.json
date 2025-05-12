@@ -82,5 +82,20 @@
                 }
             }
         }
+    },
+    "character_variants": {
+        "cv01": "Digit One with Curly Top",
+        "cv02": "Code-Friendly Small L",
+        "cv03": "Shortened Number Sign",
+        "cv04": "Shortened Slash",
+        "cv05": "Zero with Dot",
+        "cv06": "Zero with Large Dot",
+        "cv07": "Alternate At-Sign",
+        "cv08": "Shortened Backslash",
+        "cv09": "Plain Grave Accent",
+        "cv10": "Curly Small L",
+        "cv11": "Taller Equal Sign",
+        "cv12": "Larger Left Curly Bracket",
+        "cv13": "Larger Right Curly Bracket"
     }
 }

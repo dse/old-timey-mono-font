@@ -46,6 +46,19 @@ HheadDOffset: 0
 OS2CapHeight: 1056
 OS2XHeight: 756
 OS2Vendor: 'PfEd'
+Lookup: 1 0 0 "Larger Right Curly Bracket (braceright.cv13)" { "Larger Right Curly Bracket subtable (braceright.cv13)"  } ['cv13' ('DFLT' <'dflt' > ) ]
+Lookup: 1 0 0 "Larger Left Curly Bracket (braceleft.cv12)" { "Larger Left Curly Bracket subtable (braceleft.cv12)"  } ['cv12' ('DFLT' <'dflt' > ) ]
+Lookup: 1 0 0 "Taller Equal Sign (equal.cv11)" { "Taller Equal Sign subtable (equal.cv11)"  } ['cv11' ('DFLT' <'dflt' > ) ]
+Lookup: 1 0 0 "Curly Small L (l.cv10)" { "Curly Small L subtable (l.cv10)"  } ['cv10' ('DFLT' <'dflt' > ) ]
+Lookup: 1 0 0 "Plain Grave Accent (grave.cv09)" { "Plain Grave Accent subtable (grave.cv09)"  } ['cv09' ('DFLT' <'dflt' > ) ]
+Lookup: 1 0 0 "Shortened Backslash (backslash.cv08)" { "Shortened Backslash subtable (backslash.cv08)"  } ['cv08' ('DFLT' <'dflt' > ) ]
+Lookup: 1 0 0 "Alternate At-Sign (at.cv07)" { "Alternate At-Sign subtable (at.cv07)"  } ['cv07' ('DFLT' <'dflt' > ) ]
+Lookup: 1 0 0 "Zero with Dot (zero.cv05)" { "Zero with Dot subtable (zero.cv05)"  } ['cv05' ('DFLT' <'dflt' > ) ]
+Lookup: 1 0 0 "Zero with Large Dot (zero.cv06)" { "Zero with Large Dot subtable (zero.cv06)"  } ['cv06' ('DFLT' <'dflt' > ) ]
+Lookup: 1 0 0 "Shortened Slash (slash.cv04)" { "Shortened Slash subtable (slash.cv04)"  } ['cv04' ('DFLT' <'dflt' > ) ]
+Lookup: 1 0 0 "Shortened Number Sign (numbersign.cv03)" { "Shortened Number Sign subtable (numbersign.cv03)"  } ['cv03' ('DFLT' <'dflt' > ) ]
+Lookup: 1 0 0 "Code-Friendly Small L (l.cv02)" { "Code-Friendly Small L subtable (l.cv02)"  } ['cv02' ('DFLT' <'dflt' > ) ]
+Lookup: 1 0 0 "Digit One with Curly Top (one.cv01)" { "Digit One with Curly Top subtable (one.cv01)"  } ['cv01' ('DFLT' <'dflt' > ) ]
 Lookup: 1 0 0 "Simplified Forms for Size Reduction" { "Simplified Forms for Size Reduction-1"  } ['ss07' ('DFLT' <'dflt' > ) ]
 Lookup: 1 0 0 "Code Brackets" { "Code Brackets-1"  } ['ss01' ('DFLT' <'dflt' > ) 'ss02' ('DFLT' <'dflt' > ) ]
 Lookup: 1 0 0 "Apertured Letters" { "Apertured Letters-1"  } ['ss01' ('DFLT' <'dflt' > ) 'ss04' ('DFLT' <'dflt' > ) ]
@@ -16000,6 +16013,7 @@ VStem: 96 93.045<-318.488 -288.607> 336 93.045<-318.488 -288.607> 578.955 93.045
 LayerCount: 2
 Fore
 Refer: 2 -1 S 1 0 0 1 0 0 2
+Substitution2: "Shortened Number Sign subtable (numbersign.cv03)" numbersign.cv03
 Substitution2: "Simplified Forms for Size Reduction-1" numbersign.ss07
 EndChar
 
@@ -16346,6 +16360,7 @@ HStem: 1056 20G<854.961 877.246>
 LayerCount: 2
 Fore
 Refer: 1 -1 N 1 0 0 1 0 0 2
+Substitution2: "Shortened Slash subtable (slash.cv04)" slash.cv04
 EndChar
 
 StartChar: zero
@@ -16358,6 +16373,8 @@ VStem: 136 96<280.075 775.929> 776 96<280.073 775.922>
 LayerCount: 2
 Fore
 Refer: 70 -1 N 1 0 0 1 0 0 2
+Substitution2: "Zero with Dot subtable (zero.cv05)" zero.cv05
+Substitution2: "Zero with Large Dot subtable (zero.cv06)" zero.cv06
 Substitution2: "Simplified Forms for Size Reduction-1" zero.ss07
 Substitution2: "Code Digits Zero Slash-1" zero.zero
 EndChar
@@ -16372,6 +16389,7 @@ VStem: 504 96<96 960>
 LayerCount: 2
 Fore
 Refer: 71 -1 N 1 0 0 1 0 0 2
+Substitution2: "Digit One with Curly Top subtable (one.cv01)" one.cv01
 Substitution2: "Simplified Forms for Size Reduction-1" one.ss07
 Substitution2: "Code Digits Zero Slash-1" one.cv01
 EndChar
@@ -16730,6 +16748,7 @@ HStem: 220 96<137.513 870.487> 440 96<137.513 870.487>
 LayerCount: 2
 Fore
 Refer: 1554 -1 N 1 0 0 1 0 0 2
+Substitution2: "Taller Equal Sign subtable (equal.cv11)" equal.cv11
 Substitution2: "Code Symbols-1" equal.cv11
 EndChar
 
@@ -16803,6 +16822,7 @@ VStem: 63.0718 96<168.551 594.283> 262.656 96<203.459 514.105> 759.988 92.6332<-
 LayerCount: 2
 Fore
 Refer: 706 -1 N 1 0 0 1 0 0 2
+Substitution2: "Alternate At-Sign subtable (at.cv07)" at.cv07
 EndChar
 
 StartChar: A
@@ -17867,6 +17887,7 @@ SplineSet
  906.020146418 -248.794795298 l 2
  909.830225667 -255.674105052 912 -263.585663092 912 -272 c 0
 EndSplineSet
+Substitution2: "Shortened Backslash subtable (backslash.cv08)" backslash.cv08
 Comment: "{}"
 EndChar
 
@@ -17952,6 +17973,7 @@ SplineSet
  732.009765625 617.007450282 729.523322551 625.438743396 725.199947852 632.644367895 c 1
  729.523322551 625.438743396 732.009765625 617.007450282 732.009765625 608 c 1
 EndSplineSet
+Substitution2: "Plain Grave Accent subtable (grave.cv09)" grave.cv09
 Substitution2: "Code Symbols-1" grave.cv09
 Comment: "{}"
 EndChar
@@ -18262,6 +18284,8 @@ VStem: 469.657 96<96 960>
 LayerCount: 2
 Fore
 Refer: 1332 -1 N 1 0 0 1 0 0 2
+Substitution2: "Curly Small L subtable (l.cv10)" l.cv10
+Substitution2: "Code-Friendly Small L subtable (l.cv02)" l.cv02
 EndChar
 
 StartChar: m
@@ -18797,6 +18821,7 @@ VStem: 456 96<-160.333 230.828 525.172 916.335>
 LayerCount: 2
 Fore
 Refer: 2220 -1 N 1 0 0 1 0 0 2
+Substitution2: "Larger Left Curly Bracket subtable (braceleft.cv12)" braceleft.cv12
 Substitution2: "Code Brackets-1" braceleft.ss02
 Comment: "{}"
 EndChar
@@ -18831,6 +18856,7 @@ VStem: 456 96<-160.335 230.828 525.172 916.333>
 LayerCount: 2
 Fore
 Refer: 2221 -1 N 1 0 0 1 0 0 2
+Substitution2: "Larger Right Curly Bracket subtable (braceright.cv13)" braceright.cv13
 Substitution2: "Code Brackets-1" braceright.ss02
 Comment: "{}"
 EndChar

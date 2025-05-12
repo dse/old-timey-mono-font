@@ -1,6 +1,6 @@
 #!/usr/bin/env -S fontforge -quiet
 # -*- mode: python; coding: utf-8 -*-
-import fontforge, argparse, os, sys, json
+import fontforge, argparse, os, sys, json, re
 sys.path.append(os.getenv("HOME") + "/git/dse.d/fontforge-utilities/lib")
 import silence
 def main():
@@ -33,6 +33,28 @@ def main():
                     if glyph_name in font and other_glyph_name in font:
                         glyph = font[glyph_name]
                         glyph.addPosSub(subtable_name, other_glyph_name)
+
+        variant_glyphs = [glyph for glyph in list(font.glyphs()) if re.search(r'\.cv[0-9][0-9]$', glyph.glyphname)]
+        for variant_glyph in variant_glyphs:
+            normal_glyphname = variant_glyph.glyphname.split('.')[0]
+            if not normal_glyphname in font:
+                continue
+            if fontforge.unicodeFromName(normal_glyphname) < 0:
+                continue
+            normal_glyph = font[normal_glyphname]
+            feature_tag = variant_glyph.glyphname[-4:]
+            if feature_tag in font.gsub_lookups:
+                continue
+            if "character_variants" in json_data and feature_tag in json_data["character_variants"]:
+                lookup_name = "%s (%s)" % (json_data["character_variants"][feature_tag], variant_glyph.glyphname)
+                subtable_name = "%s subtable (%s)" % (json_data["character_variants"][feature_tag], variant_glyph.glyphname)
+            else:
+                lookup_name = variant_glyph.glyphname
+                subtable_name = "%s subtable" % (variant_glyph.glyphname,)
+            feature_script_lang_tuple = ((feature_tag, (('DFLT', ('dflt',)),)),)
+            font.addLookup(lookup_name, "gsub_single", (), feature_script_lang_tuple)
+            font.addLookupSubtable(lookup_name, subtable_name)
+            normal_glyph.addPosSub(subtable_name, variant_glyph.glyphname)
         if filename.endswith(".sfd"):
             font.save(filename)
         else:
