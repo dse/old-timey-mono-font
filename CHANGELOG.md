@@ -14,3 +14,7 @@
     after adjustments.
 -   fixed: U+0047 'G' did not overshoot below baseline
 -   fixed: U+00A8 DIAERESIS had holes
+
+## UPCOMING FOR 0.9.2
+
+-   added `cv01`–`cv13` lookups so `cv01`–`cv13` can be used
