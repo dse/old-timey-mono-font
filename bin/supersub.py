@@ -17,7 +17,8 @@ def main():
     parser.add_argument('filename')
     args = parser.parse_args()
 
-    print("supersub.py %s: Opening and reading..." % args.filename)
+    if "DEBUG" in os.environ:
+        print("supersub.py %s: Opening and reading..." % args.filename)
     font = fontforge.open(args.filename)
     supersubscript(font, 0x00b2, 2, xlate_superscript)
     supersubscript(font, 0x00b3, 3, xlate_superscript)
@@ -101,10 +102,12 @@ def main():
     fraction(font, 0x215f, 1, '')
     fraction(font, 0x2189, 0, 3)
     if args.filename.endswith(".sfd"):
-        print("supersub.py %s: Saving..." % args.filename)
+        if "DEBUG" in os.environ:
+            print("supersub.py %s: Saving..." % args.filename)
         font.save(args.filename)
     else:
-        print("supersub.py %s: Generating..." % args.filename)
+        if "DEBUG" in os.environ:
+            print("supersub.py %s: Generating..." % args.filename)
         font.generate(args.filename)
     font.close()
 
@@ -113,7 +116,8 @@ def digit_xlate(idx, length):
 
 def supersubscript(font, codepoint, num, xlate):
     font_path = os.path.relpath(font.path)
-    print("supersubscript %s: creating U+%04X" % (font_path, codepoint))
+    if "DEBUG" in os.environ:
+        print("supersubscript %s: creating U+%04X" % (font_path, codepoint))
     glyph = font.createChar(codepoint)
     glyph.width = 1008
     glyph.foreground = fontforge.layer()
@@ -122,17 +126,20 @@ def supersubscript(font, codepoint, num, xlate):
         num = str(num)
     for idx in range(0, len(num)):
         char = num[idx]
-        print("supersubscript %s: char[%d] = '%s'" % (font_path, idx, char))
+        if "DEBUG" in os.environ:
+            print("supersubscript %s: char[%d] = '%s'" % (font_path, idx, char))
         glyphname = fontforge.nameFromUnicode(ord(char)) + '.smol'
-        print("supersubscript %s: inserting %s" % (font_path, glyphname))
+        if "DEBUG" in os.environ:
+            print("supersubscript %s: inserting %s" % (font_path, glyphname))
         if len(num) > 1:
             xlate = psMat.compose(xlate, digit_xlate(idx, len(num)))
         references.append((glyphname, xlate))
     glyph.references = tuple(references)
     (xmin, ymin, xmax, ymax) = glyph.boundingBox()
-    print("supersubscript %s: %s %s: %f, %f, %f, %f" %
-          (font_path, glyph.glyphname, unicodedata.name(chr(codepoint)),
-           xmin, ymin, xmax, ymax))
+    if "DEBUG" in os.environ:
+        print("supersubscript %s: %s %s: %f, %f, %f, %f" %
+              (font_path, glyph.glyphname, unicodedata.name(chr(codepoint)),
+               xmin, ymin, xmax, ymax))
 
 def fraction(font, codepoint, numer, denom):
     font_path = os.path.relpath(font.path)
@@ -161,8 +168,9 @@ def fraction(font, codepoint, numer, denom):
             xlate = psMat.compose(xlate, digit_xlate(idx, len(denom)))
         glyphname = fontforge.nameFromUnicode(ord(char)) + '.smol'
         references.append((glyphname, xlate))
-    print("supersub.py %s: U+%04X" % (font_path, codepoint))
-    print(repr(references))
+    if "DEBUG" in os.environ:
+        print("supersub.py %s: U+%04X" % (font_path, codepoint))
+        print(repr(references))
     glyph.references = tuple(references)
 
 main()

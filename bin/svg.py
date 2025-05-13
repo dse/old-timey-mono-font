@@ -30,19 +30,23 @@ def main():
     parser.add_argument('--verbose', '-v', action='count', default=0)
     args = parser.parse_args()
 
-    print("svg.py %s: Opening and reading..." % args.font_filename)
+    if "DEBUG" in os.environ:
+        print("svg.py %s: Opening and reading..." % args.font_filename)
     font = fontforge.open(args.font_filename)
     write_font_filename = args.save_as if args.save_as is not None else args.font_filename
 
-    print("svg.py %s: Importing glyphs...")
+    if "DEBUG" in os.environ:
+        print("svg.py %s: Importing glyphs...")
     for svg_filename in args.svg_filenames:
         import_svg_glyph(font, svg_filename, args.width)
 
     if write_font_filename.endswith('.sfd'):
-        print("svg.py %s: Saving... %s" % (args.font_filename, write_font_filename))
+        if "DEBUG" in os.environ:
+            print("svg.py %s: Saving... %s" % (args.font_filename, write_font_filename))
         font.save(write_font_filename)
     else:
-        print("svg.py %s: Generating... %s" % (args.font_filename, write_font_filename))
+        if "DEBUG" in os.environ:
+            print("svg.py %s: Generating... %s" % (args.font_filename, write_font_filename))
         font.generate(write_font_filename)
     font.close()
 

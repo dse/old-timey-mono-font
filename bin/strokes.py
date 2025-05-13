@@ -97,7 +97,11 @@ def main():
                 expand_params["cap"] = line_cap
             if fill_flag:
                 expand_params["removeinternal"] = True
+            if not "DEBUG" in os.environ:
+                silence.on()
             glyph.stroke("circular", args.expand_stroke, **expand_params)
+            if not "DEBUG" in os.environ:
+                silence.off()
             if orig_width != 0:
                 glyph.width = orig_width
             else:

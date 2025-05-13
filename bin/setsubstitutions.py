@@ -9,7 +9,8 @@ def main():
     parser.add_argument('json_filename')
     parser.add_argument('filenames', nargs='+')
     args = parser.parse_args()
-    print("loading substitution data from %s" % args.json_filename)
+    if "DEBUG" in os.environ:
+        print("loading substitution data from %s" % args.json_filename)
     json_data = json.loads(open(args.json_filename).read())
     for filename in args.filenames:
         silence.on()
@@ -19,7 +20,8 @@ def main():
             (lookup_type, _, _) = font.getLookupInfo(lookup_name)
             if lookup_type != "gsub_single":
                 continue
-            print("removing gsub_single lookup named %s" % lookup_name)
+            if "DEBUG" in os.environ:
+                print("removing gsub_single lookup named %s" % lookup_name)
             font.removeLookup(lookup_name)
         substitution_data = json_data["substitutions"]
         for lookup_name, lookup_data in substitution_data.items():

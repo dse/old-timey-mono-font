@@ -15,7 +15,8 @@ def main():
     parser.add_argument('--verbose', '-v', action='count', default=0)
     args = parser.parse_args()
 
-    print("fontfix %s: Opening and reading..." % args.font_filename)
+    if "DEBUG" in os.environ:
+        print("fontfix %s: Opening and reading..." % args.font_filename)
     font = fontforge.open(args.font_filename)
     write_font_filename = args.save_as if args.save_as is not None else args.font_filename
 
@@ -23,17 +24,21 @@ def main():
     common_glyph_width = statistics.mode([glyph.width for glyph in font.glyphs()])
     for glyph in font.glyphs():
         if glyph.glyphname == "nonmarkingreturn":
-            print("fontfix %s: resetting %s glyph width to 0" % (args.font_filename, glyph.glyphname))
+            if "DEBUG" in os.environ:
+                print("fontfix %s: resetting %s glyph width to 0" % (args.font_filename, glyph.glyphname))
             glyph.width = common_glyph_width
         elif glyph.width != common_glyph_width and glyph.width != 0:
-            print("fontfix %s: %s width is not %d; it's %d" % (args.font_filename, glyph.glyphname, common_glyph_width, glyph.width))
+            if "DEBUG" in os.environ:
+                print("fontfix %s: %s width is not %d; it's %d" % (args.font_filename, glyph.glyphname, common_glyph_width, glyph.width))
             glyph.width = common_glyph_width
 
     if write_font_filename.endswith('.sfd'):
-        print("fontfix %s: Saving %s..." % (args.font_filename, write_font_filename))
+        if "DEBUG" in os.environ:
+            print("fontfix %s: Saving %s..." % (args.font_filename, write_font_filename))
         font.save(write_font_filename)
     else:
-        print("fontfix %s: Generating %s..." % (args.font_filename, write_font_filename))
+        if "DEBUG" in os.environ:
+            print("fontfix %s: Generating %s..." % (args.font_filename, write_font_filename))
         font.generate(write_font_filename)
 
 main()
