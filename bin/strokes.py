@@ -54,7 +54,8 @@ def main():
     fh = open('strokes.log', 'w', encoding='utf-8') if args.log else None
 
     if args.expand_stroke is None:
-        print("strokes.py %s: --expand-stroke not specified; not expanding strokes" % args.font_filename)
+        if "DEBUG" in os.environ:
+            print("strokes.py %s: --expand-stroke not specified; not expanding strokes" % args.font_filename)
     else:
         for glyph in font.glyphs():
             time_start = time.time()
@@ -64,16 +65,20 @@ def main():
             fill_flag = glyph_data.get("fill", False)
             expand_flag = glyph_data.get("expandStrokes", True)
             if not expand_flag:
-                print("strokes.py %s: %s %s is flagged 'expandStrokes: false'; not expanding strokes" % (args.font_filename, glyph.glyphname, u(real_codepoint)))
+                if "DEBUG" in os.environ:
+                    print("strokes.py %s: %s %s is flagged 'expandStrokes: false'; not expanding strokes" % (args.font_filename, glyph.glyphname, u(real_codepoint)))
                 continue
             if len(glyph.foreground) == 0 and len(glyph.references) == 0:
-                print("strokes.py %s: %s %s is blank; not expanding strokes" % (args.font_filename, glyph.glyphname, u(real_codepoint)))
+                if "DEBUG" in os.environ:
+                    print("strokes.py %s: %s %s is blank; not expanding strokes" % (args.font_filename, glyph.glyphname, u(real_codepoint)))
                 continue
             if len(glyph.references):
-                print("strokes.py %s: %s %s has references; not expanding any strokes" % (args.font_filename, glyph.glyphname, u(real_codepoint)))
+                if "DEBUG" in os.environ:
+                    print("strokes.py %s: %s %s has references; not expanding any strokes" % (args.font_filename, glyph.glyphname, u(real_codepoint)))
                 continue
             orig_width = glyph.width
-            print("strokes.py %s: %s %s: expanding strokes" % (args.font_filename, glyph.glyphname, u(real_codepoint)))
+            if "DEBUG" in os.environ:
+                print("strokes.py %s: %s %s: expanding strokes" % (args.font_filename, glyph.glyphname, u(real_codepoint)))
             expand_params = {}
             line_join = glyph_data.get("linejoin")
             line_cap = glyph_data.get("linecap")
@@ -114,10 +119,12 @@ def main():
             # #>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
     if write_font_filename.endswith('.sfd'):
-        print("strokes.py %s: Saving %s..." % (args.font_filename, write_font_filename))
+        if "DEBUG" in os.environ:
+            print("strokes.py %s: Saving %s..." % (args.font_filename, write_font_filename))
         font.save(write_font_filename)
     else:
-        print("strokes.py %s: Generating %s..." % (args.font_filename, write_font_filename))
+        if "DEBUG" in os.environ:
+            print("strokes.py %s: Generating %s..." % (args.font_filename, write_font_filename))
         font.generate(write_font_filename)
 
     if fh is not None:
