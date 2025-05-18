@@ -16,6 +16,12 @@
 -   fixed: U+0047 'G' did not overshoot below baseline
 -   fixed: U+00A8 DIAERESIS had holes
 
-## UPCOMING FOR 0.9.2
+## 0.9.2
 
--   added `cv01`–`cv13` lookups so `cv01`–`cv13` can be used
+2025-05-18
+
+-   Minor fix to U+0077 LATIN SMALL LETTER W.
+-   Add substitution lookups for the character variants (cv01 et al.),
+    required to use them at all.
+-   Specimen fixes.
+-   Build process fixes.
