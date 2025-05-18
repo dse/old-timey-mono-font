@@ -2,8 +2,8 @@ MAKEFILE := Makefile
 FONT_SRC := src/OldTimeyMono.sfd
 
 #                XXX.YZZ, typically
-SFNT_REVISION := 000.901
-VERSION       := 0.9.1
+SFNT_REVISION := 000.902
+VERSION       := 0.9.2
 
 FONT_FAMILY		= Old Timey Mono
 PS_FONT_FAMILY		= OldTimeyMono
@@ -22,6 +22,7 @@ UNDERLINE_PY_PROG		:= bin/underline.py
 NOTREADY_PY_PROG		:= bin/notready.py
 SETSUBSTITUTIONS_PY_PROG	:= bin/setsubstitutions.py
 FONTAUTOHINT_PY_PROG		:= bin/fontautohint.py
+FONTUNHINT_PY_PROG		:= bin/fontunhint.py
 
 METAS_PY_ARGS      := --ffn='$(FONT_FAMILY)' --psfn='$(PS_FONT_FAMILY)'
 METAS_PY_CODE_ARGS := --ffn='$(CODE_FONT_FAMILY)' --psfn='$(PS_CODE_FONT_FAMILY)'
@@ -41,6 +42,7 @@ UNDERLINE_PY		:= $(UNDERLINE_PY_PROG)
 NOTREADY_PY		:= $(NOTREADY_PY_PROG)
 SETSUBSTITUTIONS_PY	:= $(SETSUBSTITUTIONS_PY_PROG)
 FONTAUTOHINT_PY		:= $(FONTAUTOHINT_PY_PROG)
+FONTUNHINT_PY		:= $(FONTUNHINT_PY_PROG)
 
 SUBSTITUTIONS_JSON	:= data/substitutions.json
 
@@ -114,7 +116,7 @@ FONTTOOL__THIN		:= --expand-stroke 48
 FONTTOOL__COND		:= --aspect 0.833333 # 12cpi
 FONTTOOL__COMP		:= --aspect 0.606060 # 16.5cpi
 
-default: $(FONTS) website
+default: $(FONTS)
 fonts: $(FONTS)
 original: $(ORIGINAL_FONTS)
 coding: $(CODING_FONTS)
@@ -248,6 +250,8 @@ _zip: FORCE
 		-s '/^ttf/OldTimeyMono-$(VERSION)/' \
 		ttf
 
+specimen: $(FONTS) Makefile _specimen
+
 _specimen: FORCE
 	rm -fr specimen/src/fonts/*.woff2 || true
 	mkdir -p specimen/src/fonts
@@ -317,7 +321,8 @@ $(DISTDIR)/ttf/$(PS_CODE_FONT_FAMILY)%ttf: $(DISTDIR)/ttf/$(PS_FONT_FAMILY)%ttf 
 	$(METAS_PY_CODE) "$@"
 
 clean: FORCE
-	/bin/rm $(FONTS) || true
+	/bin/rm $(FONTS) $(ZIP_FILE) || true
+	/bin/rm specimen/src/fonts/*.woff2 || true
 	find . -type f \( \
 		-name '*.tmp' -o \
 		-name '*.tmp.*' -o \
@@ -327,18 +332,10 @@ clean: FORCE
 	\) -exec rm {} + || true
 	/bin/rm -fr src/build || true
 
-copy-fonts: FORCE
-	rsync -av dist/ttf website/fonts/
-
 version: FORCE
 	bin/version.py src/OldTimeyMono.sfd \
 		--sfnt-revision "$(SFNT_REVISION)" \
 		--ps-version "$(VERSION)"
-	for i in $(FONTS) ; do \
-		bin/version.py "$${i}" \
-			--sfnt-revision "$(SFNT_REVISION)" \
-			--ps-version "$(VERSION)" ; \
-	done
 
 publish:
 	ssh dse@webonastick.com 'cd git/dse.d/fonts.d/old-timey-mono-font && git pull && cd specimen && yarn build'
