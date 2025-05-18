@@ -250,6 +250,9 @@ _zip: FORCE
 		-s '/^ttf/OldTimeyMono-$(VERSION)/' \
 		ttf
 
+unversionedzip: FORCE
+	cp "dist/OldTimeyMono-$(VERSION).zip" "dist/OldTimeyMono.zip"
+
 specimen: $(FONTS) Makefile _specimen
 
 _specimen: FORCE
