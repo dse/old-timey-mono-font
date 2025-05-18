@@ -5,14 +5,14 @@ FamilyName: Old Timey Mono
 Weight: Medium
 Copyright: Copyright (c) 2025, Darren Embry
 UComments: "2025-04-30: Created with FontForge (http://fontforge.org)"
-Version: 0.9.0
+Version: 0.9.2
 ItalicAngle: 0
 UnderlinePosition: -300
 UnderlineWidth: 96
 Ascent: 1344
 Descent: 336
 InvalidEm: 0
-sfntRevision: 0x0000e666
+sfntRevision: 0x0000e6e9
 LayerCount: 2
 Layer: 0 0 "Back" 1
 Layer: 1 0 "Fore" 0
