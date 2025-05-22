@@ -25,14 +25,14 @@
    inkscape:deskcolor="#d1d1d1"
    inkscape:document-units="px"
    showgrid="false"
-   inkscape:zoom="5.12"
-   inkscape:cx="235.05859"
-   inkscape:cy="631.44531"
-   inkscape:window-width="1668"
-   inkscape:window-height="971"
-   inkscape:window-x="0"
-   inkscape:window-y="0"
-   inkscape:window-maximized="1"
+   inkscape:zoom="0.1875"
+   inkscape:cx="186.66667"
+   inkscape:cy="629.33333"
+   inkscape:window-width="948"
+   inkscape:window-height="999"
+   inkscape:window-x="3184"
+   inkscape:window-y="386"
+   inkscape:window-maximized="0"
    inkscape:current-layer="layer1"
    showguides="true"
    inkscape:lockguides="true">
@@ -179,24 +179,19 @@
    inkscape:groupmode="layer"
    id="layer1"
    style="display:inline">
-    <path
-   style="fill:none;stroke:#030303;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
-   d="M 12.779157,81 21.547115,39.75"
-   id="path691"
-   sodipodi:nodetypes="cc"
-   inkscape:transform-center-x="14.336863" />
+    
     
     
     <path
    style="fill:none;stroke:#030303;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
-   d="M 42.83156,76.546527 48.449515,50.116116 C 49.861626,43.472657 46.888069,38.5 39.803112,38.5 33.430665,38.5 28.097498,42.21967 19.155855,51"
+   d="m 42.389495,78.626265 6.06002,-28.510149 C 49.861626,43.472657 46.888069,38.5 39.803112,38.5 33.430665,38.5 28.097498,42.21967 19.155855,51"
    id="path922"
    sodipodi:nodetypes="ccsc"
    inkscape:transform-center-x="-2.473765"
    inkscape:transform-center-y="-0.625" />
   <path
    style="fill:none;stroke:#030303;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
-   d="M 12.779157,81 21.547115,39.75"
+   d="M 12.779157,81 21.0426,42.123557"
    id="path14461"
    sodipodi:nodetypes="cc"
    inkscape:transform-center-x="14.336863" /><path
@@ -225,9 +220,6 @@
    sodipodi:end="3.3510322"
    sodipodi:arc-type="slice"
    d="M 45.947672,82.184443 A 3,3 0 0 1 43.202616,81.37132 3,3 0 0 1 42.389494,78.626265 L 45.323936,79.25 Z" /><path
-   style="fill:none;stroke:#000000;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:markers fill stroke"
-   d="M 48.449512,50.116113 41.619246,82.249999"
-   id="path3175" /><path
    style="display:inline;fill:none;stroke:#000000;stroke-width:0.250001;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:markers fill stroke"
    d="m 9.8393598,40.190557 7.6450252,-1.625"
    id="path3179" /></g>

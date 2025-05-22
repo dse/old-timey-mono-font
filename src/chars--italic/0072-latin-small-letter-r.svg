@@ -26,12 +26,12 @@
    inkscape:document-units="px"
    showgrid="false"
    inkscape:zoom="0.32"
-   inkscape:cx="-414.0625"
-   inkscape:cy="1248.4375"
-   inkscape:window-width="1440"
-   inkscape:window-height="900"
-   inkscape:window-x="2602"
-   inkscape:window-y="430"
+   inkscape:cx="465.625"
+   inkscape:cy="737.5"
+   inkscape:window-width="948"
+   inkscape:window-height="1017"
+   inkscape:window-x="2224"
+   inkscape:window-y="386"
    inkscape:window-maximized="0"
    inkscape:current-layer="layer1"
    showguides="true"
@@ -106,11 +106,7 @@
    orientation="0,-1"
    id="guide1"
    inkscape:locked="false" />
-    <sodipodi:guide
-   position="0,54"
-   orientation="0,-1"
-   id="guide2"
-   inkscape:locked="false" />
+    
     <sodipodi:guide
    position="31.5,105"
    orientation="1,0"
@@ -182,7 +178,7 @@
     
     <path
    style="display:inline;opacity:1;fill:none;stroke:#030303;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
-   d="M 25.270223,39.749844 16.503054,80.999519"
+   d="M 24.765679,42.123735 16.503054,80.999519"
    id="path1343"
    inkscape:transform-center-x="10.613362"
    inkscape:transform-center-y="-0.0007035"
@@ -213,16 +209,15 @@
    style="display:inline;fill:none;stroke:#000000;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:markers fill stroke"
    id="path7417"
    sodipodi:type="arc"
-   sodipodi:cx="24.257961"
-   sodipodi:cy="39.534843"
-   sodipodi:rx="1.0348427"
-   sodipodi:ry="1.0348427"
+   sodipodi:cx="21.831236"
+   sodipodi:cy="41.5"
+   sodipodi:rx="3"
+   sodipodi:ry="3"
    sodipodi:start="4.5029495"
    sodipodi:end="0.20943951"
-   sodipodi:open="true"
-   sodipodi:arc-type="arc"
-   d="m 24.042805,38.522615 a 1.0348427,1.0348427 0 0 1 0.946901,0.280484 1.0348427,1.0348427 0 0 1 0.280484,0.9469" /><path
-   style="display:inline;fill:none;stroke:#000000;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:markers fill stroke"
-   d="m 14.739943,40.500004 9.302862,-1.977385"
-   id="path7419" /></g>
+   sodipodi:arc-type="slice"
+   d="m 21.207501,38.565557 a 3,3 0 0 1 2.745055,0.813123 3,3 0 0 1 0.813123,2.745055 L 21.831236,41.5 Z" /><path
+   style="display:inline;fill:none;stroke:#000000;stroke-width:0.250001;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:markers fill stroke"
+   d="m 13.562475,40.190559 7.645026,-1.625"
+   id="path3179" /></g>
 </svg>

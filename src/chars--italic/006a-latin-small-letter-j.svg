@@ -26,12 +26,12 @@
    inkscape:document-units="px"
    showgrid="false"
    inkscape:zoom="0.32"
-   inkscape:cx="126.5625"
-   inkscape:cy="695.3125"
-   inkscape:window-width="1440"
-   inkscape:window-height="900"
-   inkscape:window-x="2414"
-   inkscape:window-y="393"
+   inkscape:cx="315.625"
+   inkscape:cy="659.375"
+   inkscape:window-width="948"
+   inkscape:window-height="993"
+   inkscape:window-x="2224"
+   inkscape:window-y="386"
    inkscape:window-maximized="0"
    inkscape:current-layer="layer1"
    showguides="true"
@@ -215,7 +215,7 @@
     
     <path
    style="display:inline;fill:none;stroke:#000000;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
-   d="M 45.011804,39.75 35.761297,83.270216 C 33.619437,93.346875 26.83106,101 17.870137,101 10.716034,101 7.1173482,97.025084 8.4142316,90.923727"
+   d="M 44.50725,42.123735 35.761297,83.270216 C 33.619437,93.346875 26.83106,101 17.870137,101 10.716034,101 7.1173482,97.025084 8.4142316,90.923727"
    id="path274"
    sodipodi:nodetypes="ccsc"
    inkscape:transform-center-x="4.9174171"
@@ -224,16 +224,15 @@
    style="display:inline;fill:none;stroke:#000000;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:markers fill stroke"
    id="path7417"
    sodipodi:type="arc"
-   sodipodi:cx="43.999577"
-   sodipodi:cy="39.534843"
-   sodipodi:rx="1.0348427"
-   sodipodi:ry="1.0348427"
+   sodipodi:cx="41.572807"
+   sodipodi:cy="41.5"
+   sodipodi:rx="3"
+   sodipodi:ry="3"
    sodipodi:start="4.5029495"
    sodipodi:end="0.20943951"
-   sodipodi:open="true"
-   sodipodi:arc-type="arc"
-   d="m 43.784421,38.522615 a 1.0348427,1.0348427 0 0 1 0.9469,0.280484 1.0348427,1.0348427 0 0 1 0.280485,0.9469" /><path
-   style="display:inline;fill:none;stroke:#000000;stroke-width:0.250001;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:markers fill stroke"
-   d="M 29.242843,41.613525 43.784417,38.522617"
-   id="path7419" /></g>
+   sodipodi:arc-type="slice"
+   d="m 40.949072,38.565557 a 3,3 0 0 1 2.745056,0.813123 3,3 0 0 1 0.813122,2.745055 L 41.572807,41.5 Z" /><path
+   style="display:inline;fill:none;stroke:#000000;stroke-width:0.250002;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:markers fill stroke"
+   d="m 29.367448,41.027306 11.581623,-2.46175"
+   id="path3179" /></g>
 </svg>
