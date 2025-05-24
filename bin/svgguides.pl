@@ -87,6 +87,8 @@ while (<>) {
     $thingy->create_guide(714, color => COLOR_EXCENTER_RED, name => 'ex-center/oper-center');
 
     $thingy->create_guide(504, orientation => 'vertical');
+    $thingy->create_guide(48,  orientation => 'vertical');
+    $thingy->create_guide(960, orientation => 'vertical');
 
     $thingy->create_guide(1680 - 132, name => 'accent-above-center');
     $thingy->create_guide(168, name => 'accent-below-center');
