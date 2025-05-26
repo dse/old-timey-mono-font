@@ -68,14 +68,14 @@ def main():
                 if "DEBUG" in os.environ:
                     print("strokes.py %s: %s %s is flagged 'expandStrokes: false'; not expanding strokes" % (args.font_filename, glyph.glyphname, u(real_codepoint)))
                 continue
-            if len(glyph.foreground) == 0 and len(glyph.references) == 0:
-                if "DEBUG" in os.environ:
-                    print("strokes.py %s: %s %s is blank; not expanding strokes" % (args.font_filename, glyph.glyphname, u(real_codepoint)))
-                continue
-            if len(glyph.references):
-                if "DEBUG" in os.environ:
-                    print("strokes.py %s: %s %s has references; not expanding any strokes" % (args.font_filename, glyph.glyphname, u(real_codepoint)))
-                continue
+            # if len(glyph.foreground) == 0 and len(glyph.references) == 0:
+            #     if "DEBUG" in os.environ:
+            #         print("strokes.py %s: %s %s is blank; not expanding strokes" % (args.font_filename, glyph.glyphname, u(real_codepoint)))
+            #     continue
+            # if len(glyph.references):
+            #     if "DEBUG" in os.environ:
+            #         print("strokes.py %s: %s %s has references; not expanding any strokes" % (args.font_filename, glyph.glyphname, u(real_codepoint)))
+            #     continue
             orig_width = glyph.width
             if "DEBUG" in os.environ:
                 print("strokes.py %s: %s %s: expanding strokes" % (args.font_filename, glyph.glyphname, u(real_codepoint)))
@@ -100,6 +100,7 @@ def main():
             if not "DEBUG" in os.environ:
                 silence.on()
             glyph.stroke("circular", args.expand_stroke, **expand_params)
+            # glyph.correctDirection()
             if not "DEBUG" in os.environ:
                 silence.off()
             if orig_width != 0:
