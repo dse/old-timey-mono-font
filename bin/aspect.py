@@ -28,7 +28,7 @@ def main():
 
     for glyph in font.glyphs():
         if mixedjsontext.fontcomment_says_generated(glyph.comment):
-            if use_aspect_method_2(glyph.unicode):
+            if should_use_aspect_method_2(glyph.unicode):
                 apply_aspect_method_2(glyph)
             else:
                 final_width = math.floor(glyph.width * args.aspect)
@@ -99,7 +99,7 @@ def apply_aspect_method_2(glyph): # box drawing characters and such
     glyph.foreground = new_foreground
     glyph.width = fw
 
-def use_aspect_method_2(codepoint):
+def should_use_aspect_method_2(codepoint):
     return (
         codepoint in range(0x2500, 0x2504) or
         codepoint in range(0x2506, 0x2508) or
