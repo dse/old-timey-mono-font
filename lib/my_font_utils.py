@@ -112,13 +112,8 @@ def import_svg_glyph(font, svg_filename, width, allow_json_data=False):
     if glyphname in font:
         glyph = font[glyphname]
         if len(glyph.references):
-            if "DEBUG" in os.environ:
-                print("import_svg_glyph %s: WARNING: glyph %s %s contains references but %s is present" % (font_path, glyphname, u(glyph.unicode), svg_filename))
-                print("import_svg_glyph %s:     not importing %s" % (font_path, svg_filename))
             return
     glyph = font.createChar(codepoint, glyphname)
-    if "DEBUG" in os.environ:
-        print("import_svg_glyph %s: importing SVG %s to %s %s" % (font_path, svg_filename, glyphname, u(glyph.unicode)))
     glyph.foreground = fontforge.layer()
     if width is None:
         orig_width = glyph.width
@@ -158,9 +153,9 @@ def create_smol_glyph(font, codepoint):
     plain_glyphname = fontforge.nameFromUnicode(codepoint)
     simpl_glyphname = fontforge.nameFromUnicode(codepoint) + ".ss07"
     orig_glyphname = fontforge.nameFromUnicode(codepoint) + ".orig"
-    forsmall_glyphname = fontforge.nameFromUnicode(codepoint) + ".ss07"
     glyphname = None
 
+    # for certain regular glyphs, use a special glyph to make smaller.
     if plain_glyphname == 'equal':
         glyphname = 'equal.cv11'
     elif plain_glyphname == 'comma':
@@ -172,23 +167,17 @@ def create_smol_glyph(font, codepoint):
     elif plain_glyphname == 'semicolon':
         glyphname = 'semicolon.ss05'
 
-    elif forsmall_glyphname in font:
-        glyphname = forsmall_glyphname
+    # for certain glyphs, if certain variants are there use them.
     elif simpl_glyphname in font:
         glyphname = simpl_glyphname
     elif orig_glyphname in font:
         glyphname = orig_glyphname
-    elif plain_glyphname in font:
+    elif plain_glyphname in font: # most of the time this is the case.
         glyphname = plain_glyphname
     else:
-        if "DEBUG" in os.environ:
-            print("create_smol_glyph %s: not creating %s.smol" % (font_path, plain_glyphname))
         return
     glyph = font[glyphname]
     orig_width = glyph.width
-
-    if "DEBUG" in os.environ:
-        print("create_smol_glyph %s: creating %s.smol from %s" % (font_path, plain_glyphname, glyph.glyphname))
 
     sm_glyphname = plain_glyphname + '.smol'
     sm_glyph = font.createChar(-1, sm_glyphname)
@@ -220,9 +209,6 @@ def check_glyph_bounds(glyph, width=None):
             unicodename = unicodedata.name(chr(glyph.unicode))
         except ValueError:
             unicodename = "(no name)"
-    if "DEBUG" in os.environ:
-        print("check_all_glyph_bounds %s: %s - %s %s - xmin = %d; xmax = %d; ymin = %d; ymax = %d" %
-              (font_path, glyph.glyphname, u(glyph.unicode), unicodename, xmin, xmax, ymin, ymax))
     height = glyph.font.ascent + glyph.font.descent
     if width is None:
         width = glyph.width
@@ -284,3 +270,25 @@ def get_glyph_char_data(glyph):
     if variant_key in char_data:
         del char_data[variant_key]
     return char_data
+
+DEBUG_GLYPHS = None
+if "DEBUG_GLYPHS" in os.environ:
+    strings = os.environ["DEBUG_GLYPHS"].split(',')
+    DEBUG_GLYPHS = []
+    for string in strings:
+        if parse_codepoint_argument(string) is not None:
+            DEBUG_GLYPHS.push(parse_codepoint_argument(string))
+        else:
+            DEBUG_GLYPHS.push(glyphname)
+
+def debug_glyph(glyph):
+    codepoint = glyph.unicode
+    if codepoint < 0:
+        codepoint = fontforge.unicodeFromName(glyph.glyphname[0].split('.')[0])
+    return debug_glyphname(glyph.glyphname) or debug_codepoint(codepoint)
+
+def debug_glyphname(glyphname):
+    return glyphname in DEBUG_GLYPHS or glyphname.split('.')[0] in DEBUG_GLYPHS
+
+def debug_codepoint(codepoint):
+    return codepoint in DEBUG_GLYPHS
