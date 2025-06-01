@@ -6,23 +6,29 @@ https://news.ycombinator.com/item?id=43884418
 
 -   Add GSUB lookups for all `cvxx`.  Call the GSUB lookups `cvxx`.
 
+    > DONE
+
 -   Combining marks work properly in some cases, not in others (e.g.,
     notepad).  Maybe everything needs anchors?  Probably a good idea
     anyway, since auto-generating accented glyphs will achieve better
     results with them.
-    
-
 
 ### These are Suggestions.
 
 -   Dotted zero variant.
 
+    > cv05 or cv06
+
 -   "Looking at the examples, they look good, though one thing stands
     out, the 'w' seems to be bolder than the other letters. The 'm'
     seems fine, as do the other letters and symbols, just the 'w'."
+    
+    > It's that way in the Turbo Pascal manual too.  Leaving as is.
 
 -   "You wouldn't consider changing license to Apache-2.0, or dual
     license under that?"
+    
+    > No.
 
 -   "allow combining breve over Latin y as well: sometimes that's handy
     for indicating contrast"
@@ -67,6 +73,8 @@ https://news.ycombinator.com/item?id=43884418
     there. Notably, uppercase ẞ didn't exist at the time the source
     typeface was designed – it was only officially adopted 111 years
     later in 2017."
+    
+    > DONE.
 
 -   "I can't tell if you're aiming for a faithful reproduction of the
     original font, or to make the coding font modern and most useful
@@ -77,57 +85,21 @@ https://news.ycombinator.com/item?id=43884418
     weird. Also for the code variant I think the pound or hash mark #
     could be reduced in drama a little, to fit in with the other
     punctuation marks. Thanks for listening to my two cents."
+    
+    > Aiming for both.
 
 ## Other
 
 -   WIP: U+0250 to U+02AF - IPA Extensions block
-
--   DONE: U+2139 INFORMATION SOURCE (Information)
--   DONE: U+21E7 UPWARDS WHITE ARROW (symbol for shift key)
--   DONE: U+21EA UPWARDS WHITE ARROW FROM BAR (caps lock)
--   DONE: U+2318 PLACE OF INTEREST SIGN (COMMAND KEY)
--   DONE: U+2325 OPTION KEY (Option)
--   DONE: U+2386 ENTER SYMBOL
--   DONE: U+2387 ALTERNATE KEY SYMBOL (Alt)
--   DONE: U+2388 HELM SYMBOL (official but rarely used symbol for control)
--   DONE: U+2389 CIRCLED HORIZONTAL BAR WITH NOTCH
--   DONE: U+238A CIRCLED TRIANGLE DOWN
--   DONE: U+238B BROKEN CIRCLE WITH NORTHWEST ARROW
--   DONE: U+23CF EJECT
--   DONE: U+23E9 (Fast Forward)
--   DONE: U+23EA (Rewind)
--   DONE: U+23ED (Skip Forward)
--   DONE: U+23EE (Skip Backward)
--   DONE: U+23EF (Play/Pause Toggle)
--   DONE: U+23F4 (Reverse)
--   DONE: U+23F5 (Play)
--   DONE: U+23F8 (Pause)
--   DONE: U+23F9 BLACK SQUARE FOR STOP
--   DONE: U+23FA BLACK CIRCLE FOR RECORD
--   DONE: U+2604 COMET
--   DONE: U+2605 BLACK STAR
--   DONE: U+2606 WHITE STAR
--   DONE: U+2610 BALLOT BOX
--   DONE: U+2611 BALLOT BOX WITH CHECK
--   DONE: U+2612 BALLOT BOX WITH X
--   DONE: U+2622 RADIOACTIVE SIGN
--   DONE: U+2623 BIOHAZARD SIGN
--   DONE: U+2620 SKULL AND CROSS BONES
--   DONE: U+2714 HEAVY CHECK
--   DONE: U+2718 HEAVY BALLOT X
--   DONE: U+269B ATOM SYMBOL
-
 -   U+262E PEACE SYMBOL
 -   U+26C4 SNOWMAN WITHOUT SNOW
-
 -   U+23FB POWER SYMBOL
 -   U+23FC POWER ON-OFF SYMBOL
 -   U+23FD POWER ON SYMBOL
 -   U+23FE POWER SLEEP SYMBOL
 -   U+2B58 HEAVY CIRCLE (Power Off)
--   ??? U+1F500 (Shuffle)
--   ??? U+1F501 (Repeat)
-
+-   U+1F500 TWISTED RIGHTWARDS ARROWS (Shuffle)
+-   U+1F501 CLOCKWISE RIGHTWARDS AND LEFTWARDS OPEN CIRCLE ARROWS (Repeat)
 -   U+26A0 WARNING SIGN
 -   U+26A1 HIGH VOLTAGE SIGN
 -   U+2756 BLACK DIAMOND MINUS WHITE X
