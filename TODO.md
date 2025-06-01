@@ -6,6 +6,13 @@ https://news.ycombinator.com/item?id=43884418
 
 -   Add GSUB lookups for all `cvxx`.  Call the GSUB lookups `cvxx`.
 
+-   Combining marks work properly in some cases, not in others (e.g.,
+    notepad).  Maybe everything needs anchors?  Probably a good idea
+    anyway, since auto-generating accented glyphs will achieve better
+    results with them.
+    
+
+
 ### These are Suggestions.
 
 -   Dotted zero variant.
@@ -27,7 +34,7 @@ https://news.ycombinator.com/item?id=43884418
     This may be due to lack of anchors.  Quite frankly they would
     solve some issues I've been experiencing with auto placement.
     
-    Also:
+    Also here's a Unicode combining mark test page:
     
     -   https://alanwood.net/unicode/combining_diacritical_marks.html
 
@@ -37,6 +44,8 @@ https://news.ycombinator.com/item?id=43884418
     with descenders (like on ζ zeta) from the line above"
     
     This is hard.
+    
+    WORK IN PROGRESS
 
 -   the circumflex over alpha (ᾶ) looks really good, because it
     follows the curve of the alpha itself, but circumflex over eta (ῆ)
@@ -46,6 +55,8 @@ https://news.ycombinator.com/item?id=43884418
     because of how far to the left it is.
     
     Another accent placement issue.
+    
+    WORKING ON
 
 -   have you considered adding a variation for the Porsonic or
     single-curve circumflex?
