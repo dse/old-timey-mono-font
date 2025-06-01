@@ -40,10 +40,29 @@ and a few certain small letters modified.
 
 ![Old Timey Code](images/old-timey-code.png)
 
-## Mintty Users
+## Issues You Might Encounter
+
+### Mintty Users
 
 Text -> Font Smoothing -> Partial.  I wish I didn't have to tell you
 to do this.
+
+### Unable to Open?
+
+This likely has something to do with your antivirus/antimalware and it
+might also have something to do with WSL.
+
+If your files are in WSL, move them outside of WSL and into a normal
+Windows partition, then try again.
+
+If you still can't open the files, it's likely your antivirus still
+doing antivirus things to protect you from this dastardly, deadly
+typeface.
+
+You can also try **installing** if **opening** doesn't work.
+
+(This typeface is actually neither deadly nor dastardly.  It's quite
+benign.)
 
 ## Character Set Coverage
 
