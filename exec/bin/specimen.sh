@@ -6,7 +6,7 @@ shopt -s lastpipe               # last component is exec'd in foreground
 # set -o xtrace
 
 BINDIR="$(realpath "$(dirname "$0")")"
-MAINDIR="$(realpath "${BINDIR}/..")"
+MAINDIR="$(realpath "${BINDIR}/../..")"
 
 echo "BINDIR=${BINDIR}"
 echo "MAINDIR=${MAINDIR}"
@@ -17,7 +17,7 @@ main () {
         basename_no_ext="${basename%.ttf}"
         woff2_file="${MAINDIR}/specimen/src/fonts/${basename_no_ext}.woff2"
         mkdir -p "$(dirname "${woff2_file}")"
-        "${MAINDIR}/bin/fontconvert" "${font_file}" "${woff2_file}"
+        "${MAINDIR}/bin/fontconvert.py" "${font_file}" "${woff2_file}"
         echo "Generated ${woff2_file}"
     done
 }

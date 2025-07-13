@@ -233,7 +233,7 @@ glyph_data = None
 def get_glyph_char_data(glyph):
     global glyph_data
     if glyph_data is None:
-        with open("data/glyphs.json") as fh:
+        with open("src/data/glyphs.json") as fh:
             glyph_data = json.loads(fh.read())
     codepoint = get_glyph_real_codepoint(glyph)
     if codepoint < 0:

@@ -1,8 +1,9 @@
 #!/usr/bin/env -S python
 import os, fcntl, struct, re
 
-BUILD_NR_FILE = os.path.dirname(__file__) + "/../.test-build-number.txt"
-LOCK_FILE     = os.path.dirname(__file__) + "/../.test-build-number.lock"
+VAR_DIR       = "../../var"
+BUILD_NR_FILE = os.path.dirname(__file__) + "/" + VAR_DIR + "/.test-build-number.txt"
+LOCK_FILE     = os.path.dirname(__file__) + "/" + VAR_DIR + "/.test-build-number.lock"
 
 def main():
     get_lock()

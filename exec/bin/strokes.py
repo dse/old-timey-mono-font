@@ -41,7 +41,7 @@ def main():
     parser.add_argument('--allow-json-data', action='store_true')
     args = parser.parse_args()
 
-    with open("data/glyphs.json") as fh:
+    with open("src/data/glyphs.json") as fh:
         glyphs_data_json_text = fh.read()
     glyphs_data = json.loads(glyphs_data_json_text)
 
@@ -51,7 +51,7 @@ def main():
     # MONOSPACE
     common_glyph_width = statistics.mode([glyph.width for glyph in font.glyphs()])
 
-    fh = open('strokes.log', 'w', encoding='utf-8') if args.log else None
+    fh = open('var/strokes.log', 'w', encoding='utf-8') if args.log else None
 
     if args.expand_stroke is None:
         if "DEBUG" in os.environ:
