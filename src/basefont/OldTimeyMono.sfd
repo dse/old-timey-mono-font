@@ -46,8 +46,8 @@ HheadDOffset: 0
 OS2CapHeight: 1056
 OS2XHeight: 756
 OS2Vendor: 'PfEd'
-Lookup: 1 0 0 "Larger Right Curly Bracket (braceright.cv13)" { "Larger Right Curly Bracket subtable (braceright.cv13)"  } ['cv13' ('DFLT' <'dflt' > ) ]
-Lookup: 1 0 0 "Larger Left Curly Bracket (braceleft.cv12)" { "Larger Left Curly Bracket subtable (braceleft.cv12)"  } ['cv12' ('DFLT' <'dflt' > ) ]
+Lookup: 1 0 0 "Larger Right Curly Bracket, Alternate (braceright.cv13)" { "Larger Right Curly Bracket, Alternate subtable (braceright.cv13)"  } ['cv13' ('DFLT' <'dflt' > ) ]
+Lookup: 1 0 0 "Larger Left Curly Bracket, Alternate (braceleft.cv12)" { "Larger Left Curly Bracket, Alternate subtable (braceleft.cv12)"  } ['cv12' ('DFLT' <'dflt' > ) ]
 Lookup: 1 0 0 "Taller Equal Sign (equal.cv11)" { "Taller Equal Sign subtable (equal.cv11)"  } ['cv11' ('DFLT' <'dflt' > ) ]
 Lookup: 1 0 0 "Curly Small L (l.cv10)" { "Curly Small L subtable (l.cv10)"  } ['cv10' ('DFLT' <'dflt' > ) ]
 Lookup: 1 0 0 "Plain Grave Accent (grave.cv09)" { "Plain Grave Accent subtable (grave.cv09)"  } ['cv09' ('DFLT' <'dflt' > ) ]
@@ -76,7 +76,6 @@ NameList: AGL For New Fonts
 DisplaySize: -48
 AntiAlias: 1
 FitToEm: 1
-WinInfo: 0 21 23
 BeginPrivate: 0
 EndPrivate
 Grid
@@ -18877,7 +18876,7 @@ VStem: 456 96<-160.333 230.828 525.172 916.335>
 LayerCount: 2
 Fore
 Refer: 2220 -1 N 1 0 0 1 0 0 2
-Substitution2: "Larger Left Curly Bracket subtable (braceleft.cv12)" braceleft.cv12
+Substitution2: "Larger Left Curly Bracket, Alternate subtable (braceleft.cv12)" braceleft.cv12
 Substitution2: "Code Brackets-1" braceleft.ss02
 Comment: "{}"
 EndChar
@@ -18912,7 +18911,7 @@ VStem: 456 96<-160.335 230.828 525.172 916.333>
 LayerCount: 2
 Fore
 Refer: 2221 -1 N 1 0 0 1 0 0 2
-Substitution2: "Larger Right Curly Bracket subtable (braceright.cv13)" braceright.cv13
+Substitution2: "Larger Right Curly Bracket, Alternate subtable (braceright.cv13)" braceright.cv13
 Substitution2: "Code Brackets-1" braceright.ss02
 Comment: "{}"
 EndChar
