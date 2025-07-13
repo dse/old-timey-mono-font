@@ -107,3 +107,17 @@ https://news.ycombinator.com/item?id=43884418
 -   U+2311 SQUARE LOZENGE
 -   U+29EB BLACK LOZENGE
 -   U+2326 ERASE TO THE RIGHT (see U+232B ERASE TO THE LEFT)
+
+## Fixed
+
+-   U+042F and U+044F CYRILLIC CAPITAL AND SMALL LETTERS YA were
+    backwards.
+
+## Maybe
+
+-   20px overshoot on VWvw41
+-   no overshoot on A
+-   too late imo but
+    -   possible cap height of 1104 instead of 1056
+    -   possible ex height of 768 instead of 756
+
