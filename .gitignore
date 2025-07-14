@@ -2,7 +2,7 @@
 *.tmp.*
 *.featfreeze.otf
 __pycache__/
-testfonts/
+tmp/testfonts/
 website/fonts/ttf/*.ttf
 var/.test-build-number.lock
 var/.test-build-number.txt

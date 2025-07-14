@@ -132,7 +132,7 @@ testfontsweb: FORCE
 	rm -fr website/fonts/ttf/*
 	make fonts DISTDIR="website/fonts"
 
-TESTFONTS_DIR := testfonts
+TESTFONTS_DIR := tmp/testfonts
 
 testfonts: FORCE
 	$(eval BUILD_NR := $(shell exec/bin/buildnr.py))
