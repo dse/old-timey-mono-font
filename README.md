@@ -30,7 +30,7 @@ At a size of 12pt (6 lines per inch), Old Timey Mono is a pica font,
 or 10 characters per inch, like Courier.  It **should** be suitable
 for screenplay writing.
 
-![Old Timey Mono](images/old-timey-mono.png)
+![Old Timey Mono](public/images/old-timey-mono.png)
 
 ## Code Variant
 
@@ -38,7 +38,7 @@ Along with Old Timey Mono, there is Old Timey Code.  It has a slashed
 zero, disambiguated digit one, selected punctuation marks made larger,
 and a few certain small letters modified.
 
-![Old Timey Code](images/old-timey-code.png)
+![Old Timey Code](public/images/old-timey-code.png)
 
 ## Issues You Might Encounter
 
