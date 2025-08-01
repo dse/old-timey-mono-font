@@ -13,6 +13,12 @@
 
 WEBSITE
 
+/gulpfile.js
+/src/pages
+/src/pages/_components          # nunjucks
+/src/pages/_layouts             # nunjucks
+/src/styles
+
 /dist/web/index.html
 /dist/web/...
 /public/images/...
