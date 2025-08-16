@@ -124,6 +124,8 @@ compressed: $(COMP_FONTS)
 condensed: $(COND_FONTS)
 zip: $(ZIP_FILE)
 
+four-test-fonts: $(FONT_TTF) $(LIGHT_FONT_TTF) $(CODING_FONT_TTF) $(FONT_COND_TTF)
+
 SRC_SVGS := $(shell find src/chars -type f -name '*.svg')
 
 .SUFFIXES: .sfd .ttf
@@ -138,7 +140,7 @@ testfonts: FORCE
 	$(eval BUILD_NR := $(shell bin/buildnr.py))
 	$(eval DISTDIR_NAME := $(PS_FONT_FAMILY)$(BUILD_NR))
 	mkdir -p $(TESTFONTS_DIR)
-	make fonts \
+	make four-test-fonts \
 		FONT_FAMILY="$(FONT_FAMILY) $(BUILD_NR)" \
 		PS_FONT_FAMILY="$(PS_FONT_FAMILY)$(BUILD_NR)" \
 		CODE_FONT_FAMILY="$(CODE_FONT_FAMILY) $(BUILD_NR)" \
