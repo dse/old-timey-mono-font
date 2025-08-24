@@ -23,6 +23,7 @@ NOTREADY_PY_PROG		:= exec/bin/notready.py
 SETSUBSTITUTIONS_PY_PROG	:= exec/bin/setsubstitutions.py
 FONTAUTOHINT_PY_PROG		:= exec/bin/fontautohint.py
 FONTUNHINT_PY_PROG		:= exec/bin/fontunhint.py
+DARN_PY_PROG                    := exec/bin/darn.py
 
 METAS_PY_ARGS      := --ffn='$(FONT_FAMILY)' --psfn='$(PS_FONT_FAMILY)'
 METAS_PY_CODE_ARGS := --ffn='$(CODE_FONT_FAMILY)' --psfn='$(PS_CODE_FONT_FAMILY)'
@@ -43,6 +44,7 @@ NOTREADY_PY		:= $(NOTREADY_PY_PROG)
 SETSUBSTITUTIONS_PY	:= $(SETSUBSTITUTIONS_PY_PROG)
 FONTAUTOHINT_PY		:= $(FONTAUTOHINT_PY_PROG)
 FONTUNHINT_PY		:= $(FONTUNHINT_PY_PROG)
+DARN_PY			:= $(DARN_PY_PROG)
 
 SUBSTITUTIONS_JSON	:= src/data/substitutions.json
 
@@ -157,6 +159,7 @@ update: FORCE
 	$(NOTDEF_PY) $(FONT_SRC)
 	$(FONTAUTOHINT_PY) $(FONT_SRC)
 	$(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) $(FONT_SRC)
+	$(DARN_PY) $(FONT_SRC)
 	make fix-strokes-log
 
 update-test: FORCE
@@ -168,6 +171,7 @@ update-test: FORCE
 	$(NOTDEF_PY) $(FONT_SRC)
 	$(FONTAUTOHINT_PY) $(FONT_SRC)
 	$(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) $(FONT_SRC)
+	$(DARN_PY) $(FONT_SRC)
 	make fix-strokes-log
 
 # update source font fron SVG files, for testing if referenced glyphs
@@ -181,6 +185,7 @@ update-168: FORCE
 	$(NOTDEF_PY) $(FONT_SRC)
 	$(FONTAUTOHINT_PY) $(FONT_SRC)
 	$(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) $(FONT_SRC)
+	$(DARN_PY) $(FONT_SRC)
 	make fix-strokes-log
 update-24: FORCE
 	$(SVG_PY) $(FONT_SRC) $(SRC_SVGS)
@@ -191,6 +196,7 @@ update-24: FORCE
 	$(NOTDEF_PY) $(FONT_SRC)
 	$(FONTAUTOHINT_PY) $(FONT_SRC)
 	$(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) $(FONT_SRC)
+	$(DARN_PY) $(FONT_SRC)
 	make fix-strokes-log
 update-48: FORCE
 	$(SVG_PY) $(FONT_SRC) $(SRC_SVGS)
@@ -201,6 +207,7 @@ update-48: FORCE
 	$(NOTDEF_PY) $(FONT_SRC)
 	$(FONTAUTOHINT_PY) $(FONT_SRC)
 	$(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) $(FONT_SRC)
+	$(DARN_PY) $(FONT_SRC)
 	make fix-strokes-log
 update-72: FORCE
 	$(SVG_PY) $(FONT_SRC) $(SRC_SVGS)
@@ -211,6 +218,7 @@ update-72: FORCE
 	$(NOTDEF_PY) $(FONT_SRC)
 	$(FONTAUTOHINT_PY) $(FONT_SRC)
 	$(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) $(FONT_SRC)
+	$(DARN_PY) $(FONT_SRC)
 	make fix-strokes-log
 update-128: FORCE
 	$(SVG_PY) $(FONT_SRC) $(SRC_SVGS)
@@ -221,6 +229,7 @@ update-128: FORCE
 	$(NOTDEF_PY) $(FONT_SRC)
 	$(FONTAUTOHINT_PY) $(FONT_SRC)
 	$(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) $(FONT_SRC)
+	$(DARN_PY) $(FONT_SRC)
 	make fix-strokes-log
 
 fix-strokes-log:
@@ -268,7 +277,7 @@ _specimen: FORCE
 stage1: tmp/_build/$(PS_FONT_FAMILY).stage1.sfd
 
 # Stage 1: import SVGs
-tmp/_build/$(PS_FONT_FAMILY).stage1.sfd: $(FONT_SRC) $(SRC_SVGS) Makefile $(SVG_PY_PROG) $(BOUNDS_PY_PROG) $(SMOL_PY_PROG) $(SUPERSUB_PY_PROG) $(NOTREADY_PY_PROG) $(SETSUBSTITUTIONS_PY_PROG) $(SUBSTITUTIONS_JSON)
+tmp/_build/$(PS_FONT_FAMILY).stage1.sfd: $(FONT_SRC) $(SRC_SVGS) Makefile $(SVG_PY_PROG) $(BOUNDS_PY_PROG) $(SMOL_PY_PROG) $(SUPERSUB_PY_PROG) $(NOTREADY_PY_PROG) $(SETSUBSTITUTIONS_PY_PROG) $(SUBSTITUTIONS_JSON) $(DARN_PY)
 	@echo "stage 1"
 	mkdir -p tmp/_build
 	$(SVG_PY) "$<" -o "$@" $(SRC_SVGS)
@@ -276,6 +285,7 @@ tmp/_build/$(PS_FONT_FAMILY).stage1.sfd: $(FONT_SRC) $(SRC_SVGS) Makefile $(SVG_
 	$(SMOL_PY) "$@"
 	$(SUPERSUB_PY) "$@"
 	$(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) $(FONT_SRC)
+	$(DARN_PY) "$@"
 	$(NOTREADY_PY) "$@"
 
 # Stage 2: make condensed and compressed outlines
