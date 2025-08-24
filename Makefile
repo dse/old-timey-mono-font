@@ -2,8 +2,8 @@ MAKEFILE := Makefile
 FONT_SRC := src/basefont/OldTimeyMono.sfd
 
 #                XXX.YZZ, typically
-SFNT_REVISION := 000.902
-VERSION       := 0.9.2
+SFNT_REVISION := 000.903
+VERSION       := 0.9.3
 
 FONT_FAMILY		= Old Timey Mono
 PS_FONT_FAMILY		= OldTimeyMono
