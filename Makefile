@@ -13,9 +13,9 @@ CODE_FONT_FAMILY		= Old Timey Code
 PS_CODE_FONT_FAMILY		= OldTimeyCode
 
 NH_FONT_FAMILY			= Old Timey Mono NH
-NH_PS_FONT_FAMILY		= OldTimeyMono NH
+NH_PS_FONT_FAMILY		= OldTimeyMonoNH
 NH_CODE_FONT_FAMILY		= Old Timey Code NH
-NH_PS_CODE_FONT_FAMILY		= OldTimeyCode NH
+NH_PS_CODE_FONT_FAMILY		= OldTimeyCodeNH
 
 SVG_PY_PROG			= $(SUPPORT_BIN)/svg.py
 STROKES_PY_PROG			= $(SUPPORT_BIN)/strokes.py
@@ -178,7 +178,16 @@ CODING_FONTS = \
 	$(LIGHT_CODING_FONT_COMP_TTF) \
 	$(CODING_FONT_COND_TTF) \
 	$(THIN_CODING_FONT_COND_TTF) \
-	$(LIGHT_CODING_FONT_COND_TTF)
+	$(LIGHT_CODING_FONT_COND_TTF) \
+	$(NH_CODING_FONT_TTF) \
+	$(NH_THIN_CODING_FONT_TTF) \
+	$(NH_LIGHT_CODING_FONT_TTF) \
+	$(NH_CODING_FONT_COMP_TTF) \
+	$(NH_THIN_CODING_FONT_COMP_TTF) \
+	$(NH_LIGHT_CODING_FONT_COMP_TTF) \
+	$(NH_CODING_FONT_COND_TTF) \
+	$(NH_THIN_CODING_FONT_COND_TTF) \
+	$(NH_LIGHT_CODING_FONT_COND_TTF)
 
 COMP_FONTS = \
 	$(FONT_COMP_TTF) \
@@ -186,7 +195,13 @@ COMP_FONTS = \
 	$(THIN_FONT_COMP_TTF) \
 	$(THIN_CODING_FONT_COMP_TTF) \
 	$(LIGHT_FONT_COMP_TTF) \
-	$(LIGHT_CODING_FONT_COMP_TTF)
+	$(LIGHT_CODING_FONT_COMP_TTF) \
+	$(NH_FONT_COMP_TTF) \
+	$(NH_CODING_FONT_COMP_TTF) \
+	$(NH_THIN_FONT_COMP_TTF) \
+	$(NH_THIN_CODING_FONT_COMP_TTF) \
+	$(NH_LIGHT_FONT_COMP_TTF) \
+	$(NH_LIGHT_CODING_FONT_COMP_TTF)
 
 COND_FONTS = \
 	$(FONT_COND_TTF) \
@@ -195,9 +210,12 @@ COND_FONTS = \
 	$(THIN_CODING_FONT_COND_TTF) \
 	$(LIGHT_FONT_COND_TTF) \
 	$(LIGHT_CODING_FONT_COND_TTF)
-
-NH_FONTS = \
-
+	$(NH_FONT_COND_TTF) \
+	$(NH_CODING_FONT_COND_TTF) \
+	$(NH_THIN_FONT_COND_TTF) \
+	$(NH_THIN_CODING_FONT_COND_TTF) \
+	$(NH_LIGHT_FONT_COND_TTF) \
+	$(NH_LIGHT_CODING_FONT_COND_TTF)
 
 FONTS = $(ORIGINAL_FONTS) $(CODING_FONTS)
 
@@ -397,6 +415,12 @@ $(DISTDIR)/ttf/%-Thin.ttf: src/build/%.stage1.sfd Makefile $(STROKES_PY_PROG) $(
 	$(METAS_PY) "$@"
 	$(UNDERLINE_PY) -102 48 "$@"
 
+$(DISTDIR)/ttf/NH-%.ttf: $(DISTDIR)/ttf/%.ttf Makefile $(FONTUNHINT_PROG)
+	@echo "stage 3.5 unhint"
+	cp "$<" "$@.tmp.ttf"
+	$(FONTUNHINT_PY) "$@.tmp.ttf"
+	mv "$@.tmp.ttf" "$@"
+
 # Stage 4: make code variants
 # NOTE: can't use %.ttf because '%' cannot match less than one character.
 #                                   vvvv
@@ -405,6 +429,12 @@ $(DISTDIR)/ttf/$(PS_CODE_FONT_FAMILY)%ttf: $(DISTDIR)/ttf/$(PS_FONT_FAMILY)%ttf 
 	pyftfeatfreeze -f ss01 "$<" "$@"
 	$(SUPPORT_BIN)/fontfix "$@"
 	$(METAS_PY_CODE) "$@"
+
+$(DISTDIR)/ttf/$(NH_PS_CODE_FONT_FAMILY)%ttf: $(DISTDIR)/ttf/$(NH_PS_FONT_FAMILY)%ttf Makefile $(METAS_PY_PROG) $(SUPPORT_BIN)/fontfix
+	@echo "stage 4 code variant"
+	pyftfeatfreeze -f ss01 "$<" "$@"
+	$(SUPPORT_BIN)/fontfix "$@"
+	$(NH_METAS_PY_CODE) "$@"
 
 clean: FORCE
 	/bin/rm $(FONTS) $(ZIP_FILE) || true
