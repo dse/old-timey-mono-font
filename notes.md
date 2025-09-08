@@ -1,5 +1,19 @@
 # More Notes
 
+-   U+0149 somehow gets reconstituted even if I disable
+    reconstituting.
+    
+    Apparently this happens when generating the TTF.  This doesn't
+    happen when saving as SFD.
+    
+-   U+2117, U+2127 broken in TTF, not in SFD.
+
+-   .notdef broken in both
+
+-   mv fontfix fontfix.py
+
+-   s.smol is thin
+
 -   in a 4800dpi scanned image:
     -   width of each character cell is 330px.
     -   height of each character cell is 660px.
