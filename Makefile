@@ -23,6 +23,11 @@ PS_FONT_FAMILY			= OldTimeyMono
 CODE_FONT_FAMILY		= Old Timey Code
 PS_CODE_FONT_FAMILY		= OldTimeyCode
 
+NH_FONT_FAMILY			= Old Timey Mono NH
+NH_PS_FONT_FAMILY		= OldTimeyMonoNH
+NH_CODE_FONT_FAMILY		= Old Timey Code NH
+NH_PS_CODE_FONT_FAMILY		= OldTimeyCodeNH
+
 # executable filenames ONLY
 SVG_PY_PROG			= $(SUPPORT_BIN)/svg.py
 STROKES_PY_PROG			= $(SUPPORT_BIN)/strokes.py
@@ -42,6 +47,9 @@ VERSION_PY_PROG			= $(SUPPORT_BIN)/version.py
 
 METAS_PY_ARGS			= --ffn='$(FONT_FAMILY)'         --psfn='$(PS_FONT_FAMILY)'
 METAS_PY_CODE_ARGS		= --ffn='$(CODE_FONT_FAMILY)'    --psfn='$(PS_CODE_FONT_FAMILY)'
+
+NH_METAS_PY_ARGS		= --ffn='$(NH_FONT_FAMILY)'         --psfn='$(NH_PS_FONT_FAMILY)'
+NH_METAS_PY_CODE_ARGS		= --ffn='$(NH_CODE_FONT_FAMILY)'    --psfn='$(NH_PS_CODE_FONT_FAMILY)'
 
 # supply arguments to executables here.
 SVG_PY				= $(SVG_PY_PROG)
@@ -82,6 +90,25 @@ THIN_CODING_FONT_COND_TTF	= $(DIST_TTF)/$(PS_CODE_FONT_FAMILY)Cond-Thin.ttf
 LIGHT_FONT_COND_TTF		= $(DIST_TTF)/$(PS_FONT_FAMILY)Cond-Light.ttf
 LIGHT_CODING_FONT_COND_TTF	= $(DIST_TTF)/$(PS_CODE_FONT_FAMILY)Cond-Light.ttf
 
+NH_FONT_TTF			= $(DIST_TTF)/$(NH_PS_FONT_FAMILY).ttf
+NH_CODING_FONT_TTF		= $(DIST_TTF)/$(NH_PS_CODE_FONT_FAMILY).ttf
+NH_THIN_FONT_TTF		= $(DIST_TTF)/$(NH_PS_FONT_FAMILY)-Thin.ttf
+NH_THIN_CODING_FONT_TTF		= $(DIST_TTF)/$(NH_PS_CODE_FONT_FAMILY)-Thin.ttf
+NH_LIGHT_FONT_TTF		= $(DIST_TTF)/$(NH_PS_FONT_FAMILY)-Light.ttf
+NH_LIGHT_CODING_FONT_TTF	= $(DIST_TTF)/$(NH_PS_CODE_FONT_FAMILY)-Light.ttf
+NH_FONT_COMP_TTF		= $(DIST_TTF)/$(NH_PS_FONT_FAMILY)Comp.ttf
+NH_CODING_FONT_COMP_TTF		= $(DIST_TTF)/$(NH_PS_CODE_FONT_FAMILY)Comp.ttf
+NH_THIN_FONT_COMP_TTF		= $(DIST_TTF)/$(NH_PS_FONT_FAMILY)Comp-Thin.ttf
+NH_THIN_CODING_FONT_COMP_TTF	= $(DIST_TTF)/$(NH_PS_CODE_FONT_FAMILY)Comp-Thin.ttf
+NH_LIGHT_FONT_COMP_TTF		= $(DIST_TTF)/$(NH_PS_FONT_FAMILY)Comp-Light.ttf
+NH_LIGHT_CODING_FONT_COMP_TTF	= $(DIST_TTF)/$(NH_PS_CODE_FONT_FAMILY)Comp-Light.ttf
+NH_FONT_COND_TTF		= $(DIST_TTF)/$(NH_PS_FONT_FAMILY)Cond.ttf
+NH_CODING_FONT_COND_TTF		= $(DIST_TTF)/$(NH_PS_CODE_FONT_FAMILY)Cond.ttf
+NH_THIN_FONT_COND_TTF		= $(DIST_TTF)/$(NH_PS_FONT_FAMILY)Cond-Thin.ttf
+NH_THIN_CODING_FONT_COND_TTF	= $(DIST_TTF)/$(NH_PS_CODE_FONT_FAMILY)Cond-Thin.ttf
+NH_LIGHT_FONT_COND_TTF		= $(DIST_TTF)/$(NH_PS_FONT_FAMILY)Cond-Light.ttf
+NH_LIGHT_CODING_FONT_COND_TTF	= $(DIST_TTF)/$(NH_PS_CODE_FONT_FAMILY)Cond-Light.ttf
+
 ZIP_FILE			= $(DIST_ZIP)/$(FILENAME_BASE).zip
 
 FONTTOOL__REGULAR		= --expand-stroke 96
@@ -96,6 +123,15 @@ SRC_SVGS			= $(shell find $(SRC_VECTOR) -type f -name '*.svg')
 TESTFONTS_DIR			= testfonts
 
 ORIGINAL_FONTS = \
+	$(NH_FONT_TTF) \
+	$(NH_THIN_FONT_TTF) \
+	$(NH_LIGHT_FONT_TTF) \
+	$(NH_FONT_COMP_TTF) \
+	$(NH_THIN_FONT_COMP_TTF) \
+	$(NH_LIGHT_FONT_COMP_TTF) \
+	$(NH_FONT_COND_TTF) \
+	$(NH_THIN_FONT_COND_TTF) \
+	$(NH_LIGHT_FONT_COND_TTF) \
 	$(FONT_TTF) \
 	$(THIN_FONT_TTF) \
 	$(LIGHT_FONT_TTF) \
@@ -104,9 +140,18 @@ ORIGINAL_FONTS = \
 	$(LIGHT_FONT_COMP_TTF) \
 	$(FONT_COND_TTF) \
 	$(THIN_FONT_COND_TTF) \
-	$(LIGHT_FONT_COND_TTF)
+	$(LIGHT_FONT_COND_TTF) \
 
 CODING_FONTS = \
+	$(NH_CODING_FONT_TTF) \
+	$(NH_THIN_CODING_FONT_TTF) \
+	$(NH_LIGHT_CODING_FONT_TTF) \
+	$(NH_CODING_FONT_COMP_TTF) \
+	$(NH_THIN_CODING_FONT_COMP_TTF) \
+	$(NH_LIGHT_CODING_FONT_COMP_TTF) \
+	$(NH_CODING_FONT_COND_TTF) \
+	$(NH_THIN_CODING_FONT_COND_TTF) \
+	$(NH_LIGHT_CODING_FONT_COND_TTF) \
 	$(CODING_FONT_TTF) \
 	$(THIN_CODING_FONT_TTF) \
 	$(LIGHT_CODING_FONT_TTF) \
@@ -118,6 +163,12 @@ CODING_FONTS = \
 	$(LIGHT_CODING_FONT_COND_TTF)
 
 COMP_FONTS = \
+	$(NH_FONT_COMP_TTF) \
+	$(NH_CODING_FONT_COMP_TTF) \
+	$(NH_THIN_FONT_COMP_TTF) \
+	$(NH_THIN_CODING_FONT_COMP_TTF) \
+	$(NH_LIGHT_FONT_COMP_TTF) \
+	$(NH_LIGHT_CODING_FONT_COMP_TTF) \
 	$(FONT_COMP_TTF) \
 	$(CODING_FONT_COMP_TTF) \
 	$(THIN_FONT_COMP_TTF) \
@@ -126,6 +177,12 @@ COMP_FONTS = \
 	$(LIGHT_CODING_FONT_COMP_TTF)
 
 COND_FONTS = \
+	$(NH_FONT_COND_TTF) \
+	$(NH_CODING_FONT_COND_TTF) \
+	$(NH_THIN_FONT_COND_TTF) \
+	$(NH_THIN_CODING_FONT_COND_TTF) \
+	$(NH_LIGHT_FONT_COND_TTF) \
+	$(NH_LIGHT_CODING_FONT_COND_TTF) \
 	$(FONT_COND_TTF) \
 	$(CODING_FONT_COND_TTF) \
 	$(THIN_FONT_COND_TTF) \
@@ -284,7 +341,7 @@ _specimen: FORCE
 
 stage1: $(SRC_BUILD)/$(PS_FONT_FAMILY).stage1.sfd
 
-# Stage 1: import SVGs
+# Stage 1: import SVGs; generate base outline
 $(SRC_BUILD)/$(PS_FONT_FAMILY).stage1.sfd: $(BASEFONT) $(SRC_SVGS) Makefile $(SVG_PY_PROG) $(BOUNDS_PY_PROG) $(SMOL_PY_PROG) $(SUPERSUB_PY_PROG) $(NOTREADY_PY_PROG) $(SETSUBSTITUTIONS_PY_PROG) $(SUBSTITUTIONS_JSON)
 	@echo "stage 1"
 	mkdir -p $(SRC_BUILD)
@@ -295,7 +352,7 @@ $(SRC_BUILD)/$(PS_FONT_FAMILY).stage1.sfd: $(BASEFONT) $(SRC_SVGS) Makefile $(SV
 	$(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) $(BASEFONT)
 	$(NOTREADY_PY) "$@"
 
-# Stage 2: make condensed and compressed outlines
+# Stage 2: make condensed and compressed outlines from base outline
 $(SRC_BUILD)/$(PS_FONT_FAMILY)Cond.stage1.sfd: $(SRC_BUILD)/$(PS_FONT_FAMILY).stage1.sfd Makefile $(ASPECT_PY_PROG)
 	@echo "stage 2 condensed"
 	mkdir -p $(SRC_BUILD)
@@ -333,7 +390,7 @@ $(DIST_TTF)/%-Thin.ttf: $(SRC_BUILD)/%.stage1.sfd Makefile $(STROKES_PY_PROG) $(
 
 # Stage 4: make code variants
 # NOTE: can't use %.ttf because '%' cannot match less than one character.
-#                                   vvvv
+#                                 vvvv
 $(DIST_TTF)/$(PS_CODE_FONT_FAMILY)%ttf: $(DIST_TTF)/$(PS_FONT_FAMILY)%ttf Makefile $(METAS_PY_PROG) $(FONTFIX_PY_PROG)
 	@echo "stage 4 code variant"
 	pyftfeatfreeze -f ss01 "$<" "$@"
