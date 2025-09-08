@@ -133,6 +133,8 @@ COND_FONTS = \
 	$(LIGHT_FONT_COND_TTF) \
 	$(LIGHT_CODING_FONT_COND_TTF)
 
+limited-test-fonts: $(FONT_TTF) $(LIGHT_FONT_TTF) $(CODING_FONT_TTF) $(FONT_COND_TTF)
+
 default: $(FONTS)
 fonts: $(FONTS)
 original: $(ORIGINAL_FONTS)
@@ -145,13 +147,13 @@ zip: $(ZIP_FILE) $(UNVERSIONED_ZIP_FILE)
 
 testfontsweb: FORCE
 	rm -fr website/fonts/ttf/*
-	make fonts DISTDIR="website/fonts"
+	make limited-test-fonts DISTDIR="website/fonts"
 
 testfonts: FORCE
 	$(eval BUILD_NR = $(shell $(BUILDNR_PY)))
 	$(eval DISTDIR_NAME = $(PS_FONT_FAMILY)$(BUILD_NR))
 	mkdir -p $(TESTFONTS_DIR)
-	make fonts \
+	make limited-test-fonts \
 		FONT_FAMILY="$(FONT_FAMILY) $(BUILD_NR)" \
 		PS_FONT_FAMILY="$(PS_FONT_FAMILY)$(BUILD_NR)" \
 		CODE_FONT_FAMILY="$(CODE_FONT_FAMILY) $(BUILD_NR)" \
