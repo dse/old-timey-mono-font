@@ -1,5 +1,6 @@
 SRC_BASEFONT			= src
 SRC_BUILD			= src/build
+SRC_DATA			= data
 SUPPORT_BIN			= bin
 DIST_TTF			= dist/ttf
 
@@ -53,7 +54,7 @@ FONTUNHINT_PY			= $(FONTUNHINT_PY_PROG)
 FONTFIX_PY			= $(FONTFIX_PY_PROG)
 VERSION_PY			= $(VERSION_PY_PROG)
 
-SUBSTITUTIONS_JSON		= data/substitutions.json
+SUBSTITUTIONS_JSON		= $(SRC_DATA)/substitutions.json
 
 DISTDIR				= dist
 
