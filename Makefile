@@ -1,11 +1,12 @@
-DISTDIR				= dist
 SRC_BASEFONT			= src
 SRC_BUILD			= src/build
 SRC_DATA			= data
+SRC_VECTOR			= src/chars
 SUPPORT_BIN			= bin
+
+DISTDIR				= dist
 DIST_TTF			= $(DISTDIR)/ttf
 DIST_ZIP			= $(DISTDIR)
-SRC_VECTOR			= src/chars
 
 MAKEFILE			= Makefile
 BASEFONT			= $(SRC_BASEFONT)/OldTimeyMono.sfd
