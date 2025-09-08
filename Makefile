@@ -9,8 +9,8 @@ DIST_ZIP			= dist/zip
 BASEFONT_SFD			= $(SRC_BASEFONT)/$(PS_FONT_FAMILY).sfd
 
 #                                 XXX.YZZ, typically
-SFNT_REVISION			= 000.902
-VERSION				= 0.9.2
+SFNT_REVISION			= 000.903
+VERSION				= 0.9.3
 VENDOR				= DARN
 
 FONT_FAMILY			= Old Timey Mono
