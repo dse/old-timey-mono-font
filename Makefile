@@ -58,6 +58,24 @@ FONTFIX_PY			= $(FONTFIX_PY_PROG)
 
 SUBSTITUTIONS_JSON		= $(SRC_DATA)/substitutions.json
 
+ZIP_FILE			= $(DIST_ZIP)/$(PS_FONT_FAMILY)-$(VERSION).zip
+ZIP_FILE_REL_TO_DIST_ZIP	= $(PS_FONT_FAMILY)-$(VERSION).zip
+UNVERSIONED_ZIP_FILE		= $(DIST_ZIP)/$(PS_FONT_FAMILY).zip
+
+FONTS				= $(ORIGINAL_FONTS) $(CODING_FONTS)
+FONTS_REL_TO_DIST_ZIP		= $(patsubst $(DIST_TTF)/%.ttf,../ttf/%.ttf,$(FONTS))
+
+FONTTOOL__REGULAR		= --expand-stroke 96
+FONTTOOL__LIGHT			= --expand-stroke 72
+FONTTOOL__THIN			= --expand-stroke 48
+
+FONTTOOL__COND			= --aspect 0.833333 # 12cpi
+FONTTOOL__COMP			= --aspect 0.606060 # 16.5cpi
+
+SRC_SVGS			= $(shell find $(SRC_VECTOR) -type f -name '*.svg')
+
+TESTFONTS_DIR			= tmp/testfonts
+
 FONT_TTF			= $(DIST_TTF)/$(PS_FONT_FAMILY).ttf
 CODING_FONT_TTF			= $(DIST_TTF)/$(PS_CODE_FONT_FAMILY).ttf
 THIN_FONT_TTF			= $(DIST_TTF)/$(PS_FONT_FAMILY)-Thin.ttf
@@ -115,20 +133,6 @@ COND_FONTS = \
 	$(LIGHT_FONT_COND_TTF) \
 	$(LIGHT_CODING_FONT_COND_TTF)
 
-ZIP_FILE			= $(DIST_ZIP)/$(PS_FONT_FAMILY)-$(VERSION).zip
-ZIP_FILE_REL_TO_DIST_ZIP	= $(PS_FONT_FAMILY)-$(VERSION).zip
-UNVERSIONED_ZIP_FILE		= $(DIST_ZIP)/$(PS_FONT_FAMILY).zip
-
-FONTS				= $(ORIGINAL_FONTS) $(CODING_FONTS)
-FONTS_REL_TO_DIST_ZIP		= $(patsubst $(DIST_TTF)/%.ttf,../ttf/%.ttf,$(FONTS))
-
-FONTTOOL__REGULAR		= --expand-stroke 96
-FONTTOOL__LIGHT			= --expand-stroke 72
-FONTTOOL__THIN			= --expand-stroke 48
-
-FONTTOOL__COND			= --aspect 0.833333 # 12cpi
-FONTTOOL__COMP			= --aspect 0.606060 # 16.5cpi
-
 default: $(FONTS)
 fonts: $(FONTS)
 original: $(ORIGINAL_FONTS)
@@ -137,15 +141,11 @@ compressed: $(COMP_FONTS)
 condensed: $(COND_FONTS)
 zip: $(ZIP_FILE) $(UNVERSIONED_ZIP_FILE)
 
-SRC_SVGS			= $(shell find $(SRC_VECTOR) -type f -name '*.svg')
-
 .SUFFIXES: .sfd .ttf
 
 testfontsweb: FORCE
 	rm -fr website/fonts/ttf/*
 	make fonts DISTDIR="website/fonts"
-
-TESTFONTS_DIR			= tmp/testfonts
 
 testfonts: FORCE
 	$(eval BUILD_NR = $(shell $(BUILDNR_PY)))
