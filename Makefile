@@ -1,4 +1,5 @@
 SRC_BASEFONT			= src
+SRC_BUILD			= src/build
 SUPPORT_BIN			= bin
 
 MAKEFILE			= Makefile
@@ -294,12 +295,12 @@ _specimen: FORCE
 	@echo "cd specimen && yarn build"
 	@echo "==============================================================================="
 
-stage1: src/build/$(PS_FONT_FAMILY).stage1.sfd
+stage1: $(SRC_BUILD)/$(PS_FONT_FAMILY).stage1.sfd
 
 # Stage 1: import SVGs
-src/build/$(PS_FONT_FAMILY).stage1.sfd: $(BASEFONT) $(SRC_SVGS) Makefile $(SVG_PY_PROG) $(BOUNDS_PY_PROG) $(SMOL_PY_PROG) $(SUPERSUB_PY_PROG) $(NOTREADY_PY_PROG) $(SETSUBSTITUTIONS_PY_PROG) $(SUBSTITUTIONS_JSON)
+$(SRC_BUILD)/$(PS_FONT_FAMILY).stage1.sfd: $(BASEFONT) $(SRC_SVGS) Makefile $(SVG_PY_PROG) $(BOUNDS_PY_PROG) $(SMOL_PY_PROG) $(SUPERSUB_PY_PROG) $(NOTREADY_PY_PROG) $(SETSUBSTITUTIONS_PY_PROG) $(SUBSTITUTIONS_JSON)
 	@echo "stage 1"
-	mkdir -p src/build
+	mkdir -p $(SRC_BUILD)
 	$(SVG_PY) "$<" -o "$@" $(SRC_SVGS)
 	$(BOUNDS_PY) "$@"
 	$(SMOL_PY) "$@"
@@ -308,17 +309,17 @@ src/build/$(PS_FONT_FAMILY).stage1.sfd: $(BASEFONT) $(SRC_SVGS) Makefile $(SVG_P
 	$(NOTREADY_PY) "$@"
 
 # Stage 2: make condensed and compressed outlines
-src/build/$(PS_FONT_FAMILY)Cond.stage1.sfd: src/build/$(PS_FONT_FAMILY).stage1.sfd Makefile $(ASPECT_PY_PROG)
+$(SRC_BUILD)/$(PS_FONT_FAMILY)Cond.stage1.sfd: $(SRC_BUILD)/$(PS_FONT_FAMILY).stage1.sfd Makefile $(ASPECT_PY_PROG)
 	@echo "stage 2 condensed"
-	mkdir -p src/build
+	mkdir -p $(SRC_BUILD)
 	$(ASPECT_PY) --aspect 0.833333333333 "$<" -o "$@"
-src/build/$(PS_FONT_FAMILY)Comp.stage1.sfd: src/build/$(PS_FONT_FAMILY).stage1.sfd Makefile $(ASPECT_PY_PROG)
+$(SRC_BUILD)/$(PS_FONT_FAMILY)Comp.stage1.sfd: $(SRC_BUILD)/$(PS_FONT_FAMILY).stage1.sfd Makefile $(ASPECT_PY_PROG)
 	@echo "stage 2 compressed"
-	mkdir -p src/build
+	mkdir -p $(SRC_BUILD)
 	$(ASPECT_PY) --aspect 0.606060606060 "$<" -o "$@"
 
 # Stage 3: make weights
-$(DISTDIR)/ttf/%.ttf: src/build/%.stage1.sfd Makefile $(STROKES_PY_PROG) $(METAS_PY_PROG) $(UNDERLINE_PY_PROG) $(FONTFIX_PROG)
+$(DISTDIR)/ttf/%.ttf: $(SRC_BUILD)/%.stage1.sfd Makefile $(STROKES_PY_PROG) $(METAS_PY_PROG) $(UNDERLINE_PY_PROG) $(FONTFIX_PROG)
 	@echo "stage 3 normal (weight)"
 	mkdir -p "$(DISTDIR)/ttf"
 	$(STROKES_PY) -x 96 "$<" -o "$@"
@@ -326,7 +327,7 @@ $(DISTDIR)/ttf/%.ttf: src/build/%.stage1.sfd Makefile $(STROKES_PY_PROG) $(METAS
 	$(FONTAUTOHINT_PY) "$@"
 	$(METAS_PY) "$@"
 	$(UNDERLINE_PY) -102 96 "$@"
-$(DISTDIR)/ttf/%-Light.ttf: src/build/%.stage1.sfd Makefile $(STROKES_PY_PROG) $(METAS_PY_PROG) $(UNDERLINE_PY_PROG) $(FONTFIX_PROG)
+$(DISTDIR)/ttf/%-Light.ttf: $(SRC_BUILD)/%.stage1.sfd Makefile $(STROKES_PY_PROG) $(METAS_PY_PROG) $(UNDERLINE_PY_PROG) $(FONTFIX_PROG)
 	@echo "stage 3 light"
 	mkdir -p "$(DISTDIR)/ttf"
 	$(STROKES_PY) -x 72 "$<" -o "$@"
@@ -334,7 +335,7 @@ $(DISTDIR)/ttf/%-Light.ttf: src/build/%.stage1.sfd Makefile $(STROKES_PY_PROG) $
 	$(FONTAUTOHINT_PY) "$@"
 	$(METAS_PY) "$@"
 	$(UNDERLINE_PY) -102 72 "$@"
-$(DISTDIR)/ttf/%-Thin.ttf: src/build/%.stage1.sfd Makefile $(STROKES_PY_PROG) $(METAS_PY_PROG) $(UNDERLINE_PY_PROG) $(FONTFIX_PROG)
+$(DISTDIR)/ttf/%-Thin.ttf: $(SRC_BUILD)/%.stage1.sfd Makefile $(STROKES_PY_PROG) $(METAS_PY_PROG) $(UNDERLINE_PY_PROG) $(FONTFIX_PROG)
 	@echo "stage 3 thin"
 	mkdir -p "$(DISTDIR)/ttf"
 	$(STROKES_PY) -x 48 "$<" -o "$@"
@@ -362,7 +363,7 @@ clean: FORCE
 		-name '*~' -o \
 		-name '#*#' \
 	\) -exec rm {} + || true
-	/bin/rm -fr src/build || true
+	/bin/rm -fr $(SRC_BUILD) || true
 
 version: FORCE
 	$(VERSION_PY) $(BASEFONT) \
