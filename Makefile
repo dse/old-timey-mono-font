@@ -209,7 +209,7 @@ COND_FONTS = \
 	$(THIN_FONT_COND_TTF) \
 	$(THIN_CODING_FONT_COND_TTF) \
 	$(LIGHT_FONT_COND_TTF) \
-	$(LIGHT_CODING_FONT_COND_TTF)
+	$(LIGHT_CODING_FONT_COND_TTF) \
 	$(NH_FONT_COND_TTF) \
 	$(NH_CODING_FONT_COND_TTF) \
 	$(NH_THIN_FONT_COND_TTF) \
@@ -394,7 +394,7 @@ $(DISTDIR)/ttf/%.ttf: src/build/%.stage1.sfd Makefile $(STROKES_PY_PROG) $(METAS
 	@echo "stage 3 normal (weight)"
 	mkdir -p "$(DISTDIR)/ttf"
 	$(STROKES_PY) -x 96 "$<" -o "$@"
-	$(SUPPORT_BIN)/fontfix "$@"
+	$(SUPPORT_BIN)/fontfix.py "$@"
 	$(FONTAUTOHINT_PY) "$@"
 	$(METAS_PY) "$@"
 	$(UNDERLINE_PY) -102 96 "$@"
@@ -402,20 +402,20 @@ $(DISTDIR)/ttf/%-Light.ttf: src/build/%.stage1.sfd Makefile $(STROKES_PY_PROG) $
 	@echo "stage 3 light"
 	mkdir -p "$(DISTDIR)/ttf"
 	$(STROKES_PY) -x 72 "$<" -o "$@"
-	$(SUPPORT_BIN)/fontfix "$@"
+	$(SUPPORT_BIN)/fontfix.py "$@"
 	$(FONTAUTOHINT_PY) "$@"
 	$(METAS_PY) "$@"
 	$(UNDERLINE_PY) -102 72 "$@"
-$(DISTDIR)/ttf/%-Thin.ttf: src/build/%.stage1.sfd Makefile $(STROKES_PY_PROG) $(METAS_PY_PROG) $(UNDERLINE_PY_PROG)
+$(DISTDIR)/ttf/%-Thin.ttf: src/build/%.stage1.sfd Makefile $(STROKES_PY_PROG) $(METAS_PY_PROG) $(UNDERLINE_PY_PROG) $(SUPPORT_BIN)/fontfix.py
 	@echo "stage 3 thin"
 	mkdir -p "$(DISTDIR)/ttf"
 	$(STROKES_PY) -x 48 "$<" -o "$@"
-	$(SUPPORT_BIN)/fontfix "$@"
+	$(SUPPORT_BIN)/fontfix.py "$@"
 	$(FONTAUTOHINT_PY) "$@"
 	$(METAS_PY) "$@"
 	$(UNDERLINE_PY) -102 48 "$@"
 
-$(DISTDIR)/ttf/NH-%.ttf: $(DISTDIR)/ttf/%.ttf Makefile $(FONTUNHINT_PROG)
+$(DISTDIR)/ttf/%NH.ttf: $(DISTDIR)/ttf/%.ttf Makefile $(FONTUNHINT_PROG)
 	@echo "stage 3.5 unhint"
 	cp "$<" "$@.tmp.ttf"
 	$(FONTUNHINT_PY) "$@.tmp.ttf"
@@ -424,16 +424,16 @@ $(DISTDIR)/ttf/NH-%.ttf: $(DISTDIR)/ttf/%.ttf Makefile $(FONTUNHINT_PROG)
 # Stage 4: make code variants
 # NOTE: can't use %.ttf because '%' cannot match less than one character.
 #                                   vvvv
-$(DISTDIR)/ttf/$(PS_CODE_FONT_FAMILY)%ttf: $(DISTDIR)/ttf/$(PS_FONT_FAMILY)%ttf Makefile $(METAS_PY_PROG) $(SUPPORT_BIN)/fontfix
+$(DISTDIR)/ttf/$(PS_CODE_FONT_FAMILY)%ttf: $(DISTDIR)/ttf/$(PS_FONT_FAMILY)%ttf Makefile $(METAS_PY_PROG) $(SUPPORT_BIN)/fontfix.py
 	@echo "stage 4 code variant"
 	pyftfeatfreeze -f ss01 "$<" "$@"
-	$(SUPPORT_BIN)/fontfix "$@"
+	$(SUPPORT_BIN)/fontfix.py "$@"
 	$(METAS_PY_CODE) "$@"
 
-$(DISTDIR)/ttf/$(NH_PS_CODE_FONT_FAMILY)%ttf: $(DISTDIR)/ttf/$(NH_PS_FONT_FAMILY)%ttf Makefile $(METAS_PY_PROG) $(SUPPORT_BIN)/fontfix
+$(DISTDIR)/ttf/$(NH_PS_CODE_FONT_FAMILY)%ttf: $(DISTDIR)/ttf/$(NH_PS_FONT_FAMILY)%ttf Makefile $(METAS_PY_PROG) $(SUPPORT_BIN)/fontfix.py
 	@echo "stage 4 code variant"
 	pyftfeatfreeze -f ss01 "$<" "$@"
-	$(SUPPORT_BIN)/fontfix "$@"
+	$(SUPPORT_BIN)/fontfix.py "$@"
 	$(NH_METAS_PY_CODE) "$@"
 
 clean: FORCE
