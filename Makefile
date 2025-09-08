@@ -1,3 +1,5 @@
+default: fonts zip
+
 SRC_BASEFONT			= src/basefont
 SRC_DATA			= src/data
 SRC_BUILD			= tmp/_build
@@ -236,7 +238,6 @@ COND_FONTS = \
 	$(NH_LIGHT_FONT_COND_TTF)		\
 	$(NH_LIGHT_CODING_FONT_COND_TTF)
 
-default: $(FONTS)
 fonts: $(FONTS)
 original: $(ORIGINAL_FONTS)
 coding: $(CODING_FONTS)
