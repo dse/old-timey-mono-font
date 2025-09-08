@@ -18,6 +18,7 @@ PS_FONT_FAMILY			= OldTimeyMono
 CODE_FONT_FAMILY		= Old Timey Code
 PS_CODE_FONT_FAMILY		= OldTimeyCode
 
+# ONLY specify executable programs' pathnames here.
 SVG_PY_PROG			= $(SUPPORT_BIN)/svg.py
 STROKES_PY_PROG			= $(SUPPORT_BIN)/strokes.py
 ASPECT_PY_PROG			= $(SUPPORT_BIN)/aspect.py
@@ -38,6 +39,7 @@ FONTFIX_PY_PROG			= $(SUPPORT_BIN)/fontfix.py
 METAS_PY_ARGS			= --ffn='$(FONT_FAMILY)' --psfn='$(PS_FONT_FAMILY)'
 METAS_PY_CODE_ARGS		= --ffn='$(CODE_FONT_FAMILY)' --psfn='$(PS_CODE_FONT_FAMILY)'
 
+# You can specify arguments to executable programs here.
 SVG_PY				= $(SVG_PY_PROG)
 STROKES_PY			= $(STROKES_PY_PROG)
 ASPECT_PY			= $(ASPECT_PY_PROG)
