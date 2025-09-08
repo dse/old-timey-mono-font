@@ -114,9 +114,12 @@ COND_FONTS = \
 	$(LIGHT_FONT_COND_TTF) \
 	$(LIGHT_CODING_FONT_COND_TTF)
 
-ZIP_FILE			= $(DIST_ZIP)/$(PS_FONT_FAMILY).zip
+ZIP_FILE			= $(DIST_ZIP)/$(PS_FONT_FAMILY)-$(VERSION).zip
+ZIP_FILE_REL_TO_DIST_ZIP	= $(PS_FONT_FAMILY)-$(VERSION).zip
+UNVERSIONED_ZIP_FILE		= $(DIST_ZIP)/$(PS_FONT_FAMILY).zip
 
 FONTS				= $(ORIGINAL_FONTS) $(CODING_FONTS)
+FONTS_REL_TO_DIST_ZIP		= $(patsubst $(DIST_TTF)/%.ttf,../ttf/%.ttf,$(FONTS))
 
 FONTTOOL__REGULAR		= --expand-stroke 96
 FONTTOOL__LIGHT			= --expand-stroke 72
@@ -131,7 +134,7 @@ original: $(ORIGINAL_FONTS)
 coding: $(CODING_FONTS)
 compressed: $(COMP_FONTS)
 condensed: $(COND_FONTS)
-zip: $(ZIP_FILE)
+zip: $(ZIP_FILE) $(UNVERSIONED_ZIP_FILE)
 
 SRC_SVGS			= $(shell find $(SRC_VECTOR) -type f -name '*.svg')
 
@@ -250,17 +253,15 @@ braille: FORCE
 boxdraw: FORCE
 	fontboxdraw -f $(BASEFONT_SFD)
 
-$(ZIP_FILE): $(FONTS) Makefile _zip
-
-_zip: FORCE
+$(ZIP_FILE): FORCE
 	cd $(DIST_ZIP) && \
-		bsdtar -c -f "$(PS_FONT_FAMILY)-$(VERSION).zip" \
+		bsdtar -c -f "$(ZIP_FILE_REL_TO_DIST_ZIP)" \
 		--format zip \
 		-s '#^\.\./ttf#$(PS_FONT_FAMILY)-$(VERSION)#' \
-		../ttf
+		$(FONTS_REL_TO_DIST_ZIP) \
 
-unversionedzip: FORCE
-	cp "$(DIST_ZIP)/$(PS_FONT_FAMILY)-$(VERSION).zip" "$(DIST_ZIP)/$(PS_FONT_FAMILY).zip"
+$(UNVERSIONED_ZIP_FILE): $(ZIP_FILE)
+	cp "$(ZIP_FILE)" "$(UNVERSIONED_ZIP_FILE)"
 
 specimen: $(FONTS) Makefile _specimen
 
