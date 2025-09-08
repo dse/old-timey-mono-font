@@ -28,6 +28,7 @@ SETSUBSTITUTIONS_PY_PROG	= $(SUPPORT_BIN)/setsubstitutions.py
 FONTAUTOHINT_PY_PROG		= $(SUPPORT_BIN)/fontautohint.py
 FONTUNHINT_PY_PROG		= $(SUPPORT_BIN)/fontunhint.py
 FONTFIX_PY_PROG			= $(SUPPORT_BIN)/fontfix.py
+VERSION_PY_PROG			= $(SUPPORT_BIN)/version.py
 
 METAS_PY_ARGS			= --ffn='$(FONT_FAMILY)'         --psfn='$(PS_FONT_FAMILY)'
 METAS_PY_CODE_ARGS		= --ffn='$(CODE_FONT_FAMILY)'    --psfn='$(PS_CODE_FONT_FAMILY)'
@@ -48,6 +49,7 @@ SETSUBSTITUTIONS_PY		= $(SETSUBSTITUTIONS_PY_PROG)
 FONTAUTOHINT_PY			= $(FONTAUTOHINT_PY_PROG)
 FONTUNHINT_PY			= $(FONTUNHINT_PY_PROG)
 FONTFIX_PY			= $(FONTFIX_PY_PROG)
+VERSION_PY			= $(VERSION_PY_PROG)
 
 SUBSTITUTIONS_JSON		= data/substitutions.json
 
@@ -363,7 +365,7 @@ clean: FORCE
 	/bin/rm -fr src/build || true
 
 version: FORCE
-	$(SUPPORT_BIN)/version.py $(BASEFONT) \
+	$(VERSION_PY) $(BASEFONT) \
 		--sfnt-revision "$(SFNT_REVISION)" \
 		--ps-version "$(VERSION)"
 
