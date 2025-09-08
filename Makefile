@@ -1,5 +1,5 @@
 MAKEFILE			= Makefile
-FONT_SRC			= src/basefont/OldTimeyMono.sfd
+BASEFONT_SFD			= src/basefont/OldTimeyMono.sfd
 SUPPORT_BIN			= exec/bin
 DIST_TTF			= dist/ttf
 DIST_ZIP			= dist/zip
@@ -154,78 +154,78 @@ testfonts: FORCE
 
 # update source font fron SVG files
 update: FORCE
-	$(SVG_PY) $(FONT_SRC) $(SRC_SVGS)
-	$(BOUNDS_PY) $(FONT_SRC)
-	$(SMOL_PY) $(FONT_SRC)
-	$(SUPERSUB_PY) $(FONT_SRC)
-	$(STROKES_PY) --expand-stroke 96 $(FONT_SRC)
-	$(NOTDEF_PY) $(FONT_SRC)
-	$(FONTAUTOHINT_PY) $(FONT_SRC)
-	$(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) $(FONT_SRC)
+	$(SVG_PY) $(BASEFONT_SFD) $(SRC_SVGS)
+	$(BOUNDS_PY) $(BASEFONT_SFD)
+	$(SMOL_PY) $(BASEFONT_SFD)
+	$(SUPERSUB_PY) $(BASEFONT_SFD)
+	$(STROKES_PY) --expand-stroke 96 $(BASEFONT_SFD)
+	$(NOTDEF_PY) $(BASEFONT_SFD)
+	$(FONTAUTOHINT_PY) $(BASEFONT_SFD)
+	$(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) $(BASEFONT_SFD)
 	make fix-strokes-log
 
 update-test: FORCE
-	$(SVG_PY) $(FONT_SRC) $(SRC_SVGS)
-	$(BOUNDS_PY) $(FONT_SRC)
-	$(SMOL_PY) $(FONT_SRC)
-	$(SUPERSUB_PY) $(FONT_SRC)
-	$(STROKES_PY) --expand-stroke 96 --allow-json-data $(FONT_SRC)
-	$(NOTDEF_PY) $(FONT_SRC)
-	$(FONTAUTOHINT_PY) $(FONT_SRC)
-	$(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) $(FONT_SRC)
+	$(SVG_PY) $(BASEFONT_SFD) $(SRC_SVGS)
+	$(BOUNDS_PY) $(BASEFONT_SFD)
+	$(SMOL_PY) $(BASEFONT_SFD)
+	$(SUPERSUB_PY) $(BASEFONT_SFD)
+	$(STROKES_PY) --expand-stroke 96 --allow-json-data $(BASEFONT_SFD)
+	$(NOTDEF_PY) $(BASEFONT_SFD)
+	$(FONTAUTOHINT_PY) $(BASEFONT_SFD)
+	$(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) $(BASEFONT_SFD)
 	make fix-strokes-log
 
 # update source font fron SVG files, for testing if referenced glyphs
 # are too close. (accented letters mostly)
 update-168: FORCE
-	$(SVG_PY) $(FONT_SRC) $(SRC_SVGS)
-	$(BOUNDS_PY) $(FONT_SRC)
-	$(SMOL_PY) $(FONT_SRC)
-	$(SUPERSUB_PY) $(FONT_SRC)
-	$(STROKES_PY) --expand-stroke 168 $(FONT_SRC)
-	$(NOTDEF_PY) $(FONT_SRC)
-	$(FONTAUTOHINT_PY) $(FONT_SRC)
-	$(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) $(FONT_SRC)
+	$(SVG_PY) $(BASEFONT_SFD) $(SRC_SVGS)
+	$(BOUNDS_PY) $(BASEFONT_SFD)
+	$(SMOL_PY) $(BASEFONT_SFD)
+	$(SUPERSUB_PY) $(BASEFONT_SFD)
+	$(STROKES_PY) --expand-stroke 168 $(BASEFONT_SFD)
+	$(NOTDEF_PY) $(BASEFONT_SFD)
+	$(FONTAUTOHINT_PY) $(BASEFONT_SFD)
+	$(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) $(BASEFONT_SFD)
 	make fix-strokes-log
 update-24: FORCE
-	$(SVG_PY) $(FONT_SRC) $(SRC_SVGS)
-	$(BOUNDS_PY) $(FONT_SRC)
-	$(SMOL_PY) $(FONT_SRC)
-	$(SUPERSUB_PY) $(FONT_SRC)
-	$(STROKES_PY) --expand-stroke 24 $(FONT_SRC)
-	$(NOTDEF_PY) $(FONT_SRC)
-	$(FONTAUTOHINT_PY) $(FONT_SRC)
-	$(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) $(FONT_SRC)
+	$(SVG_PY) $(BASEFONT_SFD) $(SRC_SVGS)
+	$(BOUNDS_PY) $(BASEFONT_SFD)
+	$(SMOL_PY) $(BASEFONT_SFD)
+	$(SUPERSUB_PY) $(BASEFONT_SFD)
+	$(STROKES_PY) --expand-stroke 24 $(BASEFONT_SFD)
+	$(NOTDEF_PY) $(BASEFONT_SFD)
+	$(FONTAUTOHINT_PY) $(BASEFONT_SFD)
+	$(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) $(BASEFONT_SFD)
 	make fix-strokes-log
 update-48: FORCE
-	$(SVG_PY) $(FONT_SRC) $(SRC_SVGS)
-	$(BOUNDS_PY) $(FONT_SRC)
-	$(SMOL_PY) $(FONT_SRC)
-	$(SUPERSUB_PY) $(FONT_SRC)
-	$(STROKES_PY) --expand-stroke 48 $(FONT_SRC)
-	$(NOTDEF_PY) $(FONT_SRC)
-	$(FONTAUTOHINT_PY) $(FONT_SRC)
-	$(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) $(FONT_SRC)
+	$(SVG_PY) $(BASEFONT_SFD) $(SRC_SVGS)
+	$(BOUNDS_PY) $(BASEFONT_SFD)
+	$(SMOL_PY) $(BASEFONT_SFD)
+	$(SUPERSUB_PY) $(BASEFONT_SFD)
+	$(STROKES_PY) --expand-stroke 48 $(BASEFONT_SFD)
+	$(NOTDEF_PY) $(BASEFONT_SFD)
+	$(FONTAUTOHINT_PY) $(BASEFONT_SFD)
+	$(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) $(BASEFONT_SFD)
 	make fix-strokes-log
 update-72: FORCE
-	$(SVG_PY) $(FONT_SRC) $(SRC_SVGS)
-	$(BOUNDS_PY) $(FONT_SRC)
-	$(SMOL_PY) $(FONT_SRC)
-	$(SUPERSUB_PY) $(FONT_SRC)
-	$(STROKES_PY) --expand-stroke 72 $(FONT_SRC)
-	$(NOTDEF_PY) $(FONT_SRC)
-	$(FONTAUTOHINT_PY) $(FONT_SRC)
-	$(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) $(FONT_SRC)
+	$(SVG_PY) $(BASEFONT_SFD) $(SRC_SVGS)
+	$(BOUNDS_PY) $(BASEFONT_SFD)
+	$(SMOL_PY) $(BASEFONT_SFD)
+	$(SUPERSUB_PY) $(BASEFONT_SFD)
+	$(STROKES_PY) --expand-stroke 72 $(BASEFONT_SFD)
+	$(NOTDEF_PY) $(BASEFONT_SFD)
+	$(FONTAUTOHINT_PY) $(BASEFONT_SFD)
+	$(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) $(BASEFONT_SFD)
 	make fix-strokes-log
 update-128: FORCE
-	$(SVG_PY) $(FONT_SRC) $(SRC_SVGS)
-	$(BOUNDS_PY) $(FONT_SRC)
-	$(SMOL_PY) $(FONT_SRC)
-	$(SUPERSUB_PY) $(FONT_SRC)
-	$(STROKES_PY) --expand-stroke 128 $(FONT_SRC)
-	$(NOTDEF_PY) $(FONT_SRC)
-	$(FONTAUTOHINT_PY) $(FONT_SRC)
-	$(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) $(FONT_SRC)
+	$(SVG_PY) $(BASEFONT_SFD) $(SRC_SVGS)
+	$(BOUNDS_PY) $(BASEFONT_SFD)
+	$(SMOL_PY) $(BASEFONT_SFD)
+	$(SUPERSUB_PY) $(BASEFONT_SFD)
+	$(STROKES_PY) --expand-stroke 128 $(BASEFONT_SFD)
+	$(NOTDEF_PY) $(BASEFONT_SFD)
+	$(FONTAUTOHINT_PY) $(BASEFONT_SFD)
+	$(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) $(BASEFONT_SFD)
 	make fix-strokes-log
 
 fix-strokes-log:
@@ -240,11 +240,11 @@ fontsvg: FORCE
 
 # generate braille characters
 braille: FORCE
-	fontbraille -W 200 -f $(FONT_SRC)
+	fontbraille -W 200 -f $(BASEFONT_SFD)
 
 # generate box drawing characters
 boxdraw: FORCE
-	fontboxdraw -f $(FONT_SRC)
+	fontboxdraw -f $(BASEFONT_SFD)
 
 $(ZIP_FILE): $(FONTS) Makefile _zip
 
@@ -273,14 +273,14 @@ _specimen: FORCE
 stage1: tmp/_build/$(PS_FONT_FAMILY).stage1.sfd
 
 # Stage 1: import SVGs
-tmp/_build/$(PS_FONT_FAMILY).stage1.sfd: $(FONT_SRC) $(SRC_SVGS) Makefile $(SVG_PY_PROG) $(BOUNDS_PY_PROG) $(SMOL_PY_PROG) $(SUPERSUB_PY_PROG) $(NOTREADY_PY_PROG) $(SETSUBSTITUTIONS_PY_PROG) $(SUBSTITUTIONS_JSON)
+tmp/_build/$(PS_FONT_FAMILY).stage1.sfd: $(BASEFONT_SFD) $(SRC_SVGS) Makefile $(SVG_PY_PROG) $(BOUNDS_PY_PROG) $(SMOL_PY_PROG) $(SUPERSUB_PY_PROG) $(NOTREADY_PY_PROG) $(SETSUBSTITUTIONS_PY_PROG) $(SUBSTITUTIONS_JSON)
 	@echo "stage 1"
 	mkdir -p tmp/_build
 	$(SVG_PY) "$<" -o "$@" $(SRC_SVGS)
 	$(BOUNDS_PY) "$@"
 	$(SMOL_PY) "$@"
 	$(SUPERSUB_PY) "$@"
-	$(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) $(FONT_SRC)
+	$(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) $(BASEFONT_SFD)
 	$(NOTREADY_PY) "$@"
 
 # Stage 2: make condensed and compressed outlines
@@ -341,7 +341,7 @@ clean: FORCE
 	/bin/rm -fr tmp/_build || true
 
 version: FORCE
-	$(VERSION_PY) src/basefont/OldTimeyMono.sfd \
+	$(VERSION_PY) $(BASEFONT_SFD) \
 		--sfnt-revision "$(SFNT_REVISION)" \
 		--ps-version "$(VERSION)"
 
