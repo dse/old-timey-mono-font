@@ -82,8 +82,8 @@ ZIP_FILE			= $(DIST_ZIP)/$(PS_FONT_FAMILY)-$(VERSION).zip
 ZIP_FILE_REL_TO_DIST_ZIP	= $(PS_FONT_FAMILY)-$(VERSION).zip
 UNVERSIONED_ZIP_FILE		= $(DIST_ZIP)/$(PS_FONT_FAMILY).zip
 
-FONTS				= $(ORIGINAL_FONTS) $(CODING_FONTS)
-FONTS_REL_TO_DIST_ZIP		= $(patsubst $(DIST_TTF)/%.ttf,../ttf/%.ttf,$(FONTS))
+TTF_FONTS			= $(ORIGINAL_FONTS) $(CODING_FONTS)
+TTF_FONTS_REL_TO_DIST_ZIP	= $(patsubst $(DIST_TTF)/%.ttf,../ttf/%.ttf,$(TTF_FONTS))
 
 FONTTOOL__REGULAR		= --expand-stroke 96
 FONTTOOL__LIGHT			= --expand-stroke 72
@@ -242,7 +242,7 @@ COND_FONTS = \
 	$(NH_LIGHT_FONT_COND_TTF)		\
 	$(NH_LIGHT_CODING_FONT_COND_TTF)
 
-fonts: $(FONTS)
+fonts: $(TTF_FONTS)
 original: $(ORIGINAL_FONTS)
 coding: $(CODING_FONTS)
 compressed: $(COMP_FONTS)
@@ -375,12 +375,12 @@ $(ZIP_FILE): FORCE
 		bsdtar -c -f "$(ZIP_FILE_REL_TO_DIST_ZIP)" \
 		--format zip \
 		-s '#^\.\./ttf#$(PS_FONT_FAMILY)-$(VERSION)#' \
-		$(FONTS_REL_TO_DIST_ZIP) \
+		$(TTF_FONTS_REL_TO_DIST_ZIP) \
 
 $(UNVERSIONED_ZIP_FILE): $(ZIP_FILE)
 	cp "$(ZIP_FILE)" "$(UNVERSIONED_ZIP_FILE)"
 
-specimen: $(FONTS) $(MAKEFILE) _specimen
+specimen: $(TTF_FONTS) $(MAKEFILE) _specimen
 
 _specimen: FORCE
 	rm -fr specimen/src/fonts/*.woff2 || true
@@ -462,7 +462,7 @@ $(DIST_TTF)/$(NH_PS_CODE_FONT_FAMILY)%ttf: $(DIST_TTF)/$(NH_PS_FONT_FAMILY)%ttf 
 	$(NH_METAS_PY_CODE) "$@"
 
 clean: FORCE
-	/bin/rm $(FONTS) $(ZIP_FILE) || true
+	/bin/rm $(TTF_FONTS) $(ZIP_FILE) || true
 	/bin/rm specimen/src/fonts/*.woff2 || true
 	find . -type f \( \
 		-name '*.tmp' -o \
