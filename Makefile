@@ -3,6 +3,7 @@ SRC_BASEFONT			= src/basefont
 SUPPORT_BIN			= exec/bin
 DIST_TTF			= dist/ttf
 DIST_ZIP			= dist/zip
+SRC_DATA			= src/data
 
 BASEFONT_SFD			= $(SRC_BASEFONT)/OldTimeyMono.sfd
 
@@ -53,7 +54,7 @@ BUILDNR_PY			= $(BUILDNR_PY_PROG)
 VERSION_PY			= $(VERSION_PY_PROG)
 FONTFIX_PY			= $(FONTFIX_PY_PROG)
 
-SUBSTITUTIONS_JSON		= src/data/substitutions.json
+SUBSTITUTIONS_JSON		= $(SRC_DATA)/substitutions.json
 
 FONT_TTF			= $(DIST_TTF)/$(PS_FONT_FAMILY).ttf
 CODING_FONT_TTF			= $(DIST_TTF)/$(PS_CODE_FONT_FAMILY).ttf
