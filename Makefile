@@ -23,6 +23,7 @@ NOTREADY_PY_PROG		:= exec/bin/notready.py
 SETSUBSTITUTIONS_PY_PROG	:= exec/bin/setsubstitutions.py
 FONTAUTOHINT_PY_PROG		:= exec/bin/fontautohint.py
 FONTUNHINT_PY_PROG		:= exec/bin/fontunhint.py
+BUILDNR_PY_ORIG			:= exec/bin/buildnr.py
 
 METAS_PY_ARGS      := --ffn='$(FONT_FAMILY)' --psfn='$(PS_FONT_FAMILY)'
 METAS_PY_CODE_ARGS := --ffn='$(CODE_FONT_FAMILY)' --psfn='$(PS_CODE_FONT_FAMILY)'
@@ -43,6 +44,7 @@ NOTREADY_PY		:= $(NOTREADY_PY_PROG)
 SETSUBSTITUTIONS_PY	:= $(SETSUBSTITUTIONS_PY_PROG)
 FONTAUTOHINT_PY		:= $(FONTAUTOHINT_PY_PROG)
 FONTUNHINT_PY		:= $(FONTUNHINT_PY_PROG)
+BUILDNR_PY		:= $(BUILDNR_PY_PROG)
 
 SUBSTITUTIONS_JSON	:= src/data/substitutions.json
 
@@ -135,7 +137,7 @@ testfontsweb: FORCE
 TESTFONTS_DIR := tmp/testfonts
 
 testfonts: FORCE
-	$(eval BUILD_NR := $(shell exec/bin/buildnr.py))
+	$(eval BUILD_NR := $(shell $(BUILDNR_PY)))
 	$(eval DISTDIR_NAME := $(PS_FONT_FAMILY)$(BUILD_NR))
 	mkdir -p $(TESTFONTS_DIR)
 	make fonts \
