@@ -1,10 +1,10 @@
 SRC_BASEFONT			= src/basefont
-SUPPORT_BIN			= exec/bin
-DIST_TTF			= dist/ttf
-DIST_ZIP			= dist/zip
 SRC_DATA			= src/data
 SRC_BUILD			= tmp/_build
 SRC_VECTOR			= src/vector
+SUPPORT_BIN			= exec/bin
+DIST_TTF			= dist/ttf
+DIST_ZIP			= dist/zip
 
 BASEFONT_SFD			= $(SRC_BASEFONT)/$(PS_FONT_FAMILY).sfd
 
