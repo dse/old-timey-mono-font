@@ -17,6 +17,7 @@ NH_PS_FONT_FAMILY		= OldTimeyMonoNH
 NH_CODE_FONT_FAMILY		= Old Timey Code NH
 NH_PS_CODE_FONT_FAMILY		= OldTimeyCodeNH
 
+# executable filenames ONLY
 SVG_PY_PROG			= $(SUPPORT_BIN)/svg.py
 STROKES_PY_PROG			= $(SUPPORT_BIN)/strokes.py
 ASPECT_PY_PROG			= $(SUPPORT_BIN)/aspect.py
@@ -30,6 +31,7 @@ NOTREADY_PY_PROG		= $(SUPPORT_BIN)/notready.py
 SETSUBSTITUTIONS_PY_PROG	= $(SUPPORT_BIN)/setsubstitutions.py
 FONTAUTOHINT_PY_PROG		= $(SUPPORT_BIN)/fontautohint.py
 FONTUNHINT_PY_PROG		= $(SUPPORT_BIN)/fontunhint.py
+FONTFIX_PY_PROG			= $(SUPPORT_BIN)/fontfix.py
 
 METAS_PY_ARGS			= --ffn='$(FONT_FAMILY)'         --psfn='$(PS_FONT_FAMILY)'
 METAS_PY_CODE_ARGS		= --ffn='$(CODE_FONT_FAMILY)'    --psfn='$(PS_CODE_FONT_FAMILY)'
@@ -37,6 +39,7 @@ METAS_PY_CODE_ARGS		= --ffn='$(CODE_FONT_FAMILY)'    --psfn='$(PS_CODE_FONT_FAMI
 NH_METAS_PY_ARGS		= --ffn='$(NH_FONT_FAMILY)'      --psfn='$(NH_PS_FONT_FAMILY)'
 NH_METAS_PY_CODE_ARGS		= --ffn='$(NH_CODE_FONT_FAMILY)' --psfn='$(NH_PS_CODE_FONT_FAMILY)'
 
+# supply arguments to executables here.
 SVG_PY				= $(SVG_PY_PROG)
 STROKES_PY			= $(STROKES_PY_PROG)
 ASPECT_PY			= $(ASPECT_PY_PROG)
@@ -53,6 +56,7 @@ NOTREADY_PY			= $(NOTREADY_PY_PROG)
 SETSUBSTITUTIONS_PY		= $(SETSUBSTITUTIONS_PY_PROG)
 FONTAUTOHINT_PY			= $(FONTAUTOHINT_PY_PROG)
 FONTUNHINT_PY			= $(FONTUNHINT_PY_PROG)
+FONTFIX_PY			= $(FONTFIX_PY_PROG)
 
 SUBSTITUTIONS_JSON		= data/substitutions.json
 
@@ -390,27 +394,27 @@ src/build/$(PS_FONT_FAMILY)Comp.stage1.sfd: src/build/$(PS_FONT_FAMILY).stage1.s
 	$(ASPECT_PY) --aspect 0.606060606060 "$<" -o "$@"
 
 # Stage 3: make weights
-$(DISTDIR)/ttf/%.ttf: src/build/%.stage1.sfd Makefile $(STROKES_PY_PROG) $(METAS_PY_PROG) $(UNDERLINE_PY_PROG)
+$(DISTDIR)/ttf/%.ttf: src/build/%.stage1.sfd Makefile $(STROKES_PY_PROG) $(METAS_PY_PROG) $(UNDERLINE_PY_PROG) $(FONTFIX_PROG)
 	@echo "stage 3 normal (weight)"
 	mkdir -p "$(DISTDIR)/ttf"
 	$(STROKES_PY) -x 96 "$<" -o "$@"
-	$(SUPPORT_BIN)/fontfix.py "$@"
+	$(FONTFIX_PY) "$@"
 	$(FONTAUTOHINT_PY) "$@"
 	$(METAS_PY) "$@"
 	$(UNDERLINE_PY) -102 96 "$@"
-$(DISTDIR)/ttf/%-Light.ttf: src/build/%.stage1.sfd Makefile $(STROKES_PY_PROG) $(METAS_PY_PROG) $(UNDERLINE_PY_PROG)
+$(DISTDIR)/ttf/%-Light.ttf: src/build/%.stage1.sfd Makefile $(STROKES_PY_PROG) $(METAS_PY_PROG) $(UNDERLINE_PY_PROG) $(FONTFIX_PROG)
 	@echo "stage 3 light"
 	mkdir -p "$(DISTDIR)/ttf"
 	$(STROKES_PY) -x 72 "$<" -o "$@"
-	$(SUPPORT_BIN)/fontfix.py "$@"
+	$(FONTFIX_PY) "$@"
 	$(FONTAUTOHINT_PY) "$@"
 	$(METAS_PY) "$@"
 	$(UNDERLINE_PY) -102 72 "$@"
-$(DISTDIR)/ttf/%-Thin.ttf: src/build/%.stage1.sfd Makefile $(STROKES_PY_PROG) $(METAS_PY_PROG) $(UNDERLINE_PY_PROG) $(SUPPORT_BIN)/fontfix.py
+$(DISTDIR)/ttf/%-Thin.ttf: src/build/%.stage1.sfd Makefile $(STROKES_PY_PROG) $(METAS_PY_PROG) $(UNDERLINE_PY_PROG) $(FONTFIX_PROG)
 	@echo "stage 3 thin"
 	mkdir -p "$(DISTDIR)/ttf"
 	$(STROKES_PY) -x 48 "$<" -o "$@"
-	$(SUPPORT_BIN)/fontfix.py "$@"
+	$(FONTFIX_PY) "$@"
 	$(FONTAUTOHINT_PY) "$@"
 	$(METAS_PY) "$@"
 	$(UNDERLINE_PY) -102 48 "$@"
@@ -424,16 +428,16 @@ $(DISTDIR)/ttf/%NH.ttf: $(DISTDIR)/ttf/%.ttf Makefile $(FONTUNHINT_PROG)
 # Stage 4: make code variants
 # NOTE: can't use %.ttf because '%' cannot match less than one character.
 #                                   vvvv
-$(DISTDIR)/ttf/$(PS_CODE_FONT_FAMILY)%ttf: $(DISTDIR)/ttf/$(PS_FONT_FAMILY)%ttf Makefile $(METAS_PY_PROG) $(SUPPORT_BIN)/fontfix.py
+$(DISTDIR)/ttf/$(PS_CODE_FONT_FAMILY)%ttf: $(DISTDIR)/ttf/$(PS_FONT_FAMILY)%ttf Makefile $(METAS_PY_PROG) $(FONTFIX_PY_PROG)
 	@echo "stage 4 code variant"
 	pyftfeatfreeze -f ss01 "$<" "$@"
-	$(SUPPORT_BIN)/fontfix.py "$@"
+	$(FONTFIX_PY) "$@"
 	$(METAS_PY_CODE) "$@"
 
-$(DISTDIR)/ttf/$(NH_PS_CODE_FONT_FAMILY)%ttf: $(DISTDIR)/ttf/$(NH_PS_FONT_FAMILY)%ttf Makefile $(METAS_PY_PROG) $(SUPPORT_BIN)/fontfix.py
+$(DISTDIR)/ttf/$(NH_PS_CODE_FONT_FAMILY)%ttf: $(DISTDIR)/ttf/$(NH_PS_FONT_FAMILY)%ttf Makefile $(METAS_PY_PROG) $(FONTFIX_PY_PROG)
 	@echo "stage 4 code variant"
 	pyftfeatfreeze -f ss01 "$<" "$@"
-	$(SUPPORT_BIN)/fontfix.py "$@"
+	$(FONTFIX_PY) "$@"
 	$(NH_METAS_PY_CODE) "$@"
 
 clean: FORCE
