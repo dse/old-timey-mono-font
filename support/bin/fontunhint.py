@@ -9,7 +9,7 @@ def main():
     parser.add_argument('filenames', nargs='+')
     args = parser.parse_args()
     for filename in args.filenames:
-        font = fontforge.open(args.source_filename)
+        font = fontforge.open(filename)
         for glyph in font.glyphs():
             glyph.dhints = tuple()
             glyph.hhints = tuple()
