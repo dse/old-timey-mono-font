@@ -1,8 +1,10 @@
 MAKEFILE			= Makefile
-BASEFONT_SFD			= src/basefont/OldTimeyMono.sfd
+SRC_BASEFONT			= src/basefont
 SUPPORT_BIN			= exec/bin
 DIST_TTF			= dist/ttf
 DIST_ZIP			= dist/zip
+
+BASEFONT_SFD			= $(SRC_BASEFONT)/OldTimeyMono.sfd
 
 #                                 XXX.YZZ, typically
 SFNT_REVISION			= 000.902
