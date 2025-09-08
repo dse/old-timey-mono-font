@@ -1,4 +1,3 @@
-MAKEFILE			= Makefile
 SRC_BASEFONT			= src/basefont
 SUPPORT_BIN			= exec/bin
 DIST_TTF			= dist/ttf
