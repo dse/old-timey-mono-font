@@ -48,8 +48,8 @@ VERSION_PY_PROG			= $(SUPPORT_BIN)/version.py
 METAS_PY_ARGS			= --ffn='$(FONT_FAMILY)'         --psfn='$(PS_FONT_FAMILY)'
 METAS_PY_CODE_ARGS		= --ffn='$(CODE_FONT_FAMILY)'    --psfn='$(PS_CODE_FONT_FAMILY)'
 
-NH_METAS_PY_ARGS		= --ffn='$(NH_FONT_FAMILY)'         --psfn='$(NH_PS_FONT_FAMILY)'
-NH_METAS_PY_CODE_ARGS		= --ffn='$(NH_CODE_FONT_FAMILY)'    --psfn='$(NH_PS_CODE_FONT_FAMILY)'
+NH_METAS_PY_ARGS		= --ffn='$(NH_FONT_FAMILY)'      --psfn='$(NH_PS_FONT_FAMILY)'
+NH_METAS_PY_CODE_ARGS		= --ffn='$(NH_CODE_FONT_FAMILY)' --psfn='$(NH_PS_CODE_FONT_FAMILY)'
 
 # supply arguments to executables here.
 SVG_PY				= $(SVG_PY_PROG)
@@ -57,6 +57,8 @@ STROKES_PY			= $(STROKES_PY_PROG)
 ASPECT_PY			= $(ASPECT_PY_PROG)
 METAS_PY			= $(METAS_PY_PROG) $(METAS_PY_ARGS)
 METAS_PY_CODE			= $(METAS_PY_PROG) $(METAS_PY_CODE_ARGS)
+NH_METAS_PY			= $(METAS_PY_PROG) $(NH_METAS_PY_ARGS)
+NH_METAS_PY_CODE		= $(METAS_PY_PROG) $(NH_METAS_PY_CODE_ARGS)
 NOTDEF_PY			= $(NOTDEF_PY_PROG)
 SMOL_PY				= $(SMOL_PY_PROG)
 BOUNDS_PY			= $(BOUNDS_PY_PROG)
@@ -230,8 +232,8 @@ COND_FONTS = \
 	$(LIGHT_FONT_COND_TTF) \
 	$(LIGHT_CODING_FONT_COND_TTF)
 
-# FONTS = $(ORIGINAL_FONTS) $(CODING_FONTS)
-FONTS = $(HINTED_FONTS)
+FONTS = $(ORIGINAL_FONTS) $(CODING_FONTS)
+# FONTS = $(HINTED_FONTS)
 
 default: $(FONTS)
 fonts: $(FONTS)
@@ -443,6 +445,11 @@ $(DIST_TTF)/%-Thin.ttf: $(SRC_BUILD)/%.stage1.sfd Makefile $(STROKES_PY_PROG) $(
 	$(METAS_PY) "$@"
 	$(UNDERLINE_PY) -102 48 "$@"
 
+$(DIST_TTF)/$(NH_PS_FONT_FAMILY)%ttf: $(DIST_TTF)/$(PS_FONT_FAMILY)%ttf $(FONTUNHINT_PY_PROG)
+	cp "$<" "$@"
+	$(FONTUNHINT_PY) "$@"
+	$(NH_METAS_PY) "$@"
+
 # Stage 4: make code variants
 # => OldTimeyCode.ttf
 # => OldTimeyCodeCond.ttf
@@ -471,11 +478,14 @@ $(DIST_TTF)/$(PS_CODE_FONT_FAMILY)%ttf: $(DIST_TTF)/$(PS_FONT_FAMILY)%ttf Makefi
 	pyftfeatfreeze -f ss01 "$<" "$@"
 	$(FONTFIX_PY) "$@"
 	$(METAS_PY_CODE) "$@"
+
+# dist/ttf/OldTimeyCodeNH.ttf              dist/ttf/OldTimeyMonoNH.ttf
+
 $(DIST_TTF)/$(NH_PS_CODE_FONT_FAMILY)%ttf: $(DIST_TTF)/$(NH_PS_FONT_FAMILY)%ttf Makefile $(METAS_PY_PROG) $(FONTFIX_PY_PROG)
 	@echo "stage 4 code variant"
 	pyftfeatfreeze -f ss01 "$<" "$@"
 	$(FONTFIX_PY) "$@"
-	$(METAS_PY_CODE) "$@"
+	$(NH_METAS_PY_CODE) "$@"
 
 clean: FORCE
 	/bin/rm $(FONTS) $(ZIP_FILE) || true
