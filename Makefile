@@ -1,6 +1,7 @@
 MAKEFILE			= Makefile
 FONT_SRC			= src/basefont/OldTimeyMono.sfd
 SUPPORT_BIN			= exec/bin
+DIST_TTF			= dist/ttf
 
 #                                 XXX.YZZ, typically
 SFNT_REVISION			= 000.902
@@ -51,26 +52,24 @@ FONTFIX_PY			= $(FONTFIX_PY_PROG)
 
 SUBSTITUTIONS_JSON		= src/data/substitutions.json
 
-DISTDIR				= dist
-
-FONT_TTF			= $(DISTDIR)/ttf/$(PS_FONT_FAMILY).ttf
-CODING_FONT_TTF			= $(DISTDIR)/ttf/$(PS_CODE_FONT_FAMILY).ttf
-THIN_FONT_TTF			= $(DISTDIR)/ttf/$(PS_FONT_FAMILY)-Thin.ttf
-THIN_CODING_FONT_TTF		= $(DISTDIR)/ttf/$(PS_CODE_FONT_FAMILY)-Thin.ttf
-LIGHT_FONT_TTF			= $(DISTDIR)/ttf/$(PS_FONT_FAMILY)-Light.ttf
-LIGHT_CODING_FONT_TTF		= $(DISTDIR)/ttf/$(PS_CODE_FONT_FAMILY)-Light.ttf
-FONT_COMP_TTF			= $(DISTDIR)/ttf/$(PS_FONT_FAMILY)Comp.ttf
-CODING_FONT_COMP_TTF		= $(DISTDIR)/ttf/$(PS_CODE_FONT_FAMILY)Comp.ttf
-THIN_FONT_COMP_TTF		= $(DISTDIR)/ttf/$(PS_FONT_FAMILY)Comp-Thin.ttf
-THIN_CODING_FONT_COMP_TTF	= $(DISTDIR)/ttf/$(PS_CODE_FONT_FAMILY)Comp-Thin.ttf
-LIGHT_FONT_COMP_TTF		= $(DISTDIR)/ttf/$(PS_FONT_FAMILY)Comp-Light.ttf
-LIGHT_CODING_FONT_COMP_TTF	= $(DISTDIR)/ttf/$(PS_CODE_FONT_FAMILY)Comp-Light.ttf
-FONT_COND_TTF			= $(DISTDIR)/ttf/$(PS_FONT_FAMILY)Cond.ttf
-CODING_FONT_COND_TTF		= $(DISTDIR)/ttf/$(PS_CODE_FONT_FAMILY)Cond.ttf
-THIN_FONT_COND_TTF		= $(DISTDIR)/ttf/$(PS_FONT_FAMILY)Cond-Thin.ttf
-THIN_CODING_FONT_COND_TTF	= $(DISTDIR)/ttf/$(PS_CODE_FONT_FAMILY)Cond-Thin.ttf
-LIGHT_FONT_COND_TTF		= $(DISTDIR)/ttf/$(PS_FONT_FAMILY)Cond-Light.ttf
-LIGHT_CODING_FONT_COND_TTF	= $(DISTDIR)/ttf/$(PS_CODE_FONT_FAMILY)Cond-Light.ttf
+FONT_TTF			= $(DIST_TTF)/$(PS_FONT_FAMILY).ttf
+CODING_FONT_TTF			= $(DIST_TTF)/$(PS_CODE_FONT_FAMILY).ttf
+THIN_FONT_TTF			= $(DIST_TTF)/$(PS_FONT_FAMILY)-Thin.ttf
+THIN_CODING_FONT_TTF		= $(DIST_TTF)/$(PS_CODE_FONT_FAMILY)-Thin.ttf
+LIGHT_FONT_TTF			= $(DIST_TTF)/$(PS_FONT_FAMILY)-Light.ttf
+LIGHT_CODING_FONT_TTF		= $(DIST_TTF)/$(PS_CODE_FONT_FAMILY)-Light.ttf
+FONT_COMP_TTF			= $(DIST_TTF)/$(PS_FONT_FAMILY)Comp.ttf
+CODING_FONT_COMP_TTF		= $(DIST_TTF)/$(PS_CODE_FONT_FAMILY)Comp.ttf
+THIN_FONT_COMP_TTF		= $(DIST_TTF)/$(PS_FONT_FAMILY)Comp-Thin.ttf
+THIN_CODING_FONT_COMP_TTF	= $(DIST_TTF)/$(PS_CODE_FONT_FAMILY)Comp-Thin.ttf
+LIGHT_FONT_COMP_TTF		= $(DIST_TTF)/$(PS_FONT_FAMILY)Comp-Light.ttf
+LIGHT_CODING_FONT_COMP_TTF	= $(DIST_TTF)/$(PS_CODE_FONT_FAMILY)Comp-Light.ttf
+FONT_COND_TTF			= $(DIST_TTF)/$(PS_FONT_FAMILY)Cond.ttf
+CODING_FONT_COND_TTF		= $(DIST_TTF)/$(PS_CODE_FONT_FAMILY)Cond.ttf
+THIN_FONT_COND_TTF		= $(DIST_TTF)/$(PS_FONT_FAMILY)Cond-Thin.ttf
+THIN_CODING_FONT_COND_TTF	= $(DIST_TTF)/$(PS_CODE_FONT_FAMILY)Cond-Thin.ttf
+LIGHT_FONT_COND_TTF		= $(DIST_TTF)/$(PS_FONT_FAMILY)Cond-Light.ttf
+LIGHT_CODING_FONT_COND_TTF	= $(DIST_TTF)/$(PS_CODE_FONT_FAMILY)Cond-Light.ttf
 
 ORIGINAL_FONTS = \
 	$(FONT_TTF) \
@@ -294,25 +293,25 @@ tmp/_build/$(PS_FONT_FAMILY)Comp.stage1.sfd: tmp/_build/$(PS_FONT_FAMILY).stage1
 	$(ASPECT_PY) --aspect 0.606060606060 "$<" -o "$@"
 
 # Stage 3: make weights
-$(DISTDIR)/ttf/%.ttf: tmp/_build/%.stage1.sfd Makefile $(STROKES_PY_PROG) $(METAS_PY_PROG) $(UNDERLINE_PY_PROG)
+$(DIST_TTF)/%.ttf: tmp/_build/%.stage1.sfd Makefile $(STROKES_PY_PROG) $(METAS_PY_PROG) $(UNDERLINE_PY_PROG)
 	@echo "stage 3 normal (weight)"
-	mkdir -p "$(DISTDIR)/ttf"
+	mkdir -p "$(DIST_TTF)"
 	$(STROKES_PY) -x 96 "$<" -o "$@"
 	$(FONTFIX_PY) "$@"
 	$(FONTAUTOHINT_PY) "$@"
 	$(METAS_PY) "$@"
 	$(UNDERLINE_PY) -102 96 "$@"
-$(DISTDIR)/ttf/%-Light.ttf: tmp/_build/%.stage1.sfd Makefile $(STROKES_PY_PROG) $(METAS_PY_PROG) $(UNDERLINE_PY_PROG)
+$(DIST_TTF)/%-Light.ttf: tmp/_build/%.stage1.sfd Makefile $(STROKES_PY_PROG) $(METAS_PY_PROG) $(UNDERLINE_PY_PROG)
 	@echo "stage 3 light"
-	mkdir -p "$(DISTDIR)/ttf"
+	mkdir -p "$(DIST_TTF)"
 	$(STROKES_PY) -x 72 "$<" -o "$@"
 	$(FONTFIX_PY) "$@"
 	$(FONTAUTOHINT_PY) "$@"
 	$(METAS_PY) "$@"
 	$(UNDERLINE_PY) -102 72 "$@"
-$(DISTDIR)/ttf/%-Thin.ttf: tmp/_build/%.stage1.sfd Makefile $(STROKES_PY_PROG) $(METAS_PY_PROG) $(UNDERLINE_PY_PROG)
+$(DIST_TTF)/%-Thin.ttf: tmp/_build/%.stage1.sfd Makefile $(STROKES_PY_PROG) $(METAS_PY_PROG) $(UNDERLINE_PY_PROG)
 	@echo "stage 3 thin"
-	mkdir -p "$(DISTDIR)/ttf"
+	mkdir -p "$(DIST_TTF)"
 	$(STROKES_PY) -x 48 "$<" -o "$@"
 	$(FONTFIX_PY) "$@"
 	$(FONTAUTOHINT_PY) "$@"
@@ -322,7 +321,7 @@ $(DISTDIR)/ttf/%-Thin.ttf: tmp/_build/%.stage1.sfd Makefile $(STROKES_PY_PROG) $
 # Stage 4: make code variants
 # NOTE: can't use %.ttf because '%' cannot match less than one character.
 #                                   vvvv
-$(DISTDIR)/ttf/$(PS_CODE_FONT_FAMILY)%ttf: $(DISTDIR)/ttf/$(PS_FONT_FAMILY)%ttf Makefile $(METAS_PY_PROG) $(FONTFIX_PY_PROG)
+$(DIST_TTF)/$(PS_CODE_FONT_FAMILY)%ttf: $(DIST_TTF)/$(PS_FONT_FAMILY)%ttf Makefile $(METAS_PY_PROG) $(FONTFIX_PY_PROG)
 	@echo "stage 4 code variant"
 	pyftfeatfreeze -f ss01 "$<" "$@"
 	$(FONTFIX_PY) "$@"
