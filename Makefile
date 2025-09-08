@@ -18,6 +18,8 @@ BASEFONT_SFD			= $(SRC_BASEFONT)/$(PS_FONT_FAMILY).sfd
 SFNT_REVISION			= 000.903
 VERSION				= 0.9.3
 VENDOR				= DARN
+COPYRIGHT_OWNER			= Darren Embry
+COPYRIGHT_EMAIL			= dsembry@gmail.com
 
 FONT_FAMILY			= Old Timey Mono
 PS_FONT_FAMILY			= OldTimeyMono
@@ -277,7 +279,7 @@ update: FORCE
 	$(NOTDEF_PY) $(BASEFONT_SFD)
 	$(FONTAUTOHINT_PY) $(BASEFONT_SFD)
 	$(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) $(BASEFONT_SFD)
-	setfontmetas --vendor "$(VENDOR)" $(BASEFONT_SFD)
+	setfontmetas --vendor "$(VENDOR)" --version "$(VERSION)" --sfnt-revision "$(SFNT_REVISION)" $(BASEFONT_SFD)
 	make fix-strokes-log
 
 update-test: FORCE
@@ -289,7 +291,7 @@ update-test: FORCE
 	$(NOTDEF_PY) $(BASEFONT_SFD)
 	$(FONTAUTOHINT_PY) $(BASEFONT_SFD)
 	$(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) $(BASEFONT_SFD)
-	setfontmetas --vendor "$(VENDOR)" $(BASEFONT_SFD)
+	setfontmetas --vendor "$(VENDOR)" --version "$(VERSION)" --sfnt-revision "$(SFNT_REVISION)" $(BASEFONT_SFD)
 	make fix-strokes-log
 
 # update source font fron SVG files, for testing if referenced glyphs
@@ -303,7 +305,7 @@ update-168: FORCE
 	$(NOTDEF_PY) $(BASEFONT_SFD)
 	$(FONTAUTOHINT_PY) $(BASEFONT_SFD)
 	$(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) $(BASEFONT_SFD)
-	setfontmetas --vendor "$(VENDOR)" $(BASEFONT_SFD)
+	setfontmetas --vendor "$(VENDOR)" --version "$(VERSION)" --sfnt-revision "$(SFNT_REVISION)" $(BASEFONT_SFD)
 	make fix-strokes-log
 update-24: FORCE
 	$(SVG_PY) $(BASEFONT_SFD) $(SRC_SVGS)
@@ -314,7 +316,7 @@ update-24: FORCE
 	$(NOTDEF_PY) $(BASEFONT_SFD)
 	$(FONTAUTOHINT_PY) $(BASEFONT_SFD)
 	$(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) $(BASEFONT_SFD)
-	setfontmetas --vendor "$(VENDOR)" $(BASEFONT_SFD)
+	setfontmetas --vendor "$(VENDOR)" --version "$(VERSION)" --sfnt-revision "$(SFNT_REVISION)" $(BASEFONT_SFD)
 	make fix-strokes-log
 update-48: FORCE
 	$(SVG_PY) $(BASEFONT_SFD) $(SRC_SVGS)
@@ -325,7 +327,7 @@ update-48: FORCE
 	$(NOTDEF_PY) $(BASEFONT_SFD)
 	$(FONTAUTOHINT_PY) $(BASEFONT_SFD)
 	$(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) $(BASEFONT_SFD)
-	setfontmetas --vendor "$(VENDOR)" $(BASEFONT_SFD)
+	setfontmetas --vendor "$(VENDOR)" --version "$(VERSION)" --sfnt-revision "$(SFNT_REVISION)" $(BASEFONT_SFD)
 	make fix-strokes-log
 update-72: FORCE
 	$(SVG_PY) $(BASEFONT_SFD) $(SRC_SVGS)
@@ -336,7 +338,7 @@ update-72: FORCE
 	$(NOTDEF_PY) $(BASEFONT_SFD)
 	$(FONTAUTOHINT_PY) $(BASEFONT_SFD)
 	$(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) $(BASEFONT_SFD)
-	setfontmetas --vendor "$(VENDOR)" $(BASEFONT_SFD)
+	setfontmetas --vendor "$(VENDOR)" --version "$(VERSION)" --sfnt-revision "$(SFNT_REVISION)" $(BASEFONT_SFD)
 	make fix-strokes-log
 update-128: FORCE
 	$(SVG_PY) $(BASEFONT_SFD) $(SRC_SVGS)
@@ -347,7 +349,7 @@ update-128: FORCE
 	$(NOTDEF_PY) $(BASEFONT_SFD)
 	$(FONTAUTOHINT_PY) $(BASEFONT_SFD)
 	$(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) $(BASEFONT_SFD)
-	setfontmetas --vendor "$(VENDOR)" $(BASEFONT_SFD)
+	setfontmetas --vendor "$(VENDOR)" --version "$(VERSION)" --sfnt-revision "$(SFNT_REVISION)" $(BASEFONT_SFD)
 	make fix-strokes-log
 
 fix-strokes-log:
@@ -402,7 +404,7 @@ $(SRC_BUILD)/$(PS_FONT_FAMILY).stage1.sfd: $(BASEFONT_SFD) $(SRC_SVGS) $(MAKEFIL
 	$(SUPERSUB_PY) "$@"
 	$(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) $(BASEFONT_SFD)
 	$(NOTREADY_PY) "$@"
-	setfontmetas --vendor "$(VENDOR)" "$@"
+	setfontmetas --vendor "$(VENDOR)" --version "$(VERSION)" --sfnt-revision "$(SFNT_REVISION)" $(BASEFONT_SFD)
 
 # Stage 2: make condensed and compressed outlines
 $(SRC_BUILD)/$(PS_FONT_FAMILY)Cond.stage1.sfd: $(SRC_BUILD)/$(PS_FONT_FAMILY).stage1.sfd $(MAKEFILE) $(ASPECT_PY_PROG)
@@ -472,9 +474,6 @@ clean: FORCE
 	/bin/rm -fr $(SRC_BUILD) || true
 
 version: FORCE
-	$(VERSION_PY) $(BASEFONT_SFD) \
-		--sfnt-revision "$(SFNT_REVISION)" \
-		--ps-version "$(VERSION)"
 
 publish:
 	ssh dse@webonastick.com 'cd git/dse.d/fonts.d/old-timey-mono-font && git pull && cd specimen && yarn build'
