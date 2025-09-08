@@ -5,6 +5,7 @@ SRC_DATA			= data
 SUPPORT_BIN			= bin
 DIST_TTF			= $(DISTDIR)/ttf
 DIST_ZIP			= $(DISTDIR)
+SRC_VECTOR			= src/chars
 
 MAKEFILE			= Makefile
 BASEFONT			= $(SRC_BASEFONT)/OldTimeyMono.sfd
@@ -86,7 +87,7 @@ FONTTOOL__THIN			= --expand-stroke 48
 FONTTOOL__COND			= --aspect 0.833333 # 12cpi
 FONTTOOL__COMP			= --aspect 0.606060 # 16.5cpi
 
-SRC_SVGS			= $(shell find src/chars -type f -name '*.svg')
+SRC_SVGS			= $(shell find $(SRC_VECTOR) -type f -name '*.svg')
 
 TESTFONTS_DIR			= testfonts
 
