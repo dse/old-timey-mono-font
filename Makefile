@@ -3,6 +3,7 @@ SRC_BUILD			= src/build
 SRC_DATA			= data
 SUPPORT_BIN			= bin
 DIST_TTF			= dist/ttf
+DIST_ZIP			= dist
 
 MAKEFILE			= Makefile
 BASEFONT			= $(SRC_BASEFONT)/OldTimeyMono.sfd
@@ -97,7 +98,7 @@ HINTED_FONTS = \
 	$(LIGHT_FONT_COND_TTF) \
 	$(LIGHT_CODING_FONT_COND_TTF)
 
-ZIP_FILE			= dist/OldTimeyMono.zip
+ZIP_FILE			= $(DIST_ZIP)/OldTimeyMono.zip
 
 FONTTOOL__REGULAR		= --expand-stroke 96
 FONTTOOL__LIGHT			= --expand-stroke 72
@@ -283,7 +284,7 @@ _zip: FORCE
 		ttf
 
 unversionedzip: FORCE
-	cp "dist/OldTimeyMono-$(VERSION).zip" "dist/OldTimeyMono.zip"
+	cp "$(DIST_ZIP)/OldTimeyMono-$(VERSION).zip" "$(DIST_ZIP)/OldTimeyMono.zip"
 
 specimen: $(FONTS) Makefile _specimen
 
