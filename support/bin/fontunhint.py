@@ -22,3 +22,4 @@ def main():
         else:
             font.generate(filename, flags=['no-hints','no-flex'])
         font.close()
+main()
