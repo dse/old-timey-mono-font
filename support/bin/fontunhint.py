@@ -20,6 +20,6 @@ def main():
         if filename.endswith(".sfd"):
             font.save(filename)
         else:
-            font.generate(filename, flags=['no-hints','no-flex'])
+            font.generate(filename)
         font.close()
 main()
