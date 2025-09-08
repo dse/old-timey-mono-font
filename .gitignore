@@ -8,3 +8,8 @@ var/.test-build-number.lock
 var/.test-build-number.txt
 var/strokes.log
 tmp/_build
+src/build
+testfonts
+.test-build-number.lock
+.test-build-number.txt
+typescript
