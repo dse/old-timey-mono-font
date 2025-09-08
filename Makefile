@@ -1,9 +1,10 @@
+DISTDIR				= dist
 SRC_BASEFONT			= src
 SRC_BUILD			= src/build
 SRC_DATA			= data
 SUPPORT_BIN			= bin
-DIST_TTF			= dist/ttf
-DIST_ZIP			= dist
+DIST_TTF			= $(DISTDIR)/ttf
+DIST_ZIP			= $(DISTDIR)
 
 MAKEFILE			= Makefile
 BASEFONT			= $(SRC_BASEFONT)/OldTimeyMono.sfd
@@ -56,8 +57,6 @@ FONTFIX_PY			= $(FONTFIX_PY_PROG)
 VERSION_PY			= $(VERSION_PY_PROG)
 
 SUBSTITUTIONS_JSON		= $(SRC_DATA)/substitutions.json
-
-DISTDIR				= dist
 
 FONT_TTF			= $(DIST_TTF)/$(PS_FONT_FAMILY).ttf
 CODING_FONT_TTF			= $(DIST_TTF)/$(PS_CODE_FONT_FAMILY).ttf
