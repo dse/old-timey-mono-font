@@ -6,6 +6,8 @@ SUPPORT_BIN			= support/bin
 DIST_TTF			= dist/ttf
 DIST_ZIP			= dist/zip
 
+MAKEFILE			= Makefile
+
 BASEFONT_SFD			= $(SRC_BASEFONT)/$(PS_FONT_FAMILY).sfd
 
 #                                 XXX.YZZ, typically
@@ -373,7 +375,7 @@ $(ZIP_FILE): FORCE
 $(UNVERSIONED_ZIP_FILE): $(ZIP_FILE)
 	cp "$(ZIP_FILE)" "$(UNVERSIONED_ZIP_FILE)"
 
-specimen: $(FONTS) Makefile _specimen
+specimen: $(FONTS) $(MAKEFILE) _specimen
 
 _specimen: FORCE
 	rm -fr specimen/src/fonts/*.woff2 || true
@@ -388,7 +390,7 @@ _specimen: FORCE
 stage1: $(SRC_BUILD)/$(PS_FONT_FAMILY).stage1.sfd
 
 # Stage 1: import SVGs
-$(SRC_BUILD)/$(PS_FONT_FAMILY).stage1.sfd: $(BASEFONT_SFD) $(SRC_SVGS) Makefile $(SVG_PY_PROG) $(BOUNDS_PY_PROG) $(SMOL_PY_PROG) $(SUPERSUB_PY_PROG) $(NOTREADY_PY_PROG) $(SETSUBSTITUTIONS_PY_PROG) $(SUBSTITUTIONS_JSON)
+$(SRC_BUILD)/$(PS_FONT_FAMILY).stage1.sfd: $(BASEFONT_SFD) $(SRC_SVGS) $(MAKEFILE) $(SVG_PY_PROG) $(BOUNDS_PY_PROG) $(SMOL_PY_PROG) $(SUPERSUB_PY_PROG) $(NOTREADY_PY_PROG) $(SETSUBSTITUTIONS_PY_PROG) $(SUBSTITUTIONS_JSON)
 	@echo "stage 1"
 	mkdir -p $(SRC_BUILD)
 	$(SVG_PY) "$<" -o "$@" $(SRC_SVGS)
@@ -400,17 +402,17 @@ $(SRC_BUILD)/$(PS_FONT_FAMILY).stage1.sfd: $(BASEFONT_SFD) $(SRC_SVGS) Makefile 
 	setfontmetas --vendor "$(VENDOR)" $(BASEFONT_SFD)
 
 # Stage 2: make condensed and compressed outlines
-$(SRC_BUILD)/$(PS_FONT_FAMILY)Cond.stage1.sfd: $(SRC_BUILD)/$(PS_FONT_FAMILY).stage1.sfd Makefile $(ASPECT_PY_PROG)
+$(SRC_BUILD)/$(PS_FONT_FAMILY)Cond.stage1.sfd: $(SRC_BUILD)/$(PS_FONT_FAMILY).stage1.sfd $(MAKEFILE) $(ASPECT_PY_PROG)
 	@echo "stage 2 condensed"
 	mkdir -p $(SRC_BUILD)
 	$(ASPECT_PY) --aspect 0.833333333333 "$<" -o "$@"
-$(SRC_BUILD)/$(PS_FONT_FAMILY)Comp.stage1.sfd: $(SRC_BUILD)/$(PS_FONT_FAMILY).stage1.sfd Makefile $(ASPECT_PY_PROG)
+$(SRC_BUILD)/$(PS_FONT_FAMILY)Comp.stage1.sfd: $(SRC_BUILD)/$(PS_FONT_FAMILY).stage1.sfd $(MAKEFILE) $(ASPECT_PY_PROG)
 	@echo "stage 2 compressed"
 	mkdir -p $(SRC_BUILD)
 	$(ASPECT_PY) --aspect 0.606060606060 "$<" -o "$@"
 
 # Stage 3: make weights
-$(DIST_TTF)/%.ttf: $(SRC_BUILD)/%.stage1.sfd Makefile $(STROKES_PY_PROG) $(METAS_PY_PROG) $(UNDERLINE_PY_PROG)
+$(DIST_TTF)/%.ttf: $(SRC_BUILD)/%.stage1.sfd $(MAKEFILE) $(STROKES_PY_PROG) $(METAS_PY_PROG) $(UNDERLINE_PY_PROG)
 	@echo "stage 3 normal (weight)"
 	mkdir -p "$(DIST_TTF)"
 	$(STROKES_PY) -x 96 "$<" -o "$@"
@@ -418,7 +420,7 @@ $(DIST_TTF)/%.ttf: $(SRC_BUILD)/%.stage1.sfd Makefile $(STROKES_PY_PROG) $(METAS
 	$(FONTAUTOHINT_PY) "$@"
 	$(METAS_PY) "$@"
 	$(UNDERLINE_PY) -102 96 "$@"
-$(DIST_TTF)/%-Light.ttf: $(SRC_BUILD)/%.stage1.sfd Makefile $(STROKES_PY_PROG) $(METAS_PY_PROG) $(UNDERLINE_PY_PROG)
+$(DIST_TTF)/%-Light.ttf: $(SRC_BUILD)/%.stage1.sfd $(MAKEFILE) $(STROKES_PY_PROG) $(METAS_PY_PROG) $(UNDERLINE_PY_PROG)
 	@echo "stage 3 light"
 	mkdir -p "$(DIST_TTF)"
 	$(STROKES_PY) -x 72 "$<" -o "$@"
@@ -426,7 +428,7 @@ $(DIST_TTF)/%-Light.ttf: $(SRC_BUILD)/%.stage1.sfd Makefile $(STROKES_PY_PROG) $
 	$(FONTAUTOHINT_PY) "$@"
 	$(METAS_PY) "$@"
 	$(UNDERLINE_PY) -102 72 "$@"
-$(DIST_TTF)/%-Thin.ttf: $(SRC_BUILD)/%.stage1.sfd Makefile $(STROKES_PY_PROG) $(METAS_PY_PROG) $(UNDERLINE_PY_PROG)
+$(DIST_TTF)/%-Thin.ttf: $(SRC_BUILD)/%.stage1.sfd $(MAKEFILE) $(STROKES_PY_PROG) $(METAS_PY_PROG) $(UNDERLINE_PY_PROG)
 	@echo "stage 3 thin"
 	mkdir -p "$(DIST_TTF)"
 	$(STROKES_PY) -x 48 "$<" -o "$@"
@@ -443,12 +445,12 @@ $(DIST_TTF)/$(NH_PS_FONT_FAMILY)%ttf: $(DIST_TTF)/$(PS_FONT_FAMILY)%ttf $(FONTUN
 # Stage 4: make code variants
 # NOTE: can't use %.ttf because '%' cannot match less than one character.
 #                                   vvvv
-$(DIST_TTF)/$(PS_CODE_FONT_FAMILY)%ttf: $(DIST_TTF)/$(PS_FONT_FAMILY)%ttf Makefile $(METAS_PY_PROG) $(FONTFIX_PY_PROG)
+$(DIST_TTF)/$(PS_CODE_FONT_FAMILY)%ttf: $(DIST_TTF)/$(PS_FONT_FAMILY)%ttf $(MAKEFILE) $(METAS_PY_PROG) $(FONTFIX_PY_PROG)
 	@echo "stage 4 code variant"
 	pyftfeatfreeze -f ss01 "$<" "$@"
 	$(FONTFIX_PY) "$@"
 	$(METAS_PY_CODE) "$@"
-$(DIST_TTF)/$(NH_PS_CODE_FONT_FAMILY)%ttf: $(DIST_TTF)/$(NH_PS_FONT_FAMILY)%ttf Makefile $(METAS_PY_PROG) $(FONTFIX_PY_PROG)
+$(DIST_TTF)/$(NH_PS_CODE_FONT_FAMILY)%ttf: $(DIST_TTF)/$(NH_PS_FONT_FAMILY)%ttf $(MAKEFILE) $(METAS_PY_PROG) $(FONTFIX_PY_PROG)
 	@echo "stage 4 code variant"
 	pyftfeatfreeze -f ss01 "$<" "$@"
 	$(FONTFIX_PY) "$@"
