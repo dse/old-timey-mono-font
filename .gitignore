@@ -13,3 +13,4 @@ testfonts
 .test-build-number.lock
 .test-build-number.txt
 typescript
+dist/sfd/
