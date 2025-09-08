@@ -1,5 +1,6 @@
 MAKEFILE := Makefile
 FONT_SRC := src/basefont/OldTimeyMono.sfd
+SUPPORT_BIN := exec/bin
 
 #                XXX.YZZ, typically
 SFNT_REVISION := 000.902
@@ -10,20 +11,21 @@ PS_FONT_FAMILY		= OldTimeyMono
 CODE_FONT_FAMILY	= Old Timey Code
 PS_CODE_FONT_FAMILY	= OldTimeyCode
 
-SVG_PY_PROG			:= exec/bin/svg.py
-STROKES_PY_PROG			:= exec/bin/strokes.py
-ASPECT_PY_PROG			:= exec/bin/aspect.py
-METAS_PY_PROG			:= exec/bin/metas.py
-NOTDEF_PY_PROG			:= exec/bin/notdef.py
-SMOL_PY_PROG			:= exec/bin/smol.py
-BOUNDS_PY_PROG			:= exec/bin/bounds.py
-SUPERSUB_PY_PROG		:= exec/bin/supersub.py
-UNDERLINE_PY_PROG		:= exec/bin/underline.py
-NOTREADY_PY_PROG		:= exec/bin/notready.py
-SETSUBSTITUTIONS_PY_PROG	:= exec/bin/setsubstitutions.py
-FONTAUTOHINT_PY_PROG		:= exec/bin/fontautohint.py
-FONTUNHINT_PY_PROG		:= exec/bin/fontunhint.py
-BUILDNR_PY_ORIG			:= exec/bin/buildnr.py
+SVG_PY_PROG			:= $(SUPPORT_BIN)/svg.py
+STROKES_PY_PROG			:= $(SUPPORT_BIN)/strokes.py
+ASPECT_PY_PROG			:= $(SUPPORT_BIN)/aspect.py
+METAS_PY_PROG			:= $(SUPPORT_BIN)/metas.py
+NOTDEF_PY_PROG			:= $(SUPPORT_BIN)/notdef.py
+SMOL_PY_PROG			:= $(SUPPORT_BIN)/smol.py
+BOUNDS_PY_PROG			:= $(SUPPORT_BIN)/bounds.py
+SUPERSUB_PY_PROG		:= $(SUPPORT_BIN)/supersub.py
+UNDERLINE_PY_PROG		:= $(SUPPORT_BIN)/underline.py
+NOTREADY_PY_PROG		:= $(SUPPORT_BIN)/notready.py
+SETSUBSTITUTIONS_PY_PROG	:= $(SUPPORT_BIN)/setsubstitutions.py
+FONTAUTOHINT_PY_PROG		:= $(SUPPORT_BIN)/fontautohint.py
+FONTUNHINT_PY_PROG		:= $(SUPPORT_BIN)/fontunhint.py
+BUILDNR_PY_ORIG			:= $(SUPPORT_BIN)/buildnr.py
+VERSION_PY_ORIG			:= $(SUPPORT_BIN)/version.py
 
 METAS_PY_ARGS      := --ffn='$(FONT_FAMILY)' --psfn='$(PS_FONT_FAMILY)'
 METAS_PY_CODE_ARGS := --ffn='$(CODE_FONT_FAMILY)' --psfn='$(PS_CODE_FONT_FAMILY)'
@@ -45,6 +47,7 @@ SETSUBSTITUTIONS_PY	:= $(SETSUBSTITUTIONS_PY_PROG)
 FONTAUTOHINT_PY		:= $(FONTAUTOHINT_PY_PROG)
 FONTUNHINT_PY		:= $(FONTUNHINT_PY_PROG)
 BUILDNR_PY		:= $(BUILDNR_PY_PROG)
+VERSION_PY		:= $(VERSION_PY_PROG)
 
 SUBSTITUTIONS_JSON	:= src/data/substitutions.json
 
@@ -295,7 +298,7 @@ $(DISTDIR)/ttf/%.ttf: tmp/_build/%.stage1.sfd Makefile $(STROKES_PY_PROG) $(META
 	@echo "stage 3 normal (weight)"
 	mkdir -p "$(DISTDIR)/ttf"
 	$(STROKES_PY) -x 96 "$<" -o "$@"
-	exec/bin/fontfix "$@"
+	$(FONTFIX_PY) "$@"
 	$(FONTAUTOHINT_PY) "$@"
 	$(METAS_PY) "$@"
 	$(UNDERLINE_PY) -102 96 "$@"
@@ -303,7 +306,7 @@ $(DISTDIR)/ttf/%-Light.ttf: tmp/_build/%.stage1.sfd Makefile $(STROKES_PY_PROG) 
 	@echo "stage 3 light"
 	mkdir -p "$(DISTDIR)/ttf"
 	$(STROKES_PY) -x 72 "$<" -o "$@"
-	exec/bin/fontfix "$@"
+	$(FONTFIX_PY) "$@"
 	$(FONTAUTOHINT_PY) "$@"
 	$(METAS_PY) "$@"
 	$(UNDERLINE_PY) -102 72 "$@"
@@ -311,7 +314,7 @@ $(DISTDIR)/ttf/%-Thin.ttf: tmp/_build/%.stage1.sfd Makefile $(STROKES_PY_PROG) $
 	@echo "stage 3 thin"
 	mkdir -p "$(DISTDIR)/ttf"
 	$(STROKES_PY) -x 48 "$<" -o "$@"
-	exec/bin/fontfix "$@"
+	$(FONTFIX_PY) "$@"
 	$(FONTAUTOHINT_PY) "$@"
 	$(METAS_PY) "$@"
 	$(UNDERLINE_PY) -102 48 "$@"
@@ -319,10 +322,10 @@ $(DISTDIR)/ttf/%-Thin.ttf: tmp/_build/%.stage1.sfd Makefile $(STROKES_PY_PROG) $
 # Stage 4: make code variants
 # NOTE: can't use %.ttf because '%' cannot match less than one character.
 #                                   vvvv
-$(DISTDIR)/ttf/$(PS_CODE_FONT_FAMILY)%ttf: $(DISTDIR)/ttf/$(PS_FONT_FAMILY)%ttf Makefile $(METAS_PY_PROG) exec/bin/fontfix
+$(DISTDIR)/ttf/$(PS_CODE_FONT_FAMILY)%ttf: $(DISTDIR)/ttf/$(PS_FONT_FAMILY)%ttf Makefile $(METAS_PY_PROG) $(FONTFIX_PY_PROG)
 	@echo "stage 4 code variant"
 	pyftfeatfreeze -f ss01 "$<" "$@"
-	exec/bin/fontfix "$@"
+	$(FONTFIX_PY) "$@"
 	$(METAS_PY_CODE) "$@"
 
 clean: FORCE
@@ -338,7 +341,7 @@ clean: FORCE
 	/bin/rm -fr tmp/_build || true
 
 version: FORCE
-	exec/bin/version.py src/basefont/OldTimeyMono.sfd \
+	$(VERSION_PY) src/basefont/OldTimeyMono.sfd \
 		--sfnt-revision "$(SFNT_REVISION)" \
 		--ps-version "$(VERSION)"
 
