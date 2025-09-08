@@ -2,7 +2,7 @@ SRC_BASEFONT			= src/basefont
 SRC_DATA			= src/data
 SRC_BUILD			= tmp/_build
 SRC_VECTOR			= src/vector
-SUPPORT_BIN			= exec/bin
+SUPPORT_BIN			= support/bin
 DIST_TTF			= dist/ttf
 DIST_ZIP			= dist/zip
 
