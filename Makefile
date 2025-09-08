@@ -1,3 +1,5 @@
+# if fontunhint executes on a font, pyftfeatfreeze breaks.
+
 default: fonts zip
 
 SRC_BASEFONT			= src/basefont
