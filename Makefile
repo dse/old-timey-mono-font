@@ -8,6 +8,7 @@ SRC_BUILD			= tmp/_build
 SRC_VECTOR			= src/vector
 SUPPORT_BIN			= support/bin
 DIST_TTF			= dist/ttf
+DIST_SFD			= dist/sfd
 DIST_ZIP			= dist/zip
 
 MAKEFILE			= Makefile
@@ -83,7 +84,9 @@ ZIP_FILE_REL_TO_DIST_ZIP	= $(PS_FONT_FAMILY)-$(VERSION).zip
 UNVERSIONED_ZIP_FILE		= $(DIST_ZIP)/$(PS_FONT_FAMILY).zip
 
 TTF_FONTS			= $(ORIGINAL_FONTS) $(CODING_FONTS)
+SFD_FONTS			= $(patsubst $(DIST_TTF)/%.ttf,$(DIST_SFD)/%.sfd,$(TTF_FONTS))
 TTF_FONTS_REL_TO_DIST_ZIP	= $(patsubst $(DIST_TTF)/%.ttf,../ttf/%.ttf,$(TTF_FONTS))
+SFD_FONTS_REL_TO_DIST_ZIP	= $(patsubst $(DIST_SFD)/%.sfd,../sfd/%.sfd,$(SFD_FONTS))
 
 FONTTOOL__REGULAR		= --expand-stroke 96
 FONTTOOL__LIGHT			= --expand-stroke 72
@@ -242,11 +245,13 @@ COND_FONTS = \
 	$(NH_LIGHT_FONT_COND_TTF)		\
 	$(NH_LIGHT_CODING_FONT_COND_TTF)
 
-fonts: $(TTF_FONTS)
+fonts: $(TTF_FONTS) $(SFD_FONTS)
 original: $(ORIGINAL_FONTS)
 coding: $(CODING_FONTS)
 compressed: $(COMP_FONTS)
 condensed: $(COND_FONTS)
+ttf: $(TTF_FONTS)
+sfd: $(SFD_FONTS)
 zip: $(ZIP_FILE) $(UNVERSIONED_ZIP_FILE)
 
 .SUFFIXES: .sfd .ttf
@@ -460,6 +465,10 @@ $(DIST_TTF)/$(NH_PS_CODE_FONT_FAMILY)%ttf: $(DIST_TTF)/$(NH_PS_FONT_FAMILY)%ttf 
 	pyftfeatfreeze -f ss01 "$<" "$@"
 	$(FONTFIX_PY) "$@"
 	$(NH_METAS_PY_CODE) "$@"
+
+$(DIST_SFD)/%.sfd: $(DIST_TTF)/%.ttf
+	mkdir -p "$(DIST_SFD)"
+	fontconvert "$<" "$@"
 
 clean: FORCE
 	/bin/rm $(TTF_FONTS) $(ZIP_FILE) || true
