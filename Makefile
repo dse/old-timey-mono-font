@@ -109,6 +109,46 @@ NH_THIN_CODING_FONT_COND_TTF	= $(DIST_TTF)/$(NH_PS_CODE_FONT_FAMILY)Cond-Thin.tt
 NH_LIGHT_FONT_COND_TTF		= $(DIST_TTF)/$(NH_PS_FONT_FAMILY)Cond-Light.ttf
 NH_LIGHT_CODING_FONT_COND_TTF	= $(DIST_TTF)/$(NH_PS_CODE_FONT_FAMILY)Cond-Light.ttf
 
+HINTED_FONTS = \
+	$(FONT_TTF) \
+	$(CODING_FONT_TTF) \
+	$(THIN_FONT_TTF) \
+	$(THIN_CODING_FONT_TTF) \
+	$(LIGHT_FONT_TTF) \
+	$(LIGHT_CODING_FONT_TTF) \
+	$(FONT_COMP_TTF) \
+	$(CODING_FONT_COMP_TTF) \
+	$(THIN_FONT_COMP_TTF) \
+	$(THIN_CODING_FONT_COMP_TTF) \
+	$(LIGHT_FONT_COMP_TTF) \
+	$(LIGHT_CODING_FONT_COMP_TTF) \
+	$(FONT_COND_TTF) \
+	$(CODING_FONT_COND_TTF) \
+	$(THIN_FONT_COND_TTF) \
+	$(THIN_CODING_FONT_COND_TTF) \
+	$(LIGHT_FONT_COND_TTF) \
+	$(LIGHT_CODING_FONT_COND_TTF)
+
+UNHINTED_FONTS = \
+	$(NH_FONT_TTF) \
+	$(NH_CODING_FONT_TTF) \
+	$(NH_THIN_FONT_TTF) \
+	$(NH_THIN_CODING_FONT_TTF) \
+	$(NH_LIGHT_FONT_TTF) \
+	$(NH_LIGHT_CODING_FONT_TTF) \
+	$(NH_FONT_COMP_TTF) \
+	$(NH_CODING_FONT_COMP_TTF) \
+	$(NH_THIN_FONT_COMP_TTF) \
+	$(NH_THIN_CODING_FONT_COMP_TTF) \
+	$(NH_LIGHT_FONT_COMP_TTF) \
+	$(NH_LIGHT_CODING_FONT_COMP_TTF) \
+	$(NH_FONT_COND_TTF) \
+	$(NH_CODING_FONT_COND_TTF) \
+	$(NH_THIN_FONT_COND_TTF) \
+	$(NH_THIN_CODING_FONT_COND_TTF) \
+	$(NH_LIGHT_FONT_COND_TTF) \
+	$(NH_LIGHT_CODING_FONT_COND_TTF)
+
 ZIP_FILE			= $(DIST_ZIP)/$(FILENAME_BASE).zip
 
 FONTTOOL__REGULAR		= --expand-stroke 96
@@ -190,7 +230,8 @@ COND_FONTS = \
 	$(LIGHT_FONT_COND_TTF) \
 	$(LIGHT_CODING_FONT_COND_TTF)
 
-FONTS = $(ORIGINAL_FONTS) $(CODING_FONTS)
+# FONTS = $(ORIGINAL_FONTS) $(CODING_FONTS)
+FONTS = $(HINTED_FONTS)
 
 default: $(FONTS)
 fonts: $(FONTS)
@@ -342,6 +383,7 @@ _specimen: FORCE
 stage1: $(SRC_BUILD)/$(PS_FONT_FAMILY).stage1.sfd
 
 # Stage 1: import SVGs; generate base outline
+# => OldTimeyMono.stage1.sfd
 $(SRC_BUILD)/$(PS_FONT_FAMILY).stage1.sfd: $(BASEFONT) $(SRC_SVGS) Makefile $(SVG_PY_PROG) $(BOUNDS_PY_PROG) $(SMOL_PY_PROG) $(SUPERSUB_PY_PROG) $(NOTREADY_PY_PROG) $(SETSUBSTITUTIONS_PY_PROG) $(SUBSTITUTIONS_JSON)
 	@echo "stage 1"
 	mkdir -p $(SRC_BUILD)
@@ -353,16 +395,29 @@ $(SRC_BUILD)/$(PS_FONT_FAMILY).stage1.sfd: $(BASEFONT) $(SRC_SVGS) Makefile $(SV
 	$(NOTREADY_PY) "$@"
 
 # Stage 2: make condensed and compressed outlines from base outline
-$(SRC_BUILD)/$(PS_FONT_FAMILY)Cond.stage1.sfd: $(SRC_BUILD)/$(PS_FONT_FAMILY).stage1.sfd Makefile $(ASPECT_PY_PROG)
+# => OldTimeyMonoCond.stage1.sfd
+# => OldTimeyMonoComp.stage1.sfd
+# => 2 more fonts makes 3 fonts
+$(SRC_BUILD)/%Cond.stage1.sfd: $(SRC_BUILD)/%.stage1.sfd Makefile $(ASPECT_PY_PROG)
 	@echo "stage 2 condensed"
 	mkdir -p $(SRC_BUILD)
 	$(ASPECT_PY) --aspect 0.833333333333 "$<" -o "$@"
-$(SRC_BUILD)/$(PS_FONT_FAMILY)Comp.stage1.sfd: $(SRC_BUILD)/$(PS_FONT_FAMILY).stage1.sfd Makefile $(ASPECT_PY_PROG)
+$(SRC_BUILD)/%Comp.stage1.sfd: $(SRC_BUILD)/%.stage1.sfd Makefile $(ASPECT_PY_PROG)
 	@echo "stage 2 compressed"
 	mkdir -p $(SRC_BUILD)
 	$(ASPECT_PY) --aspect 0.606060606060 "$<" -o "$@"
 
 # Stage 3: make weights
+# => OldTimeyMono.ttf
+# => OldTimeyMonoCond.ttf
+# => OldTimeyMonoComp.ttf
+# => OldTimeyMono-Light.ttf
+# => OldTimeyMonoCond-Light.ttf
+# => OldTimeyMonoComp-Light.ttf
+# => OldTimeyMono-Thin.ttf
+# => OldTimeyMonoCond-Thin.ttf
+# => OldTimeyMonoComp-Thin.ttf
+# => 9 fonts
 $(DIST_TTF)/%.ttf: $(SRC_BUILD)/%.stage1.sfd Makefile $(STROKES_PY_PROG) $(METAS_PY_PROG) $(UNDERLINE_PY_PROG) $(FONTFIX_PROG)
 	@echo "stage 3 normal (weight)"
 	mkdir -p "$(DIST_TTF)"
@@ -389,9 +444,34 @@ $(DIST_TTF)/%-Thin.ttf: $(SRC_BUILD)/%.stage1.sfd Makefile $(STROKES_PY_PROG) $(
 	$(UNDERLINE_PY) -102 48 "$@"
 
 # Stage 4: make code variants
+# => OldTimeyCode.ttf
+# => OldTimeyCodeCond.ttf
+# => OldTimeyCodeComp.ttf
+# => OldTimeyCode-Light.ttf
+# => OldTimeyCodeCond-Light.ttf
+# => OldTimeyCodeComp-Light.ttf
+# => OldTimeyCode-Thin.ttf
+# => OldTimeyCodeCond-Thin.ttf
+# => OldTimeyCodeComp-Thin.ttf
+# => 9 more fonts
 # NOTE: can't use %.ttf because '%' cannot match less than one character.
+# "%" matches:
+#     "."
+#     "-Light."
+#     "-Thin."
+#     "Cond."
+#     "Cond-Light."
+#     "Cond-Thin."
+#     "Comp."
+#     "Comp-Light."
+#     "Comp-Thin."
 #                                 vvvv
 $(DIST_TTF)/$(PS_CODE_FONT_FAMILY)%ttf: $(DIST_TTF)/$(PS_FONT_FAMILY)%ttf Makefile $(METAS_PY_PROG) $(FONTFIX_PY_PROG)
+	@echo "stage 4 code variant"
+	pyftfeatfreeze -f ss01 "$<" "$@"
+	$(FONTFIX_PY) "$@"
+	$(METAS_PY_CODE) "$@"
+$(DIST_TTF)/$(NH_PS_CODE_FONT_FAMILY)%ttf: $(DIST_TTF)/$(NH_PS_FONT_FAMILY)%ttf Makefile $(METAS_PY_PROG) $(FONTFIX_PY_PROG)
 	@echo "stage 4 code variant"
 	pyftfeatfreeze -f ss01 "$<" "$@"
 	$(FONTFIX_PY) "$@"
