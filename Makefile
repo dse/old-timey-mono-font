@@ -4,6 +4,8 @@ SUPPORT_BIN			= exec/bin
 DIST_TTF			= dist/ttf
 DIST_ZIP			= dist/zip
 SRC_DATA			= src/data
+SRC_BUILD			= tmp/_build
+SRC_VECTOR			= src/vector
 
 BASEFONT_SFD			= $(SRC_BASEFONT)/$(PS_FONT_FAMILY).sfd
 
@@ -132,7 +134,7 @@ compressed: $(COMP_FONTS)
 condensed: $(COND_FONTS)
 zip: $(ZIP_FILE)
 
-SRC_SVGS			= $(shell find src/vector -type f -name '*.svg')
+SRC_SVGS			= $(shell find $(SRC_VECTOR) -type f -name '*.svg')
 
 .SUFFIXES: .sfd .ttf
 
@@ -266,19 +268,19 @@ specimen: $(FONTS) Makefile _specimen
 _specimen: FORCE
 	rm -fr specimen/src/fonts/*.woff2 || true
 	mkdir -p specimen/src/fonts
-	for i in dist/ttf/*.ttf ; do woff2_compress "$$i" && mv "$${i%.ttf}.woff2" specimen/src/fonts ; done
+	for i in $(DIST_TTF)/*.ttf ; do woff2_compress "$$i" && mv "$${i%.ttf}.woff2" specimen/src/fonts ; done
 	@echo "==============================================================================="
 	@echo "You'll need to do the following manually:"
 	@echo ""
 	@echo "cd specimen && yarn build"
 	@echo "==============================================================================="
 
-stage1: tmp/_build/$(PS_FONT_FAMILY).stage1.sfd
+stage1: $(SRC_BUILD)/$(PS_FONT_FAMILY).stage1.sfd
 
 # Stage 1: import SVGs
-tmp/_build/$(PS_FONT_FAMILY).stage1.sfd: $(BASEFONT_SFD) $(SRC_SVGS) Makefile $(SVG_PY_PROG) $(BOUNDS_PY_PROG) $(SMOL_PY_PROG) $(SUPERSUB_PY_PROG) $(NOTREADY_PY_PROG) $(SETSUBSTITUTIONS_PY_PROG) $(SUBSTITUTIONS_JSON)
+$(SRC_BUILD)/$(PS_FONT_FAMILY).stage1.sfd: $(BASEFONT_SFD) $(SRC_SVGS) Makefile $(SVG_PY_PROG) $(BOUNDS_PY_PROG) $(SMOL_PY_PROG) $(SUPERSUB_PY_PROG) $(NOTREADY_PY_PROG) $(SETSUBSTITUTIONS_PY_PROG) $(SUBSTITUTIONS_JSON)
 	@echo "stage 1"
-	mkdir -p tmp/_build
+	mkdir -p $(SRC_BUILD)
 	$(SVG_PY) "$<" -o "$@" $(SRC_SVGS)
 	$(BOUNDS_PY) "$@"
 	$(SMOL_PY) "$@"
@@ -287,17 +289,17 @@ tmp/_build/$(PS_FONT_FAMILY).stage1.sfd: $(BASEFONT_SFD) $(SRC_SVGS) Makefile $(
 	$(NOTREADY_PY) "$@"
 
 # Stage 2: make condensed and compressed outlines
-tmp/_build/$(PS_FONT_FAMILY)Cond.stage1.sfd: tmp/_build/$(PS_FONT_FAMILY).stage1.sfd Makefile $(ASPECT_PY_PROG)
+$(SRC_BUILD)/$(PS_FONT_FAMILY)Cond.stage1.sfd: $(SRC_BUILD)/$(PS_FONT_FAMILY).stage1.sfd Makefile $(ASPECT_PY_PROG)
 	@echo "stage 2 condensed"
-	mkdir -p tmp/_build
+	mkdir -p $(SRC_BUILD)
 	$(ASPECT_PY) --aspect 0.833333333333 "$<" -o "$@"
-tmp/_build/$(PS_FONT_FAMILY)Comp.stage1.sfd: tmp/_build/$(PS_FONT_FAMILY).stage1.sfd Makefile $(ASPECT_PY_PROG)
+$(SRC_BUILD)/$(PS_FONT_FAMILY)Comp.stage1.sfd: $(SRC_BUILD)/$(PS_FONT_FAMILY).stage1.sfd Makefile $(ASPECT_PY_PROG)
 	@echo "stage 2 compressed"
-	mkdir -p tmp/_build
+	mkdir -p $(SRC_BUILD)
 	$(ASPECT_PY) --aspect 0.606060606060 "$<" -o "$@"
 
 # Stage 3: make weights
-$(DIST_TTF)/%.ttf: tmp/_build/%.stage1.sfd Makefile $(STROKES_PY_PROG) $(METAS_PY_PROG) $(UNDERLINE_PY_PROG)
+$(DIST_TTF)/%.ttf: $(SRC_BUILD)/%.stage1.sfd Makefile $(STROKES_PY_PROG) $(METAS_PY_PROG) $(UNDERLINE_PY_PROG)
 	@echo "stage 3 normal (weight)"
 	mkdir -p "$(DIST_TTF)"
 	$(STROKES_PY) -x 96 "$<" -o "$@"
@@ -305,7 +307,7 @@ $(DIST_TTF)/%.ttf: tmp/_build/%.stage1.sfd Makefile $(STROKES_PY_PROG) $(METAS_P
 	$(FONTAUTOHINT_PY) "$@"
 	$(METAS_PY) "$@"
 	$(UNDERLINE_PY) -102 96 "$@"
-$(DIST_TTF)/%-Light.ttf: tmp/_build/%.stage1.sfd Makefile $(STROKES_PY_PROG) $(METAS_PY_PROG) $(UNDERLINE_PY_PROG)
+$(DIST_TTF)/%-Light.ttf: $(SRC_BUILD)/%.stage1.sfd Makefile $(STROKES_PY_PROG) $(METAS_PY_PROG) $(UNDERLINE_PY_PROG)
 	@echo "stage 3 light"
 	mkdir -p "$(DIST_TTF)"
 	$(STROKES_PY) -x 72 "$<" -o "$@"
@@ -313,7 +315,7 @@ $(DIST_TTF)/%-Light.ttf: tmp/_build/%.stage1.sfd Makefile $(STROKES_PY_PROG) $(M
 	$(FONTAUTOHINT_PY) "$@"
 	$(METAS_PY) "$@"
 	$(UNDERLINE_PY) -102 72 "$@"
-$(DIST_TTF)/%-Thin.ttf: tmp/_build/%.stage1.sfd Makefile $(STROKES_PY_PROG) $(METAS_PY_PROG) $(UNDERLINE_PY_PROG)
+$(DIST_TTF)/%-Thin.ttf: $(SRC_BUILD)/%.stage1.sfd Makefile $(STROKES_PY_PROG) $(METAS_PY_PROG) $(UNDERLINE_PY_PROG)
 	@echo "stage 3 thin"
 	mkdir -p "$(DIST_TTF)"
 	$(STROKES_PY) -x 48 "$<" -o "$@"
@@ -341,7 +343,7 @@ clean: FORCE
 		-name '*~' -o \
 		-name '#*#' \
 	\) -exec rm {} + || true
-	/bin/rm -fr tmp/_build || true
+	/bin/rm -fr $(SRC_BUILD) || true
 
 version: FORCE
 	$(VERSION_PY) $(BASEFONT_SFD) \
