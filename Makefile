@@ -400,7 +400,7 @@ $(SRC_BUILD)/$(PS_FONT_FAMILY).stage1.sfd: $(BASEFONT_SFD) $(SRC_SVGS) $(MAKEFIL
 	$(SUPERSUB_PY) "$@"
 	$(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) $(BASEFONT_SFD)
 	$(NOTREADY_PY) "$@"
-	setfontmetas --vendor "$(VENDOR)" $(BASEFONT_SFD)
+	setfontmetas --vendor "$(VENDOR)" "$@"
 
 # Stage 2: make condensed and compressed outlines
 $(SRC_BUILD)/$(PS_FONT_FAMILY)Cond.stage1.sfd: $(SRC_BUILD)/$(PS_FONT_FAMILY).stage1.sfd $(MAKEFILE) $(ASPECT_PY_PROG)
