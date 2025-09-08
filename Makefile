@@ -1,7 +1,8 @@
+SRC_BASEFONT			= src
 SUPPORT_BIN			= bin
 
 MAKEFILE			= Makefile
-BASEFONT			= src/OldTimeyMono.sfd
+BASEFONT			= $(SRC_BASEFONT)/OldTimeyMono.sfd
 
 #				  XXX.YZZ, typically
 SFNT_REVISION			= 000.902
@@ -362,7 +363,7 @@ clean: FORCE
 	/bin/rm -fr src/build || true
 
 version: FORCE
-	$(SUPPORT_BIN)/version.py src/OldTimeyMono.sfd \
+	$(SUPPORT_BIN)/version.py $(BASEFONT) \
 		--sfnt-revision "$(SFNT_REVISION)" \
 		--ps-version "$(VERSION)"
 
