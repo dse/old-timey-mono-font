@@ -8,6 +8,9 @@ DISTDIR				= dist
 DIST_TTF			= $(DISTDIR)/ttf
 DIST_ZIP			= $(DISTDIR)
 
+# mainly for .zip files.
+FILENAME_BASE			= OldTimeyMono
+
 MAKEFILE			= Makefile
 BASEFONT			= $(SRC_BASEFONT)/OldTimeyMono.sfd
 
@@ -79,7 +82,7 @@ THIN_CODING_FONT_COND_TTF	= $(DIST_TTF)/$(PS_CODE_FONT_FAMILY)Cond-Thin.ttf
 LIGHT_FONT_COND_TTF		= $(DIST_TTF)/$(PS_FONT_FAMILY)Cond-Light.ttf
 LIGHT_CODING_FONT_COND_TTF	= $(DIST_TTF)/$(PS_CODE_FONT_FAMILY)Cond-Light.ttf
 
-ZIP_FILE			= $(DIST_ZIP)/OldTimeyMono.zip
+ZIP_FILE			= $(DIST_ZIP)/$(FILENAME_BASE).zip
 
 FONTTOOL__REGULAR		= --expand-stroke 96
 FONTTOOL__LIGHT			= --expand-stroke 72
@@ -259,13 +262,13 @@ $(ZIP_FILE): $(FONTS) Makefile _zip
 
 _zip: FORCE
 	cd dist && \
-		bsdtar -c -f "OldTimeyMono-$(VERSION).zip" \
+		bsdtar -c -f "$(FILENAME_BASE)-$(VERSION).zip" \
 		--format zip \
-		-s '/^ttf/OldTimeyMono-$(VERSION)/' \
+		-s '/^ttf/$(FILENAME_BASE)-$(VERSION)/' \
 		ttf
 
 unversionedzip: FORCE
-	cp "$(DIST_ZIP)/OldTimeyMono-$(VERSION).zip" "$(DIST_ZIP)/OldTimeyMono.zip"
+	cp "$(DIST_ZIP)/$(FILENAME_BASE)-$(VERSION).zip" "$(DIST_ZIP)/$(FILENAME_BASE).zip"
 
 specimen: $(FONTS) Makefile _specimen
 
