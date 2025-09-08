@@ -2,6 +2,7 @@ MAKEFILE			= Makefile
 FONT_SRC			= src/basefont/OldTimeyMono.sfd
 SUPPORT_BIN			= exec/bin
 DIST_TTF			= dist/ttf
+DIST_ZIP			= dist/zip
 
 #                                 XXX.YZZ, typically
 SFNT_REVISION			= 000.902
@@ -109,7 +110,7 @@ COND_FONTS = \
 	$(LIGHT_FONT_COND_TTF) \
 	$(LIGHT_CODING_FONT_COND_TTF)
 
-ZIP_FILE			= dist/zip/OldTimeyMono.zip
+ZIP_FILE			= $(DIST_ZIP)/OldTimeyMono.zip
 
 FONTS				= $(ORIGINAL_FONTS) $(CODING_FONTS)
 
@@ -248,14 +249,14 @@ boxdraw: FORCE
 $(ZIP_FILE): $(FONTS) Makefile _zip
 
 _zip: FORCE
-	cd dist/zip && \
+	cd $(DIST_ZIP) && \
 		bsdtar -c -f "OldTimeyMono-$(VERSION).zip" \
 		--format zip \
 		-s '#^\.\./ttf#OldTimeyMono-$(VERSION)#' \
 		../ttf
 
 unversionedzip: FORCE
-	cp "dist/zip/OldTimeyMono-$(VERSION).zip" "dist/zip/OldTimeyMono.zip"
+	cp "$(DIST_ZIP)/OldTimeyMono-$(VERSION).zip" "$(DIST_ZIP)/OldTimeyMono.zip"
 
 specimen: $(FONTS) Makefile _specimen
 
