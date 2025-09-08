@@ -1,15 +1,15 @@
-MAKEFILE = Makefile
-FONT_SRC = src/basefont/OldTimeyMono.sfd
-SUPPORT_BIN = exec/bin
+MAKEFILE			= Makefile
+FONT_SRC			= src/basefont/OldTimeyMono.sfd
+SUPPORT_BIN			= exec/bin
 
-#                XXX.YZZ, typically
-SFNT_REVISION = 000.902
-VERSION       = 0.9.2
+#                                 XXX.YZZ, typically
+SFNT_REVISION			= 000.902
+VERSION				= 0.9.2
 
-FONT_FAMILY		= Old Timey Mono
-PS_FONT_FAMILY		= OldTimeyMono
-CODE_FONT_FAMILY	= Old Timey Code
-PS_CODE_FONT_FAMILY	= OldTimeyCode
+FONT_FAMILY			= Old Timey Mono
+PS_FONT_FAMILY			= OldTimeyMono
+CODE_FONT_FAMILY		= Old Timey Code
+PS_CODE_FONT_FAMILY		= OldTimeyCode
 
 SVG_PY_PROG			= $(SUPPORT_BIN)/svg.py
 STROKES_PY_PROG			= $(SUPPORT_BIN)/strokes.py
@@ -28,39 +28,37 @@ BUILDNR_PY_PROG			= $(SUPPORT_BIN)/buildnr.py
 VERSION_PY_PROG			= $(SUPPORT_BIN)/version.py
 FONTFIX_PY_PROG			= $(SUPPORT_BIN)/fontfix.py
 
-METAS_PY_ARGS      = --ffn='$(FONT_FAMILY)' --psfn='$(PS_FONT_FAMILY)'
-METAS_PY_CODE_ARGS = --ffn='$(CODE_FONT_FAMILY)' --psfn='$(PS_CODE_FONT_FAMILY)'
+METAS_PY_ARGS			= --ffn='$(FONT_FAMILY)' --psfn='$(PS_FONT_FAMILY)'
+METAS_PY_CODE_ARGS		= --ffn='$(CODE_FONT_FAMILY)' --psfn='$(PS_CODE_FONT_FAMILY)'
 
-OPT_VERBOSE :=
+SVG_PY				= $(SVG_PY_PROG)
+STROKES_PY			= $(STROKES_PY_PROG)
+ASPECT_PY			= $(ASPECT_PY_PROG)
+METAS_PY			= $(METAS_PY_PROG) $(METAS_PY_ARGS)
+METAS_PY_CODE			= $(METAS_PY_PROG) $(METAS_PY_CODE_ARGS)
+NOTDEF_PY			= $(NOTDEF_PY_PROG)
+SMOL_PY				= $(SMOL_PY_PROG)
+BOUNDS_PY			= $(BOUNDS_PY_PROG)
+SUPERSUB_PY			= $(SUPERSUB_PY_PROG)
+UNDERLINE_PY			= $(UNDERLINE_PY_PROG)
+NOTREADY_PY			= $(NOTREADY_PY_PROG)
+SETSUBSTITUTIONS_PY		= $(SETSUBSTITUTIONS_PY_PROG)
+FONTAUTOHINT_PY			= $(FONTAUTOHINT_PY_PROG)
+FONTUNHINT_PY			= $(FONTUNHINT_PY_PROG)
+BUILDNR_PY			= $(BUILDNR_PY_PROG)
+VERSION_PY			= $(VERSION_PY_PROG)
+FONTFIX_PY			= $(FONTFIX_PY_PROG)
 
-SVG_PY			= $(SVG_PY_PROG)
-STROKES_PY		= $(STROKES_PY_PROG)
-ASPECT_PY		= $(ASPECT_PY_PROG)
-METAS_PY		= $(METAS_PY_PROG) $(METAS_PY_ARGS)
-METAS_PY_CODE		= $(METAS_PY_PROG) $(METAS_PY_CODE_ARGS)
-NOTDEF_PY		= $(NOTDEF_PY_PROG)
-SMOL_PY			= $(SMOL_PY_PROG)
-BOUNDS_PY		= $(BOUNDS_PY_PROG)
-SUPERSUB_PY		= $(SUPERSUB_PY_PROG)
-UNDERLINE_PY		= $(UNDERLINE_PY_PROG)
-NOTREADY_PY		= $(NOTREADY_PY_PROG)
-SETSUBSTITUTIONS_PY	= $(SETSUBSTITUTIONS_PY_PROG)
-FONTAUTOHINT_PY		= $(FONTAUTOHINT_PY_PROG)
-FONTUNHINT_PY		= $(FONTUNHINT_PY_PROG)
-BUILDNR_PY		= $(BUILDNR_PY_PROG)
-VERSION_PY		= $(VERSION_PY_PROG)
-FONTFIX_PY		= $(FONTFIX_PY_PROG)
+SUBSTITUTIONS_JSON		= src/data/substitutions.json
 
-SUBSTITUTIONS_JSON	= src/data/substitutions.json
+DISTDIR				= dist
 
-DISTDIR = dist
-
-FONT_TTF                        = $(DISTDIR)/ttf/$(PS_FONT_FAMILY).ttf
-CODING_FONT_TTF                 = $(DISTDIR)/ttf/$(PS_CODE_FONT_FAMILY).ttf
-THIN_FONT_TTF                   = $(DISTDIR)/ttf/$(PS_FONT_FAMILY)-Thin.ttf
-THIN_CODING_FONT_TTF            = $(DISTDIR)/ttf/$(PS_CODE_FONT_FAMILY)-Thin.ttf
-LIGHT_FONT_TTF                  = $(DISTDIR)/ttf/$(PS_FONT_FAMILY)-Light.ttf
-LIGHT_CODING_FONT_TTF           = $(DISTDIR)/ttf/$(PS_CODE_FONT_FAMILY)-Light.ttf
+FONT_TTF			= $(DISTDIR)/ttf/$(PS_FONT_FAMILY).ttf
+CODING_FONT_TTF			= $(DISTDIR)/ttf/$(PS_CODE_FONT_FAMILY).ttf
+THIN_FONT_TTF			= $(DISTDIR)/ttf/$(PS_FONT_FAMILY)-Thin.ttf
+THIN_CODING_FONT_TTF		= $(DISTDIR)/ttf/$(PS_CODE_FONT_FAMILY)-Thin.ttf
+LIGHT_FONT_TTF			= $(DISTDIR)/ttf/$(PS_FONT_FAMILY)-Light.ttf
+LIGHT_CODING_FONT_TTF		= $(DISTDIR)/ttf/$(PS_CODE_FONT_FAMILY)-Light.ttf
 FONT_COMP_TTF			= $(DISTDIR)/ttf/$(PS_FONT_FAMILY)Comp.ttf
 CODING_FONT_COMP_TTF		= $(DISTDIR)/ttf/$(PS_CODE_FONT_FAMILY)Comp.ttf
 THIN_FONT_COMP_TTF		= $(DISTDIR)/ttf/$(PS_FONT_FAMILY)Comp-Thin.ttf
@@ -112,16 +110,16 @@ COND_FONTS = \
 	$(LIGHT_FONT_COND_TTF) \
 	$(LIGHT_CODING_FONT_COND_TTF)
 
-ZIP_FILE = dist/zip/OldTimeyMono.zip
+ZIP_FILE			= dist/zip/OldTimeyMono.zip
 
-FONTS = $(ORIGINAL_FONTS) $(CODING_FONTS)
+FONTS				= $(ORIGINAL_FONTS) $(CODING_FONTS)
 
-FONTTOOL__REGULAR	= --expand-stroke 96
-FONTTOOL__LIGHT		= --expand-stroke 72
-FONTTOOL__THIN		= --expand-stroke 48
+FONTTOOL__REGULAR		= --expand-stroke 96
+FONTTOOL__LIGHT			= --expand-stroke 72
+FONTTOOL__THIN			= --expand-stroke 48
 
-FONTTOOL__COND		= --aspect 0.833333 # 12cpi
-FONTTOOL__COMP		= --aspect 0.606060 # 16.5cpi
+FONTTOOL__COND			= --aspect 0.833333 # 12cpi
+FONTTOOL__COMP			= --aspect 0.606060 # 16.5cpi
 
 default: $(FONTS)
 fonts: $(FONTS)
@@ -131,7 +129,7 @@ compressed: $(COMP_FONTS)
 condensed: $(COND_FONTS)
 zip: $(ZIP_FILE)
 
-SRC_SVGS = $(shell find src/vector -type f -name '*.svg')
+SRC_SVGS			= $(shell find src/vector -type f -name '*.svg')
 
 .SUFFIXES: .sfd .ttf
 
@@ -139,7 +137,7 @@ testfontsweb: FORCE
 	rm -fr website/fonts/ttf/*
 	make fonts DISTDIR="website/fonts"
 
-TESTFONTS_DIR = tmp/testfonts
+TESTFONTS_DIR			= tmp/testfonts
 
 testfonts: FORCE
 	$(eval BUILD_NR = $(shell $(BUILDNR_PY)))
