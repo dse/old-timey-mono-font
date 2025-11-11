@@ -58,6 +58,11 @@ def main():
             print("strokes.py %s: --expand-stroke not specified; not expanding strokes" % args.font_filename)
     else:
         for glyph in font.glyphs():
+            if args.verbose:
+                if glyph.unicode >= 0:
+                    print("strokes.py: expanding strokes on %s U+%04X" % (glyph.glyphname, glyph.unicode))
+                else:
+                    print("strokes.py: expanding strokes on %s" % glyph.glyphname)
             time_start = time.time()
             #<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
             glyph_data = get_glyph_char_data(glyph) # always a dict
