@@ -24,10 +24,10 @@
    inkscape:pagecheckerboard="0"
    inkscape:deskcolor="#d1d1d1"
    inkscape:document-units="px"
-   showgrid="true"
-   inkscape:zoom="0.32"
-   inkscape:cx="531.25"
-   inkscape:cy="781.25"
+   showgrid="false"
+   inkscape:zoom="0.46115095"
+   inkscape:cx="524.77394"
+   inkscape:cy="904.25922"
    inkscape:window-width="1440"
    inkscape:window-height="847"
    inkscape:window-x="0"
@@ -45,7 +45,7 @@
    originx="0"
    originy="0"
    units="px"
-   visible="true" />
+   visible="false" />
     <sodipodi:guide
    position="0,21"
    orientation="0,-1"
@@ -174,27 +174,27 @@
    id="layer1"
    style="display:inline">
     <path
-   style="display:inline;fill:none;stroke:#000000;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+   style="display:inline;fill:none;stroke:#000000;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
    d="M 15.757813,80.999986 V 21.000016"
    id="path103"
    sodipodi:nodetypes="cc" />
     <path
-   style="display:inline;fill:none;stroke:#000000;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+   style="display:inline;fill:none;stroke:#000000;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
    d="M 9,80.999986 H 54 L 54.585937,65.676653"
    id="path104"
    sodipodi:nodetypes="ccc" />
     <path
-   style="display:inline;fill:none;stroke:#000000;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+   style="display:inline;fill:none;stroke:#000000;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
    d="M 54.605469,35.779541 54.019531,20.999999 9,21.000019"
    id="path105"
    sodipodi:nodetypes="ccc" />
     <path
-   style="display:inline;fill:none;stroke:#000000;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
-   d="M 15.882813,49.874434 H 36.437501"
+   style="display:inline;fill:none;stroke:#000000;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+   d="m 15.757813,49.874434 20.804688,0"
    id="path106"
    sodipodi:nodetypes="cc" />
     <path
-   style="display:inline;fill:none;stroke:#000000;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+   style="display:inline;fill:none;stroke:#000000;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
    d="m 36.562501,41.873563 v 16.60031"
    id="path107"
    sodipodi:nodetypes="cc" />
