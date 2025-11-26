@@ -42,6 +42,8 @@ use constant OVERSHOOT    => 20;
 use constant EX_HEIGHT    => 660; # above baseline
 use constant CAP_HEIGHT   => 960; # above baseline
 
+use constant WIDTH        => 1008;
+
 our %NS;
 BEGIN {
     %NS = (
@@ -96,9 +98,9 @@ while (<>) {
 
     $thingy->create_guide(BASELINE + EX_HEIGHT/2, color => COLOR_EXCENTER_RED, name => 'ex-center/oper-center');
 
-    $thingy->create_guide(504, orientation => 'vertical');
-    $thingy->create_guide(48,  orientation => 'vertical');
-    $thingy->create_guide(960, orientation => 'vertical');
+    $thingy->create_guide(WIDTH/2, orientation => 'vertical');
+    $thingy->create_guide(STROKE_WIDTH/2,  orientation => 'vertical');
+    $thingy->create_guide(WIDTH - STROKE_WIDTH/2, orientation => 'vertical');
 
     $thingy->create_guide(BASELINE + CAP_HEIGHT + 204, name => 'accent-above-center');
     $thingy->create_guide(BASELINE - 216, name => 'accent-below-center');
