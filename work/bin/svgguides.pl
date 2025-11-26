@@ -64,44 +64,44 @@ while (<>) {
     $thingy->load_xml($_);
     $thingy->delete_guides();
 
-    $thingy->create_guide(36, name => 'descender');
-    $thingy->create_guide(84);
-    $thingy->create_guide(132);
-    $thingy->create_guide(16, color => COLOR_OVERSHOOT_GREEN);
-    $thingy->create_guide(64, color => COLOR_OVERSHOOT_GREEN);
-    $thingy->create_guide(112, color => COLOR_OVERSHOOT_GREEN);
+    $thingy->create_guide(BASELINE - DESCENDER - STROKE_WIDTH/2, name => 'descender');
+    $thingy->create_guide(BASELINE - DESCENDER);
+    $thingy->create_guide(BASELINE - DESCENDER + STROKE_WIDTH/2);
+    $thingy->create_guide(BASELINE - DESCENDER - STROKE_WIDTH/2 - OVERSHOOT, color => COLOR_OVERSHOOT_GREEN);
+    $thingy->create_guide(BASELINE - DESCENDER                  - OVERSHOOT, color => COLOR_OVERSHOOT_GREEN);
+    $thingy->create_guide(BASELINE - DESCENDER + STROKE_WIDTH/2 - OVERSHOOT, color => COLOR_OVERSHOOT_GREEN);
 
-    $thingy->create_guide(336, name => 'baseline');
-    $thingy->create_guide(384);
-    $thingy->create_guide(432);
-    $thingy->create_guide(316, color => COLOR_OVERSHOOT_GREEN);
-    $thingy->create_guide(364, color => COLOR_OVERSHOOT_GREEN);
-    $thingy->create_guide(412, color => COLOR_OVERSHOOT_GREEN);
+    $thingy->create_guide(BASELINE - STROKE_WIDTH/2, name => 'baseline');
+    $thingy->create_guide(BASELINE);
+    $thingy->create_guide(BASELINE + STROKE_WIDTH/2);
+    $thingy->create_guide(BASELINE - STROKE_WIDTH/2 - OVERSHOOT, color => COLOR_OVERSHOOT_GREEN);
+    $thingy->create_guide(BASELINE                  - OVERSHOOT, color => COLOR_OVERSHOOT_GREEN);
+    $thingy->create_guide(BASELINE + STROKE_WIDTH/2 - OVERSHOOT, color => COLOR_OVERSHOOT_GREEN);
 
-    $thingy->create_guide(864, color => COLOR_CAPCENTER_BLACK, name => 'cap-center');
+    $thingy->create_guide(BASELINE + CAP_HEIGHT/2, color => COLOR_CAPCENTER_BLACK, name => 'cap-center');
 
-    $thingy->create_guide(1092, name => 'ex-height');
-    $thingy->create_guide(1044);
-    $thingy->create_guide(996);
-    $thingy->create_guide(1112, color => COLOR_OVERSHOOT_GREEN);
-    $thingy->create_guide(1064, color => COLOR_OVERSHOOT_GREEN);
-    $thingy->create_guide(1016, color => COLOR_OVERSHOOT_GREEN);
+    $thingy->create_guide(BASELINE + EX_HEIGHT + STROKE_WIDTH/2, name => 'ex-height');
+    $thingy->create_guide(BASELINE + EX_HEIGHT);
+    $thingy->create_guide(BASELINE + EX_HEIGHT - STROKE_WIDTH/2);
+    $thingy->create_guide(BASELINE + EX_HEIGHT + STROKE_WIDTH/2 + OVERSHOOT, color => COLOR_OVERSHOOT_GREEN);
+    $thingy->create_guide(BASELINE + EX_HEIGHT                  + OVERSHOOT, color => COLOR_OVERSHOOT_GREEN);
+    $thingy->create_guide(BASELINE + EX_HEIGHT - STROKE_WIDTH/2 + OVERSHOOT, color => COLOR_OVERSHOOT_GREEN);
 
-    $thingy->create_guide(1392, name => 'ascender');
-    $thingy->create_guide(1344);
-    $thingy->create_guide(1296);
-    $thingy->create_guide(1412, color => COLOR_OVERSHOOT_GREEN);
-    $thingy->create_guide(1364, color => COLOR_OVERSHOOT_GREEN);
-    $thingy->create_guide(1316, color => COLOR_OVERSHOOT_GREEN);
+    $thingy->create_guide(BASELINE + CAP_HEIGHT + STROKE_WIDTH/2, name => 'ascender');
+    $thingy->create_guide(BASELINE + CAP_HEIGHT);
+    $thingy->create_guide(BASELINE + CAP_HEIGHT - STROKE_WIDTH/2);
+    $thingy->create_guide(BASELINE + CAP_HEIGHT + STROKE_WIDTH/2 + OVERSHOOT, color => COLOR_OVERSHOOT_GREEN);
+    $thingy->create_guide(BASELINE + CAP_HEIGHT                  + OVERSHOOT, color => COLOR_OVERSHOOT_GREEN);
+    $thingy->create_guide(BASELINE + CAP_HEIGHT - STROKE_WIDTH/2 + OVERSHOOT, color => COLOR_OVERSHOOT_GREEN);
 
-    $thingy->create_guide(714, color => COLOR_EXCENTER_RED, name => 'ex-center/oper-center');
+    $thingy->create_guide(BASELINE + EX_HEIGHT/2, color => COLOR_EXCENTER_RED, name => 'ex-center/oper-center');
 
     $thingy->create_guide(504, orientation => 'vertical');
     $thingy->create_guide(48,  orientation => 'vertical');
     $thingy->create_guide(960, orientation => 'vertical');
 
-    $thingy->create_guide(1680 - 132, name => 'accent-above-center');
-    $thingy->create_guide(168, name => 'accent-below-center');
+    $thingy->create_guide(BASELINE + CAP_HEIGHT + 204, name => 'accent-above-center');
+    $thingy->create_guide(BASELINE - 216, name => 'accent-below-center');
 } continue {
     if (eof && $in_place && $ARGV ne '-') {
         my $fh;
