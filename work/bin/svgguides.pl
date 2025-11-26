@@ -6,6 +6,8 @@ use XML::LibXML::XPathContext;
 use Getopt::Long;
 # use Carp::Always;
 
+our $NEW_SVG;
+
 use constant COLOR_GREEN    => '#009900';
 use constant COLOR_GREEN_20 => '#ff9900';
 use constant COLOR_BLACK    => '#000000';
@@ -31,6 +33,14 @@ use constant COLOR_GRID_NON_REPRO_BLUE => '#95c9d7';
 use constant COLOR_OVERSHOOT_GREEN => '#8ff0a4';
 use constant COLOR_EXCENTER_RED => '#bf4040';
 use constant COLOR_CAPCENTER_BLACK => '#000000';
+
+use constant STROKE_WIDTH => 96;
+use constant BASELINE     => 384; # y-coordinaten
+use constant DESCENDER    => 300; # amount below baseline
+use constant ASCENDER     => 960; # above baseline
+use constant OVERSHOOT    => 20;
+use constant EX_HEIGHT    => 660; # above baseline
+use constant CAP_HEIGHT   => 960; # above baseline
 
 our %NS;
 BEGIN {
@@ -236,3 +246,58 @@ package My::Thingy {
         return $b;
     }
 }
+
+BEGIN { $NEW_SVG = <<"EOF"; }
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+     xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:svg="http://www.w3.org/2000/svg"
+     width="1008"
+     height="1680"
+     viewBox="0 0 63 105"
+     version="1.1"
+     id="svg5"
+     xml:space="preserve"
+     inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+     sodipodi:docname="blank-char.svg">
+    <sodipodi:namedview id="namedview7"
+                        pagecolor="#ffffff"
+                        bordercolor="#666666"
+                        borderopacity="1.0"
+                        inkscape:showpageshadow="2"
+                        inkscape:pageopacity="0.0"
+                        inkscape:pagecheckerboard="0"
+                        inkscape:deskcolor="#d1d1d1"
+                        inkscape:document-units="px"
+                        showgrid="true"
+                        inkscape:current-layer="layer1"
+                        showguides="true"
+                        inkscape:lockguides="false">
+        <inkscape:grid type="xygrid"
+                       id="grid1382"
+                       spacingx="0.125"
+                       spacingy="0.125"
+                       empspacing="12"
+                       originx="0"
+                       originy="0"
+                       units="px"
+                       visible="true"/>
+    </sodipodi:namedview>
+    <defs id="defs2"/>
+    <g inkscape:groupmode="layer"
+       id="layer3"
+       inkscape:label="Layer 3"
+       style="display:inline;opacity:0.5;stroke-width:3.60000001;stroke-dasharray:none"
+       transform="matrix(0.83333333,0,0,0.83333333,-157.97619,-173.09626)"/>
+    <g inkscape:groupmode="layer"
+       id="layer2"
+       inkscape:label="Layer 2"
+       style="display:inline"/>
+    <g inkscape:label="Layer 1"
+       inkscape:groupmode="layer"
+       id="layer1"
+       style="display:inline"/>
+</svg>
+EOF
