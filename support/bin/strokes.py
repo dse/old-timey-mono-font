@@ -51,39 +51,38 @@ def main():
     # MONOSPACE
     common_glyph_width = statistics.mode([glyph.width for glyph in font.glyphs()])
 
-    fh = open('var/strokes.log', 'w', encoding='utf-8') if args.log else None
-
     if args.expand_stroke is None:
         if args.verbose >= 2:
             print("strokes.py %s: --expand-stroke not specified; not expanding strokes" % args.font_filename)
     else:
         for glyph in font.glyphs():
-            if args.verbose:
-                if glyph.unicode >= 0:
-                    print("strokes.py: expanding strokes on %s U+%04X" % (glyph.glyphname, glyph.unicode))
-                else:
-                    print("strokes.py: expanding strokes on %s" % glyph.glyphname)
-            time_start = time.time()
-            #<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
             glyph_data = get_glyph_char_data(glyph) # always a dict
             real_codepoint = get_glyph_real_codepoint(glyph)
             fill_flag = glyph_data.get("fill", False)
             expand_flag = glyph_data.get("expandStrokes", True)
             if not expand_flag:
                 if args.verbose >= 2:
-                    print("strokes.py %s: %s %s is flagged 'expandStrokes: false'; not expanding strokes" % (args.font_filename, glyph.glyphname, u(real_codepoint)))
+                    print("strokes.py %s: %s %s is flagged 'expandStrokes: false'; not expanding strokes on this glyph" %
+                          (args.font_filename, glyph.glyphname, u(real_codepoint)))
                 continue
-            # if len(glyph.foreground) == 0 and len(glyph.references) == 0:
-            #     if args.verbose >= 2:
-            #         print("strokes.py %s: %s %s is blank; not expanding strokes" % (args.font_filename, glyph.glyphname, u(real_codepoint)))
-            #     continue
-            # if len(glyph.references):
-            #     if args.verbose >= 2:
-            #         print("strokes.py %s: %s %s has references; not expanding any strokes" % (args.font_filename, glyph.glyphname, u(real_codepoint)))
-            #     continue
+            has_contours   = len(glyph.foreground) != 0
+            has_references = len(glyph.references) != 0
+
+            if not has_contours:
+                if args.verbose >= 2:
+                    print("strokes.py %s: %s %s: no contours; continuing" %
+                          (args.font_filename, glyph.glyphname, u(real_codepoint)))
+            elif has_references:
+                if args.verbose >= 2:
+                    print("strokes.py %s: %s %s: NOTICE: contains both references AND contours; continuing" %
+                          (args.font_filename, glyph.glyphname, u(real_codepoint)))
+
+            if args.verbose:
+                if glyph.unicode >= 0:
+                    print("strokes.py: expanding strokes on %s U+%04X" % (glyph.glyphname, glyph.unicode))
+                else:
+                    print("strokes.py: expanding strokes on %s (-1)" % glyph.glyphname)
             orig_width = glyph.width
-            if args.verbose >= 2:
-                print("strokes.py %s: %s %s: expanding strokes" % (args.font_filename, glyph.glyphname, u(real_codepoint)))
             expand_params = {}
             line_join = glyph_data.get("linejoin")
             line_cap = glyph_data.get("linecap")
@@ -102,31 +101,32 @@ def main():
                 expand_params["cap"] = line_cap
             if fill_flag:
                 expand_params["removeinternal"] = True
-            if not args.verbose >= 2:
+            if args.verbose < 2:
                 silence.on()
+            if args.verbose >= 2:
+                print("strokes.py: calling glyph.stroke(%s, %s)" % 
+                      (repr(args.expand_stroke),
+                       json.dumps(expand_params)))
             glyph.stroke("circular", args.expand_stroke, **expand_params)
+            # nib type: circular
+            # major axis: 96
+            # minor axis: 96
+            # nib angle: 45
+            # line cap: round
+            # line join: round
+            # accuracy target: 0.25
+            # remove overlap: by layer
+            # simplify: yes
+            # add extremata: yes
+            if args.verbose >= 2:
+                print("strokes.py: glyph.stroke() finished")
             # glyph.correctDirection()
-            if not args.verbose >= 2:
+            if args.verbose < 2:
                 silence.off()
             if orig_width != 0:
                 glyph.width = orig_width
             else:
                 glyph.width = common_glyph_width # MONOSPACE
-            #>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-            time_end = time.time()
-            if fh is not None:
-                fh.write("%8.6f  %s\n" % ((time_end - time_start), charname(glyph)))
-
-            # #<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-            #     having_stroke_width = char_data["having_stroke_width"] if "having_stroke_width" in char_data else 0
-            #     glyph.stroke("circular", args.expand_stroke - having_stroke_width, **params)
-            # elif stroke_width is not None:
-            #     print("strokes.py %s: marked as already having stroke width of %d; expanding by %d" %
-            #           (args.font_filename, stroke_width, args.expand_stroke - stroke_width))
-            #     glyph.stroke("circular", args.expand_stroke - stroke_width, removeinternal=True)
-            # else:
-            #     glyph.stroke("circular", args.expand_stroke)
-            # #>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
     if write_font_filename.endswith('.sfd'):
         if args.verbose >= 2:
@@ -136,9 +136,6 @@ def main():
         if args.verbose >= 2:
             print("strokes.py %s: Generating %s..." % (args.font_filename, write_font_filename))
         font.generate(write_font_filename)
-
-    if fh is not None:
-        fh.close()
 
 def charname(glyph):
     if glyph.unicode >= 0:
