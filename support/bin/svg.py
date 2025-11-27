@@ -38,7 +38,11 @@ def main():
     if args.verbose >= 2:
         print("svg.py %s: Importing glyphs...")
     for svg_filename in args.svg_filenames:
+        if args.verbose >= 2:
+            print("svg.py %s: Importing %s ..." % (args.font_filename, svg_filename))
         import_svg_glyph(font, svg_filename, args.width)
+        if args.verbose >= 2:
+            print("svg.py %s: %s is imported" % (args.font_filename, svg_filename))
 
     if write_font_filename.endswith('.sfd'):
         if args.verbose >= 2:
