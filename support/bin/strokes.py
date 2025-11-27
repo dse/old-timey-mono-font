@@ -54,7 +54,7 @@ def main():
     fh = open('var/strokes.log', 'w', encoding='utf-8') if args.log else None
 
     if args.expand_stroke is None:
-        if "DEBUG" in os.environ:
+        if args.verbose >= 2:
             print("strokes.py %s: --expand-stroke not specified; not expanding strokes" % args.font_filename)
     else:
         for glyph in font.glyphs():
@@ -70,19 +70,19 @@ def main():
             fill_flag = glyph_data.get("fill", False)
             expand_flag = glyph_data.get("expandStrokes", True)
             if not expand_flag:
-                if "DEBUG" in os.environ:
+                if args.verbose >= 2:
                     print("strokes.py %s: %s %s is flagged 'expandStrokes: false'; not expanding strokes" % (args.font_filename, glyph.glyphname, u(real_codepoint)))
                 continue
             # if len(glyph.foreground) == 0 and len(glyph.references) == 0:
-            #     if "DEBUG" in os.environ:
+            #     if args.verbose >= 2:
             #         print("strokes.py %s: %s %s is blank; not expanding strokes" % (args.font_filename, glyph.glyphname, u(real_codepoint)))
             #     continue
             # if len(glyph.references):
-            #     if "DEBUG" in os.environ:
+            #     if args.verbose >= 2:
             #         print("strokes.py %s: %s %s has references; not expanding any strokes" % (args.font_filename, glyph.glyphname, u(real_codepoint)))
             #     continue
             orig_width = glyph.width
-            if "DEBUG" in os.environ:
+            if args.verbose >= 2:
                 print("strokes.py %s: %s %s: expanding strokes" % (args.font_filename, glyph.glyphname, u(real_codepoint)))
             expand_params = {}
             line_join = glyph_data.get("linejoin")
@@ -102,11 +102,11 @@ def main():
                 expand_params["cap"] = line_cap
             if fill_flag:
                 expand_params["removeinternal"] = True
-            if not "DEBUG" in os.environ:
+            if not args.verbose >= 2:
                 silence.on()
             glyph.stroke("circular", args.expand_stroke, **expand_params)
             # glyph.correctDirection()
-            if not "DEBUG" in os.environ:
+            if not args.verbose >= 2:
                 silence.off()
             if orig_width != 0:
                 glyph.width = orig_width
@@ -129,11 +129,11 @@ def main():
             # #>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
     if write_font_filename.endswith('.sfd'):
-        if "DEBUG" in os.environ:
+        if args.verbose >= 2:
             print("strokes.py %s: Saving %s..." % (args.font_filename, write_font_filename))
         font.save(write_font_filename)
     else:
-        if "DEBUG" in os.environ:
+        if args.verbose >= 2:
             print("strokes.py %s: Generating %s..." % (args.font_filename, write_font_filename))
         font.generate(write_font_filename)
 
