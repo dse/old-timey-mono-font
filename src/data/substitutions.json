@@ -1,5 +1,137 @@
 {
     "substitutions": {
+        "Caps to Petite Caps": {
+            "features": ["c2pc"],
+            "subtables": {
+                "Caps to Petite Caps-1": {
+                    "A": "A.c2pc",
+                    "B": "B.c2pc",
+                    "C": "C.c2pc",
+                    "D": "D.c2pc",
+                    "E": "E.c2pc",
+                    "F": "F.c2pc",
+                    "G": "G.c2pc",
+                    "H": "H.c2pc",
+                    "I": "I.c2pc",
+                    "J": "J.c2pc",
+                    "K": "K.c2pc",
+                    "L": "L.c2pc",
+                    "M": "M.c2pc",
+                    "N": "N.c2pc",
+                    "O": "O.c2pc",
+                    "P": "P.c2pc",
+                    "Q": "Q.c2pc",
+                    "R": "R.c2pc",
+                    "S": "S.c2pc",
+                    "T": "T.c2pc",
+                    "U": "U.c2pc",
+                    "V": "V.c2pc",
+                    "W": "W.c2pc",
+                    "X": "X.c2pc",
+                    "Y": "Y.c2pc",
+                    "Z": "Z.c2pc"
+                }
+            }
+        },
+        "Lowercase to Petite Caps": {
+            "features": ["pcap"],
+            "subtables": {
+                "Lowercase to Petite Caps-1": {
+                    "a": "A.c2pc",
+                    "b": "B.c2pc",
+                    "c": "C.c2pc",
+                    "d": "D.c2pc",
+                    "e": "E.c2pc",
+                    "f": "F.c2pc",
+                    "g": "G.c2pc",
+                    "h": "H.c2pc",
+                    "i": "I.c2pc",
+                    "j": "J.c2pc",
+                    "k": "K.c2pc",
+                    "l": "L.c2pc",
+                    "m": "M.c2pc",
+                    "n": "N.c2pc",
+                    "o": "O.c2pc",
+                    "p": "P.c2pc",
+                    "q": "Q.c2pc",
+                    "r": "R.c2pc",
+                    "s": "S.c2pc",
+                    "t": "T.c2pc",
+                    "u": "U.c2pc",
+                    "v": "V.c2pc",
+                    "w": "W.c2pc",
+                    "x": "X.c2pc",
+                    "y": "Y.c2pc",
+                    "z": "Z.c2pc"
+                }
+            }
+        },
+        "Caps to Small Caps": {
+            "features": ["c2sc"],
+            "subtables": {
+                "Caps to Small Caps-1": {
+                    "A": "A.c2sc",
+                    "B": "B.c2sc",
+                    "C": "C.c2sc",
+                    "D": "D.c2sc",
+                    "E": "E.c2sc",
+                    "F": "F.c2sc",
+                    "G": "G.c2sc",
+                    "H": "H.c2sc",
+                    "I": "I.c2sc",
+                    "J": "J.c2sc",
+                    "K": "K.c2sc",
+                    "L": "L.c2sc",
+                    "M": "M.c2sc",
+                    "N": "N.c2sc",
+                    "O": "O.c2sc",
+                    "P": "P.c2sc",
+                    "Q": "Q.c2sc",
+                    "R": "R.c2sc",
+                    "S": "S.c2sc",
+                    "T": "T.c2sc",
+                    "U": "U.c2sc",
+                    "V": "V.c2sc",
+                    "W": "W.c2sc",
+                    "X": "X.c2sc",
+                    "Y": "Y.c2sc",
+                    "Z": "Z.c2sc"
+                }
+            }
+        },
+        "Lowercase to Small Caps": {
+            "features": ["smcp"],
+            "subtables": {
+                "Lowercase to Small Caps-1": {
+                    "a": "A.c2sc",
+                    "b": "B.c2sc",
+                    "c": "C.c2sc",
+                    "d": "D.c2sc",
+                    "e": "E.c2sc",
+                    "f": "F.c2sc",
+                    "g": "G.c2sc",
+                    "h": "H.c2sc",
+                    "i": "I.c2sc",
+                    "j": "J.c2sc",
+                    "k": "K.c2sc",
+                    "l": "L.c2sc",
+                    "m": "M.c2sc",
+                    "n": "N.c2sc",
+                    "o": "O.c2sc",
+                    "p": "P.c2sc",
+                    "q": "Q.c2sc",
+                    "r": "R.c2sc",
+                    "s": "S.c2sc",
+                    "t": "T.c2sc",
+                    "u": "U.c2sc",
+                    "v": "V.c2sc",
+                    "w": "W.c2sc",
+                    "x": "X.c2sc",
+                    "y": "Y.c2sc",
+                    "z": "Z.c2sc"
+                }
+            }
+        },
         "Code Digits": {
             "features": ["ss01", "ss03"],
             "subtables": {
