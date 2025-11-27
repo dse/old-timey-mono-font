@@ -1,0 +1,93 @@
+{
+    "fonts": [
+        [ "psName",                   "psFamilyName", "familyName",     "weight",  "aspect",     "hinting" ],
+        [ "OldTimeyCode-Light",       "OldTimeyCode", "Old Timey Code", "light",   "regular",    "auto" ],
+        [ "OldTimeyCode-Thin",        "OldTimeyCode", "Old Timey Code", "thin",    "regular",    "auto" ],
+        [ "OldTimeyCode",             "OldTimeyCode", "Old Timey Code", "regular", "regular",    "auto" ],
+        [ "OldTimeyCodeComp-Light",   "OldTimeyCode", "Old Timey Code", "light",   "compressed", "auto" ],
+        [ "OldTimeyCodeComp-Thin",    "OldTimeyCode", "Old Timey Code", "thin",    "compressed", "auto" ],
+        [ "OldTimeyCodeComp",         "OldTimeyCode", "Old Timey Code", "regular", "compressed", "auto" ],
+        [ "OldTimeyCodeCond-Light",   "OldTimeyCode", "Old Timey Code", "light",   "condensed",  "auto" ],
+        [ "OldTimeyCodeCond-Thin",    "OldTimeyCode", "Old Timey Code", "thin",    "condensed",  "auto" ],
+        [ "OldTimeyCodeCond",         "OldTimeyCode", "Old Timey Code", "regular", "condensed",  "auto" ],
+        [ "OldTimeyCodeNH-Light",     "OldTimeyCode", "Old Timey Code", "light",   "regular",    "none" ],
+        [ "OldTimeyCodeNH-Thin",      "OldTimeyCode", "Old Timey Code", "thin",    "regular",    "none" ],
+        [ "OldTimeyCodeNH",           "OldTimeyCode", "Old Timey Code", "regular", "regular",    "none" ],
+        [ "OldTimeyCodeNHComp-Light", "OldTimeyCode", "Old Timey Code", "light",   "compressed", "none" ],
+        [ "OldTimeyCodeNHComp-Thin",  "OldTimeyCode", "Old Timey Code", "thin",    "compressed", "none" ],
+        [ "OldTimeyCodeNHComp",       "OldTimeyCode", "Old Timey Code", "regular", "compressed", "none" ],
+        [ "OldTimeyCodeNHCond-Light", "OldTimeyCode", "Old Timey Code", "light",   "condensed",  "none" ],
+        [ "OldTimeyCodeNHCond-Thin",  "OldTimeyCode", "Old Timey Code", "thin",    "condensed",  "none" ],
+        [ "OldTimeyCodeNHCond",       "OldTimeyCode", "Old Timey Code", "regular", "condensed",  "none" ],
+        [ "OldTimeyMono-Light",       "OldTimeyMono", "Old Timey Mono", "light",   "regular",    "auto" ],
+        [ "OldTimeyMono-Thin",        "OldTimeyMono", "Old Timey Mono", "thin",    "regular",    "auto" ],
+        [ "OldTimeyMono",             "OldTimeyMono", "Old Timey Mono", "regular", "regular",    "auto" ],
+        [ "OldTimeyMonoComp-Light",   "OldTimeyMono", "Old Timey Mono", "light",   "compressed", "auto" ],
+        [ "OldTimeyMonoComp-Thin",    "OldTimeyMono", "Old Timey Mono", "thin",    "compressed", "auto" ],
+        [ "OldTimeyMonoComp",         "OldTimeyMono", "Old Timey Mono", "regular", "compressed", "auto" ],
+        [ "OldTimeyMonoCond-Light",   "OldTimeyMono", "Old Timey Mono", "light",   "condensed",  "auto" ],
+        [ "OldTimeyMonoCond-Thin",    "OldTimeyMono", "Old Timey Mono", "thin",    "condensed",  "auto" ],
+        [ "OldTimeyMonoCond",         "OldTimeyMono", "Old Timey Mono", "regular", "condensed",  "auto" ],
+        [ "OldTimeyMonoNH-Light",     "OldTimeyMono", "Old Timey Mono", "light",   "regular",    "none" ],
+        [ "OldTimeyMonoNH-Thin",      "OldTimeyMono", "Old Timey Mono", "thin",    "regular",    "none" ],
+        [ "OldTimeyMonoNH",           "OldTimeyMono", "Old Timey Mono", "regular", "regular",    "none" ],
+        [ "OldTimeyMonoNHComp-Light", "OldTimeyMono", "Old Timey Mono", "light",   "compressed", "none" ],
+        [ "OldTimeyMonoNHComp-Thin",  "OldTimeyMono", "Old Timey Mono", "thin",    "compressed", "none" ],
+        [ "OldTimeyMonoNHComp",       "OldTimeyMono", "Old Timey Mono", "regular", "compressed", "none" ],
+        [ "OldTimeyMonoNHCond-Light", "OldTimeyMono", "Old Timey Mono", "light",   "condensed",  "none" ],
+        [ "OldTimeyMonoNHCond-Thin",  "OldTimeyMono", "Old Timey Mono", "thin",    "condensed",  "none" ],
+        [ "OldTimeyMonoNHCond",       "OldTimeyMono", "Old Timey Mono", "regular", "condensed",  "none" ]
+    ],
+    "weight": {
+        "DATA": {
+            "nameSuffixOrder": 1
+        },
+        "regular": {
+            "strokeWidth": 96
+        },
+        "light": {
+            "strokeWidth": 72,
+            "panose2": 3,
+            "nameSuffix": " Light",
+            "psNameSuffix": "Light",
+            "preferredStyles": ["Light"]
+        },
+        "thin": {
+            "strokeWidth": 48,
+            "panose2": 1,
+            "NameSuffix": " Thin",
+            "psNameSuffix": "Thin",
+            "preferredStyles": ["Thin"]
+        }
+    },
+    "aspect": {
+        "DATA": {
+            "familyNameSuffixOrder": 2
+        },
+        "regular": {
+        },
+        "condensed": {
+            "aspectRatio": "0.833333",
+            "familyNameSuffix": " Condensed",
+            "psFamilyNameSuffix": "Cond",
+            "preferredStyles": ["Condensed"]
+        },
+        "compressed": {
+            "aspectRatio": "0.606061",
+            "familyNameSuffix": " Compressed",
+            "psFamilyNameSuffix": "Comp",
+            "preferredStyles": ["Compressed"]
+        }
+    },
+    "hinting": {
+        "DATA": {
+            "familyNameSuffixOrder": 1
+        },
+        "auto": {
+        },
+        "none": {
+            "familyNameSuffix": " NH",
+            "psFamilyNameSuffix": "NH"
+        }
+    }
+}
