@@ -35,6 +35,11 @@ def main():
         else:
             raise Exception("unsupported reference value: %s" % repr(dest_char))
 
+        if dest_char is None:
+            if glyph_name in font:
+                font.removeGlyph(glyph_name)
+            continue
+
         dest_glyph = font[dest_glyph_name]
 
         if "." in glyph_name:
