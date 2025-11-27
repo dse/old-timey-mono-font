@@ -1,5 +1,23 @@
 # TODO
 
+## Petite and Small Caps
+
+-   U+00C6 AE
+-   U+00D0 ETH
+-   U+00DE THORN
+-   U+00DF LATIN SMALL LETTER SHARP S
+-   U+0132 IJ
+-   U+0152 OE
+-   U+018E REVERSE E
+-   U+01B7 EZH
+-   U+01B8 EZH REVERSED
+-   U+0245 TURNED V
+
+-   greek capitals GAMMA, DELTA, THETA, LAMBDA, XI, PI, SIGMA, PHI, PSI, OMEGA, DIGAMMA
+-   cyrillic capitals DJE, UKRAINIAN IE, LJE, NJE, TSHE, DZHE, BE, GHE, DE, ZHE, ZE, I, KA, EL, 
+    PE, U, EF, TSE, CHE, SHA, SHCHA, HARD SIGN, YERU, SOFT SIGN, E, YU, YA
+-   cyrillic capitals 046C, 0490, 04BA
+
 ## From Comments on Hacker News
 
 https://news.ycombinator.com/item?id=43884418
