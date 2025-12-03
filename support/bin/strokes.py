@@ -56,6 +56,9 @@ def main():
             print("strokes.py %s: --expand-stroke not specified; not expanding strokes" % args.font_filename)
     else:
         for glyph in font.glyphs():
+            if glyph.glyphname == ".notdef":
+                continue
+                
             glyph_data = get_glyph_char_data(glyph) # always a dict
             real_codepoint = get_glyph_real_codepoint(glyph)
             fill_flag = glyph_data.get("fill", False)
