@@ -14,3 +14,4 @@ testfonts
 .test-build-number.txt
 typescript
 dist/sfd/
+node_modules/
