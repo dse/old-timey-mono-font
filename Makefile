@@ -493,6 +493,11 @@ clean: FORCE
 	\) -exec rm {} + || true
 	/bin/rm -fr $(SRC_BUILD) || true
 
+data: src/data/font-data.json
+src/data/font-data.json: dist/ttf/OldTimeyMono.ttf support/bin/fontdata.py
+	support/bin/fontdata.py dist/ttf/OldTimeyMono.ttf >"$@.tmp"
+	mv "$@.tmp" "$@"
+
 version: FORCE
 
 publish:
