@@ -31,10 +31,10 @@
 as of 2025-12-04
 
 Major changes:
--   Contains the entire World Glyph Set (W1G), except for the ligatures.
--   Contains the entire Multilingual European Subset 1 (MES-1).
--   Contains most of the Simple European Character Set (SECS).
--   Contains the full IPA Extensions block.
+-   Contains 100% of the Multilingual European Subset 1 (MES-1).
+-   Contains 97% of the World Glyph Set (W1G).
+-   Contains 94% of the Simple European Character Set (SECS).
+-   Contains 100% of the IPA Extensions block.
 -   Removed numerous double-accented Latin characters not in W1G, MES-1, SECS, or WGL4
     that were in the Latin Extended Additional block.
 -   Removed unused combining marks.
