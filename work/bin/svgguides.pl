@@ -59,12 +59,14 @@ BEGIN {
 our $in_place = 0;
 our $delete_guides = 0;
 our $small_caps = 0;
+our $accents = 0;
 
 Getopt::Long::Configure('gnu_getopt');
 Getopt::Long::GetOptions(
     'i|in-place' => \$in_place,
     'd|delete-guides' => \$delete_guides,
     's|small-caps' => \$small_caps,
+    'a|accents' => \$accents,
 ) or die(":-(");
 
 if ($small_caps) {
@@ -121,21 +123,20 @@ while (<>) {
         $thingy->create_guide($STROKE_WIDTH/2,  orientation => 'vertical');
         $thingy->create_guide($WIDTH - $STROKE_WIDTH/2, orientation => 'vertical');
 
-        my $accent_above__bottom = $BASELINE + max($ASCENDER, $CAP_HEIGHT) + $STROKE_WIDTH;
-        my $accent_above__top    = $HEIGHT;
-        my $accent_above__center = ($accent_above__bottom + $accent_above__top) / 2;
-
-        $thingy->create_guide($accent_above__center, name => 'accent-above--center', color => COLOR_ACCENT);
-        $thingy->create_guide($accent_above__top,    name => 'accent-above--top',    color => COLOR_ACCENT);
-        $thingy->create_guide($accent_above__bottom, name => 'accent-above--bottom', color => COLOR_ACCENT);
-
-        my $accent_below__top    = $BASELINE - $STROKE_WIDTH;
-        my $accent_below__bottom = 0;
-        my $accent_below__center = ($accent_below__top + $accent_below__bottom) / 2;
-
-        $thingy->create_guide($accent_below__center, name => 'accent-below--center', color => COLOR_ACCENT);
-        $thingy->create_guide($accent_below__top,    name => 'accent-below--top',    color => COLOR_ACCENT);
-        $thingy->create_guide($accent_below__bottom, name => 'accent-below--bottom', color => COLOR_ACCENT);
+        if ($accents) {
+            my $accent_above__bottom = $BASELINE + max($ASCENDER, $CAP_HEIGHT) + $STROKE_WIDTH;
+            my $accent_above__top    = $HEIGHT;
+            my $accent_above__center = ($accent_above__bottom + $accent_above__top) / 2;
+            $thingy->create_guide($accent_above__center, name => 'accent-above--center', color => COLOR_ACCENT);
+            $thingy->create_guide($accent_above__top,    name => 'accent-above--top',    color => COLOR_ACCENT);
+            $thingy->create_guide($accent_above__bottom, name => 'accent-above--bottom', color => COLOR_ACCENT);
+            my $accent_below__top    = $BASELINE - $STROKE_WIDTH;
+            my $accent_below__bottom = 0;
+            my $accent_below__center = ($accent_below__top + $accent_below__bottom) / 2;
+            $thingy->create_guide($accent_below__center, name => 'accent-below--center', color => COLOR_ACCENT);
+            $thingy->create_guide($accent_below__top,    name => 'accent-below--top',    color => COLOR_ACCENT);
+            $thingy->create_guide($accent_below__bottom, name => 'accent-below--bottom', color => COLOR_ACCENT);
+        }
     }
 } continue {
     if (eof && $in_place && $ARGV ne '-') {
