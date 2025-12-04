@@ -28,6 +28,21 @@
 
 ## Next Version
 
+as of 2025-12-04
+
+Major changes:
+-   Contains the entire World Glyph Set (W1G), except for the ligatures.
+-   Contains the entire Multilingual European Subset 1 (MES-1).
+-   Contains most of the Simple European Character Set (SECS).
+-   Contains the full IPA Extensions block.
+-   Removed numerous double-accented Latin characters not in W1G, MES-1, SECS, or WGL4
+    that were in the Latin Extended Additional block.
+-   Removed unused combining marks.
+-   Redid accent placements again.
+-   Add small caps.
+-   Add petite caps.
+
+Minor changes:
 -   U+1E9E CAPITAL LETTER SHARP S added.
 -   Fixed issue where U+042F and U+044F CYRILLIC CAPITAL AND SMALL
     LETTERS YA were backwards.
@@ -35,11 +50,6 @@
 -   Fixed a minor issue with U+0070 LATIN SMALL LETTER P
 -   Added some comments in README.md about opening/installation
     issues in Windows.
-    
-Build process and other internal things:
--   Additional information for stylistic sets on names for character
-    variants and other alternate glyphs.
--   Additional Latin italic letters.
--   Added some anchors in an attempt to fix some semiautomatic accent
-    placement issues.
--   Add left and right guides to the guideline (re-)applier script.
+-   I have an official vendor ID!  I am officially registered on
+    Microsoft's font vendor registry as "DARN"!
+-   Numerous build process enhancements.
