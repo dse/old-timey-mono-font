@@ -1,6 +1,6 @@
 #!/usr/bin/env -S fontforge -quiet
 # -*- mode: python; coding: utf-8 -*-
-import fontforge, argparse, os, sys, math, json, unicodedata, unicodedataplus
+import fontforge, argparse, os, sys, math, json, unicodedata, unicodedataplus, functools
 
 CONTROL_NAMES = {
     "\u0000": "NULL",
@@ -76,10 +76,12 @@ def main():
     args = parser.parse_args()
 
     font = fontforge.open(args.filename)
-    glyphs_data = []
-
     glyphs = list(font.glyphs())
-    glyphs.sort(key = lambda glyph: glyph.encoding)
+    glyphs = [glyph for glyph in glyphs if not (glyph.unicode in range(0, 32)) and glyph.glyphname != ".notdef"]
+    glyphs.sort(key = functools.cmp_to_key(glyph_cmp))
+
+    glyphs_data = []
+    data_by_block_name = {}
 
     for glyph in glyphs:
         glyph_data = {
@@ -115,6 +117,10 @@ def main():
                     glyph_data["baseUnicode"] = base_unicode
                     glyph_data["baseGlyphName"] = base_glyphname
                     glyph_data["variantName"] = variant_name
+        base_unicode_hex = "U+%04X" % base_unicode if base_unicode >= 0 else None
+        unicode_hex = "U+%04X" % glyph.unicode if glyph.unicode >= 0 else None
+        glyph_data["baseUnicodeHex"] = base_unicode_hex
+        glyph_data["unicodeHex"] = unicode_hex
         if base_char is not None:
             glyph_data["unicodeName"] = unicodedata.name(base_char, None)
             glyph_data["unicodeCategory"] = unicodedata.category(base_char)
@@ -123,6 +129,82 @@ def main():
             if base_char in CONTROL_NAMES:
                 glyph_data["unicodeControlName"] = CONTROL_NAMES[base_char]
         glyphs_data.append(glyph_data)
-    print(json.dumps(glyphs_data, indent=4))
+
+        block_name = unicodedataplus.block(chr(base_unicode)) if base_unicode >= 0 else None
+        if not block_name in data_by_block_name:
+            data_by_block_name[block_name] = {}
+        block_data = data_by_block_name[block_name]
+
+        if base_unicode >= 0:
+            if not "codepoints" in block_data:
+                block_data["codepoints"] = []
+            if not base_unicode in block_data["codepoints"]:
+                block_data["codepoints"].append(base_unicode)
+
+        if not "glyphNames" in block_data:
+            block_data["glyphNames"] = []
+        if not "glyphNames" in block_data["glyphNames"]:
+            block_data["glyphNames"].append(glyph.glyphname)
+
+    block_names=[*data_by_block_name.keys()]
+    for block_name in block_names:
+        if not "codepoints" in data_by_block_name[block_name]:
+            data_by_block_name[block_name]["codepoints"] = []
+        if 0 == len(data_by_block_name[block_name]["codepoints"]):
+            data_by_block_name[block_name]["codepoints"].append(-1)
+
+    block_names.sort(key = lambda block_name: data_by_block_name[block_name]["codepoints"][0])
+
+    data = {
+        "glyphs": glyphs_data,
+        "blockNames": block_names,
+        "dataByBlockName": data_by_block_name,
+    }
+
+    print(json.dumps(data, indent=4))
+
+def glyph_cmp(glyph_a, glyph_b):
+    unicode_a = glyph_a.unicode
+    primary_a = True
+    glyphname_a = glyph_a.glyphname
+    if unicode_a < 0:
+        if "." in glyphname_a:
+            unicode_a = fontforge.unicodeFromName(glyphname_a.split(".")[0])
+            primary_a = False
+            variant_a = glyphname_a.split(".", maxsplit=1)[1]
+            if unicode_a < 0: unicode_a = 1114112
+        else:
+            unicode_a = 1114113
+
+    unicode_b = glyph_b.unicode
+    primary_b = True
+    glyphname_b = glyph_b.glyphname
+    if unicode_b < 0:
+        if "." in glyphname_b:
+            unicode_b = fontforge.unicodeFromName(glyphname_b.split(".")[0])
+            primary_b = False
+            variant_b = glyphname_b.split(".", maxsplit=1)[1]
+            if unicode_b < 0: unicode_b = 1114112
+        else:
+            unicode_b = 1114113
+
+    if unicode_a < unicode_b: return -1
+    if unicode_a > unicode_b: return 1
+
+    if primary_a and not primary_b: return -1
+    if primary_b and not primary_a: return 1
+
+    if not primary_a and not primary_b:
+        if variant_a is None and variant_b is not None: return -1
+        if variant_a is not None and variant_b is None: return 1
+        if variant_a < variant_b: return -1
+        if variant_a > variant_b: return 1
+
+    # variant names are the same???  for good measure...
+    if glyphname_a < glyphname_b:
+        return -1
+    if glyphname_a > glyphname_b:
+        return 1
+    return 0
 
 main()
