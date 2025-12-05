@@ -78,5 +78,17 @@
     "version": "0.9.3",
     "vheaLineGap": 0,
     "weight": "Book",
-    "exHeight": 756.0
+    "exHeight": 756.0,
+    "panose": {
+        "Family Kind": "Latin Text",
+        "Serif Style": "Any",
+        "Weight": "Book",
+        "Proportion": "Monospaced",
+        "Contrast": "None",
+        "Stroke Variation": "No Variation",
+        "Arm Style": "Any",
+        "Letterform": "Any",
+        "Midline": "Any",
+        "X-height": "Any"
+    }
 }

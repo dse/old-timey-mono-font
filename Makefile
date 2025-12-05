@@ -491,7 +491,7 @@ clean: FORCE
 	/bin/rm -fr $(SRC_BUILD) || true
 
 data: src/data/font-data.json src/data/glyphs-data.json
-src/data/font-data.json: support/bin/fontdata.py # dist/ttf/OldTimeyMono.ttf
+src/data/font-data.json: support/bin/fontdata.py src/data/panose.json # dist/ttf/OldTimeyMono.ttf
 	support/bin/fontdata.py dist/ttf/OldTimeyMono.ttf >"$@.tmp"
 	mv "$@.tmp" "$@"
 src/data/glyphs-data.json: support/bin/glyphsdata.py # dist/ttf/OldTimeyMono.ttf

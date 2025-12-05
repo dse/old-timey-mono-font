@@ -80,6 +80,24 @@ def main():
         "weight": font.weight,
         "exHeight": font.xHeight,
     }
+
+    panose_file = os.path.join(os.path.dirname(__file__), "../../src/data/panose.json")
+    with open(panose_file, "r") as fh:
+        panose_json = fh.read()
+    panose_data = json.loads(panose_json)
+    family_kinds_data = panose_data["familyKinds"][font.os2_panose[0]]
+    family_kind_name = family_kinds_data["name"]
+    family_kind_fields = family_kinds_data["fields"]
+    panose_fields = {}
+    for idx in range(0, len(family_kind_fields)):
+        field_data = family_kind_fields[idx]
+        field_name = field_data["name"]
+        field_values = field_data["values"]
+        panose_fields[field_name] = field_values[font.os2_panose[idx]]
+
+    font_data["panose"] = panose_fields
+
     print(json.dumps(font_data, indent=4))
+
 
 main()

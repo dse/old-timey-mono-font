@@ -1,0 +1,630 @@
+{
+    "familyKinds": [
+        {
+            "name": "Any",
+            "fields": [
+            ]
+        },
+        {
+            "name": "No Fit",
+            "fields": [
+            ]
+        },
+        {
+            "name": "Latin Text",
+            "fields": [
+                {
+                    "name": "Family Kind",
+                    "values": [
+                        "Any",
+                        "No Fit",
+                        "Latin Text",
+                        "Latin Hand Written",
+                        "Latin Decorative",
+                        "Latin Symbol"
+                    ]
+                },
+                {
+                    "name": "Serif Style",
+                    "values": [
+                        "Any",
+                        "No Fit",
+                        "Cove",
+                        "Obtuse Cove",
+                        "Square Cove",
+                        "Obtuse Square Cove",
+                        "Square",
+                        "Thin",
+                        "Oval",
+                        "Exaggerated",
+                        "Triangle",
+                        "Normal Sans",
+                        "Obtuse Sans",
+                        "Perpendicular Sans",
+                        "Flared",
+                        "Rounded"
+                    ]
+                },
+                {
+                    "name": "Weight",
+                    "values": [
+                        "Any",
+                        "No Fit",
+                        "Very Light",
+                        "Light",
+                        "Thin",
+                        "Book",
+                        "Medium",
+                        "Demi",
+                        "Bold",
+                        "Heavy",
+                        "Black",
+                        "Extra Black"
+                    ]
+                },
+                {
+                    "name": "Proportion",
+                    "values": [
+                        "Any",
+                        "No fit",
+                        "Old Style",
+                        "Modern",
+                        "Even Width",
+                        "Extended",
+                        "Condensed",
+                        "Very Extended",
+                        "Very Condensed",
+                        "Monospaced"
+                    ]
+                },
+                {
+                    "name": "Contrast",
+                    "values": [
+                        "Any",
+                        "No Fit",
+                        "None",
+                        "Very Low",
+                        "Low",
+                        "Medium Low",
+                        "Medium",
+                        "Medium High",
+                        "High",
+                        "Very High"
+                    ]
+                },
+                {
+                    "name": "Stroke Variation",
+                    "values": [
+                        "Any",
+                        "No Fit",
+                        "No Variation",
+                        "Gradual/Diagonal",
+                        "Gradual/Transitional",
+                        "Gradual/Vertical",
+                        "Gradual/Horizontal",
+                        "Rapid/Vertical",
+                        "Rapid/Horizontal",
+                        "Instant/Vertical",
+                        "Instant/Horizontal"
+                    ]
+                },
+                {
+                    "name": "Arm Style",
+                    "values": [
+                        "Any",
+                        "No Fit",
+                        "Straight Arms/Horizontal",
+                        "Straight Arms/Wedge",
+                        "Straight Arms/Vertical",
+                        "Straight Arms/Single Serif",
+                        "Straight Arms/Double Serif",
+                        "Non-Straight/Horizontal",
+                        "Non-Straight/Wedge",
+                        "Non-Straight/Vertical",
+                        "Non-Straight/Single Serif",
+                        "Non-Straight/Double Serif"
+                    ]
+                },
+                {
+                    "name": "Letterform",
+                    "values": [
+                        "Any",
+                        "No Fit",
+                        "Normal/Contact",
+                        "Normal/Weighted",
+                        "Normal/Boxed",
+                        "Normal/Flattened",
+                        "Normal/Rounded",
+                        "Normal/Off Center",
+                        "Normal/Square",
+                        "Oblique/Contact",
+                        "Oblique/Weighted",
+                        "Oblique/Boxed",
+                        "Oblique/Flattened",
+                        "Oblique/Rounded",
+                        "Oblique/Off Center",
+                        "Oblique/Square"
+                    ]
+                },
+                {
+                    "name": "Midline",
+                    "values": [
+                        "Any",
+                        "No Fit",
+                        "Standard/Trimmed",
+                        "Standard/Pointed",
+                        "Standard/Serifed",
+                        "High/Trimmed",
+                        "High/Pointed",
+                        "High/Serifed",
+                        "Constant/Trimmed",
+                        "Constant/Pointed",
+                        "Constant/Serifed",
+                        "Low/Trimmed",
+                        "Low/Pointed",
+                        "Low/Serifed"
+                    ]
+                },
+                {
+                    "name": "X-height",
+                    "values": [
+                        "Any",
+                        "No Fit",
+                        "Constant/Small",
+                        "Constant/Standard",
+                        "Constant/Large",
+                        "Ducking/Small",
+                        "Ducking/Standard",
+                        "Ducking/Large"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Latin Hand Written",
+            "fields": [
+                {
+                    "name": "Family Kind",
+                    "values": [
+                        "Any",
+                        "No Fit",
+                        "Latin Text",
+                        "Latin Hand Written",
+                        "Latin Decorative",
+                        "Latin Symbol"
+                    ]
+                },
+                {
+                    "name": "Tool Kind",
+                    "values": [
+                        "Any",
+                        "No Fit",
+                        "Flat Nib",
+                        "Pressure Point",
+                        "Engraved",
+                        "Ball (Round Cap)",
+                        "Brush",
+                        "Rough",
+                        "Felt Pen/Brush Tip",
+                        "Wild Brush - Drips a lot"
+                    ]
+                },
+                {
+                    "name": "Weight",
+                    "values": [
+                        "Any",
+                        "No Fit",
+                        "Very Light",
+                        "Light",
+                        "Thin",
+                        "Book",
+                        "Medium",
+                        "Demi",
+                        "Bold",
+                        "Heavy",
+                        "Black",
+                        "Extra Black (Nord)"
+                    ]
+                },
+                {
+                    "name": "Spacing",
+                    "values": [
+                        "Any",
+                        "No fit",
+                        "Proportional Spaced",
+                        "Monospaced"
+                    ]
+                },
+                {
+                    "name": "Aspect Ratio",
+                    "values": [
+                        "Any",
+                        "No Fit",
+                        "Very Condensed",
+                        "Condensed",
+                        "Normal",
+                        "Expanded",
+                        "Very Expanded"
+                    ]
+                },
+                {
+                    "name": "Contrast",
+                    "values": [
+                        "Any",
+                        "No Fit",
+                        "None",
+                        "Very Low",
+                        "Low",
+                        "Medium Low",
+                        "Medium",
+                        "Medium High",
+                        "High",
+                        "Very High"
+                    ]
+                },
+                {
+                    "name": "Topology",
+                    "values": [
+                        "Any",
+                        "No Fit",
+                        "Roman Disconnected",
+                        "Roman Trailing",
+                        "Roman Connected",
+                        "Cursive Disconnected",
+                        "Cursive Trailing",
+                        "Cursive Connected",
+                        "Blackletter Disconnected",
+                        "Blackletter Trailing",
+                        "Blackletter Connected"
+                    ]
+                },
+                {
+                    "name": "Form",
+                    "values": [
+                        "Any",
+                        "No Fit",
+                        "Upright / No Wrapping",
+                        "Upright / Some Wrapping",
+                        "Upright / More Wrapping",
+                        "Upright / Extreme Wrapping",
+                        "Oblique / No Wrapping",
+                        "Oblique / Some Wrapping",
+                        "Oblique / More Wrapping",
+                        "Oblique / Extreme Wrapping",
+                        "Exaggerated / No Wrapping",
+                        "Exaggerated / Some Wrapping",
+                        "Exaggerated / More Wrapping",
+                        "Exaggerated / Extreme Wrapping"
+                    ]
+                },
+                {
+                    "name": "Finials",
+                    "values": [
+                        "Any",
+                        "No Fit",
+                        "None / No loops",
+                        "None / Closed loops",
+                        "None / Open loops",
+                        "Sharp / No loops",
+                        "Sharp / Closed loops",
+                        "Sharp / Open loops",
+                        "Tapered / No loops",
+                        "Tapered / Closed loops",
+                        "Tapered / Open loops",
+                        "Round / No loops",
+                        "Round / Closed loops",
+                        "Round / Open loops"
+                    ]
+                },
+                {
+                    "name": "X-ascent",
+                    "values": [
+                        "Any",
+                        "No Fit",
+                        "Very Low",
+                        "Low",
+                        "Medium",
+                        "High",
+                        "Very High"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Latin Decorative",
+            "fields": [
+                {
+                    "name": "Family Kind",
+                    "values": [
+                        "Any",
+                        "No Fit",
+                        "Latin Text",
+                        "Latin Hand Written",
+                        "Latin Decorative",
+                        "Latin Symbol"
+                    ]
+                },
+                {
+                    "name": "Class",
+                    "values": [
+                        "Any",
+                        "No Fit",
+                        "Derivative",
+                        "Non-standard Topology",
+                        "Non-standard Elements",
+                        "Non-standard Aspect",
+                        "Initials",
+                        "Cartoon",
+                        "Picture Stems",
+                        "Ornamented",
+                        "Text and Background",
+                        "Collage",
+                        "Montage"
+                    ]
+                },
+                {
+                    "name": "Weight",
+                    "values": [
+                        "Any",
+                        "No Fit",
+                        "Very Light",
+                        "Light",
+                        "Thin",
+                        "Book",
+                        "Medium",
+                        "Demi",
+                        "Bold",
+                        "Heavy",
+                        "Black",
+                        "Extra Black"
+                    ]
+                },
+                {
+                    "name": "Aspect",
+                    "values": [
+                        "Any",
+                        "No fit",
+                        "Super Condensed",
+                        "Very Condensed",
+                        "Condensed",
+                        "Normal",
+                        "Extended",
+                        "Very Extended",
+                        "Super Extended",
+                        "Monospaced"
+                    ]
+                },
+                {
+                    "name": "Contrast",
+                    "values": [
+                        "Any",
+                        "No Fit",
+                        "None",
+                        "Very Low",
+                        "Low",
+                        "Medium Low",
+                        "Medium",
+                        "Medium High",
+                        "High",
+                        "Very High",
+                        "Horizontal Low",
+                        "Horizontal Medium",
+                        "Horizontal High",
+                        "Broken"
+                    ]
+                },
+                {
+                    "name": "Serif Variant",
+                    "values": [
+                        "Any",
+                        "No Fit",
+                        "Cove",
+                        "Obtuse Cove",
+                        "Square Cove",
+                        "Obtuse Square Cove",
+                        "Square",
+                        "Thin",
+                        "Oval",
+                        "Exaggerated",
+                        "Triangle",
+                        "Normal Sans",
+                        "Obtuse Sans",
+                        "Perpendicular Sans",
+                        "Flared",
+                        "Rounded",
+                        "Script"
+                    ]
+                },
+                {
+                    "name": "Treatment",
+                    "values": [
+                        "Any",
+                        "No Fit",
+                        "None - Standard Solid Fill",
+                        "White / No Fill",
+                        "Patterned Fill",
+                        "Complex Fill",
+                        "Shaped Fill",
+                        "Drawn / Distressed"
+                    ]
+                },
+                {
+                    "name": "Lining",
+                    "values": [
+                        "Any",
+                        "No Fit",
+                        "None",
+                        "Inline",
+                        "Outline",
+                        "Engraved (Multiple Lines)",
+                        "Shadow",
+                        "Relief",
+                        "Backdrop"
+                    ]
+                },
+                {
+                    "name": "Topology",
+                    "values": [
+                        "Any",
+                        "No Fit",
+                        "Standard",
+                        "Square",
+                        "Multiple Segment",
+                        "Deco (E,M,S) Waco midlines",
+                        "Uneven Weighting",
+                        "Diverse Arms",
+                        "Diverse Forms",
+                        "Lombardic Forms",
+                        "Upper Case in Lower Case",
+                        "Implied Topology",
+                        "Horseshoe E and A",
+                        "Cursive",
+                        "Blackletter",
+                        "Swash Variance"
+                    ]
+                },
+                {
+                    "name": "Range of Characters",
+                    "values": [
+                        "Any",
+                        "No Fit",
+                        "Extended Collection",
+                        "Litterals",
+                        "No Lower Case",
+                        "Small Caps"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Latin Symbol",
+            "fields": [
+                {
+                    "name": "Family Kind",
+                    "values": [
+                        "Any",
+                        "No Fit",
+                        "Latin Text",
+                        "Latin Hand Written",
+                        "Latin Decorative",
+                        "Latin Symbol"
+                    ]
+                },
+                {
+                    "name": "Kind",
+                    "values": [
+                        "Any",
+                        "No Fit",
+                        "Montages",
+                        "Pictures",
+                        "Shapes",
+                        "Scientific",
+                        "Music",
+                        "Expert",
+                        "Patterns",
+                        "Boarders",
+                        "Icons",
+                        "Logos",
+                        "Industry specific"
+                    ]
+                },
+                {
+                    "name": "Weight",
+                    "values": [
+                        "No Fit"
+                    ]
+                },
+                {
+                    "name": "Spacing",
+                    "values": [
+                        "Any",
+                        "No fit",
+                        "Proportional Spaced",
+                        "Monospaced"
+                    ]
+                },
+                {
+                    "name": "Aspect Ratio & Contrast",
+                    "values": [
+                        "No Fit"
+                    ]
+                },
+                {
+                    "name": "Aspect Ratio of Character 94",
+                    "values": [
+                        "Any",
+                        "No Fit",
+                        "No Width",
+                        "Exceptionally Wide",
+                        "Super Wide",
+                        "Very Wide",
+                        "Wide",
+                        "Normal",
+                        "Narrow",
+                        "Very Narrow"
+                    ]
+                },
+                {
+                    "name": "Aspect Ratio of Character 119",
+                    "values": [
+                        "Any",
+                        "No Fit",
+                        "No Width",
+                        "Exceptionally Wide",
+                        "Super Wide",
+                        "Very Wide",
+                        "Wide",
+                        "Normal",
+                        "Narrow",
+                        "Very Narrow"
+                    ]
+                },
+                {
+                    "name": "Aspect Ratio of Character 157",
+                    "values": [
+                        "Any",
+                        "No Fit",
+                        "No Width",
+                        "Exceptionally Wide",
+                        "Super Wide",
+                        "Very Wide",
+                        "Wide",
+                        "Normal",
+                        "Narrow",
+                        "Very Narrow"
+                    ]
+                },
+                {
+                    "name": "Aspect Ratio of Character 163",
+                    "values": [
+                        "Any",
+                        "No Fit",
+                        "No Width",
+                        "Exceptionally Wide",
+                        "Super Wide",
+                        "Very Wide",
+                        "Wide",
+                        "Normal",
+                        "Narrow",
+                        "Very Narrow"
+                    ]
+                },
+                {
+                    "name": "Aspect Ratio of Character 211",
+                    "values": [
+                        "Any",
+                        "No Fit",
+                        "No Width",
+                        "Exceptionally Wide",
+                        "Super Wide",
+                        "Very Wide",
+                        "Wide",
+                        "Normal",
+                        "Narrow",
+                        "Very Narrow"
+                    ]
+                }
+            ]
+        }
+    ]
+}
