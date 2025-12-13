@@ -1,9 +1,39 @@
 {
+    "scriptLangs": [
+        ["latn", ["ENG ", "dflt"]],
+        ["cyrl", ["ENG ", "dflt"]],
+        ["grek", ["ENG ", "dflt"]],
+        ["DFLT", ["ENG ", "dflt"]]
+    ],
     "substitutions": {
-        "Caps to Petite Caps": {
+        "'cv02' Code-Friendly Small L": {
+            "features": ["cv02"],
+            "subtables": {
+                "'cv02' Code-Friendly Small L-1": { "l": "l.cv02" }
+            }
+        },
+        "'cv10' Curly Small L": {
+            "features": ["cv10"],
+            "subtables": {
+                "'cv10' Curly Small L-1": { "l": "l.cv10" }
+            }
+        },
+        "'cv05' Zero with Dot": {
+            "features": ["cv05"],
+            "subtables": {
+                "'cv05' Zero with Dot-1": { "zero": "zero.cv05" }
+            }
+        },
+        "'cv06' Zero with Larger Dot": {
+            "features": ["cv06"],
+            "subtables": {
+                "'cv06' Zero with Larger Dot-1": { "zero": "zero.cv06" }
+            }
+        },
+        "'c2pc' Caps to Petite Caps": {
             "features": ["c2pc"],
             "subtables": {
-                "Caps to Petite Caps-1": {
+                "'c2pc' Caps to Petite Caps-1": {
                     "A": "A.c2pc",
                     "B": "B.c2pc",
                     "C": "C.c2pc",
@@ -33,10 +63,10 @@
                 }
             }
         },
-        "Lowercase to Petite Caps": {
+        "'pcap' Lowercase to Petite Caps": {
             "features": ["pcap"],
             "subtables": {
-                "Lowercase to Petite Caps-1": {
+                "'pcap' Lowercase to Petite Caps-1": {
                     "a": "A.c2pc",
                     "b": "B.c2pc",
                     "c": "C.c2pc",
@@ -66,10 +96,10 @@
                 }
             }
         },
-        "Caps to Small Caps": {
+        "'c2sc' Caps to Small Caps": {
             "features": ["c2sc"],
             "subtables": {
-                "Caps to Small Caps-1": {
+                "'c2sc' Caps to Small Caps-1": {
                     "A": "A.c2sc",
                     "B": "B.c2sc",
                     "C": "C.c2sc",
@@ -99,10 +129,10 @@
                 }
             }
         },
-        "Lowercase to Small Caps": {
+        "'smcp' Lowercase to Small Caps": {
             "features": ["smcp"],
             "subtables": {
-                "Lowercase to Small Caps-1": {
+                "'smcp' Lowercase to Small Caps-1": {
                     "a": "A.c2sc",
                     "b": "B.c2sc",
                     "c": "C.c2sc",
@@ -199,10 +229,10 @@
                 }
             }
         },
-        "Simplified Forms for Size Reduction": {
+        "'ss07' Simplified Forms for Size Reduction": {
             "features": ["ss07"],
             "subtables": {
-                "Simplified Forms for Size Reduction-1": {
+                "'ss07' Simplified Forms for Size Reduction-1": {
                     "zero": "zero.ss07",
                     "one": "one.ss07",
                     "two": "two.ss07",
@@ -216,28 +246,28 @@
         }
     },
     "character_variants": {
-        "cv01": "Digit One with Curly Top",
-        "cv02": "Code-Friendly Small L",
-        "cv03": "Shortened Number Sign",
-        "cv04": "Shortened Slash",
-        "cv05": "Zero with Dot",
-        "cv06": "Zero with Large Dot",
-        "cv07": "Alternate At-Sign",
-        "cv08": "Shortened Backslash",
-        "cv09": "Plain Grave Accent",
-        "cv10": "Curly Small L",
-        "cv11": "Taller Equal Sign",
-        "cv12": "Larger Left Curly Bracket, Alternate",
-        "cv13": "Larger Right Curly Bracket, Alternate"
+        "cv01": "'cv01' Digit One with Curly Top",
+        "cv02": "'cv02' Code-Friendly Small L",
+        "cv03": "'cv03' Shortened Number Sign",
+        "cv04": "'cv04' Shortened Slash",
+        "cv05": "'cv05' Zero with Dot",
+        "cv06": "'cv06' Zero with Large Dot",
+        "cv07": "'cv07' Alternate At-Sign",
+        "cv08": "'cv08' Shortened Backslash",
+        "cv09": "'cv09' Plain Grave Accent",
+        "cv10": "'cv10' Curly Small L",
+        "cv11": "'cv11' Taller Equal Sign",
+        "cv12": "'cv12' Larger Left Curly Bracket, Alternate",
+        "cv13": "'cv13' Larger Right Curly Bracket, Alternate"
     },
     "stylistic_sets": {
-        "ss01": "Code",
-        "ss02": "Code Brackets",
-        "ss03": "Code Digits",
-        "ss04": "Apertured Letters",
-        "ss05": "Code Punctuation",
-        "ss06": "Code Miscellaneous Symbols",
-        "ss07": "Simplified Forms Used for Size Reduction"
+        "ss01": "'ss01' Code",
+        "ss02": "'ss02' Code Brackets",
+        "ss03": "'ss03' Code Digits",
+        "ss04": "'ss04' Apertured Letters",
+        "ss05": "'ss05' Code Punctuation",
+        "ss06": "'ss06' Code Miscellaneous Symbols",
+        "ss07": "'ss07' Simplified Forms Used for Size Reduction"
     },
     "alternate_character_names": {
         "slash.orig":            null,
