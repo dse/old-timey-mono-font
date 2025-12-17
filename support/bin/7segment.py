@@ -39,7 +39,6 @@ def draw_7_segments(font, width, codept, bits):
         font.deleteGlyph(glyphname)
     glyph = font.createChar(codept)
     glyph.width = width
-    print("glyph.width = %d" % width)
 
     pi = 3.14159265358979323846
     italic_angle = 8
