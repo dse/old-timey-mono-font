@@ -257,7 +257,7 @@ zip: $(ZIP_FILE) $(UNVERSIONED_ZIP_FILE)
 
 .SUFFIXES: .sfd .ttf
 
-limited-test-fonts: $(FONT_TTF) $(LIGHT_FONT_TTF) $(CODING_FONT_TTF) $(FONT_COND_TTF)
+limited-test-fonts: $(FONT_TTF) $(CODING_FONT_TTF)
 
 testfontsweb: FORCE
 	rm -fr website/fonts/ttf/*
@@ -415,9 +415,9 @@ $(SRC_BUILD)/$(PS_FONT_FAMILY).stage1.sfd: $(BASEFONT_SFD) $(SRC_SVGS) $(MAKEFIL
 	$(BOUNDS_PY) "$@"
 	$(SMOL_PY) "$@"
 	$(SUPERSUB_PY) "$@"
-	$(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) $(BASEFONT_SFD)
-	$(REFERENCES_PY) $(BASEFONT_SFD) $(REFERENCES_JSON)
-	setfontmetas --vendor "$(VENDOR)" --version "$(VERSION)" --sfnt-revision "$(SFNT_REVISION)" $(BASEFONT_SFD)
+	$(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) "$@"
+	$(REFERENCES_PY) "$@" $(REFERENCES_JSON)
+	setfontmetas --vendor "$(VENDOR)" --version "$(VERSION)" --sfnt-revision "$(SFNT_REVISION)" "$@"
 
 # Stage 2: make condensed and compressed outlines
 $(SRC_BUILD)/$(PS_FONT_FAMILY)Cond.stage1.sfd: $(SRC_BUILD)/$(PS_FONT_FAMILY).stage1.sfd $(MAKEFILE) $(ASPECT_PY_PROG)
@@ -434,6 +434,7 @@ $(DIST_TTF)/%.ttf: $(SRC_BUILD)/%.stage1.sfd $(MAKEFILE) $(STROKES_PY_PROG) $(ME
 	@echo "stage 3 normal (weight)"
 	mkdir -p "$(DIST_TTF)"
 	$(STROKES_PY) -x 96 "$<" -o "$@"
+	$(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) "$@"
 	$(FONTFIX_PY) "$@"
 	$(FONTAUTOHINT_PY) "$@"
 	$(METAS_PY) "$@"
@@ -442,6 +443,7 @@ $(DIST_TTF)/%-Light.ttf: $(SRC_BUILD)/%.stage1.sfd $(MAKEFILE) $(STROKES_PY_PROG
 	@echo "stage 3 light"
 	mkdir -p "$(DIST_TTF)"
 	$(STROKES_PY) -x 72 "$<" -o "$@"
+	$(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) "$@"
 	$(FONTFIX_PY) "$@"
 	$(FONTAUTOHINT_PY) "$@"
 	$(METAS_PY) "$@"
@@ -450,6 +452,7 @@ $(DIST_TTF)/%-Thin.ttf: $(SRC_BUILD)/%.stage1.sfd $(MAKEFILE) $(STROKES_PY_PROG)
 	@echo "stage 3 thin"
 	mkdir -p "$(DIST_TTF)"
 	$(STROKES_PY) -x 48 "$<" -o "$@"
+	$(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) "$@"
 	$(FONTFIX_PY) "$@"
 	$(FONTAUTOHINT_PY) "$@"
 	$(METAS_PY) "$@"
@@ -468,11 +471,13 @@ $(DIST_TTF)/$(PS_CODE_FONT_FAMILY)%ttf: $(DIST_TTF)/$(PS_FONT_FAMILY)%ttf $(MAKE
 	pyftfeatfreeze -f ss01 "$<" "$@"
 	$(FONTFIX_PY) "$@"
 	$(METAS_PY_CODE) "$@"
+	$(SETSUBSTITUTIONS_PY) --pyftfeatfreeze $(SUBSTITUTIONS_JSON) "$@"
 $(DIST_TTF)/$(NH_PS_CODE_FONT_FAMILY)%ttf: $(DIST_TTF)/$(NH_PS_FONT_FAMILY)%ttf $(MAKEFILE) $(METAS_PY_PROG) $(FONTFIX_PY_PROG)
 	@echo "stage 4 code variant"
 	pyftfeatfreeze -f ss01 "$<" "$@"
 	$(FONTFIX_PY) "$@"
 	$(NH_METAS_PY_CODE) "$@"
+	$(SETSUBSTITUTIONS_PY) --pyftfeatfreeze $(SUBSTITUTIONS_JSON) "$@"
 
 $(DIST_SFD)/%.sfd: $(DIST_TTF)/%.ttf
 	mkdir -p "$(DIST_SFD)"
@@ -490,11 +495,11 @@ clean: FORCE
 	\) -exec rm {} + || true
 	/bin/rm -fr $(SRC_BUILD) || true
 
-data: src/data/font-data.json src/data/glyphs-data.json
+data: src/data/font-data.json src/data/font-glyphs-data.json
 src/data/font-data.json: support/bin/fontdata.py src/data/panose.json # dist/ttf/OldTimeyMono.ttf
 	support/bin/fontdata.py dist/ttf/OldTimeyMono.ttf >"$@.tmp"
 	mv "$@.tmp" "$@"
-src/data/glyphs-data.json: support/bin/glyphsdata.py # dist/ttf/OldTimeyMono.ttf
+src/data/font-glyphs-data.json: support/bin/glyphsdata.py # dist/ttf/OldTimeyMono.ttf
 	support/bin/glyphsdata.py dist/ttf/OldTimeyMono.ttf >"$@.tmp"
 	mv "$@.tmp" "$@"
 
