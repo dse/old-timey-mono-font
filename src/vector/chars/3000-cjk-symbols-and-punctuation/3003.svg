@@ -24,7 +24,7 @@
    inkscape:pagecheckerboard="0"
    inkscape:deskcolor="#d1d1d1"
    inkscape:document-units="px"
-   showgrid="true"
+   showgrid="false"
    inkscape:zoom="0.54556877"
    inkscape:cx="482.98219"
    inkscape:cy="526.0565"
@@ -45,7 +45,7 @@
    originx="0"
    originy="0"
    units="px"
-   visible="true" />
+   visible="false" />
     <sodipodi:guide
    position="0,21"
    orientation="0,-1"
@@ -180,7 +180,7 @@
     
     <path
    style="display:inline;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
-   d="m 23.33509,21 4.829629,1.294095 -13.414624,40.4048 z"
+   d="m 20.83509,21 4.829629,1.294095 -13.414624,40.4048 z"
    id="path135" />
     
     
@@ -188,6 +188,6 @@
     
   <path
    style="display:inline;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
-   d="m 43.33509,21 4.829629,1.294095 -13.414624,40.4048 z"
+   d="m 45.83509,21 4.829629,1.294095 -13.414624,40.4048 z"
    id="path19" /></g>
 </svg>
