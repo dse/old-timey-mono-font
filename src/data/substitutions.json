@@ -6,30 +6,6 @@
         ["DFLT", ["ENG ", "dflt"]]
     ],
     "substitutions": {
-        "'cv02' Code-Friendly Small L": {
-            "features": ["cv02"],
-            "subtables": {
-                "'cv02' Code-Friendly Small L-1": { "l": "l.cv02" }
-            }
-        },
-        "'cv10' Curly Small L": {
-            "features": ["cv10"],
-            "subtables": {
-                "'cv10' Curly Small L-1": { "l": "l.cv10" }
-            }
-        },
-        "'cv05' Zero with Dot": {
-            "features": ["cv05"],
-            "subtables": {
-                "'cv05' Zero with Dot-1": { "zero": "zero.cv05" }
-            }
-        },
-        "'cv06' Zero with Larger Dot": {
-            "features": ["cv06"],
-            "subtables": {
-                "'cv06' Zero with Larger Dot-1": { "zero": "zero.cv06" }
-            }
-        },
         "'c2pc' Caps to Petite Caps": {
             "features": ["c2pc"],
             "subtables": {
