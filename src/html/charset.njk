@@ -1,0 +1,21 @@
+{% extends "_layouts/layout.njk" %}
+{% set pageTitle = "Character Set" %}
+
+{% block main %}
+    <div class="container">
+        {% for glyphList in glyphLists %}
+            <h3>
+                {{ glyphList.name }}
+            </h3>
+            <ul class="glyph__list">
+                {% for glyph in glyphList.glyphs %}
+                    <li class="glyph__list__item">
+                        <div class="glyph__card" title="U+{{glyph.unicode}} {{ glyph.data.unicodeName }}">
+                            <span class="glyph__char">{{ glyph.char }}</span>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endfor %}
+    </div>
+{% endblock %}

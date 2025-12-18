@@ -1,0 +1,43 @@
+{
+  "name": "old-timey-mono-font",
+  "version": "1.0.0",
+  "description": "It will be under [Releases](https://github.com/dse/old-timey-mono-font/releases).",
+  "main": "index.js",
+  "directories": {
+    "example": "examples",
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "gulp build",
+    "sass": "gulp sass",
+    "html": "gulp html",
+    "dev": "gulp dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dse/old-timey-mono-font.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/dse/old-timey-mono-font/issues"
+  },
+  "homepage": "https://github.com/dse/old-timey-mono-font#readme",
+  "dependencies": {
+    "bootstrap": "^5.3.8",
+    "browser-sync": "^3.0.4",
+    "gulp": "^5.0.1",
+    "gulp-beautify": "^3.0.0",
+    "gulp-data": "^1.3.1",
+    "gulp-nunjucks": "^6.1.0",
+    "gulp-nunjucks-render": "^2.2.3",
+    "gulp-sass": "^6.0.1",
+    "js-beautify": "^1.15.4",
+    "lodash": "^4.17.21",
+    "nunjucks": "^3.2.4",
+    "sass": "^1.94.2"
+  }
+}

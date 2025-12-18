@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{{pageTitle}}</title>
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+        {% include "_components/site-header.njk" %}
+        {% block subheader %}
+        {% endblock %}
+        <div class="container">
+            {% block pageTitle %}
+                <h1 class="text-center">
+                    {{pageTitle}}
+                </h1>
+            {% endblock %}
+            {% block lead %}
+            {% endblock %}
+        </div>
+        <main>
+            {% block main %}
+            {% endblock %}
+        </main>
+        {% include "_components/site-footer.njk" %}
+    </body>
+</html>

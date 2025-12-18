@@ -1,0 +1,93 @@
+@font-face {
+    font-family: "Old Timey Mono";
+    font-weight: 400;
+    font-style: normal;
+    src: url("../ttf/OldTimeyMono.ttf");
+}
+@font-face {
+    font-family: "Old Timey Code";
+    font-weight: 400;
+    font-style: normal;
+    src: url("../ttf/OldTimeyCode.ttf");
+}
+@font-face {
+    font-family: "Consolas";
+    font-weight: 400;
+    font-style: normal;
+    src: url("../fonts/consola.ttf");
+}
+@font-face {
+    font-family: "Consolas";
+    font-weight: 700;
+    font-style: normal;
+    src: url("../fonts/consolab.ttf");
+}
+@font-face {
+    font-family: "Consolas";
+    font-weight: 400;
+    font-style: italic;
+    src: url("../fonts/consolai.ttf");
+}
+@font-face {
+    font-family: "Consolas";
+    font-weight: 700;
+    font-style: italic;
+    src: url("../fonts/consolaz.ttf");
+}
+body {
+    padding-top: 1rem;
+}
+.glyph {
+    &__list {
+        margin-left: 0;
+        list-style: none;
+
+        display: flex;
+        flex-flow: row wrap;
+        align-items: stretch;
+        justify-content: flex-start;
+        gap: 0.25rem;
+    }
+    &__list__item {
+        flex: 0 0 4em;
+    }
+    &__char {
+        display: block;
+        border: 1px solid $border-color;
+        line-height: 1.5;
+        font-size: 250%;
+        text-align: center;
+    }
+    &__code {
+        display: block;
+        text-align: center;
+        font-size: 12px;
+    }
+}
+ol, ul {
+    padding-left: 4ch;
+    li::marker {
+        left: 0;
+        right: 0;
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+}
+h1 {
+    text-shadow: -0.05em 0 0 currentcolor;
+    color: #0c0;
+}
+h2 {
+    color: #0c0;
+}
+h3 {
+    color: #9c9;
+}
+.old-timey-code {
+    font-family: "Old Timey Code";
+}
+pre {
+    margin-left: 4ch;
+}
