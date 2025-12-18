@@ -146,7 +146,7 @@ def main():
         if not "glyphNames" in block_data["glyphNames"]:
             block_data["glyphNames"].append(glyph.glyphname)
 
-    block_names=[*data_by_block_name.keys()]
+    block_names = [block_name for block_name in [*data_by_block_name.keys()] if block_name is not None]
     for block_name in block_names:
         if not "codepoints" in data_by_block_name[block_name]:
             data_by_block_name[block_name]["codepoints"] = []
