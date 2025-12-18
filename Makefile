@@ -375,13 +375,14 @@ fontsvg: FORCE
 	@echo "use 'make update', dingus." >&2
 	false
 
-# generate braille characters
-braille: FORCE
+symbols: FORCE
 	fontbraille -W 200 -f $(BASEFONT_SFD)
-
-# generate box drawing characters
-boxdraw: FORCE
 	fontboxdraw -f $(BASEFONT_SFD)
+	support/bin/7segment.py $(BASEFONT_SFD)
+	support/bin/blocksextants.py $(BASEFONT_SFD)
+	support/bin/diagonalblocks.py $(BASEFONT_SFD)
+	support/bin/triangularblocks.py $(BASEFONT_SFD)
+	support/bin/retrosymbols.py $(BASEFONT_SFD)
 
 $(ZIP_FILE): FORCE
 	cd $(DIST_ZIP) && \
