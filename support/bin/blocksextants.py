@@ -1,9 +1,5 @@
 #!/usr/bin/env -S fontforge -quiet
 # -*- mode: python; coding: utf-8 -*-
-#
-# symbols.py - draw certain symbols from the SYMBOLS FOR LEGACY
-# COMPUTING block.
-#
 import fontforge, argparse, os, sys, statistics
 
 sys.path.append(os.path.dirname(__file__) + "/../lib")
@@ -102,17 +98,17 @@ def draw_block_sextant(font, width, codept, bits):
     pen = glyph.glyphPen()
 
     if bits & (1 << 5):
-        draw_grid_shape(glyph, pen, width, 2, 3, [[[0,0],[1,0],[1,1],[0,1]]])
+        draw_grid_shape(width, 2, 3, [[[0,0],[1,0],[1,1],[0,1]]], glyph=glyph, pen=pen)
     if bits & (1 << 4):
-        draw_grid_shape(glyph, pen, width, 2, 3, [[[1,0],[2,0],[2,1],[1,1]]])
+        draw_grid_shape(width, 2, 3, [[[1,0],[2,0],[2,1],[1,1]]], glyph=glyph, pen=pen)
     if bits & (1 << 3):
-        draw_grid_shape(glyph, pen, width, 2, 3, [[[0,1],[1,1],[1,2],[0,2]]])
+        draw_grid_shape(width, 2, 3, [[[0,1],[1,1],[1,2],[0,2]]], glyph=glyph, pen=pen)
     if bits & (1 << 2):
-        draw_grid_shape(glyph, pen, width, 2, 3, [[[1,1],[2,1],[2,2],[1,2]]])
+        draw_grid_shape(width, 2, 3, [[[1,1],[2,1],[2,2],[1,2]]], glyph=glyph, pen=pen)
     if bits & (1 << 1):
-        draw_grid_shape(glyph, pen, width, 2, 3, [[[0,2],[1,2],[1,3],[0,3]]])
+        draw_grid_shape(width, 2, 3, [[[0,2],[1,2],[1,3],[0,3]]], glyph=glyph, pen=pen)
     if bits & (1 << 0):
-        draw_grid_shape(glyph, pen, width, 2, 3, [[[1,2],[2,2],[2,3],[1,3]]])
+        draw_grid_shape(width, 2, 3, [[[1,2],[2,2],[2,3],[1,3]]], glyph=glyph, pen=pen)
 
     glyph.width = round(width)
 

@@ -292,3 +292,64 @@ def debug_glyphname(glyphname):
 
 def debug_codepoint(codepoint):
     return codepoint in DEBUG_GLYPHS
+
+def draw_grid_shape(width, x_max, y_max, polygons, font=None, codept=None, glyph=None, pen=None):
+    if font is not None and codept is not None:
+        glyphname = fontforge.nameFromUnicode(codept)
+        if glyphname in font:
+            font.removeGlyph(glyphname)
+        glyph = font.createChar(codept)
+        glyph.width = width
+        pen = glyph.glyphPen()
+        return draw_grid_shape(width, x_max, y_max, polygons, glyph=glyph, pen=pen)
+    font = glyph.font
+    for polygon in polygons:
+        if type(polygon[0]) in [float, int]:
+            black_level = polygon[0]
+            points = polygon[1:]
+        else:
+            black_level = 1
+            points = polygon[0:]
+        first_point = True
+        for point in points:
+            print(repr(point))
+            [x,y] = point
+            x = x * width / x_max
+            y = font.ascent - y * (font.descent + font.ascent) / y_max
+            if first_point:
+                pen.moveTo((x, y))
+                first_point = False
+            else:
+                pen.lineTo((x, y))
+        pen.closePath()
+    glyph.width = width
+
+def draw_shape(width, x_max, y_max, polygons, font=None, codept=None, glyph=None, pen=None):
+    if font is not None and codept is not None:
+        glyphname = fontforge.nameFromUnicode(codept)
+        if glyphname in font:
+            font.removeGlyph(glyphname)
+        glyph = font.createChar(codept)
+        glyph.width = width
+        pen = glyph.glyphPen()
+        return draw_shape(width, x_max, y_max, polygons, glyph=glyph, pen=pen)
+    font = glyph.font
+    for polygon in polygons:
+        if type(polygon[0]) in [float, int]:
+            black_level = polygon[0]
+            points = polygon[1:]
+        else:
+            black_level = 1
+            points = polygon[0:]
+        first_point = True
+        for point in points:
+            [x,y] = point
+            x = x * width / x_max
+            y = y * (font.ascent - (font.descent + font.ascent)) / y_max
+            if first_point:
+                pen.moveTo((x, y))
+            else:
+                pen.lineTo((x, y))
+            first_point = False
+        pen.closePath()
+    glyph.width = width
