@@ -22,7 +22,7 @@ def main():
         raise Exception("not enough glyphs same width")
 
     draw_grid_shape(median_width, 2, 2, [[[0,0],[2,0],[2,2],[0,2],[1,1]]], codept=0x1fb68, font=font)
-    draw_grid_shape(median_width, 2, 2, [[[0,0],[1.1],[2.0],[2,2],[0,2]]], codept=0x1fb69, font=font)
+    draw_grid_shape(median_width, 2, 2, [[[0,0],[1,1],[2,0],[2,2],[0,2]]], codept=0x1fb69, font=font)
     draw_grid_shape(median_width, 2, 2, [[[0,0],[2,0],[1,1],[2,2],[0,2]]], codept=0x1fb6a, font=font)
     draw_grid_shape(median_width, 2, 2, [[[0,0],[2,0],[2,2],[1,1],[0,2]]], codept=0x1fb6b, font=font)
     draw_grid_shape(median_width, 2, 2, [[[0,0],[1,1],[0,2]]], codept=0x1fb6c, font=font)
