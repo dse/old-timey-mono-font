@@ -254,8 +254,12 @@ def get_glyph_char_data(glyph):
                 break
     if chr(codepoint) in glyph_data:
         this_char_data = glyph_data[chr(codepoint)]
-        if variant_key in this_char_data:
-            variant_char_data = this_char_data[variant_key]
+    elif u(codepoint) in glyph_data:
+        this_char_data = glyph_data[u(codepoint)]
+    else:
+        this_char_data = None
+    if this_char_data is not None and variant_key in this_char_data:
+        variant_char_data = this_char_data[variant_key]
     if (range_char_data is None and
         this_char_data is None and
         variant_char_data is None):

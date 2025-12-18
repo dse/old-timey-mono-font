@@ -61,6 +61,9 @@ def main():
                 
             glyph_data = get_glyph_char_data(glyph) # always a dict
             real_codepoint = get_glyph_real_codepoint(glyph)
+            if glyph_data is None:
+                glyph_data = get_glyph_char_data("U+%04X" % real_codepoint) # always a dict
+
             fill_flag = glyph_data.get("fill", False)
             expand_flag = glyph_data.get("expandStrokes", True)
             if not expand_flag:

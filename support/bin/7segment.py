@@ -11,22 +11,24 @@ def main():
     glyphs = list(font.glyphs())
     widths = [glyph.width for glyph in glyphs]
     widths.sort()
-    median_width = round(statistics.median(widths))
+    median_width = statistics.median(widths)
 
     glyphs_having_median_width = [glyph for glyph in glyphs if abs(glyph.width - median_width) < median_width / 1000]
     if len(glyphs_having_median_width) / len(glyphs) < 0.95:
         raise Exception("not enough glyphs same width")
 
-    draw_7_segments(font, median_width, 0x1fbf0, 0b1110111)
-    draw_7_segments(font, median_width, 0x1fbf1, 0b0010010)
-    draw_7_segments(font, median_width, 0x1fbf2, 0b1011101)
-    draw_7_segments(font, median_width, 0x1fbf3, 0b1011011)
-    draw_7_segments(font, median_width, 0x1fbf4, 0b0111010)
-    draw_7_segments(font, median_width, 0x1fbf5, 0b1101011)
-    draw_7_segments(font, median_width, 0x1fbf6, 0b1101111)
-    draw_7_segments(font, median_width, 0x1fbf7, 0b1010010)
-    draw_7_segments(font, median_width, 0x1fbf8, 0b1111111)
-    draw_7_segments(font, median_width, 0x1fbf9, 0b1111011)
+    width = round(median_width)
+
+    draw_7_segments(font, width, 0x1fbf0, 0b1110111)
+    draw_7_segments(font, width, 0x1fbf1, 0b0010010)
+    draw_7_segments(font, width, 0x1fbf2, 0b1011101)
+    draw_7_segments(font, width, 0x1fbf3, 0b1011011)
+    draw_7_segments(font, width, 0x1fbf4, 0b0111010)
+    draw_7_segments(font, width, 0x1fbf5, 0b1101011)
+    draw_7_segments(font, width, 0x1fbf6, 0b1101111)
+    draw_7_segments(font, width, 0x1fbf7, 0b1010010)
+    draw_7_segments(font, width, 0x1fbf8, 0b1111111)
+    draw_7_segments(font, width, 0x1fbf9, 0b1111011)
 
     if args.filename.endswith(".sfd"):
         font.save()
