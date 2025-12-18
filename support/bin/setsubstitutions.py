@@ -8,26 +8,55 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('json_filename')
     parser.add_argument('filenames', nargs='+')
+    parser.add_argument('--pyftfeatfreeze', action='store_true')
     args = parser.parse_args()
-    if "DEBUG" in os.environ:
-        print("loading substitution data from %s" % args.json_filename)
     json_data = json.loads(open(args.json_filename).read())
     for filename in args.filenames:
         silence.on()
         font = fontforge.open(filename)
         silence.off()
+
         for lookup_name in font.gsub_lookups:
             (lookup_type, _, _) = font.getLookupInfo(lookup_name)
             if lookup_type != "gsub_single":
                 continue
-            if "DEBUG" in os.environ:
-                print("removing gsub_single lookup named %s" % lookup_name)
             font.removeLookup(lookup_name)
+
+        default_script_langs = json_data.get("scriptLangs")
+        if default_script_langs is None:
+            default_script_lang_tuple = None
+        else:
+            default_script_lang_tuple = [] # initialize, will convert to tuple later
+            for script_lang in default_script_langs:
+                [script, langs] = script_lang
+                script_lang_tuple = (script, tuple(langs))
+                default_script_lang_tuple.append(script_lang_tuple)
+            default_script_lang_tuple = tuple(default_script_lang_tuple)
+
         substitution_data = json_data["substitutions"]
         for lookup_name, lookup_data in substitution_data.items():
             features = lookup_data["features"]
             subtables = lookup_data["subtables"]
-            feature_script_lang_tuple = tuple([(feature_tag, (('DFLT', ('dflt',)),)) for feature_tag in features])
+
+            # put together feature-script-lang-tuple (or get the default)
+            script_langs = lookup_data.get("scriptLangs")
+            if script_langs is None:
+                script_langs = default_script_langs
+
+            # build feature-script-lang tuple from script-langs
+            if script_langs is None:
+                script_lang_tuples = tuple([('DFLT', ('dflt',))])
+            else:
+                script_lang_tuples = [] # initialize
+                for script_lang in script_langs:
+                    [script, langs] = script_lang
+                    script_lang_tuple = (script, tuple(langs))
+                    script_lang_tuples.append(script_lang_tuple)
+                script_lang_tuples = tuple(script_lang_tuples)
+            feature_script_lang_tuple = \
+                tuple([(feature_tag, script_lang_tuples,) for feature_tag in features])
+
+            # add lookups, lookup subtables, and substitutions
             font.addLookup(lookup_name, "gsub_single", (), feature_script_lang_tuple)
             for subtable_name, subtable_data in subtables.items():
                 font.addLookupSubtable(lookup_name, subtable_name)
@@ -36,30 +65,38 @@ def main():
                         glyph = font[glyph_name]
                         glyph.addPosSub(subtable_name, other_glyph_name)
 
-        variant_glyphs = [glyph for glyph in list(font.glyphs()) if re.search(r'\.cv[0-9][0-9]$', glyph.glyphname)]
-        for variant_glyph in variant_glyphs:
-            normal_glyphname = variant_glyph.glyphname.split('.')[0]
-            if not normal_glyphname in font:
+        # add lookups for cvXX variants
+        variant_glyphs = [glyph for glyph in list(font.glyphs())
+                          if re.search(r'\.cv[0-9][0-9]$', glyph.glyphname)]
+        for variant_glyph in variant_glyphs: # destination glyphs
+            base_glyphname = variant_glyph.glyphname.split('.')[0] # e.g., "zero"
+            base_codepoint = fontforge.unicodeFromName(base_glyphname)
+            unicoded_glyphs = [glyph for glyph in font.glyphs() if glyph.unicode == base_codepoint]
+            if not len(unicoded_glyphs):
                 continue
-            if fontforge.unicodeFromName(normal_glyphname) < 0:
-                continue
-            normal_glyph = font[normal_glyphname]
-            feature_tag = variant_glyph.glyphname[-4:]
-            if feature_tag in font.gsub_lookups:
-                continue
+            if len(unicoded_glyphs) > 1:
+                print("WARNING: more than one glyph with codepoint %d" % base_codepoint)
+            feature_tag = variant_glyph.glyphname[-4:] # e.g., "cv05"
+            feature_script_lang_tuple = ((feature_tag, default_script_lang_tuple),)
             if "character_variants" in json_data and feature_tag in json_data["character_variants"]:
                 lookup_name = "%s (%s)" % (json_data["character_variants"][feature_tag], variant_glyph.glyphname)
-                subtable_name = "%s subtable (%s)" % (json_data["character_variants"][feature_tag], variant_glyph.glyphname)
+                subtable_name = "%s-1 (%s)" % (json_data["character_variants"][feature_tag], variant_glyph.glyphname)
             else:
-                lookup_name = variant_glyph.glyphname
-                subtable_name = "%s subtable" % (variant_glyph.glyphname,)
-            feature_script_lang_tuple = ((feature_tag, (('DFLT', ('dflt',)),)),)
+                lookup_name = "%s" % (feature_tag, variant_glyph.glyphname)
+                subtable_name = "'%s' %s-1" % (feature_tag, variant_glyph.glyphname)
             font.addLookup(lookup_name, "gsub_single", (), feature_script_lang_tuple)
             font.addLookupSubtable(lookup_name, subtable_name)
-            normal_glyph.addPosSub(subtable_name, variant_glyph.glyphname)
+            for unicoded_glyph in unicoded_glyphs: # should only be one
+                if unicoded_glyph.glyphname == base_glyphname: # taken care of later
+                    continue
+                if unicoded_glyph.glyphname != variant_glyph.glyphname:
+                    unicoded_glyph.addPosSub(subtable_name, variant_glyph.glyphname)
+            font[base_glyphname].addPosSub(subtable_name, variant_glyph.glyphname) # for good measure
+
         if filename.endswith(".sfd"):
             font.save(filename)
         else:
             font.generate(filename)
+
         font.close()
 main()
