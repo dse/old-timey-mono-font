@@ -179,7 +179,7 @@ def create_smol_glyph(font, codepoint):
     glyph = font[glyphname]
     orig_width = glyph.width
 
-    sm_glyphname = plain_glyphname + '.smol'
+    sm_glyphname = plain_glyphname + '.SMOL'
     sm_glyph = font.createChar(-1, sm_glyphname)
     sm_glyph.foreground = fontforge.layer() # clear out any existing contours
 

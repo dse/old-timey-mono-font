@@ -128,7 +128,7 @@ def supersubscript(font, codepoint, num, xlate):
         char = num[idx]
         if "DEBUG" in os.environ:
             print("supersubscript %s: char[%d] = '%s'" % (font_path, idx, char))
-        glyphname = fontforge.nameFromUnicode(ord(char)) + '.smol'
+        glyphname = fontforge.nameFromUnicode(ord(char)) + '.SMOL'
         if "DEBUG" in os.environ:
             print("supersubscript %s: inserting %s" % (font_path, glyphname))
         if len(num) > 1:
@@ -159,14 +159,14 @@ def fraction(font, codepoint, numer, denom):
         xlate = xlate_numerator
         if len(numer) > 1:
             xlate = psMat.compose(xlate, digit_xlate(idx, len(numer)))
-        glyphname = fontforge.nameFromUnicode(ord(char)) + '.smol'
+        glyphname = fontforge.nameFromUnicode(ord(char)) + '.SMOL'
         references.append((glyphname, xlate))
     for idx in range(0, len(denom)):
         char = denom[idx]
         xlate = xlate_denominator
         if len(denom) > 1:
             xlate = psMat.compose(xlate, digit_xlate(idx, len(denom)))
-        glyphname = fontforge.nameFromUnicode(ord(char)) + '.smol'
+        glyphname = fontforge.nameFromUnicode(ord(char)) + '.SMOL'
         references.append((glyphname, xlate))
     if "DEBUG" in os.environ:
         print("supersub.py %s: U+%04X" % (font_path, codepoint))

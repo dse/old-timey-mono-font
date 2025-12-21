@@ -22147,7 +22147,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: exclam.smol
+StartChar: exclam.SMOL
 Encoding: 65563 -1 747
 Width: 1008
 VWidth: 864
@@ -22173,7 +22173,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: quotedbl.smol
+StartChar: quotedbl.SMOL
 Encoding: 65564 -1 748
 Width: 1008
 VWidth: 864
@@ -22202,7 +22202,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: numbersign.smol
+StartChar: numbersign.SMOL
 Encoding: 65565 -1 749
 Width: 1008
 VWidth: 864
@@ -22261,7 +22261,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: dollar.smol
+StartChar: dollar.SMOL
 Encoding: 65566 -1 750
 Width: 1008
 VWidth: 864
@@ -22309,7 +22309,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: percent.smol
+StartChar: percent.SMOL
 Encoding: 65567 -1 751
 Width: 1008
 VWidth: 864
@@ -22355,7 +22355,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: ampersand.smol
+StartChar: ampersand.SMOL
 Encoding: 65568 -1 752
 Width: 1008
 VWidth: 864
@@ -22406,7 +22406,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: quotesingle.smol
+StartChar: quotesingle.SMOL
 Encoding: 65569 -1 753
 Width: 1008
 VWidth: 864
@@ -22427,7 +22427,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: parenleft.smol
+StartChar: parenleft.SMOL
 Encoding: 65570 -1 754
 Width: 1008
 VWidth: 864
@@ -22451,7 +22451,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: parenright.smol
+StartChar: parenright.SMOL
 Encoding: 65571 -1 755
 Width: 1008
 VWidth: 864
@@ -22475,7 +22475,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: asterisk.smol
+StartChar: asterisk.SMOL
 Encoding: 65572 -1 756
 Width: 1008
 VWidth: 864
@@ -22517,7 +22517,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: plus.smol
+StartChar: plus.SMOL
 Encoding: 65573 -1 757
 Width: 1008
 VWidth: 864
@@ -22547,7 +22547,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: comma.smol
+StartChar: comma.SMOL
 Encoding: 65574 -1 758
 Width: 1008
 VWidth: 864
@@ -22569,7 +22569,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: hyphen.smol
+StartChar: hyphen.SMOL
 Encoding: 65575 -1 759
 Width: 1008
 VWidth: 864
@@ -22589,7 +22589,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: period.smol
+StartChar: period.SMOL
 Encoding: 65576 -1 760
 Width: 1008
 VWidth: 864
@@ -22607,7 +22607,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: slash.smol
+StartChar: slash.SMOL
 Encoding: 65577 -1 761
 Width: 1008
 VWidth: 864
@@ -22652,7 +22652,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: zero.smol
+StartChar: zero.SMOL
 Encoding: 65579 -1 763
 Width: 1008
 VWidth: 864
@@ -22737,7 +22737,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: one.smol
+StartChar: one.SMOL
 Encoding: 65582 -1 766
 Width: 1008
 VWidth: 864
@@ -22802,7 +22802,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: two.smol
+StartChar: two.SMOL
 Encoding: 65584 -1 768
 Width: 1008
 VWidth: 864
@@ -22878,7 +22878,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: three.smol
+StartChar: three.SMOL
 Encoding: 65586 -1 770
 Width: 1008
 VWidth: 864
@@ -22916,7 +22916,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: four.smol
+StartChar: four.SMOL
 Encoding: 65587 -1 771
 Width: 1008
 VWidth: 864
@@ -22988,7 +22988,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: five.smol
+StartChar: five.SMOL
 Encoding: 65589 -1 773
 Width: 1008
 VWidth: 864
@@ -23021,7 +23021,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: six.smol
+StartChar: six.SMOL
 Encoding: 65590 -1 774
 Width: 1008
 VWidth: 864
@@ -23055,7 +23055,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: seven.smol
+StartChar: seven.SMOL
 Encoding: 65591 -1 775
 Width: 1008
 VWidth: 864
@@ -23086,7 +23086,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: eight.smol
+StartChar: eight.SMOL
 Encoding: 65592 -1 776
 Width: 1008
 VWidth: 864
@@ -23124,7 +23124,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: nine.smol
+StartChar: nine.SMOL
 Encoding: 65593 -1 777
 Width: 1008
 VWidth: 864
@@ -23158,7 +23158,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: colon.smol
+StartChar: colon.SMOL
 Encoding: 65594 -1 778
 Width: 1008
 VWidth: 864
@@ -23181,7 +23181,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: semicolon.smol
+StartChar: semicolon.SMOL
 Encoding: 65595 -1 779
 Width: 1008
 VWidth: 864
@@ -23208,7 +23208,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: less.smol
+StartChar: less.SMOL
 Encoding: 65596 -1 780
 Width: 1008
 VWidth: 864
@@ -23234,7 +23234,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: equal.smol
+StartChar: equal.SMOL
 Encoding: 65597 -1 781
 Width: 1008
 VWidth: 864
@@ -23261,7 +23261,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: greater.smol
+StartChar: greater.SMOL
 Encoding: 65598 -1 782
 Width: 1008
 VWidth: 864
@@ -23287,7 +23287,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: question.smol
+StartChar: question.SMOL
 Encoding: 65599 -1 783
 Width: 1008
 VWidth: 864
@@ -23319,7 +23319,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: at.smol
+StartChar: at.SMOL
 Encoding: 65600 -1 784
 Width: 1008
 VWidth: 864
@@ -23368,7 +23368,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: A.smol
+StartChar: A.SMOL
 Encoding: 65601 -1 785
 Width: 1008
 VWidth: 864
@@ -23406,7 +23406,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: B.smol
+StartChar: B.SMOL
 Encoding: 65602 -1 786
 Width: 1008
 VWidth: 864
@@ -23445,7 +23445,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: C.smol
+StartChar: C.SMOL
 Encoding: 65603 -1 787
 Width: 1008
 VWidth: 864
@@ -23477,7 +23477,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: D.smol
+StartChar: D.SMOL
 Encoding: 65604 -1 788
 Width: 1008
 VWidth: 864
@@ -23508,7 +23508,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: E.smol
+StartChar: E.SMOL
 Encoding: 65605 -1 789
 Width: 1008
 VWidth: 864
@@ -23554,7 +23554,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: F.smol
+StartChar: F.SMOL
 Encoding: 65606 -1 790
 Width: 1008
 VWidth: 864
@@ -23598,7 +23598,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: G.smol
+StartChar: G.SMOL
 Encoding: 65607 -1 791
 Width: 1008
 VWidth: 864
@@ -23634,7 +23634,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: H.smol
+StartChar: H.SMOL
 Encoding: 65608 -1 792
 Width: 1008
 VWidth: 864
@@ -23676,7 +23676,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: I.smol
+StartChar: I.SMOL
 Encoding: 65609 -1 793
 Width: 1008
 VWidth: 864
@@ -23706,7 +23706,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: J.smol
+StartChar: J.SMOL
 Encoding: 65610 -1 794
 Width: 1008
 VWidth: 864
@@ -23737,7 +23737,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: K.smol
+StartChar: K.SMOL
 Encoding: 65611 -1 795
 Width: 1008
 VWidth: 864
@@ -23785,7 +23785,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: L.smol
+StartChar: L.SMOL
 Encoding: 65612 -1 796
 Width: 1008
 VWidth: 864
@@ -23818,7 +23818,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: M.smol
+StartChar: M.SMOL
 Encoding: 65613 -1 797
 Width: 1008
 VWidth: 864
@@ -23860,7 +23860,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: N.smol
+StartChar: N.SMOL
 Encoding: 65614 -1 798
 Width: 1008
 VWidth: 864
@@ -23905,7 +23905,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: O.smol
+StartChar: O.SMOL
 Encoding: 65615 -1 799
 Width: 1008
 VWidth: 864
@@ -23932,7 +23932,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: P.smol
+StartChar: P.SMOL
 Encoding: 65616 -1 800
 Width: 1008
 VWidth: 864
@@ -23968,7 +23968,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: Q.smol
+StartChar: Q.SMOL
 Encoding: 65617 -1 801
 Width: 1008
 VWidth: 864
@@ -24007,7 +24007,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: R.smol
+StartChar: R.SMOL
 Encoding: 65618 -1 802
 Width: 1008
 VWidth: 864
@@ -24050,7 +24050,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: S.smol
+StartChar: S.SMOL
 Encoding: 65619 -1 803
 Width: 1008
 VWidth: 864
@@ -24090,7 +24090,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: T.smol
+StartChar: T.SMOL
 Encoding: 65620 -1 804
 Width: 1008
 VWidth: 864
@@ -24126,7 +24126,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: U.smol
+StartChar: U.SMOL
 Encoding: 65621 -1 805
 Width: 1008
 VWidth: 864
@@ -24162,7 +24162,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: V.smol
+StartChar: V.SMOL
 Encoding: 65622 -1 806
 Width: 1008
 VWidth: 864
@@ -24197,7 +24197,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: W.smol
+StartChar: W.SMOL
 Encoding: 65623 -1 807
 Width: 1008
 VWidth: 864
@@ -24242,7 +24242,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: X.smol
+StartChar: X.SMOL
 Encoding: 65624 -1 808
 Width: 1008
 VWidth: 864
@@ -24288,7 +24288,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: Y.smol
+StartChar: Y.SMOL
 Encoding: 65625 -1 809
 Width: 1008
 VWidth: 864
@@ -24327,7 +24327,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: Z.smol
+StartChar: Z.SMOL
 Encoding: 65626 -1 810
 Width: 1008
 VWidth: 864
@@ -24361,7 +24361,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: bracketleft.smol
+StartChar: bracketleft.SMOL
 Encoding: 65627 -1 811
 Width: 1008
 VWidth: 864
@@ -24387,7 +24387,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: backslash.smol
+StartChar: backslash.SMOL
 Encoding: 65628 -1 812
 Width: 1008
 VWidth: 864
@@ -24408,7 +24408,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: bracketright.smol
+StartChar: bracketright.SMOL
 Encoding: 65629 -1 813
 Width: 1008
 VWidth: 864
@@ -24434,7 +24434,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: asciicircum.smol
+StartChar: asciicircum.SMOL
 Encoding: 65630 -1 814
 Width: 1008
 VWidth: 864
@@ -24460,7 +24460,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: underscore.smol
+StartChar: underscore.SMOL
 Encoding: 65631 -1 815
 Width: 1008
 VWidth: 864
@@ -24480,7 +24480,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: grave.smol
+StartChar: grave.SMOL
 Encoding: 65632 -1 816
 Width: 1008
 VWidth: 864
@@ -24546,7 +24546,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: a.smol
+StartChar: a.SMOL
 Encoding: 65634 -1 818
 Width: 1008
 VWidth: 864
@@ -24585,7 +24585,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: b.smol
+StartChar: b.SMOL
 Encoding: 65635 -1 819
 Width: 1008
 VWidth: 864
@@ -24617,7 +24617,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: c.smol
+StartChar: c.SMOL
 Encoding: 65636 -1 820
 Width: 1008
 VWidth: 864
@@ -24645,7 +24645,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: d.smol
+StartChar: d.SMOL
 Encoding: 65637 -1 821
 Width: 1008
 VWidth: 864
@@ -24681,7 +24681,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: e.smol
+StartChar: e.SMOL
 Encoding: 65638 -1 822
 Width: 1008
 VWidth: 864
@@ -24711,7 +24711,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: f.smol
+StartChar: f.SMOL
 Encoding: 65639 -1 823
 Width: 1008
 VWidth: 864
@@ -24751,7 +24751,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: g.smol
+StartChar: g.SMOL
 Encoding: 65640 -1 824
 Width: 1008
 VWidth: 864
@@ -24801,7 +24801,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: h.smol
+StartChar: h.SMOL
 Encoding: 65641 -1 825
 Width: 1008
 VWidth: 864
@@ -24843,7 +24843,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: i.smol
+StartChar: i.SMOL
 Encoding: 65642 -1 826
 Width: 1008
 VWidth: 864
@@ -24876,7 +24876,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: j.smol
+StartChar: j.SMOL
 Encoding: 65643 -1 827
 Width: 1008
 VWidth: 864
@@ -24910,7 +24910,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: k.smol
+StartChar: k.SMOL
 Encoding: 65644 -1 828
 Width: 1008
 VWidth: 864
@@ -24956,7 +24956,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: l.smol
+StartChar: l.SMOL
 Encoding: 65645 -1 829
 Width: 1008
 VWidth: 864
@@ -24984,7 +24984,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: m.smol
+StartChar: m.SMOL
 Encoding: 65646 -1 830
 Width: 1008
 VWidth: 864
@@ -25034,7 +25034,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: n.smol
+StartChar: n.SMOL
 Encoding: 65647 -1 831
 Width: 1008
 VWidth: 864
@@ -25076,7 +25076,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: o.smol
+StartChar: o.SMOL
 Encoding: 65648 -1 832
 Width: 1008
 VWidth: 864
@@ -25099,7 +25099,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: p.smol
+StartChar: p.SMOL
 Encoding: 65649 -1 833
 Width: 1008
 VWidth: 864
@@ -25136,7 +25136,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: q.smol
+StartChar: q.SMOL
 Encoding: 65650 -1 834
 Width: 1008
 VWidth: 864
@@ -25170,7 +25170,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: r.smol
+StartChar: r.SMOL
 Encoding: 65651 -1 835
 Width: 1008
 VWidth: 864
@@ -25208,7 +25208,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: s.smol
+StartChar: s.SMOL
 Encoding: 65652 -1 836
 Width: 1008
 VWidth: 864
@@ -25247,7 +25247,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: t.smol
+StartChar: t.SMOL
 Encoding: 65653 -1 837
 Width: 1008
 VWidth: 864
@@ -25283,7 +25283,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: u.smol
+StartChar: u.SMOL
 Encoding: 65654 -1 838
 Width: 1008
 VWidth: 864
@@ -25321,7 +25321,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: v.smol
+StartChar: v.SMOL
 Encoding: 65655 -1 839
 Width: 1008
 VWidth: 864
@@ -25356,7 +25356,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: w.smol
+StartChar: w.SMOL
 Encoding: 65656 -1 840
 Width: 1008
 VWidth: 864
@@ -25399,7 +25399,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: x.smol
+StartChar: x.SMOL
 Encoding: 65657 -1 841
 Width: 1008
 VWidth: 864
@@ -25445,7 +25445,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: y.smol
+StartChar: y.SMOL
 Encoding: 65658 -1 842
 Width: 1008
 VWidth: 864
@@ -25483,7 +25483,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: z.smol
+StartChar: z.SMOL
 Encoding: 65659 -1 843
 Width: 1008
 VWidth: 864
@@ -25517,7 +25517,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: braceleft.smol
+StartChar: braceleft.SMOL
 Encoding: 65660 -1 844
 Width: 1008
 VWidth: 864
@@ -25551,7 +25551,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: bar.smol
+StartChar: bar.SMOL
 Encoding: 65661 -1 845
 Width: 1008
 VWidth: 864
@@ -25570,7 +25570,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: braceright.smol
+StartChar: braceright.SMOL
 Encoding: 65662 -1 846
 Width: 1008
 VWidth: 864
@@ -25604,7 +25604,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: asciitilde.smol
+StartChar: asciitilde.SMOL
 Encoding: 65663 -1 847
 Width: 1008
 VWidth: 864
@@ -39496,7 +39496,7 @@ Fore
 Refer: 837 -1 N 1 0 0 1 0 -156 2
 EndChar
 
-StartChar: uni0259.smol
+StartChar: uni0259.SMOL
 Encoding: 65705 -1 1641
 Width: 1008
 VWidth: 864
@@ -43653,7 +43653,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: beta.smol
+StartChar: beta.SMOL
 Encoding: 65718 -1 1782
 Width: 1008
 VWidth: 864
@@ -43692,7 +43692,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: gamma.smol
+StartChar: gamma.SMOL
 Encoding: 65719 -1 1783
 Width: 1008
 VWidth: 864
@@ -43723,7 +43723,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: rho.smol
+StartChar: rho.SMOL
 Encoding: 65720 -1 1784
 Width: 1008
 VWidth: 864
@@ -43750,7 +43750,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: phi.smol
+StartChar: phi.SMOL
 Encoding: 65721 -1 1785
 Width: 1008
 VWidth: 864
@@ -43788,7 +43788,7 @@ SplineSet
 EndSplineSet
 EndChar
 
-StartChar: chi.smol
+StartChar: chi.SMOL
 Encoding: 65722 -1 1786
 Width: 1008
 VWidth: 864
