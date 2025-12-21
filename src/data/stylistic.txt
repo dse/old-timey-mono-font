@@ -1,0 +1,27 @@
+VCEN Verticaly Centered Glyphs              # % ( ) * + - / : < = >
+                                            @ [ \ ] ^ { | } ~
+
+ss01 Code
+    ss02 Code Brackets                      ( ) [ ] { }
+    ss03 Code Digits                        0 1
+    ss04 Apertured Letters                  a c e s
+    ss05 Code Punctuation                   , . : ; ‘ ’ “ ” etc.
+    ss06 Code Miscellaneous Symbols         = `
+
+ss07 Simplified Forms for Size Reduction    0 1 2 3 5 a $ #
+
+cv01 Digit One with Curly Top               1
+cv02 Code-Friendly Small L                  l
+cv03 Shortened Number Sign                  #
+cv04 Shortened Slash                        / 
+cv05 Zero with Dot                          0
+cv06 Zero with Large Dot                    0
+cv07 Alternate At-Sign                      @
+cv08 Shortened Backslash                    \
+cv09 Plain Grave Accent                     `
+cv10 Curly Small L                          l
+cv11 Taller Equal Sign                      =
+cv12 Larger Left Curly Bracket, Alternate   {
+cv13 Larger Right Curly Bracket, Alternate  }
+
+SMOL Half-Size Letters for Use with Fractions, Superscripts, Subscripts, and for Other Purposes
