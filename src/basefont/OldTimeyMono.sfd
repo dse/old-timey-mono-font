@@ -226,7 +226,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: slash.orig
+StartChar: slash.ORIG
 Encoding: 65536 -1 1
 Width: 1008
 VWidth: 4000
@@ -248,7 +248,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: numbersign.orig
+StartChar: numbersign.ORIG
 Encoding: 65537 -1 2
 Width: 1008
 VWidth: 4000
@@ -1310,7 +1310,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: zero.orig
+StartChar: zero.ORIG
 Encoding: 65541 -1 70
 Width: 1008
 VWidth: 4000
@@ -1334,7 +1334,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: one.orig
+StartChar: one.ORIG
 Encoding: 65542 -1 71
 Width: 1008
 VWidth: 4000
@@ -7090,7 +7090,7 @@ Fore
 Refer: 569 42 N 1 0 0 1 0 -399 2
 EndChar
 
-StartChar: colon.orig
+StartChar: colon.ORIG
 Encoding: 65544 -1 277
 Width: 1008
 VWidth: 4000
@@ -7114,7 +7114,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: comma.orig
+StartChar: comma.ORIG
 Encoding: 65545 -1 278
 Width: 1008
 VWidth: 4000
@@ -7137,7 +7137,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: semicolon.orig
+StartChar: semicolon.ORIG
 Encoding: 65546 -1 279
 Width: 1008
 VWidth: 4000
@@ -7165,7 +7165,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: period.orig
+StartChar: period.ORIG
 Encoding: 65547 -1 280
 Width: 1008
 VWidth: 4000
@@ -21026,7 +21026,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: at.orig
+StartChar: at.ORIG
 Encoding: 65553 -1 706
 Width: 1008
 VWidth: 0
@@ -21351,7 +21351,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: quoteleft.orig
+StartChar: quoteleft.ORIG
 Encoding: 65556 -1 718
 Width: 1008
 VWidth: 0
@@ -21374,7 +21374,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: quoteright.orig
+StartChar: quoteright.ORIG
 Encoding: 65557 -1 719
 Width: 1008
 VWidth: 0
@@ -21397,7 +21397,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: quotedblleft.orig
+StartChar: quotedblleft.ORIG
 Encoding: 65558 -1 720
 Width: 1008
 VWidth: 0
@@ -21429,7 +21429,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: quotedblright.orig
+StartChar: quotedblright.ORIG
 Encoding: 65559 -1 721
 Width: 1008
 VWidth: 0
@@ -21814,7 +21814,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: periodcentered.orig
+StartChar: periodcentered.ORIG
 Encoding: 65561 -1 734
 Width: 1008
 VWidth: 0
@@ -32489,7 +32489,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: quotesinglbase.orig
+StartChar: quotesinglbase.ORIG
 Encoding: 65666 -1 1222
 Width: 1008
 VWidth: 0
@@ -32512,7 +32512,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: uni201F.orig
+StartChar: uni201F.ORIG
 Encoding: 65667 -1 1223
 Width: 1008
 VWidth: 0
@@ -32545,7 +32545,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: onedotenleader.orig
+StartChar: onedotenleader.ORIG
 Encoding: 65668 -1 1224
 Width: 1008
 VWidth: 0
@@ -32661,7 +32661,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: quotedblbase.orig
+StartChar: quotedblbase.ORIG
 Encoding: 65673 -1 1229
 Width: 1008
 VWidth: 0
@@ -32817,7 +32817,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: twodotenleader.orig
+StartChar: twodotenleader.ORIG
 Encoding: 65679 -1 1235
 Width: 1008
 VWidth: 0
@@ -32873,7 +32873,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: ellipsis.orig
+StartChar: ellipsis.ORIG
 Encoding: 65681 -1 1237
 Width: 1008
 VWidth: 0
@@ -32903,7 +32903,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: quotereversed.orig
+StartChar: quotereversed.ORIG
 Encoding: 65682 -1 1238
 Width: 1008
 VWidth: 0
@@ -32991,7 +32991,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: l.orig
+StartChar: l.ORIG
 Encoding: 65685 -1 1241
 Width: 1008
 VWidth: 0
@@ -33199,7 +33199,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: uni2027.orig
+StartChar: uni2027.ORIG
 Encoding: 65689 -1 1248
 Width: 1008
 VWidth: 0
@@ -33344,7 +33344,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: uni204F.orig
+StartChar: uni204F.ORIG
 Encoding: 65690 -1 1251
 Width: 1008
 VWidth: 0
@@ -36418,7 +36418,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: c.orig
+StartChar: c.ORIG
 Encoding: 65694 -1 1453
 Width: 1008
 VWidth: 0
@@ -36492,7 +36492,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: e.orig
+StartChar: e.ORIG
 Encoding: 65696 -1 1455
 Width: 1008
 VWidth: 0
@@ -36523,7 +36523,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: a.orig
+StartChar: a.ORIG
 Encoding: 65697 -1 1456
 Width: 1008
 VWidth: 0
@@ -36598,7 +36598,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: s.orig
+StartChar: s.ORIG
 Encoding: 65699 -1 1458
 Width: 1008
 VWidth: 0
@@ -36686,7 +36686,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: equal.orig
+StartChar: equal.ORIG
 Encoding: 65701 -1 1460
 Width: 1008
 VWidth: 0
@@ -49709,7 +49709,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: braceleft.orig
+StartChar: braceleft.ORIG
 Encoding: 65727 -1 1946
 Width: 1008
 VWidth: 0
@@ -49747,7 +49747,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: braceright.orig
+StartChar: braceright.ORIG
 Encoding: 65728 -1 1947
 Width: 1008
 VWidth: 0
@@ -49824,7 +49824,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: parenleft.orig
+StartChar: parenleft.ORIG
 Encoding: 65730 -1 1949
 Width: 1008
 VWidth: 0
@@ -49850,7 +49850,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: parenright.orig
+StartChar: parenright.ORIG
 Encoding: 65731 -1 1950
 Width: 1008
 VWidth: 0
@@ -49876,7 +49876,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: bracketleft.orig
+StartChar: bracketleft.ORIG
 Encoding: 65732 -1 1951
 Width: 1008
 VWidth: 0
@@ -49903,7 +49903,7 @@ EndSplineSet
 Comment: "{}"
 EndChar
 
-StartChar: bracketright.orig
+StartChar: bracketright.ORIG
 Encoding: 65733 -1 1952
 Width: 1008
 VWidth: 0

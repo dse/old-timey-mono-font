@@ -152,7 +152,7 @@ def create_smol_glyph(font, codepoint):
     font_path = os.path.relpath(font.path)
     plain_glyphname = fontforge.nameFromUnicode(codepoint)
     simpl_glyphname = fontforge.nameFromUnicode(codepoint) + ".ss07"
-    orig_glyphname = fontforge.nameFromUnicode(codepoint) + ".orig"
+    orig_glyphname = fontforge.nameFromUnicode(codepoint) + ".ORIG"
     glyphname = None
 
     # for certain regular glyphs, use a special glyph to make smaller.
