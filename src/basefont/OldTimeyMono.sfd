@@ -23,7 +23,7 @@ OS2Version: 0
 OS2_WeightWidthSlopeOnly: 0
 OS2_UseTypoMetrics: 1
 CreationTime: 1729142792
-ModificationTime: 1766298463
+ModificationTime: 1766299179
 PfmFamily: 17
 TTFWeight: 500
 TTFWidth: 5
@@ -46,29 +46,29 @@ HheadDOffset: 0
 OS2CapHeight: 1056
 OS2XHeight: 756
 OS2Vendor: 'DARN'
-Lookup: 1 0 0 "Larger Right Curly Bracket, Alternate (braceright.cv13)" { "Larger Right Curly Bracket, Alternate subtable (braceright.cv13)"  } ['cv13' ('DFLT' <'dflt' > ) ]
-Lookup: 1 0 0 "Larger Left Curly Bracket, Alternate (braceleft.cv12)" { "Larger Left Curly Bracket, Alternate subtable (braceleft.cv12)"  } ['cv12' ('DFLT' <'dflt' > ) ]
-Lookup: 1 0 0 "Taller Equal Sign (equal.cv11)" { "Taller Equal Sign subtable (equal.cv11)"  } ['cv11' ('DFLT' <'dflt' > ) ]
-Lookup: 1 0 0 "Curly Small L (l.cv10)" { "Curly Small L subtable (l.cv10)"  } ['cv10' ('DFLT' <'dflt' > ) ]
-Lookup: 1 0 0 "Plain Grave Accent (grave.cv09)" { "Plain Grave Accent subtable (grave.cv09)"  } ['cv09' ('DFLT' <'dflt' > ) ]
-Lookup: 1 0 0 "Shortened Backslash (backslash.cv08)" { "Shortened Backslash subtable (backslash.cv08)"  } ['cv08' ('DFLT' <'dflt' > ) ]
-Lookup: 1 0 0 "Alternate At-Sign (at.cv07)" { "Alternate At-Sign subtable (at.cv07)"  } ['cv07' ('DFLT' <'dflt' > ) ]
-Lookup: 1 0 0 "Zero with Dot (zero.cv05)" { "Zero with Dot subtable (zero.cv05)"  } ['cv05' ('DFLT' <'dflt' > ) ]
-Lookup: 1 0 0 "Zero with Large Dot (zero.cv06)" { "Zero with Large Dot subtable (zero.cv06)"  } ['cv06' ('DFLT' <'dflt' > ) ]
-Lookup: 1 0 0 "Shortened Slash (slash.cv04)" { "Shortened Slash subtable (slash.cv04)"  } ['cv04' ('DFLT' <'dflt' > ) ]
-Lookup: 1 0 0 "Shortened Number Sign (numbersign.cv03)" { "Shortened Number Sign subtable (numbersign.cv03)"  } ['cv03' ('DFLT' <'dflt' > ) ]
-Lookup: 1 0 0 "Code-Friendly Small L (l.cv02)" { "Code-Friendly Small L subtable (l.cv02)"  } ['cv02' ('DFLT' <'dflt' > ) ]
-Lookup: 1 0 0 "Digit One with Curly Top (one.cv01)" { "Digit One with Curly Top subtable (one.cv01)"  } ['cv01' ('DFLT' <'dflt' > ) ]
-Lookup: 1 0 0 "Simplified Forms for Size Reduction" { "Simplified Forms for Size Reduction-1"  } ['ss07' ('DFLT' <'dflt' > ) ]
-Lookup: 1 0 0 "Code Brackets" { "Code Brackets-1"  } ['ss01' ('DFLT' <'dflt' > ) 'ss02' ('DFLT' <'dflt' > ) ]
-Lookup: 1 0 0 "Apertured Letters" { "Apertured Letters-1"  } ['ss01' ('DFLT' <'dflt' > ) 'ss04' ('DFLT' <'dflt' > ) ]
-Lookup: 1 0 0 "Code Symbols" { "Code Symbols-1"  } ['ss01' ('DFLT' <'dflt' > ) 'ss06' ('DFLT' <'dflt' > ) ]
-Lookup: 1 0 0 "Larger Punctuation" { "Larger Punctuation-1"  } ['ss01' ('DFLT' <'dflt' > ) 'ss05' ('DFLT' <'dflt' > ) ]
-Lookup: 1 0 0 "Code Digits" { "Code Digits Zero Slash-1"  } ['ss01' ('DFLT' <'dflt' > ) 'ss03' ('DFLT' <'dflt' > ) ]
-Lookup: 1 0 0 "Lowercase to Small Caps" { "Lowercase to Small Caps-1"  } ['smcp' ('DFLT' <'dflt' > ) ]
-Lookup: 1 0 0 "Caps to Small Caps" { "Caps to Small Caps-1"  } ['c2sc' ('DFLT' <'dflt' > ) ]
-Lookup: 1 0 0 "Lowercase to Petite Caps" { "Lowercase to Petite Caps-1"  } ['pcap' ('DFLT' <'dflt' > ) ]
-Lookup: 1 0 0 "Caps to Petite Caps" { "Caps to Petite Caps-1"  } ['c2pc' ('DFLT' <'dflt' > ) ]
+Lookup: 1 0 0 "'cv13' Larger Right Curly Bracket, Alternate (braceright.cv13)" { "'cv13' Larger Right Curly Bracket, Alternate-1 (braceright.cv13)"  } ['cv13' ('latn' <'ENG ' 'dflt' > 'cyrl' <'ENG ' 'dflt' > 'grek' <'ENG ' 'dflt' > 'DFLT' <'ENG ' 'dflt' > ) ]
+Lookup: 1 0 0 "'cv12' Larger Left Curly Bracket, Alternate (braceleft.cv12)" { "'cv12' Larger Left Curly Bracket, Alternate-1 (braceleft.cv12)"  } ['cv12' ('latn' <'ENG ' 'dflt' > 'cyrl' <'ENG ' 'dflt' > 'grek' <'ENG ' 'dflt' > 'DFLT' <'ENG ' 'dflt' > ) ]
+Lookup: 1 0 0 "'cv11' Taller Equal Sign (equal.cv11)" { "'cv11' Taller Equal Sign-1 (equal.cv11)"  } ['cv11' ('latn' <'ENG ' 'dflt' > 'cyrl' <'ENG ' 'dflt' > 'grek' <'ENG ' 'dflt' > 'DFLT' <'ENG ' 'dflt' > ) ]
+Lookup: 1 0 0 "'cv10' Curly Small L (l.cv10)" { "'cv10' Curly Small L-1 (l.cv10)"  } ['cv10' ('latn' <'ENG ' 'dflt' > 'cyrl' <'ENG ' 'dflt' > 'grek' <'ENG ' 'dflt' > 'DFLT' <'ENG ' 'dflt' > ) ]
+Lookup: 1 0 0 "'cv09' Plain Grave Accent (grave.cv09)" { "'cv09' Plain Grave Accent-1 (grave.cv09)"  } ['cv09' ('latn' <'ENG ' 'dflt' > 'cyrl' <'ENG ' 'dflt' > 'grek' <'ENG ' 'dflt' > 'DFLT' <'ENG ' 'dflt' > ) ]
+Lookup: 1 0 0 "'cv08' Shortened Backslash (backslash.cv08)" { "'cv08' Shortened Backslash-1 (backslash.cv08)"  } ['cv08' ('latn' <'ENG ' 'dflt' > 'cyrl' <'ENG ' 'dflt' > 'grek' <'ENG ' 'dflt' > 'DFLT' <'ENG ' 'dflt' > ) ]
+Lookup: 1 0 0 "'cv07' Alternate At-Sign (at.cv07)" { "'cv07' Alternate At-Sign-1 (at.cv07)"  } ['cv07' ('latn' <'ENG ' 'dflt' > 'cyrl' <'ENG ' 'dflt' > 'grek' <'ENG ' 'dflt' > 'DFLT' <'ENG ' 'dflt' > ) ]
+Lookup: 1 0 0 "'cv05' Zero with Dot (zero.cv05)" { "'cv05' Zero with Dot-1 (zero.cv05)"  } ['cv05' ('latn' <'ENG ' 'dflt' > 'cyrl' <'ENG ' 'dflt' > 'grek' <'ENG ' 'dflt' > 'DFLT' <'ENG ' 'dflt' > ) ]
+Lookup: 1 0 0 "'cv06' Zero with Large Dot (zero.cv06)" { "'cv06' Zero with Large Dot-1 (zero.cv06)"  } ['cv06' ('latn' <'ENG ' 'dflt' > 'cyrl' <'ENG ' 'dflt' > 'grek' <'ENG ' 'dflt' > 'DFLT' <'ENG ' 'dflt' > ) ]
+Lookup: 1 0 0 "'cv04' Shortened Slash (slash.cv04)" { "'cv04' Shortened Slash-1 (slash.cv04)"  } ['cv04' ('latn' <'ENG ' 'dflt' > 'cyrl' <'ENG ' 'dflt' > 'grek' <'ENG ' 'dflt' > 'DFLT' <'ENG ' 'dflt' > ) ]
+Lookup: 1 0 0 "'cv03' Shortened Number Sign (numbersign.cv03)" { "'cv03' Shortened Number Sign-1 (numbersign.cv03)"  } ['cv03' ('latn' <'ENG ' 'dflt' > 'cyrl' <'ENG ' 'dflt' > 'grek' <'ENG ' 'dflt' > 'DFLT' <'ENG ' 'dflt' > ) ]
+Lookup: 1 0 0 "'cv02' Code-Friendly Small L (l.cv02)" { "'cv02' Code-Friendly Small L-1 (l.cv02)"  } ['cv02' ('latn' <'ENG ' 'dflt' > 'cyrl' <'ENG ' 'dflt' > 'grek' <'ENG ' 'dflt' > 'DFLT' <'ENG ' 'dflt' > ) ]
+Lookup: 1 0 0 "'cv01' Digit One with Curly Top (one.cv01)" { "'cv01' Digit One with Curly Top-1 (one.cv01)"  } ['cv01' ('latn' <'ENG ' 'dflt' > 'cyrl' <'ENG ' 'dflt' > 'grek' <'ENG ' 'dflt' > 'DFLT' <'ENG ' 'dflt' > ) ]
+Lookup: 1 0 0 "'ss07' Simplified Forms for Size Reduction" { "'ss07' Simplified Forms for Size Reduction-1"  } ['ss07' ('latn' <'ENG ' 'dflt' > 'cyrl' <'ENG ' 'dflt' > 'grek' <'ENG ' 'dflt' > 'DFLT' <'ENG ' 'dflt' > ) ]
+Lookup: 1 0 0 "Code Brackets" { "Code Brackets-1"  } ['ss01' ('latn' <'ENG ' 'dflt' > 'cyrl' <'ENG ' 'dflt' > 'grek' <'ENG ' 'dflt' > 'DFLT' <'ENG ' 'dflt' > ) 'ss02' ('latn' <'ENG ' 'dflt' > 'cyrl' <'ENG ' 'dflt' > 'grek' <'ENG ' 'dflt' > 'DFLT' <'ENG ' 'dflt' > ) ]
+Lookup: 1 0 0 "Apertured Letters" { "Apertured Letters-1"  } ['ss01' ('latn' <'ENG ' 'dflt' > 'cyrl' <'ENG ' 'dflt' > 'grek' <'ENG ' 'dflt' > 'DFLT' <'ENG ' 'dflt' > ) 'ss04' ('latn' <'ENG ' 'dflt' > 'cyrl' <'ENG ' 'dflt' > 'grek' <'ENG ' 'dflt' > 'DFLT' <'ENG ' 'dflt' > ) ]
+Lookup: 1 0 0 "Code Symbols" { "Code Symbols-1"  } ['ss01' ('latn' <'ENG ' 'dflt' > 'cyrl' <'ENG ' 'dflt' > 'grek' <'ENG ' 'dflt' > 'DFLT' <'ENG ' 'dflt' > ) 'ss06' ('latn' <'ENG ' 'dflt' > 'cyrl' <'ENG ' 'dflt' > 'grek' <'ENG ' 'dflt' > 'DFLT' <'ENG ' 'dflt' > ) ]
+Lookup: 1 0 0 "Larger Punctuation" { "Larger Punctuation-1"  } ['ss01' ('latn' <'ENG ' 'dflt' > 'cyrl' <'ENG ' 'dflt' > 'grek' <'ENG ' 'dflt' > 'DFLT' <'ENG ' 'dflt' > ) 'ss05' ('latn' <'ENG ' 'dflt' > 'cyrl' <'ENG ' 'dflt' > 'grek' <'ENG ' 'dflt' > 'DFLT' <'ENG ' 'dflt' > ) ]
+Lookup: 1 0 0 "Code Digits" { "Code Digits Zero Slash-1"  } ['ss01' ('latn' <'ENG ' 'dflt' > 'cyrl' <'ENG ' 'dflt' > 'grek' <'ENG ' 'dflt' > 'DFLT' <'ENG ' 'dflt' > ) 'ss03' ('latn' <'ENG ' 'dflt' > 'cyrl' <'ENG ' 'dflt' > 'grek' <'ENG ' 'dflt' > 'DFLT' <'ENG ' 'dflt' > ) ]
+Lookup: 1 0 0 "'smcp' Lowercase to Small Caps" { "'smcp' Lowercase to Small Caps-1"  } ['smcp' ('latn' <'ENG ' 'dflt' > 'cyrl' <'ENG ' 'dflt' > 'grek' <'ENG ' 'dflt' > 'DFLT' <'ENG ' 'dflt' > ) ]
+Lookup: 1 0 0 "'c2sc' Caps to Small Caps" { "'c2sc' Caps to Small Caps-1"  } ['c2sc' ('latn' <'ENG ' 'dflt' > 'cyrl' <'ENG ' 'dflt' > 'grek' <'ENG ' 'dflt' > 'DFLT' <'ENG ' 'dflt' > ) ]
+Lookup: 1 0 0 "'pcap' Lowercase to Petite Caps" { "'pcap' Lowercase to Petite Caps-1"  } ['pcap' ('latn' <'ENG ' 'dflt' > 'cyrl' <'ENG ' 'dflt' > 'grek' <'ENG ' 'dflt' > 'DFLT' <'ENG ' 'dflt' > ) ]
+Lookup: 1 0 0 "'c2pc' Caps to Petite Caps" { "'c2pc' Caps to Petite Caps-1"  } ['c2pc' ('latn' <'ENG ' 'dflt' > 'cyrl' <'ENG ' 'dflt' > 'grek' <'ENG ' 'dflt' > 'DFLT' <'ENG ' 'dflt' > ) ]
 Lookup: 260 0 0 "'mark' Mark Positioning lookup 0" { "'mark' Mark Positioning lookup 0-1"  } ['mark' ('DFLT' <'dflt' > 'brai' <'dflt' > 'latn' <'dflt' > ) ]
 MarkAttachClasses: 1
 DEI: 91125
@@ -191,7 +191,7 @@ Grid
  504 3072 l 25
 EndSplineSet
 AnchorClass2: "bottom" "'mark' Mark Positioning lookup 0-1" "top" "'mark' Mark Positioning lookup 0-1"
-BeginChars: 65818 2113
+BeginChars: 65821 2117
 
 StartChar: cedilla
 Encoding: 184 184 0
@@ -16026,8 +16026,8 @@ VStem: 96 93.045<-318.488 -288.607> 336 93.045<-318.488 -288.607> 578.955 93.045
 LayerCount: 2
 Fore
 Refer: 2 -1 S 1 0 0 1 0 0 2
-Substitution2: "Shortened Number Sign subtable (numbersign.cv03)" numbersign.cv03
-Substitution2: "Simplified Forms for Size Reduction-1" numbersign.ss07
+Substitution2: "'cv03' Shortened Number Sign-1 (numbersign.cv03)" numbersign.cv03
+Substitution2: "'ss07' Simplified Forms for Size Reduction-1" numbersign.ss07
 EndChar
 
 StartChar: dollar
@@ -16099,7 +16099,7 @@ SplineSet
  334.146774899 927.872466114 275.462519919 900.993464385 248.759501998 848.27613424 c 0
  240.413320706 831.799030569 236.26953125 814.723080245 236.26953125 797.080078125 c 0
 EndSplineSet
-Substitution2: "Simplified Forms for Size Reduction-1" dollar.ss07
+Substitution2: "'ss07' Simplified Forms for Size Reduction-1" dollar.ss07
 Comment: "{}"
 EndChar
 
@@ -16373,7 +16373,7 @@ HStem: 1056 20G<854.961 877.246>
 LayerCount: 2
 Fore
 Refer: 1 -1 N 1 0 0 1 0 0 2
-Substitution2: "Shortened Slash subtable (slash.cv04)" slash.cv04
+Substitution2: "'cv04' Shortened Slash-1 (slash.cv04)" slash.cv04
 EndChar
 
 StartChar: zero
@@ -16386,9 +16386,9 @@ VStem: 136 96<280.075 775.929> 776 96<280.073 775.922>
 LayerCount: 2
 Fore
 Refer: 70 -1 N 1 0 0 1 0 0 2
-Substitution2: "Zero with Dot subtable (zero.cv05)" zero.cv05
-Substitution2: "Zero with Large Dot subtable (zero.cv06)" zero.cv06
-Substitution2: "Simplified Forms for Size Reduction-1" zero.ss07
+Substitution2: "'cv05' Zero with Dot-1 (zero.cv05)" zero.cv05
+Substitution2: "'cv06' Zero with Large Dot-1 (zero.cv06)" zero.cv06
+Substitution2: "'ss07' Simplified Forms for Size Reduction-1" zero.ss07
 Substitution2: "Code Digits Zero Slash-1" zero.zero
 EndChar
 
@@ -16402,8 +16402,8 @@ VStem: 504 96<96 960>
 LayerCount: 2
 Fore
 Refer: 71 -1 N 1 0 0 1 0 0 2
-Substitution2: "Digit One with Curly Top subtable (one.cv01)" one.cv01
-Substitution2: "Simplified Forms for Size Reduction-1" one.ss07
+Substitution2: "'cv01' Digit One with Curly Top-1 (one.cv01)" one.cv01
+Substitution2: "'ss07' Simplified Forms for Size Reduction-1" one.ss07
 Substitution2: "Code Digits Zero Slash-1" one.cv01
 EndChar
 
@@ -16442,7 +16442,7 @@ SplineSet
  181.56144691 714.29296875 146.609375 749.24504066 146.609375 792.29296875 c 0
  146.609375 938.36420013 305.766865632 1076 513.588867188 1076 c 0x7c
 EndSplineSet
-Substitution2: "Simplified Forms for Size Reduction-1" two.ss07
+Substitution2: "'ss07' Simplified Forms for Size Reduction-1" two.ss07
 Comment: "{}"
 EndChar
 
@@ -16481,7 +16481,7 @@ SplineSet
  264.414352113 119.596719159 356.948015618 76 469.58203125 76 c 0
  666.892568393 76 792.62890625 188.821148098 792.62890625 326.17578125 c 0xe8
 EndSplineSet
-Substitution2: "Simplified Forms for Size Reduction-1" three.ss07
+Substitution2: "'ss07' Simplified Forms for Size Reduction-1" three.ss07
 Comment: "{}"
 EndChar
 
@@ -16554,7 +16554,7 @@ SplineSet
  244.047928089 340.192382812 279 305.240310904 279 262.192382812 c 0
  279 232.249457148 262.089483117 206.223469883 237.306416376 193.152388045 c 1xf4
 EndSplineSet
-Substitution2: "Simplified Forms for Size Reduction-1" five.ss07
+Substitution2: "'ss07' Simplified Forms for Size Reduction-1" five.ss07
 Comment: "{}"
 EndChar
 
@@ -16761,7 +16761,7 @@ HStem: 220 96<137.513 870.487> 440 96<137.513 870.487>
 LayerCount: 2
 Fore
 Refer: 1459 -1 N 1 0 0 1 0 0 2
-Substitution2: "Taller Equal Sign subtable (equal.cv11)" equal.cv11
+Substitution2: "'cv11' Taller Equal Sign-1 (equal.cv11)" equal.cv11
 Substitution2: "Code Symbols-1" equal.cv11
 EndChar
 
@@ -16835,7 +16835,7 @@ VStem: 63.0718 96<168.551 594.283> 262.656 96<203.459 514.105> 759.988 92.6332<-
 LayerCount: 2
 Fore
 Refer: 706 -1 N 1 0 0 1 0 0 2
-Substitution2: "Alternate At-Sign subtable (at.cv07)" at.cv07
+Substitution2: "'cv07' Alternate At-Sign-1 (at.cv07)" at.cv07
 EndChar
 
 StartChar: A
@@ -16876,8 +16876,8 @@ SplineSet
  840.738839749 96 l 1
  884 96 l 2
 EndSplineSet
-Substitution2: "Caps to Small Caps-1" A.c2sc
-Substitution2: "Caps to Petite Caps-1" A.c2pc
+Substitution2: "'c2sc' Caps to Small Caps-1" A.c2sc
+Substitution2: "'c2pc' Caps to Petite Caps-1" A.c2pc
 Comment: "{}"
 EndChar
 
@@ -16918,8 +16918,8 @@ SplineSet
  539.4375 96 l 2
  686.185240259 96 814.334960938 191.748697737 814.334960938 305.3046875 c 0xf4
 EndSplineSet
-Substitution2: "Caps to Small Caps-1" B.c2sc
-Substitution2: "Caps to Petite Caps-1" B.c2pc
+Substitution2: "'c2sc' Caps to Small Caps-1" B.c2sc
+Substitution2: "'c2pc' Caps to Petite Caps-1" B.c2pc
 Comment: "{}"
 EndChar
 
@@ -16954,8 +16954,8 @@ SplineSet
  306.446192507 -20 146 197.23807784 146 528 c 0
  146 856.076563567 294.033174245 1076 494 1076 c 0xd8
 EndSplineSet
-Substitution2: "Caps to Small Caps-1" C.c2sc
-Substitution2: "Caps to Petite Caps-1" C.c2pc
+Substitution2: "'c2sc' Caps to Small Caps-1" C.c2sc
+Substitution2: "'c2pc' Caps to Petite Caps-1" C.c2pc
 Comment: "{}"
 EndChar
 
@@ -16988,8 +16988,8 @@ SplineSet
  334.56104155 95.9984887545 387.1220831 95.9999999978 439.68359375 96 c 0
  712.501376595 96 833.734375 298.795665318 833.734375 528 c 0
 EndSplineSet
-Substitution2: "Caps to Small Caps-1" D.c2sc
-Substitution2: "Caps to Petite Caps-1" D.c2pc
+Substitution2: "'c2sc' Caps to Small Caps-1" D.c2sc
+Substitution2: "'c2pc' Caps to Petite Caps-1" D.c2pc
 Comment: "{}"
 EndChar
 
@@ -17038,8 +17038,8 @@ SplineSet
  537 594.008789062 l 1
  537 674.0234375 l 2
 EndSplineSet
-Substitution2: "Caps to Small Caps-1" E.c2sc
-Substitution2: "Caps to Petite Caps-1" E.c2pc
+Substitution2: "'c2sc' Caps to Small Caps-1" E.c2sc
+Substitution2: "'c2pc' Caps to Petite Caps-1" E.c2pc
 Comment: "{}"
 EndChar
 
@@ -17085,8 +17085,8 @@ SplineSet
  542.8671875 592 l 1
  542.8671875 670 l 2
 EndSplineSet
-Substitution2: "Caps to Small Caps-1" F.c2sc
-Substitution2: "Caps to Petite Caps-1" F.c2pc
+Substitution2: "'c2sc' Caps to Small Caps-1" F.c2sc
+Substitution2: "'c2pc' Caps to Petite Caps-1" F.c2pc
 Comment: "{}"
 EndChar
 
@@ -17130,8 +17130,8 @@ SplineSet
  280.489212785 980 198 764.46520451 198 528 c 0
  198 264.653537987 317.188832351 76 466.055664062 76 c 0xb6
 EndSplineSet
-Substitution2: "Caps to Small Caps-1" G.c2sc
-Substitution2: "Caps to Petite Caps-1" G.c2pc
+Substitution2: "'c2sc' Caps to Small Caps-1" G.c2sc
+Substitution2: "'c2pc' Caps to Petite Caps-1" G.c2pc
 Comment: "{}"
 EndChar
 
@@ -17183,8 +17183,8 @@ SplineSet
  347 21.50808 325.49192 0 299 0 c 0
  129 0 129 0 129 0 c 2xf0
 EndSplineSet
-Substitution2: "Caps to Small Caps-1" H.c2sc
-Substitution2: "Caps to Petite Caps-1" H.c2pc
+Substitution2: "'c2sc' Caps to Small Caps-1" H.c2sc
+Substitution2: "'c2pc' Caps to Petite Caps-1" H.c2pc
 Comment: "{}"
 EndChar
 
@@ -17216,8 +17216,8 @@ SplineSet
  456 960 l 1
  218.342773438 960 l 2
 EndSplineSet
-Substitution2: "Caps to Small Caps-1" I.c2sc
-Substitution2: "Caps to Petite Caps-1" I.c2pc
+Substitution2: "'c2sc' Caps to Small Caps-1" I.c2sc
+Substitution2: "'c2pc' Caps to Petite Caps-1" I.c2pc
 Comment: "{}"
 EndChar
 
@@ -17250,8 +17250,8 @@ SplineSet
  300.380859375 271.487787797 275.41727178 240.889455714 241.700722516 232.283793738 c 1
  254.40121565 129.863360276 360.360793249 76 457.532226562 76 c 0
 EndSplineSet
-Substitution2: "Caps to Small Caps-1" J.c2sc
-Substitution2: "Caps to Petite Caps-1" J.c2pc
+Substitution2: "'c2sc' Caps to Small Caps-1" J.c2sc
+Substitution2: "'c2pc' Caps to Petite Caps-1" J.c2pc
 Comment: "{}"
 EndChar
 
@@ -17303,8 +17303,8 @@ SplineSet
  947.467773438 21.50808 925.959693438 0 899.467773438 0 c 0
  686.209960938 0 686.209960938 0 686.209960938 0 c 2xd0
 EndSplineSet
-Substitution2: "Caps to Small Caps-1" K.c2sc
-Substitution2: "Caps to Petite Caps-1" K.c2pc
+Substitution2: "'c2sc' Caps to Small Caps-1" K.c2sc
+Substitution2: "'c2pc' Caps to Petite Caps-1" K.c2pc
 Comment: "{}"
 EndChar
 
@@ -17339,8 +17339,8 @@ SplineSet
  208 960 l 1
  140 960 l 2
 EndSplineSet
-Substitution2: "Caps to Small Caps-1" L.c2sc
-Substitution2: "Caps to Petite Caps-1" L.c2pc
+Substitution2: "'c2sc' Caps to Small Caps-1" L.c2sc
+Substitution2: "'c2pc' Caps to Petite Caps-1" L.c2pc
 Comment: "{}"
 EndChar
 
@@ -17392,8 +17392,8 @@ SplineSet
  677.210607632 1018.75021297 l 2
  682.097241232 1040.07370504 701.203404635 1056 724 1056 c 2xe0
 EndSplineSet
-Substitution2: "Caps to Small Caps-1" M.c2sc
-Substitution2: "Caps to Petite Caps-1" M.c2pc
+Substitution2: "'c2sc' Caps to Small Caps-1" M.c2sc
+Substitution2: "'c2pc' Caps to Petite Caps-1" M.c2pc
 Comment: "{}"
 EndChar
 
@@ -17440,8 +17440,8 @@ SplineSet
  735.994140625 959.99023438 l 1
  683.99609375 959.99023438 l 2
 EndSplineSet
-Substitution2: "Caps to Small Caps-1" N.c2sc
-Substitution2: "Caps to Petite Caps-1" N.c2pc
+Substitution2: "'c2sc' Caps to Small Caps-1" N.c2sc
+Substitution2: "'c2pc' Caps to Petite Caps-1" N.c2pc
 Comment: "{}"
 EndChar
 
@@ -17466,8 +17466,8 @@ SplineSet
  273.610463551 -20 136 199.850581429 136 528 c 0
  136 856.170209059 273.625190175 1076 504 1076 c 0
 EndSplineSet
-Substitution2: "Caps to Small Caps-1" O.c2sc
-Substitution2: "Caps to Petite Caps-1" O.c2pc
+Substitution2: "'c2sc' Caps to Small Caps-1" O.c2sc
+Substitution2: "'c2pc' Caps to Petite Caps-1" O.c2pc
 Comment: "{}"
 EndChar
 
@@ -17505,8 +17505,8 @@ SplineSet
  347.0625 960 l 1
  347.0625 600 l 1
 EndSplineSet
-Substitution2: "Caps to Small Caps-1" P.c2sc
-Substitution2: "Caps to Petite Caps-1" P.c2pc
+Substitution2: "'c2sc' Caps to Small Caps-1" P.c2sc
+Substitution2: "'c2pc' Caps to Petite Caps-1" P.c2pc
 Comment: "{}"
 EndChar
 
@@ -17550,8 +17550,8 @@ SplineSet
  550.352707362 177.208458923 523.079798451 185 497 185 c 0
  480.738420868 185 435.82235499 178.42617581 376.630188888 115.937041641 c 1
 EndSplineSet
-Substitution2: "Caps to Small Caps-1" Q.c2sc
-Substitution2: "Caps to Petite Caps-1" Q.c2pc
+Substitution2: "'c2sc' Caps to Small Caps-1" Q.c2sc
+Substitution2: "'c2pc' Caps to Petite Caps-1" Q.c2pc
 Comment: "{}"
 EndChar
 
@@ -17597,8 +17597,8 @@ SplineSet
  602.230683174 612 663.400885339 641.216891126 707.948887564 685.676464187 c 0
  743.607229265 721.264022975 763.642578125 762.474364077 763.642578125 796 c 0
 EndSplineSet
-Substitution2: "Caps to Small Caps-1" R.c2sc
-Substitution2: "Caps to Petite Caps-1" R.c2pc
+Substitution2: "'c2sc' Caps to Small Caps-1" R.c2sc
+Substitution2: "'c2pc' Caps to Petite Caps-1" R.c2pc
 Comment: "{}"
 EndChar
 
@@ -17643,8 +17643,8 @@ SplineSet
  415.942255288 571.480612668 l 2
  230.103934632 633.968027946 185.174804688 721.03091108 185.174804688 818.659179688 c 0xa3
 EndSplineSet
-Substitution2: "Caps to Small Caps-1" S.c2sc
-Substitution2: "Caps to Petite Caps-1" S.c2pc
+Substitution2: "'c2sc' Caps to Small Caps-1" S.c2sc
+Substitution2: "'c2pc' Caps to Petite Caps-1" S.c2pc
 Comment: "{}"
 EndChar
 
@@ -17682,8 +17682,8 @@ SplineSet
  724 21.50808 702.49192 0 676 0 c 0
  332 0 332 0 332 0 c 2
 EndSplineSet
-Substitution2: "Caps to Small Caps-1" T.c2sc
-Substitution2: "Caps to Petite Caps-1" T.c2pc
+Substitution2: "'c2sc' Caps to Small Caps-1" T.c2sc
+Substitution2: "'c2pc' Caps to Petite Caps-1" T.c2pc
 Comment: "{}"
 EndChar
 
@@ -17724,8 +17724,8 @@ SplineSet
  253.9954475 748.662877568 253.999999999 537.331614516 254 326 c 0
  254 187.540583138 365.855907174 76.189453125 504.319335938 76.189453125 c 0
 EndSplineSet
-Substitution2: "Caps to Small Caps-1" U.c2sc
-Substitution2: "Caps to Petite Caps-1" U.c2pc
+Substitution2: "'c2sc' Caps to Small Caps-1" U.c2sc
+Substitution2: "'c2pc' Caps to Petite Caps-1" U.c2pc
 Comment: "{}"
 EndChar
 
@@ -17767,8 +17767,8 @@ SplineSet
  737.943537037 959.99414062 l 1
  673.995117188 959.99414062 l 2
 EndSplineSet
-Substitution2: "Caps to Small Caps-1" V.c2sc
-Substitution2: "Caps to Petite Caps-1" V.c2pc
+Substitution2: "'c2sc' Caps to Small Caps-1" V.c2sc
+Substitution2: "'c2pc' Caps to Petite Caps-1" V.c2pc
 Comment: "{}"
 EndChar
 
@@ -17817,8 +17817,8 @@ SplineSet
  436.274697064 960 l 1
  416 960 l 2
 EndSplineSet
-Substitution2: "Caps to Small Caps-1" W.c2sc
-Substitution2: "Caps to Petite Caps-1" W.c2pc
+Substitution2: "'c2sc' Caps to Small Caps-1" W.c2sc
+Substitution2: "'c2pc' Caps to Petite Caps-1" W.c2pc
 Comment: "{}"
 EndChar
 
@@ -17869,8 +17869,8 @@ SplineSet
  687.130869098 960 l 1
  636 960 l 2
 EndSplineSet
-Substitution2: "Caps to Small Caps-1" X.c2sc
-Substitution2: "Caps to Petite Caps-1" X.c2pc
+Substitution2: "'c2sc' Caps to Small Caps-1" X.c2sc
+Substitution2: "'c2pc' Caps to Petite Caps-1" X.c2pc
 Comment: "{}"
 EndChar
 
@@ -17913,8 +17913,8 @@ SplineSet
  725.754290485 960 l 1
  648 960 l 2
 EndSplineSet
-Substitution2: "Caps to Small Caps-1" Y.c2sc
-Substitution2: "Caps to Petite Caps-1" Y.c2pc
+Substitution2: "'c2sc' Caps to Small Caps-1" Y.c2sc
+Substitution2: "'c2pc' Caps to Petite Caps-1" Y.c2pc
 Comment: "{}"
 EndChar
 
@@ -17950,8 +17950,8 @@ SplineSet
  207.988474128 822.938684543 l 2
  207.423198974 796.936027468 186.137241644 776 160 776 c 0
 EndSplineSet
-Substitution2: "Caps to Small Caps-1" Z.c2sc
-Substitution2: "Caps to Petite Caps-1" Z.c2pc
+Substitution2: "'c2sc' Caps to Small Caps-1" Z.c2sc
+Substitution2: "'c2pc' Caps to Petite Caps-1" Z.c2pc
 Comment: "{}"
 EndChar
 
@@ -17987,7 +17987,7 @@ SplineSet
  906.020146418 -248.794795298 l 2
  909.830225667 -255.674105052 912 -263.585663092 912 -272 c 0
 EndSplineSet
-Substitution2: "Shortened Backslash subtable (backslash.cv08)" backslash.cv08
+Substitution2: "'cv08' Shortened Backslash-1 (backslash.cv08)" backslash.cv08
 Comment: "{}"
 EndChar
 
@@ -18073,7 +18073,7 @@ SplineSet
  732.009765625 617.007450282 729.523322551 625.438743396 725.199947852 632.644367895 c 1
  729.523322551 625.438743396 732.009765625 617.007450282 732.009765625 608 c 1
 EndSplineSet
-Substitution2: "Plain Grave Accent subtable (grave.cv09)" grave.cv09
+Substitution2: "'cv09' Plain Grave Accent-1 (grave.cv09)" grave.cv09
 Substitution2: "Code Symbols-1" grave.cv09
 Comment: "{}"
 EndChar
@@ -18089,10 +18089,10 @@ AnchorPoint: "top" 444 796 basechar 0
 LayerCount: 2
 Fore
 Refer: 1455 -1 N 1 0 0 1 0 0 2
-Substitution2: "Simplified Forms for Size Reduction-1" a.ss07
+Substitution2: "'ss07' Simplified Forms for Size Reduction-1" a.ss07
 Substitution2: "Apertured Letters-1" a.ss04
-Substitution2: "Lowercase to Small Caps-1" A.c2sc
-Substitution2: "Lowercase to Petite Caps-1" A.c2pc
+Substitution2: "'smcp' Lowercase to Small Caps-1" A.c2sc
+Substitution2: "'pcap' Lowercase to Petite Caps-1" A.c2pc
 EndChar
 
 StartChar: b
@@ -18128,8 +18128,8 @@ SplineSet
  315.993941695 655.089444835 328.837656696 668.578410861 342.375397458 681.02428395 c 0
  405.523157252 739.07894891 485.230153025 776 568.01953125 776 c 0
 EndSplineSet
-Substitution2: "Lowercase to Small Caps-1" B.c2sc
-Substitution2: "Lowercase to Petite Caps-1" B.c2pc
+Substitution2: "'smcp' Lowercase to Small Caps-1" B.c2sc
+Substitution2: "'pcap' Lowercase to Petite Caps-1" B.c2pc
 Comment: "{}"
 EndChar
 
@@ -18145,8 +18145,8 @@ LayerCount: 2
 Fore
 Refer: 1452 -1 N 1 0 0 1 0 0 2
 Substitution2: "Apertured Letters-1" c.ss04
-Substitution2: "Lowercase to Small Caps-1" C.c2sc
-Substitution2: "Lowercase to Petite Caps-1" C.c2pc
+Substitution2: "'smcp' Lowercase to Small Caps-1" C.c2sc
+Substitution2: "'pcap' Lowercase to Petite Caps-1" C.c2pc
 EndChar
 
 StartChar: d
@@ -18183,8 +18183,8 @@ SplineSet
  203.500976562 208.030726171 297.869232244 76 456.946289062 76 c 0
  594.717491533 76 724.999022128 211.780850411 724.999023438 378 c 0
 EndSplineSet
-Substitution2: "Lowercase to Small Caps-1" D.c2sc
-Substitution2: "Lowercase to Petite Caps-1" D.c2pc
+Substitution2: "'smcp' Lowercase to Small Caps-1" D.c2sc
+Substitution2: "'pcap' Lowercase to Petite Caps-1" D.c2pc
 Comment: "{}"
 EndChar
 
@@ -18200,8 +18200,8 @@ LayerCount: 2
 Fore
 Refer: 1454 -1 N 1 0 0 1 0 0 2
 Substitution2: "Apertured Letters-1" e.ss04
-Substitution2: "Lowercase to Small Caps-1" E.c2sc
-Substitution2: "Lowercase to Petite Caps-1" E.c2pc
+Substitution2: "'smcp' Lowercase to Small Caps-1" E.c2sc
+Substitution2: "'pcap' Lowercase to Petite Caps-1" E.c2pc
 EndChar
 
 StartChar: f
@@ -18243,8 +18243,8 @@ SplineSet
  756.281056242 933.927234605 744.988512716 944.373525257 730.394415391 953.232979177 c 0
  702.817602833 969.973685688 662.852386661 979.98046875 615.997070312 979.98046875 c 0
 EndSplineSet
-Substitution2: "Lowercase to Small Caps-1" F.c2sc
-Substitution2: "Lowercase to Petite Caps-1" F.c2pc
+Substitution2: "'smcp' Lowercase to Small Caps-1" F.c2sc
+Substitution2: "'pcap' Lowercase to Petite Caps-1" F.c2pc
 Comment: "{}"
 EndChar
 
@@ -18299,8 +18299,8 @@ SplineSet
  212.249023438 391.208550808 294.567194041 308.616210938 395.030273438 308.616210938 c 0
  495.493352835 308.616210938 577.811523438 391.208550808 577.811523438 494.30859375 c 0
 EndSplineSet
-Substitution2: "Lowercase to Small Caps-1" G.c2sc
-Substitution2: "Lowercase to Petite Caps-1" G.c2pc
+Substitution2: "'smcp' Lowercase to Small Caps-1" G.c2sc
+Substitution2: "'pcap' Lowercase to Petite Caps-1" G.c2pc
 Comment: "{}"
 EndChar
 
@@ -18345,8 +18345,8 @@ SplineSet
  317 659.829409389 l 1
  382.180601537 725.103472365 450.309575254 776 558.37109375 776 c 0xec
 EndSplineSet
-Substitution2: "Lowercase to Small Caps-1" H.c2sc
-Substitution2: "Lowercase to Petite Caps-1" H.c2pc
+Substitution2: "'smcp' Lowercase to Small Caps-1" H.c2sc
+Substitution2: "'pcap' Lowercase to Petite Caps-1" H.c2pc
 Comment: "{}"
 EndChar
 
@@ -18396,8 +18396,8 @@ SplineSet
  937.239257812 21.50808 915.731177812 0 889.239257812 0 c 0
  642.458984375 0 642.458984375 0 642.458984375 0 c 2xe8
 EndSplineSet
-Substitution2: "Lowercase to Small Caps-1" K.c2sc
-Substitution2: "Lowercase to Petite Caps-1" K.c2pc
+Substitution2: "'smcp' Lowercase to Small Caps-1" K.c2sc
+Substitution2: "'pcap' Lowercase to Petite Caps-1" K.c2pc
 Comment: "{}"
 EndChar
 
@@ -18412,10 +18412,10 @@ AnchorPoint: "top" 394 1056 basechar 0
 LayerCount: 2
 Fore
 Refer: 1240 -1 N 1 0 0 1 0 0 2
-Substitution2: "Curly Small L subtable (l.cv10)" l.cv10
-Substitution2: "Code-Friendly Small L subtable (l.cv02)" l.cv02
-Substitution2: "Lowercase to Small Caps-1" L.c2sc
-Substitution2: "Lowercase to Petite Caps-1" L.c2pc
+Substitution2: "'cv10' Curly Small L-1 (l.cv10)" l.cv10
+Substitution2: "'cv02' Code-Friendly Small L-1 (l.cv02)" l.cv02
+Substitution2: "'smcp' Lowercase to Small Caps-1" L.c2sc
+Substitution2: "'pcap' Lowercase to Petite Caps-1" L.c2pc
 EndChar
 
 StartChar: m
@@ -18470,8 +18470,8 @@ SplineSet
  416.039548966 776 488.58525752 767.22121135 531.683386766 685.43033369 c 1
  563.762359716 725.215032235 618.825028953 776 690.87890625 776 c 0xa8
 EndSplineSet
-Substitution2: "Lowercase to Small Caps-1" M.c2sc
-Substitution2: "Lowercase to Petite Caps-1" M.c2pc
+Substitution2: "'smcp' Lowercase to Small Caps-1" M.c2sc
+Substitution2: "'pcap' Lowercase to Petite Caps-1" M.c2pc
 Comment: "{}"
 EndChar
 
@@ -18515,8 +18515,8 @@ SplineSet
  322.610351562 656.042268988 l 1
  398.942218923 734.233088811 470.033752542 776 562.455078125 776 c 0xac
 EndSplineSet
-Substitution2: "Lowercase to Small Caps-1" N.c2sc
-Substitution2: "Lowercase to Petite Caps-1" N.c2pc
+Substitution2: "'smcp' Lowercase to Small Caps-1" N.c2sc
+Substitution2: "'pcap' Lowercase to Petite Caps-1" N.c2pc
 Comment: "{}"
 EndChar
 
@@ -18541,8 +18541,8 @@ SplineSet
  295.441907158 -20 144 153.523726449 144 378 c 0
  144 602.487797034 295.452219435 776 504 776 c 0
 EndSplineSet
-Substitution2: "Lowercase to Small Caps-1" O.c2sc
-Substitution2: "Lowercase to Petite Caps-1" O.c2pc
+Substitution2: "'smcp' Lowercase to Small Caps-1" O.c2sc
+Substitution2: "'pcap' Lowercase to Petite Caps-1" O.c2pc
 Comment: "{}"
 EndChar
 
@@ -18582,8 +18582,8 @@ SplineSet
  405.363538859 685.127929688 309.529296875 541.140945116 309.529296875 378 c 0
  309.529296875 214.870398425 405.354702838 70.8720703125 565.098632812 70.8720703125 c 0
 EndSplineSet
-Substitution2: "Lowercase to Small Caps-1" P.c2sc
-Substitution2: "Lowercase to Petite Caps-1" P.c2pc
+Substitution2: "'smcp' Lowercase to Small Caps-1" P.c2sc
+Substitution2: "'pcap' Lowercase to Petite Caps-1" P.c2pc
 Comment: "{}"
 EndChar
 
@@ -18620,8 +18620,8 @@ SplineSet
  321.956688665 680 225.374023438 538.601318355 225.374023438 378 c 0
  225.374023438 217.393362298 321.960937157 76 482.923828125 76 c 0
 EndSplineSet
-Substitution2: "Lowercase to Small Caps-1" Q.c2sc
-Substitution2: "Lowercase to Petite Caps-1" Q.c2pc
+Substitution2: "'smcp' Lowercase to Small Caps-1" Q.c2sc
+Substitution2: "'pcap' Lowercase to Petite Caps-1" Q.c2pc
 Comment: "{}"
 EndChar
 
@@ -18661,8 +18661,8 @@ SplineSet
  159.78515625 74.49192 181.29323625 96 207.78515625 96 c 2
  286.190255531 96 l 1xb8
 EndSplineSet
-Substitution2: "Lowercase to Small Caps-1" R.c2sc
-Substitution2: "Lowercase to Petite Caps-1" R.c2pc
+Substitution2: "'smcp' Lowercase to Small Caps-1" R.c2sc
+Substitution2: "'pcap' Lowercase to Petite Caps-1" R.c2pc
 Comment: "{}"
 EndChar
 
@@ -18678,8 +18678,8 @@ LayerCount: 2
 Fore
 Refer: 1457 -1 N 1 0 0 1 0 0 2
 Substitution2: "Apertured Letters-1" s.ss04
-Substitution2: "Lowercase to Small Caps-1" S.c2sc
-Substitution2: "Lowercase to Petite Caps-1" S.c2pc
+Substitution2: "'smcp' Lowercase to Small Caps-1" S.c2sc
+Substitution2: "'pcap' Lowercase to Petite Caps-1" S.c2pc
 EndChar
 
 StartChar: t
@@ -18717,8 +18717,8 @@ SplineSet
  468.34765625 660 l 1
  468.34765625 253.641601562 l 2
 EndSplineSet
-Substitution2: "Lowercase to Small Caps-1" T.c2sc
-Substitution2: "Lowercase to Petite Caps-1" T.c2pc
+Substitution2: "'smcp' Lowercase to Small Caps-1" T.c2sc
+Substitution2: "'pcap' Lowercase to Petite Caps-1" T.c2pc
 Comment: "{}"
 EndChar
 
@@ -18759,8 +18759,8 @@ SplineSet
  314 209.537760788 327.724058667 165.008876949 348.611265244 134.342035818 c 0
  374.239467184 96.7144098124 411.411717289 76 462 76 c 0xa8
 EndSplineSet
-Substitution2: "Lowercase to Small Caps-1" U.c2sc
-Substitution2: "Lowercase to Petite Caps-1" U.c2pc
+Substitution2: "'smcp' Lowercase to Small Caps-1" U.c2sc
+Substitution2: "'pcap' Lowercase to Petite Caps-1" U.c2pc
 Comment: "{}"
 EndChar
 
@@ -18796,8 +18796,8 @@ SplineSet
  707.086444434 660 l 1
  626 660 l 2
 EndSplineSet
-Substitution2: "Lowercase to Small Caps-1" V.c2sc
-Substitution2: "Lowercase to Petite Caps-1" V.c2pc
+Substitution2: "'smcp' Lowercase to Small Caps-1" V.c2sc
+Substitution2: "'pcap' Lowercase to Petite Caps-1" V.c2pc
 Comment: "{}"
 EndChar
 
@@ -18847,8 +18847,8 @@ SplineSet
  444.41249779 660 l 1
  437 660 l 2
 EndSplineSet
-Substitution2: "Lowercase to Small Caps-1" W.c2sc
-Substitution2: "Lowercase to Petite Caps-1" W.c2pc
+Substitution2: "'smcp' Lowercase to Small Caps-1" W.c2sc
+Substitution2: "'pcap' Lowercase to Petite Caps-1" W.c2pc
 Comment: "{}"
 EndChar
 
@@ -18899,8 +18899,8 @@ SplineSet
  658.652312428 660 l 1
  614 660 l 2
 EndSplineSet
-Substitution2: "Lowercase to Small Caps-1" X.c2sc
-Substitution2: "Lowercase to Petite Caps-1" X.c2pc
+Substitution2: "'smcp' Lowercase to Small Caps-1" X.c2sc
+Substitution2: "'pcap' Lowercase to Petite Caps-1" X.c2pc
 Comment: "{}"
 EndChar
 
@@ -18941,8 +18941,8 @@ SplineSet
  216.046542743 -61.1484375 251 -96.0992531546 251 -139.1484375 c 0
  251 -165.728502136 237.674592974 -189.222037907 217.345803126 -203.307020609 c 1
 EndSplineSet
-Substitution2: "Lowercase to Small Caps-1" Y.c2sc
-Substitution2: "Lowercase to Petite Caps-1" Y.c2pc
+Substitution2: "'smcp' Lowercase to Small Caps-1" Y.c2sc
+Substitution2: "'pcap' Lowercase to Petite Caps-1" Y.c2pc
 Comment: "{}"
 EndChar
 
@@ -18978,8 +18978,8 @@ SplineSet
  221.477922788 576.499565229 l 2
  220.684112388 550.700727241 199.490924815 530 173.500976562 530 c 0
 EndSplineSet
-Substitution2: "Lowercase to Small Caps-1" Z.c2sc
-Substitution2: "Lowercase to Petite Caps-1" Z.c2pc
+Substitution2: "'smcp' Lowercase to Small Caps-1" Z.c2sc
+Substitution2: "'pcap' Lowercase to Petite Caps-1" Z.c2pc
 Comment: "{}"
 EndChar
 
@@ -18993,7 +18993,7 @@ VStem: 456 96<-160.333 230.828 525.172 916.335>
 LayerCount: 2
 Fore
 Refer: 1945 -1 N 1 0 0 1 0 0 2
-Substitution2: "Larger Left Curly Bracket, Alternate subtable (braceleft.cv12)" braceleft.cv12
+Substitution2: "'cv12' Larger Left Curly Bracket, Alternate-1 (braceleft.cv12)" braceleft.cv12
 Substitution2: "Code Brackets-1" braceleft.ss02
 Comment: "{}"
 EndChar
@@ -19028,7 +19028,7 @@ VStem: 456 96<-160.335 230.828 525.172 916.333>
 LayerCount: 2
 Fore
 Refer: 1946 -1 N 1 0 0 1 0 0 2
-Substitution2: "Larger Right Curly Bracket, Alternate subtable (braceright.cv13)" braceright.cv13
+Substitution2: "'cv13' Larger Right Curly Bracket, Alternate-1 (braceright.cv13)" braceright.cv13
 Substitution2: "Code Brackets-1" braceright.ss02
 Comment: "{}"
 EndChar
@@ -22066,8 +22066,8 @@ SplineSet
  553.74609375 949.820235973 518.794021842 914.868164062 475.74609375 914.868164062 c 0
  432.696909403 914.868164062 397.74609375 949.82162132 397.74609375 992.868164062 c 0xf0
 EndSplineSet
-Substitution2: "Lowercase to Small Caps-1" I.c2sc
-Substitution2: "Lowercase to Petite Caps-1" I.c2pc
+Substitution2: "'smcp' Lowercase to Small Caps-1" I.c2sc
+Substitution2: "'pcap' Lowercase to Petite Caps-1" I.c2pc
 Comment: "{}"
 EndChar
 
@@ -22102,8 +22102,8 @@ SplineSet
  679.560546875 949.820235973 644.608474967 914.868164062 601.560546875 914.868164062 c 0
  558.511362529 914.868164062 523.560546875 949.821621318 523.560546875 992.868164062 c 0xf8
 EndSplineSet
-Substitution2: "Lowercase to Small Caps-1" J.c2sc
-Substitution2: "Lowercase to Petite Caps-1" J.c2pc
+Substitution2: "'smcp' Lowercase to Small Caps-1" J.c2sc
+Substitution2: "'pcap' Lowercase to Petite Caps-1" J.c2pc
 Comment: "{}"
 EndChar
 
@@ -32443,19 +32443,19 @@ Width: 1008
 VWidth: 0
 Flags: W
 HStem: -290 516
-VStem: 381 246<19.7576 189.963>
+VStem: 421 246<19.7576 189.963>
 LayerCount: 2
 Fore
 SplineSet
-311.85344833 -202.418472527 m 0
- 329.675102058 -190.231355715 431.252491037 -114.976088207 490.32842961 -19.2477695407 c 1
- 428.855197643 -12.4411912033 381.000000001 39.7204530827 381 103 c 0
- 381 170.900467153 436.099532847 226 504 226 c 0
- 571.900467153 226 627 170.900467153 627 103 c 0
- 627 -99.3776839306 380.077247663 -272.004173973 366.14655167 -281.581527473 c 0
- 358.423459352 -286.891153445 349.071919749 -290 339 -290 c 0
- 312.50808 -290 291 -268.49192 291 -242 c 0
- 291 -225.579999749 299.262683018 -211.074623683 311.85344833 -202.418472527 c 0
+351.85344833 -202.418472527 m 0
+ 369.675102058 -190.231355715 471.252491037 -114.976088207 530.32842961 -19.2477695407 c 1
+ 468.855197643 -12.4411912033 421.000000001 39.7204530827 421 103 c 0
+ 421 170.900467153 476.099532847 226 544 226 c 0
+ 611.900467153 226 667 170.900467153 667 103 c 0
+ 667 -99.3776839306 420.077247663 -272.004173973 406.14655167 -281.581527473 c 0
+ 398.423459352 -286.891153445 389.071919749 -290 379 -290 c 0
+ 352.50808 -290 331 -268.49192 331 -242 c 0
+ 331 -225.579999749 339.262683018 -211.074623683 351.85344833 -202.418472527 c 0
 EndSplineSet
 Comment: "{}"
 EndChar
@@ -32541,19 +32541,19 @@ Width: 1008
 VWidth: 0
 Flags: W
 HStem: 560 516
-VStem: 381 246<869.758 1039.96>
+VStem: 421 246<869.758 1039.96>
 LayerCount: 2
 Fore
 SplineSet
-311.85344833 647.581527473 m 0
- 329.675102058 659.768644285 431.252491037 735.023911793 490.32842961 830.752230459 c 1
- 428.855197643 837.558808797 381.000000001 889.720453082 381 953 c 0
- 381 1020.90046715 436.099532847 1076 504 1076 c 0
- 571.900467153 1076 627 1020.90046715 627 953 c 0
- 627 750.622316069 380.077247663 577.995826027 366.14655167 568.418472527 c 0
- 358.423459352 563.108846555 349.071919749 560 339 560 c 0
- 312.50808 560 291 581.50808 291 608 c 0
- 291 624.420000251 299.262683018 638.925376317 311.85344833 647.581527473 c 0
+351.85344833 647.581527473 m 0
+ 369.675102058 659.768644285 471.252491037 735.023911793 530.32842961 830.752230459 c 1
+ 468.855197643 837.558808797 421.000000001 889.720453082 421 953 c 0
+ 421 1020.90046715 476.099532847 1076 544 1076 c 0
+ 611.900467153 1076 667 1020.90046715 667 953 c 0
+ 667 750.622316069 420.077247663 577.995826027 406.14655167 568.418472527 c 0
+ 398.423459352 563.108846555 389.071919749 560 379 560 c 0
+ 352.50808 560 331 581.50808 331 608 c 0
+ 331 624.420000251 339.262683018 638.925376317 351.85344833 647.581527473 c 0
 EndSplineSet
 Comment: "{}"
 EndChar
@@ -32564,28 +32564,28 @@ Width: 1008
 VWidth: 0
 Flags: W
 HStem: -290 516
-VStem: 181 246<19.7576 189.963> 581 246<19.7576 189.963>
+VStem: 201 246<19.7576 189.963> 601 246<19.7576 189.963>
 LayerCount: 2
 Fore
 SplineSet
-511.85344833 -202.418472527 m 0
- 529.675102058 -190.231355715 631.252491037 -114.976088207 690.32842961 -19.2477695407 c 1
- 628.855197643 -12.4411912033 581.000000001 39.7204530827 581 103 c 0
- 581 170.900467153 636.099532847 226 704 226 c 0
- 771.900467153 226 827 170.900467153 827 103 c 0
- 827 -99.3776839306 580.077247663 -272.004173973 566.14655167 -281.581527473 c 0
- 558.423459352 -286.891153445 549.071919749 -290 539 -290 c 0
- 512.50808 -290 491 -268.49192 491 -242 c 0
- 491 -225.579999749 499.262683018 -211.074623683 511.85344833 -202.418472527 c 0
-111.85344833 -202.418472527 m 0
- 129.675102058 -190.231355715 231.252491037 -114.976088207 290.32842961 -19.2477695407 c 1
- 228.855197643 -12.4411912033 181.000000001 39.7204530827 181 103 c 0
- 181 170.900467153 236.099532847 226 304 226 c 0
- 371.900467153 226 427 170.900467153 427 103 c 0
- 427 -99.3776839306 180.077247663 -272.004173973 166.14655167 -281.581527473 c 0
- 158.423459352 -286.891153445 149.071919749 -290 139 -290 c 0
- 112.50808 -290 91 -268.49192 91 -242 c 0
- 91 -225.579999749 99.2626830183 -211.074623683 111.85344833 -202.418472527 c 0
+531.85344833 -202.418472527 m 0
+ 549.675102058 -190.231355715 651.252491037 -114.976088207 710.32842961 -19.2477695407 c 1
+ 648.855197643 -12.4411912033 601.000000001 39.7204530827 601 103 c 0
+ 601 170.900467153 656.099532847 226 724 226 c 0
+ 791.900467153 226 847 170.900467153 847 103 c 0
+ 847 -99.3776839306 600.077247663 -272.004173973 586.14655167 -281.581527473 c 0
+ 578.423459352 -286.891153445 569.071919749 -290 559 -290 c 0
+ 532.50808 -290 511 -268.49192 511 -242 c 0
+ 511 -225.579999749 519.262683018 -211.074623683 531.85344833 -202.418472527 c 0
+131.85344833 -202.418472527 m 0
+ 149.675102058 -190.231355715 251.252491037 -114.976088207 310.32842961 -19.2477695407 c 1
+ 248.855197643 -12.4411912033 201.000000001 39.7204530827 201 103 c 0
+ 201 170.900467153 256.099532847 226 324 226 c 0
+ 391.900467153 226 447 170.900467153 447 103 c 0
+ 447 -99.3776839306 200.077247663 -272.004173973 186.14655167 -281.581527473 c 0
+ 178.423459352 -286.891153445 169.071919749 -290 159 -290 c 0
+ 132.50808 -290 111 -268.49192 111 -242 c 0
+ 111 -225.579999749 119.262683018 -211.074623683 131.85344833 -202.418472527 c 0
 EndSplineSet
 Comment: "{}"
 EndChar
@@ -32615,19 +32615,19 @@ Width: 1008
 VWidth: 0
 Flags: W
 HStem: 560 516
-VStem: 381 246<596.037 766.242>
+VStem: 341 246<596.037 766.242>
 LayerCount: 2
 Fore
 SplineSet
-696.14655167 988.418472527 m 0
- 678.324897942 976.231355715 576.747508963 900.976088207 517.67157039 805.247769541 c 1
- 579.144802357 798.441191203 626.999999999 746.279546918 627 683 c 0
- 627 615.098444409 571.899913019 560 504 560 c 0
- 436.100086981 560 381 615.098444409 381 683 c 0
- 381 885.377683931 627.922752337 1058.00417397 641.85344833 1067.58152747 c 0
- 649.576540648 1072.89115344 658.928080251 1076 669 1076 c 0
- 695.49192 1076 717 1054.49192 717 1028 c 0
- 717 1011.57999975 708.737316982 997.074623683 696.14655167 988.418472527 c 0
+656.14655167 988.418472527 m 0
+ 638.324897942 976.231355715 536.747508963 900.976088207 477.67157039 805.247769541 c 1
+ 539.144802357 798.441191203 586.999999999 746.279546918 587 683 c 0
+ 587 615.098444409 531.899913019 560 464 560 c 0
+ 396.100086981 560 341 615.098444409 341 683 c 0
+ 341 885.377683931 587.922752337 1058.00417397 601.85344833 1067.58152747 c 0
+ 609.576540648 1072.89115344 618.928080251 1076 629 1076 c 0
+ 655.49192 1076 677 1054.49192 677 1028 c 0
+ 677 1011.57999975 668.737316982 997.074623683 656.14655167 988.418472527 c 0
 EndSplineSet
 Comment: "{}"
 EndChar
@@ -32771,19 +32771,19 @@ Width: 1008
 VWidth: 0
 Flags: W
 HStem: 560 516
-VStem: 381 246<869.746 1039.96>
+VStem: 341 246<869.746 1039.96>
 LayerCount: 2
 Fore
 SplineSet
-517.671570388 830.75223046 m 1
- 577.002286293 734.611063424 679.071453404 659.258121594 696.14655167 647.581527473 c 0
- 708.737316982 638.925376317 717 624.420000251 717 608 c 0
- 717 581.50808 695.49192 560 669 560 c 0
- 658.928080251 560 649.576540648 563.108846555 641.85344833 568.418472527 c 0
- 627.991891143 577.948293098 381 750.593983414 381 953 c 0
- 381 1020.90046715 436.099532847 1076 504 1076 c 0
- 571.900467153 1076 627 1020.90046715 627 953 c 0
- 627 889.720453082 579.144802356 837.558808796 517.671570388 830.75223046 c 1
+477.671570388 830.75223046 m 1
+ 537.002286293 734.611063424 639.071453404 659.258121594 656.14655167 647.581527473 c 0
+ 668.737316982 638.925376317 677 624.420000251 677 608 c 0
+ 677 581.50808 655.49192 560 629 560 c 0
+ 618.928080251 560 609.576540648 563.108846555 601.85344833 568.418472527 c 0
+ 587.991891143 577.948293098 341 750.593983414 341 953 c 0
+ 341 1020.90046715 396.099532847 1076 464 1076 c 0
+ 531.900467153 1076 587 1020.90046715 587 953 c 0
+ 587 889.720453082 539.144802356 837.558808796 477.671570388 830.75223046 c 1
 EndSplineSet
 Comment: "{}"
 EndChar
@@ -32818,28 +32818,28 @@ Width: 1008
 VWidth: 0
 Flags: W
 HStem: 560 516
-VStem: 181 246<596.037 766.242> 581 246<596.037 766.242>
+VStem: 161 246<596.037 766.242> 561 246<596.037 766.242>
 LayerCount: 2
 Fore
 SplineSet
-896.14655167 988.418472527 m 0
- 878.324897942 976.231355715 776.747508963 900.976088207 717.67157039 805.247769541 c 1
- 779.144802357 798.441191203 826.999999999 746.279546918 827 683 c 0
- 827 615.098444409 771.899913019 560 704 560 c 0
- 636.100086981 560 581 615.098444409 581 683 c 0
- 581 885.377683931 827.922752337 1058.00417397 841.85344833 1067.58152747 c 0
- 849.576540648 1072.89115344 858.928080251 1076 869 1076 c 0
- 895.49192 1076 917 1054.49192 917 1028 c 0
- 917 1011.57999975 908.737316982 997.074623683 896.14655167 988.418472527 c 0
-496.14655167 988.418472527 m 0
- 478.324897942 976.231355715 376.747508963 900.976088207 317.67157039 805.247769541 c 1
- 379.144802357 798.441191203 426.999999999 746.279546918 427 683 c 0
- 427 615.098444409 371.899913019 560 304 560 c 0
- 236.100086981 560 181 615.098444409 181 683 c 0
- 181 885.377683931 427.922752337 1058.00417397 441.85344833 1067.58152747 c 0
- 449.576540648 1072.89115344 458.928080251 1076 469 1076 c 0
- 495.49192 1076 517 1054.49192 517 1028 c 0
- 517 1011.57999975 508.737316982 997.074623683 496.14655167 988.418472527 c 0
+876.14655167 988.418472527 m 0
+ 858.324897942 976.231355715 756.747508963 900.976088207 697.67157039 805.247769541 c 1
+ 759.144802357 798.441191203 806.999999999 746.279546918 807 683 c 0
+ 807 615.098444409 751.899913019 560 684 560 c 0
+ 616.100086981 560 561 615.098444409 561 683 c 0
+ 561 885.377683931 807.922752337 1058.00417397 821.85344833 1067.58152747 c 0
+ 829.576540648 1072.89115344 838.928080251 1076 849 1076 c 0
+ 875.49192 1076 897 1054.49192 897 1028 c 0
+ 897 1011.57999975 888.737316982 997.074623683 876.14655167 988.418472527 c 0
+476.14655167 988.418472527 m 0
+ 458.324897942 976.231355715 356.747508963 900.976088207 297.67157039 805.247769541 c 1
+ 359.144802357 798.441191203 406.999999999 746.279546918 407 683 c 0
+ 407 615.098444409 351.899913019 560 284 560 c 0
+ 216.100086981 560 161 615.098444409 161 683 c 0
+ 161 885.377683931 407.922752337 1058.00417397 421.85344833 1067.58152747 c 0
+ 429.576540648 1072.89115344 438.928080251 1076 449 1076 c 0
+ 475.49192 1076 497 1054.49192 497 1028 c 0
+ 497 1011.57999975 488.737316982 997.074623683 476.14655167 988.418472527 c 0
 EndSplineSet
 Comment: "{}"
 EndChar
@@ -32904,28 +32904,28 @@ Width: 1008
 VWidth: 0
 Flags: W
 HStem: 560 516
-VStem: 181 246<869.746 1039.96> 581 246<869.746 1039.96>
+VStem: 161 246<869.746 1039.96> 561 246<869.746 1039.96>
 LayerCount: 2
 Fore
 SplineSet
-717.671570388 830.75223046 m 1
- 777.002286293 734.611063424 879.071453404 659.258121594 896.14655167 647.581527473 c 0
- 908.737316982 638.925376317 917 624.420000251 917 608 c 0
- 917 581.50808 895.49192 560 869 560 c 0
- 858.928080251 560 849.576540648 563.108846555 841.85344833 568.418472527 c 0
- 827.991891143 577.948293098 581 750.593983414 581 953 c 0
- 581 1020.90046715 636.099532847 1076 704 1076 c 0
- 771.900467153 1076 827 1020.90046715 827 953 c 0
- 827 889.720453082 779.144802356 837.558808796 717.671570388 830.75223046 c 1
-317.671570388 830.75223046 m 1
- 377.002286293 734.611063424 479.071453404 659.258121594 496.14655167 647.581527473 c 0
- 508.737316982 638.925376317 517 624.420000251 517 608 c 0
- 517 581.50808 495.49192 560 469 560 c 0
- 458.928080251 560 449.576540648 563.108846555 441.85344833 568.418472527 c 0
- 427.991891143 577.948293098 181 750.593983414 181 953 c 0
- 181 1020.90046715 236.099532847 1076 304 1076 c 0
- 371.900467153 1076 427 1020.90046715 427 953 c 0
- 427 889.720453082 379.144802356 837.558808796 317.671570388 830.75223046 c 1
+697.671570388 830.75223046 m 1
+ 757.002286293 734.611063424 859.071453404 659.258121594 876.14655167 647.581527473 c 0
+ 888.737316982 638.925376317 897 624.420000251 897 608 c 0
+ 897 581.50808 875.49192 560 849 560 c 0
+ 838.928080251 560 829.576540648 563.108846555 821.85344833 568.418472527 c 0
+ 807.991891143 577.948293098 561 750.593983414 561 953 c 0
+ 561 1020.90046715 616.099532847 1076 684 1076 c 0
+ 751.900467153 1076 807 1020.90046715 807 953 c 0
+ 807 889.720453082 759.144802356 837.558808796 697.671570388 830.75223046 c 1
+297.671570388 830.75223046 m 1
+ 357.002286293 734.611063424 459.071453404 659.258121594 476.14655167 647.581527473 c 0
+ 488.737316982 638.925376317 497 624.420000251 497 608 c 0
+ 497 581.50808 475.49192 560 449 560 c 0
+ 438.928080251 560 429.576540648 563.108846555 421.85344833 568.418472527 c 0
+ 407.991891143 577.948293098 161 750.593983414 161 953 c 0
+ 161 1020.90046715 216.099532847 1076 284 1076 c 0
+ 351.900467153 1076 407 1020.90046715 407 953 c 0
+ 407 889.720453082 359.144802356 837.558808796 297.671570388 830.75223046 c 1
 EndSplineSet
 Comment: "{}"
 EndChar
@@ -32936,28 +32936,28 @@ Width: 1008
 VWidth: 0
 Flags: W
 HStem: 560 516
-VStem: 181 246<869.758 1039.96> 581 246<869.758 1039.96>
+VStem: 201 246<869.758 1039.96> 601 246<869.758 1039.96>
 LayerCount: 2
 Fore
 SplineSet
-111.85344833 647.581527473 m 0
- 129.675102058 659.768644285 231.252491037 735.023911793 290.32842961 830.752230459 c 1
- 228.855197643 837.558808797 181.000000001 889.720453082 181 953 c 0
- 181 1020.90046715 236.099532847 1076 304 1076 c 0
- 371.900467153 1076 427 1020.90046715 427 953 c 0
- 427 750.622316069 180.077247663 577.995826027 166.14655167 568.418472527 c 0
- 158.423459352 563.108846555 149.071919749 560 139 560 c 0
- 112.50808 560 91 581.50808 91 608 c 0
- 91 624.420000251 99.2626830183 638.925376317 111.85344833 647.581527473 c 0
-511.85344833 647.581527473 m 0
- 529.675102058 659.768644285 631.252491037 735.023911793 690.32842961 830.752230459 c 1
- 628.855197643 837.558808797 581.000000001 889.720453082 581 953 c 0
- 581 1020.90046715 636.099532847 1076 704 1076 c 0
- 771.900467153 1076 827 1020.90046715 827 953 c 0
- 827 750.622316069 580.077247663 577.995826027 566.14655167 568.418472527 c 0
- 558.423459352 563.108846555 549.071919749 560 539 560 c 0
- 512.50808 560 491 581.50808 491 608 c 0
- 491 624.420000251 499.262683018 638.925376317 511.85344833 647.581527473 c 0
+131.85344833 647.581527473 m 0
+ 149.675102058 659.768644285 251.252491037 735.023911793 310.32842961 830.752230459 c 1
+ 248.855197643 837.558808797 201.000000001 889.720453082 201 953 c 0
+ 201 1020.90046715 256.099532847 1076 324 1076 c 0
+ 391.900467153 1076 447 1020.90046715 447 953 c 0
+ 447 750.622316069 200.077247663 577.995826027 186.14655167 568.418472527 c 0
+ 178.423459352 563.108846555 169.071919749 560 159 560 c 0
+ 132.50808 560 111 581.50808 111 608 c 0
+ 111 624.420000251 119.262683018 638.925376317 131.85344833 647.581527473 c 0
+531.85344833 647.581527473 m 0
+ 549.675102058 659.768644285 651.252491037 735.023911793 710.32842961 830.752230459 c 1
+ 648.855197643 837.558808797 601.000000001 889.720453082 601 953 c 0
+ 601 1020.90046715 656.099532847 1076 724 1076 c 0
+ 791.900467153 1076 847 1020.90046715 847 953 c 0
+ 847 750.622316069 600.077247663 577.995826027 586.14655167 568.418472527 c 0
+ 578.423459352 563.108846555 569.071919749 560 559 560 c 0
+ 532.50808 560 511 581.50808 511 608 c 0
+ 511 624.420000251 519.262683018 638.925376317 531.85344833 647.581527473 c 0
 EndSplineSet
 Comment: "{}"
 EndChar
@@ -54710,6 +54710,118 @@ SplineSet
  772.538564049 181.567255484 736.868890263 155.756274958 698.211901167 127.546032396 c 0
  683.439919042 116.76606198 668.214931462 105.630636798 652.629073333 94.5233344696 c 1
  675.504399397 82.2530040597 699.465768256 76.001953125 723.810546875 76.001953125 c 0
+EndSplineSet
+Comment: "{}"
+EndChar
+
+StartChar: underscoredbl.BASE
+Encoding: 65818 -1 2113
+Width: 1008
+VWidth: 0
+Flags: W
+HStem: 0 96<137.513 870.487> 220 96<137.513 870.487>
+LayerCount: 2
+Fore
+SplineSet
+184.000976562 220 m 2
+ 157.509056562 220 136.000976562 241.50808 136.000976562 268 c 0
+ 136.000976562 294.49192 157.509056562 316 184.000976562 316 c 2
+ 823.999023438 316 l 2
+ 850.490943438 316 871.999023438 294.49192 871.999023438 268 c 0
+ 871.999023438 241.50808 850.490943438 220 823.999023438 220 c 2
+ 184.000976562 220 l 2
+184.000976562 0 m 2
+ 157.509056562 0 136.000976562 21.50808 136.000976562 48 c 0
+ 136.000976562 74.49192 157.509056562 96 184.000976562 96 c 2
+ 823.999023438 96 l 2
+ 850.490943438 96 871.999023438 74.49192 871.999023438 48 c 0
+ 871.999023438 21.50808 850.490943438 0 823.999023438 0 c 2
+ 184.000976562 0 l 2
+EndSplineSet
+Comment: "{}"
+EndChar
+
+StartChar: underscore.BASE
+Encoding: 65819 -1 2114
+Width: 1008
+VWidth: 0
+Flags: W
+HStem: 0 96<137.513 870.487>
+LayerCount: 2
+Fore
+SplineSet
+184.000976562 0 m 2
+ 157.509056562 0 136.000976562 21.50808 136.000976562 48 c 0
+ 136.000976562 74.49192 157.509056562 96 184.000976562 96 c 2
+ 823.999023438 96 l 2
+ 850.490943438 96 871.999023438 74.49192 871.999023438 48 c 0
+ 871.999023438 21.50808 850.490943438 0 823.999023438 0 c 2
+ 184.000976562 0 l 2
+EndSplineSet
+Comment: "{}"
+EndChar
+
+StartChar: one.default
+Encoding: 65820 -1 2115
+Width: 1008
+VWidth: 0
+Flags: W
+HStem: 0 96<225.512 504 600 878.488> 960 96<269.512 504>
+VStem: 504 96<96 960>
+LayerCount: 2
+Fore
+SplineSet
+272 0 m 2
+ 245.50808 0 224 21.50808 224 48 c 0
+ 224 74.49192 245.50808 96 272 96 c 2
+ 504 96 l 1
+ 504 960 l 1
+ 316 960 l 2
+ 289.50808 960 268 981.50808 268 1008 c 0
+ 268 1034.49192 289.50808 1056 316 1056 c 2
+ 552 1056 l 2
+ 578.49192 1056 600 1034.49192 600 1008 c 2
+ 600 96 l 1
+ 832 96 l 2
+ 858.49192 96 880 74.49192 880 48 c 0
+ 880 21.50808 858.49192 0 832 0 c 2
+ 272 0 l 2
+EndSplineSet
+Comment: "{}"
+EndChar
+
+StartChar: uni3003
+Encoding: 12291 12291 2116
+Width: 1008
+VWidth: 0
+Flags: W
+HStem: 1036 20G<321.779 335.512 721.779 735.512>
+VStem: 148.002 93.5672<294.33 325.7> 548.002 93.5672<294.33 325.7>
+LayerCount: 2
+Fore
+SplineSet
+858.635742188 987.294921875 m 0
+ 858.635742188 982.014310407 857.781180925 976.931717387 856.20292651 972.178010925 c 0
+ 641.569137447 325.700471862 641.569137447 325.700471862 641.569137447 325.700471862 c 2
+ 635.229560764 306.605650161 617.213261657 292.817382812 596.001953125 292.817382812 c 0
+ 569.510033125 292.817382812 548.001953125 314.325462812 548.001953125 340.817382812 c 0
+ 548.001953125 344.145134746 548.341325636 347.394247475 548.987318946 350.531969287 c 2
+ 686.346693946 1017.71458648 l 2
+ 690.843392586 1039.55597275 710.197160059 1056 733.361328125 1056 c 0
+ 737.662209528 1056 741.831734253 1055.43312186 745.799196737 1054.37007115 c 2
+ 823.0736108 1033.66499303 l 2
+ 843.54432479 1028.18002446 858.635742188 1009.48596047 858.635742188 987.294921875 c 0
+458.635742188 987.294921875 m 0
+ 458.635742188 982.014310407 457.781180925 976.931717387 456.20292651 972.178010925 c 0
+ 241.569137447 325.700471862 241.569137447 325.700471862 241.569137447 325.700471862 c 2
+ 235.229560764 306.605650161 217.213261657 292.817382812 196.001953125 292.817382812 c 0
+ 169.510033125 292.817382812 148.001953125 314.325462812 148.001953125 340.817382812 c 0
+ 148.001953125 344.145134746 148.341325636 347.394247475 148.987318946 350.531969287 c 2
+ 286.346693946 1017.71458648 l 2
+ 290.843392586 1039.55597275 310.197160059 1056 333.361328125 1056 c 0
+ 337.662209528 1056 341.831734253 1055.43312186 345.799196737 1054.37007115 c 2
+ 423.0736108 1033.66499303 l 2
+ 443.54432479 1028.18002446 458.635742188 1009.48596047 458.635742188 987.294921875 c 0
 EndSplineSet
 Comment: "{}"
 EndChar
