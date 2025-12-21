@@ -1,21 +1,31 @@
 # Old Timey Mono
 
-## DOWNLOAD
+## Are You Using Old Timey Mono or Old Timey Code?
+
+I would love [to hear from you](mailto:dsembry@gmail.com?subject=Old+Timey+Mono).
+
+If you're using it on your website, project, advertising campaign, or
+something, please tell me if I have permission to take a screenshot.
+And/or send me a screenshot.
+
+You can also send me money.  If you can't afford it, then don't.
+
+## Download
 
 It will be under [Releases](https://github.com/dse/old-timey-mono-font/releases).
 
-## SPECIMEN
+## Specimen
 
 https://webonastick.com/fonts/old-timey-mono/
 
 ## About
 
 A clean monospace typeface based on Reproducing Typewriter which was
-available as early as 1906.  Reproducing Typewriter was designed for
-simulating typewritten letters in smaller point sizes for
-advertisements, catalogs, etc., where readability and/or distortion
-resulting from duplication were issues with faces based on actual
-typewriters at the time.
+available as early as 1906.  Reproducing Typewriter was a metal
+typeface designed for simulating typewritten letters in smaller point
+sizes for advertisements, catalogs, etc., where readability and/or
+distortion resulting from duplication were issues with faces based on
+actual typewriters at the time.
 
 "Sight Saver" typewriter faces designed for readability were also
 available, though they were at larger sizes than ordinary pica or
@@ -32,7 +42,7 @@ for screenplay writing.
 
 ![Old Timey Mono](public/images/old-timey-mono.png)
 
-## Code Variant
+## Old Timey Code
 
 Along with Old Timey Mono, there is Old Timey Code.  It has a slashed
 zero, disambiguated digit one, selected punctuation marks made larger,
