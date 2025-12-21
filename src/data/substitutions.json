@@ -6,6 +6,34 @@
         ["DFLT", ["ENG ", "dflt"]]
     ],
     "substitutions": {
+        "'VCEN' Vertically Centered Glyphs": {
+            "features": ["VCEN"],
+            "subtables": {
+                "'VCEN' Vertically Centered Glyphs-1": {
+                    "#": ".VCEN",
+                    "%": ".VCEN",
+                    "(": ".VCEN",
+                    ")": ".VCEN",
+                    "*": ".VCEN",
+                    "+": ".VCEN",
+                    "-": ".VCEN",
+                    "/": ".VCEN",
+                    ":": ".VCEN",
+                    "<": ".VCEN",
+                    "=": ".VCEN",
+                    ">": ".VCEN",
+                    "@": ".VCEN",
+                    "[": ".VCEN",
+                    "\\": ".VCEN",
+                    "]": ".VCEN",
+                    "^": ".VCEN",
+                    "{": ".VCEN",
+                    "|": ".VCEN",
+                    "}": ".VCEN",
+                    "~": ".VCEN"
+                }
+            }
+        },
         "'c2pc' Caps to Petite Caps": {
             "features": ["c2pc"],
             "subtables": {
