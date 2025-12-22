@@ -6,6 +6,15 @@
         ["DFLT", ["ENG ", "dflt"]]
     ],
     "substitutions": {
+        "'BASE' Baseline Underlines": {
+            "features": ["BASE"],
+            "subtables": {
+                "'BASE' Baseline Underlines-1": {
+                    "_": ".BASE",
+                    "U+2017": ".BASE"
+                }
+            }
+        },
         "'VCEN' Vertically Centered Glyphs": {
             "features": ["VCEN"],
             "subtables": {
@@ -244,7 +253,10 @@
                     "five": "five.ss07",
                     "a": "a.ss07",
                     "dollar": "dollar.ss07",
-                    "numbersign": "numbersign.ss07"
+                    "numbersign": "numbersign.ss07",
+                    "c": "c.ss04",
+                    "e": "e.ss04",
+                    "s": "s.ss04"
                 }
             }
         }
