@@ -39,17 +39,24 @@ Major changes:
     that were in the Latin Extended Additional block.  Those were unwieldy to maintain.
 -   Removed unused combining marks.
 -   Redid accent placements again.
--   Add small caps.
--   Add petite caps.
+-   Add small caps, along with "c2sc" and "scap" OpenType features.
+-   Add petite caps, along with "c2pc" and "pcap" OpenType features.
 -   Added selected symbols from Symbols for Legacy Computing.
+-   Added "BASE" for underlines on the baseline (better for `snake_case_identifiers` in my opinion).
+-   Added "VCEN" for vertically centered glyphs.
 
-Minor changes:
--   U+1E9E CAPITAL LETTER SHARP S added.
--   Added U+3003 DITTO MARK.
--   Fixed issue where U+042F and U+044F CYRILLIC CAPITAL AND SMALL
-    LETTERS YA were backwards.
--   Fixed minor alignment issue with U+03C7 GREEK SMALL LETTER CHI.
--   Fixed a minor issue with U+0070 LATIN SMALL LETTER P
+New Characters:
+-   U+1E9E LATIN CAPITAL LETTER SHARP S, to accompany U+00DF LATIN SMALL LETTER SHARP S
+-   U+3003 DITTO MARK
+
+Character Fixes:
+-   Fixed issue where these were backwards:
+    -   U+042F CYRILLIC CAPITAL LETTER YA
+    -   U+044F CYRILLIC SMALL LETTER YA
+-   Fixed minor alignment issue with:
+    -   U+03C7 GREEK SMALL LETTER CHI
+-   Fixed a minor issue with:
+    -   U+0070 LATIN SMALL LETTER P
 -   Fixed the following characters because I didn't like the bottom terminals:
     -   U+025B LATIN SMALL LETTER OPEN E
     -   U+025C LATIN SMALL LETTER REVERSED OPEN E
@@ -57,7 +64,11 @@ Minor changes:
     -   U+03B5 GREEK SMALL LETTER EPSILON
     -   U+0437 CYRILLIC SMALL LETTER ZE
 
-Administrative changes not affecting the font:
+Minor Changes:
+-   Made sure existing OpenType features actually work.
+-   Renamed vendor-defined features to ones reserved for vendor use (matching `/^[A-Z]{4}$/`).
+
+Administrative Changes Not Affecting the Font:
 -   Added some comments in README.md about opening/installation
     issues in Windows.
 -   I have an official vendor ID!  I am officially registered on
