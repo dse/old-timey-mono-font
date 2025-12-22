@@ -496,11 +496,15 @@ clean: FORCE
 	\) -exec rm {} + || true
 	/bin/rm -fr $(SRC_BUILD) || true
 
-data: src/data/font-data.json src/data/font-glyphs-data.json
-src/data/font-data.json: support/bin/fontdata.py src/data/panose.json # dist/ttf/OldTimeyMono.ttf
+data: src/data/font-data.json src/data/glyphs-data.json 
+
+# i don't believe this is used
+src/data/font-data.json: support/bin/fontdata.py src/data/panose.json dist/ttf/OldTimeyMono.ttf
 	support/bin/fontdata.py dist/ttf/OldTimeyMono.ttf >"$@.tmp"
 	mv "$@.tmp" "$@"
-src/data/font-glyphs-data.json: support/bin/glyphsdata.py # dist/ttf/OldTimeyMono.ttf
+
+# used to generate character repertoire page
+src/data/glyphs-data.json: support/bin/glyphsdata.py dist/ttf/OldTimeyMono.ttf
 	support/bin/glyphsdata.py dist/ttf/OldTimeyMono.ttf >"$@.tmp"
 	mv "$@.tmp" "$@"
 
