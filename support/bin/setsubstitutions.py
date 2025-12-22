@@ -60,10 +60,24 @@ def main():
             font.addLookup(lookup_name, "gsub_single", (), feature_script_lang_tuple)
             for subtable_name, subtable_data in subtables.items():
                 font.addLookupSubtable(lookup_name, subtable_name)
-                for glyph_name, other_glyph_name in subtable_data.items():
+                for char_name, other_glyph_name in subtable_data.items():
+
+                    codepoint = parse_char(char_name, as=int)
+                    glyph_name = fontforge.nameFromUnicode(codepoint)
+
+                    if other_glyph_name in font: # e.g., "colon.VCEN"
+                        pass                     # OK
+                    elif other_glyph_name.startswith("."): # e.g., ".VCEN"
+                        other_glyph_name = glyph_name + other_glyph_name # e.g., "colon.VCEN"
+
                     if glyph_name in font and other_glyph_name in font:
                         glyph = font[glyph_name]
                         glyph.addPosSub(subtable_name, other_glyph_name)
+                    else:
+                        if glyph_name not in font:
+                            print("WARNING: %s (used in subtable %s) not in font" % (glyph_name, subtable_name))
+                        if other_glyph_name not in font:
+                            print("WARNING: %s (used in subtable %s) not in font" % (other_glyph_name, subtable_name))
 
         # add lookups for cvXX variants
         variant_glyphs = [glyph for glyph in list(font.glyphs())

@@ -9,6 +9,9 @@ import json
 import psMat
 
 sys.path.append(os.getenv("HOME") + "/git/dse.d/fontforge-utilities/lib")
+sys.path.append(os.getenv("HOME") + "/git/dse.d/fonts.d/old-timey-mono-font/support/lib")
+
+from my_font_utils import parse_char
 
 def main():
     global args
@@ -24,16 +27,8 @@ def main():
     font = fontforge.open(args.filename)
 
     for glyph_name, dest_char in references.items():
-
-        if type(dest_char) == str:
-            if len(dest_char) == 1:
-                dest_codepoint = ord(dest_char)
-                dest_glyph_name = fontforge.nameFromUnicode(dest_codepoint)
-            else:
-                dest_codepoint = fontforge.unicodeFromName(dest_char)
-                dest_glyph_name = dest_char
-        else:
-            raise Exception("unsupported reference value: %s" % repr(dest_char))
+        dest_codepoint = parse_char(dest_char, as=int)
+        dest_glyph_name = fontforge.nameFromUnicode(dest_codepoint)
 
         if dest_char is None:
             if glyph_name in font:
