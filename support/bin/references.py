@@ -27,7 +27,7 @@ def main():
     font = fontforge.open(args.filename)
 
     for glyph_name, dest_char in references.items():
-        dest_codepoint = parse_char(dest_char, as=int)
+        dest_codepoint = parse_char(dest_char, as_str=False)
         dest_glyph_name = fontforge.nameFromUnicode(dest_codepoint)
 
         if dest_char is None:

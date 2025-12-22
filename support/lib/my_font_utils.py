@@ -366,23 +366,21 @@ def draw_shape(width, x_max, y_max, polygons, font=None, codept=None, glyph=None
 # parse_char("x1f4a9")
 # parse_char("U+1F4A9")
 # parse_char("U1F4A9")
-def parse_char(str, default=ValueError, as=str):
-    if as != str and as != int:
-        raise ValueError("as must be str or int")
+def parse_char(str, default=ValueError, as_str=False):
     if len(str) == 1:
-        return ord(str) if as == int else str
+        return str if as_str else ord(str)
     codepoint = fontforge.unicodeFromName(str)
     if codepoint >= 0:
-        return codepoint if as == int else chr(codepoint)
+        return chr(codepoint) if as_str else codepoint
     try:
         char = unicodedata.lookup(str.upper())
-        return ord(char) if as == int else char
+        return char if as_str else ord(char)
     except KeyError:
         pass
     if match := re.fullmatch(r'(?:0?[Xx]|[Uu]\+?)([0-9A-Fa-f]+)'):
         hex = match.group(1)
         codepoint = int(hex, 16)
-        return codepoint if as == int else chr(codepoint)
+        return chr(codepoint) if as_str else codepoint
     if default == ValueError:
         raise ValueError("invalid character: %s" % repr(str))
     return default
