@@ -1,0 +1,35 @@
+.trial__label {
+    margin-bottom: 1rem;
+}
+.trial__textarea {
+    decoration: none;
+    background-color: inherit;
+    border-color: currentcolor;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    color: white;
+    width: 100%;
+    display: block;
+    margin-bottom: 1rem;
+    font-size: 200%;
+}
+.trial__label {
+    display: block;
+    &--textarea {
+        margin-bottom: 1rem;
+    }
+    &--checkbox {
+        margin-bottom: 0.5rem;
+    }
+}
+.trial__button {
+    decoration: none;
+    padding: 0.5ch 1ch;
+    background-color: #0c0;
+    color: black;
+    border: 1px solid transparent;
+}
+pre.template {
+    display: none;
+}

@@ -1,0 +1,127 @@
+<pre class="template" id="ascii">
+ !&quot;#$%&amp;'()*+,-./
+0123456789:;&lt;=&gt;?
+@ABCDEFGHIJKLMNO
+PQRSTUVWXYZ[\]^_
+`abcdefghijklmno
+pqrstuvwxyz{{"{"}}|{{"}"}}~
+</pre>
+<pre class="template" id="VCEN">
+   YOU'RE SO WHITE YOU'RE #GGGGGG.
+PRICES ARE 25% OFF UNTIL 24:00 HOURS.
+  3+4=7   3-4=-1   3*4=12  3/4=0.75
+ (PAREN)  &lt;ANGLE&gt;  [SQUARE]  {CURLY}
+C:\WINDOWS\SYSTEM32\DRIVERS\ETC\HOSTS
+~/Projects/OldTimeyMono/src/basefont/
+cat src/basefont/OldTimeyMono.sfd | \
+        grep -e '^StartChar:'
+</pre>
+<pre class="template" id="pangrams">
+The quick brown fox jumps over the lazy dog.
+Wafting zephyrs quickly vex bold Jim.
+Pack my box with five dozen liquor jugs.
+Quick nymph bugs vex fjord waltz.
+Waltz, bad nymph, for quick jigs vex.
+Sphinx of black quartz, judge my vow.
+
+Єхидна, ґава, їжак ще й шиплячі плазуни бігцем форсують Янцзи.<!-- UA -->
+
+Съешь ещё этих мягких французских булок, да выпей же чаю.<!-- RU -->
+В чащах юга жил бы цитрус? Да, но фальшивый экземпляр!
+
+Διαφυλάξτε γενικά τη ζωή σας από βαθειά ψυχικά τραύματα.<!-- HE -->
+Ξεσκεπάζω την ψυχοφθόρα βδελυγμία.
+Γκόλφω, βάδιζε μπροστά ξανθή ψυχή!
+Ταχίστη αλώπηξ βαφής ψημένη γη, δρασκελίζει υπέρ νωθρού κυνός.
+Οὐδὸν ὑπερβαίνων ὑψηρεφέος ἄντροιο.
+
+</pre>
+<pre class="template" id="lorem_ipsum">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
+consequat volutpat tortor, sit amet porta nisi bibendum quis. Etiam
+sodales et dolor eget blandit. Morbi dignissim, orci vitae egestas
+lacinia, nisi tellus interdum ipsum, id fermentum odio odio a nisi.
+Morbi fermentum odio risus, ut sollicitudin sem interdum non. Nulla
+id pellentesque nisl. Curabitur tempus sodales vehicula. Vestibulum
+molestie sodales tincidunt.
+</pre>
+<pre class="template" id="code">
+send(to, from, count)
+register short *to, *from;
+register count;
+{
+        register n=(count+7)/8;
+        switch(count%8){
+        case 0:	do{     *to = *from++;
+        case 7:         *to = *from++;
+        case 6:         *to = *from++;
+        case 5:         *to = *from++;
+        case 4:         *to = *from++;
+        case 3:         *to = *from++;
+        case 2:         *to = *from++;
+        case 1:         *to = *from++;
+                }while(--n>0);
+        }
+}
+
+float Q_rsqrt( float number ) {
+    long i;
+    float x2, y;
+    const float threehalfs = 1.5F;
+    x2 = number * 0.5F;
+    y  = number;
+    i  = * ( long * ) &y; // evil floating point bit level hacking
+    i  = 0x5f3759df - ( i &gt;&gt; 1 ); // what the fuck?
+    y  = * ( float * ) &i;
+    y  = y * ( threehalfs - ( x2 * y * y ) ); // 1st iteration
+//	y  = y * ( threehalfs - ( x2 * y * y ) ); // 2nd iteration, this can be removed
+    return y;
+}
+</pre>
+<pre class="template" id="english">
+All human beings are born free and equal in dignity and rights.
+They are endowed with reason and conscience and should act towards
+one another in a spirit of brotherhood.
+
+Everyone is entitled to all the rights and freedoms set forth in
+this Declaration, without distinction of any kind, such as race,
+colour, sex, language, religion, political or other opinion, national
+or social origin, property, birth or other status.
+
+Furthermore, no distinction shall be made on the basis of the
+political, jurisdictional or international status of the country
+or territory to which a person belongs, whether it be independent,
+trust, non-self-governing or under any other limitation of sovereignty.
+</pre>
+<pre class="template" id="greek">
+'Ολοι οι άνθρωποι γεννιούνται ελεύθεροι και ίσοι στην αξιοπρέπεια
+και τα δικαιώματα. Είναι προικισμένοι με λογική και συνείδηση, και
+οφείλουν να συμπεριφέρονται μεταξύ τους με πνεύμα αδελφοσύνης.
+
+Κάθε άνθρωπος δικαιούται να επικαλείται όλα τα δικαιώματα και όλες
+τις ελευθερίες που προκηρύσσει η παρούσα Διακήρυξη, χωρίς καμία
+απολύτως διάκριση, ειδικότερα ως προς τη φυλή, το χρώμα, το φύλο,
+τη γλώσσα, τις θρησκείες, τις πολιτικές ή οποιεσδήποτε άλλες
+πεποιθήσεις, την εθνική ή κοινωνική καταγωγή, την περιουσία, τη
+γέννηση ή οποιαδήποτε άλλη κατάσταση.
+
+Δεν θα μπορεί ακόμα να γίνεται καμία διάκριση εξαιτίας του πολιτικού,
+νομικού ή διεθνούς καθεστώτος της χώρας από την οποία προέρχεται
+κανείς, είτε πρόκειται για χώρα ή εδαφική περιοχή ανεξάρτητη, υπό
+κηδεμονία ή υπεξουσία, ή που βρίσκεται υπό οποιονδήποτε άλλον
+περιορισμό κυριαρχίας.
+</pre>
+<pre class="template" id="ukrainian">
+Всі люди народжуються вільними і рівними у своїй гідності та правах.
+Вони наділені розумом і совістю і повинні діяти у відношенні один
+до одного в дусі братерства.
+
+Кожна людина повинна мати всі права і всі свободи, проголошені цією
+Декларацією, незалежно від раси, кольору шкіри, статі, мови, релігії,
+політичних або інших переконань, національного чи соціального
+походження, майнового, станового або іншого становища.
+
+беручи до уваги, що необхідно, щоб права людини охоронялися силою
+закону з метою забезпечення того, щоб людина не була змушена вдаватиця
+як до останнього засобу до повстання проти тиранії і гноблення; і
+</pre>

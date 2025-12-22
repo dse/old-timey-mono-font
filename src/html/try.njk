@@ -1,0 +1,175 @@
+{% extends "_layouts/layout.njk" %}
+{% set pageTitle = "Try Old Timey Mono" %}
+
+{% block main %}
+    <div class="container">
+        <div id="trial">
+            <form>
+                {% include "_try_examples.njk" %}
+                <h2>Type Text Here</h2>
+                <label class="trial__label trial__label--textarea">
+                    <textarea id="trial__textarea" class="trial__textarea" rows="12"></textarea>
+                </label>
+                <h2>Samples</h2>
+                <p>
+                    <button class="trial__button" type="button" name="example" value="ascii">ASCII</button>
+                    <button class="trial__button" type="button" name="example" value="VCEN">VCEN Demo</button>
+                    <button class="trial__button" type="button" name="example" value="lorem_ipsum">Lorem Ipsum</button>
+                    <button class="trial__button" type="button" name="example" value="pangrams">Pangrams</button>
+                    <button class="trial__button" type="button" name="example" value="code">Code</button>
+                    <button class="trial__button" type="button" name="example" value="english">English</button>
+                    <button class="trial__button" type="button" name="example" value="greek">Greek</button>
+                    <button class="trial__button" type="button" name="example" value="ukrainian">Ukrainian</button>
+                </p>
+                <h2>Compare</h2>
+                <p>
+                    <label>
+                        <input type="radio" class="trial__radio" name="compare" value="Old Timey Mono" checked /> Old Timey
+                    </label>
+                    <label>
+                        <input type="radio" class="trial__radio" name="compare" value="Courier New" /> Courier New
+                    </label>
+                    <label>
+                        <input type="radio" class="trial__radio" name="compare" value="Consolas" /> Consolas (if you have it)
+                    </label>
+                </p>
+                <h2>Stylistic Sets and Character Variants</h2>
+                <label class="trial__label trial__label--checkbox">
+                    <input type="checkbox" class="trial__checkbox" name="feature" value="VCEN"> VCEN Vertically Centered Glyphs
+                </label>
+                <label class="trial__label trial__label--checkbox">
+                    <input type="checkbox" class="trial__checkbox" name="feature" value="BASE"> BASE Underlines on the Baseline
+                </label>
+                <label class="trial__label trial__label--checkbox">
+                    <input type="checkbox" class="trial__checkbox" name="feature" value="ss01"> ss01 Code-Friendly
+                </label>
+                <label class="trial__label trial__label--checkbox">
+                    <input type="checkbox" class="trial__checkbox" name="feature" value="ss02"> ss02 Code Brackets
+                </label>
+                <label class="trial__label trial__label--checkbox">
+                    <input type="checkbox" class="trial__checkbox" name="feature" value="ss03"> ss03 Code Digits
+                </label>
+                <label class="trial__label trial__label--checkbox">
+                    <input type="checkbox" class="trial__checkbox" name="feature" value="ss04"> ss04 Apertured Letters (used for code)
+                </label>
+                <label class="trial__label trial__label--checkbox">
+                    <input type="checkbox" class="trial__checkbox" name="feature" value="ss05"> ss05 Larger Punctuation (used for code)
+                </label>
+                <label class="trial__label trial__label--checkbox">
+                    <input type="checkbox" class="trial__checkbox" name="feature" value="ss06"> ss06 Code Symbols
+                </label>
+                <label class="trial__label trial__label--checkbox">
+                    <input type="checkbox" class="trial__checkbox" name="feature" value="ss07">
+                    <div style="display: inline-block; vertical-align: top;">
+                        ss07 Simplified Forms for Size Reduction
+                        <br>
+                        (some are used for certain half-sized letters created for subscripts, superscripts, fractions, etc.)
+                    </div>
+                </label>
+                <label class="trial__label trial__label--checkbox">
+                    <input type="checkbox" class="trial__checkbox" name="feature" value="c2pc"> c2pc Caps to Petite Caps
+                    (ASCII only)
+                </label>
+                <label class="trial__label trial__label--checkbox">
+                    <input type="checkbox" class="trial__checkbox" name="feature" value="c2sc"> c2sc Caps to Small Caps
+                    (ASCII only)
+                </label>
+                <label class="trial__label trial__label--checkbox">
+                    <input type="checkbox" class="trial__checkbox" name="feature" value="pcap"> pcap Lowercase to Petite Caps
+                    (ASCII only)
+                </label>
+                <label class="trial__label trial__label--checkbox">
+                    <input type="checkbox" class="trial__checkbox" name="feature" value="smcp"> smcp Lowercase to Small Caps
+                    (ASCII only)
+                </label>
+                <label class="trial__label trial__label--checkbox">
+                    <input type="checkbox" class="trial__checkbox" name="feature" value="cv01"> cv01 Digit One with Curly Top
+                </label>
+                <label class="trial__label trial__label--checkbox">
+                    <input type="checkbox" class="trial__checkbox" name="feature" value="cv02"> cv02 Code-Friendly Small L
+                </label>
+                <label class="trial__label trial__label--checkbox">
+                    <input type="checkbox" class="trial__checkbox" name="feature" value="cv03"> cv03 Shortened Number Sign
+                </label>
+                <label class="trial__label trial__label--checkbox">
+                    <input type="checkbox" class="trial__checkbox" name="feature" value="cv04"> cv04 Shortened Slash
+                </label>
+                <label class="trial__label trial__label--checkbox">
+                    <input type="checkbox" class="trial__checkbox" name="feature" value="cv05"> cv05 Zero with Dot
+                </label>
+                <label class="trial__label trial__label--checkbox">
+                    <input type="checkbox" class="trial__checkbox" name="feature" value="cv06"> cv06 Zero with Large Dot
+                </label>
+                <label class="trial__label trial__label--checkbox">
+                    <input type="checkbox" class="trial__checkbox" name="feature" value="cv07"> cv07 Alternate At-Sign
+                </label>
+                <label class="trial__label trial__label--checkbox">
+                    <input type="checkbox" class="trial__checkbox" name="feature" value="cv08"> cv08 Shortened Backslash
+                </label>
+                <label class="trial__label trial__label--checkbox">
+                    <input type="checkbox" class="trial__checkbox" name="feature" value="cv09"> cv09 Plain Grave Accent
+                </label>
+                <label class="trial__label trial__label--checkbox">
+                    <input type="checkbox" class="trial__checkbox" name="feature" value="cv10"> cv10 Curly Small L
+                </label>
+                <label class="trial__label trial__label--checkbox">
+                    <input type="checkbox" class="trial__checkbox" name="feature" value="cv11"> cv11 Taller Equal Sign
+                </label>
+                <label class="trial__label trial__label--checkbox">
+                    <input type="checkbox" class="trial__checkbox" name="feature" value="cv12"> cv12 Larger Left Curly Bracket, Alternate
+                </label>
+                <label class="trial__label trial__label--checkbox">
+                    <input type="checkbox" class="trial__checkbox" name="feature" value="cv13"> cv13 Larger Right Curly Bracket, Alternate
+                </label>
+            </form>
+        </div>
+    </div>
+    <script>
+        const trial = document.getElementById("trial");
+        const checkboxes = document.querySelectorAll("[type=checkbox][name=feature]");
+        const buttons = document.querySelectorAll("button[type=button][name=example]");
+        const textarea = document.getElementById("trial__textarea");
+        const compares = document.querySelectorAll("[type=radio][name=compare]");
+        console.log(`${checkboxes.length} checkbox(es)`);
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener("change", function () {
+                console.log(`checkbox clicked`);
+                update();
+            });
+        });
+        buttons.forEach(button => {
+            button.addEventListener("click", function () {
+                textarea.value = document.getElementById(button.getAttribute("value")).innerText;
+            });
+        });
+        compares.forEach(compare => {
+            compare.addEventListener("change", function () {
+                update();
+            });
+        });
+        update();
+        function update() {
+            const features = [];
+            checkboxes.forEach(checkbox => {
+                if (checkbox.checked) {
+                    features.push(checkbox.value);
+                }
+            });
+            console.log(`features: ${features.join(", ")}`);
+            const fontFeatureSettings = features.map(f => `"${f}" 1`).join(", ");
+            console.log(`fontFeatureSettings: ${JSON.stringify(fontFeatureSettings)}`);
+            if (features.length) {
+                trial.style.fontFeatureSettings = fontFeatureSettings;
+                textarea.style.fontFeatureSettings = fontFeatureSettings;
+            } else {
+                trial.style.fontFeatureSettings = "";
+                textarea.style.fontFeatureSettings = "";
+            }
+            console.log(trial);
+            [...compares].filter(c => c.checked).forEach(c => {
+                textarea.style.fontFamily = c.getAttribute("value");
+            });
+        }
+
+    </script>
+{% endblock %}

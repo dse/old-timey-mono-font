@@ -85,9 +85,13 @@ h2 {
 h3 {
     color: #9c9;
 }
-.old-timey-code {
-    font-family: "Old Timey Code";
-}
 pre {
     margin-left: 4ch;
+    font-family: inherit;
+}
+.old-timey-code {
+    font-family: $font-family-code;
+}
+.pre--code {
+    font-family: $font-family-code;
 }
