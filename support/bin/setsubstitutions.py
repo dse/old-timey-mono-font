@@ -1,7 +1,12 @@
 #!/usr/bin/env -S fontforge -quiet
 # -*- mode: python; coding: utf-8 -*-
 import fontforge, argparse, os, sys, json, re
+
 sys.path.append(os.getenv("HOME") + "/git/dse.d/fontforge-utilities/lib")
+sys.path.append(os.getenv("HOME") + "/git/dse.d/fonts.d/old-timey-mono-font/support/lib")
+
+from my_font_utils import parse_char
+
 import silence
 def main():
     global args
@@ -62,7 +67,7 @@ def main():
                 font.addLookupSubtable(lookup_name, subtable_name)
                 for char_name, other_glyph_name in subtable_data.items():
 
-                    codepoint = parse_char(char_name, as=int)
+                    codepoint = parse_char(char_name, as_str=False)
                     glyph_name = fontforge.nameFromUnicode(codepoint)
 
                     if other_glyph_name in font: # e.g., "colon.VCEN"
