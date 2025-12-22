@@ -8,8 +8,8 @@
    version="1.1"
    id="svg5"
    xml:space="preserve"
-   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
-   sodipodi:docname="025c.svg"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25)"
+   sodipodi:docname="025c-latin-small-letter-reversed-open-e.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -26,15 +26,15 @@
    inkscape:document-units="px"
    showgrid="false"
    inkscape:zoom="0.45254834"
-   inkscape:cx="-196.66407"
-   inkscape:cy="881.67377"
-   inkscape:window-width="1908"
-   inkscape:window-height="1017"
-   inkscape:window-x="1128"
-   inkscape:window-y="418"
-   inkscape:window-maximized="1"
+   inkscape:cx="406.5864"
+   inkscape:cy="1177.7747"
+   inkscape:window-width="1312"
+   inkscape:window-height="809"
+   inkscape:window-x="0"
+   inkscape:window-y="25"
+   inkscape:window-maximized="0"
    inkscape:current-layer="layer1"
-   showguides="false"
+   showguides="true"
    inkscape:lockguides="false">
     <inkscape:grid
    type="xygrid"
@@ -45,7 +45,7 @@
    originx="0"
    originy="0"
    units="px"
-   visible="true" />
+   visible="false" />
     <sodipodi:guide
    position="0,21"
    orientation="0,1"
@@ -250,11 +250,11 @@
    inkscape:groupmode="layer"
    id="layer1"
    style="display:inline"><path
-     id="path1499"
+     id="path1499-7"
      style="display:inline;fill:none;stroke:#000000;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2.61313;stroke-opacity:1"
-     d="m 9.7499997,70.875001 c 0,6.282239 6.1966773,11.375001 21.7500013,11.375001 C 47.053325,82.250002 53.25,77.15724 53.25,70.875001 53.25,64.592761 44.290006,59.5 31.500003,59.5"
-     sodipodi:nodetypes="czzc" /><path
-     id="path1501"
+     d="M 9.75,75 C 13.5,78.75 21,82.25 31.500001,82.25 47.053325,82.25 53.25,77.15724 53.25,70.875 53.25,64.592761 44.290006,59.5 31.500003,59.5"
+     sodipodi:nodetypes="cszc" /><path
+     id="path1501-5"
      style="display:inline;fill:none;stroke:#000000;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2.61313;stroke-opacity:1"
      d="m 31.500003,59.5 c 11.112628,0 19.504175,-4.70101 19.504175,-10.5 0,-5.798989 -6.620983,-10.5 -19.504175,-10.5 -7.611697,0 -13.037428,1.640995 -16.203197,4.179894"
      sodipodi:nodetypes="czsc" /></g>
