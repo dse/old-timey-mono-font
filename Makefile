@@ -1,6 +1,8 @@
 # if fontunhint executes on a font, pyftfeatfreeze breaks.
 
-default: fonts zip
+# data => npm run build
+
+default: fonts zip data npm-run-build
 
 SRC_BASEFONT			= src/basefont
 SRC_DATA			= src/data
@@ -512,5 +514,8 @@ version: FORCE
 
 publish:
 	ssh dse@webonastick.com 'cd git/dse.d/fonts.d/old-timey-mono-font && git pull && cd specimen && yarn build'
+
+npm-run-build: FORCE
+	npm run build
 
 .PHONY: FORCE
