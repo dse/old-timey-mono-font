@@ -17,9 +17,12 @@ MAKEFILE			= Makefile
 
 BASEFONT_SFD			= $(SRC_BASEFONT)/$(PS_OTMONO_FONT_FAMILY).sfd
 
-#                                 XXX.YZZ, typically
-SFNT_REVISION			= 000.904 # x.incremental
-VERSION				= 0.10.0  # x.y.z
+#                      typically: XXX.YZZ, incremental
+SFNT_REVISION			= 000.904
+
+#                      typically: major.minor.patch
+VERSION				= 0.10.0
+
 VENDOR				= DARN
 COPYRIGHT_OWNER			= Darren Embry
 COPYRIGHT_EMAIL			= dsembry@gmail.com
