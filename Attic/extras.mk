@@ -1,0 +1,107 @@
+# update source font fron SVG files, for testing if referenced glyphs
+# are too close. (accented letters mostly)
+update-168: FORCE
+    $(SVG_PY) $(BASEFONT_SFD) $(SRC_SVGS)
+    $(BOUNDS_PY) $(BASEFONT_SFD)
+    $(SMOL_PY) $(BASEFONT_SFD)
+    $(SUPERSUB_PY) $(BASEFONT_SFD)
+    $(STROKES_PY) --expand-stroke 168 $(BASEFONT_SFD)
+    $(NOTDEF_PY) $(BASEFONT_SFD)
+    $(FONTAUTOHINT_PY) $(BASEFONT_SFD)
+    $(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) $(BASEFONT_SFD)
+    $(REFERENCES_PY) $(BASEFONT_SFD) $(REFERENCES_JSON)
+    setfontmetas --vendor "$(VENDOR)" --version "$(VERSION)" --sfnt-revision "$(SFNT_REVISION)" $(BASEFONT_SFD)
+    make fix-strokes-log
+update-24: FORCE
+    $(SVG_PY) $(BASEFONT_SFD) $(SRC_SVGS)
+    $(BOUNDS_PY) $(BASEFONT_SFD)
+    $(SMOL_PY) $(BASEFONT_SFD)
+    $(SUPERSUB_PY) $(BASEFONT_SFD)
+    $(STROKES_PY) --expand-stroke 24 $(BASEFONT_SFD)
+    $(NOTDEF_PY) $(BASEFONT_SFD)
+    $(FONTAUTOHINT_PY) $(BASEFONT_SFD)
+    $(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) $(BASEFONT_SFD)
+    $(REFERENCES_PY) $(BASEFONT_SFD) $(REFERENCES_JSON)
+    setfontmetas --vendor "$(VENDOR)" --version "$(VERSION)" --sfnt-revision "$(SFNT_REVISION)" $(BASEFONT_SFD)
+    make fix-strokes-log
+update-48: FORCE
+    $(SVG_PY) $(BASEFONT_SFD) $(SRC_SVGS)
+    $(BOUNDS_PY) $(BASEFONT_SFD)
+    $(SMOL_PY) $(BASEFONT_SFD)
+    $(SUPERSUB_PY) $(BASEFONT_SFD)
+    $(STROKES_PY) --expand-stroke 48 $(BASEFONT_SFD)
+    $(NOTDEF_PY) $(BASEFONT_SFD)
+    $(FONTAUTOHINT_PY) $(BASEFONT_SFD)
+    $(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) $(BASEFONT_SFD)
+    $(REFERENCES_PY) $(BASEFONT_SFD) $(REFERENCES_JSON)
+    setfontmetas --vendor "$(VENDOR)" --version "$(VERSION)" --sfnt-revision "$(SFNT_REVISION)" $(BASEFONT_SFD)
+    make fix-strokes-log
+update-72: FORCE
+    $(SVG_PY) $(BASEFONT_SFD) $(SRC_SVGS)
+    $(BOUNDS_PY) $(BASEFONT_SFD)
+    $(SMOL_PY) $(BASEFONT_SFD)
+    $(SUPERSUB_PY) $(BASEFONT_SFD)
+    $(STROKES_PY) --expand-stroke 72 $(BASEFONT_SFD)
+    $(NOTDEF_PY) $(BASEFONT_SFD)
+    $(FONTAUTOHINT_PY) $(BASEFONT_SFD)
+    $(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) $(BASEFONT_SFD)
+    $(REFERENCES_PY) $(BASEFONT_SFD) $(REFERENCES_JSON)
+    setfontmetas --vendor "$(VENDOR)" --version "$(VERSION)" --sfnt-revision "$(SFNT_REVISION)" $(BASEFONT_SFD)
+    make fix-strokes-log
+update-128: FORCE
+    $(SVG_PY) $(BASEFONT_SFD) $(SRC_SVGS)
+    $(BOUNDS_PY) $(BASEFONT_SFD)
+    $(SMOL_PY) $(BASEFONT_SFD)
+    $(SUPERSUB_PY) $(BASEFONT_SFD)
+    $(STROKES_PY) --expand-stroke 128 $(BASEFONT_SFD)
+    $(NOTDEF_PY) $(BASEFONT_SFD)
+    $(FONTAUTOHINT_PY) $(BASEFONT_SFD)
+    $(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) $(BASEFONT_SFD)
+    $(REFERENCES_PY) $(BASEFONT_SFD) $(REFERENCES_JSON)
+    setfontmetas --vendor "$(VENDOR)" --version "$(VERSION)" --sfnt-revision "$(SFNT_REVISION)" $(BASEFONT_SFD)
+    make fix-strokes-log
+
+# FONTTOOL__THIN			= --expand-stroke 48
+# FONTTOOL__COMP			= --aspect 0.606060 # 16.5cpi
+# OTMONO_THIN_TTF			= $(DIST_TTF)/$(PS_OTMONO_FONT_FAMILY)-Thin.ttf
+# OTCODE_THIN_TTF			= $(DIST_TTF)/$(PS_OTCODE_FONT_FAMILY)-Thin.ttf
+# OTMONO_COND_THIN_TTF		= $(DIST_TTF)/$(PS_OTMONO_FONT_FAMILY)Cond-Thin.ttf
+# OTCODE_COND_THIN_TTF		= $(DIST_TTF)/$(PS_OTCODE_FONT_FAMILY)Cond-Thin.ttf
+# OTMONO_COMP_TTF			= $(DIST_TTF)/$(PS_OTMONO_FONT_FAMILY)Comp.ttf
+# OTCODE_COMP_TTF			= $(DIST_TTF)/$(PS_OTCODE_FONT_FAMILY)Comp.ttf
+# OTMONO_COMP_LIGHT_TTF		= $(DIST_TTF)/$(PS_OTMONO_FONT_FAMILY)Comp-Light.ttf
+# OTCODE_COMP_LIGHT_TTF		= $(DIST_TTF)/$(PS_OTCODE_FONT_FAMILY)Comp-Light.ttf
+# OTMONO_COMP_THIN_TTF		= $(DIST_TTF)/$(PS_OTMONO_FONT_FAMILY)Comp-Thin.ttf
+# OTCODE_COMP_THIN_TTF		= $(DIST_TTF)/$(PS_OTCODE_FONT_FAMILY)Comp-Thin.ttf
+# NH_OTMONO_THIN_TTF		= $(DIST_TTF)/$(NH_PS_OTMONO_FONT_FAMILY)-Thin.ttf
+# NH_OTCODE_THIN_TTF		= $(DIST_TTF)/$(NH_PS_OTCODE_FONT_FAMILY)-Thin.ttf
+# NH_OTMONO_COND_THIN_TTF		= $(DIST_TTF)/$(NH_PS_OTMONO_FONT_FAMILY)Cond-Thin.ttf
+# NH_OTCODE_COND_THIN_TTF		= $(DIST_TTF)/$(NH_PS_OTCODE_FONT_FAMILY)Cond-Thin.ttf
+# NH_OTMONO_COMP_TTF		= $(DIST_TTF)/$(NH_PS_OTMONO_FONT_FAMILY)Comp.ttf
+# NH_OTCODE_COMP_TTF		= $(DIST_TTF)/$(NH_PS_OTCODE_FONT_FAMILY)Comp.ttf
+# NH_OTMONO_COMP_LIGHT_TTF	= $(DIST_TTF)/$(NH_PS_OTMONO_FONT_FAMILY)Comp-Light.ttf
+# NH_OTCODE_COMP_LIGHT_TTF	= $(DIST_TTF)/$(NH_PS_OTCODE_FONT_FAMILY)Comp-Light.ttf
+# NH_OTMONO_COMP_THIN_TTF		= $(DIST_TTF)/$(NH_PS_OTMONO_FONT_FAMILY)Comp-Thin.ttf
+# NH_OTCODE_COMP_THIN_TTF		= $(DIST_TTF)/$(NH_PS_OTCODE_FONT_FAMILY)Comp-Thin.ttf
+# COMP_FONTS = \
+#   $(OTMONO_COMP_TTF)		\
+#   $(OTCODE_COMP_TTF)		\
+#   $(OTMONO_COMP_LIGHT_TTF)	\
+#   $(OTCODE_COMP_LIGHT_TTF)	\
+#   $(NH_OTMONO_COMP_TTF)		\
+#   $(NH_OTCODE_COMP_TTF)		\
+#   $(NH_OTMONO_COMP_LIGHT_TTF)	\
+#   $(NH_OTCODE_COMP_LIGHT_TTF)
+# $(SRC_BUILD)/$(PS_OTMONO_FONT_FAMILY)Comp.stage1.sfd: $(SRC_BUILD)/$(PS_OTMONO_FONT_FAMILY).stage1.sfd $(MAKEFILE) $(ASPECT_PY_PROG)
+#   @echo "stage 2 compressed"
+#   mkdir -p $(SRC_BUILD)
+#   $(ASPECT_PY) --aspect 0.606060606060 "$<" -o "$@"
+# $(DIST_TTF)/%-Thin.ttf: $(SRC_BUILD)/%.stage1.sfd $(MAKEFILE) $(STROKES_PY_PROG) $(METAS_PY_PROG) $(UNDERLINE_PY_PROG)
+#   @echo "stage 3 thin"
+#   mkdir -p "$(DIST_TTF)"
+#   $(STROKES_PY) -x 48 "$<" -o "$@"
+#   $(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) "$@"
+#   $(FONTFIX_PY) "$@"
+#   $(FONTAUTOHINT_PY) "$@"
+#   $(METAS_PY) "$@"
+#   $(UNDERLINE_PY) -102 48 "$@"
