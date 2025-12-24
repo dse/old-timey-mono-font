@@ -35,6 +35,7 @@ NH_OTCODE_FONT_FAMILY		= Old Timey Code NH
 NH_PS_OTCODE_FONT_FAMILY	= OldTimeyCodeNH
 
 # ONLY specify executable programs' pathnames here.
+# Use *_PY variables to supply arguments.
 SVG_PY_PROG			= $(SUPPORT_BIN)/svg.py
 STROKES_PY_PROG			= $(SUPPORT_BIN)/strokes.py
 ASPECT_PY_PROG			= $(SUPPORT_BIN)/aspect.py
