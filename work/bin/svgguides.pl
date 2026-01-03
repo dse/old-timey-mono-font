@@ -84,9 +84,6 @@ if ($tall) {
     $BASELINE_CENTER = $DESCENT + $STROKE_WIDTH / 2;
 }
 
-printf("ascent = %d\n", $ASCENT);
-printf("descent = %d\n", $DESCENT);
-
 if ($small_caps) {
     my $dh = ($ASCENDER_C2C - $EX_HEIGHT_C2C) / 2;
     $ASCENDER_C2C -= $dh;
