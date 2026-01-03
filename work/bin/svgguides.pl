@@ -15,6 +15,7 @@ use constant COLOR_BLACK    => '#000000';
 use constant COLOR_BLUE     => '#0000ff';
 use constant COLOR_RED      => '#ff0000';
 use constant COLOR_ORANGE   => '#ff9900';
+use constant COLOR_ORANGE__FEINT => '#ffcc80';
 
 use constant COLOR_IS_BROWN => '#986a44';
 use constant COLOR_IS_BLUE  => '#0099e5'; # 26, 4d
@@ -36,16 +37,23 @@ use constant COLOR_OVERSHOOT  => COLOR_GRID_GREEN;
 use constant COLOR_EX_CENTER  => COLOR_GRID_RED;
 use constant COLOR_CAP_CENTER => COLOR_GRID_BLACK;
 use constant COLOR_ACCENT     => COLOR_ORANGE;
+use constant COLOR_ACCENT__FEINT => COLOR_ORANGE__FEINT;
 
-our $WIDTH        = 1008;
-our $HEIGHT       = 1680;
-our $STROKE_WIDTH = 96;
-our $BASELINE     = 384; # y-coordinate of CENTER
-our $DESCENDER    = 300; # amount below baseline, CENTER-TO-CENTER
-our $ASCENDER     = 960; # amount above baseline, CENTER-TO-CENTER
-our $OVERSHOOT    = 20;
-our $EX_HEIGHT    = 660; # amount above baseline, CENTER-TO-CENTER
-our $CAP_HEIGHT   = 960; # amount above baseline, CENTER-TO-CENTER
+# only dependent on font, not on height nor width
+our $DESCENDER_C2C    = 300; # amount below baseline, CENTER-TO-CENTER
+our $ASCENDER_C2C     = 960; # amount above baseline, CENTER-TO-CENTER
+our $OVERSHOOT        = 20;
+our $EX_HEIGHT_C2C    = 660; # amount above baseline, CENTER-TO-CENTER
+our $CAP_HEIGHT_C2C   = 960; # amount above baseline, CENTER-TO-CENTER
+our $STROKE_WIDTH     = 96;
+
+our $WIDTH            = 1008;
+our $HEIGHT           = 1680;
+
+our $ASCENT           = 1344;
+our $DESCENT          = $HEIGHT - $ASCENT;
+our $ACCENT_SEPARATOR = $STROKE_WIDTH;
+our $BASELINE_CENTER  = $DESCENT + $STROKE_WIDTH / 2;
 
 our %NS;
 BEGIN {
@@ -60,6 +68,7 @@ our $in_place = 0;
 our $delete_guides = 0;
 our $small_caps = 0;
 our $accents = 0;
+our $tall = 0;
 
 Getopt::Long::Configure('gnu_getopt');
 Getopt::Long::GetOptions(
@@ -67,12 +76,23 @@ Getopt::Long::GetOptions(
     'd|delete-guides' => \$delete_guides,
     's|small-caps' => \$small_caps,
     'a|accents' => \$accents,
+    't|tall' => \$tall,
 ) or die(":-(");
 
+if ($tall) {
+    $HEIGHT = 2016;
+    $ASCENT = $HEIGHT - ($HEIGHT - $CAP_HEIGHT_C2C - $STROKE_WIDTH) / 2;
+    $DESCENT = $HEIGHT - $ASCENT;
+    $BASELINE_CENTER = $DESCENT + $STROKE_WIDTH / 2;
+}
+
+printf("ascent = %d\n", $ASCENT);
+printf("descent = %d\n", $DESCENT);
+
 if ($small_caps) {
-    my $dh = ($ASCENDER - $EX_HEIGHT) / 2;
-    $ASCENDER -= $dh;
-    $CAP_HEIGHT -= $dh;
+    my $dh = ($ASCENDER_C2C - $EX_HEIGHT_C2C) / 2;
+    $ASCENDER_C2C -= $dh;
+    $CAP_HEIGHT_C2C -= $dh;
 }
 
 local $/ = undef;
@@ -83,40 +103,40 @@ while (<>) {
     $thingy->load_xml($_);
     $thingy->delete_guides();
     if (!$delete_guides) {
-        $thingy->create_guide($BASELINE - $DESCENDER - $STROKE_WIDTH/2, name => 'descender');
-        $thingy->create_guide($BASELINE - $DESCENDER);
-        $thingy->create_guide($BASELINE - $DESCENDER + $STROKE_WIDTH/2);
-        $thingy->create_guide($BASELINE - $DESCENDER - $STROKE_WIDTH/2 - $OVERSHOOT, color => COLOR_OVERSHOOT);
-        $thingy->create_guide($BASELINE - $DESCENDER                   - $OVERSHOOT, color => COLOR_OVERSHOOT);
-        $thingy->create_guide($BASELINE - $DESCENDER + $STROKE_WIDTH/2 - $OVERSHOOT, color => COLOR_OVERSHOOT);
+        $thingy->create_guide($BASELINE_CENTER - $DESCENDER_C2C - $STROKE_WIDTH/2, name => 'descender');
+        $thingy->create_guide($BASELINE_CENTER - $DESCENDER_C2C);
+        $thingy->create_guide($BASELINE_CENTER - $DESCENDER_C2C + $STROKE_WIDTH/2);
+        $thingy->create_guide($BASELINE_CENTER - $DESCENDER_C2C - $STROKE_WIDTH/2 - $OVERSHOOT, color => COLOR_OVERSHOOT);
+        $thingy->create_guide($BASELINE_CENTER - $DESCENDER_C2C                   - $OVERSHOOT, color => COLOR_OVERSHOOT);
+        $thingy->create_guide($BASELINE_CENTER - $DESCENDER_C2C + $STROKE_WIDTH/2 - $OVERSHOOT, color => COLOR_OVERSHOOT);
 
-        $thingy->create_guide($BASELINE - $STROKE_WIDTH/2, name => 'baseline');
-        $thingy->create_guide($BASELINE);
-        $thingy->create_guide($BASELINE + $STROKE_WIDTH/2);
-        $thingy->create_guide($BASELINE - $STROKE_WIDTH/2 - $OVERSHOOT, color => COLOR_OVERSHOOT);
-        $thingy->create_guide($BASELINE                   - $OVERSHOOT, color => COLOR_OVERSHOOT);
-        $thingy->create_guide($BASELINE + $STROKE_WIDTH/2 - $OVERSHOOT, color => COLOR_OVERSHOOT);
+        $thingy->create_guide($BASELINE_CENTER - $STROKE_WIDTH/2, name => 'baseline');
+        $thingy->create_guide($BASELINE_CENTER);
+        $thingy->create_guide($BASELINE_CENTER + $STROKE_WIDTH/2);
+        $thingy->create_guide($BASELINE_CENTER - $STROKE_WIDTH/2 - $OVERSHOOT, color => COLOR_OVERSHOOT);
+        $thingy->create_guide($BASELINE_CENTER                   - $OVERSHOOT, color => COLOR_OVERSHOOT);
+        $thingy->create_guide($BASELINE_CENTER + $STROKE_WIDTH/2 - $OVERSHOOT, color => COLOR_OVERSHOOT);
 
-        $thingy->create_guide($BASELINE + $CAP_HEIGHT/2, color => COLOR_CAP_CENTER, name => 'cap-center');
+        $thingy->create_guide($BASELINE_CENTER + $CAP_HEIGHT_C2C/2, color => COLOR_CAP_CENTER, name => 'cap-center');
 
         if (!$small_caps) {
-            $thingy->create_guide($BASELINE + $EX_HEIGHT + $STROKE_WIDTH/2, name => 'ex-height');
-            $thingy->create_guide($BASELINE + $EX_HEIGHT);
-            $thingy->create_guide($BASELINE + $EX_HEIGHT - $STROKE_WIDTH/2);
-            $thingy->create_guide($BASELINE + $EX_HEIGHT + $STROKE_WIDTH/2 + $OVERSHOOT, color => COLOR_OVERSHOOT);
-            $thingy->create_guide($BASELINE + $EX_HEIGHT                   + $OVERSHOOT, color => COLOR_OVERSHOOT);
-            $thingy->create_guide($BASELINE + $EX_HEIGHT - $STROKE_WIDTH/2 + $OVERSHOOT, color => COLOR_OVERSHOOT);
+            $thingy->create_guide($BASELINE_CENTER + $EX_HEIGHT_C2C + $STROKE_WIDTH/2, name => 'ex-height');
+            $thingy->create_guide($BASELINE_CENTER + $EX_HEIGHT_C2C);
+            $thingy->create_guide($BASELINE_CENTER + $EX_HEIGHT_C2C - $STROKE_WIDTH/2);
+            $thingy->create_guide($BASELINE_CENTER + $EX_HEIGHT_C2C + $STROKE_WIDTH/2 + $OVERSHOOT, color => COLOR_OVERSHOOT);
+            $thingy->create_guide($BASELINE_CENTER + $EX_HEIGHT_C2C                   + $OVERSHOOT, color => COLOR_OVERSHOOT);
+            $thingy->create_guide($BASELINE_CENTER + $EX_HEIGHT_C2C - $STROKE_WIDTH/2 + $OVERSHOOT, color => COLOR_OVERSHOOT);
         }
 
-        $thingy->create_guide($BASELINE + $CAP_HEIGHT + $STROKE_WIDTH/2, name => 'ascender');
-        $thingy->create_guide($BASELINE + $CAP_HEIGHT);
-        $thingy->create_guide($BASELINE + $CAP_HEIGHT - $STROKE_WIDTH/2);
-        $thingy->create_guide($BASELINE + $CAP_HEIGHT + $STROKE_WIDTH/2 + $OVERSHOOT, color => COLOR_OVERSHOOT);
-        $thingy->create_guide($BASELINE + $CAP_HEIGHT                   + $OVERSHOOT, color => COLOR_OVERSHOOT);
-        $thingy->create_guide($BASELINE + $CAP_HEIGHT - $STROKE_WIDTH/2 + $OVERSHOOT, color => COLOR_OVERSHOOT);
+        $thingy->create_guide($BASELINE_CENTER + $CAP_HEIGHT_C2C + $STROKE_WIDTH/2, name => 'ascender');
+        $thingy->create_guide($BASELINE_CENTER + $CAP_HEIGHT_C2C);
+        $thingy->create_guide($BASELINE_CENTER + $CAP_HEIGHT_C2C - $STROKE_WIDTH/2);
+        $thingy->create_guide($BASELINE_CENTER + $CAP_HEIGHT_C2C + $STROKE_WIDTH/2 + $OVERSHOOT, color => COLOR_OVERSHOOT);
+        $thingy->create_guide($BASELINE_CENTER + $CAP_HEIGHT_C2C                   + $OVERSHOOT, color => COLOR_OVERSHOOT);
+        $thingy->create_guide($BASELINE_CENTER + $CAP_HEIGHT_C2C - $STROKE_WIDTH/2 + $OVERSHOOT, color => COLOR_OVERSHOOT);
 
         if (!$small_caps) {
-            $thingy->create_guide($BASELINE + $EX_HEIGHT/2, color => COLOR_EX_CENTER, name => 'ex-center/oper-center');
+            $thingy->create_guide($BASELINE_CENTER + $EX_HEIGHT_C2C/2, color => COLOR_EX_CENTER, name => 'ex-center/oper-center');
         }
 
         $thingy->create_guide($WIDTH/2, orientation => 'vertical');
@@ -124,13 +144,13 @@ while (<>) {
         $thingy->create_guide($WIDTH - $STROKE_WIDTH/2, orientation => 'vertical');
 
         if ($accents) {
-            my $accent_above__bottom = $BASELINE + max($ASCENDER, $CAP_HEIGHT) + $STROKE_WIDTH;
+            my $accent_above__bottom = $BASELINE_CENTER + max($ASCENDER_C2C, $CAP_HEIGHT_C2C) + $STROKE_WIDTH / 2 + $ACCENT_SEPARATOR;
             my $accent_above__top    = $HEIGHT;
             my $accent_above__center = ($accent_above__bottom + $accent_above__top) / 2;
             $thingy->create_guide($accent_above__center, name => 'accent-above--center', color => COLOR_ACCENT);
             $thingy->create_guide($accent_above__top,    name => 'accent-above--top',    color => COLOR_ACCENT);
             $thingy->create_guide($accent_above__bottom, name => 'accent-above--bottom', color => COLOR_ACCENT);
-            my $accent_below__top    = $BASELINE - $STROKE_WIDTH;
+            my $accent_below__top    = $BASELINE_CENTER - $STROKE_WIDTH/2 - $ACCENT_SEPARATOR;
             my $accent_below__bottom = 0;
             my $accent_below__center = ($accent_below__top + $accent_below__bottom) / 2;
             $thingy->create_guide($accent_below__center, name => 'accent-below--center', color => COLOR_ACCENT);
@@ -194,8 +214,8 @@ package My::Thingy {
         $self->{view_box_ymin} = $view_box_ymin;
         $self->{view_box_ymax} = $view_box_ymax;
 
-        printf STDERR ("viewbox start at %f, %f width %f height %f\n",
-                       $view_box_xmin, $view_box_ymin, $view_box_width, $view_box_height);
+        # printf STDERR ("viewbox start at %f, %f width %f height %f\n",
+        #                $view_box_xmin, $view_box_ymin, $view_box_width, $view_box_height);
 
         if (!$svg->hasAttribute('width')) {
         }
@@ -207,7 +227,7 @@ package My::Thingy {
             my ($pos_x, $pos_y) = split(/\s*,\s*/, $pos);
             my $pos_y_svg = $self->y_view_box_to_svg($pos_y);
             my $pos_x_svg = $self->x_view_box_to_svg($pos_x);
-            print("$pos_x, $pos_y => $pos_x_svg, $pos_y_svg\n");
+            # print("$pos_x, $pos_y => $pos_x_svg, $pos_y_svg\n");
         }
     }
     sub delete_guides {
@@ -276,7 +296,7 @@ package My::Thingy {
     }
     sub convert {
         my ($self, $coord, $from_1, $from_2, $to_1, $to_2) = @_;
-        printf STDERR ("%f | %f %f | %f %f\n", $coord, $from_1, $from_2, $to_1, $to_2);
+        # printf STDERR ("%f | %f %f | %f %f\n", $coord, $from_1, $from_2, $to_1, $to_2);
         my $a = ($coord - $from_1) / ($from_2 - $from_1);
         my $b = $to_1 + $a * ($to_2 - $to_1);
         return $b;
