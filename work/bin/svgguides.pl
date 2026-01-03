@@ -5,7 +5,6 @@ use XML::LibXML;
 use XML::LibXML::XPathContext;
 use Getopt::Long;
 use List::Util qw(max);
-# use Carp::Always;
 
 our $NEW_SVG;
 
@@ -39,7 +38,6 @@ use constant COLOR_CAP_CENTER => COLOR_GRID_BLACK;
 use constant COLOR_ACCENT     => COLOR_ORANGE;
 use constant COLOR_ACCENT__FEINT => COLOR_ORANGE__FEINT;
 
-# only dependent on font, not on height nor width
 our $DESCENDER_C2C    = 300; # amount below baseline, CENTER-TO-CENTER
 our $ASCENDER_C2C     = 960; # amount above baseline, CENTER-TO-CENTER
 our $OVERSHOOT        = 20;
