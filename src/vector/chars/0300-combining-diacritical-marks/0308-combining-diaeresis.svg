@@ -24,17 +24,17 @@
    inkscape:pagecheckerboard="0"
    inkscape:deskcolor="#d1d1d1"
    inkscape:document-units="px"
-   showgrid="false"
-   inkscape:zoom="0.90509668"
-   inkscape:cx="471.22038"
-   inkscape:cy="227.6"
-   inkscape:window-width="1440"
-   inkscape:window-height="847"
+   showgrid="true"
+   inkscape:zoom="0.39221416"
+   inkscape:cx="420.68854"
+   inkscape:cy="53.542178"
+   inkscape:window-width="1312"
+   inkscape:window-height="431"
    inkscape:window-x="0"
    inkscape:window-y="25"
-   inkscape:window-maximized="1"
+   inkscape:window-maximized="0"
    inkscape:current-layer="layer1"
-   showguides="true"
+   showguides="false"
    inkscape:lockguides="false">
     <inkscape:grid
    type="xygrid"
@@ -45,7 +45,7 @@
    originx="0"
    originy="0"
    units="px"
-   visible="false" />
+   visible="true" />
     
     
     
@@ -271,51 +271,27 @@
     
     
     
-  <g
-   id="g17419"
-   transform="translate(-10.5,-0.75)"><g
-     id="layer3-5"
-     inkscape:label="Layer 3"
-     style="display:inline;opacity:0.5;stroke-width:3.6;stroke-dasharray:none"
-     transform="matrix(0.83333333,0,0,0.83333333,-157.97619,-173.09626)" /><g
-     id="layer2-0"
-     inkscape:label="Layer 2"
-     style="display:inline" /><g
-     inkscape:label="Layer 1"
-     id="layer1-3"
-     style="display:inline">
-    
-    
-    
-    
-    
-    
-    
-  <path
-   id="path16795"
-   style="fill:none;stroke:#84e700;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;paint-order:markers fill stroke"
-   d="m 34.5,8.25 a 3,3 0 0 1 -3,3 3,3 0 0 1 -3,-3 3,3 0 0 1 3,-3 3,3 0 0 1 3,3 z" /></g></g><g
-   id="g17429"
-   transform="translate(10.5,-0.75)"><g
-     id="g17421"
-     inkscape:label="Layer 3"
-     style="display:inline;opacity:0.5;stroke-width:3.6;stroke-dasharray:none"
-     transform="matrix(0.83333333,0,0,0.83333333,-157.97619,-173.09626)" /><g
-     id="g17423"
-     inkscape:label="Layer 2"
-     style="display:inline" /><g
-     inkscape:label="Layer 1"
-     id="g17427"
-     style="display:inline">
-    
-    
-    
-    
-    
-    
-    
-  <path
-   id="circle17425"
-   style="fill:none;stroke:#84e700;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;paint-order:markers fill stroke"
-   d="m 34.5,8.25 a 3,3 0 0 1 -3,3 3,3 0 0 1 -3,-3 3,3 0 0 1 3,-3 3,3 0 0 1 3,3 z" /></g></g></g>
+  <circle
+   style="display:inline;fill:none;stroke:#000099;stroke-width:6;stroke-linecap:round;stroke-linejoin:round"
+   id="path129"
+   cx="21"
+   cy="6"
+   r="0.75" /><path
+   style="display:inline;fill:none;stroke:#000099;stroke-width:6;stroke-linecap:round;stroke-linejoin:round"
+   d="m 20.25,6 h 1.5"
+   id="path130" /><path
+   style="display:inline;fill:none;stroke:#000099;stroke-width:6;stroke-linecap:round;stroke-linejoin:round"
+   d="m 21,5.25 v 1.5"
+   id="path131" /><path
+   style="display:inline;fill:none;stroke:#000099;stroke-width:6;stroke-linecap:round;stroke-linejoin:round"
+   d="m 42.125,5.25 v 1.5"
+   id="path133" /><path
+   style="display:inline;fill:none;stroke:#000099;stroke-width:6;stroke-linecap:round;stroke-linejoin:round"
+   d="m 41.375,6 h 1.5"
+   id="path132" /><circle
+   style="display:inline;fill:none;stroke:#000099;stroke-width:6;stroke-linecap:round;stroke-linejoin:round"
+   id="circle131"
+   cx="42.125"
+   cy="6"
+   r="0.75" /></g>
 </svg>

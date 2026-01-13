@@ -24,10 +24,10 @@
    inkscape:pagecheckerboard="0"
    inkscape:deskcolor="#d1d1d1"
    inkscape:document-units="px"
-   showgrid="false"
-   inkscape:zoom="0.92198569"
-   inkscape:cx="350.87312"
-   inkscape:cy="1487.0079"
+   showgrid="true"
+   inkscape:zoom="0.65580249"
+   inkscape:cx="372.06324"
+   inkscape:cy="1431.8335"
    inkscape:window-width="1312"
    inkscape:window-height="803"
    inkscape:window-x="0"
@@ -45,7 +45,7 @@
    originx="0"
    originy="0"
    units="px"
-   visible="false" />
+   visible="true" />
     
     
     
@@ -284,13 +284,13 @@
      style="display:inline;stroke-width:11.6111;stroke-dasharray:none"
      transform="matrix(0.51674653,0,0,0.51674653,13.40012,53.0592)" /><path
      style="display:inline;fill:none;fill-opacity:1;stroke:#000000;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2.61313;stroke-dasharray:none;stroke-opacity:1"
-     d="m 28.5,101.375 c 0,0 6,-5 6,-10"
+     d="m 28.5,100.5 c 0,0 6,-4.75 6,-9.75"
      id="path8-3"
      sodipodi:nodetypes="cc" /><ellipse
      style="fill:#d40000;stroke:#000099;stroke-width:6;stroke-linecap:round;stroke-linejoin:round"
      id="path1"
      cx="-31.5"
-     cy="-91.375"
+     cy="-90.75"
      rx="3"
      ry="0.75"
      transform="scale(-1)" /></g>

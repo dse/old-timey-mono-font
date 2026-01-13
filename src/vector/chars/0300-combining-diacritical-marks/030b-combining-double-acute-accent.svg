@@ -26,8 +26,8 @@
    inkscape:document-units="px"
    showgrid="true"
    inkscape:zoom="0.46274594"
-   inkscape:cx="517.56262"
-   inkscape:cy="687.20214"
+   inkscape:cx="376.01626"
+   inkscape:cy="289.57574"
    inkscape:window-width="1440"
    inkscape:window-height="847"
    inkscape:window-x="0"
@@ -267,12 +267,12 @@
    style="display:inline">
     
   <path
-   style="fill:none;stroke:#000000;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;paint-order:markers fill stroke"
-   d="M 36.75,12 47.25,3"
-   id="path5836"
+   style="display:inline;fill:none;stroke:#000099;stroke-width:6;stroke-linecap:round;stroke-linejoin:round"
+   d="m 13.5,9 15,-6"
+   id="path125"
    sodipodi:nodetypes="cc" /><path
-   style="fill:none;stroke:#000000;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;paint-order:markers fill stroke"
-   d="M 15.75,12 26.25,3"
-   id="path8229"
+   style="display:inline;fill:none;stroke:#000099;stroke-width:6;stroke-linecap:round;stroke-linejoin:round"
+   d="m 37.5,9 15,-6"
+   id="path125-4"
    sodipodi:nodetypes="cc" /></g>
 </svg>

@@ -25,9 +25,9 @@
    inkscape:deskcolor="#d1d1d1"
    inkscape:document-units="px"
    showgrid="true"
-   inkscape:zoom="1.0532982"
-   inkscape:cx="368.84142"
-   inkscape:cy="282.92083"
+   inkscape:zoom="0.94083516"
+   inkscape:cx="555.88909"
+   inkscape:cy="227.45749"
    inkscape:window-width="1312"
    inkscape:window-height="779"
    inkscape:window-x="0"
@@ -266,10 +266,11 @@
    id="layer1"
    style="display:inline">
     
-  <circle
+  <ellipse
    style="fill:none;stroke:#000000;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;paint-order:markers fill stroke"
    id="path18170"
    cx="31.5"
-   cy="11.375"
-   r="8.375" /></g>
+   cy="11.25"
+   rx="10.499999"
+   ry="8.25" /></g>
 </svg>
