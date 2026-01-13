@@ -9,7 +9,7 @@
    id="svg5"
    xml:space="preserve"
    inkscape:version="1.3.2 (091e20e, 2023-11-25)"
-   sodipodi:docname="0301-combining-acute-accent.svg"
+   sodipodi:docname="0301-combining-acute-accent--LCCM.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -24,15 +24,15 @@
    inkscape:pagecheckerboard="0"
    inkscape:deskcolor="#d1d1d1"
    inkscape:document-units="px"
-   showgrid="true"
-   inkscape:zoom="0.21336331"
-   inkscape:cx="248.4026"
-   inkscape:cy="79.676304"
-   inkscape:window-width="1312"
-   inkscape:window-height="431"
+   showgrid="false"
+   inkscape:zoom="0.61232209"
+   inkscape:cx="396.84996"
+   inkscape:cy="290.69668"
+   inkscape:window-width="1440"
+   inkscape:window-height="847"
    inkscape:window-x="0"
    inkscape:window-y="25"
-   inkscape:window-maximized="0"
+   inkscape:window-maximized="1"
    inkscape:current-layer="layer1"
    showguides="true"
    inkscape:lockguides="false">
@@ -45,7 +45,7 @@
    originx="0"
    originy="0"
    units="px"
-   visible="true" />
+   visible="false" />
     
     
     
@@ -266,8 +266,18 @@
    id="layer1"
    style="display:inline">
     
-  <path
-   style="display:inline;fill:none;stroke:#000099;stroke-width:6;stroke-linecap:round;stroke-linejoin:round"
-   d="m 22.5,9 21,-6"
-   id="path125" /></g>
+  <circle
+   style="fill:none;stroke:#000099;stroke-width:3;stroke-linecap:round;stroke-linejoin:round"
+   id="path1"
+   cx="-40.125"
+   cy="14.125"
+   r="2.625"
+   transform="scale(-1,1)" /><path
+   style="fill:none;stroke:#000099;stroke-width:3;stroke-linecap:round;stroke-linejoin:round"
+   d="M 38.361313,12.180794 21.75,27.25 41.392125,16.423931"
+   id="path2"
+   sodipodi:nodetypes="ccc" /><path
+   style="fill:none;stroke:#000099;stroke-width:3;stroke-linecap:round;stroke-linejoin:round"
+   d="M 21.75,27.25 40.125,14.125"
+   id="path3" /></g>
 </svg>

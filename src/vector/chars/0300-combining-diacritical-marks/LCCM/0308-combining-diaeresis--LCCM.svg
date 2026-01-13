@@ -9,7 +9,7 @@
    id="svg5"
    xml:space="preserve"
    inkscape:version="1.3.2 (091e20e, 2023-11-25)"
-   sodipodi:docname="0308-combining-diaeresis.svg"
+   sodipodi:docname="0308-combining-diaeresis--LCCM.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -24,17 +24,17 @@
    inkscape:pagecheckerboard="0"
    inkscape:deskcolor="#d1d1d1"
    inkscape:document-units="px"
-   showgrid="true"
+   showgrid="false"
    inkscape:zoom="0.39221416"
-   inkscape:cx="420.68854"
-   inkscape:cy="53.542178"
-   inkscape:window-width="1312"
-   inkscape:window-height="431"
+   inkscape:cx="537.9714"
+   inkscape:cy="660.35352"
+   inkscape:window-width="1440"
+   inkscape:window-height="847"
    inkscape:window-x="0"
    inkscape:window-y="25"
-   inkscape:window-maximized="0"
+   inkscape:window-maximized="1"
    inkscape:current-layer="layer1"
-   showguides="false"
+   showguides="true"
    inkscape:lockguides="false">
     <inkscape:grid
    type="xygrid"
@@ -45,7 +45,7 @@
    originx="0"
    originy="0"
    units="px"
-   visible="true" />
+   visible="false" />
     
     
     
@@ -271,27 +271,29 @@
     
     
     
-  <circle
-   style="display:inline;fill:none;stroke:#000099;stroke-width:6;stroke-linecap:round;stroke-linejoin:round"
-   id="path129"
-   cx="21"
-   cy="6"
-   r="0.75" /><path
-   style="display:inline;fill:none;stroke:#000099;stroke-width:6;stroke-linecap:round;stroke-linejoin:round"
-   d="m 20.25,6 h 1.5"
-   id="path130" /><path
-   style="display:inline;fill:none;stroke:#000099;stroke-width:6;stroke-linecap:round;stroke-linejoin:round"
-   d="m 21,5.25 v 1.5"
-   id="path131" /><path
-   style="display:inline;fill:none;stroke:#000099;stroke-width:6;stroke-linecap:round;stroke-linejoin:round"
-   d="m 42.125,5.25 v 1.5"
-   id="path133" /><path
-   style="display:inline;fill:none;stroke:#000099;stroke-width:6;stroke-linecap:round;stroke-linejoin:round"
-   d="m 41.375,6 h 1.5"
-   id="path132" /><circle
-   style="display:inline;fill:none;stroke:#000099;stroke-width:6;stroke-linecap:round;stroke-linejoin:round"
-   id="circle131"
-   cx="42.125"
-   cy="6"
-   r="0.75" /></g>
+  <ellipse
+   style="display:inline;fill:none;stroke:#000099;stroke-width:6.00001;stroke-linecap:round;stroke-linejoin:round"
+   id="path129-1"
+   cx="21.375"
+   cy="23.5"
+   rx="1.1249979"
+   ry="1.1249996" /><path
+   style="display:inline;fill:none;stroke:#000099;stroke-width:6.00001;stroke-linecap:round;stroke-linejoin:round"
+   d="M 20.250063,23.499994 H 22.5"
+   id="path130-6" /><path
+   style="display:inline;fill:none;stroke:#000099;stroke-width:6.00001;stroke-linecap:round;stroke-linejoin:round"
+   d="m 21.375063,22.374994 v 2.25"
+   id="path131-4" /><path
+   style="display:inline;fill:none;stroke:#000099;stroke-width:6.00001;stroke-linecap:round;stroke-linejoin:round"
+   d="m 41.625,22.374994 v 2.25"
+   id="path133-0" /><path
+   style="display:inline;fill:none;stroke:#000099;stroke-width:6.00001;stroke-linecap:round;stroke-linejoin:round"
+   d="m 40.5,23.499994 h 2.25"
+   id="path132-5" /><ellipse
+   style="display:inline;fill:none;stroke:#000099;stroke-width:6.00001;stroke-linecap:round;stroke-linejoin:round"
+   id="circle131-8"
+   cx="41.625"
+   cy="23.5"
+   rx="1.1249979"
+   ry="1.1249996" /></g>
 </svg>

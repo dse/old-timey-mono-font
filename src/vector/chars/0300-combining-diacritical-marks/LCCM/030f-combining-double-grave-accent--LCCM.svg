@@ -9,7 +9,7 @@
    id="svg5"
    xml:space="preserve"
    inkscape:version="1.3.2 (091e20e, 2023-11-25)"
-   sodipodi:docname="030f-combining-double-grave-accent.svg"
+   sodipodi:docname="030f-combining-double-grave-accent--LCCM.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -24,10 +24,10 @@
    inkscape:pagecheckerboard="0"
    inkscape:deskcolor="#d1d1d1"
    inkscape:document-units="px"
-   showgrid="true"
-   inkscape:zoom="0.39729944"
-   inkscape:cx="375.03199"
-   inkscape:cy="410.2699"
+   showgrid="false"
+   inkscape:zoom="0.46731567"
+   inkscape:cx="460.07445"
+   inkscape:cy="579.90779"
    inkscape:window-width="1440"
    inkscape:window-height="847"
    inkscape:window-x="0"
@@ -45,7 +45,7 @@
    originx="0"
    originy="0"
    units="px"
-   visible="true" />
+   visible="false" />
     
     
     
@@ -266,13 +266,31 @@
    id="layer1"
    style="display:inline">
     
-  <path
-   style="display:inline;fill:none;stroke:#000099;stroke-width:6;stroke-linecap:round;stroke-linejoin:round"
-   d="M 49.5,9 34.5,3"
-   id="path125"
-   sodipodi:nodetypes="cc" /><path
-   style="display:inline;fill:none;stroke:#000099;stroke-width:6;stroke-linecap:round;stroke-linejoin:round"
-   d="M 25.5,9 10.5,3"
-   id="path125-4"
+  <circle
+   style="display:inline;fill:none;stroke:#000099;stroke-width:3;stroke-linecap:round;stroke-linejoin:round"
+   id="path1"
+   cx="34.125"
+   cy="14.125"
+   r="2.625" /><path
+   style="display:inline;fill:none;stroke:#000099;stroke-width:3;stroke-linecap:round;stroke-linejoin:round"
+   d="M 36.276638,12.621312 46.5,27.25 32.497454,16.184543"
+   id="path2"
+   sodipodi:nodetypes="ccc" /><path
+   style="display:inline;fill:none;stroke:#000099;stroke-width:3;stroke-linecap:round;stroke-linejoin:round"
+   d="M 46.5,27.25 34.125,14.125"
+   id="path3"
+   sodipodi:nodetypes="cc" /><circle
+   style="display:inline;fill:none;stroke:#000099;stroke-width:3;stroke-linecap:round;stroke-linejoin:round"
+   id="circle1"
+   cx="16.125"
+   cy="14.125"
+   r="2.625" /><path
+   style="display:inline;fill:none;stroke:#000099;stroke-width:3;stroke-linecap:round;stroke-linejoin:round"
+   d="M 18.276638,12.621312 28.5,27.25 14.497454,16.184543"
+   id="path4"
+   sodipodi:nodetypes="ccc" /><path
+   style="display:inline;fill:none;stroke:#000099;stroke-width:3;stroke-linecap:round;stroke-linejoin:round"
+   d="M 28.5,27.25 16.125,14.125"
+   id="path5"
    sodipodi:nodetypes="cc" /></g>
 </svg>
