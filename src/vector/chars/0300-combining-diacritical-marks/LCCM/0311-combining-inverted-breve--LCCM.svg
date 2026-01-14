@@ -9,7 +9,7 @@
    id="svg5"
    xml:space="preserve"
    inkscape:version="1.3.2 (091e20e, 2023-11-25)"
-   sodipodi:docname="0311-combining-inverted-breve.svg"
+   sodipodi:docname="0311-combining-inverted-breve--LCCM.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -24,12 +24,12 @@
    inkscape:pagecheckerboard="0"
    inkscape:deskcolor="#d1d1d1"
    inkscape:document-units="px"
-   showgrid="true"
-   inkscape:zoom="1.061347"
-   inkscape:cx="466.38847"
-   inkscape:cy="211.05256"
+   showgrid="false"
+   inkscape:zoom="0.70789117"
+   inkscape:cx="383.53353"
+   inkscape:cy="395.54103"
    inkscape:window-width="1312"
-   inkscape:window-height="751"
+   inkscape:window-height="735"
    inkscape:window-x="0"
    inkscape:window-y="25"
    inkscape:window-maximized="0"
@@ -45,7 +45,7 @@
    originx="0"
    originy="0"
    units="px"
-   visible="true" />
+   visible="false" />
     
     
     
@@ -253,7 +253,7 @@
    inkscape:groupmode="layer"
    id="layer3"
    inkscape:label="Layer 3"
-   style="display:inline;opacity:0.5;stroke-width:3.6;stroke-dasharray:none"
+   style="display:inline;opacity:0.5;stroke-width:3.60000001;stroke-dasharray:none"
    transform="matrix(0.83333333,0,0,0.83333333,-157.97619,-173.09626)" />
   <g
    inkscape:groupmode="layer"
@@ -267,8 +267,16 @@
    style="display:inline">
     
   <path
-   style="display:inline;fill:none;stroke:#000099;stroke-width:6;stroke-linecap:round;stroke-linejoin:round"
-   d="m 19.5,9 c 1.5,-3 6,-6 12,-6 6,0 10.267949,3 12,6"
-   id="path134"
-   sodipodi:nodetypes="ccc" /></g>
+   style="fill:none;stroke:#000099;stroke-width:3;stroke-linecap:round;stroke-linejoin:round"
+   id="path1"
+   sodipodi:type="arc"
+   sodipodi:cx="31.5"
+   sodipodi:cy="31.688171"
+   sodipodi:rx="14.25"
+   sodipodi:ry="14.25"
+   sodipodi:start="3.403392"
+   sodipodi:end="6.0213859"
+   sodipodi:open="true"
+   sodipodi:arc-type="arc"
+   d="M 17.735557,28.000001 A 14.25,14.25 0 0 1 31.5,17.438171 14.25,14.25 0 0 1 45.264443,28" /></g>
 </svg>
