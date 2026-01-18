@@ -95,9 +95,7 @@ def main():
             unicode = get_origin_unicode(glyph)
             if unicode not in UNICODE_RANGE:
                 continue
-            charname = unicodedata.name(chr(unicode))
-
-            (string, glyphs_and_ctxs, name_string) = get_glyph_struct(glyph)
+            (string, glyphs_and_ctxs, name_string, _) = get_glyph_struct(glyph)
             has = get_glyph_has(glyph)
             if string is None:
                 continue
@@ -158,26 +156,19 @@ def main():
                         print("%s: positioned %s above, with no horizontal shift" % (glyph.glyphname, mark.glyphname))
             else:
                 if args.verbose:
-                    (expanded_string, expanded_glyphs_and_ctxs, expanded_name_string) = get_glyph_struct(glyph, expand=True)
-                    print(  "%s: not yet implemented: %s" % (glyph.glyphname, string))
-                    if args.verbose >= 2:
-                        indent = len(": not yet implemented: ")
-                        print("%-*s%s" % (indent + len(glyph.glyphname), "", name_string))
-                        print("%-*s%s" % (indent + len(glyph.glyphname), "", [x[0].glyphname for x in glyphs_and_ctxs]))
-                        print("%-*s%s" % (indent + len(glyph.glyphname), "", expanded_string))
-                        print("%-*s%s" % (indent + len(glyph.glyphname), "", expanded_name_string))
-                        print("%-*s%s" % (indent + len(glyph.glyphname), "", [x[0].glyphname for x in expanded_glyphs_and_ctxs]))
-
+                    print("%s: not yet implemented: %s" % (glyph.glyphname, string))
+                if args.verbose >= 2:
+                    indent = len(": not yet implemented: ") + len(glyph.glyphname)
+                    print("%-*s%s" % indent, "", name_string))
+                    print("%-*s%s" % indent, "", [x[0].glyphname for x in glyphs_and_ctxs]))
+                    (expanded_string, expanded_glyphs_and_ctxs, expanded_name_string, _) = get_glyph_struct(glyph, expand=True)
+                    print("%-*s%s" % indent, "", expanded_string))
+                    print("%-*s%s" % indent, "", expanded_name_string))
+                    print("%-*s%s" % indent, "", [x[0].glyphname for x in expanded_glyphs_and_ctxs]))
             # elif string == "((base,base),mark_above)":
-            #     print("%s: %s not yet implemented" % (glyph.glyphname, string))
             # elif string == "((base,mark_above),mark_above)":
-            #     print("%s: %s not yet implemented" % (glyph.glyphname, string))
             # elif string == "(base,(base,(base,mark_above)))":
-            #     print("%s: %s not yet implemented" % (glyph.glyphname, string))
             # elif string == "(base,(base,mark_above))":
-            #     print("%s: %s not yet implemented" % (glyph.glyphname, string))
-            # else:
-            #     print("%s: %s not supported" % (glyph.glyphname, string))
         if filename.endswith(".sfd"):
             print("Saving %s" % filename)
             font.save(filename)
@@ -259,35 +250,32 @@ def is_mark(glyph):
         return False
     return True
 
-def get_glyph_type_order(struct):
-    if struct is None:
-        return -1
-    name = struct[0]
-    if name is None:
-        return -1
-    if name == "blank":
-        return 0
-    if name == "base":
+# attempt to normalize glyph structures
+def get_glyph_sort_order(glyph, idx=-1):
+    if glyph is None:
+        return 99
+    if len(glyph.references) == 0:
+        if len(glyph.foreground) == 0:
+            return 98
+        if is_mark(glyph):
+            if is_mark_above(glyph):
+                return 2
+            return 3
         return 1
-    if name.startswith("comp("):
-        return 2
-    if name.startswith("("):
-        return 2
-    if name == "mark":
-        return 3
-    return 99
+    return min([get_glyph_sort_order(glyph.font[ref[0]])
+                for ref in enumerate(glyph.references)])
 
 def get_glyph_struct(glyph, all_marks=False, context=None, expand=False):
     if len(glyph.references) == 0:
         if len(glyph.foreground) == 0:
-            return ("blank", [(glyph, context)], glyph.glyphname)
+            return ("blank", [(glyph, context)], glyph.glyphname, glyph)
         if is_mark(glyph):
             if is_mark_above(glyph):
-                return ("mark_above", [(glyph, context)], glyph.glyphname)
+                return ("mark_above", [(glyph, context)], glyph.glyphname, glyph)
             if all_marks:
-                return ("mark_not_above", [(glyph, context)], glyph.glyphname)
+                return ("mark_not_above", [(glyph, context)], glyph.glyphname, glyph)
             return None
-        return ("base", [(glyph, context)], glyph.glyphname)
+        return ("base", [(glyph, context)], glyph.glyphname, glyph)
     structs = []
     for idx, ref in enumerate(glyph.references):
         referent_name = ref[0]
@@ -298,7 +286,7 @@ def get_glyph_struct(glyph, all_marks=False, context=None, expand=False):
         structs.append(struct)
     if len(structs) == 0:
         return None
-    structs.sort(key=get_glyph_type_order)
+    structs.sort(key=lambda struct: get_glyph_sort_order(struct[3]))
     strings = []
     glyphs_and_ctxs = []
     if expand:
@@ -311,12 +299,12 @@ def get_glyph_struct(glyph, all_marks=False, context=None, expand=False):
             glyphs_and_ctxs.append(add_glyph_and_ctx)
     if not expand:
         if len(structs) == 1:
-            return (("%s" % ",".join(strings)), glyphs_and_ctxs, 
-                    ("%s" % ",".join(names)))
-        return (("(%s)" % ",".join(strings)), glyphs_and_ctxs, 
-                ("(%s)" % ",".join(names)))
+            return (("%s" % ",".join(strings)), glyphs_and_ctxs,
+                    ("%s" % ",".join(names)), glyph)
+        return (("(%s)" % ",".join(strings)), glyphs_and_ctxs,
+                ("(%s)" % ",".join(names)), glyph)
     return (("comp(%s)" % ",".join(strings)), glyphs_and_ctxs,
-            ("%s(%s)" % (glyph.glyphname, ",".join(names))))
+            ("%s(%s)" % (glyph.glyphname, ",".join(names))), glyph)
     
 def get_glyph_has(glyph, has=None):
     if has is None:
