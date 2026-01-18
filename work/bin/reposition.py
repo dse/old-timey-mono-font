@@ -40,6 +40,7 @@ HAS_ASCENDER = {
 }
 print(chr(0x04ee) in HAS_ASCENDER)
 
+MARK_TYPE_OTHER = -1
 MARK_TYPE_ABOVE = 0
 MARK_TYPE_TOP_RIGHT = 1
 MARK_TYPE_BELOW = 2
@@ -56,7 +57,7 @@ MARK_TYPE = {
     "\u037a": MARK_TYPE_BELOW,
     "\u0384": MARK_TYPE_ABOVE,
     "\u0385": MARK_TYPE_ABOVE,  # •/•
-    "\u0387": -1,
+    "\u0387": MARK_TYPE_OTHER,
     "\u1fbe": MARK_TYPE_BELOW,
     "\u1fc0": MARK_TYPE_ABOVE_SPACING,
 }
