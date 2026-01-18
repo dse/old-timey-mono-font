@@ -84,6 +84,7 @@ def main():
     global args
     parser = argparse.ArgumentParser()
     parser.add_argument('filename', nargs='+')
+    parser.add_argument('--verbose', '-v', action='count', default=0)
     args = parser.parse_args()
     for filename in args.filename:
         print(filename)
@@ -152,6 +153,13 @@ def main():
                         mark_ctx_glyph.addReference(*mark_ref)
                     else:
                         mark_ctx_glyph.addReference(*ref)
+                if args.verbose:
+                    if shift_horiz > 0:
+                        print("%s: positioned %s above, shifting right by %d" % (glyph.glyphname, mark.glyphname, shift_horiz))
+                    elif shift_horiz < 0:
+                        print("%s: positioned %s above, shifting left by %d" % (glyph.glyphname, mark.glyphname, -shift_horiz))
+                    else:
+                        print("%s: positioned %s above, with no horizontal shift" % (glyph.glyphname, mark.glyphname))
             elif string == "((base,base),mark_above)":
                 print("%s: %s not yet implemented" % (glyph.glyphname, string))
             elif string == "((base,mark_above),mark_above)":
