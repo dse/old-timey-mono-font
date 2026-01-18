@@ -286,19 +286,8 @@ def get_glyph_struct(glyph, not_all_marks=False, context=None, expand=False):
 
     if len(structs) == 0:
         return None
-    if len(structs) == 1:
-        if expand:
-            return (
-                "(" + structs[0][0] + ")", # string
-                [structs[0][1]],           # building flat list of glyphs
-                [structs[0][2]],           # building flat list of names
-            )
-        return structs[0]
     
     structs.sort(key=get_glyph_type_order)
-
-    # NOTE: a ctx is a tuple of the origin glyph and the index into
-    # its references that points to this glyph.
     strings = []
     glyphs_and_ctxs = []
     names = []
@@ -308,9 +297,11 @@ def get_glyph_struct(glyph, not_all_marks=False, context=None, expand=False):
             glyphs_and_ctxs.append(add_glyph_and_ctx)
         for add_name in struct[2]:
             names.append(add_name)
-            
-    return (("(%s)" % ",".join(strings)), glyphs_and_ctxs, names)
 
+    if len(structs) == 1 and not expand:
+        return (("%s" % ",".join(strings)), glyphs_and_ctxs, names)
+    return (("(%s)" % ",".join(strings)), glyphs_and_ctxs, names)
+    
 def get_glyph_has(glyph, has=None):
     if has is None:
         has = {}
