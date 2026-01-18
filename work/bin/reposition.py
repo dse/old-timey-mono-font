@@ -195,15 +195,12 @@ def find_base_glyphs(glyph):
 
 def has_ascender(glyph):
     if glyph.glyphname in HAS_ASCENDER:
-        has = HAS_ASCENDER[glyph.glyphname]
-        return has
+        return HAS_ASCENDER[glyph.glyphname]
     if glyph.unicode in UNICODE_RANGE:
         if glyph.unicode in HAS_ASCENDER:
-            has = HAS_ASCENDER[glyph.unicode]
-            return has
+            return HAS_ASCENDER[glyph.unicode]
         if chr(glyph.unicode) in HAS_ASCENDER:
-            has = HAS_ASCENDER[chr(glyph.unicode)]
-            return has
+            return HAS_ASCENDER[chr(glyph.unicode)]
 
     origin_glyphname = glyph.glyphname.split(".")[0]
     origin_glyph = glyph.font[origin_glyphname]
@@ -211,15 +208,12 @@ def has_ascender(glyph):
 
     if "." in glyph.glyphname:  # meaning glyph is x.y and we're checking x
         if origin_glyph.glyphname in HAS_ASCENDER:
-            has = HAS_ASCENDER[origin_glyph.glyphname]
-            return has
+            return HAS_ASCENDER[origin_glyph.glyphname]
         if origin_glyph.unicode in UNICODE_RANGE:
             if origin_glyph.unicode in HAS_ASCENDER:
-                has = HAS_ASCENDER[origin_glyph.unicode]
-                return has
+                return HAS_ASCENDER[origin_glyph.unicode]
             if chr(origin_glyph.unicode) in HAS_ASCENDER:
-                has = HAS_ASCENDER[chr(origin_glyph.unicode)]
-                return has
+                return HAS_ASCENDER[chr(origin_glyph.unicode)]
             
     base_glyphs = find_base_glyphs(glyph)
     for base_glyph in base_glyphs:
@@ -228,13 +222,10 @@ def has_ascender(glyph):
         if has_ascender(base_glyph):
             return True
 
-    # We'd rather put a short accent way above a glyph not having an
-    # ascender, than put a tall ascent on top of a glyph with an
-    # ascender.  Assume worst case is the former.
     origin_char = chr(origin_unicode)
     if origin_char.islower():
-        return False
-    return True
+        return False            # assume l/c chars don't have them 
+    return True                 # assume u/c chars do
 
 def is_mark_above(glyph):
     origin_unicode = get_origin_unicode(glyph)
