@@ -263,23 +263,23 @@ def get_glyph_type_order(glyph_type):
         return 3
     return 99
 
-def get_glyph_struct(glyph, not_all_marks=True, context=None, expand=False):
+def get_glyph_struct(glyph, all_marks=False, context=None, expand=False):
     if len(glyph.references) == 0:
         if len(glyph.foreground) == 0:
             return ("blank", [(glyph, context)], [(glyph.glyphname, context)])
         if is_mark(glyph):
             if is_mark_above(glyph):
                 return ("mark_above", [(glyph, context)], [(glyph.glyphname, context)])
-            if not_all_marks:
-                return None
-            return ("mark_not_above", [(glyph, context)], [(glyph.glyphname, context)])
+            if all_marks:
+                return ("mark_not_above", [(glyph, context)], [(glyph.glyphname, context)])
+            return None
         return ("base", [(glyph, context)], [(glyph.glyphname, context)])
 
     structs = []
     for idx, ref in enumerate(glyph.references):
         referent_name = ref[0]
         referent_glyph = glyph.font[referent_name]
-        struct = get_glyph_struct(referent_glyph, not_all_marks=not_all_marks, context=(glyph, idx), expand=expand)
+        struct = get_glyph_struct(referent_glyph, all_marks=all_marks, context=(glyph, idx), expand=expand)
         if struct is None or len(struct) == 0:
             continue
         structs.append(struct)
