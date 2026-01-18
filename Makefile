@@ -203,7 +203,7 @@ testfonts: FORCE
 	ln -n -f -s "$(DISTDIR_NAME)/ttf" $(TESTFONTS_DIR)/latest
 
 # update source font fron SVG files
-update: FORCE
+redraw: FORCE
 	$(SVG_PY) $(BASEFONT_SFD) $(SRC_SVGS)
 	$(BOUNDS_PY) $(BASEFONT_SFD)
 	$(SMOL_PY) $(BASEFONT_SFD)
@@ -216,7 +216,7 @@ update: FORCE
 	setfontmetas --vendor "$(VENDOR)" --version "$(VERSION)" --sfnt-revision "$(SFNT_REVISION)" $(BASEFONT_SFD)
 	make fix-strokes-log
 
-update-test: FORCE
+redraw-test: FORCE
 	$(SVG_PY) $(BASEFONT_SFD) $(SRC_SVGS)
 	$(BOUNDS_PY) $(BASEFONT_SFD)
 	$(SMOL_PY) $(BASEFONT_SFD)
@@ -233,11 +233,20 @@ fix-strokes-log:
 	if test -e strokes.log ; then sort -n strokes.log | sponge strokes.log ; else true ; fi
 
 fonttool: FORCE
-	@echo "use 'make update', dingus." >&2
+	@echo "use 'make redraw', DINGUS." >&2
 	false
 fontsvg: FORCE
-	@echo "use 'make update', dingus." >&2
+	@echo "use 'make redraw', DINGUS." >&2
 	false
+update: FORCE
+	@echo "use 'make redraw', DINGUS." >&2
+	false
+update-test: FORCE
+	@echo "use 'make redraw-test', DINGUS." >&2
+	false
+
+reposition: FORCE
+	work/bin/reposition.py $(BASEFONT_SFD)
 
 symbols: FORCE
 	fontbraille -W 200 -f $(BASEFONT_SFD)
