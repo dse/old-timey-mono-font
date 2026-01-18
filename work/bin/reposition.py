@@ -97,7 +97,7 @@ def main():
                 continue
             charname = unicodedata.name(chr(unicode))
 
-            (string, glyphs_and_ctxs, names) = get_glyph_struct(glyph, no_marks_not_above=True)
+            (string, glyphs_and_ctxs, names) = get_glyph_struct(glyph, not_all_marks=True)
             has = get_glyph_has(glyph)
             if string is None:
                 continue
@@ -263,14 +263,14 @@ def get_glyph_type_order(glyph_type):
         return 3
     return 99
 
-def get_glyph_struct(glyph, no_marks_not_above=False, context=None, unroll=False):
+def get_glyph_struct(glyph, not_all_marks=False, context=None, expand=False):
     if len(glyph.references) == 0:
         if len(glyph.foreground) == 0:
             return ("blank", [(glyph, context)], [(glyph.glyphname, context)])
         if is_mark(glyph):
             if is_mark_above(glyph):
                 return ("mark_above", [(glyph, context)], [(glyph.glyphname, context)])
-            if no_marks_not_above:
+            if not_all_marks:
                 return None
             return ("mark_not_above", [(glyph, context)], [(glyph.glyphname, context)])
         return ("base", [(glyph, context)], [(glyph.glyphname, context)])
@@ -279,7 +279,7 @@ def get_glyph_struct(glyph, no_marks_not_above=False, context=None, unroll=False
     for idx, ref in enumerate(glyph.references):
         referent_name = ref[0]
         referent_glyph = glyph.font[referent_name]
-        struct = get_glyph_struct(referent_glyph, no_marks_not_above=no_marks_not_above, context=(glyph, idx), unroll=unroll)
+        struct = get_glyph_struct(referent_glyph, not_all_marks=not_all_marks, context=(glyph, idx), expand=expand)
         if struct is None or len(struct) == 0:
             continue
         structs.append(struct)
@@ -287,7 +287,7 @@ def get_glyph_struct(glyph, no_marks_not_above=False, context=None, unroll=False
     if len(structs) == 0:
         return None
     if len(structs) == 1:
-        if unroll:
+        if expand:
             return (
                 "(" + structs[0][0] + ")", # string
                 [structs[0][1]],           # building flat list of glyphs
