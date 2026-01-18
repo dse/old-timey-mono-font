@@ -92,11 +92,7 @@ def main():
         for glyph in font.glyphs():
             if len(glyph.references) < 2: # not a composite glyph
                 continue
-            unicode = glyph.unicode
-            if unicode not in UNICODE_RANGE:
-                if "." not in glyph.glyphname:
-                    continue
-                unicode = fontforge.unicodeFromName(glyph.glyphname.split(".")[0])
+            unicode = get_origin_unicode(glyph)
             if unicode not in UNICODE_RANGE:
                 continue
             charname = unicodedata.name(chr(unicode))
@@ -230,27 +226,26 @@ def has_ascender(glyph):
         if has_ascender(base_glyph):
             return True
 
-    origin_char = chr(origin_unicode)
-    if origin_char.islower():
+    if chr(origin_unicode).islower():
         return False            # assume l/c chars don't have them 
     return True                 # assume u/c chars do
 
 def is_mark_above(glyph):
     origin_unicode = get_origin_unicode(glyph)
-    if origin_unicode < 0:
+    if origin_unicode not in UNICODE_RANGE:
         return False
-    origin_char = chr(origin_unicode)
-    if unicodedata.category(origin_char) not in MARK_CATEGORIES:
+    if unicodedata.category(chr(origin_unicode)) not in MARK_CATEGORIES:
         return False
-    return MARK_TYPE.get(origin_char, MARK_TYPE_ABOVE) == MARK_TYPE_ABOVE
+    # default --------------------------------v
+    return MARK_TYPE.get(chr(origin_unicode), MARK_TYPE_ABOVE) == MARK_TYPE_ABOVE
 
 def is_mark(glyph):
-    unicode = fontforge.unicodeFromName(glyph.glyphname.split(".")[0])
-    if unicode < 0:
+    origin_unicode = get_origin_unicode(glyph)
+    if origin_unicode not in UNICODE_RANGE:
         return False
-    if unicodedata.category(chr(unicode)) in MARK_CATEGORIES:
-        return True
-    return False
+    if unicodedata.category(chr(unicode)) not in MARK_CATEGORIES:
+        return False
+    return True
 
 def get_glyph_type_order(glyph_type):
     if glyph_type is None:
