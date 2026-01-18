@@ -95,7 +95,7 @@ def main():
             unicode = get_origin_unicode(glyph)
             if unicode not in UNICODE_RANGE:
                 continue
-            (string, glyphs_and_ctxs, name_string, _) = get_glyph_struct(glyph)
+            (string, glyphs_and_ctxs, name_string, *_) = get_glyph_struct(glyph)
             has = get_glyph_has(glyph)
             if string is None:
                 continue
@@ -159,12 +159,12 @@ def main():
                     print("%s: not yet implemented: %s" % (glyph.glyphname, string))
                 if args.verbose >= 2:
                     indent = len(": not yet implemented: ") + len(glyph.glyphname)
-                    print("%-*s%s" % indent, "", name_string))
-                    print("%-*s%s" % indent, "", [x[0].glyphname for x in glyphs_and_ctxs]))
-                    (expanded_string, expanded_glyphs_and_ctxs, expanded_name_string, _) = get_glyph_struct(glyph, expand=True)
-                    print("%-*s%s" % indent, "", expanded_string))
-                    print("%-*s%s" % indent, "", expanded_name_string))
-                    print("%-*s%s" % indent, "", [x[0].glyphname for x in expanded_glyphs_and_ctxs]))
+                    print("%-*s%s" % (indent, "", name_string))
+                    print("%-*s%s" % (indent, "", [x[0].glyphname for x in glyphs_and_ctxs]))
+                    (expanded_string, expanded_glyphs_and_ctxs, expanded_name_string, *_) = get_glyph_struct(glyph, expand=True)
+                    print("%-*s%s" % (indent, "", expanded_string))
+                    print("%-*s%s" % (indent, "", expanded_name_string))
+                    print("%-*s%s" % (indent, "", [x[0].glyphname for x in expanded_glyphs_and_ctxs]))
             # elif string == "((base,base),mark_above)":
             # elif string == "((base,mark_above),mark_above)":
             # elif string == "(base,(base,(base,mark_above)))":
