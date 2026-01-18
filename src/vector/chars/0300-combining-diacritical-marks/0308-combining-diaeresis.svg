@@ -25,16 +25,16 @@
    inkscape:deskcolor="#d1d1d1"
    inkscape:document-units="px"
    showgrid="true"
-   inkscape:zoom="0.39221416"
-   inkscape:cx="420.68854"
-   inkscape:cy="53.542178"
-   inkscape:window-width="1312"
-   inkscape:window-height="431"
+   inkscape:zoom="1.6985126"
+   inkscape:cx="478.65409"
+   inkscape:cy="105.97508"
+   inkscape:window-width="1440"
+   inkscape:window-height="847"
    inkscape:window-x="0"
    inkscape:window-y="25"
-   inkscape:window-maximized="0"
+   inkscape:window-maximized="1"
    inkscape:current-layer="layer1"
-   showguides="false"
+   showguides="true"
    inkscape:lockguides="false">
     <inkscape:grid
    type="xygrid"
@@ -271,27 +271,11 @@
     
     
     
-  <circle
-   style="display:inline;fill:none;stroke:#000099;stroke-width:6;stroke-linecap:round;stroke-linejoin:round"
-   id="path129"
-   cx="21"
-   cy="6"
-   r="0.75" /><path
-   style="display:inline;fill:none;stroke:#000099;stroke-width:6;stroke-linecap:round;stroke-linejoin:round"
-   d="m 20.25,6 h 1.5"
-   id="path130" /><path
-   style="display:inline;fill:none;stroke:#000099;stroke-width:6;stroke-linecap:round;stroke-linejoin:round"
-   d="m 21,5.25 v 1.5"
-   id="path131" /><path
-   style="display:inline;fill:none;stroke:#000099;stroke-width:6;stroke-linecap:round;stroke-linejoin:round"
-   d="m 42.125,5.25 v 1.5"
-   id="path133" /><path
-   style="display:inline;fill:none;stroke:#000099;stroke-width:6;stroke-linecap:round;stroke-linejoin:round"
-   d="m 41.375,6 h 1.5"
-   id="path132" /><circle
-   style="display:inline;fill:none;stroke:#000099;stroke-width:6;stroke-linecap:round;stroke-linejoin:round"
-   id="circle131"
-   cx="42.125"
-   cy="6"
-   r="0.75" /></g>
+  <path
+   id="path1573-2-01-13-7-3"
+   style="display:inline;fill:none;stroke:#000000;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round"
+   d="M 22.875001,6 A 1.8750008,1.8750008 0 0 1 21,7.8750008 1.8750008,1.8750008 0 0 1 19.124999,6 1.8750008,1.8750008 0 0 1 21,4.1249992 1.8750008,1.8750008 0 0 1 22.875001,6 Z" /><path
+   id="circle1"
+   style="display:inline;fill:none;stroke:#000000;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round"
+   d="M 43.875001,6 A 1.8750008,1.8750008 0 0 1 42,7.8750008 1.8750008,1.8750008 0 0 1 40.124999,6 1.8750008,1.8750008 0 0 1 42,4.1249992 1.8750008,1.8750008 0 0 1 43.875001,6 Z" /></g>
 </svg>
