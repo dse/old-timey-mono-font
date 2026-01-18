@@ -89,87 +89,56 @@ def main():
         print(filename)
         font = fontforge.open(filename)
         for glyph in font.glyphs():
-            if len(glyph.references) < 2:
-                print("%s: not a composite glyph" % glyph.glyphname)
+            if len(glyph.references) < 2: # not a composite glyph
                 continue
             unicode = glyph.unicode
             if unicode not in UNICODE_RANGE:
                 if "." not in glyph.glyphname:
-                    print("%s: out of range" % glyph.glyphname)
                     continue
                 unicode = fontforge.unicodeFromName(glyph.glyphname.split(".")[0])
             if unicode not in UNICODE_RANGE:
-                print("%s: out of range" % glyph.glyphname)
                 continue
             charname = unicodedata.name(chr(unicode))
 
             (string, glyphs_and_ctxs, names) = get_glyph_struct(glyph, no_marks_not_above=True)
             has = get_glyph_has(glyph)
             if string is None:
-                print("%s: no string representation of structure" % glyph.glyphname)
                 continue
             if "base" not in has:
-                print("%s: no base glyph" % glyph.glyphname)
                 continue
             if "mark_above" not in has:
-                print("%s: no mark_above glyph" % glyph.glyphname)
                 continue
             if string == "(base,mark_above)":
-                print("%s: %s" % (glyph.glyphname, string))
-                (unrolled_string, _, _) = get_glyph_struct(glyph, no_marks_not_above=True, unroll=True)
-                print("%*s  uncompactified %s" % (len(glyph.glyphname), "", unrolled_string))
-
                 (base, base_ctx) = glyphs_and_ctxs[0]
-                print("    base glyph is %s" % base.glyphname)
                 (mark, mark_ctx) = glyphs_and_ctxs[1]
-                print("    mark glyph is %s" % mark.glyphname)
-
                 (base_ctx_glyph, base_ctx_index) = base_ctx
                 (mark_ctx_glyph, mark_ctx_index) = mark_ctx
-
-                print("    base context is %s.references[%s]" % (base_ctx_glyph.glyphname, base_ctx_index))
-                print("    mark context is %s.references[%s]" % (mark_ctx_glyph.glyphname, base_ctx_index))
-
                 refs = [list(r) for r in mark_ctx_glyph.references]
                 mark_ref = refs[mark_ctx_index]
-
-                print("    %s's references:" % mark_ctx_glyph.glyphname)
-                for ref in mark_ctx_glyph.references:
-                    print("        %s" % repr(ref))
-
-                print("    %s's mark reference: %s" % (mark_ctx_glyph.glyphname, repr(mark_ref)))
-
                 origin_base_unicode = get_origin_unicode(base)
                 origin_mark_unicode = get_origin_unicode(mark)
                 origin_base_ctx_unicode = get_origin_unicode(base_ctx_glyph)
                 origin_mark_ctx_unicode = get_origin_unicode(mark_ctx_glyph)
-
                 if origin_base_unicode not in UNICODE_RANGE:
                     continue
                 if origin_mark_unicode not in UNICODE_RANGE:
                     continue
-
                 origin_base_char = chr(origin_base_unicode)
 
                 # horizontal shift
-                print("    trying shifts: %s or %s" % (origin_base_char, base.glyphname))
                 shift_horiz = 0
                 if origin_base_char in SHIFT_MARK:
                     shift_horiz = SHIFT_MARK[origin_base_char]
                 elif base.glyphname in SHIFT_MARK:
                     shift_horiz = SHIFT_MARK[base.glyphname]
-                print("    horizontal shift is %d" % shift_horiz)
                 xform = psMat.translate(shift_horiz, 0)
                 if has_ascender(glyph):
-                    print("    original glyph %s HAS an ascender" % glyph.glyphname)
                     mark_name = mark_ref[0].split(".")[0]
                     mark_ref[0] = mark_name
                 elif has_ascender(base):
-                    print("    base glyph %s HAS an ascender" % base.glyphname)
                     mark_name = mark_ref[0].split(".")[0]
                     mark_ref[0] = mark_name
                 else:
-                    print("    NEITHER original glyph %s nor base glyph %s has an ascender" % (glyph.glyphname, base.glyphname))
                     mark_name = mark_ref[0].split(".")[0]
                     mark_name_LCCM = mark_name + ".LCCM"
                     if mark_name_LCCM in font:
@@ -177,17 +146,12 @@ def main():
                     else:
                         mark_ref[0] = mark_name
                 mark_ref[1] = xform
-                print("    updating %s's mark reference to: %s" % (mark_ctx_glyph.glyphname, repr(mark_ref)))
-                print("    we have to re-create its list of references as follows:")
                 mark_ctx_glyph.references = []
                 for idx, ref in enumerate(refs):
                     if idx == mark_ctx_index:
-                        print("        [%d] adding modified reference %s" % (idx, repr(mark_ref)))
                         mark_ctx_glyph.addReference(*mark_ref)
                     else:
-                        print("        [%d] adding original reference %s" % (idx, repr(ref)))
                         mark_ctx_glyph.addReference(*ref)
-                pprint(glyph.references)
             elif string == "((base,base),mark_above)":
                 print("%s: %s not yet implemented" % (glyph.glyphname, string))
             elif string == "((base,mark_above),mark_above)":
@@ -230,24 +194,15 @@ def find_base_glyphs(glyph):
     return glyphs
 
 def has_ascender(glyph):
-    print("has_ascender(%s %d):" % (glyph.glyphname, glyph.unicode))
     if glyph.glyphname in HAS_ASCENDER:
         has = HAS_ASCENDER[glyph.glyphname]
-        print("    glyph %s is in HAS_ASCENDER by key %s as %s" % (glyph.glyphname,
-                                                                   glyph.glyphname, has))
         return has
     if glyph.unicode in UNICODE_RANGE:
         if glyph.unicode in HAS_ASCENDER:
             has = HAS_ASCENDER[glyph.unicode]
-            print("    glyph %s is in HAS_ASCENDER by codepoint U+%04X as %s" % (glyph.glyphname,
-                                                                                 glyph.unicode,
-                                                                                 has))
             return has
         if chr(glyph.unicode) in HAS_ASCENDER:
             has = HAS_ASCENDER[chr(glyph.unicode)]
-            print(repr(HAS_ASCENDER))
-            print("    glyph %s is in HAS_ASCENDER by character %s (U+%04X) as %s" %
-                  (glyph.glyphname, repr(chr(glyph.unicode)), glyph.unicode, has))
             return has
 
     origin_glyphname = glyph.glyphname.split(".")[0]
@@ -257,28 +212,19 @@ def has_ascender(glyph):
     if "." in glyph.glyphname:  # meaning glyph is x.y and we're checking x
         if origin_glyph.glyphname in HAS_ASCENDER:
             has = HAS_ASCENDER[origin_glyph.glyphname]
-            print("    origin_glyph %s is in HAS_ASCENDER by key %s as %s" % (origin_glyph.glyphname,
-                                                                              origin_glyph.glyphname, has))
             return has
         if origin_glyph.unicode in UNICODE_RANGE:
             if origin_glyph.unicode in HAS_ASCENDER:
                 has = HAS_ASCENDER[origin_glyph.unicode]
-                print("    origin_glyph %s is in HAS_ASCENDER by codepoint U+%04X as %s" % (origin_glyph.glyphname,
-                                                                                            origin_glyph.unicode,
-                                                                                            has))
                 return has
             if chr(origin_glyph.unicode) in HAS_ASCENDER:
                 has = HAS_ASCENDER[chr(origin_glyph.unicode)]
-                print("    origin_glyph %s is in HAS_ASCENDER by character %s (U+%04X) as %s" %
-                      (origin_glyph.glyphname, repr(chr(origin_glyph.unicode)), origin_glyph.unicode, has))
                 return has
-
             
     base_glyphs = find_base_glyphs(glyph)
     for base_glyph in base_glyphs:
         if base_glyph.glyphname == glyph.glyphname:
-            # avoid recursion
-            continue
+            continue            # avoid recursion
         if has_ascender(base_glyph):
             return True
 
@@ -287,9 +233,7 @@ def has_ascender(glyph):
     # ascender.  Assume worst case is the former.
     origin_char = chr(origin_unicode)
     if origin_char.islower():
-        print("    origin character %s is lower case" % repr(origin_char))
         return False
-    print("    origin character %s is NOT lower case" % repr(origin_char))
     return True
 
 def is_mark_above(glyph):
