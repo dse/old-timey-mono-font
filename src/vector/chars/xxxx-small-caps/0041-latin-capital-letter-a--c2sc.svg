@@ -26,8 +26,8 @@
    inkscape:document-units="px"
    showgrid="false"
    inkscape:zoom="0.4"
-   inkscape:cx="505"
-   inkscape:cy="840"
+   inkscape:cx="550"
+   inkscape:cy="695"
    inkscape:window-width="1440"
    inkscape:window-height="847"
    inkscape:window-x="0"
@@ -204,7 +204,7 @@
    sodipodi:nodetypes="cc" />
     <path
    style="display:inline;fill:none;stroke:#000000;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
-   d="M 12.75,81.000001 29,30.375 h 5 l 16.25,50.625005"
+   d="M 12.75,81.000001 29,29.75 h 5 l 16.25,51.250005"
    id="path33"
    sodipodi:nodetypes="cccc" />
     <path

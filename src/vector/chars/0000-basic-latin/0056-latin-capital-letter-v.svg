@@ -25,14 +25,14 @@
    inkscape:deskcolor="#d1d1d1"
    inkscape:document-units="px"
    showgrid="true"
-   inkscape:zoom="0.63334122"
-   inkscape:cx="369.46909"
-   inkscape:cy="1207.8797"
-   inkscape:window-width="1312"
-   inkscape:window-height="431"
+   inkscape:zoom="0.5965886"
+   inkscape:cx="279.92489"
+   inkscape:cy="1163.2807"
+   inkscape:window-width="1440"
+   inkscape:window-height="847"
    inkscape:window-x="0"
    inkscape:window-y="25"
-   inkscape:window-maximized="0"
+   inkscape:window-maximized="1"
    inkscape:current-layer="layer1"
    showguides="true"
    inkscape:lockguides="false">
@@ -175,7 +175,7 @@
    style="display:inline">
     <path
    style="display:inline;opacity:1;fill:none;stroke:#030303;stroke-width:7.2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-   d="m 205.09643,232.91552 19.875,72 h 4.8 l 19.875,-72"
+   d="m 205.09643,232.91552 19.875,72.75 h 4.8 l 19.875,-72.75"
    id="path1837"
    transform="matrix(0.83333331,0,0,0.83333331,-157.97619,-173.09626)"
    sodipodi:nodetypes="cccc" />

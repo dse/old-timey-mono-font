@@ -9,7 +9,7 @@
    id="svg5"
    xml:space="preserve"
    inkscape:version="1.3.2 (091e20e, 2023-11-25)"
-   sodipodi:docname="0056-latin-capital-letter-v.svg"
+   sodipodi:docname="1d20-latin-letter-small-capital-v.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -26,13 +26,13 @@
    inkscape:document-units="px"
    showgrid="false"
    inkscape:zoom="0.63334122"
-   inkscape:cx="461.04689"
-   inkscape:cy="661.57071"
-   inkscape:window-width="1312"
-   inkscape:window-height="431"
+   inkscape:cx="429.46834"
+   inkscape:cy="980.51411"
+   inkscape:window-width="1440"
+   inkscape:window-height="847"
    inkscape:window-x="0"
    inkscape:window-y="25"
-   inkscape:window-maximized="0"
+   inkscape:window-maximized="1"
    inkscape:current-layer="layer1"
    showguides="true"
    inkscape:lockguides="false">
@@ -175,7 +175,7 @@
    style="display:inline">
     <path
    style="display:inline;opacity:1;fill:none;stroke:#030303;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-   d="M 12.937497,39.749743 29.499996,81 h 4 l 16.5625,-41.250257"
+   d="M 12.937497,39.749743 29.499996,81.625 h 4 l 16.5625,-41.875257"
    id="path1837"
    sodipodi:nodetypes="cccc" />
     <path
