@@ -35,6 +35,7 @@ MARK_TYPE_TOP_RIGHT = 1
 MARK_TYPE_BELOW = 2
 MARK_TYPE_ABOVE_RIGHT = 3
 MARK_TYPE_ABOVE_SPACING = 4
+DEFAULT_MARK_TYPE = MARK_TYPE_ABOVE
 
 MARK_TYPE = {
     "\u031b": MARK_TYPE_TOP_RIGHT,
@@ -201,7 +202,6 @@ def has_ascender(glyph):
     origin_glyphname = glyph.glyphname.split(".")[0]
     origin_glyph = glyph.font[origin_glyphname]
     origin_unicode = get_origin_unicode(glyph)
-
     if "." in glyph.glyphname:  # meaning glyph is x.y and we're checking x
         if origin_glyph.glyphname in HAS_ASCENDER:
             return HAS_ASCENDER[origin_glyph.glyphname]
@@ -228,8 +228,7 @@ def is_mark_above(glyph):
         return False
     if unicodedata.category(chr(origin_unicode)) not in MARK_CATEGORIES:
         return False
-    # default --------------------------------v
-    return MARK_TYPE.get(chr(origin_unicode), MARK_TYPE_ABOVE) == MARK_TYPE_ABOVE
+    return MARK_TYPE.get(chr(origin_unicode), DEFAULT_MARK_TYPE) == MARK_TYPE_ABOVE
 
 def is_mark(glyph):
     origin_unicode = get_origin_unicode(glyph)
@@ -251,8 +250,7 @@ def get_glyph_sort_order(glyph, idx=-1):
                 return 2
             return 3
         return 1
-    return min([get_glyph_sort_order(glyph.font[ref[0]])
-                for ref in enumerate(glyph.references)])
+    return min([get_glyph_sort_order(glyph.font[ref[0]]) for ref in enumerate(glyph.references)])
 
 def get_glyph_struct(glyph, all_marks=False, context=None, expand=False):
     if len(glyph.references) == 0:
