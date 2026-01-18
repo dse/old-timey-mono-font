@@ -321,16 +321,17 @@ def get_glyph_has(glyph, has=None):
         has = {}
     if len(glyph.references) == 0:
         if len(glyph.foreground) == 0:
-            has["blank"] = True
+            has["blank"] = has.get("blank", 0) + 1
             return has
         if is_mark(glyph):
             if is_mark_above(glyph):
-                has["mark_above"] = True
+                has["mark_above"] = has.get("mark_above", 0) + 1
                 return has
-            has["mark_not_above"] = True
+            has["mark_not_above"] = has.get("mark_not_above", 0) + 1
             return has
-        has["base"] = True
+        has["base"] = has.get("base", 0) + 1
         return has
+    has["comp"] = has.get("comp", 0) + 1
     for idx, ref in enumerate(glyph.references):
         get_glyph_has(glyph.font[ref[0]], has)
     return has
