@@ -55,6 +55,7 @@ BUILDNR_PY_PROG			= $(SUPPORT_BIN)/buildnr.py
 VERSION_PY_PROG			= $(SUPPORT_BIN)/version.py
 FONTFIX_PY_PROG			= $(SUPPORT_BIN)/fontfix.py
 REFERENCES_PY_PROG              = $(SUPPORT_BIN)/references.py
+REPOSITION_PY_PROG		= work/bin/reposition.py
 
 METAS_PY_ARGS			= --ffn='$(OTMONO_FONT_FAMILY)' --psfn='$(PS_OTMONO_FONT_FAMILY)'
 METAS_PY_CODE_ARGS		= --ffn='$(OTCODE_FONT_FAMILY)' --psfn='$(PS_OTCODE_FONT_FAMILY)'
@@ -82,6 +83,7 @@ BUILDNR_PY			= $(BUILDNR_PY_PROG)
 VERSION_PY			= $(VERSION_PY_PROG)
 FONTFIX_PY			= $(FONTFIX_PY_PROG)
 REFERENCES_PY                   = $(REFERENCES_PY_PROG)
+REPOSITION_PY                   = $(REPOSITION_PY_PROG)
 
 SUBSTITUTIONS_JSON		= $(SRC_DATA)/substitutions.json
 REFERENCES_JSON                 = $(SRC_DATA)/references.json
@@ -245,8 +247,8 @@ update-test: FORCE
 	@echo "use 'make redraw-test', DINGUS." >&2
 	false
 
-reposition: FORCE
-	work/bin/reposition.py $(BASEFONT_SFD)
+reposition: FORCE $(REPOSITION_PROG)
+	$(REPOSITION_PY) $(BASEFONT_SFD)
 
 symbols: FORCE
 	fontbraille -W 200 -f $(BASEFONT_SFD)
