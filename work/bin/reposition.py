@@ -259,10 +259,10 @@ def is_mark(glyph):
         return False
     return True
 
-def get_glyph_type_order(glyph_type):
-    if glyph_type is None:
+def get_glyph_type_order(struct):
+    if struct is None:
         return -1
-    name = glyph_type[0]
+    name = struct[0]
     if name is None:
         return -1
     if name == "blank":
