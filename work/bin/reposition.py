@@ -97,7 +97,7 @@ def main():
                 continue
             charname = unicodedata.name(chr(unicode))
 
-            (string, glyphs_and_ctxs, names) = get_glyph_struct(glyph, not_all_marks=True)
+            (string, glyphs_and_ctxs, names) = get_glyph_struct(glyph)
             has = get_glyph_has(glyph)
             if string is None:
                 continue
@@ -263,7 +263,7 @@ def get_glyph_type_order(glyph_type):
         return 3
     return 99
 
-def get_glyph_struct(glyph, not_all_marks=False, context=None, expand=False):
+def get_glyph_struct(glyph, not_all_marks=True, context=None, expand=False):
     if len(glyph.references) == 0:
         if len(glyph.foreground) == 0:
             return ("blank", [(glyph, context)], [(glyph.glyphname, context)])
