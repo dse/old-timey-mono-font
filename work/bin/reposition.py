@@ -3,16 +3,6 @@
 import argparse, fontforge, unicodedata
 from pprint import pprint
 
-RD_REFERENT_GLYPHNAME   = 0
-RD_REF_IDX              = 1
-RD_REF_TUPLE            = 2
-RD_REF_GLYPHNAME        = 3
-RD_REF_TRANSFORM        = 4
-RD_REF_SELECTED         = 5
-RD_REF_BASE_GLYPHNAME   = 6
-RD_REF_BASE_UNICODE     = 7
-RD_ORDER                = 8
-
 MARK_NONSPACING         = "Mn"
 MARK_SPACING            = "Mc"
 MARK_ENCLOSING          = "Me"
@@ -38,7 +28,6 @@ HAS_ASCENDER = {
     "\u045b": True,
     "\u04bb": True,
 }
-print(chr(0x04ee) in HAS_ASCENDER)
 
 MARK_TYPE_OTHER = -1
 MARK_TYPE_ABOVE = 0
