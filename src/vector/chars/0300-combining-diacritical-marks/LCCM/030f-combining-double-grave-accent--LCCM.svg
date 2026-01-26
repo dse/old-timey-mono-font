@@ -26,8 +26,8 @@
    inkscape:document-units="px"
    showgrid="false"
    inkscape:zoom="0.46731567"
-   inkscape:cx="460.07445"
-   inkscape:cy="579.90779"
+   inkscape:cx="446.16522"
+   inkscape:cy="472.91374"
    inkscape:window-width="1440"
    inkscape:window-height="847"
    inkscape:window-x="0"
@@ -269,28 +269,28 @@
   <circle
    style="display:inline;fill:none;stroke:#000099;stroke-width:3;stroke-linecap:round;stroke-linejoin:round"
    id="path1"
-   cx="34.125"
+   cx="36.625"
    cy="14.125"
    r="2.625" /><path
    style="display:inline;fill:none;stroke:#000099;stroke-width:3;stroke-linecap:round;stroke-linejoin:round"
-   d="M 36.276638,12.621312 46.5,27.25 32.497454,16.184543"
+   d="M 38.776638,12.621312 49,27.25 34.997454,16.184543"
    id="path2"
    sodipodi:nodetypes="ccc" /><path
    style="display:inline;fill:none;stroke:#000099;stroke-width:3;stroke-linecap:round;stroke-linejoin:round"
-   d="M 46.5,27.25 34.125,14.125"
+   d="M 49,27.25 36.625,14.125"
    id="path3"
    sodipodi:nodetypes="cc" /><circle
    style="display:inline;fill:none;stroke:#000099;stroke-width:3;stroke-linecap:round;stroke-linejoin:round"
    id="circle1"
-   cx="16.125"
+   cx="13.625"
    cy="14.125"
    r="2.625" /><path
    style="display:inline;fill:none;stroke:#000099;stroke-width:3;stroke-linecap:round;stroke-linejoin:round"
-   d="M 18.276638,12.621312 28.5,27.25 14.497454,16.184543"
+   d="M 15.776638,12.621312 26,27.25 11.997454,16.184543"
    id="path4"
    sodipodi:nodetypes="ccc" /><path
    style="display:inline;fill:none;stroke:#000099;stroke-width:3;stroke-linecap:round;stroke-linejoin:round"
-   d="M 28.5,27.25 16.125,14.125"
+   d="M 26,27.25 13.625,14.125"
    id="path5"
    sodipodi:nodetypes="cc" /></g>
 </svg>
