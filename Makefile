@@ -21,10 +21,10 @@ OTMONO_FONT_FAMILY_BASENAME     = OldTimeyMono
 BASEFONT_SFD			= $(SRC_BASEFONT)/$(OTMONO_FONT_FAMILY_BASENAME).sfd
 
 #                      typically: XXX.YZZ, incremental
-SFNT_REVISION			= 000.904
+SFNT_REVISION			= 000.905
 
 #                      typically: major.minor.patch
-VERSION				= 0.10.0
+VERSION				= 0.11.0
 
 VENDOR				= DARN
 COPYRIGHT_OWNER			= Darren Embry
