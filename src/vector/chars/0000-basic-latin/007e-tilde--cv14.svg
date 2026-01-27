@@ -24,10 +24,10 @@
    inkscape:pagecheckerboard="0"
    inkscape:deskcolor="#d1d1d1"
    inkscape:document-units="px"
-   showgrid="false"
-   inkscape:zoom="0.27753994"
-   inkscape:cx="291.84989"
-   inkscape:cy="774.66328"
+   showgrid="true"
+   inkscape:zoom="0.60032002"
+   inkscape:cx="565.5317"
+   inkscape:cy="836.22066"
    inkscape:window-width="1440"
    inkscape:window-height="847"
    inkscape:window-x="0"
@@ -45,7 +45,7 @@
    originx="0"
    originy="0"
    units="px"
-   visible="false" />
+   visible="true" />
     
     
     
@@ -267,8 +267,8 @@
    style="display:inline">
     
   <path
-   style="fill:none;stroke:#000099;stroke-width:3;stroke-linecap:round;stroke-linejoin:round"
-   d="m 13.5,67.875 c 0,-10.5 3,-15 7.5,-15 4.5,0 16.5,15 21,15 4.5,0 7.5,-4.5 7.5,-15"
+   style="fill:none;stroke:#000099;stroke-width:6;stroke-linecap:round;stroke-linejoin:round"
+   d="m 8.9999999,67.875 c 0,-10.5 3.7500001,-15 9.3750001,-15 5.625,0 20.625,15 26.249999,15 5.625,0 9.375,-4.5 9.375,-15"
    id="path8"
    sodipodi:nodetypes="cccc" /></g>
 </svg>
