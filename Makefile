@@ -9,13 +9,16 @@ SRC_DATA			= src/data
 SRC_BUILD			= tmp/_build
 SRC_VECTOR			= src/vector
 SUPPORT_BIN			= support/bin
-DIST_TTF			= dist/ttf
-DIST_SFD			= dist/sfd
-DIST_ZIP			= dist/zip
+DIST_DIR			= dist
+DIST_TTF			= $(DIST_DIR)/ttf
+DIST_SFD			= $(DIST_DIR)/sfd
+DIST_ZIP			= $(DIST_DIR)/zip
 
 MAKEFILE			= Makefile
 
-BASEFONT_SFD			= $(SRC_BASEFONT)/$(PS_OTMONO_FONT_FAMILY).sfd
+OTMONO_FONT_FAMILY_BASENAME     = OldTimeyMono
+
+BASEFONT_SFD			= $(SRC_BASEFONT)/$(OTMONO_FONT_FAMILY_BASENAME).sfd
 
 #                      typically: XXX.YZZ, incremental
 SFNT_REVISION			= 000.904
@@ -190,19 +193,19 @@ limited-test-fonts: $(OTMONO_TTF) $(OTCODE_TTF)
 
 testfontsweb: FORCE
 	rm -fr website/fonts/ttf/*
-	make limited-test-fonts DISTDIR="website/fonts"
+	make limited-test-fonts DIST_DIR="website/fonts"
 
 testfonts: FORCE
 	$(eval BUILD_NR = $(shell $(BUILDNR_PY)))
-	$(eval DISTDIR_NAME = $(PS_OTMONO_FONT_FAMILY)$(BUILD_NR))
+	$(eval DIST_DIR_NAME = $(PS_OTMONO_FONT_FAMILY)$(BUILD_NR))
 	mkdir -p $(TESTFONTS_DIR)
 	make limited-test-fonts \
 		OTMONO_FONT_FAMILY="$(OTMONO_FONT_FAMILY) $(BUILD_NR)" \
 		PS_OTMONO_FONT_FAMILY="$(PS_OTMONO_FONT_FAMILY)$(BUILD_NR)" \
 		OTCODE_FONT_FAMILY="$(OTCODE_FONT_FAMILY) $(BUILD_NR)" \
 		PS_OTCODE_FONT_FAMILY="$(PS_OTCODE_FONT_FAMILY)$(BUILD_NR)" \
-		DISTDIR="$(TESTFONTS_DIR)/$(DISTDIR_NAME)"
-	ln -n -f -s "$(DISTDIR_NAME)/ttf" $(TESTFONTS_DIR)/latest
+		DIST_DIR="$(TESTFONTS_DIR)/$(DIST_DIR_NAME)"
+	ln -n -f -s "$(DIST_DIR_NAME)/ttf" $(TESTFONTS_DIR)/latest
 
 # update source font fron SVG files
 redraw: FORCE
@@ -361,13 +364,13 @@ clean: FORCE
 data: src/data/font-data.json src/data/glyphs-data.json 
 
 # i don't believe this is used
-src/data/font-data.json: support/bin/fontdata.py src/data/panose.json dist/ttf/OldTimeyMono.ttf
-	support/bin/fontdata.py dist/ttf/OldTimeyMono.ttf >"$@.tmp"
+src/data/font-data.json: support/bin/fontdata.py src/data/panose.json $(DIST_TTF)/OldTimeyMono.ttf
+	support/bin/fontdata.py $(DIST_TTF)/OldTimeyMono.ttf >"$@.tmp"
 	mv "$@.tmp" "$@"
 
 # used to generate character repertoire page
-src/data/glyphs-data.json: support/bin/glyphsdata.py dist/ttf/OldTimeyMono.ttf
-	support/bin/glyphsdata.py dist/ttf/OldTimeyMono.ttf >"$@.tmp"
+src/data/glyphs-data.json: support/bin/glyphsdata.py $(DIST_TTF)/OldTimeyMono.ttf
+	support/bin/glyphsdata.py $(DIST_TTF)/OldTimeyMono.ttf >"$@.tmp"
 	mv "$@.tmp" "$@"
 
 version: FORCE
