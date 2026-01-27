@@ -205,7 +205,8 @@
                     "quoteleft": "quoteleft.ss05",
                     "quoteright": "quoteright.ss05",
                     "quotedblleft": "quotedblleft.ss05",
-                    "quotedblright": "quotedblright.ss05"
+                    "quotedblright": "quotedblright.ss05",
+                    "asciitilde": "asciitilde.cv14"
                 }
             }
         },
@@ -274,7 +275,8 @@
         "cv10": "'cv10' Curly Small L",
         "cv11": "'cv11' Taller Equal Sign",
         "cv12": "'cv12' Larger Left Curly Bracket, Alternate",
-        "cv13": "'cv13' Larger Right Curly Bracket, Alternate"
+        "cv13": "'cv13' Larger Right Curly Bracket, Alternate",
+        "cv14": "'cv14' Visibility Enhanced Tilde"
     },
     "stylistic_sets": {
         "ss01": "'ss01' Code",
@@ -487,6 +489,7 @@
         "bracketright.ss02":     "RIGHT SQUARE BRACKET, WITH ENHANCED VISIBILITY",
         "parenright.ss02":       "RIGHT PARENTHESIS, WITH ENHANCED VISIBILITY",
         "braceright.ss02":       "RIGHT CURLY BRACKET, WITH ENHANCED VISIBILITY",
-        "braceleft.ss02":        "LEFT CURLY BRACKET, WITH ENHANCED VISIBILITY"
+        "braceleft.ss02":        "LEFT CURLY BRACKET, WITH ENHANCED VISIBILITY",
+        "asciitilde.cv14":       "TILDE WITH ENHANCED VISIBILITY"
     }
 }

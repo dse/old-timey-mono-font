@@ -23,7 +23,7 @@ OS2Version: 0
 OS2_WeightWidthSlopeOnly: 0
 OS2_UseTypoMetrics: 1
 CreationTime: 1729142792
-ModificationTime: 1769394351
+ModificationTime: 1769528773
 PfmFamily: 17
 TTFWeight: 500
 TTFWidth: 5
@@ -46,6 +46,7 @@ HheadDOffset: 0
 OS2CapHeight: 1056
 OS2XHeight: 756
 OS2Vendor: 'DARN'
+Lookup: 1 0 0 "'cv14' Visibility Enhanced Tilde (asciitilde.cv14)" { "'cv14' Visibility Enhanced Tilde-1 (asciitilde.cv14)"  } ['cv14' ('latn' <'ENG ' 'dflt' > 'cyrl' <'ENG ' 'dflt' > 'grek' <'ENG ' 'dflt' > 'DFLT' <'ENG ' 'dflt' > ) ]
 Lookup: 1 0 0 "'cv13' Larger Right Curly Bracket, Alternate (braceright.cv13)" { "'cv13' Larger Right Curly Bracket, Alternate-1 (braceright.cv13)"  } ['cv13' ('latn' <'ENG ' 'dflt' > 'cyrl' <'ENG ' 'dflt' > 'grek' <'ENG ' 'dflt' > 'DFLT' <'ENG ' 'dflt' > ) ]
 Lookup: 1 0 0 "'cv12' Larger Left Curly Bracket, Alternate (braceleft.cv12)" { "'cv12' Larger Left Curly Bracket, Alternate-1 (braceleft.cv12)"  } ['cv12' ('latn' <'ENG ' 'dflt' > 'cyrl' <'ENG ' 'dflt' > 'grek' <'ENG ' 'dflt' > 'DFLT' <'ENG ' 'dflt' > ) ]
 Lookup: 1 0 0 "'cv11' Taller Equal Sign (equal.cv11)" { "'cv11' Taller Equal Sign-1 (equal.cv11)"  } ['cv11' ('latn' <'ENG ' 'dflt' > 'cyrl' <'ENG ' 'dflt' > 'grek' <'ENG ' 'dflt' > 'DFLT' <'ENG ' 'dflt' > ) ]
@@ -81,7 +82,7 @@ NameList: AGL For New Fonts
 DisplaySize: -48
 AntiAlias: 1
 FitToEm: 1
-WinInfo: 841 29 11
+WinInfo: 1856 29 11
 BeginPrivate: 0
 EndPrivate
 Grid
@@ -192,7 +193,7 @@ Grid
  504 3072 l 25
 EndSplineSet
 AnchorClass2: "bottom" "'mark' Mark Positioning lookup 0-1" "top" "'mark' Mark Positioning lookup 0-1"
-BeginChars: 2149 2146
+BeginChars: 2150 2147
 
 StartChar: cedilla
 Encoding: 120 184 0
@@ -19071,6 +19072,8 @@ SplineSet
  872.000976562 376.523060646 807.797165845 250 663.999023438 250 c 0
  523.509979708 250 439.341082805 410 343.999023438 410 c 0
 EndSplineSet
+Substitution2: "'cv14' Visibility Enhanced Tilde-1 (asciitilde.cv14)" asciitilde.cv14
+Substitution2: "Larger Punctuation-1" asciitilde.cv14
 Substitution2: "'VCEN' Vertically Centered Glyphs-1" asciitilde.VCEN
 Comment: "{}"
 EndChar
@@ -55606,6 +55609,38 @@ LayerCount: 2
 Fore
 Refer: 1462 834 S 1 0 0 1 0 0 2
 Refer: 2131 -1 N 1 0 0 1 0 0 2
+EndChar
+
+StartChar: asciitilde.cv14
+Encoding: 2149 -1 2146
+Width: 1008
+VWidth: 0
+Flags: W
+HStem: 210 96.0085<618.501 718.49> 450 96<289.51 390.284>
+VStem: 168 96<211.512 431.402> 744 96<324.598 544.488>
+LayerCount: 2
+Fore
+SplineSet
+264 258 m 0
+ 264 231.50808 242.49192 210 216 210 c 0
+ 189.50808 210 168 231.50808 168 258 c 0
+ 168 370.382422298 188.147566508 451.138982932 231.401258199 499.229706726 c 0
+ 259.04152801 529.960969864 296.774982039 546 336 546 c 0
+ 389.170440661 546 448.401616111 493.40194226 536.269464702 413.522079904 c 0
+ 580.614482098 373.208427726 646.725741719 313.107282616 673.149898067 306.008467152 c 0
+ 683.066493426 306.156608773 712.104140309 306.590395161 730.600799668 373.850974646 c 0
+ 738.820374591 403.740338004 744 445.08979407 744 498 c 0
+ 744 524.49192 765.50808 546 792 546 c 0
+ 818.49192 546 840 524.49192 840 498 c 0
+ 840 385.617577702 819.852433492 304.861017068 776.598741801 256.770293274 c 0
+ 748.95847199 226.039030136 711.225017961 210 672 210 c 0
+ 618.829559339 210 559.598383889 262.59805774 471.730535298 342.477920096 c 0
+ 427.092853775 383.057630571 381.029462774 424.823117037 349.59496398 443.082941405 c 0
+ 343.426406587 446.66616299 338.48649184 449.158582168 336 450 c 0
+ 321.891684628 450 312.876167464 446.285943717 302.790480865 435.07238137 c 0
+ 282.964908654 413.029728363 264 360.074460269 264 258 c 0
+EndSplineSet
+Comment: "{}"
 EndChar
 EndChars
 EndSplineFont
