@@ -48,6 +48,13 @@
     <main>
 
         <div class="container">
+            <div id="mode">
+                <form id="mode-form">
+                    <label><input type="radio" name="mode" value="system" checked>System</label>
+                    <label><input type="radio" name="mode" value="light">Light</label>
+                    <label><input type="radio" name="mode" value="dark">Dark</label>
+                </form>
+            </div>
             <div id="trial">
                 <form>
                     <pre class="template" id="ascii">
@@ -342,6 +349,25 @@ trust, non-self-governing or under any other limitation of sovereignty.
                 [...compares].filter(c => c.checked).forEach(c => {
                     textarea.style.fontFamily = c.getAttribute("value");
                 });
+            }
+            const modeForm = document.getElementById("mode-form");
+            const modeInput = modeForm["modeForm"];
+
+            function updateMode() {
+                document.documentElement.classList.remove("system-mode");
+                document.documentElement.classList.remove("light-mode");
+                document.documentElement.classList.remove("dark-mode");
+                switch (modeInput.value) {
+                    case "system":
+                        document.documentElement.classList.add("system-mode");
+                        break;
+                    case "light":
+                        document.documentElement.classList.add("light-mode");
+                        break;
+                    case "dark":
+                        document.documentElement.classList.add("dark-mode");
+                        break;
+                }
             }
         </script>
 
