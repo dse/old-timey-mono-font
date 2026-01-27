@@ -35,19 +35,27 @@ Major changes:
 -   Contains 97% of the World Glyph Set (W1G).
 -   Contains 94% of the Simple European Character Set (SECS).
 -   Contains 100% of the IPA Extensions block.
--   Removed numerous double-accented Latin characters not in W1G, MES-1, SECS, or WGL4
-    that were in the Latin Extended Additional block.  Those were unwieldy to maintain.
--   Removed unused combining marks.
--   Redid accent placements again.
+-   Accents:
+    -   Re-re-re-did all the accent placements.
+    -   More visible accent marks for lowercase characters.
 -   Add small caps, along with "c2sc" and "scap" OpenType features.
 -   Add petite caps, along with "c2pc" and "pcap" OpenType features.
 -   Added selected symbols from Symbols for Legacy Computing.
 -   Added "BASE" for underlines on the baseline (better for `snake_case_identifiers` in my opinion).
 -   Added "VCEN" for vertically centered glyphs.
+-   Removed:
+    -   Removed numerous double-accented Latin characters not in W1G, MES-1, SECS, or WGL4
+        that were in the Latin Extended Additional block.  Those were unwieldy to maintain.
+    -   Removed unused combining marks.
+-   Added overshoots to top- and bottom-pointy letters such as `A`,
+    `N`, `V`, `W`, `v`, and `w`.
 
 New Characters:
 -   U+1E9E LATIN CAPITAL LETTER SHARP S, to accompany U+00DF LATIN SMALL LETTER SHARP S
 -   U+3003 DITTO MARK
+
+New Variants:
+-   Coding variant of U+007E TILDE
 
 Character Fixes:
 -   Fixed issue where these were backwards:
