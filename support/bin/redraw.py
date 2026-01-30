@@ -5,10 +5,11 @@ import fontforge
 import argparse
 import os
 import sys
+import json
 
 sys.path.append(os.path.dirname(__file__) + "/../lib")
 from my_font_utils import reconstitute_references
-# from my_font_utils import import_svg_glyph
+from my_font_utils import parse_glyph_svg_filename
 from my_font_utils import create_smol_glyph
 from my_font_utils import check_all_glyph_bounds
 
@@ -64,6 +65,7 @@ def import_svg_glyph(font, svg_filename, width, allow_json_data=False):
     if glyphname in font:
         glyph = font[glyphname]
         if len(glyph.references):
+            print("redraw.py %s: not redrawing onto %s which has references" % (svg_filename, glyphname))
             return
     glyph = font.createChar(codepoint, glyphname)
     glyph.foreground = fontforge.layer()
