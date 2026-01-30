@@ -375,7 +375,7 @@ src/data/glyphs-data.json: support/bin/glyphsdata.py $(DIST_TTF)/OldTimeyMono.tt
 
 version: FORCE
 
-publish:
+publish: FORCE
 	ssh dse@webonastick.com 'cd git/dse.d/fonts.d/old-timey-mono-font && git pull && cd specimen && yarn build'
 
 npm-run-build: FORCE
