@@ -272,16 +272,16 @@ $(ZIP_FILE): FORCE
 $(UNVERSIONED_ZIP_FILE): $(ZIP_FILE)
 	cp "$(ZIP_FILE)" "$(UNVERSIONED_ZIP_FILE)"
 
-specimen: $(TTF_FONTS) $(MAKEFILE) _specimen
+SPECIMEN_DIR = dist/specimen
 
-_specimen: FORCE
-	rm -fr specimen/src/fonts/*.woff2 || true
-	mkdir -p specimen/src/fonts
-	for i in $(DIST_TTF)/*.ttf ; do woff2_compress "$$i" && mv "$${i%.ttf}.woff2" specimen/src/fonts ; done
+specimen: FORCE
+	rm -fr $(SPECIMEN_DIR)/src/fonts/*.woff2 || true
+	mkdir -p $(SPECIMEN_DIR)/src/fonts
+	for i in $(DIST_TTF)/*.ttf ; do woff2_compress "$$i" && mv "$${i%.ttf}.woff2" $(SPECIMEN_DIR)/src/fonts ; done
 	@echo "==============================================================================="
 	@echo "You'll need to do the following manually:"
 	@echo ""
-	@echo "cd specimen && yarn build"
+	@echo "cd $(SPECIMEN_DIR) && yarn build"
 	@echo "==============================================================================="
 
 stage1: $(SRC_BUILD)/$(PS_OTMONO_FONT_FAMILY).stage1.sfd
@@ -351,7 +351,7 @@ $(DIST_SFD)/%.sfd: $(DIST_TTF)/%.ttf
 
 clean: FORCE
 	/bin/rm $(TTF_FONTS) $(ZIP_FILE) || true
-	/bin/rm specimen/src/fonts/*.woff2 || true
+	/bin/rm $(SPECIMEN_DIR)/src/fonts/*.woff2 || true
 	find . -type f \( \
 		-name '*.tmp' -o \
 		-name '*.tmp.*' -o \
@@ -376,7 +376,7 @@ src/data/glyphs-data.json: support/bin/glyphsdata.py $(DIST_TTF)/OldTimeyMono.tt
 version: FORCE
 
 publish: FORCE
-	ssh dse@webonastick.com 'cd git/dse.d/fonts.d/old-timey-mono-font && git pull && cd specimen && yarn build'
+	ssh dse@webonastick.com 'cd git/dse.d/fonts.d/old-timey-mono-font && git pull'
 
 npm-run-build: FORCE
 	npm run build
