@@ -8,7 +8,7 @@ import sys
 
 sys.path.append(os.path.dirname(__file__) + "/../lib")
 from my_font_utils import reconstitute_references
-from my_font_utils import import_svg_glyph
+# from my_font_utils import import_svg_glyph
 from my_font_utils import create_smol_glyph
 from my_font_utils import check_all_glyph_bounds
 
@@ -53,5 +53,49 @@ def main():
             print("svg.py %s: Generating... %s" % (args.font_filename, write_font_filename))
         font.generate(write_font_filename)
     font.close()
+
+# FIXME: if allow_json_data is True, allow a ".svg" to override.
+def import_svg_glyph(font, svg_filename, width, allow_json_data=False):
+    font_path = os.path.relpath(font.path)
+    (codepoint, glyphname, real_codepoint, plain_glyphname, stroke_width) = parse_glyph_svg_filename(svg_filename)
+    if codepoint is None and glyphname is None:
+        return
+    glyph = None
+    if glyphname in font:
+        glyph = font[glyphname]
+        if len(glyph.references):
+            return
+    glyph = font.createChar(codepoint, glyphname)
+    glyph.foreground = fontforge.layer()
+    if width is None:
+        orig_width = glyph.width
+    if stroke_width is not None:
+        font.strokedfont = True
+        glyph.importOutlines(svg_filename, correctdir=True)
+        font.strokedfont = False
+    else:
+        font.strokedfont = True
+        glyph.importOutlines(svg_filename)
+        font.strokedfont = False
+    if width is None:
+        glyph.width = orig_width
+    else:
+        glyph.width = width
+
+    data = None
+    try:
+        data = json.loads(glyph.comment)
+    except json.decoder.JSONDecodeError:
+        data = glyph.comment
+    if type(data) == str and not re.search(r'\S', data):
+        data = { }
+    elif data is not None and type(data) != dict:
+        data = { "data": data }
+    if stroke_width is None:
+        if "stroke_width" in data:
+            del data["stroke_width"]
+    else:
+        data["stroke_width"] = stroke_width
+    glyph.comment = json.dumps(data, indent=4)
 
 main()
