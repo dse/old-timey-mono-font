@@ -20,7 +20,7 @@ const optimization = {
 };
 
 const fileLoaderOptions = {
-	name: "[path][name].[hash].[ext]",
+	name: "[path][name].[contenthash].[ext]",
 	context: input
 };
 
@@ -34,7 +34,7 @@ module.exports = {
 	},
 	output: {
 		path: out,
-		filename: "[name].[hash].js",
+		filename: "[name].[contenthash].js",
 		publicPath: "./"
 	},
 	module: {

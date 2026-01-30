@@ -275,13 +275,18 @@ $(UNVERSIONED_ZIP_FILE): $(ZIP_FILE)
 SPECIMEN_DIR = dist/specimen
 
 specimen: FORCE
+	rm -fr $(SPECIMEN_DIR)/src/fonts/*.ttf || true
 	rm -fr $(SPECIMEN_DIR)/src/fonts/*.woff2 || true
 	mkdir -p $(SPECIMEN_DIR)/src/fonts
-	for i in $(DIST_TTF)/*.ttf ; do woff2_compress "$$i" && mv "$${i%.ttf}.woff2" $(SPECIMEN_DIR)/src/fonts ; done
+	for i in $(DIST_TTF)/*.ttf ; do \
+		woff2_compress "$$i" && \
+		cp "$$i" $(SPECIMEN_DIR)/src/fonts && \
+		mv "$${i%.ttf}.woff2" $(SPECIMEN_DIR)/src/fonts ; \
+	done
 	@echo "==============================================================================="
 	@echo "You'll need to do the following manually:"
 	@echo ""
-	@echo "cd $(SPECIMEN_DIR) && yarn build"
+	@echo "cd $(SPECIMEN_DIR) && yarn clean && yarn build"
 	@echo "==============================================================================="
 
 stage1: $(SRC_BUILD)/$(PS_OTMONO_FONT_FAMILY).stage1.sfd
