@@ -54,10 +54,10 @@
     "withstmt":         false,
 
     // Environments
-    "browser":          false,          // see also devel
+    "browser":          true,
     "browserify":       false,
     "couch":            false,
-    "devel":            false,
+    "devel":            true,
     "dojo":             false,
     "jasmine":          false,
     "jquery":           false,
@@ -68,7 +68,7 @@
     "nonstandard":      false,
     "phantom":          false,
     "prototypejs":      false,
-    "quint":            false,
+    "qunit":            false,
     "rhino":            false,
     "shelljs":          false,
     "typed":            false,
