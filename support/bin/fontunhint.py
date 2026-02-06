@@ -15,8 +15,11 @@ def main():
             glyph.hhints = tuple()
             glyph.vhints = tuple()
             glyph.manualHints = True
-            font.gasp_version = 1
-            font.gasp = ((1, ('antialias',),),)
+        font.gasp_version = 1
+        font.gasp = (
+            (0,     ('antialias',),),
+            (65535, ('antialias',),),
+        )
         if filename.endswith(".sfd"):
             font.save(filename)
         else:
