@@ -1,92 +1,82 @@
 [
-	{
-		"name": "OldTimeyMono",
-		"selector": "oldtimeymono",
-		"style": "OldTimeyMono"
-	},
-	{
-		"name": "OldTimeyMono-Thin",
-		"selector": "oldtimeymono-thin",
-		"style": "OldTimeyMono-Thin"
-	},
-	{
-		"name": "OldTimeyMono-Light",
-		"selector": "oldtimeymono-light",
-		"style": "OldTimeyMono-Light"
-	},
-	{
-		"name": "OldTimeyMono-Comp",
-		"selector": "oldtimeymono-comp",
-		"style": "OldTimeyMono-Comp"
-	},
-	{
-		"name": "OldTimeyMono-ThinComp",
-		"selector": "oldtimeymono-thincomp",
-		"style": "OldTimeyMono-ThinComp"
-	},
-	{
-		"name": "OldTimeyMono-LightComp",
-		"selector": "oldtimeymono-lightcomp",
-		"style": "OldTimeyMono-LightComp"
-	},
-	{
-		"name": "OldTimeyMono-Cond",
-		"selector": "oldtimeymono-cond",
-		"style": "OldTimeyMono-Cond"
-	},
-	{
-		"name": "OldTimeyMono-ThinCond",
-		"selector": "oldtimeymono-thincond",
-		"style": "OldTimeyMono-ThinCond"
-	},
-	{
-		"name": "OldTimeyMono-LightCond",
-		"selector": "oldtimeymono-lightcond",
-		"style": "OldTimeyMono-LightCond"
-	},
-	{
-		"name": "OldTimeyCode",
-		"selector": "oldtimeycode",
-		"style": "OldTimeyCode"
-	},
-	{
-		"name": "OldTimeyCode-Thin",
-		"selector": "oldtimeycode-thin",
-		"style": "OldTimeyCode-Thin"
-	},
-	{
-		"name": "OldTimeyCode-Light",
-		"selector": "oldtimeycode-light",
-		"style": "OldTimeyCode-Light"
-	},
-	{
-		"name": "OldTimeyCode-Comp",
-		"selector": "oldtimeycode-comp",
-		"style": "OldTimeyCode-Comp"
-	},
-	{
-		"name": "OldTimeyCode-ThinComp",
-		"selector": "oldtimeycode-thincomp",
-		"style": "OldTimeyCode-ThinComp"
-	},
-	{
-		"name": "OldTimeyCode-LightComp",
-		"selector": "oldtimeycode-lightcomp",
-		"style": "OldTimeyCode-LightComp"
-	},
-	{
-		"name": "OldTimeyCode-Cond",
-		"selector": "oldtimeycode-cond",
-		"style": "OldTimeyCode-Cond"
-	},
-	{
-		"name": "OldTimeyCode-ThinCond",
-		"selector": "oldtimeycode-thincond",
-		"style": "OldTimeyCode-ThinCond"
-	},
-	{
-		"name": "OldTimeyCode-LightCond",
-		"selector": "oldtimeycode-lightcond",
-		"style": "OldTimeyCode-LightCond"
-	}
+    {
+        "name": "Old Timey Code Light",
+        "selector": "old-timey-code-light",
+        "style": "light"
+    },
+    {
+        "name": "Old Timey Code",
+        "selector": "old-timey-code",
+        "style": "unknown"
+    },
+    {
+        "name": "Old Timey Code Light Condensed",
+        "selector": "old-timey-code-light-condensed",
+        "style": "light"
+    },
+    {
+        "name": "Old Timey Code Condensed",
+        "selector": "old-timey-code-condensed",
+        "style": "unknown"
+    },
+    {
+        "name": "Old Timey Code NH Light",
+        "selector": "old-timey-code-nh-light",
+        "style": "light"
+    },
+    {
+        "name": "Old Timey Code NH",
+        "selector": "old-timey-code-nh",
+        "style": "unknown"
+    },
+    {
+        "name": "Old Timey Code NH Light Condensed",
+        "selector": "old-timey-code-nh-light-condensed",
+        "style": "light"
+    },
+    {
+        "name": "Old Timey Code NH Condensed",
+        "selector": "old-timey-code-nh-condensed",
+        "style": "unknown"
+    },
+    {
+        "name": "Old Timey Mono Light",
+        "selector": "old-timey-mono-light",
+        "style": "light"
+    },
+    {
+        "name": "Old Timey Mono",
+        "selector": "old-timey-mono",
+        "style": "unknown"
+    },
+    {
+        "name": "Old Timey Mono Light Condensed",
+        "selector": "old-timey-mono-light-condensed",
+        "style": "light"
+    },
+    {
+        "name": "Old Timey Mono Condensed",
+        "selector": "old-timey-mono-condensed",
+        "style": "unknown"
+    },
+    {
+        "name": "Old Timey Mono NH Light",
+        "selector": "old-timey-mono-nh-light",
+        "style": "light"
+    },
+    {
+        "name": "Old Timey Mono NH",
+        "selector": "old-timey-mono-nh",
+        "style": "unknown"
+    },
+    {
+        "name": "Old Timey Mono NH Light Condensed",
+        "selector": "old-timey-mono-nh-light-condensed",
+        "style": "light"
+    },
+    {
+        "name": "Old Timey Mono NH Condensed",
+        "selector": "old-timey-mono-nh-condensed",
+        "style": "unknown"
+    }
 ]
