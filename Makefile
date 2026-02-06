@@ -2,7 +2,7 @@
 
 # data => npm run build
 
-default: fonts zip data npm-run-build
+default: fonts zip data
 
 SRC_BASEFONT			= src/basefont
 SRC_DATA			= src/data
@@ -182,7 +182,6 @@ unhinted: $(UNHINTED_FONTS)
 fonts: $(TTF_FONTS) $(SFD_FONTS)
 original: $(OTMONO_FONTS)
 coding: $(OTCODE_FONTS)
-# compressed: $(COMP_FONTS)
 condensed: $(COND_FONTS)
 ttf: $(TTF_FONTS)
 sfd: $(SFD_FONTS)
@@ -191,10 +190,6 @@ zip: $(ZIP_FILE) $(UNVERSIONED_ZIP_FILE)
 .SUFFIXES: .sfd .ttf
 
 limited-test-fonts: $(OTMONO_TTF) $(OTCODE_TTF)
-
-testfontsweb: FORCE
-	rm -fr website/fonts/ttf/*
-	make limited-test-fonts DIST_DIR="website/fonts"
 
 testfonts: FORCE
 	$(eval BUILD_NR = $(shell $(BUILDNR_PY)))
@@ -273,23 +268,6 @@ $(ZIP_FILE): FORCE
 $(UNVERSIONED_ZIP_FILE): $(ZIP_FILE)
 	cp "$(ZIP_FILE)" "$(UNVERSIONED_ZIP_FILE)"
 
-SPECIMEN_DIR = dist/specimen
-
-specimen: FORCE
-	rm -fr $(SPECIMEN_DIR)/src/fonts/*.ttf || true
-	rm -fr $(SPECIMEN_DIR)/src/fonts/*.woff2 || true
-	mkdir -p $(SPECIMEN_DIR)/src/fonts
-	for i in $(DIST_TTF)/*.ttf ; do \
-		woff2_compress "$$i" && \
-		cp "$$i" $(SPECIMEN_DIR)/src/fonts && \
-		mv "$${i%.ttf}.woff2" $(SPECIMEN_DIR)/src/fonts ; \
-	done
-	@echo "==============================================================================="
-	@echo "You'll need to do the following manually:"
-	@echo ""
-	@echo "cd $(SPECIMEN_DIR) && yarn clean && yarn build"
-	@echo "==============================================================================="
-
 stage1: $(SRC_BUILD)/$(PS_OTMONO_FONT_FAMILY).stage1.sfd
 
 # Stage 1: import SVGs
@@ -357,14 +335,6 @@ $(DIST_SFD)/%.sfd: $(DIST_TTF)/%.ttf
 
 clean: FORCE
 	/bin/rm $(TTF_FONTS) $(ZIP_FILE) || true
-	/bin/rm $(SPECIMEN_DIR)/src/fonts/*.woff2 || true
-	find . -type f \( \
-		-name '*.tmp' -o \
-		-name '*.tmp.*' -o \
-		-name '*.featfreeze.otf' -o \
-		-name '*~' -o \
-		-name '#*#' \
-	\) -exec rm {} + || true
 	/bin/rm -fr $(SRC_BUILD) || true
 
 data: src/data/font-data.json src/data/glyphs-data.json 
@@ -383,8 +353,5 @@ version: FORCE
 
 publish: FORCE
 	ssh dse@webonastick.com 'cd git/dse.d/fonts.d/old-timey-mono-font && git pull'
-
-npm-run-build: FORCE
-	npm run build
 
 .PHONY: FORCE
