@@ -17,6 +17,7 @@ def main():
             glyph.manualHints = True
         font.gasp_version = 1
         font.gasp = (
+            (10, ('antialias','symmetric-smoothing',),),
             (65535, ('antialias','symmetric-smoothing',),),
         )
         if filename.endswith(".sfd"):
