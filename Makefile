@@ -178,6 +178,7 @@ COND_FONTS = \
 	$(NH_OTCODE_COND_LIGHT_TTF)
 
 
+unhinted: $(UNHINTED_FONTS)
 fonts: $(TTF_FONTS) $(SFD_FONTS)
 original: $(OTMONO_FONTS)
 coding: $(OTCODE_FONTS)
