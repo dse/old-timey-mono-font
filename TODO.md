@@ -1,5 +1,8 @@
 # TODO
 
+-   latin small letter eth can go all the way to the top; there are
+    never combining marks above it, and it would be easier to read.
+
 ## Petite and Small Caps
 
 -   U+00C6 AE
@@ -105,6 +108,8 @@ https://news.ycombinator.com/item?id=43884418
     punctuation marks. Thanks for listening to my two cents."
     
     > Aiming for both.
+    
+    Inline stylistic tag `INLN`?
 
 ## Other
 
@@ -126,16 +131,13 @@ https://news.ycombinator.com/item?id=43884418
 -   U+29EB BLACK LOZENGE
 -   U+2326 ERASE TO THE RIGHT (see U+232B ERASE TO THE LEFT)
 
-## Fixed
-
--   U+042F and U+044F CYRILLIC CAPITAL AND SMALL LETTERS YA were
-    backwards.
-
 ## Maybe
 
 -   20px overshoot on VWvw41
 -   no overshoot on A
 -   too late imo but
-    -   possible cap height of 1104 instead of 1056
-    -   possible ex height of 768 instead of 756
+    -   possible cap height of 1104 (1008 + 96)
+        -   presently ........ 1056 (960 + 96)
+    -   possible ex height of 768 (672 + 96)
+        -   presently ....... 756 (660 + 96)
 
