@@ -354,4 +354,7 @@ version: FORCE
 publish: FORCE
 	ssh dse@webonastick.com 'cd git/dse.d/fonts.d/old-timey-mono-font && git pull'
 
+shaperglot: FORCE
+	shaperglot report dist/ttf/OldTimeyMono.ttf | sort > shaperglot.txt
+
 .PHONY: FORCE
