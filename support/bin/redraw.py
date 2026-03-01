@@ -6,6 +6,7 @@ import argparse
 import os
 import sys
 import json
+import re
 
 sys.path.append(os.path.dirname(__file__) + "/../lib")
 from my_font_utils import reconstitute_references
