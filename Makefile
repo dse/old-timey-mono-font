@@ -42,7 +42,7 @@ NH_PS_OTCODE_FONT_FAMILY	= OldTimeyCodeNH
 
 # ONLY specify executable programs' pathnames here.
 # Use *_PY variables to supply arguments.
-SVG_PY_PROG			= $(SUPPORT_BIN)/redraw.py
+REDRAW_PY_PROG			= $(SUPPORT_BIN)/redraw.py
 STROKES_PY_PROG			= $(SUPPORT_BIN)/strokes.py
 ASPECT_PY_PROG			= $(SUPPORT_BIN)/aspect.py
 METAS_PY_PROG			= $(SUPPORT_BIN)/metas.py
@@ -67,7 +67,7 @@ NH_METAS_PY_ARGS		= --ffn='$(NH_OTMONO_FONT_FAMILY)' --psfn='$(NH_PS_OTMONO_FONT
 NH_METAS_PY_CODE_ARGS		= --ffn='$(NH_OTCODE_FONT_FAMILY)' --psfn='$(NH_PS_OTCODE_FONT_FAMILY)'
 
 # You can specify arguments to executable programs here.
-SVG_PY				= $(SVG_PY_PROG)
+REDRAW_PY			= $(REDRAW_PY_PROG)
 STROKES_PY			= $(STROKES_PY_PROG)
 ASPECT_PY			= $(ASPECT_PY_PROG)
 METAS_PY			= $(METAS_PY_PROG) $(METAS_PY_ARGS)
@@ -205,7 +205,7 @@ testfonts: FORCE
 
 # update source font fron SVG files
 redraw: FORCE
-	$(SVG_PY) $(BASEFONT_SFD) $(SRC_SVGS)
+	$(REDRAW_PY) $(BASEFONT_SFD) $(SRC_SVGS)
 	$(BOUNDS_PY) $(BASEFONT_SFD)
 	$(SMOL_PY) $(BASEFONT_SFD)
 	$(SUPERSUB_PY) $(BASEFONT_SFD)
@@ -218,7 +218,7 @@ redraw: FORCE
 	make fix-strokes-log
 
 redraw-test: FORCE
-	$(SVG_PY) $(BASEFONT_SFD) $(SRC_SVGS)
+	$(REDRAW_PY) $(BASEFONT_SFD) $(SRC_SVGS)
 	$(BOUNDS_PY) $(BASEFONT_SFD)
 	$(SMOL_PY) $(BASEFONT_SFD)
 	$(SUPERSUB_PY) $(BASEFONT_SFD)
@@ -271,10 +271,10 @@ $(UNVERSIONED_ZIP_FILE): $(ZIP_FILE)
 stage1: $(SRC_BUILD)/$(PS_OTMONO_FONT_FAMILY).stage1.sfd
 
 # Stage 1: import SVGs
-$(SRC_BUILD)/$(PS_OTMONO_FONT_FAMILY).stage1.sfd: $(BASEFONT_SFD) $(SRC_SVGS) $(MAKEFILE) $(SVG_PY_PROG) $(BOUNDS_PY_PROG) $(SMOL_PY_PROG) $(SUPERSUB_PY_PROG) $(SETSUBSTITUTIONS_PY_PROG) $(SUBSTITUTIONS_JSON) $(REFERENCES_JSON)
+$(SRC_BUILD)/$(PS_OTMONO_FONT_FAMILY).stage1.sfd: $(BASEFONT_SFD) $(SRC_SVGS) $(MAKEFILE) $(REDRAW_PY_PROG) $(BOUNDS_PY_PROG) $(SMOL_PY_PROG) $(SUPERSUB_PY_PROG) $(SETSUBSTITUTIONS_PY_PROG) $(SUBSTITUTIONS_JSON) $(REFERENCES_JSON)
 	@echo "stage 1"
 	mkdir -p $(SRC_BUILD)
-	$(SVG_PY) "$<" -o "$@" $(SRC_SVGS)
+	$(REDRAW_PY) "$<" -o "$@" $(SRC_SVGS)
 	$(BOUNDS_PY) "$@"
 	$(SMOL_PY) "$@"
 	$(SUPERSUB_PY) "$@"
