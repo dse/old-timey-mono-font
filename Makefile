@@ -358,8 +358,7 @@ shaperglot: FORCE
 	shaperglot report dist/ttf/OldTimeyMono.ttf | sort > shaperglot.txt
 
 release:
-	gh release create v$(VERSION) --notes "bugfix release" \
-		./dist/ttf/*.ttf ./dist/zip/OldTimeyMono-$(VERSION).zip ./LICENSE.md 
+	gh release create v$(VERSION) ./dist/ttf/*.ttf ./dist/zip/OldTimeyMono-$(VERSION).zip ./LICENSE.md 
 
 .PHONY: FORCE
 
