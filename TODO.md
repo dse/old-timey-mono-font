@@ -1,7 +1,34 @@
+# Known Issues
+
+-   The following characters appear double wide in macOS Terminal.app:
+
+    -   U+2329 LEFT-POINTING ANGLE BRACKET "〈"
+    -   U+232A RIGHT-POINTING ANGLE BRACKET "〉"
+    
+    Those glyphs' advance widths in the font are correct.
+    
+    In macOS, this occurs in iTerm as well.
+    
 # TODO
 
--   latin small letter eth can go all the way to the top; there are
-    never combining marks above it, and it would be easier to read.
+-   add U+03F4 GREEK CAPITAL THETA SYMBOL.
+
+-   U+00F0 LATIN SMALL LETTER ETH can go all the way to the top; there
+    are never combining marks above it, and it would be easier to
+    read.
+
+-   check box drawings for dumb shit like this that shows up in mintty:
+
+            ######################
+            ######################
+            ######################
+            ######################
+             ###
+             ###
+             ###
+             ###
+             ###
+             ###
 
 ## Petite and Small Caps
 
@@ -17,9 +44,13 @@
 -   U+0245 TURNED V
 
 -   greek capitals GAMMA, DELTA, THETA, LAMBDA, XI, PI, SIGMA, PHI, PSI, OMEGA, DIGAMMA
+
 -   cyrillic capitals DJE, UKRAINIAN IE, LJE, NJE, TSHE, DZHE, BE, GHE, DE, ZHE, ZE, I, KA, EL, 
     PE, U, EF, TSE, CHE, SHA, SHCHA, HARD SIGN, YERU, SOFT SIGN, E, YU, YA
+
 -   cyrillic capitals 046C, 0490, 04BA
+
+-   accented glyphs
 
 ## From Comments on Hacker News
 
