@@ -1227,29 +1227,33 @@ def boxdraw(font):
                      (x3_diag, y4_diag)))
         glyph.removeOverlap()
     for glyph in [font.createChar(LIGHT_LEFT)]:                              # ╴ 0x2574
-        pass
+        rect(glyph, 0, x2_light, y1_light, y2_light)
     for glyph in [font.createChar(LIGHT_UP)]:                                # ╵ 0x2575
-        pass
+        rect(glyph, x1_light, x2_light, ascent, y2_light)
     for glyph in [font.createChar(LIGHT_RIGHT)]:                             # ╶ 0x2576
-        pass
+        rect(glyph, x1_light, width, y1_light, y2_light)
     for glyph in [font.createChar(LIGHT_DOWN)]:                              # ╷ 0x2577
-        pass
+        rect(glyph, x1_light, x2_light, y1_light, -descent)
     for glyph in [font.createChar(HEAVY_LEFT)]:                              # ╸ 0x2578
-        pass
+        rect(glyph, 0, x2_heavy, y1_heavy, y2_heavy)
     for glyph in [font.createChar(HEAVY_UP)]:                                # ╹ 0x2579
-        pass
+        rect(glyph, x1_heavy, x2_heavy, ascent, y2_heavy)
     for glyph in [font.createChar(HEAVY_RIGHT)]:                             # ╺ 0x257A
-        pass
+        rect(glyph, x1_heavy, width, y1_heavy, y2_heavy)
     for glyph in [font.createChar(HEAVY_DOWN)]:                              # ╻ 0x257B
-        pass
+        rect(glyph, x1_heavy, x2_heavy, y1_heavy, -descent)
     for glyph in [font.createChar(LIGHT_LEFT_AND_HEAVY_RIGHT)]:              # ╼ 0x257C
-        pass
+        poly(glyph, ((0, y1_light),
+                     (X, x1_heavy, y1_heavy, width, y2_heavy, x1_heavy, y2_light, 0)))
     for glyph in [font.createChar(LIGHT_UP_AND_HEAVY_DOWN)]:                 # ╽ 0x257D
-        pass
+        poly(glyph, ((x1_light, ascent),
+                     (X, x2_light, y1_heavy, x2_heavy, -descent, x1_heavy, y1_heavy, x1_light)))
     for glyph in [font.createChar(HEAVY_LEFT_AND_LIGHT_RIGHT)]:              # ╾ 0x257E
-        pass
+        poly(glyph, ((0, y1_heavy),
+                     (X, x2_heavy, y1_light, width, y2_light, x2_heavy, y2_heavy, 0)))
     for glyph in [font.createChar(HEAVY_UP_AND_LIGHT_DOWN)]:                 # ╿ 0x257F
-        pass
+        poly(glyph, ((x1_heavy, ascent),
+                     (X, x2_heavy, y2_heavy, x2_light, -descent, x1_light, y2_heavy, x1_heavy)))
 
     for codepoint in range(0x2500, 0x2580):
         glyph = font.createChar(codepoint)
