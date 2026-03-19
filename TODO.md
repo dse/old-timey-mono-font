@@ -8,7 +8,7 @@
     Those glyphs' advance widths in the font are correct.
     
     In macOS, this occurs in iTerm as well.
-    
+
 # TODO
 
 -   add U+03F4 GREEK CAPITAL THETA SYMBOL.
@@ -17,7 +17,9 @@
     are never combining marks above it, and it would be easier to
     read.
 
--   check box drawings for dumb shit like this that shows up in mintty:
+-   SOLUTION?  Hinting?
+
+    check box drawings for dumb shit like this that shows up in mintty:
 
             ######################
             ######################
@@ -43,10 +45,12 @@
 -   U+01B8 EZH REVERSED
 -   U+0245 TURNED V
 
--   greek capitals GAMMA, DELTA, THETA, LAMBDA, XI, PI, SIGMA, PHI, PSI, OMEGA, DIGAMMA
+-   greek capitals GAMMA, DELTA, THETA, LAMBDA, XI, PI,
+    SIGMA, PHI, PSI, OMEGA, DIGAMMA
 
--   cyrillic capitals DJE, UKRAINIAN IE, LJE, NJE, TSHE, DZHE, BE, GHE, DE, ZHE, ZE, I, KA, EL, 
-    PE, U, EF, TSE, CHE, SHA, SHCHA, HARD SIGN, YERU, SOFT SIGN, E, YU, YA
+-   cyrillic capitals DJE, UKRAINIAN IE, LJE, NJE, TSHE,
+    DZHE, BE, GHE, DE, ZHE, ZE, I, KA, EL, PE, U, EF, TSE,
+    CHE, SHA, SHCHA, HARD SIGN, YERU, SOFT SIGN, E, YU, YA
 
 -   cyrillic capitals 046C, 0490, 04BA
 
@@ -144,7 +148,6 @@ https://news.ycombinator.com/item?id=43884418
 
 ## Other
 
--   WIP: U+0250 to U+02AF - IPA Extensions block
 -   U+262E PEACE SYMBOL
 -   U+26C4 SNOWMAN WITHOUT SNOW
 -   U+23FB POWER SYMBOL
@@ -165,7 +168,7 @@ https://news.ycombinator.com/item?id=43884418
 ## Maybe
 
 -   20px overshoot on VWvw41
--   no overshoot on A
+-   no overshoot on A?
 -   too late imo but
     -   possible cap height of 1104 (1008 + 96)
         -   presently ........ 1056 (960 + 96)
