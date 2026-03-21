@@ -11,11 +11,11 @@
 
 # TODO
 
--   add U+03F4 GREEK CAPITAL THETA SYMBOL.
-
 -   U+00F0 LATIN SMALL LETTER ETH can go all the way to the top; there
     are never combining marks above it, and it would be easier to
     read.
+    
+    OR the loop can be shorter making the stroke more visible
 
 -   SOLUTION?  Hinting?
 
@@ -68,6 +68,8 @@ https://news.ycombinator.com/item?id=43884418
     notepad).  Maybe everything needs anchors?  Probably a good idea
     anyway, since auto-generating accented glyphs will achieve better
     results with them.
+    
+    Y̆ y̆ <-- mintty is showing a double breve?
 
 ### These are Suggestions.
 
@@ -145,6 +147,11 @@ https://news.ycombinator.com/item?id=43884418
     > Aiming for both.
     
     Inline stylistic tag `INLN`?
+    
+    asterisk.INLN
+    underline.INLN
+    circumflex.INLN
+    tilde.INLN
 
 ## Other
 
