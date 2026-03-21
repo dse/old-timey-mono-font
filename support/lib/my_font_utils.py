@@ -403,8 +403,6 @@ def is_monospace(font, confidence=1, fudge=1):
                  approx_equal(glyph.width, width, fudge=fudge)])
             >= confidence * len(list(font.glyphs())))
 
-def is_dualspace(font, fudge=1):
-
 def get_dualspace_widths(items, fn=lambda i:i.width, confidence=1, fudge=1):
     equal_width_items  = []
     half_width_items   = []
