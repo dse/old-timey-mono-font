@@ -367,6 +367,11 @@ def draw_shape(width, x_max, y_max, polygons, font=None, codept=None, glyph=None
 # parse_char("U+1F4A9")
 # parse_char("U1F4A9")
 def parse_char(str, default=ValueError, as_str=False):
+    """Return a string containing a single character, that being the
+character with the supplied codepoint, character, Adobe glyph name,
+Unicode glyph name, or hex code.
+
+    """
     if len(str) == 1:
         return str if as_str else ord(str)
     codepoint = fontforge.unicodeFromName(str)
@@ -384,3 +389,60 @@ def parse_char(str, default=ValueError, as_str=False):
     if default == ValueError:
         raise ValueError("invalid character: %s" % repr(str))
     return default
+
+def get_monospace_glyph_width(font, median=False):
+    widths = [glyph.width for glyph in font.glyphs() if glyph.width > 0]
+    if median:
+        return statistics.median(widths)
+    return statistics.mode(widths)
+
+def is_monospace(font, confidence=1, fudge=1):
+    width = get_monospace_glyph_width(font)
+    return (len([glyph.width for glyph in font.glyphs() if
+                 glyph.width > 0 and
+                 approx_equal(glyph.width, width, fudge=fudge)])
+            >= confidence * len(list(font.glyphs())))
+
+def is_dualspace(font, fudge=1):
+
+def get_dualspace_widths(items, fn=lambda i:i.width, confidence=1, fudge=1):
+    equal_width_items  = []
+    half_width_items   = []
+    double_width_items = []
+    other_items        = []
+    for this_item in items:
+        this_value = fn(this_item)
+        if equal_width_items.length == 0:
+            equal_width_items.append(this_item)
+        elif len([each_item for each_item in equal_width_items if approx_equal(fn(each_item), this_value, fudge=fudge)]):
+            equal_width_items.append(this_item)
+        elif len([each_item for each_item in half_width_items if approx_equal(fn(each_item) * 2, this_value, fudge=fudge)]):
+            half_width_items.append(this_item)
+        elif len([each_item for each_item in equal_width_items if approx_equal(fn(each_item), this_value / 2, fudge=fudge)]):
+            half_width_items.append(this_item)
+        elif len([each_item for each_item in double_width_items if approx_equal(fn(each_item) / 2, this_value, fudge=fudge)]):
+            double_width_items.append(this_item)
+        elif len([each_item for each_item in equal_width_items if approx_equal(fn(each_item), this_value * 2, fudge-fudge)]):
+            double_width_items.append(this_item)
+        else:
+            other_items.push(this_item)
+    if len(half_width_items) and len(double_width_items):
+        return False
+    if len(half_width_items) and len(equal_width_items):
+        return [half_width_items, equal_width_items]
+    if len(equal_width_items) and len(double_width_items):
+        return [equal_width_items, double_width_items]
+
+    if len(half_width_items) <= (1-confidence)*len(items) and len(double_width_items) <= (1-confidence)*len(items)
+
+    return False
+
+def get_monospace_width_glyphs(font, fudge=1):
+    width = get_monospace_glyph_width(font)
+    return [glyph for glyph in font.glyphs() if
+            approx_equal(glyph.width, width, fudge=fudge)]
+
+def approx_equal(a, b, fudge=1.01):
+    if fudge == 1:
+        return a == b
+    return (a <= (b * fudge)) and (b <= (a * fudge))
