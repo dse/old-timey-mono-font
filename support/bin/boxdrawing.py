@@ -4,141 +4,13 @@ import fontforge, sys, os, statistics, argparse, math
 
 sys.path.append("%s/git/dse.d/font-utils/lib" % os.getenv("HOME"))
 from font_utils import fonts_in
+from draw_utils import rect, poly, GA
 
 # https://spencermortensen.com/articles/bezier-circle/
 C = 0.5519150244935105707435627
 
 X = "X"
 Y = "Y"
-
-LIGHT_HORIZONTAL                         = 0x2500
-HEAVY_HORIZONTAL                         = 0x2501
-LIGHT_VERTICAL                           = 0x2502
-HEAVY_VERTICAL                           = 0x2503
-LIGHT_TRIPLE_DASH_HORIZONTAL             = 0x2504
-HEAVY_TRIPLE_DASH_HORIZONTAL             = 0x2505
-LIGHT_TRIPLE_DASH_VERTICAL               = 0x2506
-HEAVY_TRIPLE_DASH_VERTICAL               = 0x2507
-LIGHT_QUADRUPLE_DASH_HORIZONTAL          = 0x2508
-HEAVY_QUADRUPLE_DASH_HORIZONTAL          = 0x2509
-LIGHT_QUADRUPLE_DASH_VERTICAL            = 0x250A
-HEAVY_QUADRUPLE_DASH_VERTICAL            = 0x250B
-LIGHT_DOWN_AND_RIGHT                     = 0x250C
-DOWN_LIGHT_AND_RIGHT_HEAVY               = 0x250D
-DOWN_HEAVY_AND_RIGHT_LIGHT               = 0x250E
-HEAVY_DOWN_AND_RIGHT                     = 0x250F
-LIGHT_DOWN_AND_LEFT                      = 0x2510
-DOWN_LIGHT_AND_LEFT_HEAVY                = 0x2511
-DOWN_HEAVY_AND_LEFT_LIGHT                = 0x2512
-HEAVY_DOWN_AND_LEFT                      = 0x2513
-LIGHT_UP_AND_RIGHT                       = 0x2514
-UP_LIGHT_AND_RIGHT_HEAVY                 = 0x2515
-UP_HEAVY_AND_RIGHT_LIGHT                 = 0x2516
-HEAVY_UP_AND_RIGHT                       = 0x2517
-LIGHT_UP_AND_LEFT                        = 0x2518
-UP_LIGHT_AND_LEFT_HEAVY                  = 0x2519
-UP_HEAVY_AND_LEFT_LIGHT                  = 0x251A
-HEAVY_UP_AND_LEFT                        = 0x251B
-LIGHT_VERTICAL_AND_RIGHT                 = 0x251C
-VERTICAL_LIGHT_AND_RIGHT_HEAVY           = 0x251D
-UP_HEAVY_AND_RIGHT_DOWN_LIGHT            = 0x251E
-DOWN_HEAVY_AND_RIGHT_UP_LIGHT            = 0x251F
-VERTICAL_HEAVY_AND_RIGHT_LIGHT           = 0x2520
-DOWN_LIGHT_AND_RIGHT_UP_HEAVY            = 0x2521
-UP_LIGHT_AND_RIGHT_DOWN_HEAVY            = 0x2522
-HEAVY_VERTICAL_AND_RIGHT                 = 0x2523
-LIGHT_VERTICAL_AND_LEFT                  = 0x2524
-VERTICAL_LIGHT_AND_LEFT_HEAVY            = 0x2525
-UP_HEAVY_AND_LEFT_DOWN_LIGHT             = 0x2526
-DOWN_HEAVY_AND_LEFT_UP_LIGHT             = 0x2527
-VERTICAL_HEAVY_AND_LEFT_LIGHT            = 0x2528
-DOWN_LIGHT_AND_LEFT_UP_HEAVY             = 0x2529
-UP_LIGHT_AND_LEFT_DOWN_HEAVY             = 0x252A
-HEAVY_VERTICAL_AND_LEFT                  = 0x252B
-LIGHT_DOWN_AND_HORIZONTAL                = 0x252C
-LEFT_HEAVY_AND_RIGHT_DOWN_LIGHT          = 0x252D
-RIGHT_HEAVY_AND_LEFT_DOWN_LIGHT          = 0x252E
-DOWN_LIGHT_AND_HORIZONTAL_HEAVY          = 0x252F
-DOWN_HEAVY_AND_HORIZONTAL_LIGHT          = 0x2530
-RIGHT_LIGHT_AND_LEFT_DOWN_HEAVY          = 0x2531
-LEFT_LIGHT_AND_RIGHT_DOWN_HEAVY          = 0x2532
-HEAVY_DOWN_AND_HORIZONTAL                = 0x2533
-LIGHT_UP_AND_HORIZONTAL                  = 0x2534
-LEFT_HEAVY_AND_RIGHT_UP_LIGHT            = 0x2535
-RIGHT_HEAVY_AND_LEFT_UP_LIGHT            = 0x2536
-UP_LIGHT_AND_HORIZONTAL_HEAVY            = 0x2537
-UP_HEAVY_AND_HORIZONTAL_LIGHT            = 0x2538
-RIGHT_LIGHT_AND_LEFT_UP_HEAVY            = 0x2539
-LEFT_LIGHT_AND_RIGHT_UP_HEAVY            = 0x253A
-HEAVY_UP_AND_HORIZONTAL                  = 0x253B
-LIGHT_VERTICAL_AND_HORIZONTAL            = 0x253C
-LEFT_HEAVY_AND_RIGHT_VERTICAL_LIGHT      = 0x253D
-RIGHT_HEAVY_AND_LEFT_VERTICAL_LIGHT      = 0x253E
-VERTICAL_LIGHT_AND_HORIZONTAL_HEAVY      = 0x253F
-UP_HEAVY_AND_DOWN_HORIZONTAL_LIGHT       = 0x2540
-DOWN_HEAVY_AND_UP_HORIZONTAL_LIGHT       = 0x2541
-VERTICAL_HEAVY_AND_HORIZONTAL_LIGHT      = 0x2542
-LEFT_UP_HEAVY_AND_RIGHT_DOWN_LIGHT       = 0x2543
-RIGHT_UP_HEAVY_AND_LEFT_DOWN_LIGHT       = 0x2544
-LEFT_DOWN_HEAVY_AND_RIGHT_UP_LIGHT       = 0x2545
-RIGHT_DOWN_HEAVY_AND_LEFT_UP_LIGHT       = 0x2546
-DOWN_LIGHT_AND_UP_HORIZONTAL_HEAVY       = 0x2547
-UP_LIGHT_AND_DOWN_HORIZONTAL_HEAVY       = 0x2548
-RIGHT_LIGHT_AND_LEFT_VERTICAL_HEAVY      = 0x2549
-LEFT_LIGHT_AND_RIGHT_VERTICAL_HEAVY      = 0x254A
-HEAVY_VERTICAL_AND_HORIZONTAL            = 0x254B
-LIGHT_DOUBLE_DASH_HORIZONTAL             = 0x254C
-HEAVY_DOUBLE_DASH_HORIZONTAL             = 0x254D
-LIGHT_DOUBLE_DASH_VERTICAL               = 0x254E
-HEAVY_DOUBLE_DASH_VERTICAL               = 0x254F
-DOUBLE_HORIZONTAL                        = 0x2550
-DOUBLE_VERTICAL                          = 0x2551
-DOWN_SINGLE_AND_RIGHT_DOUBLE             = 0x2552
-DOWN_DOUBLE_AND_RIGHT_SINGLE             = 0x2553
-DOUBLE_DOWN_AND_RIGHT                    = 0x2554
-DOWN_SINGLE_AND_LEFT_DOUBLE              = 0x2555
-DOWN_DOUBLE_AND_LEFT_SINGLE              = 0x2556
-DOUBLE_DOWN_AND_LEFT                     = 0x2557
-UP_SINGLE_AND_RIGHT_DOUBLE               = 0x2558
-UP_DOUBLE_AND_RIGHT_SINGLE               = 0x2559
-DOUBLE_UP_AND_RIGHT                      = 0x255A
-UP_SINGLE_AND_LEFT_DOUBLE                = 0x255B
-UP_DOUBLE_AND_LEFT_SINGLE                = 0x255C
-DOUBLE_UP_AND_LEFT                       = 0x255D
-VERTICAL_SINGLE_AND_RIGHT_DOUBLE         = 0x255E
-VERTICAL_DOUBLE_AND_RIGHT_SINGLE         = 0x255F
-DOUBLE_VERTICAL_AND_RIGHT                = 0x2560
-VERTICAL_SINGLE_AND_LEFT_DOUBLE          = 0x2561
-VERTICAL_DOUBLE_AND_LEFT_SINGLE          = 0x2562
-DOUBLE_VERTICAL_AND_LEFT                 = 0x2563
-DOWN_SINGLE_AND_HORIZONTAL_DOUBLE        = 0x2564
-DOWN_DOUBLE_AND_HORIZONTAL_SINGLE        = 0x2565
-DOUBLE_DOWN_AND_HORIZONTAL               = 0x2566
-UP_SINGLE_AND_HORIZONTAL_DOUBLE          = 0x2567
-UP_DOUBLE_AND_HORIZONTAL_SINGLE          = 0x2568
-DOUBLE_UP_AND_HORIZONTAL                 = 0x2569
-VERTICAL_SINGLE_AND_HORIZONTAL_DOUBLE    = 0x256A
-VERTICAL_DOUBLE_AND_HORIZONTAL_SINGLE    = 0x256B
-DOUBLE_VERTICAL_AND_HORIZONTAL           = 0x256C
-LIGHT_ARC_DOWN_AND_RIGHT                 = 0x256D
-LIGHT_ARC_DOWN_AND_LEFT                  = 0x256E
-LIGHT_ARC_UP_AND_LEFT                    = 0x256F
-LIGHT_ARC_UP_AND_RIGHT                   = 0x2570
-LIGHT_DIAGONAL_UPPER_RIGHT_TO_LOWER_LEFT = 0x2571
-LIGHT_DIAGONAL_UPPER_LEFT_TO_LOWER_RIGHT = 0x2572
-LIGHT_DIAGONAL_CROSS                     = 0x2573
-LIGHT_LEFT                               = 0x2574
-LIGHT_UP                                 = 0x2575
-LIGHT_RIGHT                              = 0x2576
-LIGHT_DOWN                               = 0x2577
-HEAVY_LEFT                               = 0x2578
-HEAVY_UP                                 = 0x2579
-HEAVY_RIGHT                              = 0x257A
-HEAVY_DOWN                               = 0x257B
-LIGHT_LEFT_AND_HEAVY_RIGHT               = 0x257C
-LIGHT_UP_AND_HEAVY_DOWN                  = 0x257D
-HEAVY_LEFT_AND_LIGHT_RIGHT               = 0x257E
-HEAVY_UP_AND_LIGHT_DOWN                  = 0x257F
 
 STROKE_WIDTH = 96
 STROKE_WIDTH_HEAVY = 336
@@ -160,7 +32,7 @@ def main():
     args = parser.parse_args()
     for filename in args.filenames:
         for font in fonts_in([filename], names=False):
-            boxdraw(font)
+            boxdraw(font, args)
             if filename.endswith(".sfd"):
                 print("Saving %s" % filename)
                 font.save(filename)
@@ -168,19 +40,16 @@ def main():
                 print("Generating %s" % filename)
                 font.generate(filename)
 
-def boxdraw(font):
-    global STROKE_WIDTH
-    global STROKE_WIDTH_HEAVY
-    global STROKE_DIST_DOUBLE
-    global args
-
+def boxdraw(font, args):
+    stroke_width       = args.light
+    stroke_width_heavy = args.heavy
+    stroke_dist_double = args.double
     if args.width is not None:
         width = args.width
     else:
-        width = round(statistics.median([glyph.width for glyph in font.glyphs()]))
-    print("width => %d" % width)
+        width = round(statistics.median([glyph.width for glyph in font.glyphs()
+                                         if glyph.width]))
     height = font.em
-    print("height => %d" % height)
 
     xc = round(width/2)
     yc = round(font.capHeight/2)
@@ -188,24 +57,24 @@ def boxdraw(font):
     ascent = font.ascent
     descent = font.descent
 
-    x1_light = round(xc - STROKE_WIDTH/2)
-    x2_light = round(xc + STROKE_WIDTH/2)
-    y1_light = round(yc + STROKE_WIDTH/2)
-    y2_light = round(yc - STROKE_WIDTH/2)
+    x1_light = round(xc - stroke_width/2)
+    x2_light = round(xc + stroke_width/2)
+    y1_light = round(yc + stroke_width/2)
+    y2_light = round(yc - stroke_width/2)
 
-    x1_heavy = round(xc - STROKE_WIDTH_HEAVY/2)
-    x2_heavy = round(xc + STROKE_WIDTH_HEAVY/2)
-    y1_heavy = round(yc + STROKE_WIDTH_HEAVY/2)
-    y2_heavy = round(yc - STROKE_WIDTH_HEAVY/2)
+    x1_heavy = round(xc - stroke_width_heavy/2)
+    x2_heavy = round(xc + stroke_width_heavy/2)
+    y1_heavy = round(yc + stroke_width_heavy/2)
+    y2_heavy = round(yc - stroke_width_heavy/2)
 
-    x1_double = round(xc - STROKE_DIST_DOUBLE/2 - STROKE_WIDTH/2)
-    x2_double = round(xc - STROKE_DIST_DOUBLE/2 + STROKE_WIDTH/2)
-    x3_double = round(xc + STROKE_DIST_DOUBLE/2 - STROKE_WIDTH/2)
-    x4_double = round(xc + STROKE_DIST_DOUBLE/2 + STROKE_WIDTH/2)
-    y1_double = round(yc + STROKE_DIST_DOUBLE/2 + STROKE_WIDTH/2)
-    y2_double = round(yc + STROKE_DIST_DOUBLE/2 - STROKE_WIDTH/2)
-    y3_double = round(yc - STROKE_DIST_DOUBLE/2 + STROKE_WIDTH/2)
-    y4_double = round(yc - STROKE_DIST_DOUBLE/2 - STROKE_WIDTH/2)
+    x1_double = round(xc - stroke_dist_double/2 - stroke_width/2)
+    x2_double = round(xc - stroke_dist_double/2 + stroke_width/2)
+    x3_double = round(xc + stroke_dist_double/2 - stroke_width/2)
+    x4_double = round(xc + stroke_dist_double/2 + stroke_width/2)
+    y1_double = round(yc + stroke_dist_double/2 + stroke_width/2)
+    y2_double = round(yc + stroke_dist_double/2 - stroke_width/2)
+    y3_double = round(yc - stroke_dist_double/2 + stroke_width/2)
+    y4_double = round(yc - stroke_dist_double/2 - stroke_width/2)
 
     arc_radius = ARC_DRAWING_RADIUS * min(width, height) / 2
 
@@ -214,8 +83,8 @@ def boxdraw(font):
     y1_arc = yc + arc_radius
     y2_arc = yc - arc_radius
 
-    inner_radius = arc_radius - STROKE_WIDTH / 2
-    outer_radius = arc_radius + STROKE_WIDTH / 2
+    inner_radius = arc_radius - stroke_width / 2
+    outer_radius = arc_radius + stroke_width / 2
 
     # double/triple/quadruple dashes
     dash_horiz = {}
@@ -233,155 +102,151 @@ def boxdraw(font):
         print("%d horiz => %s" % (i, repr(dash_horiz[i])))
         print("%d vert  => %s" % (i, repr(dash_vert[i])))
 
-    for codepoint in range(0x2500, 0x2580):
-        glyph = font.createChar(codepoint)
-        glyph.clear()
-
-    for glyph in [font.createChar(LIGHT_HORIZONTAL)]:               # ─ 0x2500
+    for glyph in GA("BOX DRAWINGS LIGHT HORIZONTAL"):
         rect(glyph, 0, width, y1_light, y2_light)
-    for glyph in [font.createChar(HEAVY_HORIZONTAL)]:               # ━ 0x2501
+    for glyph in GA("BOX DRAWINGS HEAVY HORIZONTAL"):
         rect(glyph, 0, width, y1_heavy, y2_heavy)
-    for glyph in [font.createChar(LIGHT_VERTICAL)]:                 # │ 0x2502
+    for glyph in GA("BOX DRAWINGS LIGHT VERTICAL"):
         rect(glyph, x1_light, x2_light, ascent, -descent)
-    for glyph in [font.createChar(HEAVY_VERTICAL)]:                 # ┃ 0x2503
+    for glyph in GA("BOX DRAWINGS HEAVY VERTICAL"):
         rect(glyph, x1_heavy, x2_heavy, ascent, -descent)
-    for glyph in [font.createChar(LIGHT_TRIPLE_DASH_HORIZONTAL)]:   # ┄ 0x2504
+    for glyph in GA("BOX DRAWINGS LIGHT TRIPLE DASH HORIZONTAL"):
         for i in range(0, 3):
             rect(glyph, dash_horiz[3][i*2], dash_horiz[3][i*2+1], y1_light, y2_light)
-    for glyph in [font.createChar(HEAVY_TRIPLE_DASH_HORIZONTAL)]:   # ┅ 0x2505
+    for glyph in GA("BOX DRAWINGS HEAVY TRIPLE DASH HORIZONTAL"):
         for i in range(0, 3):
             rect(glyph, dash_horiz[3][i*2], dash_horiz[3][i*2+1], y1_heavy, y2_heavy)
-    for glyph in [font.createChar(LIGHT_TRIPLE_DASH_VERTICAL)]:     # ┆ 0x2506
+    for glyph in GA("BOX DRAWINGS LIGHT TRIPLE DASH VERTICAL"):
         for i in range(0, 3):
             rect(glyph, x1_light, x2_light, dash_vert[3][i*2], dash_vert[3][i*2+1])
-    for glyph in [font.createChar(HEAVY_TRIPLE_DASH_VERTICAL)]:     # ┇ 0x2507
+    for glyph in GA("BOX DRAWINGS HEAVY TRIPLE DASH VERTICAL"):
         for i in range(0, 3):
             rect(glyph, x1_heavy, x2_heavy, dash_vert[3][i*2], dash_vert[3][i*2+1])
-    for glyph in [font.createChar(LIGHT_QUADRUPLE_DASH_HORIZONTAL)]:# ┈ 0x2508
+    for glyph in GA("BOX DRAWINGS LIGHT QUADRUPLE DASH HORIZONTAL"):
         for i in range(0, 4):
             rect(glyph, dash_horiz[4][i*2], dash_horiz[4][i*2+1], y1_light, y2_light)
-    for glyph in [font.createChar(HEAVY_QUADRUPLE_DASH_HORIZONTAL)]:# ┉ 0x2509
+    for glyph in GA("BOX DRAWINGS HEAVY QUADRUPLE DASH HORIZONTAL"):
         for i in range(0, 4):
             rect(glyph, dash_horiz[4][i*2], dash_horiz[4][i*2+1], y1_heavy, y2_heavy)
-    for glyph in [font.createChar(LIGHT_QUADRUPLE_DASH_VERTICAL)]:  # ┊ 0x250A
+    for glyph in GA("BOX DRAWINGS LIGHT QUADRUPLE DASH VERTICAL"):
         for i in range(0, 4):
             rect(glyph, x1_light, x2_light, dash_vert[4][i*2], dash_vert[4][i*2+1])
-    for glyph in [font.createChar(HEAVY_QUADRUPLE_DASH_VERTICAL)]:  # ┋ 0x250B
+    for glyph in GA("BOX DRAWINGS HEAVY QUADRUPLE DASH VERTICAL"):
         for i in range(0, 4):
             rect(glyph, x1_heavy, x2_heavy, dash_vert[4][i*2], dash_vert[4][i*2+1])
-    for glyph in [font.createChar(LIGHT_DOWN_AND_RIGHT)]:                    # ┌ 0x250C
+    for glyph in GA("BOX DRAWINGS LIGHT DOWN AND RIGHT"):
         poly(glyph, ((x1_light, y1_light),
                      (X, width),
                      (Y, y2_light),
                      (X, x2_light),
                      (Y, -descent),
                      (X, x1_light)))
-    for glyph in [font.createChar(DOWN_LIGHT_AND_RIGHT_HEAVY)]:              # ┍ 0x250D
+    for glyph in GA("BOX DRAWINGS DOWN LIGHT AND RIGHT HEAVY"):
         poly(glyph, ((x1_light, y1_heavy),
                      (width, y1_heavy),
                      (width, y2_heavy),
                      (x2_light, y2_heavy),
                      (x2_light, -descent),
                      (x1_light, -descent)))
-    for glyph in [font.createChar(DOWN_HEAVY_AND_RIGHT_LIGHT)]:              # ┎ 0x250E
+    for glyph in GA("BOX DRAWINGS DOWN HEAVY AND RIGHT LIGHT"):
         poly(glyph, ((x1_heavy, y1_light),
                      (width, y1_light),
                      (width, y2_light),
                      (x2_heavy, y2_light),
                      (x2_heavy, -descent),
                      (x1_heavy, -descent)))
-    for glyph in [font.createChar(HEAVY_DOWN_AND_RIGHT)]:                    # ┏ 0x250F
+    for glyph in GA("BOX DRAWINGS HEAVY DOWN AND RIGHT"):
         poly(glyph, ((x1_heavy, y1_heavy),
                      (width, y1_heavy),
                      (width, y2_heavy),
                      (x2_heavy, y2_heavy),
                      (x2_heavy, -descent),
                      (x1_heavy, -descent)))
-    for glyph in [font.createChar(LIGHT_DOWN_AND_LEFT)]:                     # ┐ 0x2510
+    for glyph in GA("BOX DRAWINGS LIGHT DOWN AND LEFT"):
         poly(glyph, ((0, y1_light),
                      (x2_light, y1_light),
                      (x2_light, -descent),
                      (x1_light, -descent),
                      (x1_light, y2_light),
                      (0, y2_light)))
-    for glyph in [font.createChar(DOWN_LIGHT_AND_LEFT_HEAVY)]:               # ┑ 0x2511
+    for glyph in GA("BOX DRAWINGS DOWN LIGHT AND LEFT HEAVY"):
         poly(glyph, ((0, y1_heavy),
                      (x2_light, y1_heavy),
                      (x2_light, -descent),
                      (x1_light, -descent),
                      (x1_light, y2_heavy),
                      (0, y2_heavy)))
-    for glyph in [font.createChar(DOWN_HEAVY_AND_LEFT_LIGHT)]:               # ┒ 0x2512
+    for glyph in GA("BOX DRAWINGS DOWN HEAVY AND LEFT LIGHT"):
         poly(glyph, ((0, y1_light),
                      (x2_heavy, y1_light),
                      (x2_heavy, -descent),
                      (x1_heavy, -descent),
                      (x1_heavy, y2_light),
                      (0, y2_light)))
-    for glyph in [font.createChar(HEAVY_DOWN_AND_LEFT)]:                     # ┓ 0x2513
+    for glyph in GA("BOX DRAWINGS HEAVY DOWN AND LEFT"):
         poly(glyph, ((0, y1_heavy),
                      (x2_heavy, y1_heavy),
                      (x2_heavy, -descent),
                      (x1_heavy, -descent),
                      (x1_heavy, y2_heavy),
                      (0, y2_heavy)))
-    for glyph in [font.createChar(LIGHT_UP_AND_RIGHT)]:                      # └ 0x2514
+    for glyph in GA("BOX DRAWINGS LIGHT UP AND RIGHT"):
         poly(glyph, ((x1_light, ascent),
                      (x2_light, ascent),
                      (x2_light, y1_light),
                      (width, y1_light),
                      (width, y2_light),
                      (x1_light, y2_light)))
-    for glyph in [font.createChar(UP_LIGHT_AND_RIGHT_HEAVY)]:                # ┕ 0x2515
+    for glyph in GA("BOX DRAWINGS UP LIGHT AND RIGHT HEAVY"):
         poly(glyph, ((x1_light, ascent),
                      (x2_light, ascent),
                      (x2_light, y1_heavy),
                      (width, y1_heavy),
                      (width, y2_heavy),
                      (x1_light, y2_heavy)))
-    for glyph in [font.createChar(UP_HEAVY_AND_RIGHT_LIGHT)]:                # ┖ 0x2516
+    for glyph in GA("BOX DRAWINGS UP HEAVY AND RIGHT LIGHT"):
         poly(glyph, ((x1_heavy, ascent),
                      (x2_heavy, ascent),
                      (x2_heavy, y1_light),
                      (width, y1_light),
                      (width, y2_light),
                      (x1_heavy, y2_light)))
-    for glyph in [font.createChar(HEAVY_UP_AND_RIGHT)]:                      # ┗ 0x2517
+    for glyph in GA("BOX DRAWINGS HEAVY UP AND RIGHT"):
         poly(glyph, ((x1_heavy, ascent),
                      (x2_heavy, ascent),
                      (x2_heavy, y1_heavy),
                      (width, y1_heavy),
                      (width, y2_heavy),
                      (x1_heavy, y2_heavy)))
-    for glyph in [font.createChar(LIGHT_UP_AND_LEFT)]:                       # ┘ 0x2518
+    for glyph in GA("BOX DRAWINGS LIGHT UP AND LEFT"):
         poly(glyph, ((x1_light, ascent),
                      (x2_light, ascent),
                      (x2_light, y2_light),
                      (0, y2_light),
                      (0, y1_light),
                      (x1_light, y1_light)))
-    for glyph in [font.createChar(UP_LIGHT_AND_LEFT_HEAVY)]:                 # ┙ 0x2519
+    for glyph in GA("BOX DRAWINGS UP LIGHT AND LEFT HEAVY"):
         poly(glyph, ((x1_light, ascent),
                      (x2_light, ascent),
                      (x2_light, y2_heavy),
                      (0, y2_heavy),
                      (0, y1_heavy),
                      (x1_light, y1_heavy)))
-    for glyph in [font.createChar(UP_HEAVY_AND_LEFT_LIGHT)]:                 # ┚ 0x251A
+    for glyph in GA("BOX DRAWINGS UP HEAVY AND LEFT LIGHT"):
         poly(glyph, ((x1_heavy, ascent),
                      (x2_heavy, ascent),
                      (x2_heavy, y2_light),
                      (0, y2_light),
                      (0, y1_light),
                      (x1_heavy, y1_light)))
-    for glyph in [font.createChar(HEAVY_UP_AND_LEFT)]:                       # ┛ 0x251B
+    for glyph in GA("BOX DRAWINGS HEAVY UP AND LEFT"):
         poly(glyph, ((x1_heavy, ascent),
                      (x2_heavy, ascent),
                      (x2_heavy, y2_heavy),
                      (0, y2_heavy),
                      (0, y1_heavy),
                      (x1_heavy, y1_heavy)))
-    for glyph in [font.createChar(LIGHT_VERTICAL_AND_RIGHT)]:                # ├ 0x251C
+    for glyph in GA("BOX DRAWINGS LIGHT VERTICAL AND RIGHT"):
         poly(glyph, ((x1_light, ascent),
                      (x2_light, ascent),
                      (x2_light, y1_light),
@@ -390,7 +255,7 @@ def boxdraw(font):
                      (x2_light, y2_light),
                      (x2_light, -descent),
                      (x1_light, -descent)))
-    for glyph in [font.createChar(VERTICAL_LIGHT_AND_RIGHT_HEAVY)]:          # ┝ 0x251D
+    for glyph in GA("BOX DRAWINGS VERTICAL LIGHT AND RIGHT HEAVY"):
         poly(glyph, ((x1_light, ascent),
                      (x2_light, ascent),
                      (x2_light, y1_heavy),
@@ -399,7 +264,7 @@ def boxdraw(font):
                      (x2_light, y2_heavy),
                      (x2_light, -descent),
                      (x1_light, -descent)))
-    for glyph in [font.createChar(UP_HEAVY_AND_RIGHT_DOWN_LIGHT)]:           # ┞ 0x251E
+    for glyph in GA("BOX DRAWINGS UP HEAVY AND RIGHT DOWN LIGHT"):
         poly(glyph, ((x1_heavy, ascent),
                      (x2_heavy, ascent),
                      (x2_heavy, y1_light),
@@ -410,7 +275,7 @@ def boxdraw(font):
                      (x1_light, -descent),
                      (x1_light, y2_light),
                      (x1_heavy, y2_light)))
-    for glyph in [font.createChar(DOWN_HEAVY_AND_RIGHT_UP_LIGHT)]:           # ┟ 0x251F
+    for glyph in GA("BOX DRAWINGS DOWN HEAVY AND RIGHT UP LIGHT"):
         poly(glyph, ((x1_light, ascent),
                      (X, x2_light),
                      (Y, y1_light),
@@ -421,7 +286,7 @@ def boxdraw(font):
                      (X, x1_heavy),
                      (Y, y1_light),
                      (X, x1_light)))
-    for glyph in [font.createChar(VERTICAL_HEAVY_AND_RIGHT_LIGHT)]:          # ┠ 0x2520
+    for glyph in GA("BOX DRAWINGS VERTICAL HEAVY AND RIGHT LIGHT"):
         poly(glyph, ((x1_heavy, ascent),
                      (X, x2_heavy),
                      (Y, y1_light),
@@ -430,7 +295,7 @@ def boxdraw(font):
                      (X, x2_heavy),
                      (Y, -descent),
                      (X, x1_heavy)))
-    for glyph in [font.createChar(DOWN_LIGHT_AND_RIGHT_UP_HEAVY)]:           # ┡ 0x2521
+    for glyph in GA("BOX DRAWINGS DOWN LIGHT AND RIGHT UP HEAVY"):
         poly(glyph, ((x1_heavy, ascent),
                      (X, x2_heavy),
                      (Y, y1_heavy),
@@ -441,7 +306,7 @@ def boxdraw(font):
                      (X, x1_light),
                      (Y, y2_heavy),
                      (X, x1_heavy)))
-    for glyph in [font.createChar(UP_LIGHT_AND_RIGHT_DOWN_HEAVY)]:           # ┢ 0x2522
+    for glyph in GA("BOX DRAWINGS UP LIGHT AND RIGHT DOWN HEAVY"):
         poly(glyph, ((x1_light, ascent),
                      (X, x2_light),
                      (Y, y1_heavy),
@@ -452,7 +317,7 @@ def boxdraw(font):
                      (X, x1_heavy),
                      (Y, y1_heavy),
                      (X, x1_light)))
-    for glyph in [font.createChar(HEAVY_VERTICAL_AND_RIGHT)]:                # ┣ 0x2523
+    for glyph in GA("BOX DRAWINGS HEAVY VERTICAL AND RIGHT"):
         poly(glyph, ((x1_heavy, ascent),
                      (x2_heavy, ascent),
                      (x2_heavy, y1_heavy),
@@ -461,7 +326,7 @@ def boxdraw(font):
                      (x2_heavy, y2_heavy),
                      (x2_heavy, -descent),
                      (x1_heavy, -descent)))
-    for glyph in [font.createChar(LIGHT_VERTICAL_AND_LEFT)]:                 # ┤ 0x2524
+    for glyph in GA("BOX DRAWINGS LIGHT VERTICAL AND LEFT"):
         poly(glyph, ((x1_light, ascent),
                      (X, x2_light),
                      (Y, -descent),
@@ -470,7 +335,7 @@ def boxdraw(font):
                      (X, 0),
                      (Y, y1_light),
                      (X, x1_light)))
-    for glyph in [font.createChar(VERTICAL_LIGHT_AND_LEFT_HEAVY)]:           # ┥ 0x2525
+    for glyph in GA("BOX DRAWINGS VERTICAL LIGHT AND LEFT HEAVY"):
         poly(glyph, ((x1_light, ascent),
                      (X, x2_light),
                      (Y, -descent),
@@ -479,7 +344,7 @@ def boxdraw(font):
                      (X, 0),
                      (Y, y1_heavy),
                      (X, x1_light)))
-    for glyph in [font.createChar(UP_HEAVY_AND_LEFT_DOWN_LIGHT)]:            # ┦ 0x2526
+    for glyph in GA("BOX DRAWINGS UP HEAVY AND LEFT DOWN LIGHT"):
         poly(glyph, ((x1_heavy, ascent),
                      (X, x2_heavy),
                      (Y, y2_light),
@@ -490,7 +355,7 @@ def boxdraw(font):
                      (X, 0),
                      (Y, y1_light),
                      (X, x1_heavy)))
-    for glyph in [font.createChar(DOWN_HEAVY_AND_LEFT_UP_LIGHT)]:            # ┧ 0x2527
+    for glyph in GA("BOX DRAWINGS DOWN HEAVY AND LEFT UP LIGHT"):
         poly(glyph, ((x1_light, ascent),
                      (x2_light, ascent),
                      (x2_light, y1_light),
@@ -501,7 +366,7 @@ def boxdraw(font):
                      (0, y2_light),
                      (0, y1_light),
                      (x1_light, y1_light)))
-    for glyph in [font.createChar(VERTICAL_HEAVY_AND_LEFT_LIGHT)]:           # ┨ 0x2528
+    for glyph in GA("BOX DRAWINGS VERTICAL HEAVY AND LEFT LIGHT"):
         poly(glyph, ((x1_heavy, ascent),
                      (X, x2_heavy),
                      (Y, -descent),
@@ -510,7 +375,7 @@ def boxdraw(font):
                      (X, 0),
                      (Y, y1_light),
                      (X, x1_heavy)))
-    for glyph in [font.createChar(DOWN_LIGHT_AND_LEFT_UP_HEAVY)]:            # ┩ 0x2529
+    for glyph in GA("BOX DRAWINGS DOWN LIGHT AND LEFT UP HEAVY"):
         poly(glyph, ((x1_heavy, ascent),
                      (X, x2_heavy),
                      (Y, y2_heavy),
@@ -521,7 +386,7 @@ def boxdraw(font):
                      (X, 0),
                      (Y, y1_heavy),
                      (X, x1_heavy)))
-    for glyph in [font.createChar(UP_LIGHT_AND_LEFT_DOWN_HEAVY)]:            # ┪ 0x252A
+    for glyph in GA("BOX DRAWINGS UP LIGHT AND LEFT DOWN HEAVY"):
         poly(glyph, ((x1_light, ascent),
                      (X, x2_light),
                      (Y, y1_heavy),
@@ -532,7 +397,7 @@ def boxdraw(font):
                      (X, 0),
                      (Y, y1_heavy),
                      (X, x1_light)))
-    for glyph in [font.createChar(HEAVY_VERTICAL_AND_LEFT)]:                 # ┫ 0x252B
+    for glyph in GA("BOX DRAWINGS HEAVY VERTICAL AND LEFT"):
         poly(glyph, ((x1_heavy, ascent),
                      (X, x2_heavy),
                      (Y, -descent),
@@ -541,7 +406,7 @@ def boxdraw(font):
                      (X, 0),
                      (Y, y1_heavy),
                      (X, x1_heavy)))
-    for glyph in [font.createChar(LIGHT_DOWN_AND_HORIZONTAL)]:               # ┬ 0x252C
+    for glyph in GA("BOX DRAWINGS LIGHT DOWN AND HORIZONTAL"):
         poly(glyph, ((0, y1_light),
                      (width, y1_light),
                      (width, y2_light),
@@ -550,7 +415,7 @@ def boxdraw(font):
                      (x1_light, -descent),
                      (x1_light, y2_light),
                      (0, y2_light)))
-    for glyph in [font.createChar(LEFT_HEAVY_AND_RIGHT_DOWN_LIGHT)]:         # ┭ 0x252D
+    for glyph in GA("BOX DRAWINGS LEFT HEAVY AND RIGHT DOWN LIGHT"):
         poly(glyph, ((0, y1_heavy),
                      (X, x2_light),
                      (Y, y1_light),
@@ -561,7 +426,7 @@ def boxdraw(font):
                      (X, x1_light),
                      (Y, y2_heavy),
                      (X, 0)))
-    for glyph in [font.createChar(RIGHT_HEAVY_AND_LEFT_DOWN_LIGHT)]:         # ┮ 0x252E
+    for glyph in GA("BOX DRAWINGS RIGHT HEAVY AND LEFT DOWN LIGHT"):
         poly(glyph, ((0, y1_light),
                      (X, x1_light),
                      (Y, y1_heavy),
@@ -572,7 +437,7 @@ def boxdraw(font):
                      (X, x1_light),
                      (Y, y2_light),
                      (X, 0)))
-    for glyph in [font.createChar(DOWN_LIGHT_AND_HORIZONTAL_HEAVY)]:         # ┯ 0x252F
+    for glyph in GA("BOX DRAWINGS DOWN LIGHT AND HORIZONTAL HEAVY"):
         poly(glyph, ((0, y1_heavy),
                      (width, y1_heavy),
                      (width, y2_heavy),
@@ -581,7 +446,7 @@ def boxdraw(font):
                      (x1_light, -descent),
                      (x1_light, y2_heavy),
                      (0, y2_heavy)))
-    for glyph in [font.createChar(DOWN_HEAVY_AND_HORIZONTAL_LIGHT)]:         # ┰ 0x2530
+    for glyph in GA("BOX DRAWINGS DOWN HEAVY AND HORIZONTAL LIGHT"):
         poly(glyph, ((0, y1_light),
                      (width, y1_light),
                      (width, y2_light),
@@ -590,7 +455,7 @@ def boxdraw(font):
                      (x1_heavy, -descent),
                      (x1_heavy, y2_light),
                      (0, y2_light)))
-    for glyph in [font.createChar(RIGHT_LIGHT_AND_LEFT_DOWN_HEAVY)]:         # ┱ 0x2531
+    for glyph in GA("BOX DRAWINGS RIGHT LIGHT AND LEFT DOWN HEAVY"):
         poly(glyph, ((0, y1_heavy),
                      (X, x2_heavy),
                      (Y, y1_light),
@@ -601,7 +466,7 @@ def boxdraw(font):
                      (X, x1_heavy),
                      (Y, y2_heavy),
                      (X, 0)))
-    for glyph in [font.createChar(LEFT_LIGHT_AND_RIGHT_DOWN_HEAVY)]:         # ┲ 0x2532
+    for glyph in GA("BOX DRAWINGS LEFT LIGHT AND RIGHT DOWN HEAVY"):
         poly(glyph, ((0, y1_light),
                      (X, x1_heavy),
                      (Y, y1_heavy),
@@ -612,7 +477,7 @@ def boxdraw(font):
                      (X, x1_heavy),
                      (Y, y2_light),
                      (X, 0)))
-    for glyph in [font.createChar(HEAVY_DOWN_AND_HORIZONTAL)]:               # ┳ 0x2533
+    for glyph in GA("BOX DRAWINGS HEAVY DOWN AND HORIZONTAL"):
         poly(glyph, ((0, y1_heavy),
                      (width, y1_heavy),
                      (width, y2_heavy),
@@ -621,7 +486,7 @@ def boxdraw(font):
                      (x1_heavy, -descent),
                      (x1_heavy, y2_heavy),
                      (0, y2_heavy)))
-    for glyph in [font.createChar(LIGHT_UP_AND_HORIZONTAL)]:                 # ┴ 0x2534
+    for glyph in GA("BOX DRAWINGS LIGHT UP AND HORIZONTAL"):
         poly(glyph, ((x1_light, ascent),
                      (X, x2_light),
                      (Y, y1_light),
@@ -630,7 +495,7 @@ def boxdraw(font):
                      (X, 0),
                      (Y, y1_light),
                      (X, x1_light)))
-    for glyph in [font.createChar(LEFT_HEAVY_AND_RIGHT_UP_LIGHT)]:           # ┵ 0x2535
+    for glyph in GA("BOX DRAWINGS LEFT HEAVY AND RIGHT UP LIGHT"):
         poly(glyph, ((x1_light, ascent),
                      (X, x2_light),
                      (Y, y1_light),
@@ -642,7 +507,7 @@ def boxdraw(font):
                      (Y, y1_heavy),
                      (X, x1_light)))
         pass
-    for glyph in [font.createChar(RIGHT_HEAVY_AND_LEFT_UP_LIGHT)]:           # ┶ 0x2536
+    for glyph in GA("BOX DRAWINGS RIGHT HEAVY AND LEFT UP LIGHT"):
         poly(glyph, ((x1_light, ascent),
                      (X, x2_light),
                      (Y, y1_heavy),
@@ -653,7 +518,7 @@ def boxdraw(font):
                      (X, 0),
                      (Y, y1_light),
                      (X, x1_light)))
-    for glyph in [font.createChar(UP_LIGHT_AND_HORIZONTAL_HEAVY)]:           # ┷ 0x2537
+    for glyph in GA("BOX DRAWINGS UP LIGHT AND HORIZONTAL HEAVY"):
         poly(glyph, ((x1_light, ascent),
                      (X, x2_light),
                      (Y, y1_heavy),
@@ -662,7 +527,7 @@ def boxdraw(font):
                      (X, 0),
                      (Y, y1_heavy),
                      (X, x1_light)))
-    for glyph in [font.createChar(UP_HEAVY_AND_HORIZONTAL_LIGHT)]:           # ┸ 0x2538
+    for glyph in GA("BOX DRAWINGS UP HEAVY AND HORIZONTAL LIGHT"):
         poly(glyph, ((x1_heavy, ascent),
                      (X, x2_heavy),
                      (Y, y1_light),
@@ -671,7 +536,7 @@ def boxdraw(font):
                      (X, 0),
                      (Y, y1_light),
                      (X, x1_heavy)))
-    for glyph in [font.createChar(RIGHT_LIGHT_AND_LEFT_UP_HEAVY)]:           # ┹ 0x2539
+    for glyph in GA("BOX DRAWINGS RIGHT LIGHT AND LEFT UP HEAVY"):
         poly(glyph, ((x1_heavy, ascent),
                      (X, x2_heavy),
                      (Y, y1_light),
@@ -682,7 +547,7 @@ def boxdraw(font):
                      (X, 0),
                      (Y, y1_heavy),
                      (X, x1_heavy)))
-    for glyph in [font.createChar(LEFT_LIGHT_AND_RIGHT_UP_HEAVY)]:           # ┺ 0x253A
+    for glyph in GA("BOX DRAWINGS LEFT LIGHT AND RIGHT UP HEAVY"):
         poly(glyph, ((x1_heavy, ascent),
                      (X, x2_heavy),
                      (Y, y1_heavy),
@@ -693,7 +558,7 @@ def boxdraw(font):
                      (X, 0),
                      (Y, y1_light),
                      (X, x1_heavy)))
-    for glyph in [font.createChar(HEAVY_UP_AND_HORIZONTAL)]:                 # ┻ 0x253B
+    for glyph in GA("BOX DRAWINGS HEAVY UP AND HORIZONTAL"):
         poly(glyph, ((x1_heavy, ascent),
                      (X, x2_heavy),
                      (Y, y1_heavy),
@@ -702,7 +567,7 @@ def boxdraw(font):
                      (X, 0),
                      (Y, y1_heavy),
                      (X, x1_heavy)))
-    for glyph in [font.createChar(LIGHT_VERTICAL_AND_HORIZONTAL)]:           # ┼ 0x253C
+    for glyph in GA("BOX DRAWINGS LIGHT VERTICAL AND HORIZONTAL"):
         poly(glyph, ((x1_light, ascent),
                      (X, x2_light),
                      (Y, y1_light),
@@ -715,7 +580,7 @@ def boxdraw(font):
                      (X, 0),
                      (Y, y1_light),
                      (X, x1_light)))
-    for glyph in [font.createChar(LEFT_HEAVY_AND_RIGHT_VERTICAL_LIGHT)]:     # ┽ 0x253D
+    for glyph in GA("BOX DRAWINGS LEFT HEAVY AND RIGHT VERTICAL LIGHT"):
         poly(glyph, ((x1_light, ascent),
                      (X, x2_light),
                      (Y, y1_light),
@@ -728,7 +593,7 @@ def boxdraw(font):
                      (X, 0),
                      (Y, y1_heavy),
                      (X, x1_light)))
-    for glyph in [font.createChar(RIGHT_HEAVY_AND_LEFT_VERTICAL_LIGHT)]:     # ┾ 0x253E
+    for glyph in GA("BOX DRAWINGS RIGHT HEAVY AND LEFT VERTICAL LIGHT"):
         poly(glyph, ((x1_light, ascent),
                      (X, x2_light),
                      (Y, y1_heavy),
@@ -741,121 +606,9 @@ def boxdraw(font):
                      (X, 0),
                      (Y, y1_light),
                      (X, x1_light)))
-    for glyph in [font.createChar(VERTICAL_LIGHT_AND_HORIZONTAL_HEAVY)]:     # ┿ 0x253F
+    for glyph in GA("BOX DRAWINGS VERTICAL LIGHT AND HORIZONTAL HEAVY"):
         poly(glyph, ((x1_light, ascent),
                      (X, x2_light),
-                     (Y, y1_heavy),
-                     (X, width),
-                     (Y, y2_heavy),
-                     (X, x2_light),
-                     (Y, -descent),
-                     (X, x1_light),
-                     (Y, y2_heavy),
-                     (X, 0),
-                     (Y, y1_heavy),
-                     (X, x1_light)))
-    for glyph in [font.createChar(UP_HEAVY_AND_DOWN_HORIZONTAL_LIGHT)]:      # ╀ 0x2540
-        poly(glyph, ((x1_heavy, ascent),
-                     (X, x2_heavy),
-                     (Y, y1_light),
-                     (X, width),
-                     (Y, y2_light),
-                     (X, x2_light),
-                     (Y, -descent),
-                     (X, x1_light),
-                     (Y, y2_light),
-                     (X, 0),
-                     (Y, y1_light),
-                     (X, x1_heavy)))
-    for glyph in [font.createChar(DOWN_HEAVY_AND_UP_HORIZONTAL_LIGHT)]:      # ╁ 0x2541
-        poly(glyph, ((x1_light, ascent),
-                     (X, x2_light),
-                     (Y, y1_light),
-                     (X, width),
-                     (Y, y2_light),
-                     (X, x2_heavy),
-                     (Y, -descent),
-                     (X, x1_heavy),
-                     (Y, y2_light),
-                     (X, 0),
-                     (Y, y1_light),
-                     (X, x1_light)))
-    for glyph in [font.createChar(VERTICAL_HEAVY_AND_HORIZONTAL_LIGHT)]:     # ╂ 0x2542
-        poly(glyph, ((x1_heavy, ascent),
-                     (X, x2_heavy),
-                     (Y, y1_light),
-                     (X, width),
-                     (Y, y2_light),
-                     (X, x2_heavy),
-                     (Y, -descent),
-                     (X, x1_heavy),
-                     (Y, y2_light),
-                     (X, 0),
-                     (Y, y1_light),
-                     (X, x1_heavy)))
-    for glyph in [font.createChar(LEFT_UP_HEAVY_AND_RIGHT_DOWN_LIGHT)]:      # ╃ 0x2543
-        poly(glyph, ((x1_heavy, ascent),
-                     (X, x2_heavy),
-                     (Y, y1_light),
-                     (X, width),
-                     (Y, y2_light),
-                     (X, x2_heavy),
-                     (Y, y2_heavy),
-                     (X, x2_light),
-                     (Y, -descent),
-                     (X, x1_light),
-                     (Y, y2_heavy),
-                     (X, 0),
-                     (Y, y1_heavy),
-                     (X, x1_heavy)))
-    for glyph in [font.createChar(RIGHT_UP_HEAVY_AND_LEFT_DOWN_LIGHT)]:      # ╄ 0x2544
-        poly(glyph, ((x1_heavy, ascent),
-                     (X, x2_heavy),
-                     (Y, y1_heavy),
-                     (X, width),
-                     (Y, y2_heavy),
-                     (X, x2_light),
-                     (Y, -descent),
-                     (X, x1_light),
-                     (Y, y2_heavy),
-                     (X, x1_heavy),
-                     (Y, y2_light),
-                     (X, 0),
-                     (Y, y1_light),
-                     (X, x1_heavy)))
-    for glyph in [font.createChar(LEFT_DOWN_HEAVY_AND_RIGHT_UP_LIGHT)]:      # ╅ 0x2545
-        poly(glyph, ((x1_light, ascent),
-                     (X, x2_light),
-                     (Y, y1_heavy),
-                     (X, x2_heavy),
-                     (Y, y1_light),
-                     (X, width),
-                     (Y, y2_light),
-                     (X, x2_heavy),
-                     (Y, -descent),
-                     (X, x1_heavy),
-                     (Y, y2_heavy),
-                     (X, 0),
-                     (Y, y1_heavy),
-                     (X, x1_light)))
-    for glyph in [font.createChar(RIGHT_DOWN_HEAVY_AND_LEFT_UP_LIGHT)]:      # ╆ 0x2546
-        poly(glyph, ((x1_light, ascent),
-                     (X, x2_light),
-                     (Y, y1_heavy),
-                     (X, width),
-                     (Y, y2_heavy),
-                     (X, x2_heavy),
-                     (Y, -descent),
-                     (X, x1_heavy),
-                     (Y, y2_light),
-                     (X, 0),
-                     (Y, y1_light),
-                     (X, x1_heavy),
-                     (Y, y1_heavy),
-                     (X, x1_light)))
-    for glyph in [font.createChar(DOWN_LIGHT_AND_UP_HORIZONTAL_HEAVY)]:      # ╇ 0x2547
-        poly(glyph, ((x1_heavy, ascent),
-                     (X, x2_heavy),
                      (Y, y1_heavy),
                      (X, width),
                      (Y, y2_heavy),
@@ -865,8 +618,120 @@ def boxdraw(font):
                      (Y, y2_heavy),
                      (X, 0),
                      (Y, y1_heavy),
+                     (X, x1_light)))
+    for glyph in GA("BOX DRAWINGS UP HEAVY AND DOWN HORIZONTAL LIGHT"):
+        poly(glyph, ((x1_heavy, ascent),
+                     (X, x2_heavy),
+                     (Y, y1_light),
+                     (X, width),
+                     (Y, y2_light),
+                     (X, x2_light),
+                     (Y, -descent),
+                     (X, x1_light),
+                     (Y, y2_light),
+                     (X, 0),
+                     (Y, y1_light),
                      (X, x1_heavy)))
-    for glyph in [font.createChar(UP_LIGHT_AND_DOWN_HORIZONTAL_HEAVY)]:      # ╈ 0x2548
+    for glyph in GA("BOX DRAWINGS DOWN HEAVY AND UP HORIZONTAL LIGHT"):
+        poly(glyph, ((x1_light, ascent),
+                     (X, x2_light),
+                     (Y, y1_light),
+                     (X, width),
+                     (Y, y2_light),
+                     (X, x2_heavy),
+                     (Y, -descent),
+                     (X, x1_heavy),
+                     (Y, y2_light),
+                     (X, 0),
+                     (Y, y1_light),
+                     (X, x1_light)))
+    for glyph in GA("BOX DRAWINGS VERTICAL HEAVY AND HORIZONTAL LIGHT"):
+        poly(glyph, ((x1_heavy, ascent),
+                     (X, x2_heavy),
+                     (Y, y1_light),
+                     (X, width),
+                     (Y, y2_light),
+                     (X, x2_heavy),
+                     (Y, -descent),
+                     (X, x1_heavy),
+                     (Y, y2_light),
+                     (X, 0),
+                     (Y, y1_light),
+                     (X, x1_heavy)))
+    for glyph in GA("BOX DRAWINGS LEFT UP HEAVY AND RIGHT DOWN LIGHT"):
+        poly(glyph, ((x1_heavy, ascent),
+                     (X, x2_heavy),
+                     (Y, y1_light),
+                     (X, width),
+                     (Y, y2_light),
+                     (X, x2_heavy),
+                     (Y, y2_heavy),
+                     (X, x2_light),
+                     (Y, -descent),
+                     (X, x1_light),
+                     (Y, y2_heavy),
+                     (X, 0),
+                     (Y, y1_heavy),
+                     (X, x1_heavy)))
+    for glyph in GA("BOX DRAWINGS RIGHT UP HEAVY AND LEFT DOWN LIGHT"):
+        poly(glyph, ((x1_heavy, ascent),
+                     (X, x2_heavy),
+                     (Y, y1_heavy),
+                     (X, width),
+                     (Y, y2_heavy),
+                     (X, x2_light),
+                     (Y, -descent),
+                     (X, x1_light),
+                     (Y, y2_heavy),
+                     (X, x1_heavy),
+                     (Y, y2_light),
+                     (X, 0),
+                     (Y, y1_light),
+                     (X, x1_heavy)))
+    for glyph in GA("BOX DRAWINGS LEFT DOWN HEAVY AND RIGHT UP LIGHT"):
+        poly(glyph, ((x1_light, ascent),
+                     (X, x2_light),
+                     (Y, y1_heavy),
+                     (X, x2_heavy),
+                     (Y, y1_light),
+                     (X, width),
+                     (Y, y2_light),
+                     (X, x2_heavy),
+                     (Y, -descent),
+                     (X, x1_heavy),
+                     (Y, y2_heavy),
+                     (X, 0),
+                     (Y, y1_heavy),
+                     (X, x1_light)))
+    for glyph in GA("BOX DRAWINGS RIGHT DOWN HEAVY AND LEFT UP LIGHT"):
+        poly(glyph, ((x1_light, ascent),
+                     (X, x2_light),
+                     (Y, y1_heavy),
+                     (X, width),
+                     (Y, y2_heavy),
+                     (X, x2_heavy),
+                     (Y, -descent),
+                     (X, x1_heavy),
+                     (Y, y2_light),
+                     (X, 0),
+                     (Y, y1_light),
+                     (X, x1_heavy),
+                     (Y, y1_heavy),
+                     (X, x1_light)))
+    for glyph in GA("BOX DRAWINGS DOWN LIGHT AND UP HORIZONTAL HEAVY"):
+        poly(glyph, ((x1_heavy, ascent),
+                     (X, x2_heavy),
+                     (Y, y1_heavy),
+                     (X, width),
+                     (Y, y2_heavy),
+                     (X, x2_light),
+                     (Y, -descent),
+                     (X, x1_light),
+                     (Y, y2_heavy),
+                     (X, 0),
+                     (Y, y1_heavy),
+                     (X, x1_heavy)))
+    for glyph in GA("BOX DRAWINGS UP LIGHT AND DOWN HORIZONTAL HEAVY"):
         poly(glyph, ((x1_light, ascent),
                      (X, x2_light),
                      (Y, y1_heavy),
@@ -879,7 +744,7 @@ def boxdraw(font):
                      (X, 0),
                      (Y, y1_heavy),
                      (X, x1_light)))
-    for glyph in [font.createChar(RIGHT_LIGHT_AND_LEFT_VERTICAL_HEAVY)]:     # ╉ 0x2549
+    for glyph in GA("BOX DRAWINGS RIGHT LIGHT AND LEFT VERTICAL HEAVY"):
         poly(glyph, ((x1_heavy, ascent),
                      (X, x2_heavy),
                      (Y, y1_light),
@@ -892,7 +757,7 @@ def boxdraw(font):
                      (X, 0),
                      (Y, y1_heavy),
                      (X, x1_heavy)))
-    for glyph in [font.createChar(LEFT_LIGHT_AND_RIGHT_VERTICAL_HEAVY)]:     # ╊ 0x254A
+    for glyph in GA("BOX DRAWINGS LEFT LIGHT AND RIGHT VERTICAL HEAVY"):
         poly(glyph, ((x1_heavy, ascent),
                      (X, x2_heavy),
                      (Y, y1_heavy),
@@ -905,7 +770,7 @@ def boxdraw(font):
                      (X, 0),
                      (Y, y1_light),
                      (X, x1_heavy)))
-    for glyph in [font.createChar(HEAVY_VERTICAL_AND_HORIZONTAL)]:           # ╋ 0x254B
+    for glyph in GA("BOX DRAWINGS HEAVY VERTICAL AND HORIZONTAL"):
         poly(glyph, ((x1_heavy, ascent),
                      (X, x2_heavy),
                      (Y, y1_heavy),
@@ -918,25 +783,25 @@ def boxdraw(font):
                      (X, 0),
                      (Y, y1_heavy),
                      (X, x1_heavy)))
-    for glyph in [font.createChar(LIGHT_DOUBLE_DASH_HORIZONTAL)]:            # ╌ 0x254C
+    for glyph in GA("BOX DRAWINGS LIGHT DOUBLE DASH HORIZONTAL"):
         for i in range(0, 2):
             rect(glyph, dash_horiz[2][i*2], dash_horiz[2][i*2+1], y1_light, y2_light)
-    for glyph in [font.createChar(HEAVY_DOUBLE_DASH_HORIZONTAL)]:            # ╍ 0x254D
+    for glyph in GA("BOX DRAWINGS HEAVY DOUBLE DASH HORIZONTAL"):
         for i in range(0, 2):
             rect(glyph, dash_horiz[2][i*2], dash_horiz[2][i*2+1], y1_heavy, y2_heavy)
-    for glyph in [font.createChar(LIGHT_DOUBLE_DASH_VERTICAL)]:              # ╎ 0x254E
+    for glyph in GA("BOX DRAWINGS LIGHT DOUBLE DASH VERTICAL"):
         for i in range(0, 2):
             rect(glyph, x1_light, x2_light, dash_vert[2][i*2], dash_vert[2][i*2+1])
-    for glyph in [font.createChar(HEAVY_DOUBLE_DASH_VERTICAL)]:              # ╏ 0x254F
+    for glyph in GA("BOX DRAWINGS HEAVY DOUBLE DASH VERTICAL"):
         for i in range(0, 2):
             rect(glyph, x1_heavy, x2_heavy, dash_vert[2][i*2], dash_vert[2][i*2+1])
-    for glyph in [font.createChar(DOUBLE_HORIZONTAL)]:                       # ═ 0x2550
+    for glyph in GA("BOX DRAWINGS DOUBLE HORIZONTAL"):
         rect(glyph, 0, width, y1_double, y2_double)
         rect(glyph, 0, width, y3_double, y4_double)
-    for glyph in [font.createChar(DOUBLE_VERTICAL)]:                         # ║ 0x2551
+    for glyph in GA("BOX DRAWINGS DOUBLE VERTICAL"):
         rect(glyph, x1_double, x2_double, ascent, -descent)
         rect(glyph, x3_double, x4_double, ascent, -descent)
-    for glyph in [font.createChar(DOWN_SINGLE_AND_RIGHT_DOUBLE)]:            # ╒ 0x2552
+    for glyph in GA("BOX DRAWINGS DOWN SINGLE AND RIGHT DOUBLE"):
         poly(glyph, ((x1_light, y1_double),
                      (X, width),
                      (Y, y2_double),
@@ -947,7 +812,7 @@ def boxdraw(font):
                      (X, x2_light),
                      (Y, -descent),
                      (X, x1_light)))
-    for glyph in [font.createChar(DOWN_DOUBLE_AND_RIGHT_SINGLE)]:            # ╓ 0x2553
+    for glyph in GA("BOX DRAWINGS DOWN DOUBLE AND RIGHT SINGLE"):
         poly(glyph, ((x1_double, y1_light),
                      (X, width),
                      (Y, y2_light),
@@ -958,7 +823,7 @@ def boxdraw(font):
                      (X, x2_double),
                      (Y, -descent),
                      (X, x1_double)))
-    for glyph in [font.createChar(DOUBLE_DOWN_AND_RIGHT)]:                   # ╔ 0x2554
+    for glyph in GA("BOX DRAWINGS DOUBLE DOWN AND RIGHT"):
         poly(glyph, ((x1_double, y1_double),
                      (X, width),
                      (Y, y2_double),
@@ -971,7 +836,7 @@ def boxdraw(font):
                      (X, x4_double),
                      (Y, -descent),
                      (X, x3_double)))
-    for glyph in [font.createChar(DOWN_SINGLE_AND_LEFT_DOUBLE)]:             # ╕ 0x2555
+    for glyph in GA("BOX DRAWINGS DOWN SINGLE AND LEFT DOUBLE"):
         poly(glyph, ((0, y1_double),
                      (X, x2_light),
                      (Y, -descent),
@@ -982,7 +847,7 @@ def boxdraw(font):
                      (X, x1_light),
                      (Y, y2_double),
                      (X, 0)))
-    for glyph in [font.createChar(DOWN_DOUBLE_AND_LEFT_SINGLE)]:             # ╖ 0x2556
+    for glyph in GA("BOX DRAWINGS DOWN DOUBLE AND LEFT SINGLE"):
         poly(glyph, ((0, y1_light),
                      (X, x4_double),
                      (Y, -descent),
@@ -993,7 +858,7 @@ def boxdraw(font):
                      (X, x1_double),
                      (Y, y2_light),
                      (X, 0)))
-    for glyph in [font.createChar(DOUBLE_DOWN_AND_LEFT)]:                    # ╗ 0x2557
+    for glyph in GA("BOX DRAWINGS DOUBLE DOWN AND LEFT"):
         poly(glyph, ((0, y1_double),
                      (X, x4_double),
                      (Y, -descent),
@@ -1006,7 +871,7 @@ def boxdraw(font):
                      (X, x1_double),
                      (Y, y4_double),
                      (X, 0)))
-    for glyph in [font.createChar(UP_SINGLE_AND_RIGHT_DOUBLE)]:              # ╘ 0x2558
+    for glyph in GA("BOX DRAWINGS UP SINGLE AND RIGHT DOUBLE"):
         poly(glyph, ((x1_light, ascent),
                      (X, x2_light),
                      (Y, y1_double),
@@ -1017,7 +882,7 @@ def boxdraw(font):
                      (X, width),
                      (Y, y4_double),
                      (X, x1_light)))
-    for glyph in [font.createChar(UP_DOUBLE_AND_RIGHT_SINGLE)]:              # ╙ 0x2559
+    for glyph in GA("BOX DRAWINGS UP DOUBLE AND RIGHT SINGLE"):
         poly(glyph, ((x1_double, ascent),
                      (X, x2_double),
                      (Y, y1_light),
@@ -1028,7 +893,7 @@ def boxdraw(font):
                      (X, width),
                      (Y, y2_light),
                      (X, x1_double)))
-    for glyph in [font.createChar(DOUBLE_UP_AND_RIGHT)]:                     # ╚ 0x255A
+    for glyph in GA("BOX DRAWINGS DOUBLE UP AND RIGHT"):
         poly(glyph, ((x1_double, ascent),
                      (X, x2_double),
                      (Y, y3_double),
@@ -1041,7 +906,7 @@ def boxdraw(font):
                      (X, width),
                      (Y, y2_double),
                      (X, x3_double)))
-    for glyph in [font.createChar(UP_SINGLE_AND_LEFT_DOUBLE)]:               # ╛ 0x255B
+    for glyph in GA("BOX DRAWINGS UP SINGLE AND LEFT DOUBLE"):
         poly(glyph, ((x1_light, ascent),
                      (X, x2_light),
                      (Y, y4_double),
@@ -1052,71 +917,71 @@ def boxdraw(font):
                      (X, 0),
                      (Y, y1_double),
                      (X, x1_light)))
-    for glyph in [font.createChar(UP_DOUBLE_AND_LEFT_SINGLE)]:               # ╜ 0x255C
+    for glyph in GA("BOX DRAWINGS UP DOUBLE AND LEFT SINGLE"):
         poly(glyph, ((x1_double, ascent),
                      (X, x2_double, y1_light, x3_double, ascent, x4_double, y2_light, 0, y1_light, x1_double)))
-    for glyph in [font.createChar(DOUBLE_UP_AND_LEFT)]:                      # ╝ 0x255D
+    for glyph in GA("BOX DRAWINGS DOUBLE UP AND LEFT"):
         poly(glyph, ((x1_double, ascent),
                      (X, x2_double, y2_double, 0, y1_double, x1_double)))
         poly(glyph, ((x3_double, ascent),
                      (X, x4_double, y4_double, 0, y3_double, x3_double)))
-    for glyph in [font.createChar(VERTICAL_SINGLE_AND_RIGHT_DOUBLE)]:        # ╞ 0x255E
+    for glyph in GA("BOX DRAWINGS VERTICAL SINGLE AND RIGHT DOUBLE"):
         poly(glyph, ((x1_light, ascent),
                      (X, x2_light, y1_double, width, y2_double, x2_light, y3_double, width, y4_double, x2_light, -descent, x1_light)))
-    for glyph in [font.createChar(VERTICAL_DOUBLE_AND_RIGHT_SINGLE)]:        # ╟ 0x255F
+    for glyph in GA("BOX DRAWINGS VERTICAL DOUBLE AND RIGHT SINGLE"):
         rect(glyph, x1_double, x2_double, ascent, -descent)
         poly(glyph, ((x3_double, ascent),
                      (X, x4_double, y1_light, width, y2_light, x4_double, -descent, x3_double)))
-    for glyph in [font.createChar(DOUBLE_VERTICAL_AND_RIGHT)]:               # ╠ 0x2560
+    for glyph in GA("BOX DRAWINGS DOUBLE VERTICAL AND RIGHT"):
         rect(glyph, x1_double, x2_double, ascent, -descent)
         poly(glyph, ((x3_double, ascent), (X, x4_double, y1_double, width, y2_double, x3_double)))
         poly(glyph, ((x3_double, y3_double), (X, width, y4_double, x4_double, -descent, x3_double)))
-    for glyph in [font.createChar(VERTICAL_SINGLE_AND_LEFT_DOUBLE)]:         # ╡ 0x2561
+    for glyph in GA("BOX DRAWINGS VERTICAL SINGLE AND LEFT DOUBLE"):
         poly(glyph, ((x1_light, ascent),
                      (X, x2_light, -descent, x1_light, y4_double, 0, y3_double, x1_light, y2_double, 0, y1_double, x1_light)))
-    for glyph in [font.createChar(VERTICAL_DOUBLE_AND_LEFT_SINGLE)]:         # ╢ 0x2562
+    for glyph in GA("BOX DRAWINGS VERTICAL DOUBLE AND LEFT SINGLE"):
         rect(glyph, x3_double, x4_double, ascent, -descent)
         poly(glyph, ((x1_double, ascent),
                      (X, x2_double, -descent, x1_double, y2_light, 0, y1_light, x1_double)))
 
-    for glyph in [font.createChar(DOUBLE_VERTICAL_AND_LEFT)]:                # ╣ 0x2563
+    for glyph in GA("BOX DRAWINGS DOUBLE VERTICAL AND LEFT"):
         rect(glyph, x3_double, x4_double, ascent, -descent)
         poly(glyph, ((x1_double, ascent), (X, x2_double, y2_double, 0, y1_double, x1_double)))
         poly(glyph, ((0, y3_double), (X, x2_double, -descent, x1_double, y4_double, 0)))
-    for glyph in [font.createChar(DOWN_SINGLE_AND_HORIZONTAL_DOUBLE)]:       # ╤ 0x2564
+    for glyph in GA("BOX DRAWINGS DOWN SINGLE AND HORIZONTAL DOUBLE"):
         rect(glyph, 0, width, y1_double, y2_double)
         poly(glyph, ((0, y3_double),
                      (X, width, y4_double, x2_light, -descent, x1_light, y4_double, 0)))
-    for glyph in [font.createChar(DOWN_DOUBLE_AND_HORIZONTAL_SINGLE)]:       # ╥ 0x2565
+    for glyph in GA("BOX DRAWINGS DOWN DOUBLE AND HORIZONTAL SINGLE"):
         poly(glyph, ((0, y1_light),
                      (X, width, y2_light, x4_double, -descent, x3_double, y2_light, x2_double, -descent, x1_double, y2_light, 0)))
-    for glyph in [font.createChar(DOUBLE_DOWN_AND_HORIZONTAL)]:              # ╦ 0x2566
+    for glyph in GA("BOX DRAWINGS DOUBLE DOWN AND HORIZONTAL"):
         rect(glyph, 0, width, y1_double, y2_double)
         poly(glyph, ((0, y3_double), (X, x2_double, -descent, x1_double, y4_double, 0)))
         poly(glyph, ((x3_double, y3_double),
                      (X, width, y4_double, x4_double, -descent, x3_double)))
-    for glyph in [font.createChar(UP_SINGLE_AND_HORIZONTAL_DOUBLE)]:         # ╧ 0x2567
+    for glyph in GA("BOX DRAWINGS UP SINGLE AND HORIZONTAL DOUBLE"):
         rect(glyph, 0, width, y3_double, y4_double)
         poly(glyph, ((x1_light, ascent),
                      (X, x2_light, y1_double, width, y2_double, 0, y1_double, x1_light)))
-    for glyph in [font.createChar(UP_DOUBLE_AND_HORIZONTAL_SINGLE)]:         # ╨ 0x2568
+    for glyph in GA("BOX DRAWINGS UP DOUBLE AND HORIZONTAL SINGLE"):
         poly(glyph, ((x1_double, ascent),
                      (X, x2_double, y1_light, x3_double, ascent, x4_double, y1_light, width, y2_light, 0, y1_light, x1_double)))
-    for glyph in [font.createChar(DOUBLE_UP_AND_HORIZONTAL)]:                # ╩ 0x2569
+    for glyph in GA("BOX DRAWINGS DOUBLE UP AND HORIZONTAL"):
         rect(glyph, 0, width, y3_double, y4_double)
         poly(glyph, ((x1_double, ascent),
                      (X, x2_double, y2_double, 0, y1_double, x1_double)))
         poly(glyph, ((x3_double, ascent),
                      (X, x4_double, y1_double, width, y2_double, x3_double)))
-    for glyph in [font.createChar(VERTICAL_SINGLE_AND_HORIZONTAL_DOUBLE)]:   # ╪ 0x256A
+    for glyph in GA("BOX DRAWINGS VERTICAL SINGLE AND HORIZONTAL DOUBLE"):
         poly(glyph, ((x1_light, ascent),
                      (X, x2_light, y1_double, width, y2_double, x2_light, y3_double, width,
                       y4_double, x2_light, -descent, x1_light, y4_double, 0, y3_double, x1_light, y2_double, 0, y1_double, x1_light)))
-    for glyph in [font.createChar(VERTICAL_DOUBLE_AND_HORIZONTAL_SINGLE)]:   # ╫ 0x256B
+    for glyph in GA("BOX DRAWINGS VERTICAL DOUBLE AND HORIZONTAL SINGLE"):
         poly(glyph, ((x1_double, ascent),
                      (X, x2_double, y1_light, x3_double, ascent, x4_double, y1_light, width, y2_light, x4_double, -descent, x3_double, y2_light, x2_double,
                       -descent, x1_double, y2_light, 0, y1_light, x1_double)))
-    for glyph in [font.createChar(DOUBLE_VERTICAL_AND_HORIZONTAL)]:          # ╬ 0x256C
+    for glyph in GA("BOX DRAWINGS DOUBLE VERTICAL AND HORIZONTAL"):
         poly(glyph, ((0, y3_double), (X, x2_double, -descent, x1_double, y4_double, 0)))
         poly(glyph, ((x3_double, y3_double),
                      (X, width, y4_double, x4_double, -descent, x3_double)))
@@ -1124,7 +989,7 @@ def boxdraw(font):
                      (X, x2_double, y2_double, 0, y1_double, x1_double)))
         poly(glyph, ((x3_double, ascent),
                      (X, x4_double, y1_double, width, y2_double, x3_double)))
-    for glyph in [font.createChar(LIGHT_ARC_DOWN_AND_RIGHT)]:                # ╭ 0x256D
+    for glyph in GA("BOX DRAWINGS LIGHT ARC DOWN AND RIGHT"):
         pen = glyph.glyphPen(replace=False)
         pen.moveTo((x2_arc, y1_light))
         pen.lineTo((width, y1_light))
@@ -1147,7 +1012,7 @@ def boxdraw(font):
         )
         pen.closePath()
         pen = None
-    for glyph in [font.createChar(LIGHT_ARC_DOWN_AND_LEFT)]:                 # ╮ 0x256E
+    for glyph in GA("BOX DRAWINGS LIGHT ARC DOWN AND LEFT"):
         pen = glyph.glyphPen(replace=False)
         pen.moveTo((0, y1_light))
         pen.lineTo((x1_arc, y1_light))
@@ -1163,7 +1028,7 @@ def boxdraw(font):
         pen.lineTo((0, y2_light))
         pen.closePath()
         pen = None
-    for glyph in [font.createChar(LIGHT_ARC_UP_AND_LEFT)]:                   # ╯ 0x256F
+    for glyph in GA("BOX DRAWINGS LIGHT ARC UP AND LEFT"):
         pen = glyph.glyphPen(replace=False)
         pen.moveTo((x1_light, ascent))
         pen.lineTo((x2_light, ascent))
@@ -1179,7 +1044,7 @@ def boxdraw(font):
                     (x1_light, y1_arc))
         pen.closePath()
         pen = None
-    for glyph in [font.createChar(LIGHT_ARC_UP_AND_RIGHT)]:                  # ╰ 0x2570
+    for glyph in GA("BOX DRAWINGS LIGHT ARC UP AND RIGHT"):
         pen = glyph.glyphPen(replace=False)
         pen.moveTo((x1_light, ascent))
         pen.lineTo((x2_light, ascent))
@@ -1197,26 +1062,26 @@ def boxdraw(font):
         pen = None
 
     theta = math.atan(width / height)
-    x1_diag = 0 - STROKE_WIDTH / 2 * math.cos(theta)
-    x2_diag = 0 + STROKE_WIDTH / 2 * math.cos(theta)
-    x3_diag = width - STROKE_WIDTH / 2 * math.cos(theta)
-    x4_diag = width + STROKE_WIDTH / 2 * math.cos(theta)
-    y1_diag = ascent + STROKE_WIDTH / 2 * math.sin(theta)
-    y2_diag = ascent - STROKE_WIDTH / 2 * math.sin(theta)
-    y3_diag = -descent + STROKE_WIDTH / 2 * math.sin(theta)
-    y4_diag = -descent - STROKE_WIDTH / 2 * math.sin(theta)
+    x1_diag = 0 - stroke_width / 2 * math.cos(theta)
+    x2_diag = 0 + stroke_width / 2 * math.cos(theta)
+    x3_diag = width - stroke_width / 2 * math.cos(theta)
+    x4_diag = width + stroke_width / 2 * math.cos(theta)
+    y1_diag = ascent + stroke_width / 2 * math.sin(theta)
+    y2_diag = ascent - stroke_width / 2 * math.sin(theta)
+    y3_diag = -descent + stroke_width / 2 * math.sin(theta)
+    y4_diag = -descent - stroke_width / 2 * math.sin(theta)
 
-    for glyph in [font.createChar(LIGHT_DIAGONAL_UPPER_RIGHT_TO_LOWER_LEFT)]:# ╱ 0x2571
+    for glyph in GA("BOX DRAWINGS LIGHT DIAGONAL UPPER RIGHT TO LOWER LEFT"):
         poly(glyph, ((x3_diag, y1_diag),
                      (x4_diag, y2_diag),
                      (x2_diag, y4_diag),
                      (x1_diag, y3_diag)))
-    for glyph in [font.createChar(LIGHT_DIAGONAL_UPPER_LEFT_TO_LOWER_RIGHT)]:# ╲ 0x2572
+    for glyph in GA("BOX DRAWINGS LIGHT DIAGONAL UPPER LEFT TO LOWER RIGHT"):
         poly(glyph, ((x1_diag, y2_diag),
                      (x2_diag, y1_diag),
                      (x4_diag, y3_diag),
                      (x3_diag, y4_diag)))
-    for glyph in [font.createChar(LIGHT_DIAGONAL_CROSS)]:                    # ╳ 0x2573
+    for glyph in GA("BOX DRAWINGS LIGHT DIAGONAL CROSS"):
         poly(glyph, ((x3_diag, y1_diag),
                      (x4_diag, y2_diag),
                      (x2_diag, y4_diag),
@@ -1226,93 +1091,37 @@ def boxdraw(font):
                      (x4_diag, y3_diag),
                      (x3_diag, y4_diag)))
         glyph.removeOverlap()
-    for glyph in [font.createChar(LIGHT_LEFT)]:                              # ╴ 0x2574
+    for glyph in GA("BOX DRAWINGS LIGHT LEFT"):
         rect(glyph, 0, x2_light, y1_light, y2_light)
-    for glyph in [font.createChar(LIGHT_UP)]:                                # ╵ 0x2575
+    for glyph in GA("BOX DRAWINGS LIGHT UP"):
         rect(glyph, x1_light, x2_light, ascent, y2_light)
-    for glyph in [font.createChar(LIGHT_RIGHT)]:                             # ╶ 0x2576
+    for glyph in GA("BOX DRAWINGS LIGHT RIGHT"):
         rect(glyph, x1_light, width, y1_light, y2_light)
-    for glyph in [font.createChar(LIGHT_DOWN)]:                              # ╷ 0x2577
+    for glyph in GA("BOX DRAWINGS LIGHT DOWN"):
         rect(glyph, x1_light, x2_light, y1_light, -descent)
-    for glyph in [font.createChar(HEAVY_LEFT)]:                              # ╸ 0x2578
+    for glyph in GA("BOX DRAWINGS HEAVY LEFT"):
         rect(glyph, 0, x2_heavy, y1_heavy, y2_heavy)
-    for glyph in [font.createChar(HEAVY_UP)]:                                # ╹ 0x2579
+    for glyph in GA("BOX DRAWINGS HEAVY UP"):
         rect(glyph, x1_heavy, x2_heavy, ascent, y2_heavy)
-    for glyph in [font.createChar(HEAVY_RIGHT)]:                             # ╺ 0x257A
+    for glyph in GA("BOX DRAWINGS HEAVY RIGHT"):
         rect(glyph, x1_heavy, width, y1_heavy, y2_heavy)
-    for glyph in [font.createChar(HEAVY_DOWN)]:                              # ╻ 0x257B
+    for glyph in GA("BOX DRAWINGS HEAVY DOWN"):
         rect(glyph, x1_heavy, x2_heavy, y1_heavy, -descent)
-    for glyph in [font.createChar(LIGHT_LEFT_AND_HEAVY_RIGHT)]:              # ╼ 0x257C
+    for glyph in GA("BOX DRAWINGS LIGHT LEFT AND HEAVY RIGHT"):
         poly(glyph, ((0, y1_light),
                      (X, x1_heavy, y1_heavy, width, y2_heavy, x1_heavy, y2_light, 0)))
-    for glyph in [font.createChar(LIGHT_UP_AND_HEAVY_DOWN)]:                 # ╽ 0x257D
+    for glyph in GA("BOX DRAWINGS LIGHT UP AND HEAVY DOWN"):
         poly(glyph, ((x1_light, ascent),
                      (X, x2_light, y1_heavy, x2_heavy, -descent, x1_heavy, y1_heavy, x1_light)))
-    for glyph in [font.createChar(HEAVY_LEFT_AND_LIGHT_RIGHT)]:              # ╾ 0x257E
+    for glyph in GA("BOX DRAWINGS HEAVY LEFT AND LIGHT RIGHT"):
         poly(glyph, ((0, y1_heavy),
                      (X, x2_heavy, y1_light, width, y2_light, x2_heavy, y2_heavy, 0)))
-    for glyph in [font.createChar(HEAVY_UP_AND_LIGHT_DOWN)]:                 # ╿ 0x257F
+    for glyph in GA("BOX DRAWINGS HEAVY UP AND LIGHT DOWN"):
         poly(glyph, ((x1_heavy, ascent),
                      (X, x2_heavy, y2_heavy, x2_light, -descent, x1_light, y2_heavy, x1_heavy)))
 
     for codepoint in range(0x2500, 0x2580):
         glyph = font.createChar(codepoint)
-        old_width = glyph.width
         glyph.width = width
-        new_width = glyph.width
-        print("%s: %d => %d" % (glyph.glyphname, old_width, new_width))
-
-def rect(glyph, x1, x2, y1, y2):
-    print("rect(%s, %d, %d, %d, %d)" % (glyph, x1, x2, y1, y2))
-    pen = glyph.glyphPen(replace=False)
-    pen.moveTo((x1, y1))
-    pen.lineTo((x2, y1))
-    pen.lineTo((x2, y2))
-    pen.lineTo((x1, y2))
-    pen.closePath()
-    pen = None
-
-def poly(glyph, pairs):
-    pen = glyph.glyphPen(replace=False)
-    x = pairs[0][0]
-    y = pairs[0][1]
-    pen.moveTo((x, y))
-    for pair in pairs[1:]:
-        if len(pair) > 2:
-            if pair[0] == X:
-                horizontal = True
-            elif pair[0] == Y:
-                horizontal = False
-            else:
-                raise Exception("pair of coordinates of more than 2 must start with X or Y")
-            for i in range(1, len(pair)):
-                if horizontal:
-                    x = pair[i]
-                else:
-                    y = pair[i]
-                pen.lineTo((x, y))
-                horizontal = not horizontal
-        elif pair[0] == X:
-            x = pair[1]
-            pen.lineTo((x, y))
-        elif pair[0] == Y:
-            y = pair[1]
-            pen.lineTo((x, y))
-        else:
-            (x, y) = pair
-            pen.lineTo((x, y))
-    pen.closePath()
-    pen = None
-
-def clip(glyph, x1, y1, x2, y2):
-    contour = fontforge.contour()
-    contour.moveTo((x1, y1))
-    contour.lineTo((x2, y1))
-    contour.lineTo((x2, y2))
-    contour.lineTo((x1, y2))
-    contour.closed = True
-    contour = None
-    glyph.layers["Fore"] += clipContour
-    glyph.intersect()
 
 main()
