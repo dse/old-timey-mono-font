@@ -146,12 +146,8 @@ https://news.ycombinator.com/item?id=43884418
     
     > Aiming for both.
     
-    Inline stylistic tag `INLN`?
-    
-    asterisk.INLN
-    underline.INLN
-    circumflex.INLN
-    tilde.INLN
+    There's a VCEN stylistic set but some of these can be character
+    variants.
 
 ## Other
 
@@ -167,10 +163,8 @@ https://news.ycombinator.com/item?id=43884418
 -   U+26A0 WARNING SIGN
 -   U+26A1 HIGH VOLTAGE SIGN
 -   U+2756 BLACK DIAMOND MINUS WHITE X
--   U+25CA LOZENGE
 -   U+2311 SQUARE LOZENGE
 -   U+29EB BLACK LOZENGE
--   U+2326 ERASE TO THE RIGHT (see U+232B ERASE TO THE LEFT)
 
 ## Maybe
 
