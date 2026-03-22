@@ -1,8 +1,10 @@
-#!/usr/bin/env -S fontforge -quiet
+#!/usr/bin/env -S fontforge -script
 # -*- mode: python; coding: utf-8 -*-
 import fontforge, argparse, os, sys, json, re
-sys.path.append(os.getenv("HOME") + "/git/dse.d/fontforge-utilities/lib")
+
+sys.path.append("%s/git/dse.d/my-python/src/my_python_dse" % os.getenv("HOME"))
 import silence
+
 def main():
     global args
     parser = argparse.ArgumentParser()

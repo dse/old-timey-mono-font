@@ -11,12 +11,15 @@ import re
 import unicodedata
 import json
 
+# sys.path.append("%s/git/dse.d/my-python/src/my_python_dse" % os.getenv("HOME"))
 sys.path.append(os.getenv("HOME") + "/git/dse.d/fontforge-utilities/lib")
+sys.path.append(os.getenv("HOME") + "/git/dse.d/fonts.d/old-timey-mono-font/support/lib")
 import mixedjsontext
 import silence
+from my_font_utils import u
 
 sys.path.append(os.path.dirname(__file__) + "/../lib")
-from my_font_utils import u, get_glyph_real_codepoint, get_glyph_char_data
+from my_font_utils import get_glyph_real_codepoint, get_glyph_char_data
 
 SVG_LINECAP_VALUES = ["butt", "round", "square"]
 SVG_LINEJOIN_VALUES = ["arcs", "bevel", "miter", "miter-clip", "miterclip", "round"]

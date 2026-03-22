@@ -9,7 +9,6 @@ xlate_fraction    = psMat.translate(0, 75)
 xlate_denominator = psMat.translate(0, -231)
 
 sys.path.append(os.path.dirname(__file__) + "/../lib")
-from my_font_chars import UNICODE
 
 def main():
     global args
@@ -74,7 +73,7 @@ def main():
     supersubscript(font, 0x2092, 'o', xlate_subscript)
     supersubscript(font, 0x2093, 'x', xlate_subscript)
     supersubscript(font, 0x2C7C, 'j', xlate_subscript)
-    supersubscript(font, 0x2094, chr(UNICODE["LATIN_SMALL_LETTER_SCHWA"]), xlate_subscript)
+    supersubscript(font, 0x2094, "\N{LATIN SMALL LETTER SCHWA}", xlate_subscript)
     supersubscript(font, 0x1d66, chr(0x03b2), xlate_subscript) # l/c beta
     supersubscript(font, 0x1d67, chr(0x03b3), xlate_subscript) # l/c gamma
     supersubscript(font, 0x1d68, chr(0x03c1), xlate_subscript) # l/c rho

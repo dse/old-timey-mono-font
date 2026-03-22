@@ -8,10 +8,8 @@ import sys
 import json
 import psMat
 
-sys.path.append(os.getenv("HOME") + "/git/dse.d/fontforge-utilities/lib")
-sys.path.append(os.getenv("HOME") + "/git/dse.d/fonts.d/old-timey-mono-font/support/lib")
-
-from my_font_utils import parse_char
+sys.path.append("%s/git/dse.d/my-python/src/my_python_dse" % os.getenv("HOME"))
+from font_utils import parse_char
 
 def main():
     global args
@@ -27,7 +25,7 @@ def main():
     font = fontforge.open(args.filename)
 
     for glyph_name, dest_char in references.items():
-        dest_codepoint = parse_char(dest_char, as_str=False)
+        dest_codepoint = parse_char(dest_char)
         dest_glyph_name = fontforge.nameFromUnicode(dest_codepoint)
 
         if dest_char is None:
