@@ -2,7 +2,7 @@
 
 # data => npm run build
 
-default: fonts zip data
+default: fonts zip
 
 SRC_BASEFONT			= src/basefont
 SRC_DATA			= src/data
@@ -342,17 +342,17 @@ clean: FORCE
 	/bin/rm $(TTF_FONTS) $(ZIP_FILE) || true
 	/bin/rm -fr $(SRC_BUILD) || true
 
-data: src/data/font-data.json src/data/glyphs-data.json 
+# data: src/data/font-data.json src/data/glyphs-data.json 
 
-# i don't believe this is used
-src/data/font-data.json: support/bin/fontdata.py src/data/panose.json $(DIST_TTF)/OldTimeyMono.ttf
-	support/bin/fontdata.py $(DIST_TTF)/OldTimeyMono.ttf >"$@.tmp"
-	mv "$@.tmp" "$@"
+# # i don't believe this is used
+# src/data/font-data.json: support/bin/fontdata.py src/data/panose.json $(DIST_TTF)/OldTimeyMono.ttf
+# 	support/bin/fontdata.py $(DIST_TTF)/OldTimeyMono.ttf >"$@.tmp"
+# 	mv "$@.tmp" "$@"
 
-# used to generate character repertoire page
-src/data/glyphs-data.json: support/bin/glyphsdata.py $(DIST_TTF)/OldTimeyMono.ttf
-	support/bin/glyphsdata.py $(DIST_TTF)/OldTimeyMono.ttf >"$@.tmp"
-	mv "$@.tmp" "$@"
+# # used to generate character repertoire page
+# src/data/glyphs-data.json: support/bin/glyphsdata.py $(DIST_TTF)/OldTimeyMono.ttf
+# 	support/bin/glyphsdata.py $(DIST_TTF)/OldTimeyMono.ttf >"$@.tmp"
+# 	mv "$@.tmp" "$@"
 
 version: FORCE
 
