@@ -4,11 +4,11 @@
 
 I would love [to hear from you](mailto:dsembry@gmail.com?subject=Old+Timey+Mono).
 
-If you're using it on your website, project, advertising campaign, or
+If you’re using it on your website, project, advertising campaign, or
 something, please tell me if I have permission to take a screenshot.
 And/or send me a screenshot.
 
-You can also send me money.  If you can't afford it, then don't.
+You can also send me money.  If you can’t afford it, then don’t.
 
 ## Download
 
@@ -27,7 +27,7 @@ sizes for advertisements, catalogs, etc., where readability and/or
 distortion resulting from duplication were issues with faces based on
 actual typewriters at the time.
 
-"Sight Saver" typewriter faces designed for readability were also
+“Sight Saver” typewriter faces designed for readability were also
 available, though they were at larger sizes than ordinary pica or
 elite typefaces.
 
@@ -54,7 +54,7 @@ and a few certain small letters modified.
 
 ### Mintty Users
 
-Text -> Font Smoothing -> Partial.  I wish I didn't have to tell you
+Text -> Font Smoothing -> Partial.  I wish I didn’t have to tell you
 to do this.
 
 ### Unable to Open?
@@ -65,13 +65,13 @@ might also have something to do with WSL.
 If your files are in WSL, move them outside of WSL and into a normal
 Windows partition, then try again.
 
-If you still can't open the files, it's likely your antivirus still
+If you still can’t open the files, it’s likely your antivirus still
 doing antivirus things to protect you from this dastardly, deadly
 typeface.
 
-You can also try **installing** if **opening** doesn't work.
+You can also try **installing** if **opening** doesn’t work.
 
-(This typeface is actually neither deadly nor dastardly.  It's quite
+(This typeface is actually neither deadly nor dastardly.  It’s quite
 benign.)
 
 ## Character Set Coverage
@@ -88,8 +88,8 @@ controls):
 -   Code Page 850
 -   Windows Glyph List 4 (WGL4)
 -   Adobe Glyph List for New Fonts (AGLFN)
--   Windows 1252's additional characters
--   Mac OS Roman, except for the ff and fi ligatures (which don't belong in monospace fonts)
+-   Windows 1252’s additional characters
+-   Mac OS Roman, except for the ff and fi ligatures (which don’t belong in monospace fonts)
 -   The following Unicode blocks in their entirety:
     -   U+2500–U+257F Box Drawing
     -   U+2580–U+259F Block Elements
@@ -97,6 +97,44 @@ controls):
     -   U+0100–U+017F Latin Extended-A
 -   And then some.
 -   And a few extras!
+
+## Stylistic Sets
+
+-   `BASE` - moves U+005F LOW LINE and U+2017 SPACING DOUBLE UNDERSCORE
+    up to the baseline, better for identifiers in code I think.
+    Not yet part of `ss01` or coding variant.
+-   `VCEN` - vertically centers a lot of ASCII symbols:
+
+        # % ( ) * _ - / : < = > @ [ \ ] ^ { | } ~
+        
+-   `c2pc` - caps to petite caps, ASCII only
+-   `pcap` - lowercase to petite caps, ASCII only
+-   `c2sc` - caps to small caps, ASCII only
+-   `smcp` - lowercase to small caps, ASCII only
+-   `ss01` - coding friendly symbols, combines `ss02`–`ss06`.
+    “Baked” into Old Timey Code.
+-   `ss02` - enhanced visibility on brackets
+-   `ss03` - code digits: slashed digit zero, unambiguous digit one
+-   `ss04` - more open arpetures on `a c e s`
+-   `ss05` - enhanced visibility on selected punctuation marks
+-   `ss06` - more spaced apart equal sign, grave accent more like backtick
+
+## Character Variants
+
+-   `cv01` Digit One with Curly Top
+-   `cv02` Code-Friendly Small L
+-   `cv03` Shortened Number Sign
+-   `cv04` Shortened Slash
+-   `cv05` Zero with Dot
+-   `cv06` Zero with Large Dot
+-   `cv07` Alternate At-Sign
+-   `cv08` Shortened Backslash
+-   `cv09` Plain Grave Accent
+-   `cv10` Curly Small L
+-   `cv11` Taller Equal Sign
+-   `cv12` Larger Left Curly Bracket, Alternate
+-   `cv13` Larger Right Curly Bracket, Alternate
+-   `cv14` Visibility Enhanced Tilde
 
 ## Languages Supported
 

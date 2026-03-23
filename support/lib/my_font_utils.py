@@ -367,6 +367,11 @@ def draw_shape(width, x_max, y_max, polygons, font=None, codept=None, glyph=None
 # parse_char("U+1F4A9")
 # parse_char("U1F4A9")
 def parse_char(str, default=ValueError, as_str=False):
+    """Return a string containing a single character, that being the
+character with the supplied codepoint, character, Adobe glyph name,
+Unicode glyph name, or hex code.
+
+    """
     if len(str) == 1:
         return str if as_str else ord(str)
     codepoint = fontforge.unicodeFromName(str)

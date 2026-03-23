@@ -1,0 +1,127 @@
+@font-face {
+    src: url("../../tmp/testfonts/OldTimeyMono3/ttf/OldTimeyCode3.ttf");
+    font-family: "Old Timey Code 3";
+}
+@font-face {
+    src: url("../../tmp/testfonts/OldTimeyMono3/ttf/OldTimeyMono3.ttf");
+    font-family: "Old Timey Mono 3";
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #eeeeee;
+    --fg: #222222;
+    --light-border: #dddddd;
+    --border: #999999;
+    --gap: 2ch;
+    --heading: #ee3322;
+    --heading-3: orange;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    color: var(--fg);
+    background-color: var(--bg);
+}
+body {
+    font-family: "Old Timey Mono 3", monospace;
+    line-height: 1;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.old-timey-code {
+    font-family: "Old Timey Code 3", monospace;
+}
+.old-timey-mono {
+    font-family: "Old Timey Mono 3", monospace;
+}
+h1, h2, h3, h4, h5, h6, p, ul, ol, dl, dt, dd, li, pre {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 100%;
+    font-weight: normal;
+}
+h1, h2 {
+    color: var(--heading);
+}
+h3 {
+    color: var(--heading-3);
+}
+h1, h2, h3, h4, h5, h6, b, strong {
+    text-shadow: 0.05em 0 currentcolor;
+}
+h2 {
+/*    color: blue;*/
+}
+pre {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+.container {
+    max-width: 81ch;
+    padding-left: 1ch;
+    padding-right: 1ch;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.justify-content-space-between {
+    justify-content: space-between;
+}
+
+.specimen-section {
+    border-top: 2px solid var(--fg);
+    margin-top: calc(3rem / 2 - 1px);
+    padding-top: calc(1rem / 2 - 1px);
+    width: 100%;
+}
+.specimen-section__row {
+    display: flex;
+    flex-flow: row nowrap;
+}
+.specimen-section__header {
+    flex: 0 0 calc(16% / 0.79);
+    padding-right: 1ch;
+}
+.specimen-section__body {
+    flex: 0 0 calc(63% / 0.79);
+}
+.char-list {
+    display: flex;
+    flex-flow: row wrap;
+}
+.char-list__char {
+    display: block;
+    border: 1px solid var(--light-border);
+    padding: calc(0.5em - 1px) calc(0.5ch - 1px);
+    margin-right: -1px;
+    margin-bottom: -1px;
+    min-width: 2ch;
+}
+
+.elite {
+    font-size: calc(100% * 5/6);
+    line-height: 1.2;
+}
+
+.row {
+    display: flex;
+    flex-flow: row nowrap;
+    margin-left: calc(-0.5 * var(--gap));
+    margin-right: calc(-0.5 * var(--gap));
+}
+.col {
+    padding-left: calc(0.5 * var(--gap));
+    padding-right: calc(0.5 * var(--gap));
+    flex: 0 1 auto;
+}
+
+.pre-wrapper {
+    overflow-x: auto;
+}

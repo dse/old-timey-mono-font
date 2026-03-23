@@ -2,7 +2,7 @@
 
 # data => npm run build
 
-default: fonts zip data
+default: fonts zip
 
 SRC_BASEFONT			= src/basefont
 SRC_DATA			= src/data
@@ -59,6 +59,7 @@ VERSION_PY_PROG			= $(SUPPORT_BIN)/version.py
 FONTFIX_PY_PROG			= $(SUPPORT_BIN)/fontfix.py
 REFERENCES_PY_PROG              = $(SUPPORT_BIN)/references.py
 REPOSITION_PY_PROG		= work/bin/reposition.py
+BOXDRAWING_PY_PROG		= $(SUPPORT_BIN)/boxdrawing.py
 
 METAS_PY_ARGS			= --ffn='$(OTMONO_FONT_FAMILY)' --psfn='$(PS_OTMONO_FONT_FAMILY)'
 METAS_PY_CODE_ARGS		= --ffn='$(OTCODE_FONT_FAMILY)' --psfn='$(PS_OTCODE_FONT_FAMILY)'
@@ -87,6 +88,7 @@ VERSION_PY			= $(VERSION_PY_PROG)
 FONTFIX_PY			= $(FONTFIX_PY_PROG)
 REFERENCES_PY                   = $(REFERENCES_PY_PROG)
 REPOSITION_PY                   = $(REPOSITION_PY_PROG)
+BOXDRAWING_PY                   = $(BOXDRAWING_PY_PROG)
 
 SUBSTITUTIONS_JSON		= $(SRC_DATA)/substitutions.json
 REFERENCES_JSON                 = $(SRC_DATA)/references.json
@@ -206,6 +208,7 @@ testfonts: FORCE
 # update source font fron SVG files
 redraw: FORCE
 	$(REDRAW_PY) $(BASEFONT_SFD) $(SRC_SVGS)
+	$(BOXDRAWING_PY) $(BASEFONT_SFD)
 	$(BOUNDS_PY) $(BASEFONT_SFD)
 	$(SMOL_PY) $(BASEFONT_SFD)
 	$(SUPERSUB_PY) $(BASEFONT_SFD)
@@ -219,6 +222,7 @@ redraw: FORCE
 
 redraw-test: FORCE
 	$(REDRAW_PY) $(BASEFONT_SFD) $(SRC_SVGS)
+	$(BOXDRAWING_PY) $(BASEFONT_SFD)
 	$(BOUNDS_PY) $(BASEFONT_SFD)
 	$(SMOL_PY) $(BASEFONT_SFD)
 	$(SUPERSUB_PY) $(BASEFONT_SFD)
@@ -251,7 +255,7 @@ reposition: FORCE $(REPOSITION_PROG)
 
 symbols: FORCE
 	fontbraille -W 200 -f $(BASEFONT_SFD)
-	fontboxdraw -f $(BASEFONT_SFD)
+	support/bin/boxdrawing.py $(BASEFONT_SFD)
 	support/bin/7segment.py $(BASEFONT_SFD)
 	support/bin/blocksextants.py $(BASEFONT_SFD)
 	support/bin/diagonalblocks.py $(BASEFONT_SFD)
@@ -275,6 +279,7 @@ $(SRC_BUILD)/$(PS_OTMONO_FONT_FAMILY).stage1.sfd: $(BASEFONT_SFD) $(SRC_SVGS) $(
 	@echo "stage 1"
 	mkdir -p $(SRC_BUILD)
 	$(REDRAW_PY) "$<" -o "$@" $(SRC_SVGS)
+	$(BOXDRAWING_PY) "$@"
 	$(BOUNDS_PY) "$@"
 	$(SMOL_PY) "$@"
 	$(SUPERSUB_PY) "$@"
@@ -337,17 +342,17 @@ clean: FORCE
 	/bin/rm $(TTF_FONTS) $(ZIP_FILE) || true
 	/bin/rm -fr $(SRC_BUILD) || true
 
-data: src/data/font-data.json src/data/glyphs-data.json 
+# data: src/data/font-data.json src/data/glyphs-data.json 
 
-# i don't believe this is used
-src/data/font-data.json: support/bin/fontdata.py src/data/panose.json $(DIST_TTF)/OldTimeyMono.ttf
-	support/bin/fontdata.py $(DIST_TTF)/OldTimeyMono.ttf >"$@.tmp"
-	mv "$@.tmp" "$@"
+# # i don't believe this is used
+# src/data/font-data.json: support/bin/fontdata.py src/data/panose.json $(DIST_TTF)/OldTimeyMono.ttf
+# 	support/bin/fontdata.py $(DIST_TTF)/OldTimeyMono.ttf >"$@.tmp"
+# 	mv "$@.tmp" "$@"
 
-# used to generate character repertoire page
-src/data/glyphs-data.json: support/bin/glyphsdata.py $(DIST_TTF)/OldTimeyMono.ttf
-	support/bin/glyphsdata.py $(DIST_TTF)/OldTimeyMono.ttf >"$@.tmp"
-	mv "$@.tmp" "$@"
+# # used to generate character repertoire page
+# src/data/glyphs-data.json: support/bin/glyphsdata.py $(DIST_TTF)/OldTimeyMono.ttf
+# 	support/bin/glyphsdata.py $(DIST_TTF)/OldTimeyMono.ttf >"$@.tmp"
+# 	mv "$@.tmp" "$@"
 
 version: FORCE
 

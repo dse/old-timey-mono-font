@@ -1,11 +1,26 @@
 #!/usr/bin/env -S fontforge -quiet
 # -*- mode: python; coding: utf-8 -*-
 import fontforge, argparse, os, sys, statistics, math
+
+sys.path.append("%s/git/dse.d/my-python/src/my_python_dse" % os.getenv("HOME"))
+from font_utils import fonts_in
+
 def main():
     global args
     parser = argparse.ArgumentParser()
-    parser.add_argument("filename")
+    parser.add_argument("filenames", nargs="+")
     args = parser.parse_args()
+
+    for font in fonts_in(filenames):
+        draw_seven_segment_digits(font, args)
+        if filename.endswith(".sfd"):
+            print("Saving %s" % filename)
+            font.save(filename)
+        else:
+            print("Generating %s" % filename)
+            font.generate(filename)
+
+def draw_seven_segment_digits(font, args):
     font = fontforge.open(args.filename)
 
     glyphs = list(font.glyphs())
