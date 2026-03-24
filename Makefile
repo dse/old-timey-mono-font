@@ -250,9 +250,6 @@ update-test: FORCE
 	@echo "use 'make redraw-test', DINGUS." >&2
 	false
 
-reposition: FORCE $(REPOSITION_PROG)
-	$(REPOSITION_PY) $(BASEFONT_SFD)
-
 symbols: FORCE
 	fontbraille -W 200 -f $(BASEFONT_SFD)
 	support/bin/boxdrawing.py $(BASEFONT_SFD)
@@ -362,4 +359,8 @@ publish: FORCE
 shaperglot: FORCE
 	shaperglot report dist/ttf/OldTimeyMono.ttf | sort > shaperglot.txt
 
+release:
+	gh release create v$(VERSION) ./dist/ttf/*.ttf ./dist/zip/OldTimeyMono-$(VERSION).zip ./LICENSE.md 
+
 .PHONY: FORCE
+
