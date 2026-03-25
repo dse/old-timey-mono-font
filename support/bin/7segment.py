@@ -3,7 +3,7 @@
 import fontforge, argparse, os, sys, statistics, math
 
 sys.path.append("%s/git/dse.d/my-python/src/my_python_dse" % os.getenv("HOME"))
-from font_utils import fonts_in
+from font_utils import get_fonts_in
 
 def main():
     global args
@@ -11,7 +11,7 @@ def main():
     parser.add_argument("filenames", nargs="+")
     args = parser.parse_args()
 
-    for font in fonts_in(filenames):
+    for font in get_fonts_in(filenames):
         draw_seven_segment_digits(font, args)
         if filename.endswith(".sfd"):
             print("Saving %s" % filename)

@@ -4,7 +4,7 @@ import fontforge, sys, os, statistics, argparse, math
 
 sys.path.append("%s/git/dse.d/my-python/src/my_python_dse" % os.getenv("HOME"))
 from font_draw_utils import rect, poly, GA
-from font_utils import fonts_in
+from font_utils import get_fonts_in
 
 # https://spencermortensen.com/articles/bezier-circle/
 C = 0.5519150244935105707435627
@@ -31,7 +31,7 @@ def main():
     parser.add_argument("--width", type=int)
     args = parser.parse_args()
     for filename in args.filenames:
-        for font in fonts_in([filename]):
+        for font in get_fonts_in([filename]):
             boxdraw(font, args)
             if filename.endswith(".sfd"):
                 print("Saving %s" % filename)
