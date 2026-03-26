@@ -8,19 +8,23 @@ import argparse
 
 def main():
     global args
-    parser = argparse.ArgumentParser(description="convert fonts from one format to another")
+    parser = argparse.ArgumentParser(description="convert a font from one format to another one or more formats")
     parser.add_argument('source_filename', help = "original filename")
-    parser.add_argument('dest_filename', nargs = '+', default = [], help = "filename/format to convert to (can also be a bare extension, e.g., \".ttf\")")
+    parser.add_argument('dest_filename',
+                        nargs = '+', default = [],
+                        help = ("filename/format to convert to " +
+                                "(can also be a bare extension, e.g., \".ttf\")"))
     args = parser.parse_args()
-
     font = fontforge.open(args.source_filename)
     (source_base, source_ext) = os.path.splitext(args.source_filename)
     for dest_filename in args.dest_filename:
         if re.search(r'^\.[A-Za-z0-9]+$', dest_filename): # dest_filename is just an extension, i.e., '.ttf'
             dest_filename = source_base + dest_filename
         if dest_filename.endswith('.sfd'):
+            print("Saving %s" % dest_filename)
             font.save(dest_filename)
         else:
+            print("Generating %s" % dest_filename)
             font.generate(dest_filename)
 
 main()
