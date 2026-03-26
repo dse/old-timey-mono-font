@@ -1,42 +1,12 @@
 [
-	{
-		"name": "Old Timey Code",
-		"selector": "old-timey-code",
-		"style": "Old Timey Code"
-	},
-	{
-		"name": "Old Timey Code Light",
-		"selector": "old-timey-code-light",
-		"style": "Old Timey Code Light"
-	},
-	{
-		"name": "Old Timey Code Condensed",
-		"selector": "old-timey-code-condensed",
-		"style": "Old Timey Code Condensed"
-	},
-	{
-		"name": "Old Timey Code Light Condensed",
-		"selector": "old-timey-code-light-condensed",
-		"style": "Old Timey Code Light Condensed"
-	},
-	{
-		"name": "Old Timey Mono",
-		"selector": "old-timey-mono",
-		"style": "Old Timey Mono"
-	},
-	{
-		"name": "Old Timey Mono Light",
-		"selector": "old-timey-mono-light",
-		"style": "Old Timey Mono Light"
-	},
-	{
-		"name": "Old Timey Mono Condensed",
-		"selector": "old-timey-mono-condensed",
-		"style": "Old Timey Mono Condensed"
-	},
-	{
-		"name": "Old Timey Mono Light Condensed",
-		"selector": "old-timey-mono-light-condensed",
-		"style": "Old Timey Mono Light Condensed"
-	}
+    {
+        "name": "Old Timey Code",
+        "selector": "old-timey-code",
+        "style": "unknown"
+    },
+    {
+        "name": "Old Timey Mono",
+        "selector": "old-timey-mono",
+        "style": "unknown"
+    }
 ]
