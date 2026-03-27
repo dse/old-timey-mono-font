@@ -93,13 +93,14 @@ pre {
     flex: 0 0 calc(63% / 0.79);
 }
 .char-list {
+    font-size: 200%;
     display: flex;
     flex-flow: row wrap;
 }
 .char-list__char {
     display: block;
     border: 1px solid var(--light-border);
-    padding: calc(0.5em - 1px) calc(0.5ch - 1px);
+    padding: calc(0.5rem - 1px) calc(0.5ch - 1px);
     margin-right: -1px;
     margin-bottom: -1px;
     min-width: 2ch;
