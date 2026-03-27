@@ -23,7 +23,7 @@ OS2Version: 0
 OS2_WeightWidthSlopeOnly: 0
 OS2_UseTypoMetrics: 1
 CreationTime: 1729142792
-ModificationTime: 1774059686
+ModificationTime: 1774575831
 PfmFamily: 17
 TTFWeight: 500
 TTFWidth: 5
@@ -83,7 +83,7 @@ NameList: AGL For New Fonts
 DisplaySize: -48
 AntiAlias: 1
 FitToEm: 1
-WinInfo: 0 32 8
+WinInfo: 8704 32 8
 BeginPrivate: 0
 EndPrivate
 Grid
@@ -196,7 +196,7 @@ Grid
  504 3072 l 25
 EndSplineSet
 AnchorClass2: "bottom" "'mark' Mark Positioning lookup 0-1" "top" "'mark' Mark Positioning lookup 0-1"
-BeginChars: 1114441 2314
+BeginChars: 1114441 2318
 
 StartChar: cedilla
 Encoding: 184 184 0
@@ -31362,7 +31362,7 @@ Flags: HW
 HStem: 220 96<137.513 870.487> 440 96<137.513 870.487> 1056 20G<854.961 877.246>
 LayerCount: 2
 Fore
-Refer: 574 47 N 1 0 0 1 0 0 2
+Refer: 574 47 S 1 0 0 1 0 0 2
 Refer: 588 61 N 1 0 0 1 0 0 2
 Comment: "{}"
 EndChar
@@ -58149,6 +58149,52 @@ SplineSet
  504 84 l 0
  504 924 l 0
 EndSplineSet
+EndChar
+
+StartChar: uni27EA
+Encoding: 10218 10218 2314
+Width: 1008
+VWidth: 0
+Flags: HW
+LayerCount: 2
+Fore
+Refer: 2148 10216 N 1 0 0 1 -150 0 2
+Refer: 2148 10216 S 1 0 0 1 150 0 2
+EndChar
+
+StartChar: uni27EB
+Encoding: 10219 10219 2315
+Width: 1008
+VWidth: 0
+Flags: HW
+LayerCount: 2
+Fore
+Refer: 2147 10217 S 1 0 0 1 150 0 2
+Refer: 2147 10217 N 1 0 0 1 -150 0 2
+EndChar
+
+StartChar: uni2262
+Encoding: 8802 8802 2316
+Width: 1008
+VWidth: 0
+Flags: HW
+LayerCount: 2
+Fore
+Refer: 574 47 S 1 0 0 1 0 0 2
+Refer: 1798 8801 N 1 0 0 1 0 0 2
+EndChar
+
+StartChar: uni2213
+Encoding: 8723 8723 2317
+Width: 1008
+VWidth: 4000
+Flags: HWO
+HStem: -86 96<137.513 870.487> 426 96<137.512 456 552 870.486>
+VStem: 456 96<107.512 426 522 840.488>
+LayerCount: 2
+Fore
+Refer: 73 8722 N 1 0 0 1 0 416 2
+Refer: 570 43 N 1 0 0 1 0 -96 2
 EndChar
 EndChars
 EndSplineFont
