@@ -8,7 +8,7 @@
    version="1.1"
    id="svg5"
    xml:space="preserve"
-   inkscape:version="1.3.2 (091e20e, 2023-11-25)"
+   inkscape:version="1.4.3 (1:1.4.3+202512261035+0d15f75042)"
    sodipodi:docname="0311-combining-inverted-breve.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -25,13 +25,13 @@
    inkscape:deskcolor="#d1d1d1"
    inkscape:document-units="px"
    showgrid="true"
-   inkscape:zoom="0.46063422"
-   inkscape:cx="401.62018"
-   inkscape:cy="193.21187"
-   inkscape:window-width="1312"
-   inkscape:window-height="751"
-   inkscape:window-x="0"
-   inkscape:window-y="25"
+   inkscape:zoom="0.23726648"
+   inkscape:cx="118.01077"
+   inkscape:cy="-720.70862"
+   inkscape:window-width="1210"
+   inkscape:window-height="991"
+   inkscape:window-x="26"
+   inkscape:window-y="23"
    inkscape:window-maximized="0"
    inkscape:current-layer="layer1"
    showguides="true"
@@ -268,7 +268,7 @@
     
   <path
    style="display:inline;fill:none;stroke:#000099;stroke-width:6;stroke-linecap:round;stroke-linejoin:round"
-   d="M 19.5,9 C 21,4.5 24,3 31.5,3 39,3 42,4.5 43.5,9"
+   d="m 19.5,9 c 3,-4.5 6,-6 12,-6 6,0 9,1.5 12,6"
    id="path134-4"
    sodipodi:nodetypes="ccc" /></g>
 </svg>
