@@ -1,3 +1,5 @@
 [submodule "chug"]
 	path = chug
 	url = git@github.com:dse/chug.git
+        branch = v3
+
