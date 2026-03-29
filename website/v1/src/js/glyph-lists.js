@@ -1,8 +1,8 @@
 /*global categoriesData, glyphsData, fontGlyphsData */
 /*jshint ignore: start */
-import categoriesData from "../data/external/category-data.json" with { type: "json" };
-import glyphsData     from "../data/external/glyph-data.json"    with { type: "json" };
-import fontGlyphsData from "../data/glyphs-data.json"            with { type: "json" };
+import categoriesData from "../../../../src/data/external/category-data.json" with { type: "json" };
+import glyphsData     from "../../../../src/data/external/glyph-data.json"    with { type: "json" };
+import fontGlyphsData from "../../../../src/data/glyphs-data.json"            with { type: "json" };
 /*jshint ignore: end */
 
 import _ from "lodash";
