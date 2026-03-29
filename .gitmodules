@@ -1,6 +1,3 @@
-[submodule "website/v3/chug"]
-	path = website/v3/chug
-	url = git@github.com:dse/chug.git
 [submodule "chug"]
 	path = chug
 	url = git@github.com:dse/chug.git
