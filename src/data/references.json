@@ -22,7 +22,7 @@
     "U.c2pc": "\u1d1c",
     "V.c2pc": "\u1d20",
     "W.c2pc": "\u1d21",
-    "X.c2pc": "\uef11",
+    "X.c2pc": "\u0078",
     "Y.c2pc": "\u028f",
     "Z.c2pc": "\u1d22",
 
@@ -49,7 +49,7 @@
     "u.pcap": "\u1d1c",
     "v.pcap": "\u1d20",
     "w.pcap": "\u1d21",
-    "x.pcap": "\uef11",
+    "x.pcap": "\u0078",
     "y.pcap": "\u028f",
     "z.pcap": "\u1d22"
 }
