@@ -1,0 +1,60 @@
+root = true
+
+[*]
+        end_of_line = lf
+        trim_trailing_whitespace = true
+        insert_final_newline = true
+        indent_size = 4
+        indent_style = space
+        charset = utf-8
+
+[*.txt]
+        indent_size = 4
+[*.py]
+        indent_size = 4
+[*.json]
+        indent_size = 4
+[*.php]
+        indent_size = 4
+[{*.sh,*.bash,*.ksh}]
+        indent_size = 4
+[*.pl]
+        indent_size = 4
+
+[{*.c,*.h}]
+        indent_size = 5
+[{*.cc,*.cxx,*.cpp,*.java,*.cs}]
+        indent_size = 4
+[{*.js,*.mjs,*.cjs,*.jsx}]
+        indent_size = 4
+
+[{*.yaml,*.yml}]
+        indent_size = 2
+[*.diff]
+        indent_size = 8
+        indent_style = tab
+        trim_trailing_whitespace = false
+[*.patch]
+        indent_size = 8
+        indent_style = tab
+        insert_final_newline = false
+        trim_trailing_whitespace = false
+[*.xml]
+        indent_size = 2
+[*.md]
+        # 2 trailing spaces = linebreak
+        trim_trailing_whitespace = false
+        # Avoids inconsistent rendering of rendered lists across
+        # platforms.  Avoids conflicts between non-4-space indents and
+        # indented code blocks, which require 4 spaces.
+        indent_size = 4
+
+[{Makefile,GNUMakefile,*.mk,*.mak}]
+        indent_size = 8
+        indent_style = tab
+
+# styles managed by things like npm, yarn, composer, etc.
+[{package.json,package-lock.json,yarn.lock}]
+        indent_size = 2
+[composer.json]
+        indent_size = 4
