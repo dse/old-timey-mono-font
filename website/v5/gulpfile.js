@@ -32,8 +32,10 @@ const devTask = gulp.series(
         nunjucksTask,
     ),
     startServerTask,
-    watchSassTask,
-    watchNunjucksTask,
+    gulp.parallel(
+        watchSassTask,
+        watchNunjucksTask,
+    ),
 );
 
 const buildTask = gulp.series(
