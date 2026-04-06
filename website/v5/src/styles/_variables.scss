@@ -1,0 +1,36 @@
+$body-bg: #eee;
+$body-color: #222;
+$font-family-base: "Old Timey Mono Web", monospace;
+$font-family-code: "Old Timey Code Web", monospace;
+$font-family-monospace: "Old Timey Mono Web", monospace;
+$font-size-base: 1rem;
+$h1-font-size: $font-size-base * 4.00;
+$h2-font-size: $font-size-base * 3.00;
+$h3-font-size: $font-size-base * 2.00;
+$h4-font-size: $font-size-base * 2.00;
+$h5-font-size: $font-size-base * 1.00;
+$h6-font-size: $font-size-base * 1.00;
+$border-color: #222;
+$border-color-translucent: rgba(#222, 0.15);
+$headings-margin-bottom: 1rem;
+$headings-font-weight: normal;
+$bold-text-shadow: 0.05em 0 0 currentcolor;
+
+$line-height-base:                  1;
+$line-height-sm:                    1;
+$line-height-lg:                    1;
+$headings-line-height:              1;
+$display-line-height:               1;
+$input-btn-line-height:             1;
+$btn-line-height:                   1;
+$input-line-height:                 1;
+$form-select-line-height:           1;
+$form-floating-line-height:         1;
+$form-feedback-tooltip-line-height: 1;
+$modal-title-line-height:           1;
+$offcanvas-title-line-height:       1;
+
+:root {
+    --border-color: #{$border-color};
+    --border-color-translucent: #{$border-color-translucent};
+}

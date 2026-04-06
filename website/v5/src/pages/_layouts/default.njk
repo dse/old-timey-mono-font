@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html {{ htmlAttributes|safe }}>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="../../css/main.css?v={{ cacheBust }}">
+    {% if pageTitle %}
+        <title>{{ pageTitle }} | {{ siteName }}</title>
+    {% else %}
+        <title>{{ siteName }}</title>
+    {% endif %}
+    {% if canonical %}
+        <link rel="canonical" href="{{ canonical }}">
+    {% endif %}
+</head>
+<body>
+    {% include "_components/site-header.njk" %}
+    <main role="main">
+        {% block main %}
+        {% endblock %}
+    </main>
+    {% include "_components/site-footer.njk" %}
+    <script src="../../js/main.bundle.js?v={{ cacheBust }}"></script>
+</body>
+</html>

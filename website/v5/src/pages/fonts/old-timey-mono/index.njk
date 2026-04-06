@@ -1,0 +1,304 @@
+{# -*- fill-column: 132 -*- #}
+{% set pageTitle = "Home" %}
+{% set htmlAttributes = "translate=\"no\"" %}
+{% extends "_layouts/default.njk" %}
+{% macro charList(name, codepoints) %}
+    {% if codepoints|length %}
+        <hr>
+        <section class="section">
+            <header class="section__header">
+                <h2 class="h6">{{ name }}</h2>
+            </header>
+            <div class="section__body">
+                <div class="char-list">
+                    {% for codepoint in codepoints -%}
+                        <span title="{{ codepoint|uhex }} {{ codepoint|charname }}">{{ codepoint|chr }}</span>
+                    {%- endfor %}
+                </div>
+            </div>
+        </section>
+    {% endif %}
+{% endmacro %}
+{% block main %}
+    <div class="container">
+        <h1>
+            Old Timey Mono
+        </h1>
+        <hr>
+        <p>
+            Based on Reproducing Typewriter (1906).
+        </p>
+        <hr>
+        <section class="section">
+            <header class="section__header">
+                <h2 class="h6">Old Timey Mono</h2>
+            </header>
+            <div class="section__body">
+                <div class="row row-cols-1 row-cols-lg-2">
+                    <div class="col">
+                        <div style="font-size: 50%;">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ut luctus eros. Sed sed
+                                vestibulum turpis. Etiam tincidunt nisl aliquam ornare sollicitudin. Donec venenatis purus vitae
+                                facilisis lacinia. Suspendisse dignissim massa eget lectus feugiat tristique. Ut enim metus,
+                                dignissim sed bibendum sed, efficitur ut ipsum. Nunc sed diam efficitur, venenatis arcu eu,
+                                facilisis erat. Fusce leo augue, vehicula quis rhoncus eu, ornare ac sem. Nulla facilisi. Nam
+                                sagittis urna ut elit congue, a vehicula lorem molestie. Curabitur id feugiat arcu. Vestibulum
+                                dignissim urna faucibus arcu finibus, at pharetra ex egestas. Sed sed sapien est. Class aptent
+                                taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+                            </p>
+                        </div>
+                        <div style="font-size: 62.5%;">
+                            <p>
+                                Nulla ornare finibus nulla, et consequat eros tincidunt ac. Vivamus ac dignissim lorem. Phasellus
+                                vitae nibh justo. Donec id augue erat. Pellentesque eleifend magna in sagittis molestie. Sed
+                                laoreet commodo purus, sit amet scelerisque nulla rutrum ut. Quisque volutpat tincidunt ex
+                                tempus condimentum. Nullam pharetra nibh vel nibh fermentum ornare. Sed id semper massa. Class
+                                aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+                            </p>
+                        </div>
+                        <div style="font-size: 80%;">
+                            <p>
+                                Pellentesque eget arcu non urna tempor molestie. Vestibulum pulvinar auctor facilisis. Proin
+                                sapien enim, accumsan at nibh a, tempus pharetra sapien. Duis nibh dolor, lacinia sit amet
+                                sapien non, lacinia ullamcorper ante. Maecenas eget tortor quam.
+                            </p>
+                        </div>
+                        <div style="font-size: 100%;">
+                            <p>
+                                Fusce vulputate elit at mi finibus viverra. Cras sem tellus, pellentesque vel quam vitae,
+                                blandit consequat tortor. Etiam convallis sapien dolor, ut porta justo lobortis sed. Aenean
+                                lacinia mattis velit, ut sollicitudin magna congue non.
+                            </p>
+                        </div>
+                        <div style="font-size: 125%;">
+                            <p>
+                                Praesent gravida nisl ac nisi dignissim convallis. Curabitur odio tortor, mollis vitae dignissim
+                                ac, aliquet luctus justo. Curabitur molestie, mi ut vestibulum rhoncus, risus ipsum tincidunt
+                                felis, sodales gravida nulla leo quis nibh. Integer sed ultrices eros. Donec viverra, odio
+                                a congue sagittis, justo ipsum faucibus est, sed sollicitudin tellus lorem vitae ligula.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div style="font-size: 160%;">
+                            <p>
+                                Praesent gravida nisl ac nisi dignissim convallis. Curabitur odio tortor, mollis vitae dignissim
+                                ac, aliquet luctus justo. Curabitur molestie, mi ut vestibulum rhoncus, risus ipsum tincidunt
+                                felis, sodales gravida nulla leo quis nibh. Integer sed ultrices eros.
+                            </p>
+                        </div>
+                        <div style="font-size: 200%;">
+                            <p>
+                                Praesent gravida nisl ac nisi dignissim convallis. Curabitur odio tortor, mollis vitae
+                                dignissim ac, aliquet luctus justo.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <hr>
+        <section class="section">
+            <header class="section__header">
+                <h2 class="h6">English</h2>
+            </header>
+            <div class="section__body">
+                <p>
+                    All human beings are born free and equal in dignity and rights. They are endowed with reason and conscience
+                    and should act towards one another in a spirit of brotherhood.
+                </p>
+                <p>
+                    Everyone is entitled to all the rights and freedoms set forth in this Declaration, without distinction of
+                    any kind, such as race, colour, sex, language, religion, political or other opinion, national or social
+                    origin, property, birth or other status.
+                </p>
+                <p>
+                    Furthermore, no distinction shall be made on the basis of the political, jurisdictional or international status
+                    of the country or territory to which a person belongs, whether it be independent, trust, non-self-governing
+                    or under any other limitation of sovereignty.
+                </p>
+            </div>
+        </section>
+        <hr>
+        <section class="section">
+            <header class="section__header">
+                <h2 class="h6">Español</h2>
+            </header>
+            <div class="section__body">
+                <p>
+                    Todos los seres humanos nacen libres e iguales en dignidad y derechos y, dotados como están de razón y
+                    conciencia, deben comportarse fraternalmente los unos con los otros.
+                </p>
+                <p>
+                    Toda persona tiene los derechos y libertades proclamados en esta Declaración, sin distinción alguna de
+                    raza, color, sexo, idioma, religión, opinión política o de cualquier otra índole, origen nacional o
+                    social, posición económica, nacimiento o cualquier otra condición.
+                </p>
+                <p>
+                    Además, no se hará distinción alguna fundada en la condición política, jurídica o internacional del
+                    país o territorio de cuya jurisdicción dependa una persona, tanto si se trata de un país independiente,
+                    como de un territorio bajo administración fiduciaria, no autónomo o sometido a cualquier otra limitación
+                    de soberanía.
+                </p>
+            </div>
+        </section>
+        <hr>
+        <section class="section">
+            <header class="section__header">
+                <h2 class="h6">Íslenska</h2>
+            </header>
+            <div class="section__body">
+                <p>
+                    Hver maður er borinn frjáls og jafn öðrum að virðingu og réttindum. Menn eru gæddir vitsmunum og samvizku, og
+                    ber þeim að breyta bróðurlega hverjum við annan.
+                </p>
+                <p>
+                    Hver maður skal eiga kröfu á réttindum þeim og því frjálsræði, sem fólgin eru í yfirlýsingu þessari, og skal þar
+                    engan greinarmun gera vegna kynþáttar, litarháttar, kynferðis, tungu, trúar, stjórnmálaskoðana eða annarra
+                    skoðana, þjóðernis, uppruna, eigna, ætternis eða annarra aðstæðna.
+                </p>
+                <p>
+                    Eigi má heldur gera greinarmun á mönnum fyrir sakir stjórnskipulags lands þeirra eða landsvæðis, þjóðréttarstöðu
+                    þess eða lögsögu yfir því, hvort sem landið er sjálfstætt ríki, umráðasvæði, sjálfstjórnarlaust eða á annan hátt
+                    háð takmörkunum á fullveldi sínu.
+                </p>
+            </div>
+        </section>
+        <hr>
+        <section class="section">
+            <header class="section__header">
+                <h2 class="h6">ελληνικά</h2>
+            </header>
+            <div class="section__body">
+                <p>
+                    'Ολοι οι άνθρωποι γεννιούνται ελεύθεροι και ίσοι στην αξιοπρέπεια και τα δικαιώματα. Είναι προικισμένοι με
+                    λογική και συνείδηση, και οφείλουν να συμπεριφέρονται μεταξύ τους με πνεύμα αδελφοσύνης.
+                </p>
+                <p>
+                    Κάθε άνθρωπος δικαιούται να επικαλείται όλα τα δικαιώματα και όλες τις ελευθερίες που προκηρύσσει η παρούσα
+                    Διακήρυξη, χωρίς καμία απολύτως διάκριση, ειδικότερα ως προς τη φυλή, το χρώμα, το φύλο, τη γλώσσα, τις
+                    θρησκείες, τις πολιτικές ή οποιεσδήποτε άλλες πεποιθήσεις, την εθνική ή κοινωνική καταγωγή, την περιουσία, τη
+                    γέννηση ή οποιαδήποτε άλλη κατάσταση.
+                </p>
+                <p>
+                    Δεν θα μπορεί ακόμα να γίνεται καμία διάκριση εξαιτίας του πολιτικού, νομικού ή διεθνούς καθεστώτος της χώρας
+                    από την οποία προέρχεται κανείς, είτε πρόκειται για χώρα ή εδαφική περιοχή ανεξάρτητη, υπό κηδεμονία ή
+                    υπεξουσία, ή που βρίσκεται υπό οποιονδήποτε άλλον περιορισμό κυριαρχίας.
+                </p>
+            </div>
+        </section>
+        <hr>
+        <section class="section">
+            <header class="section__header">
+                <h2 class="h6">українська</h2>
+            </header>
+            <div class="section__body">
+                <p>
+                    Всі люди народжуються вільними і рівними у своїй гідності та правах. Вони наділені розумом і совістю і повинні
+                    діяти у відношенні один до одного в дусі братерства.
+                </p>
+                <p>
+                    Кожна людина повинна мати всі права і всі свободи, проголошені цією Декларацією, незалежно від раси, кольору
+                    шкіри, статі, мови, релігії, політичних або інших переконань, національного чи соціального походження,
+                    майнового, станового або іншого становища.
+                </p>
+                <p>
+                    Крім того, не повинно проводитися ніякого розрізнення на основі політичного, правового або міжнародного статусу
+                    країни або території, до якої людина належить, незалежно від того, чи є ця територія незалежною, підопічною,
+                    несамоврядованою або як-небудь інакше обмеженою у своєму суверенітеті.
+                </p>
+            </div>
+        </section>
+        <hr>
+        <section class="section">
+            <header class="section__header">
+                <h2 class="h6">Français</h2>
+            </header>
+            <div class="section__body">
+                <p>
+                    Tous les êtres humains naissent libres et égaux en dignité et en droits. Ils sont doués de raison et de
+                    conscience et doivent agir les uns envers les autres dans un esprit de fraternité.
+                </p>
+                <p>
+                    Chacun peut se prévaloir de tous les droits et de toutes les libertés proclamés dans la présente Déclaration,
+                    sans distinction aucune, notamment de race, de couleur, de sexe, de langue, de religion, d'opinion politique ou
+                    de toute autre opinion, d'origine nationale ou sociale, de fortune, de naissance ou de toute autre situation.
+                </p>
+                <p>
+                    De plus, il ne sera fait aucune distinction fondée sur le statut politique, juridique ou international du pays
+                    ou du territoire dont une personne est ressortissante, que ce pays ou territoire soit indépendant, sous tutelle,
+                    non autonome ou soumis à une limitation quelconque de souveraineté.
+                </p>
+            </div>
+        </section>
+        <hr>
+        <section class="section">
+            <header class="section__header">
+                <h2 class="h6">Old Timey Code</h2>
+            </header>
+            <div class="section__body">
+                <div class="pre-wrapper">
+                    <pre class="old-timey-code">
+send(to, from, count)
+register short *to, *from;
+register count;
+{
+        register n=(count+7)/8;
+        switch(count%8){
+        case 0: do{     *to = *from++;
+        case 7:         *to = *from++;
+        case 6:         *to = *from++;
+        case 5:         *to = *from++;
+        case 4:         *to = *from++;
+        case 3:         *to = *from++;
+        case 2:         *to = *from++;
+        case 1:         *to = *from++;
+                }while(--n>0);
+        }
+}</pre>
+                </div>
+                <div class="pre-wrapper">
+                    <pre class="old-timey-code">
+float Q_rsqrt(float number) {
+     long i;
+     float x2, y;
+     const float threehalfs = 1.5F;
+
+     x2 = number * 0.5F;
+     y  = number;
+     i  = *(long*)&y;                             // evil floating point bit level hacking
+     i  = 0x5f3759df - ( i >> 1 );                // what the heck?
+     y  = *(float*)&i;
+     y  = y * ( threehalfs - ( x2 * y * y ) );    // 1st iteration
+     // y  = y * ( threehalfs - ( x2 * y * y ) ); // 2nd iteration, this can be removed
+
+     return y;
+}</pre>
+                </div>
+            </div>
+        </section>
+        {{ charList("Latin",            fontData.latin.alpha) }}
+        {{ charList("Latin (marks)",    fontData.latin.mark) }}
+        {{ charList("Latin (other)",    fontData.latin.nonAlpha) }}
+        {{ charList("Cyrillic",         fontData.cyrillic.alpha) }}
+        {{ charList("Cyrillic (marks)", fontData.cyrillic.mark) }}
+        {{ charList("Cyrillic (other)", fontData.cyrillic.nonAlpha) }}
+        {{ charList("Greek",            fontData.greek.alpha) }}
+        {{ charList("Greek (marks)",    fontData.greek.mark) }}
+        {{ charList("Greek (other)",    fontData.greek.nonAlpha) }}
+        {{ charList("Punctuation",      fontData.punct) }}
+        {{ charList("Numeric",          fontData.numeric) }}
+        {{ charList("Marks",            fontData.mark) }}
+        {{ charList("Symbols",          fontData.symbol) }}
+        {{ charList("Other",            fontData.other) }}
+        {{ charList("Legacy Computing", fontData.legacy) }}
+        {{ charList("Block Elements",   fontData.block) }}
+        {{ charList("Braille Patterns", fontData.braille) }}
+        {{ charList("Box Drawing",      fontData.box) }}
+        {{ charList("IPA",              fontData.ipa) }}
+        {% for category, codepoints in fontData.otherCategory %}
+            {{ charList(category, codepoints) }}
+        {% endfor %}
+    </div>
+{% endblock %}
