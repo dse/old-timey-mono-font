@@ -2,23 +2,7 @@
 {% set pageTitle = "Home" %}
 {% set htmlAttributes = "translate=\"no\"" %}
 {% extends "_layouts/default.njk" %}
-{% macro charList(name, codepoints) %}
-    {% if codepoints|length %}
-        <hr>
-        <section class="section">
-            <header class="section__header">
-                <h2 class="h6">{{ name }}</h2>
-            </header>
-            <div class="section__body">
-                <div class="char-list">
-                    {% for codepoint in codepoints -%}
-                        <span title="{{ codepoint|uhex }} {{ codepoint|charname }}">{{ codepoint|chr }}</span>
-                    {%- endfor %}
-                </div>
-            </div>
-        </section>
-    {% endif %}
-{% endmacro %}
+{% from "_macros/charlist.njk" import charList as charList %}
 {% block main %}
     <div class="container">
         <h1>
@@ -222,8 +206,8 @@
                 </p>
                 <p>
                     Chacun peut se prévaloir de tous les droits et de toutes les libertés proclamés dans la présente Déclaration,
-                    sans distinction aucune, notamment de race, de couleur, de sexe, de langue, de religion, d'opinion politique ou
-                    de toute autre opinion, d'origine nationale ou sociale, de fortune, de naissance ou de toute autre situation.
+                    sans distinction aucune, notamment de race, de couleur, de sexe, de langue, de religion, d’opinion politique ou
+                    de toute autre opinion, d’origine nationale ou sociale, de fortune, de naissance ou de toute autre situation.
                 </p>
                 <p>
                     De plus, il ne sera fait aucune distinction fondée sur le statut politique, juridique ou international du pays
@@ -232,52 +216,8 @@
                 </p>
             </div>
         </section>
-        <hr>
-        <section class="section">
-            <header class="section__header">
-                <h2 class="h6">Old Timey Code</h2>
-            </header>
-            <div class="section__body">
-                <div class="pre-wrapper">
-                    <pre class="old-timey-code">
-send(to, from, count)
-register short *to, *from;
-register count;
-{
-        register n=(count+7)/8;
-        switch(count%8){
-        case 0: do{     *to = *from++;
-        case 7:         *to = *from++;
-        case 6:         *to = *from++;
-        case 5:         *to = *from++;
-        case 4:         *to = *from++;
-        case 3:         *to = *from++;
-        case 2:         *to = *from++;
-        case 1:         *to = *from++;
-                }while(--n>0);
-        }
-}</pre>
-                </div>
-                <div class="pre-wrapper">
-                    <pre class="old-timey-code">
-float Q_rsqrt(float number) {
-     long i;
-     float x2, y;
-     const float threehalfs = 1.5F;
 
-     x2 = number * 0.5F;
-     y  = number;
-     i  = *(long*)&y;                             // evil floating point bit level hacking
-     i  = 0x5f3759df - ( i >> 1 );                // what the heck?
-     y  = *(float*)&i;
-     y  = y * ( threehalfs - ( x2 * y * y ) );    // 1st iteration
-     // y  = y * ( threehalfs - ( x2 * y * y ) ); // 2nd iteration, this can be removed
 
-     return y;
-}</pre>
-                </div>
-            </div>
-        </section>
         {{ charList("Latin",            fontData.latin.alpha) }}
         {{ charList("Latin (marks)",    fontData.latin.mark) }}
         {{ charList("Latin (other)",    fontData.latin.nonAlpha) }}
