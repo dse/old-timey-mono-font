@@ -1,0 +1,17 @@
+{% macro charList(name, codepoints) %}
+    {% if codepoints|length %}
+        <hr>
+        <section class="section">
+            <header class="section__header">
+                <h2 class="h6">{{ name }}</h2>
+            </header>
+            <div class="section__body">
+                <div class="char-list">
+                    {% for codepoint in codepoints -%}
+                        <span title="{{ codepoint|uhex }} {{ codepoint|charname }}">{{ codepoint|chr }}</span>
+                    {%- endfor %}
+                </div>
+            </div>
+        </section>
+    {% endif %}
+{% endmacro %}
