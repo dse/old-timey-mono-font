@@ -1,5 +1,4 @@
-[submodule "chug"]
-	path = chug
+[submodule "website/v5/chug"]
+	path = website/v5/chug
 	url = git@github.com:dse/chug.git
-        branch = v3
-
+	branch = v3
