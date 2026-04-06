@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html translate="no">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="../../css/main.css?v=">
+
+    <title>Home | </title>
+
+
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container mt-3">
+            <ul class="list-unstyled d-flex mb-0 align-items-center">
+                <li class="list-inline-item align-baseline">
+                    <a href="./">Old Timey Mono</a>
+                </li>
+                <li class="list-inline-item align-baseline">
+                    <a href="./code.html">Old Timey Code</a>
+                </li>
+                <li class="list-inline-item align-baseline">
+                    <a href="./stylistics.html">Stylistics</a>
+                </li>
+                <li class="list-inline-item align-baseline">
+                    <a href="https://github.com/dse/old-timey-mono-font">GitHub</a>
+                </li>
+                <li class="list-inline-item align-baseline" style="flex: 1 0 auto; text-align: right;">
+                    <pre class="mb-0 fw-bold">
+<a href="https://github.com/dse/old-timey-mono-font/releases" style="color: #009900; text-decoration: none;">+-------------+
+| Download \/ |
++-------------+</a></pre>
+                </li>
+            </ul>
+            <hr>
+        </div>
+    </header>
+
+    <main role="main">
+
+        <div class="container">
+            <h1>
+                Old Timey Code
+            </h1>
+            <hr>
+            <section class="section">
+                <header class="section__header">
+                    <h2 class="h6">Old Timey Code</h2>
+                </header>
+                <div class="section__body">
+                    <div class="pre-wrapper">
+                        <pre class="old-timey-code">
+send(to, from, count)
+register short *to, *from;
+register count;
+{
+        register n=(count+7)/8;
+        switch(count%8){
+        case 0: do{     *to = *from++;
+        case 7:         *to = *from++;
+        case 6:         *to = *from++;
+        case 5:         *to = *from++;
+        case 4:         *to = *from++;
+        case 3:         *to = *from++;
+        case 2:         *to = *from++;
+        case 1:         *to = *from++;
+                }while(--n>0);
+        }
+}</pre>
+                    </div>
+                    <div class="pre-wrapper">
+                        <pre class="old-timey-code">
+float Q_rsqrt(float number) {
+     long i;
+     float x2, y;
+     const float threehalfs = 1.5F;
+
+     x2 = number * 0.5F;
+     y  = number;
+     i  = *(long*)&y;                             // evil floating point bit level hacking
+     i  = 0x5f3759df - ( i >> 1 );                // what the heck?
+     y  = *(float*)&i;
+     y  = y * ( threehalfs - ( x2 * y * y ) );    // 1st iteration
+     // y  = y * ( threehalfs - ( x2 * y * y ) ); // 2nd iteration, this can be removed
+
+     return y;
+}</pre>
+                    </div>
+                </div>
+            </section>
+            <hr>
+            <section class="section">
+                <header class="section__header">
+                    <h2 class="h6">
+                        <span class="dark-green">Old Timey Code</span> vs. Mono
+                    </h2>
+                </header>
+                <div class="section__body">
+                    <div class="mb-3">
+                        <pre class="old-timey-mono mb-0">0123456789aces<wbr>.,:;‘’“”=()[]{}`~</pre>
+                        <pre class="old-timey-code mb-0 dark-green">0123456789aces<wbr>.,:;‘’“”=()[]{}`~</pre>
+                    </div>
+                    <div class="mb-3" style="font-size: 200%;">
+                        <pre class="old-timey-mono mb-0">0123456789aces<wbr>.,:;‘’“”=`~<wbr>()[]{}</pre>
+                        <pre class="old-timey-code mb-0 dark-green">0123456789aces<wbr>.,:;‘’“”=`~<wbr>()[]{}</pre>
+                    </div>
+                    <p>
+                        Old Timey Mono is a best-effort faithful revival of Reproducing Typewriter. <span class="dark-green">Old Timey Code</span>
+                        alters some glyphs to make it more usable for coding.
+                        Note the digits zero and one, the more open arpetures in the letters “aces”,
+                        the larger punctuation marks, equal sign, brackets, backtick, and tilde.
+                    </p>
+                </div>
+            </section>
+        </div><!-- container -->
+
+    </main>
+    <footer class="site-footer">
+        <div class="container">
+            <hr>
+            <p>
+                Copyright 2026 <a href="mailto:dsembry@gmail.com">Darren Embry</a>.
+                <a target="_blank" href="ofl.html">SIL-OFL 1.1</a>.
+            </p>
+        </div>
+    </footer>
+
+    <script src="../../js/main.bundle.js?v="></script>
+</body>
+
+</html>

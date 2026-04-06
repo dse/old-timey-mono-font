@@ -15,8 +15,26 @@
 <body>
     <header class="site-header">
         <div class="container mt-3">
-            <a href="./">Old Timey Mono</a>
-            <a href="https://github.com/dse/old-timey-mono-font">GitHub</a>
+            <ul class="list-unstyled d-flex mb-0 align-items-center">
+                <li class="list-inline-item align-baseline">
+                    <a href="./">Old Timey Mono</a>
+                </li>
+                <li class="list-inline-item align-baseline">
+                    <a href="./code.html">Old Timey Code</a>
+                </li>
+                <li class="list-inline-item align-baseline">
+                    <a href="./stylistics.html">Stylistics</a>
+                </li>
+                <li class="list-inline-item align-baseline">
+                    <a href="https://github.com/dse/old-timey-mono-font">GitHub</a>
+                </li>
+                <li class="list-inline-item align-baseline" style="flex: 1 0 auto; text-align: right;">
+                    <pre class="mb-0 fw-bold">
+<a href="https://github.com/dse/old-timey-mono-font/releases" style="color: #009900; text-decoration: none;">+-------------+
+| Download \/ |
++-------------+</a></pre>
+                </li>
+            </ul>
             <hr>
         </div>
     </header>
@@ -225,8 +243,8 @@
                     </p>
                     <p>
                         Chacun peut se prévaloir de tous les droits et de toutes les libertés proclamés dans la présente Déclaration,
-                        sans distinction aucune, notamment de race, de couleur, de sexe, de langue, de religion, d'opinion politique ou
-                        de toute autre opinion, d'origine nationale ou sociale, de fortune, de naissance ou de toute autre situation.
+                        sans distinction aucune, notamment de race, de couleur, de sexe, de langue, de religion, d’opinion politique ou
+                        de toute autre opinion, d’origine nationale ou sociale, de fortune, de naissance ou de toute autre situation.
                     </p>
                     <p>
                         De plus, il ne sera fait aucune distinction fondée sur le statut politique, juridique ou international du pays
@@ -235,52 +253,8 @@
                     </p>
                 </div>
             </section>
-            <hr>
-            <section class="section">
-                <header class="section__header">
-                    <h2 class="h6">Old Timey Code</h2>
-                </header>
-                <div class="section__body">
-                    <div class="pre-wrapper">
-                        <pre class="old-timey-code">
-send(to, from, count)
-register short *to, *from;
-register count;
-{
-        register n=(count+7)/8;
-        switch(count%8){
-        case 0: do{     *to = *from++;
-        case 7:         *to = *from++;
-        case 6:         *to = *from++;
-        case 5:         *to = *from++;
-        case 4:         *to = *from++;
-        case 3:         *to = *from++;
-        case 2:         *to = *from++;
-        case 1:         *to = *from++;
-                }while(--n>0);
-        }
-}</pre>
-                    </div>
-                    <div class="pre-wrapper">
-                        <pre class="old-timey-code">
-float Q_rsqrt(float number) {
-     long i;
-     float x2, y;
-     const float threehalfs = 1.5F;
 
-     x2 = number * 0.5F;
-     y  = number;
-     i  = *(long*)&y;                             // evil floating point bit level hacking
-     i  = 0x5f3759df - ( i >> 1 );                // what the heck?
-     y  = *(float*)&i;
-     y  = y * ( threehalfs - ( x2 * y * y ) );    // 1st iteration
-     // y  = y * ( threehalfs - ( x2 * y * y ) ); // 2nd iteration, this can be removed
 
-     return y;
-}</pre>
-                    </div>
-                </div>
-            </section>
 
 
             <hr>

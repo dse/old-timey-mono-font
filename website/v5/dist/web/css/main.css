@@ -740,7 +740,7 @@ progress {
 }
 
 .list-inline-item:not(:last-child) {
-    margin-right: 0.5rem;
+    margin-right: 1ch;
 }
 
 .initialism {
@@ -8239,10 +8239,6 @@ hr::after {
     }
 }
 
-.section__header {
-    text-shadow: 0.05em 0 0 currentcolor;
-}
-
 .section__body {
     width: calc(100% - var(--column-1));
     flex: 1 1 calc(100% - var(--column-1));
@@ -8338,4 +8334,115 @@ pre {
     max-width: 75ch;
     margin-left: auto;
     margin-right: auto;
+}
+
+.dark-blue {
+    color: #333399;
+}
+
+.dark-green {
+    color: #009900;
+}
+
+.VCEN {
+    font-feature-settings: "VCEN";
+}
+
+.BASE {
+    font-feature-settings: "BASE";
+}
+
+.c2pc {
+    font-feature-settings: "c2pc";
+}
+
+.pcap {
+    font-feature-settings: "pcap";
+}
+
+.c2sc {
+    font-feature-settings: "c2sc";
+}
+
+.smcp {
+    font-feature-settings: "smcp";
+}
+
+.ss05 {
+    font-feature-settings: "ss05";
+}
+
+.ss02 {
+    font-feature-settings: "ss02";
+}
+
+.cv01 {
+    font-feature-settings: "cv01";
+}
+
+.cv02 {
+    font-feature-settings: "cv02";
+}
+
+.cv03 {
+    font-feature-settings: "cv03";
+}
+
+.cv04 {
+    font-feature-settings: "cv04";
+}
+
+.cv05 {
+    font-feature-settings: "cv05";
+}
+
+.cv06 {
+    font-feature-settings: "cv06";
+}
+
+.cv07 {
+    font-feature-settings: "cv07";
+}
+
+.cv08 {
+    font-feature-settings: "cv08";
+}
+
+.cv09 {
+    font-feature-settings: "cv09";
+}
+
+.cv10 {
+    font-feature-settings: "cv10";
+}
+
+.cv11 {
+    font-feature-settings: "cv11";
+}
+
+.cv12 {
+    font-feature-settings: "cv12";
+}
+
+.cv13 {
+    font-feature-settings: "cv13";
+}
+
+.cv14 {
+    font-feature-settings: "cv14";
+}
+
+.fs-200 {
+    font-size: 200%;
+}
+
+b,
+strong {
+    font-weight: normal;
+    text-shadow: 0.05em 0 0 currentcolor;
+}
+
+.fw-bold {
+    font-weight: normal;
+    text-shadow: 0.05em 0 0 currentcolor;
 }
