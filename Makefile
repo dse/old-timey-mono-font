@@ -362,5 +362,8 @@ shaperglot: FORCE
 release:
 	gh release create v$(VERSION) ./dist/ttf/*.ttf ./dist/zip/OldTimeyMono-$(VERSION).zip ./LICENSE.md 
 
+website: FORCE
+	cd website/v5 && make
+
 .PHONY: FORCE
 

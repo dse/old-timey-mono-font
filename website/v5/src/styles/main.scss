@@ -28,7 +28,7 @@
 @import "../../node_modules/bootstrap/scss/images";
 @import "../../node_modules/bootstrap/scss/containers";
 @import "../../node_modules/bootstrap/scss/grid";
-// @import "../../node_modules/bootstrap/scss/tables";
+@import "../../node_modules/bootstrap/scss/tables";
 // @import "../../node_modules/bootstrap/scss/forms";
 // @import "../../node_modules/bootstrap/scss/buttons";
 // @import "../../node_modules/bootstrap/scss/transitions";
@@ -124,6 +124,20 @@ hr {
         width: calc(2ch + 1px);
         margin-right: -1px;
         margin-bottom: -1px;
+        padding: 0.5ch;
+        border: 1px solid #ccc;
+        min-width: 2ch;
+    }
+}
+.char-table {
+    &__char-cell {
+        font-size: 200%;
+        text-align: center;
+    }
+    &__char {
+        display: inline-block;
+        height: calc(3ch + 1px);
+        width: calc(2ch + 1px);
         padding: 0.5ch;
         border: 1px solid #ccc;
         min-width: 2ch;

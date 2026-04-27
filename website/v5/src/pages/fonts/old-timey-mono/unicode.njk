@@ -1,0 +1,57 @@
+{# -*- fill-column: 132 -*- #}
+{% set pageTitle = "Unicode" %}
+{% set htmlAttributes = "translate=\"no\"" %}
+{% extends "_layouts/default.njk" %}
+{% block main %}
+    <div class="container">
+        <table class="table char-table">
+            <thead>
+                <tr>
+                    <td></td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>9</td>
+                    <td>A</td>
+                    <td>B</td>
+                    <td>C</td>
+                    <td>D</td>
+                    <td>E</td>
+                    <td>F</td>
+                    <td></td>
+                </tr>
+            </thead>
+            <tbody>
+                {% for rowNumber in fontData.table.rowNumbers %}
+                    <tr>
+                        {% set startAt = rowNumber * 16 %}
+                        {% set endAt = rowNumber * 16 + 15 %}
+                        <th class="char-table__row-heading" scope="row">
+                            {{ startAt|uhex }}
+                        </th>
+                        {% for flag in fontData.table.rows[rowNumber] %}
+                            {% set codepoint = startAt + loop.index0 %}
+                            {% if flag %}
+                                <td class="char-table__char-cell char-table__char-cell--occupied">
+                                    <span class="char-table__char" title="{{ codepoint|uhex }} {{ codepoint|charname }}">{{ codepoint|chr }}</span>
+                                </td>
+                            {% else %}
+                                <td class="char-table__char-cell char-table__char-cell--blank">
+                                </td>
+                            {% endif %}
+                        {% endfor %}
+                        <th class="char-table__row-heading" scope="row">
+                            {{ endAt|uhex }}
+                        </th>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

@@ -13,6 +13,9 @@ import ipaExtensionsBlock                       from "@unicode/unicode-17.0.0/Bl
 
 import * as fontkit from "fontkit";
 
+const J = JSON.stringify;
+const JJ = function (value, replacer, space) { return JSON.stringify(value, replacer, space ?? 4); };
+
 export function getFontData(filename) {
     let font = fontkit.openSync(filename);
     const symbols = {
@@ -49,21 +52,9 @@ export function getFontData(filename) {
     const codepoints = font.characterSet;
     codepoints.sort((a, b) => a - b);
     for (const codepoint of codepoints) {
-        // controls
-        if (codepoint < 32 || (codepoint >= 127 && codepoint <= 159)) {
+        if (exclude(codepoint)) {
             continue;
         }
-
-        // soft hyphen
-        if (codepoint === 0x00ad) {
-            continue;
-        }
-
-        // private use and surrogates
-        if (codepoint >= 0xd800   && codepoint <= 0xdfff  ) { continue; }
-        if (codepoint >= 0xe000   && codepoint <= 0xf8ff  ) { continue; }
-        if (codepoint >= 0xf0000  && codepoint <= 0xfffff ) { continue; }
-        if (codepoint >= 0x100000 && codepoint <= 0x10ffff) { continue; }
 
         const isLatin = latinCodepoints.includes(codepoint);
         const isGreek = greekCodepoints.includes(codepoint);
@@ -183,7 +174,50 @@ export function getFontData(filename) {
         symbols.category[generalCategoryName] = symbols.category[generalCategoryName] ?? [];
         symbols.category[generalCategoryName].push(codepoint);
     }
+
+    const table = symbols.table = {
+        rowNumbers: [],
+        rows: {},
+    };
+
+    console.log(J(codepoints));
+    for (const codepoint of codepoints) {
+        if (exclude(codepoint)) {
+            continue;
+        }
+        const rowNumber = Math.floor(codepoint / 16);
+        const colNumber = codepoint % 16;
+        console.log(`${codepoint} ${rowNumber} ${colNumber}`);
+        if (!table.rowNumbers.includes(rowNumber)) {
+            table.rowNumbers.push(rowNumber);
+            table.rows[rowNumber] = [];
+            for (let i = 0; i < 16; i += 1) {
+                table.rows[rowNumber][i] = false;
+            }
+        }
+        table.rows[rowNumber][colNumber] = true;
+    }
+
     return symbols;
+
+    function exclude(codepoint) {
+        // controls
+        if (codepoint < 32 || (codepoint >= 127 && codepoint <= 159)) {
+            return true;
+        }
+
+        // soft hyphen
+        if (codepoint === 0x00ad) {
+            return true;
+        }
+
+        // private use and surrogates
+        if (codepoint >= 0xd800   && codepoint <= 0xdfff  ) { return true; }
+        if (codepoint >= 0xe000   && codepoint <= 0xf8ff  ) { return true; }
+        if (codepoint >= 0xf0000  && codepoint <= 0xfffff ) { return true; }
+        if (codepoint >= 0x100000 && codepoint <= 0x10ffff) { return true; }
+        return false;
+    }
 }
 
 function parseChar(str) {
