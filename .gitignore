@@ -15,3 +15,4 @@ testfonts
 typescript
 dist/sfd/
 node_modules/
+*.tmp
