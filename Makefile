@@ -7,7 +7,7 @@ default: fonts zip
 SRC_BASEFONT			= src/basefont
 SRC_DATA			= src/data
 SRC_BUILD			= tmp/_build
-SRC_VECTOR			= src/vector
+SRC_VECTOR			= src/vector/chars/stroke
 SUPPORT_BIN			= support/bin
 DIST_DIR			= dist
 DIST_TTF			= $(DIST_DIR)/ttf
