@@ -278,6 +278,153 @@ def main():
             draw_horizontal_diagonal_arc(glyph, left=False, upper=False)
             glyph.removeOverlap()
 
+        for glyph in GA(font, "U+FAF2E"):
+            draw_vertical_diagonal_arc(glyph, left=True, upper=True)
+            draw_heavy_circle(glyph)
+            glyph.removeOverlap()
+        for glyph in GA(font, "U+FAF2F"):
+            draw_vertical_diagonal_arc(glyph, left=False, upper=True)
+            draw_heavy_circle(glyph)
+            glyph.removeOverlap()
+        for glyph in GA(font, "U+FAF30"):
+            draw_vertical_diagonal_arc(glyph, left=True, upper=False)
+            draw_heavy_circle(glyph)
+            glyph.removeOverlap()
+        for glyph in GA(font, "U+FAF31"):
+            draw_vertical_diagonal_arc(glyph, left=False, upper=False)
+            draw_heavy_circle(glyph)
+            glyph.removeOverlap()
+        for glyph in GA(font, "U+FAF32"):
+            draw_horizontal_diagonal_arc(glyph, left=True, upper=True)
+            draw_heavy_circle(glyph)
+            glyph.removeOverlap()
+        for glyph in GA(font, "U+FAF33"):
+            draw_horizontal_diagonal_arc(glyph, left=False, upper=True)
+            draw_heavy_circle(glyph)
+            glyph.removeOverlap()
+        for glyph in GA(font, "U+FAF34"):
+            draw_horizontal_diagonal_arc(glyph, left=True, upper=False)
+            draw_heavy_circle(glyph)
+            glyph.removeOverlap()
+        for glyph in GA(font, "U+FAF35"):
+            draw_horizontal_diagonal_arc(glyph, left=False, upper=False)
+            draw_heavy_circle(glyph)
+            glyph.removeOverlap()
+
+        for glyph in GA(font, "U+FAF36"):
+            draw_vertical_diagonal_arc(glyph, left=True, upper=True)
+            draw_heavy_circle(glyph)
+            glyph.removeOverlap()
+            hollow_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+        for glyph in GA(font, "U+FAF37"):
+            draw_vertical_diagonal_arc(glyph, left=False, upper=True)
+            draw_heavy_circle(glyph)
+            glyph.removeOverlap()
+            hollow_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+        for glyph in GA(font, "U+FAF38"):
+            draw_vertical_diagonal_arc(glyph, left=True, upper=False)
+            draw_heavy_circle(glyph)
+            glyph.removeOverlap()
+            hollow_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+        for glyph in GA(font, "U+FAF39"):
+            draw_vertical_diagonal_arc(glyph, left=False, upper=False)
+            draw_heavy_circle(glyph)
+            glyph.removeOverlap()
+            hollow_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+        for glyph in GA(font, "U+FAF3A"):
+            draw_horizontal_diagonal_arc(glyph, left=True, upper=True)
+            draw_heavy_circle(glyph)
+            glyph.removeOverlap()
+            hollow_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+        for glyph in GA(font, "U+FAF3B"):
+            draw_horizontal_diagonal_arc(glyph, left=False, upper=True)
+            draw_heavy_circle(glyph)
+            glyph.removeOverlap()
+            hollow_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+        for glyph in GA(font, "U+FAF3C"):
+            draw_horizontal_diagonal_arc(glyph, left=True, upper=False)
+            draw_heavy_circle(glyph)
+            glyph.removeOverlap()
+            hollow_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+        for glyph in GA(font, "U+FAF3D"):
+            draw_horizontal_diagonal_arc(glyph, left=False, upper=False)
+            draw_heavy_circle(glyph)
+            glyph.removeOverlap()
+            hollow_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+
+        for glyph in GA(font, "U+FAF3E"):
+            draw_vertical_diagonal_arc(glyph, left=True, upper=True)
+            draw_heavy_circle(glyph)
+            glyph.removeOverlap()
+            hollow_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+            draw_x_for_hollowed_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+        for glyph in GA(font, "U+FAF3F"):
+            draw_vertical_diagonal_arc(glyph, left=False, upper=True)
+            draw_heavy_circle(glyph)
+            glyph.removeOverlap()
+            hollow_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+            draw_x_for_hollowed_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+        for glyph in GA(font, "U+FAF40"):
+            draw_vertical_diagonal_arc(glyph, left=True, upper=False)
+            draw_heavy_circle(glyph)
+            glyph.removeOverlap()
+            hollow_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+            draw_x_for_hollowed_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+        for glyph in GA(font, "U+FAF41"):
+            draw_vertical_diagonal_arc(glyph, left=False, upper=False)
+            draw_heavy_circle(glyph)
+            glyph.removeOverlap()
+            hollow_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+            draw_x_for_hollowed_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+        for glyph in GA(font, "U+FAF42"):
+            draw_horizontal_diagonal_arc(glyph, left=True, upper=True)
+            draw_heavy_circle(glyph)
+            glyph.removeOverlap()
+            hollow_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+            draw_x_for_hollowed_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+        for glyph in GA(font, "U+FAF43"):
+            draw_horizontal_diagonal_arc(glyph, left=False, upper=True)
+            draw_heavy_circle(glyph)
+            glyph.removeOverlap()
+            hollow_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+            draw_x_for_hollowed_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+        for glyph in GA(font, "U+FAF44"):
+            draw_horizontal_diagonal_arc(glyph, left=True, upper=False)
+            draw_heavy_circle(glyph)
+            glyph.removeOverlap()
+            hollow_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+            draw_x_for_hollowed_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+        for glyph in GA(font, "U+FAF45"):
+            draw_horizontal_diagonal_arc(glyph, left=False, upper=False)
+            draw_heavy_circle(glyph)
+            glyph.removeOverlap()
+            hollow_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+            draw_x_for_hollowed_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+
         if filename.endswith(".sfd"):
             font.save(filename)
         else:
