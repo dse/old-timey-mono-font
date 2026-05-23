@@ -21,7 +21,9 @@ from box_draw_utils import \
     draw_light_lower_right_arc, \
     draw_heavy_circle, \
     hollow_out_heavy_circle, \
-    draw_x_for_hollowed_out_heavy_circle
+    draw_x_for_hollowed_out_heavy_circle, \
+    draw_dot
+
 
 # https://spencermortensen.com/articles/bezier-circle/
 C = 0.5519150244935105707435627
@@ -50,380 +52,882 @@ def main():
 
     for [font, filename, font_in_file] in get_fonts_from(args.filenames, with_filenames=True, ttc=False):
 
-        # this revision
-        for glyph in GA(font, "U+FAF00"):
-            draw_light_vertical(glyph)
+        codepoint = 0xfaf00
+
+        # revision mark, heavy circle
+        for glyph in GA(font, codepoint):
+            # heavy circle revision mark
             draw_heavy_circle(glyph)
             glyph.removeOverlap()
-        for glyph in GA(font, "U+FAF01"):
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # heavy circle revision mark light horizontal
             draw_light_horizontal(glyph)
             draw_heavy_circle(glyph)
             glyph.removeOverlap()
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # heavy circle revision mark light vertical
+            draw_light_vertical(glyph)
+            draw_heavy_circle(glyph)
+            glyph.removeOverlap()
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # heavy circle revision mark light vertical upper
+            draw_light_vertical_top(glyph)
+            draw_heavy_circle(glyph)
+            glyph.removeOverlap()
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # heavy circle revision mark light vertical lower
+            draw_light_vertical_bottom(glyph)
+            draw_heavy_circle(glyph)
+            glyph.removeOverlap()
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # heavy circle revision mark light horizontal left
+            draw_light_horizontal_left(glyph)
+            draw_heavy_circle(glyph)
+            glyph.removeOverlap()
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # heavy circle revision mark light horizontal right
+            draw_light_horizontal_right(glyph)
+            draw_heavy_circle(glyph)
+            glyph.removeOverlap()
+            codepoint += 1
+
+        # revision mark, light circle
+        for glyph in GA(font, codepoint):
+            # light circle revision mark
+            draw_heavy_circle(glyph)
+            glyph.removeOverlap()
+            hollow_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # light circle revision mark light horizontal
+            draw_light_horizontal(glyph)
+            draw_heavy_circle(glyph)
+            glyph.removeOverlap()
+            hollow_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # light circle revision mark light vertical
+            draw_light_vertical(glyph)
+            draw_heavy_circle(glyph)
+            glyph.removeOverlap()
+            hollow_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # light circle revision mark light vertical upper
+            draw_light_vertical_top(glyph)
+            draw_heavy_circle(glyph)
+            glyph.removeOverlap()
+            hollow_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # light circle revision mark light vertical lower
+            draw_light_vertical_bottom(glyph)
+            draw_heavy_circle(glyph)
+            glyph.removeOverlap()
+            hollow_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # light circle revision mark light horizontal left
+            draw_light_horizontal_left(glyph)
+            draw_heavy_circle(glyph)
+            glyph.removeOverlap()
+            hollow_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # light circle revision mark light horizontal right
+            draw_light_horizontal_right(glyph)
+            draw_heavy_circle(glyph)
+            glyph.removeOverlap()
+            hollow_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+            codepoint += 1
+
+        # revision mark, light circle with x
+        for glyph in GA(font, codepoint):
+            # light circle with x revision mark
+            draw_heavy_circle(glyph)
+            glyph.removeOverlap()
+            hollow_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+            draw_x_for_hollowed_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # light circle with x revision mark light horizontal
+            draw_light_horizontal(glyph)
+            draw_heavy_circle(glyph)
+            glyph.removeOverlap()
+            hollow_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+            draw_x_for_hollowed_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # light circle with x revision mark light vertical
+            draw_light_vertical(glyph)
+            draw_heavy_circle(glyph)
+            glyph.removeOverlap()
+            hollow_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+            draw_x_for_hollowed_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # light circle with x revision mark light vertical upper
+            draw_light_vertical_top(glyph)
+            draw_heavy_circle(glyph)
+            glyph.removeOverlap()
+            hollow_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+            draw_x_for_hollowed_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # light circle with x revision mark light vertical lower
+            draw_light_vertical_bottom(glyph)
+            draw_heavy_circle(glyph)
+            glyph.removeOverlap()
+            hollow_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+            draw_x_for_hollowed_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # light circle with x revision mark light horizontal left
+            draw_light_horizontal_left(glyph)
+            draw_heavy_circle(glyph)
+            glyph.removeOverlap()
+            hollow_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+            draw_x_for_hollowed_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # light circle with x revision mark light horizontal right
+            draw_light_horizontal_right(glyph)
+            draw_heavy_circle(glyph)
+            glyph.removeOverlap()
+            hollow_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+            draw_x_for_hollowed_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+            codepoint += 1
+
+        # revision mark, light circle with dot
+        for glyph in GA(font, codepoint):
+            # light circle with dot revision mark
+            draw_heavy_circle(glyph)
+            glyph.removeOverlap()
+            hollow_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+            draw_dot(glyph)
+            glyph.removeOverlap()
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # light circle with dot revision mark light horizontal
+            draw_light_horizontal(glyph)
+            draw_heavy_circle(glyph)
+            glyph.removeOverlap()
+            hollow_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+            draw_dot(glyph)
+            glyph.removeOverlap()
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # light circle with dot revision mark light vertical
+            draw_light_vertical(glyph)
+            draw_heavy_circle(glyph)
+            glyph.removeOverlap()
+            hollow_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+            draw_dot(glyph)
+            glyph.removeOverlap()
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # light circle with dot revision mark light vertical upper
+            draw_light_vertical_top(glyph)
+            draw_heavy_circle(glyph)
+            glyph.removeOverlap()
+            hollow_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+            draw_dot(glyph)
+            glyph.removeOverlap()
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # light circle with dot revision mark light vertical lower
+            draw_light_vertical_bottom(glyph)
+            draw_heavy_circle(glyph)
+            glyph.removeOverlap()
+            hollow_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+            draw_dot(glyph)
+            glyph.removeOverlap()
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # light circle with dot revision mark light horizontal left
+            draw_light_horizontal_left(glyph)
+            draw_heavy_circle(glyph)
+            glyph.removeOverlap()
+            hollow_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+            draw_dot(glyph)
+            glyph.removeOverlap()
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # light circle with dot revision mark light horizontal right
+            draw_light_horizontal_right(glyph)
+            draw_heavy_circle(glyph)
+            glyph.removeOverlap()
+            hollow_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+            draw_dot(glyph)
+            glyph.removeOverlap()
+            codepoint += 1
 
         # merge drawing
-        for glyph in GA(font, "U+FAF02"):
+        for glyph in GA(font, codepoint):
+            # vertical merge upper from left
             draw_light_vertical(glyph)
             draw_light_upper_left_arc(glyph, arc_type=ARC_TYPE_B)
             glyph.removeOverlap()
-        for glyph in GA(font, "U+FAF03"):
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # vertical merge upper from right
             draw_light_vertical(glyph)
             draw_light_upper_right_arc(glyph, arc_type=ARC_TYPE_B)
             glyph.removeOverlap()
-        for glyph in GA(font, "U+FAF04"):
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # vertical merge lower from left
             draw_light_vertical(glyph)
             draw_light_lower_left_arc(glyph, arc_type=ARC_TYPE_B)
             glyph.removeOverlap()
-        for glyph in GA(font, "U+FAF05"):
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # vertical merge lower from right
             draw_light_vertical(glyph)
             draw_light_lower_right_arc(glyph, arc_type=ARC_TYPE_B)
             glyph.removeOverlap()
-        for glyph in GA(font, "U+FAF06"):
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # vertical merge upper from left and right
             draw_light_vertical(glyph)
             draw_light_upper_left_arc(glyph, arc_type=ARC_TYPE_B)
             draw_light_upper_right_arc(glyph, arc_type=ARC_TYPE_B)
             glyph.removeOverlap()
-        for glyph in GA(font, "U+FAF07"):
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # vertical merge lower from left and right
             draw_light_vertical(glyph)
             draw_light_lower_left_arc(glyph, arc_type=ARC_TYPE_B)
             draw_light_lower_right_arc(glyph, arc_type=ARC_TYPE_B)
             glyph.removeOverlap()
+            codepoint += 1
 
-        for glyph in GA(font, "U+FAF08"):
+        for glyph in GA(font, codepoint):
+            # horizontal merge left from upper
             draw_light_horizontal(glyph)
             draw_light_upper_left_arc(glyph, arc_type=ARC_TYPE_B)
             glyph.removeOverlap()
-        for glyph in GA(font, "U+FAF09"):
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # horizontal merge right from upper
             draw_light_horizontal(glyph)
             draw_light_upper_right_arc(glyph, arc_type=ARC_TYPE_B)
             glyph.removeOverlap()
-        for glyph in GA(font, "U+FAF0A"):
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # horizontal merge left from lower
             draw_light_horizontal(glyph)
             draw_light_lower_left_arc(glyph, arc_type=ARC_TYPE_B)
             glyph.removeOverlap()
-        for glyph in GA(font, "U+FAF0B"):
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # horizontal merge right from lower
             draw_light_horizontal(glyph)
             draw_light_lower_right_arc(glyph, arc_type=ARC_TYPE_B)
             glyph.removeOverlap()
-        for glyph in GA(font, "U+FAF0C"):
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # horizontal merge left from upper and lower
             draw_light_horizontal(glyph)
             draw_light_upper_left_arc(glyph, arc_type=ARC_TYPE_B)
             draw_light_lower_left_arc(glyph, arc_type=ARC_TYPE_B)
             glyph.removeOverlap()
-        for glyph in GA(font, "U+FAF0D"):
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # horizontal merge right from upper and lower
             draw_light_horizontal(glyph)
             draw_light_upper_right_arc(glyph, arc_type=ARC_TYPE_B)
             draw_light_lower_right_arc(glyph, arc_type=ARC_TYPE_B)
             glyph.removeOverlap()
-
-        # this revision
-        for glyph in GA(font, "U+FAF0E"):
-            draw_light_vertical_top(glyph)
-            draw_heavy_circle(glyph)
-            glyph.removeOverlap()
-        for glyph in GA(font, "U+FAF0F"):
-            draw_light_vertical_bottom(glyph)
-            draw_heavy_circle(glyph)
-            glyph.removeOverlap()
-        for glyph in GA(font, "U+FAF10"):
-            draw_light_horizontal_left(glyph)
-            draw_heavy_circle(glyph)
-            glyph.removeOverlap()
-        for glyph in GA(font, "U+FAF11"):
-            draw_light_horizontal_right(glyph)
-            draw_heavy_circle(glyph)
-            glyph.removeOverlap()
+            codepoint += 1
 
         # alternate style arcs
-        for glyph in GA(font, "U+FAF12"):
+        for glyph in GA(font, codepoint):
+            # revision log drawing upper left arc
             draw_light_upper_left_arc(glyph, arc_type=ARC_TYPE_B)
             glyph.removeOverlap()
-        for glyph in GA(font, "U+FAF13"):
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # revision log drawing upper right arc
             draw_light_upper_right_arc(glyph, arc_type=ARC_TYPE_B)
             glyph.removeOverlap()
-        for glyph in GA(font, "U+FAF14"):
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # revision log drawing lower left arc
             draw_light_lower_left_arc(glyph, arc_type=ARC_TYPE_B)
             glyph.removeOverlap()
-        for glyph in GA(font, "U+FAF15"):
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # revision log drawing lower right arc
             draw_light_lower_right_arc(glyph, arc_type=ARC_TYPE_B)
             glyph.removeOverlap()
+            codepoint += 1
 
         # double-arcs
-        for glyph in GA(font, "U+FAF16"):
+        for glyph in GA(font, codepoint):
+            # revision log drawing upper left and right arcs
             draw_light_upper_left_arc(glyph, arc_type=ARC_TYPE_B)
             draw_light_upper_right_arc(glyph, arc_type=ARC_TYPE_B)
             glyph.removeOverlap()
-        for glyph in GA(font, "U+FAF17"):
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # revision log drawing lower left and right arcs
             draw_light_lower_left_arc(glyph, arc_type=ARC_TYPE_B)
             draw_light_lower_right_arc(glyph, arc_type=ARC_TYPE_B)
             glyph.removeOverlap()
-        for glyph in GA(font, "U+FAF18"):
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # revision log drawing lower and upper left arcs
             draw_light_upper_left_arc(glyph, arc_type=ARC_TYPE_B)
             draw_light_lower_left_arc(glyph, arc_type=ARC_TYPE_B)
             glyph.removeOverlap()
-        for glyph in GA(font, "U+FAF19"):
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # revision log drawing lower and upper right arcs
             draw_light_upper_right_arc(glyph, arc_type=ARC_TYPE_B)
             draw_light_lower_right_arc(glyph, arc_type=ARC_TYPE_B)
             glyph.removeOverlap()
+            codepoint += 1
 
-        # this revision, hollowed out
-        for glyph in GA(font, "U+FAF1A"):
-            draw_light_vertical(glyph)
-            draw_heavy_circle(glyph)
+        # diagonal to horizontal/vertical
+        for glyph in GA(font, codepoint):
+            # light diagonal upper left to down
+            draw_vertical_diagonal(glyph, left=True, upper=True)
             glyph.removeOverlap()
-            hollow_out_heavy_circle(glyph)
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # light diagonal upper right to down
+            draw_vertical_diagonal(glyph, left=False, upper=True)
             glyph.removeOverlap()
-        for glyph in GA(font, "U+FAF1B"):
-            draw_light_horizontal(glyph)
-            draw_heavy_circle(glyph)
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # light diagonal lower left to up
+            draw_vertical_diagonal(glyph, left=True, upper=False)
             glyph.removeOverlap()
-            hollow_out_heavy_circle(glyph)
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # light diagonal lower right to up
+            draw_vertical_diagonal(glyph, left=False, upper=False)
             glyph.removeOverlap()
-        for glyph in GA(font, "U+FAF1C"):
-            draw_light_vertical_top(glyph)
-            draw_heavy_circle(glyph)
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # light dialgonal upper left to right
+            draw_horizontal_diagonal(glyph, left=True, upper=True)
             glyph.removeOverlap()
-            hollow_out_heavy_circle(glyph)
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # light diagonal upper right to left
+            draw_horizontal_diagonal(glyph, left=False, upper=True)
             glyph.removeOverlap()
-        for glyph in GA(font, "U+FAF1D"):
-            draw_light_vertical_bottom(glyph)
-            draw_heavy_circle(glyph)
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # light diagonal lower left to right
+            draw_horizontal_diagonal(glyph, left=True, upper=False)
             glyph.removeOverlap()
-            hollow_out_heavy_circle(glyph)
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # light diagonal lower right to left
+            draw_horizontal_diagonal(glyph, left=False, upper=False)
             glyph.removeOverlap()
-        for glyph in GA(font, "U+FAF1E"):
-            draw_light_horizontal_left(glyph)
-            draw_heavy_circle(glyph)
-            glyph.removeOverlap()
-            hollow_out_heavy_circle(glyph)
-            glyph.removeOverlap()
-        for glyph in GA(font, "U+FAF1F"):
-            draw_light_horizontal_right(glyph)
-            draw_heavy_circle(glyph)
-            glyph.removeOverlap()
-            hollow_out_heavy_circle(glyph)
-            glyph.removeOverlap()
+            codepoint += 1
 
-        # this revision, hollowed out, with X
-        for glyph in GA(font, "U+FAF20"):
-            draw_light_vertical(glyph)
+        # revision mark heavy circle with diagonal to horizontal/vertical
+        for glyph in GA(font, codepoint):
+            # revision mark heavy circle with light diagonal upper left to down
+            draw_vertical_diagonal(glyph, left=True, upper=True)
+            glyph.removeOverlap()
             draw_heavy_circle(glyph)
             glyph.removeOverlap()
-            hollow_out_heavy_circle(glyph)
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # revision mark heavy circle with light diagonal upper right to down
+            draw_vertical_diagonal(glyph, left=False, upper=True)
             glyph.removeOverlap()
-            draw_x_for_hollowed_out_heavy_circle(glyph)
-            glyph.removeOverlap()
-        for glyph in GA(font, "U+FAF21"):
-            draw_light_horizontal(glyph)
             draw_heavy_circle(glyph)
             glyph.removeOverlap()
-            hollow_out_heavy_circle(glyph)
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # revision mark heavy circle with light diagonal lower left to up
+            draw_vertical_diagonal(glyph, left=True, upper=False)
             glyph.removeOverlap()
-            draw_x_for_hollowed_out_heavy_circle(glyph)
-            glyph.removeOverlap()
-        for glyph in GA(font, "U+FAF22"):
-            draw_light_vertical_top(glyph)
             draw_heavy_circle(glyph)
             glyph.removeOverlap()
-            hollow_out_heavy_circle(glyph)
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # revision mark heavy circle with light diagonal lower right to up
+            draw_vertical_diagonal(glyph, left=False, upper=False)
             glyph.removeOverlap()
-            draw_x_for_hollowed_out_heavy_circle(glyph)
-            glyph.removeOverlap()
-        for glyph in GA(font, "U+FAF23"):
-            draw_light_vertical_bottom(glyph)
             draw_heavy_circle(glyph)
             glyph.removeOverlap()
-            hollow_out_heavy_circle(glyph)
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # revision mark heavy circle with light dialgonal upper left to right
+            draw_horizontal_diagonal(glyph, left=True, upper=True)
             glyph.removeOverlap()
-            draw_x_for_hollowed_out_heavy_circle(glyph)
-            glyph.removeOverlap()
-        for glyph in GA(font, "U+FAF24"):
-            draw_light_horizontal_left(glyph)
             draw_heavy_circle(glyph)
             glyph.removeOverlap()
-            hollow_out_heavy_circle(glyph)
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # revision mark heavy circle with light diagonal upper right to left
+            draw_horizontal_diagonal(glyph, left=False, upper=True)
             glyph.removeOverlap()
-            draw_x_for_hollowed_out_heavy_circle(glyph)
-            glyph.removeOverlap()
-        for glyph in GA(font, "U+FAF25"):
-            draw_light_horizontal_right(glyph)
             draw_heavy_circle(glyph)
             glyph.removeOverlap()
-            hollow_out_heavy_circle(glyph)
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # revision mark heavy circle with light diagonal lower left to right
+            draw_horizontal_diagonal(glyph, left=True, upper=False)
             glyph.removeOverlap()
-            draw_x_for_hollowed_out_heavy_circle(glyph)
+            draw_heavy_circle(glyph)
             glyph.removeOverlap()
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # revision mark heavy circle with light diagonal lower right to left
+            draw_horizontal_diagonal(glyph, left=False, upper=False)
+            glyph.removeOverlap()
+            draw_heavy_circle(glyph)
+            glyph.removeOverlap()
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # revision mark heavy circle with light diagonal lower left
+            draw_diagonal_piece(glyph, left=True, upper=False)
+            glyph.removeOverlap()
+            draw_heavy_circle(glyph)
+            glyph.removeOverlap()
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # revision mark heavy circle with light diagonal lower right
+            draw_diagonal_piece(glyph, left=False, upper=False)
+            glyph.removeOverlap()
+            draw_heavy_circle(glyph)
+            glyph.removeOverlap()
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # revision mark heavy circle with light diagonal upper left
+            draw_diagonal_piece(glyph, left=True, upper=True)
+            glyph.removeOverlap()
+            draw_heavy_circle(glyph)
+            glyph.removeOverlap()
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # revision mark heavy circle with light diagonal upper right
+            draw_diagonal_piece(glyph, left=False, upper=True)
+            glyph.removeOverlap()
+            draw_heavy_circle(glyph)
+            glyph.removeOverlap()
+            codepoint += 1
 
-        for glyph in GA(font, "U+FAF26"):
-            draw_vertical_diagonal_arc(glyph, left=True, upper=True)
+        # revision mark light circle with diagonal to horizontal/vertical
+        for glyph in GA(font, codepoint):
+            # revision mark light circle with light diagonal upper left to down
+            draw_vertical_diagonal(glyph, left=True, upper=True)
             glyph.removeOverlap()
-        for glyph in GA(font, "U+FAF27"):
-            draw_vertical_diagonal_arc(glyph, left=False, upper=True)
+            draw_heavy_circle(glyph)
             glyph.removeOverlap()
-        for glyph in GA(font, "U+FAF28"):
-            draw_vertical_diagonal_arc(glyph, left=True, upper=False)
+            hollow_out_heavy_circle(glyph)
             glyph.removeOverlap()
-        for glyph in GA(font, "U+FAF29"):
-            draw_vertical_diagonal_arc(glyph, left=False, upper=False)
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # revision mark light circle with light diagonal upper right to down
+            draw_vertical_diagonal(glyph, left=False, upper=True)
             glyph.removeOverlap()
-        for glyph in GA(font, "U+FAF2A"):
-            draw_horizontal_diagonal_arc(glyph, left=True, upper=True)
+            draw_heavy_circle(glyph)
             glyph.removeOverlap()
-        for glyph in GA(font, "U+FAF2B"):
-            draw_horizontal_diagonal_arc(glyph, left=False, upper=True)
+            hollow_out_heavy_circle(glyph)
             glyph.removeOverlap()
-        for glyph in GA(font, "U+FAF2C"):
-            draw_horizontal_diagonal_arc(glyph, left=True, upper=False)
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # revision mark light circle with light diagonal lower left to up
+            draw_vertical_diagonal(glyph, left=True, upper=False)
             glyph.removeOverlap()
-        for glyph in GA(font, "U+FAF2D"):
-            draw_horizontal_diagonal_arc(glyph, left=False, upper=False)
+            draw_heavy_circle(glyph)
             glyph.removeOverlap()
+            hollow_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # revision mark light circle with light diagonal lower right to up
+            draw_vertical_diagonal(glyph, left=False, upper=False)
+            glyph.removeOverlap()
+            draw_heavy_circle(glyph)
+            glyph.removeOverlap()
+            hollow_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # revision mark light circle with light dialgonal upper left to right
+            draw_horizontal_diagonal(glyph, left=True, upper=True)
+            glyph.removeOverlap()
+            draw_heavy_circle(glyph)
+            glyph.removeOverlap()
+            hollow_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # revision mark light circle with light diagonal upper right to left
+            draw_horizontal_diagonal(glyph, left=False, upper=True)
+            glyph.removeOverlap()
+            draw_heavy_circle(glyph)
+            glyph.removeOverlap()
+            hollow_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # revision mark light circle with light diagonal lower left to right
+            draw_horizontal_diagonal(glyph, left=True, upper=False)
+            glyph.removeOverlap()
+            draw_heavy_circle(glyph)
+            glyph.removeOverlap()
+            hollow_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # revision mark light circle with light diagonal lower right to left
+            draw_horizontal_diagonal(glyph, left=False, upper=False)
+            glyph.removeOverlap()
+            draw_heavy_circle(glyph)
+            glyph.removeOverlap()
+            hollow_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # revision mark light circle with light diagonal lower left
+            draw_diagonal_piece(glyph, left=True, upper=False)
+            glyph.removeOverlap()
+            draw_heavy_circle(glyph)
+            glyph.removeOverlap()
+            hollow_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # revision mark light circle with light diagonal lower right
+            draw_diagonal_piece(glyph, left=False, upper=False)
+            glyph.removeOverlap()
+            draw_heavy_circle(glyph)
+            glyph.removeOverlap()
+            hollow_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # revision mark light circle with light diagonal upper left
+            draw_diagonal_piece(glyph, left=True, upper=True)
+            glyph.removeOverlap()
+            draw_heavy_circle(glyph)
+            glyph.removeOverlap()
+            hollow_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # revision mark light circle with light diagonal upper right
+            draw_diagonal_piece(glyph, left=False, upper=True)
+            glyph.removeOverlap()
+            draw_heavy_circle(glyph)
+            glyph.removeOverlap()
+            hollow_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+            codepoint += 1
 
-        for glyph in GA(font, "U+FAF2E"):
-            draw_vertical_diagonal_arc(glyph, left=True, upper=True)
+        # revision mark light circle with x with diagonal to horizontal/vertical
+        for glyph in GA(font, codepoint):
+            # revision mark light circle with x with light diagonal upper left to down
+            draw_vertical_diagonal(glyph, left=True, upper=True)
+            glyph.removeOverlap()
             draw_heavy_circle(glyph)
             glyph.removeOverlap()
-        for glyph in GA(font, "U+FAF2F"):
-            draw_vertical_diagonal_arc(glyph, left=False, upper=True)
+            hollow_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+            draw_x_for_hollowed_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # revision mark light circle with x with light diagonal upper right to down
+            draw_vertical_diagonal(glyph, left=False, upper=True)
+            glyph.removeOverlap()
             draw_heavy_circle(glyph)
             glyph.removeOverlap()
-        for glyph in GA(font, "U+FAF30"):
-            draw_vertical_diagonal_arc(glyph, left=True, upper=False)
+            hollow_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+            draw_x_for_hollowed_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # revision mark light circle with x with light diagonal lower left to up
+            draw_vertical_diagonal(glyph, left=True, upper=False)
+            glyph.removeOverlap()
             draw_heavy_circle(glyph)
             glyph.removeOverlap()
-        for glyph in GA(font, "U+FAF31"):
-            draw_vertical_diagonal_arc(glyph, left=False, upper=False)
+            hollow_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+            draw_x_for_hollowed_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # revision mark light circle with x with light diagonal lower right to up
+            draw_vertical_diagonal(glyph, left=False, upper=False)
+            glyph.removeOverlap()
             draw_heavy_circle(glyph)
             glyph.removeOverlap()
-        for glyph in GA(font, "U+FAF32"):
-            draw_horizontal_diagonal_arc(glyph, left=True, upper=True)
+            hollow_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+            draw_x_for_hollowed_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # revision mark light circle with x with light dialgonal upper left to right
+            draw_horizontal_diagonal(glyph, left=True, upper=True)
+            glyph.removeOverlap()
             draw_heavy_circle(glyph)
             glyph.removeOverlap()
-        for glyph in GA(font, "U+FAF33"):
-            draw_horizontal_diagonal_arc(glyph, left=False, upper=True)
+            hollow_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+            draw_x_for_hollowed_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # revision mark light circle with x with light diagonal upper right to left
+            draw_horizontal_diagonal(glyph, left=False, upper=True)
+            glyph.removeOverlap()
             draw_heavy_circle(glyph)
             glyph.removeOverlap()
-        for glyph in GA(font, "U+FAF34"):
-            draw_horizontal_diagonal_arc(glyph, left=True, upper=False)
+            hollow_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+            draw_x_for_hollowed_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # revision mark light circle with x with light diagonal lower left to right
+            draw_horizontal_diagonal(glyph, left=True, upper=False)
+            glyph.removeOverlap()
             draw_heavy_circle(glyph)
             glyph.removeOverlap()
-        for glyph in GA(font, "U+FAF35"):
-            draw_horizontal_diagonal_arc(glyph, left=False, upper=False)
+            hollow_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+            draw_x_for_hollowed_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # revision mark light circle with x with light diagonal lower right to left
+            draw_horizontal_diagonal(glyph, left=False, upper=False)
+            glyph.removeOverlap()
             draw_heavy_circle(glyph)
             glyph.removeOverlap()
+            hollow_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+            draw_x_for_hollowed_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # revision mark light circle with x with light diagonal lower left
+            draw_diagonal_piece(glyph, left=True, upper=False)
+            glyph.removeOverlap()
+            draw_heavy_circle(glyph)
+            glyph.removeOverlap()
+            hollow_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+            draw_x_for_hollowed_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # revision mark light circle with x with light diagonal lower right
+            draw_diagonal_piece(glyph, left=False, upper=False)
+            glyph.removeOverlap()
+            draw_heavy_circle(glyph)
+            glyph.removeOverlap()
+            hollow_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+            draw_x_for_hollowed_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # revision mark light circle with x with light diagonal upper left
+            draw_diagonal_piece(glyph, left=True, upper=True)
+            glyph.removeOverlap()
+            draw_heavy_circle(glyph)
+            glyph.removeOverlap()
+            hollow_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+            draw_x_for_hollowed_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # revision mark light circle with x with light diagonal upper right
+            draw_diagonal_piece(glyph, left=False, upper=True)
+            glyph.removeOverlap()
+            draw_heavy_circle(glyph)
+            glyph.removeOverlap()
+            hollow_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+            draw_x_for_hollowed_out_heavy_circle(glyph)
+            glyph.removeOverlap()
+            codepoint += 1
 
-        for glyph in GA(font, "U+FAF36"):
-            draw_vertical_diagonal_arc(glyph, left=True, upper=True)
+        # revision mark light circle with dot with diagonal to horizontal/vertical
+        for glyph in GA(font, codepoint):
+            # revision mark light circle with dot with light diagonal upper left to down
+            draw_vertical_diagonal(glyph, left=True, upper=True)
+            glyph.removeOverlap()
             draw_heavy_circle(glyph)
             glyph.removeOverlap()
             hollow_out_heavy_circle(glyph)
             glyph.removeOverlap()
-        for glyph in GA(font, "U+FAF37"):
-            draw_vertical_diagonal_arc(glyph, left=False, upper=True)
+            draw_dot(glyph)
+            glyph.removeOverlap()
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # revision mark light circle with dot with light diagonal upper right to down
+            draw_vertical_diagonal(glyph, left=False, upper=True)
+            glyph.removeOverlap()
             draw_heavy_circle(glyph)
             glyph.removeOverlap()
             hollow_out_heavy_circle(glyph)
             glyph.removeOverlap()
-        for glyph in GA(font, "U+FAF38"):
-            draw_vertical_diagonal_arc(glyph, left=True, upper=False)
+            draw_dot(glyph)
+            glyph.removeOverlap()
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # revision mark light circle with dot with light diagonal lower left to up
+            draw_vertical_diagonal(glyph, left=True, upper=False)
+            glyph.removeOverlap()
             draw_heavy_circle(glyph)
             glyph.removeOverlap()
             hollow_out_heavy_circle(glyph)
             glyph.removeOverlap()
-        for glyph in GA(font, "U+FAF39"):
-            draw_vertical_diagonal_arc(glyph, left=False, upper=False)
+            draw_dot(glyph)
+            glyph.removeOverlap()
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # revision mark light circle with dot with light diagonal lower right to up
+            draw_vertical_diagonal(glyph, left=False, upper=False)
+            glyph.removeOverlap()
             draw_heavy_circle(glyph)
             glyph.removeOverlap()
             hollow_out_heavy_circle(glyph)
             glyph.removeOverlap()
-        for glyph in GA(font, "U+FAF3A"):
-            draw_horizontal_diagonal_arc(glyph, left=True, upper=True)
+            draw_dot(glyph)
+            glyph.removeOverlap()
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # revision mark light circle with dot with light dialgonal upper left to right
+            draw_horizontal_diagonal(glyph, left=True, upper=True)
+            glyph.removeOverlap()
             draw_heavy_circle(glyph)
             glyph.removeOverlap()
             hollow_out_heavy_circle(glyph)
             glyph.removeOverlap()
-        for glyph in GA(font, "U+FAF3B"):
-            draw_horizontal_diagonal_arc(glyph, left=False, upper=True)
+            draw_dot(glyph)
+            glyph.removeOverlap()
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # revision mark light circle with dot with light diagonal upper right to left
+            draw_horizontal_diagonal(glyph, left=False, upper=True)
+            glyph.removeOverlap()
             draw_heavy_circle(glyph)
             glyph.removeOverlap()
             hollow_out_heavy_circle(glyph)
             glyph.removeOverlap()
-        for glyph in GA(font, "U+FAF3C"):
-            draw_horizontal_diagonal_arc(glyph, left=True, upper=False)
+            draw_dot(glyph)
+            glyph.removeOverlap()
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # revision mark light circle with dot with light diagonal lower left to right
+            draw_horizontal_diagonal(glyph, left=True, upper=False)
+            glyph.removeOverlap()
             draw_heavy_circle(glyph)
             glyph.removeOverlap()
             hollow_out_heavy_circle(glyph)
             glyph.removeOverlap()
-        for glyph in GA(font, "U+FAF3D"):
-            draw_horizontal_diagonal_arc(glyph, left=False, upper=False)
+            draw_dot(glyph)
+            glyph.removeOverlap()
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # revision mark light circle with dot with light diagonal lower right to left
+            draw_horizontal_diagonal(glyph, left=False, upper=False)
+            glyph.removeOverlap()
             draw_heavy_circle(glyph)
             glyph.removeOverlap()
             hollow_out_heavy_circle(glyph)
             glyph.removeOverlap()
-
-        for glyph in GA(font, "U+FAF3E"):
-            draw_vertical_diagonal_arc(glyph, left=True, upper=True)
+            draw_dot(glyph)
+            glyph.removeOverlap()
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # revision mark light circle with dot with light diagonal lower left
+            draw_diagonal_piece(glyph, left=True, upper=False)
+            glyph.removeOverlap()
             draw_heavy_circle(glyph)
             glyph.removeOverlap()
             hollow_out_heavy_circle(glyph)
             glyph.removeOverlap()
-            draw_x_for_hollowed_out_heavy_circle(glyph)
+            draw_dot(glyph)
             glyph.removeOverlap()
-        for glyph in GA(font, "U+FAF3F"):
-            draw_vertical_diagonal_arc(glyph, left=False, upper=True)
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # revision mark light circle with dot with light diagonal lower right
+            draw_diagonal_piece(glyph, left=False, upper=False)
+            glyph.removeOverlap()
             draw_heavy_circle(glyph)
             glyph.removeOverlap()
             hollow_out_heavy_circle(glyph)
             glyph.removeOverlap()
-            draw_x_for_hollowed_out_heavy_circle(glyph)
+            draw_dot(glyph)
             glyph.removeOverlap()
-        for glyph in GA(font, "U+FAF40"):
-            draw_vertical_diagonal_arc(glyph, left=True, upper=False)
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # revision mark light circle with dot with light diagonal upper left
+            draw_diagonal_piece(glyph, left=True, upper=True)
+            glyph.removeOverlap()
             draw_heavy_circle(glyph)
             glyph.removeOverlap()
             hollow_out_heavy_circle(glyph)
             glyph.removeOverlap()
-            draw_x_for_hollowed_out_heavy_circle(glyph)
+            draw_dot(glyph)
             glyph.removeOverlap()
-        for glyph in GA(font, "U+FAF41"):
-            draw_vertical_diagonal_arc(glyph, left=False, upper=False)
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # revision mark light circle with dot with light diagonal upper right
+            draw_diagonal_piece(glyph, left=False, upper=True)
+            glyph.removeOverlap()
             draw_heavy_circle(glyph)
             glyph.removeOverlap()
             hollow_out_heavy_circle(glyph)
             glyph.removeOverlap()
-            draw_x_for_hollowed_out_heavy_circle(glyph)
+            draw_dot(glyph)
             glyph.removeOverlap()
-        for glyph in GA(font, "U+FAF42"):
-            draw_horizontal_diagonal_arc(glyph, left=True, upper=True)
-            draw_heavy_circle(glyph)
-            glyph.removeOverlap()
-            hollow_out_heavy_circle(glyph)
-            glyph.removeOverlap()
-            draw_x_for_hollowed_out_heavy_circle(glyph)
-            glyph.removeOverlap()
-        for glyph in GA(font, "U+FAF43"):
-            draw_horizontal_diagonal_arc(glyph, left=False, upper=True)
-            draw_heavy_circle(glyph)
-            glyph.removeOverlap()
-            hollow_out_heavy_circle(glyph)
-            glyph.removeOverlap()
-            draw_x_for_hollowed_out_heavy_circle(glyph)
-            glyph.removeOverlap()
-        for glyph in GA(font, "U+FAF44"):
-            draw_horizontal_diagonal_arc(glyph, left=True, upper=False)
-            draw_heavy_circle(glyph)
-            glyph.removeOverlap()
-            hollow_out_heavy_circle(glyph)
-            glyph.removeOverlap()
-            draw_x_for_hollowed_out_heavy_circle(glyph)
-            glyph.removeOverlap()
-        for glyph in GA(font, "U+FAF45"):
-            draw_horizontal_diagonal_arc(glyph, left=False, upper=False)
-            draw_heavy_circle(glyph)
-            glyph.removeOverlap()
-            hollow_out_heavy_circle(glyph)
-            glyph.removeOverlap()
-            draw_x_for_hollowed_out_heavy_circle(glyph)
-            glyph.removeOverlap()
+            codepoint += 1
 
         if filename.endswith(".sfd"):
             font.save(filename)
@@ -548,6 +1052,130 @@ def draw_vertical_diagonal_arc(glyph, clockwise=True, left=True, upper=True, hor
             pen.curveTo((x3b, y3b), (x4b, y4b), (x2b, y2b))
             pen.lineTo((x2a, y2a))
             pen.curveTo((x4a, y4a), (x3a, y3a), (x1a, y1a))
+    pen.closePath()
+    pen = None
+
+def draw_vertical_diagonal(glyph, clockwise=True, left=True, upper=False):
+    draw_horizontal_diagonal(glyph, clockwise=clockwise, left=left, upper=upper, horizontal=False)
+
+def draw_horizontal_diagonal(glyph, clockwise=True, left=True, upper=False, horizontal=True):
+    global STROKE_WIDTH
+    font = glyph.font
+
+    this_way = clockwise
+    if not left:
+        this_way = not this_way
+    if upper:
+        this_way = not this_way
+
+    w = glyph.width
+    h = font.ascent + font.descent
+
+    x1 = 0
+    y1 = -font.descent
+    x1a = x1 - STROKE_WIDTH/2 * h / math.sqrt(w*w + h*h)
+    y1a = y1 + STROKE_WIDTH/2 * w / math.sqrt(w*w + h*h)
+    x1b = x1 + STROKE_WIDTH/2 * h / math.sqrt(w*w + h*h)
+    y1b = y1 - STROKE_WIDTH/2 * w / math.sqrt(w*w + h*h)
+
+    if horizontal:
+        x3a = glyph.width
+        x3b = glyph.width
+        y3a = (font.ascent - font.descent) / 2 + STROKE_WIDTH/2
+        y3b = (font.ascent - font.descent) / 2 - STROKE_WIDTH/2
+        y2a = y3a
+        y2b = y3b
+        x2a = x1a + w/h * (y2a - y1a)
+        x2b = x1b + w/h * (y2b - y1b)
+    else:
+        x3a = glyph.width/2 - STROKE_WIDTH/2
+        x3b = glyph.width/2 + STROKE_WIDTH/2
+        y3a = font.ascent
+        y3b = font.ascent
+        x2a = x3a
+        x2b = x3b
+        y2a = y1a + h/w * (x2a - x1a)
+        y2b = y1b + h/w * (x2b - x1b)
+
+    if not left:
+        (x1, x1a, x1b, x2a, x2b, x3a, x3b) = [
+            glyph.width - x for x in
+            (x1, x1a, x1b, x2a, x2b, x3a, x3b)
+        ]
+    if upper:
+        (y1, y1a, y1b, y2a, y2b, y3a, y3b) = [
+            font.ascent - font.descent - y for y in
+            (y1, y1a, y1b, y2a, y2b, y3a, y3b)
+        ]
+
+    pen = glyph.glyphPen(replace=False)
+    if this_way:
+        pen.moveTo((x1a, y1a))
+        pen.lineTo((x2a, y2a))
+        pen.lineTo((x3a, y3a))
+        pen.lineTo((x3b, y3b))
+        pen.lineTo((x2b, y2b))
+        pen.lineTo((x1b, y1b))
+    else:
+        pen.moveTo((x1a, y1a))
+        pen.lineTo((x1b, y1b))
+        pen.lineTo((x2b, y2b))
+        pen.lineTo((x3b, y3b))
+        pen.lineTo((x3a, y3a))
+        pen.lineTo((x2a, y2a))
+    pen.closePath()
+    pen = None
+
+def draw_diagonal_piece(glyph, clockwise=True, left=True, upper=False):
+    global STROKE_WIDTH
+
+    font = glyph.font
+
+    this_way = clockwise
+    if not left:
+        this_way = not this_way
+    if upper:
+        this_way = not this_way
+
+    w = glyph.width
+    h = font.ascent + font.descent
+
+    x0 = 0
+    y0 = -font.descent
+    x0a = x0 - STROKE_WIDTH/2 * h / math.sqrt(w*w + h*h)
+    y0a = y0 + STROKE_WIDTH/2 * w / math.sqrt(w*w + h*h)
+    x0b = x0 + STROKE_WIDTH/2 * h / math.sqrt(w*w + h*h)
+    y0b = y0 - STROKE_WIDTH/2 * w / math.sqrt(w*w + h*h)
+
+    x1 = glyph.width / 2
+    y1 = (font.ascent - font.descent) / 2
+    x1a = x1 - STROKE_WIDTH/2 * h / math.sqrt(w*w + h*h)
+    y1a = y1 + STROKE_WIDTH/2 * w / math.sqrt(w*w + h*h)
+    x1b = x1 + STROKE_WIDTH/2 * h / math.sqrt(w*w + h*h)
+    y1b = y1 - STROKE_WIDTH/2 * w / math.sqrt(w*w + h*h)
+
+    if not left:
+        (x0, x0a, x0b, x1, x1a, x1b) = [
+            glyph.width - x for x in
+            (x0, x0a, x0b, x1, x1a, x1b)
+        ]
+    if upper:
+        (y0, y0a, y0b, y1, y1a, y1b) = [
+            font.ascent - font.descent - y for y in
+            (y0, y0a, y0b, y1, y1a, y1b)
+        ]
+
+    pen = glyph.glyphPen(replace=False)
+    if this_way:
+        pen.moveTo((x0a, y0a))
+        pen.lineTo((x1a, y1a))
+        pen.lineTo((x1b, y1b))
+        pen.lineTo((x0b, y0b))
+    else:
+        pen.moveTo((x0a, y0a))
+        pen.lineTo((x0b, y0b))
+        pen.lineTo((x1b, y1b))
+        pen.lineTo((x1a, y1a))
     pen.closePath()
     pen = None
 
