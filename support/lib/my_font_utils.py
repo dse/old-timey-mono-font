@@ -1,26 +1,12 @@
 import fontforge, re, os, psMat, unicodedata, json
+font_utils_path = "%s/git/dse.d/my-python/src/my_python_dse" % os.getenv("HOME")
+if font_utils_path not in sys.path:
+    sys.path.append(font_utils_path)
 
-def u(codepoint, pad=False):
-    result = None
-    if codepoint < 0:
-        result = "%d" % codepoint
-    else:
-        result = "U+%04X" % codepoint
-    if pad:
-        result = "%-8s" % result
-    return result
+from font_utils import u, parse_char
 
 def parse_codepoint_argument(str):
-    # U+1F4A9
-    # 128169
-    # 0x1f4a9
-    if (match := re.fullmatch(r'(?:0?x|u\+?)([0-9A-Fa-f]+)', str, flags=re.IGNORECASE)):
-        return int(match.group(1), 16)
-    if len(str) == 1:
-        return ord(str)
-    if (match := re.fullmatch(r'[0-9]+', str, flags=re.IGNORECASE)):
-        return int(match.group(0))
-    return None
+    return parse_char(str)
 
 def reconstitute_references(glyph):
     # Apparently a glyph.unlinkRef() call will replace the
@@ -357,35 +343,3 @@ def draw_shape(width, x_max, y_max, polygons, font=None, codept=None, glyph=None
             first_point = False
         pen.closePath()
     glyph.width = width
-
-# parse_char("{")
-# parse_char("quotedblright")
-# parse_char("pile of poo")
-# parse_char("PILE OF POO")
-# parse_char("0x1f4a9")
-# parse_char("x1f4a9")
-# parse_char("U+1F4A9")
-# parse_char("U1F4A9")
-def parse_char(str, default=ValueError, as_str=False):
-    """Return a string containing a single character, that being the
-character with the supplied codepoint, character, Adobe glyph name,
-Unicode glyph name, or hex code.
-
-    """
-    if len(str) == 1:
-        return str if as_str else ord(str)
-    codepoint = fontforge.unicodeFromName(str)
-    if codepoint >= 0:
-        return chr(codepoint) if as_str else codepoint
-    try:
-        char = unicodedata.lookup(str.upper())
-        return char if as_str else ord(char)
-    except KeyError:
-        pass
-    if match := re.fullmatch(r'(?:0?[Xx]|[Uu]\+?)([0-9A-Fa-f]+)'):
-        hex = match.group(1)
-        codepoint = int(hex, 16)
-        return chr(codepoint) if as_str else codepoint
-    if default == ValueError:
-        raise ValueError("invalid character: %s" % repr(str))
-    return default
