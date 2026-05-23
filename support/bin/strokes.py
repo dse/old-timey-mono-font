@@ -1,5 +1,6 @@
-#!/usr/bin/env -S fontforge -quiet
+#!/usr/bin/env -S fontforge -script
 # -*- mode: python; coding: utf-8 -*-
+# -nosplash -quiet
 
 import fontforge
 import argparse
@@ -12,14 +13,24 @@ import unicodedata
 import json
 
 # sys.path.append("%s/git/dse.d/my-python/src/my_python_dse" % os.getenv("HOME"))
-sys.path.append(os.getenv("HOME") + "/git/dse.d/fontforge-utilities/lib")
-sys.path.append(os.getenv("HOME") + "/git/dse.d/fonts.d/old-timey-mono-font/support/lib")
+
+mod_path = os.getenv("HOME") + "/git/dse.d/fontforge-utilities/lib"
+if not mod_path in sys.path:
+    sys.path.append(mod_path)
+
+mod_path = os.getenv("HOME") + "/git/dse.d/fonts.d/old-timey-mono-font/support/lib"
+if not mod_path in sys.path:
+    sys.path.append(mod_path)
+
+mod_path = os.getenv("HOME") + "/git/dse.d/my-python/src/my_python_dse"
+if not mod_path in sys.path:
+    sys.path.append(mod_path)
+
 import mixedjsontext
 import silence
-from my_font_utils import u
 
-sys.path.append(os.path.dirname(__file__) + "/../lib")
-from my_font_utils import get_glyph_real_codepoint, get_glyph_char_data
+from my_font_utils import u, get_glyph_char_data
+from font_utils import get_base_codepoint
 
 SVG_LINECAP_VALUES = ["butt", "round", "square"]
 SVG_LINEJOIN_VALUES = ["arcs", "bevel", "miter", "miter-clip", "miterclip", "round"]
@@ -63,9 +74,11 @@ def main():
                 continue
                 
             glyph_data = get_glyph_char_data(glyph) # always a dict
-            real_codepoint = get_glyph_real_codepoint(glyph)
-            if glyph_data is None:
-                glyph_data = get_glyph_char_data("U+%04X" % real_codepoint) # always a dict
+            real_codepoint = get_base_codepoint(glyph)
+            print(real_codepoint)
+
+            if real_codepoint in range(0xfaf00, 0xfaf00 + 0x0100):
+                print(repr(glyph_data))
 
             fill_flag = glyph_data.get("fill", False)
             expand_flag = glyph_data.get("expandStrokes", True)
