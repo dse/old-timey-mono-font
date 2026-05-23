@@ -266,22 +266,26 @@ def main():
             draw_vertical_diagonal_arc(glyph, left=False, upper=False)
             glyph.removeOverlap()
         for glyph in GA(font, "U+FAF2A"):
-            draw_vertical_diagonal_arc(glyph, left=True, upper=True, horizontal=True)
+            draw_horizontal_diagonal_arc(glyph, left=True, upper=True)
             glyph.removeOverlap()
         for glyph in GA(font, "U+FAF2B"):
-            draw_vertical_diagonal_arc(glyph, left=False, upper=True, horizontal=True)
+            draw_horizontal_diagonal_arc(glyph, left=False, upper=True)
             glyph.removeOverlap()
         for glyph in GA(font, "U+FAF2C"):
-            draw_vertical_diagonal_arc(glyph, left=True, upper=False, horizontal=True)
+            draw_horizontal_diagonal_arc(glyph, left=True, upper=False)
             glyph.removeOverlap()
         for glyph in GA(font, "U+FAF2D"):
-            draw_vertical_diagonal_arc(glyph, left=False, upper=False, horizontal=True)
+            draw_horizontal_diagonal_arc(glyph, left=False, upper=False)
             glyph.removeOverlap()
 
         if filename.endswith(".sfd"):
             font.save(filename)
         else:
             font.generate(filename)
+
+def draw_horizontal_diagonal_arc(glyph, clockwise=True, left=True, upper=True):
+    draw_vertical_diagonal_arc(glyph, clockwise=clockwise, left=left, upper=upper,
+                               horizontal=True)
 
 def draw_vertical_diagonal_arc(glyph, clockwise=True, left=True, upper=True, horizontal=False):
     global STROKE_WIDTH
