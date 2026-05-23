@@ -52,7 +52,7 @@ def boxdraw(font, args):
     height = font.em
 
     xc = round(width/2)
-    yc = round(font.capHeight/2)
+    yc = round((font.ascent - font.descent) / 2)
 
     ascent = font.ascent
     descent = font.descent
