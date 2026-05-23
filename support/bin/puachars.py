@@ -375,6 +375,69 @@ def main():
             glyph.removeOverlap()
             codepoint += 1
 
+        # merge drawing
+        for glyph in GA(font, codepoint):
+            # box drawings light horizontal and vertical with upper left arc
+            draw_light_vertical(glyph)
+            draw_light_horizontal(glyph)
+            draw_light_upper_left_arc(glyph, arc_type=ARC_TYPE_B)
+            glyph.removeOverlap()
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # box drawings light horizontal and vertical with upper right arc
+            draw_light_vertical(glyph)
+            draw_light_horizontal(glyph)
+            draw_light_upper_right_arc(glyph, arc_type=ARC_TYPE_B)
+            glyph.removeOverlap()
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # box drawings light horizontal and vertical with lower left arc
+            draw_light_vertical(glyph)
+            draw_light_horizontal(glyph)
+            draw_light_lower_left_arc(glyph, arc_type=ARC_TYPE_B)
+            glyph.removeOverlap()
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # box drawings light horizontal and vertical with lower right arc
+            draw_light_vertical(glyph)
+            draw_light_horizontal(glyph)
+            draw_light_lower_right_arc(glyph, arc_type=ARC_TYPE_B)
+            glyph.removeOverlap()
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # box drawings light horizontal and vertical with upper left and right arcs
+            draw_light_vertical(glyph)
+            draw_light_horizontal(glyph)
+            draw_light_upper_left_arc(glyph, arc_type=ARC_TYPE_B)
+            draw_light_upper_right_arc(glyph, arc_type=ARC_TYPE_B)
+            glyph.removeOverlap()
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # box drawings light horizontal and vertical with lower left and right arcs
+            draw_light_vertical(glyph)
+            draw_light_horizontal(glyph)
+            draw_light_lower_left_arc(glyph, arc_type=ARC_TYPE_B)
+            draw_light_lower_right_arc(glyph, arc_type=ARC_TYPE_B)
+            glyph.removeOverlap()
+            codepoint += 1
+
+        for glyph in GA(font, codepoint):
+            # box drawings light horizontal and vertical with upper and lower left arcs
+            draw_light_vertical(glyph)
+            draw_light_horizontal(glyph)
+            draw_light_upper_left_arc(glyph, arc_type=ARC_TYPE_B)
+            draw_light_lower_left_arc(glyph, arc_type=ARC_TYPE_B)
+            glyph.removeOverlap()
+            codepoint += 1
+        for glyph in GA(font, codepoint):
+            # box drawings light horizontal and vertical with upper and lower right arcs
+            draw_light_vertical(glyph)
+            draw_light_horizontal(glyph)
+            draw_light_upper_right_arc(glyph, arc_type=ARC_TYPE_B)
+            draw_light_lower_right_arc(glyph, arc_type=ARC_TYPE_B)
+            glyph.removeOverlap()
+            codepoint += 1
+
         # alternate style arcs
         for glyph in GA(font, codepoint):
             # revision log drawing upper left arc
