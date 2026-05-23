@@ -3,7 +3,7 @@
 import fontforge, argparse, os, sys, statistics, math
 
 sys.path.append("%s/git/dse.d/my-python/src/my_python_dse" % os.getenv("HOME"))
-from font_utils import get_fonts_in
+from font_utils import get_fonts_from
 
 def main():
     global args
@@ -11,8 +11,8 @@ def main():
     parser.add_argument("filenames", nargs="+")
     args = parser.parse_args()
 
-    for font in get_fonts_in(filenames):
-        draw_seven_segment_digits(font, args)
+    for [font, filename, _] in get_fonts_from(args.filenames, with_filenames=True):
+        draw_seven_segment_digits(font)
         if filename.endswith(".sfd"):
             print("Saving %s" % filename)
             font.save(filename)
@@ -20,9 +20,7 @@ def main():
             print("Generating %s" % filename)
             font.generate(filename)
 
-def draw_seven_segment_digits(font, args):
-    font = fontforge.open(args.filename)
-
+def draw_seven_segment_digits(font):
     glyphs = list(font.glyphs())
     widths = [glyph.width for glyph in glyphs]
     widths.sort()
@@ -44,11 +42,6 @@ def draw_seven_segment_digits(font, args):
     draw_7_segments(font, width, 0x1fbf7, 0b1010010)
     draw_7_segments(font, width, 0x1fbf8, 0b1111111)
     draw_7_segments(font, width, 0x1fbf9, 0b1111011)
-
-    if args.filename.endswith(".sfd"):
-        font.save()
-    else:
-        font.generate()
 
 def draw_7_segments(font, width, codept, bits):
     glyphname = fontforge.nameFromUnicode(codept)
