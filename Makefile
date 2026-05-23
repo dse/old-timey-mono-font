@@ -258,6 +258,7 @@ symbols: FORCE
 	support/bin/diagonalblocks.py $(BASEFONT_SFD)
 	support/bin/triangularblocks.py $(BASEFONT_SFD)
 	support/bin/retrosymbols.py $(BASEFONT_SFD)
+	support/bin/puachars.py $(BASEFONT_SFD)
 
 $(ZIP_FILE): FORCE
 	cd $(DIST_ZIP) && \
