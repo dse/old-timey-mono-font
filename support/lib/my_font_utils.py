@@ -1,9 +1,10 @@
-import fontforge, re, os, psMat, unicodedata, json
+import fontforge, re, os, psMat, unicodedata, json, sys
+
 font_utils_path = "%s/git/dse.d/my-python/src/my_python_dse" % os.getenv("HOME")
 if font_utils_path not in sys.path:
     sys.path.append(font_utils_path)
 
-from font_utils import u, parse_char
+from font_utils import u, parse_char, get_base_codepoint, get_base_glyphname, get_variant_name
 
 def parse_codepoint_argument(str):
     return parse_char(str)
@@ -208,42 +209,79 @@ def check_glyph_bounds(glyph, width=None):
         if ymax > glyph.font.ascent + height/2:
             print("check_all_glyph_bounds %s:     top" % font_path)
 
-def get_glyph_real_codepoint(glyph):
-    if glyph.unicode >= 0:
-        return glyph.unicode
-    if (idx := glyph.glyphname.find(".")) == -1:
-        return -1
-    return fontforge.unicodeFromName(glyph.glyphname[0:idx])
-
 glyph_data = None
 def get_glyph_char_data(glyph):
     global glyph_data
     if glyph_data is None:
         with open("src/data/glyphs.json") as fh:
             glyph_data = json.loads(fh.read())
-    codepoint = get_glyph_real_codepoint(glyph)
-    if codepoint < 0:
-        return {}
-    variant = None
-    if (idx := glyph.glyphname.find(".")) != -1:
-        variant = glyph.glyphname[idx+1:]
-    variant_key = "variant." + variant if variant is not None else None
-    range_char_data     = None
-    this_char_data      = None
-    variant_char_data   = None
-    if "ranges" in glyph_data:
-        for range_item in glyph_data["ranges"]:
-            start_cp = ord(range_item["from"])
-            end_cp = ord(range_item["to"])
-            if codepoint in range(start_cp, end_cp + 1) and "data" in range_item:
-                range_char_data = range_item["data"]
-                break
-    if chr(codepoint) in glyph_data:
-        this_char_data = glyph_data[chr(codepoint)]
-    elif u(codepoint) in glyph_data:
-        this_char_data = glyph_data[u(codepoint)]
-    else:
-        this_char_data = None
+    base_codepoint = get_base_codepoint(glyph)
+    base_glyphname = get_base_glyphname(glyph)
+    variant_name = get_variant_name(glyph)
+
+    char_data = {}
+
+    if "__RANGES__" in glyph_data:
+        for range_item in glyph_data["__RANGES__"]:
+            start_cp = parse_char(range_item["from"])
+            end_cp   = parse_char(range_item["to"])
+            if base_codepoint in range(start_cp, end_cp + 1) and "data" in range_item:
+                data = range_item["data"]
+                char_data = { **char_data, **data }
+
+    if base_codepoint in range(0, 0x110000) and chr(base_codepoint) in glyph_data:
+        data = glyph_data[chr(base_codepoint)]
+        char_data = { **char_data, **data }
+
+    if base_codepoint in range(0, 0x110000) and u(base_codepoint) in glyph_data:
+        data = glyph_data[u(base_codepoint)]
+        char_data = { **char_data, **data }
+
+    if glyph.glyphname in glyph_data:
+        data = glyph_data[glyph.glyphname]
+        char_data = { **char_data, **data }
+
+    try:
+        if base_codepoint in range(0, 0x110000):
+            unicodename = unicodedata.name(chr(base_codepoint))
+            if unicodename in glyph_data:
+                data = glyph_data[unicodename]
+                char_data = { **char_data, **data }
+    except ValueError:
+        pass
+
+    if "__VARIANTS__" in char_data:
+        if variant_name is not None:
+            if variant_name in char_data["__VARIANTS__"]:
+                data = char_data["__VARIANTS__"][variant_name]
+                char_data = { **char_data, **data }
+        del char_data["__VARIANTS__"]
+
+    return char_data
+
+    # if codepoint < 0:
+    #     return {}
+    # variant = None
+    # if (idx := glyph.glyphname.find(".")) != -1:
+    #     variant = glyph.glyphname[idx+1:]
+    # variant_key = "variant." + variant if variant is not None else None
+    # range_char_data     = None
+    # this_char_data      = None
+    # variant_char_data   = None
+    # if "ranges" in glyph_data:
+    #     for range_item in glyph_data["ranges"]:
+    #         start_cp = ord(range_item["from"])
+    #         end_cp = ord(range_item["to"])
+    #         if codepoint in range(start_cp, end_cp + 1) and "data" in range_item:
+    #             range_char_data = range_item["data"]
+    #             break
+    # if chr(codepoint) in glyph_data:
+    #     this_char_data = glyph_data[chr(codepoint)]
+    # elif u(codepoint) in glyph_data:
+    #     this_char_data = glyph_data[u(codepoint)]
+    # else:
+    #     this_char_data = None
+
     if this_char_data is not None and variant_key in this_char_data:
         variant_char_data = this_char_data[variant_key]
     if (range_char_data is None and
