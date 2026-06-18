@@ -235,12 +235,6 @@ package My::Thingy {
         $self->{view_box_xmax} = $view_box_xmax;
         $self->{view_box_ymin} = $view_box_ymin;
         $self->{view_box_ymax} = $view_box_ymax;
-
-        # printf STDERR ("viewbox start at %f, %f width %f height %f\n",
-        #                $view_box_xmin, $view_box_ymin, $view_box_width, $view_box_height);
-
-        if (!$svg->hasAttribute("width")) {
-        }
     }
     sub list_guides {
         my ($self) = @_;
@@ -288,7 +282,6 @@ package My::Thingy {
         my $guide = $self->{doc}->createElement("sodipodi:guide");
         my $xx = $self->x_svg_to_view_box($x);
         my $yy = $self->y_svg_to_view_box($y);
-        printf STDERR ("%s: %f,%f => %f,%f\n", $name // "(unnamed)", $x,$y, $xx,$yy);
         $guide->setAttribute("position", sprintf("%f,%f", $xx, $yy));
         $guide->setAttribute("inkscape:locked", $args{locked} ? "true" : "false");
         $guide->setAttribute("inkscape:label", $name) if defined $name;
