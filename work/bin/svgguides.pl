@@ -9,29 +9,29 @@ use Math::Trig qw(pi);
 
 our $NEW_SVG;
 
-use constant COLOR_GREEN    => '#009900';
-use constant COLOR_GREEN_20 => '#ff9900';
-use constant COLOR_BLACK    => '#000000';
-use constant COLOR_BLUE     => '#0000ff';
-use constant COLOR_RED      => '#ff0000';
-use constant COLOR_ORANGE   => '#ff9900';
-use constant COLOR_ORANGE__FEINT => '#ffcc80';
+use constant COLOR_GREEN    => "#009900";
+use constant COLOR_GREEN_20 => "#ff9900";
+use constant COLOR_BLACK    => "#000000";
+use constant COLOR_BLUE     => "#0000ff";
+use constant COLOR_RED      => "#ff0000";
+use constant COLOR_ORANGE   => "#ff9900";
+use constant COLOR_ORANGE__FEINT => "#ffcc80";
 
-use constant COLOR_IS_BROWN => '#986a44';
-use constant COLOR_IS_BLUE  => '#0099e5'; # 26, 4d
-use constant COLOR_IS_RED   => '#ff0000'; # 7f
+use constant COLOR_IS_BROWN => "#986a44";
+use constant COLOR_IS_BLUE  => "#0099e5"; # 26, 4d
+use constant COLOR_IS_RED   => "#ff0000"; # 7f
 
-use constant COLOR_GRID_BLUE           => '#b3b3ff';
-use constant COLOR_GRID_GREEN          => '#5aff5a';
-use constant COLOR_GRID_RED            => '#ff9e9e';
-use constant COLOR_GRID_GRAY           => '#bbbbbb';
-use constant COLOR_GRID_ORANGE         => '#ffab57';
-use constant COLOR_GRID_MAGENTA        => '#ff8cff';
-use constant COLOR_GRID_CYAN           => '#1cffff';
-use constant COLOR_GRID_YELLOW         => '#ffff00'; # higher luminance
-use constant COLOR_GRID_BLACK          => '#000000';
-use constant COLOR_GRID_WHITE          => '#ffffff';
-use constant COLOR_GRID_NON_REPRO_BLUE => '#95c9d7';
+use constant COLOR_GRID_BLUE           => "#b3b3ff";
+use constant COLOR_GRID_GREEN          => "#5aff5a";
+use constant COLOR_GRID_RED            => "#ff9e9e";
+use constant COLOR_GRID_GRAY           => "#bbbbbb";
+use constant COLOR_GRID_ORANGE         => "#ffab57";
+use constant COLOR_GRID_MAGENTA        => "#ff8cff";
+use constant COLOR_GRID_CYAN           => "#1cffff";
+use constant COLOR_GRID_YELLOW         => "#ffff00"; # higher luminance
+use constant COLOR_GRID_BLACK          => "#000000";
+use constant COLOR_GRID_WHITE          => "#ffffff";
+use constant COLOR_GRID_NON_REPRO_BLUE => "#95c9d7";
 
 use constant COLOR_OVERSHOOT  => COLOR_GRID_GREEN;
 use constant COLOR_EX_CENTER  => COLOR_GRID_RED;
@@ -58,9 +58,9 @@ our $ITALIC_ANGLE     = -12;
 our %NS;
 BEGIN {
     %NS = (
-        inkscape => 'http://www.inkscape.org/namespaces/inkscape',
-        sodipodi => 'http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd',
-        svg      => 'http://www.w3.org/2000/svg',
+        inkscape => "http://www.inkscape.org/namespaces/inkscape",
+        sodipodi => "http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd",
+        svg      => "http://www.w3.org/2000/svg",
     );
 }
 
@@ -70,13 +70,13 @@ our $small_caps = 0;
 our $accents = 0;
 our $tall = 0;
 
-Getopt::Long::Configure('gnu_getopt');
+Getopt::Long::Configure("gnu_getopt");
 Getopt::Long::GetOptions(
-    'i|in-place' => \$in_place,
-    'd|delete-guides' => \$delete_guides,
-    's|small-caps' => \$small_caps,
-    'a|accents' => \$accents,
-    't|tall' => \$tall,
+    "i|in-place" => \$in_place,
+    "d|delete-guides" => \$delete_guides,
+    "s|small-caps" => \$small_caps,
+    "a|accents" => \$accents,
+    "t|tall" => \$tall,
 ) or die(":-(");
 
 if ($tall) {
@@ -101,59 +101,59 @@ while (<>) {
     $thingy->delete_guides();
     if (!$delete_guides) {
 
-        $thingy->create_guide($BASELINE_CENTER - $DESCENDER_C2C - $STROKE_WIDTH/2, name => 'descender');
-        $thingy->create_guide($BASELINE_CENTER - $DESCENDER_C2C,                   name => 'descender-B');
-        $thingy->create_guide($BASELINE_CENTER - $DESCENDER_C2C + $STROKE_WIDTH/2, name => 'descender-C');
-        $thingy->create_guide($BASELINE_CENTER - $DESCENDER_C2C - $STROKE_WIDTH/2 - $OVERSHOOT, color => COLOR_OVERSHOOT, name => 'descender');
-        $thingy->create_guide($BASELINE_CENTER - $DESCENDER_C2C                   - $OVERSHOOT, color => COLOR_OVERSHOOT, name => 'descender-B');
-        $thingy->create_guide($BASELINE_CENTER - $DESCENDER_C2C + $STROKE_WIDTH/2 - $OVERSHOOT, color => COLOR_OVERSHOOT, name => 'descender-C');
+        $thingy->create_guide($BASELINE_CENTER - $DESCENDER_C2C - $STROKE_WIDTH/2, name => "descender");
+        $thingy->create_guide($BASELINE_CENTER - $DESCENDER_C2C,                   name => "descender-B");
+        $thingy->create_guide($BASELINE_CENTER - $DESCENDER_C2C + $STROKE_WIDTH/2, name => "descender-C");
+        $thingy->create_guide($BASELINE_CENTER - $DESCENDER_C2C - $STROKE_WIDTH/2 - $OVERSHOOT, color => COLOR_OVERSHOOT, name => "descender");
+        $thingy->create_guide($BASELINE_CENTER - $DESCENDER_C2C                   - $OVERSHOOT, color => COLOR_OVERSHOOT, name => "descender-B");
+        $thingy->create_guide($BASELINE_CENTER - $DESCENDER_C2C + $STROKE_WIDTH/2 - $OVERSHOOT, color => COLOR_OVERSHOOT, name => "descender-C");
 
-        $thingy->create_guide($BASELINE_CENTER - $STROKE_WIDTH/2, name => 'baseline');
-        $thingy->create_guide($BASELINE_CENTER,                   name => 'baseline-B');
-        $thingy->create_guide($BASELINE_CENTER + $STROKE_WIDTH/2, name => 'baseline-C');
-        $thingy->create_guide($BASELINE_CENTER - $STROKE_WIDTH/2 - $OVERSHOOT, color => COLOR_OVERSHOOT, name => 'baseline');
-        $thingy->create_guide($BASELINE_CENTER                   - $OVERSHOOT, color => COLOR_OVERSHOOT, name => 'baseline-B');
-        $thingy->create_guide($BASELINE_CENTER + $STROKE_WIDTH/2 - $OVERSHOOT, color => COLOR_OVERSHOOT, name => 'baseline-C');
+        $thingy->create_guide($BASELINE_CENTER - $STROKE_WIDTH/2, name => "baseline");
+        $thingy->create_guide($BASELINE_CENTER,                   name => "baseline-B");
+        $thingy->create_guide($BASELINE_CENTER + $STROKE_WIDTH/2, name => "baseline-C");
+        $thingy->create_guide($BASELINE_CENTER - $STROKE_WIDTH/2 - $OVERSHOOT, color => COLOR_OVERSHOOT, name => "baseline");
+        $thingy->create_guide($BASELINE_CENTER                   - $OVERSHOOT, color => COLOR_OVERSHOOT, name => "baseline-B");
+        $thingy->create_guide($BASELINE_CENTER + $STROKE_WIDTH/2 - $OVERSHOOT, color => COLOR_OVERSHOOT, name => "baseline-C");
 
-        $thingy->create_guide($BASELINE_CENTER + $CAP_HEIGHT_C2C/2, color => COLOR_CAP_CENTER, name => 'cap-center');
-
-        if (!$small_caps) {
-            $thingy->create_guide($BASELINE_CENTER + $EX_HEIGHT_C2C + $STROKE_WIDTH/2, name => 'ex-height');
-            $thingy->create_guide($BASELINE_CENTER + $EX_HEIGHT_C2C, name => 'ex-height-B');
-            $thingy->create_guide($BASELINE_CENTER + $EX_HEIGHT_C2C - $STROKE_WIDTH/2, name => 'ex-height-C');
-            $thingy->create_guide($BASELINE_CENTER + $EX_HEIGHT_C2C + $STROKE_WIDTH/2 + $OVERSHOOT, color => COLOR_OVERSHOOT, name => 'ex-height');
-            $thingy->create_guide($BASELINE_CENTER + $EX_HEIGHT_C2C                   + $OVERSHOOT, color => COLOR_OVERSHOOT, name => 'ex-height-B');
-            $thingy->create_guide($BASELINE_CENTER + $EX_HEIGHT_C2C - $STROKE_WIDTH/2 + $OVERSHOOT, color => COLOR_OVERSHOOT, name => 'ex-height-C');
-        }
-
-        $thingy->create_guide($BASELINE_CENTER + $CAP_HEIGHT_C2C + $STROKE_WIDTH/2, name => 'ascender');
-        $thingy->create_guide($BASELINE_CENTER + $CAP_HEIGHT_C2C, name => 'ascender-B');
-        $thingy->create_guide($BASELINE_CENTER + $CAP_HEIGHT_C2C - $STROKE_WIDTH/2, name => 'ascender-C');
-        $thingy->create_guide($BASELINE_CENTER + $CAP_HEIGHT_C2C + $STROKE_WIDTH/2 + $OVERSHOOT, color => COLOR_OVERSHOOT, name => 'ascender');
-        $thingy->create_guide($BASELINE_CENTER + $CAP_HEIGHT_C2C                   + $OVERSHOOT, color => COLOR_OVERSHOOT, name => 'ascender-B');
-        $thingy->create_guide($BASELINE_CENTER + $CAP_HEIGHT_C2C - $STROKE_WIDTH/2 + $OVERSHOOT, color => COLOR_OVERSHOOT, name => 'ascender-C');
+        $thingy->create_guide($BASELINE_CENTER + $CAP_HEIGHT_C2C/2, color => COLOR_CAP_CENTER, name => "cap-center");
 
         if (!$small_caps) {
-            $thingy->create_guide($BASELINE_CENTER + $EX_HEIGHT_C2C/2, color => COLOR_EX_CENTER, name => 'ex-center/oper-center');
+            $thingy->create_guide($BASELINE_CENTER + $EX_HEIGHT_C2C + $STROKE_WIDTH/2, name => "ex-height");
+            $thingy->create_guide($BASELINE_CENTER + $EX_HEIGHT_C2C, name => "ex-height-B");
+            $thingy->create_guide($BASELINE_CENTER + $EX_HEIGHT_C2C - $STROKE_WIDTH/2, name => "ex-height-C");
+            $thingy->create_guide($BASELINE_CENTER + $EX_HEIGHT_C2C + $STROKE_WIDTH/2 + $OVERSHOOT, color => COLOR_OVERSHOOT, name => "ex-height");
+            $thingy->create_guide($BASELINE_CENTER + $EX_HEIGHT_C2C                   + $OVERSHOOT, color => COLOR_OVERSHOOT, name => "ex-height-B");
+            $thingy->create_guide($BASELINE_CENTER + $EX_HEIGHT_C2C - $STROKE_WIDTH/2 + $OVERSHOOT, color => COLOR_OVERSHOOT, name => "ex-height-C");
         }
 
-        $thingy->create_guide($WIDTH/2, orientation => 'vertical');
-        $thingy->create_guide($STROKE_WIDTH/2,  orientation => 'vertical');
-        $thingy->create_guide($WIDTH - $STROKE_WIDTH/2, orientation => 'vertical');
+        $thingy->create_guide($BASELINE_CENTER + $CAP_HEIGHT_C2C + $STROKE_WIDTH/2, name => "ascender");
+        $thingy->create_guide($BASELINE_CENTER + $CAP_HEIGHT_C2C, name => "ascender-B");
+        $thingy->create_guide($BASELINE_CENTER + $CAP_HEIGHT_C2C - $STROKE_WIDTH/2, name => "ascender-C");
+        $thingy->create_guide($BASELINE_CENTER + $CAP_HEIGHT_C2C + $STROKE_WIDTH/2 + $OVERSHOOT, color => COLOR_OVERSHOOT, name => "ascender");
+        $thingy->create_guide($BASELINE_CENTER + $CAP_HEIGHT_C2C                   + $OVERSHOOT, color => COLOR_OVERSHOOT, name => "ascender-B");
+        $thingy->create_guide($BASELINE_CENTER + $CAP_HEIGHT_C2C - $STROKE_WIDTH/2 + $OVERSHOOT, color => COLOR_OVERSHOOT, name => "ascender-C");
+
+        if (!$small_caps) {
+            $thingy->create_guide($BASELINE_CENTER + $EX_HEIGHT_C2C/2, color => COLOR_EX_CENTER, name => "ex-center/oper-center");
+        }
+
+        $thingy->create_guide($WIDTH/2, orientation => "vertical");
+        $thingy->create_guide($STROKE_WIDTH/2,  orientation => "vertical");
+        $thingy->create_guide($WIDTH - $STROKE_WIDTH/2, orientation => "vertical");
 
         if ($accents) {
             my $accent_above__bottom = $BASELINE_CENTER + max($ASCENDER_C2C, $CAP_HEIGHT_C2C) + $STROKE_WIDTH / 2 + $ACCENT_SEPARATOR;
             my $accent_above__top    = $HEIGHT;
             my $accent_above__center = ($accent_above__bottom + $accent_above__top) / 2;
-            $thingy->create_guide($accent_above__center, name => 'accent-above--center', color => COLOR_ACCENT);
-            $thingy->create_guide($accent_above__top,    name => 'accent-above--top',    color => COLOR_ACCENT);
-            $thingy->create_guide($accent_above__bottom, name => 'accent-above--bottom', color => COLOR_ACCENT);
+            $thingy->create_guide($accent_above__center, name => "accent-above--center", color => COLOR_ACCENT);
+            $thingy->create_guide($accent_above__top,    name => "accent-above--top",    color => COLOR_ACCENT);
+            $thingy->create_guide($accent_above__bottom, name => "accent-above--bottom", color => COLOR_ACCENT);
             my $accent_below__top    = $BASELINE_CENTER - $STROKE_WIDTH/2 - $ACCENT_SEPARATOR;
             my $accent_below__bottom = 0;
             my $accent_below__center = ($accent_below__top + $accent_below__bottom) / 2;
-            $thingy->create_guide($accent_below__center, name => 'accent-below--center', color => COLOR_ACCENT);
-            $thingy->create_guide($accent_below__top,    name => 'accent-below--top',    color => COLOR_ACCENT);
-            $thingy->create_guide($accent_below__bottom, name => 'accent-below--bottom', color => COLOR_ACCENT);
+            $thingy->create_guide($accent_below__center, name => "accent-below--center", color => COLOR_ACCENT);
+            $thingy->create_guide($accent_below__top,    name => "accent-below--top",    color => COLOR_ACCENT);
+            $thingy->create_guide($accent_below__bottom, name => "accent-below--bottom", color => COLOR_ACCENT);
         }
 
         my $cap_center = $BASELINE_CENTER + $CAP_HEIGHT_C2C / 2;
@@ -180,10 +180,10 @@ while (<>) {
         );
     }
 } continue {
-    if (eof && $in_place && $ARGV ne '-') {
+    if (eof && $in_place && $ARGV ne "-") {
         my $fh;
         my $ARGVTMP = $ARGV . ".tmp";
-        open($fh, '>', $ARGVTMP) or die("$ARGVTMP: $!\n");
+        open($fh, ">", $ARGVTMP) or die("$ARGVTMP: $!\n");
         print $fh $thingy->to_string() or die("$ARGVTMP: $!\n");
         close($fh) or die("$ARGVTMP: $!\n");
         rename($ARGVTMP, $ARGV) or die("$ARGV => $ARGVTMP: $!\n");
@@ -212,10 +212,10 @@ package My::Thingy {
         $xpc->registerNs(svg      => $NS{svg});
         my $svg = $doc->documentElement;
 
-        my $width  = $svg->getAttribute('width');
-        my $height = $svg->getAttribute('height');
+        my $width  = $svg->getAttribute("width");
+        my $height = $svg->getAttribute("height");
 
-        my @view_box = split(' ', $svg->getAttribute('viewBox') // '');
+        my @view_box = split(" ", $svg->getAttribute("viewBox") // "");
         my ($view_box_xmin, $view_box_ymin, $view_box_width, $view_box_height) = @view_box;
 
         $view_box_xmin //= 0;
@@ -239,7 +239,7 @@ package My::Thingy {
         # printf STDERR ("viewbox start at %f, %f width %f height %f\n",
         #                $view_box_xmin, $view_box_ymin, $view_box_width, $view_box_height);
 
-        if (!$svg->hasAttribute('width')) {
+        if (!$svg->hasAttribute("width")) {
         }
     }
     sub list_guides {
