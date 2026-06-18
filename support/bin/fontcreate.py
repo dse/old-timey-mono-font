@@ -4,6 +4,7 @@ import os, argparse, fontforge
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("filename", help="new font filename")
+    parser.add_argument("--create", action="store_true", help="force creation of new font if filename exists")
     parser.add_argument("--font-name", "--fontname", help="e.g., \"Courier-Bold\", \"AvantGardeGothic\"")
     parser.add_argument("--full-name", "--fullname", help="e.g., \"Courier Bold\", \"ITC Avant Garde Gothic\"")
     parser.add_argument("--weight-name", "--weightname", "--weight", help="e.g., \"Book\", \"Bold\", etc.")
@@ -27,7 +28,10 @@ def main():
     parser.add_argument("--compacted", action="store_true")
     args = parser.parse_args()
 
-    font = fontforge.font()
+    if os.path.exists(args.filename) and not args.create:
+        font = fontforge.open(args.filename)
+    else:
+        font = fontforge.font()
 
     if args.encoding is not None:
         font.encoding = args.encoding
