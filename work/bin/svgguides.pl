@@ -5,6 +5,7 @@ use XML::LibXML;
 use XML::LibXML::XPathContext;
 use Getopt::Long;
 use List::Util qw(max);
+use Math::Trig qw(pi);
 
 our $NEW_SVG;
 
@@ -52,6 +53,7 @@ our $ASCENT           = 1344;
 our $DESCENT          = $HEIGHT - $ASCENT;
 our $ACCENT_SEPARATOR = $STROKE_WIDTH;
 our $BASELINE_CENTER  = $DESCENT + $STROKE_WIDTH / 2;
+our $ITALIC_ANGLE     = -12;
 
 our %NS;
 BEGIN {
@@ -98,37 +100,38 @@ while (<>) {
     $thingy->load_xml($_);
     $thingy->delete_guides();
     if (!$delete_guides) {
+
         $thingy->create_guide($BASELINE_CENTER - $DESCENDER_C2C - $STROKE_WIDTH/2, name => 'descender');
-        $thingy->create_guide($BASELINE_CENTER - $DESCENDER_C2C);
-        $thingy->create_guide($BASELINE_CENTER - $DESCENDER_C2C + $STROKE_WIDTH/2);
-        $thingy->create_guide($BASELINE_CENTER - $DESCENDER_C2C - $STROKE_WIDTH/2 - $OVERSHOOT, color => COLOR_OVERSHOOT);
-        $thingy->create_guide($BASELINE_CENTER - $DESCENDER_C2C                   - $OVERSHOOT, color => COLOR_OVERSHOOT);
-        $thingy->create_guide($BASELINE_CENTER - $DESCENDER_C2C + $STROKE_WIDTH/2 - $OVERSHOOT, color => COLOR_OVERSHOOT);
+        $thingy->create_guide($BASELINE_CENTER - $DESCENDER_C2C,                   name => 'descender-B');
+        $thingy->create_guide($BASELINE_CENTER - $DESCENDER_C2C + $STROKE_WIDTH/2, name => 'descender-C');
+        $thingy->create_guide($BASELINE_CENTER - $DESCENDER_C2C - $STROKE_WIDTH/2 - $OVERSHOOT, color => COLOR_OVERSHOOT, name => 'descender');
+        $thingy->create_guide($BASELINE_CENTER - $DESCENDER_C2C                   - $OVERSHOOT, color => COLOR_OVERSHOOT, name => 'descender-B');
+        $thingy->create_guide($BASELINE_CENTER - $DESCENDER_C2C + $STROKE_WIDTH/2 - $OVERSHOOT, color => COLOR_OVERSHOOT, name => 'descender-C');
 
         $thingy->create_guide($BASELINE_CENTER - $STROKE_WIDTH/2, name => 'baseline');
-        $thingy->create_guide($BASELINE_CENTER);
-        $thingy->create_guide($BASELINE_CENTER + $STROKE_WIDTH/2);
-        $thingy->create_guide($BASELINE_CENTER - $STROKE_WIDTH/2 - $OVERSHOOT, color => COLOR_OVERSHOOT);
-        $thingy->create_guide($BASELINE_CENTER                   - $OVERSHOOT, color => COLOR_OVERSHOOT);
-        $thingy->create_guide($BASELINE_CENTER + $STROKE_WIDTH/2 - $OVERSHOOT, color => COLOR_OVERSHOOT);
+        $thingy->create_guide($BASELINE_CENTER,                   name => 'baseline-B');
+        $thingy->create_guide($BASELINE_CENTER + $STROKE_WIDTH/2, name => 'baseline-C');
+        $thingy->create_guide($BASELINE_CENTER - $STROKE_WIDTH/2 - $OVERSHOOT, color => COLOR_OVERSHOOT, name => 'baseline');
+        $thingy->create_guide($BASELINE_CENTER                   - $OVERSHOOT, color => COLOR_OVERSHOOT, name => 'baseline-B');
+        $thingy->create_guide($BASELINE_CENTER + $STROKE_WIDTH/2 - $OVERSHOOT, color => COLOR_OVERSHOOT, name => 'baseline-C');
 
         $thingy->create_guide($BASELINE_CENTER + $CAP_HEIGHT_C2C/2, color => COLOR_CAP_CENTER, name => 'cap-center');
 
         if (!$small_caps) {
             $thingy->create_guide($BASELINE_CENTER + $EX_HEIGHT_C2C + $STROKE_WIDTH/2, name => 'ex-height');
-            $thingy->create_guide($BASELINE_CENTER + $EX_HEIGHT_C2C);
-            $thingy->create_guide($BASELINE_CENTER + $EX_HEIGHT_C2C - $STROKE_WIDTH/2);
-            $thingy->create_guide($BASELINE_CENTER + $EX_HEIGHT_C2C + $STROKE_WIDTH/2 + $OVERSHOOT, color => COLOR_OVERSHOOT);
-            $thingy->create_guide($BASELINE_CENTER + $EX_HEIGHT_C2C                   + $OVERSHOOT, color => COLOR_OVERSHOOT);
-            $thingy->create_guide($BASELINE_CENTER + $EX_HEIGHT_C2C - $STROKE_WIDTH/2 + $OVERSHOOT, color => COLOR_OVERSHOOT);
+            $thingy->create_guide($BASELINE_CENTER + $EX_HEIGHT_C2C, name => 'ex-height-B');
+            $thingy->create_guide($BASELINE_CENTER + $EX_HEIGHT_C2C - $STROKE_WIDTH/2, name => 'ex-height-C');
+            $thingy->create_guide($BASELINE_CENTER + $EX_HEIGHT_C2C + $STROKE_WIDTH/2 + $OVERSHOOT, color => COLOR_OVERSHOOT, name => 'ex-height');
+            $thingy->create_guide($BASELINE_CENTER + $EX_HEIGHT_C2C                   + $OVERSHOOT, color => COLOR_OVERSHOOT, name => 'ex-height-B');
+            $thingy->create_guide($BASELINE_CENTER + $EX_HEIGHT_C2C - $STROKE_WIDTH/2 + $OVERSHOOT, color => COLOR_OVERSHOOT, name => 'ex-height-C');
         }
 
         $thingy->create_guide($BASELINE_CENTER + $CAP_HEIGHT_C2C + $STROKE_WIDTH/2, name => 'ascender');
-        $thingy->create_guide($BASELINE_CENTER + $CAP_HEIGHT_C2C);
-        $thingy->create_guide($BASELINE_CENTER + $CAP_HEIGHT_C2C - $STROKE_WIDTH/2);
-        $thingy->create_guide($BASELINE_CENTER + $CAP_HEIGHT_C2C + $STROKE_WIDTH/2 + $OVERSHOOT, color => COLOR_OVERSHOOT);
-        $thingy->create_guide($BASELINE_CENTER + $CAP_HEIGHT_C2C                   + $OVERSHOOT, color => COLOR_OVERSHOOT);
-        $thingy->create_guide($BASELINE_CENTER + $CAP_HEIGHT_C2C - $STROKE_WIDTH/2 + $OVERSHOOT, color => COLOR_OVERSHOOT);
+        $thingy->create_guide($BASELINE_CENTER + $CAP_HEIGHT_C2C, name => 'ascender-B');
+        $thingy->create_guide($BASELINE_CENTER + $CAP_HEIGHT_C2C - $STROKE_WIDTH/2, name => 'ascender-C');
+        $thingy->create_guide($BASELINE_CENTER + $CAP_HEIGHT_C2C + $STROKE_WIDTH/2 + $OVERSHOOT, color => COLOR_OVERSHOOT, name => 'ascender');
+        $thingy->create_guide($BASELINE_CENTER + $CAP_HEIGHT_C2C                   + $OVERSHOOT, color => COLOR_OVERSHOOT, name => 'ascender-B');
+        $thingy->create_guide($BASELINE_CENTER + $CAP_HEIGHT_C2C - $STROKE_WIDTH/2 + $OVERSHOOT, color => COLOR_OVERSHOOT, name => 'ascender-C');
 
         if (!$small_caps) {
             $thingy->create_guide($BASELINE_CENTER + $EX_HEIGHT_C2C/2, color => COLOR_EX_CENTER, name => 'ex-center/oper-center');
@@ -152,6 +155,29 @@ while (<>) {
             $thingy->create_guide($accent_below__top,    name => 'accent-below--top',    color => COLOR_ACCENT);
             $thingy->create_guide($accent_below__bottom, name => 'accent-below--bottom', color => COLOR_ACCENT);
         }
+
+        my $cap_center = $BASELINE_CENTER + $CAP_HEIGHT_C2C / 2;
+        my $ex_center  = $BASELINE_CENTER + $EX_HEIGHT_C2C / 2;
+        my $mid_center = ($cap_center + $ex_center) / 2;
+
+        $thingy->create_guide_2(
+            x => $WIDTH / 2,
+            y => $cap_center,
+            angle => $ITALIC_ANGLE,
+            name => "ital center cap",
+        );
+        $thingy->create_guide_2(
+            x => $WIDTH / 2,
+            y => $mid_center,
+            angle => $ITALIC_ANGLE,
+            name => "ital center mid",
+        );
+        $thingy->create_guide_2(
+            x => $WIDTH / 2,
+            y => $ex_center,
+            angle => $ITALIC_ANGLE,
+            name => "ital center ex",
+        );
     }
 } continue {
     if (eof && $in_place && $ARGV ne '-') {
@@ -168,6 +194,7 @@ while (<>) {
 }
 
 package My::Thingy {
+    use Math::Trig qw(pi);
     sub new {
         my ($class) = @_;
         my $self = bless({}, $class);
@@ -231,43 +258,63 @@ package My::Thingy {
             $guide->parentNode->removeChild($guide);
         }
     }
-    sub create_guide {
-        my ($self, $new_pos_svg, %args) = @_;
-        my $color       = $args{color};
-        my $guide_name  = $args{name};
-        my $orientation = $args{orientation} // "horizontal";
-        $orientation = "horizontal" if lc(substr($orientation, 0, 1)) eq 'h';
-        $orientation = "vertical" if lc(substr($orientation, 0, 1)) eq 'v';
-        my $is_horizontal = $orientation eq 'horizontal';
+    sub create_guide_2 {
+        my ($self, %args) = @_;
+        my $x          = $args{x} // ($WIDTH / 2);
+        my $y          = $args{y} // 0;
+        my $angle      = $args{angle} // 0;
+        my $name       = $args{name};
+        my $color      = $args{color};
+        my $horizontal = $args{horizontal};
+        my $vertical   = $args{vertical};
+        my $locked     = $args{locked};
+        if (defined $angle && defined $horizontal && defined $vertical) {
+            die("create_guide_2: supplying angle, horizontal, and vertical makes no sense");
+        } elsif (defined $angle && defined $horizontal) {
+            die("create_guide_2: supplying angle and horizontal makes no sense");
+        } elsif (defined $angle && defined $vertical) {
+            die("create_guide_2: supplying angle and vertical makes no sense");
+        } elsif (defined $horizontal && defined $vertical) {
+            die("create_guide_2: supplying horizontal and vertical makes no sense");
+        }
+        if ($vertical) {
+            $angle = 0;
+            undef $vertical;
+        } elsif ($horizontal) {
+            $angle = 90;
+            undef $vertical;
+        }
+        $angle *= pi / 180 if defined $angle;
         my $guide = $self->{doc}->createElement("sodipodi:guide");
-        if ($is_horizontal) {
-            my $new_pos_vbox = $self->y_svg_to_view_box($new_pos_svg);
-            $guide->setAttribute('position', sprintf("%f,%f", 0, $new_pos_vbox));
-        } else {
-            my $new_pos_vbox = $self->x_svg_to_view_box($new_pos_svg);
-            $guide->setAttribute('position', sprintf("%f,%f", $new_pos_vbox, 0));
-        }
-        if ($args{locked}) {
-            $guide->setAttribute("inkscape:locked", "true");
-        } else {
-            $guide->setAttribute("inkscape:locked", "false");
-        }
-        if (defined $guide_name) {
-            $guide->setAttribute("inkscape:label", $guide_name);
-        }
-        if (defined $color) {
-            $guide->setAttribute("inkscape:color", $color);
-        }
-        if ($is_horizontal) {
-            $guide->setAttribute("orientation", "0,1");
-        } else {
-            $guide->setAttribute("orientation", "1,0");
-        }
+        my $xx = $self->x_svg_to_view_box($x);
+        my $yy = $self->y_svg_to_view_box($y);
+        printf STDERR ("%s: %f,%f => %f,%f\n", $name // "(unnamed)", $x,$y, $xx,$yy);
+        $guide->setAttribute("position", sprintf("%f,%f", $xx, $yy));
+        $guide->setAttribute("inkscape:locked", $args{locked} ? "true" : "false");
+        $guide->setAttribute("inkscape:label", $name) if defined $name;
+        $guide->setAttribute("inkscape:color", $color) if defined $color;
+        $guide->setAttribute("orientation", sprintf("%f,%f", -cos($angle), -sin($angle)));
         my ($namedview) = $self->{xpc}->findnodes("//sodipodi:namedview");
         if (!$namedview) {
             die("no namedview element\n");
         }
         $namedview->appendChild($guide);
+    }
+    sub create_guide {
+        my ($self, $new_pos_svg, %args) = @_;
+
+        my $orientation = (delete $args{orientation}) // "horizontal";
+        if ($orientation eq "horizontal") {
+            $args{angle} = 270;
+            $args{x} = 0;
+            $args{y} = $new_pos_svg;
+        } else {
+            $args{angle} = 0;
+            $args{x} = $new_pos_svg;
+            $args{y} = 0;
+        }
+        $self->create_guide_2(%args);
+
     }
     sub to_string {
         my ($self) = @_;
