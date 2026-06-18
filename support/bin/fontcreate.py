@@ -22,7 +22,7 @@ def main():
     parser.add_argument("--uwidth", type=float)
     parser.add_argument("--panose", type=int, nargs=10)
     parser.add_argument("--width", type=int, help="width of space glyph")
-    parser.add_argument("--vendor", help="font creator's, registered 4-character vendor string (bit.ly/fontvendors)")
+    parser.add_argument("--vendor", help="font creator's registered 4-character vendor string (bit.ly/fontvendors)")
     parser.add_argument("--encoding")
     parser.add_argument("--compacted", action="store_true")
     args = parser.parse_args()
