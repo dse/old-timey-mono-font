@@ -7,7 +7,8 @@ default: fonts zip
 SRC_BASEFONT			= src/basefont
 SRC_DATA			= src/data
 SRC_BUILD			= tmp/_build
-SRC_VECTOR			= src/vector/chars/stroke
+SRC_VECTOR_UPRIGHT		= src/upright
+SRC_VECTOR_ITALIC		= src/italic
 SUPPORT_BIN			= support/bin
 DIST_DIR			= dist
 DIST_TTF			= $(DIST_DIR)/ttf
@@ -365,6 +366,43 @@ release:
 
 website: FORCE
 	cd website/v5 && make
+
+italic: FORCE
+	support/bin/fontcreate.py \
+		--encoding=UnicodeFull --compacted \
+		--fontname="OldTimeyMono-Italic" \
+		--fullname="Old Timey Mono Italic" \
+		--family-name="Old Timey Mono" \
+		--version=0.0.0 --sfnt-revision=0.000 \
+		--ascent 1344 --descent 336 \
+		--width 1008 \
+		--italicangle -12 \
+		OldTimeyMono-Italic.sfd
+	support/bin/fontimport.py OldTimeyMono-Italic.sfd \
+		$(SRC_VECTOR_ITALIC)/*/*.svg \
+		$(SRC_VECTOR_UPRIGHT)/0000-basic-latin/0023-number-sign.svg \
+		$(SRC_VECTOR_UPRIGHT)/0000-basic-latin/0025-percent-sign.svg \
+		$(SRC_VECTOR_UPRIGHT)/0000-basic-latin/0028-left-parenthesis.svg \
+		$(SRC_VECTOR_UPRIGHT)/0000-basic-latin/0029-right-parenthesis.svg \
+		$(SRC_VECTOR_UPRIGHT)/0000-basic-latin/002a-asterisk.svg \
+		$(SRC_VECTOR_UPRIGHT)/0000-basic-latin/002b-plus-sign.svg \
+		$(SRC_VECTOR_UPRIGHT)/0000-basic-latin/002d-hyphen-minus.svg \
+		$(SRC_VECTOR_UPRIGHT)/0000-basic-latin/002f-solidus.svg \
+		$(SRC_VECTOR_UPRIGHT)/0000-basic-latin/003c-less-than-sign.svg \
+		$(SRC_VECTOR_UPRIGHT)/0000-basic-latin/003d-equals-sign.svg \
+		$(SRC_VECTOR_UPRIGHT)/0000-basic-latin/003e-greater-than-sign.svg \
+		$(SRC_VECTOR_UPRIGHT)/0000-basic-latin/0023-number-sign.svg \
+		$(SRC_VECTOR_UPRIGHT)/0000-basic-latin/0040-commercial-at.svg \
+		$(SRC_VECTOR_UPRIGHT)/0000-basic-latin/005b-left-square-bracket.svg \
+		$(SRC_VECTOR_UPRIGHT)/0000-basic-latin/005c-reverse-solidus.svg \
+		$(SRC_VECTOR_UPRIGHT)/0000-basic-latin/005d-right-square-bracket.svg \
+		$(SRC_VECTOR_UPRIGHT)/0000-basic-latin/005e-circumflex-accent.svg \
+		$(SRC_VECTOR_UPRIGHT)/0000-basic-latin/005f-low-line.svg \
+		$(SRC_VECTOR_UPRIGHT)/0000-basic-latin/0060-grave-accent.svg \
+		$(SRC_VECTOR_UPRIGHT)/0000-basic-latin/007b-left-curly-bracket.svg \
+		$(SRC_VECTOR_UPRIGHT)/0000-basic-latin/007c-vertical-line.svg \
+		$(SRC_VECTOR_UPRIGHT)/0000-basic-latin/007d-right-curly-bracket.svg \
+		$(SRC_VECTOR_UPRIGHT)/0000-basic-latin/007e-tilde.svg
 
 .PHONY: FORCE
 
