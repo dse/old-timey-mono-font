@@ -9,7 +9,7 @@
    id="svg5"
    xml:space="preserve"
    inkscape:version="1.4.4 (1:1.4.4+202605061436+dcaf3e7d9e)"
-   sodipodi:docname="0030.svg"
+   sodipodi:docname="zero.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -25,11 +25,11 @@
    inkscape:deskcolor="#d1d1d1"
    inkscape:document-units="px"
    showgrid="false"
-   inkscape:zoom="0.51508654"
-   inkscape:cx="204.81995"
-   inkscape:cy="887.22956"
-   inkscape:window-width="1920"
-   inkscape:window-height="995"
+   inkscape:zoom="0.32"
+   inkscape:cx="829.6875"
+   inkscape:cy="400"
+   inkscape:window-width="2304"
+   inkscape:window-height="1427"
    inkscape:window-x="0"
    inkscape:window-y="0"
    inkscape:window-maximized="1"
@@ -235,26 +235,17 @@
    id="guide32" /></sodipodi:namedview>
   <defs
    id="defs2" />
-  <g
-   inkscape:groupmode="layer"
-   id="layer3"
-   inkscape:label="Layer 3"
-   style="display:inline;opacity:0.5;stroke-width:3.60000001;stroke-dasharray:none"
-   transform="matrix(0.83333333,0,0,0.83333333,-157.97619,-173.09626)" />
-  <g
-   inkscape:groupmode="layer"
-   id="layer2"
-   inkscape:label="Layer 2"
-   style="display:inline" />
+  
+  
   <g
    inkscape:label="Layer 1"
    inkscape:groupmode="layer"
    id="layer1"
    style="display:inline">
-    <path
-   id="path1497"
+    
+  <path
+   id="path35"
    style="display:inline;fill:none;stroke:#000000;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2.61313"
-   d="M 51.234462,51 C 49.390113,68.547815 41.678711,82.25 28.178803,82.25 14.678711,82.25 9.921187,68.547816 11.765537,51 13.609887,33.452184 21.3211,19.749996 34.821192,19.749997 48.3211,19.749998 53.078811,33.452185 51.234462,51 Z"
-   sodipodi:nodetypes="sssss" />
-  </g>
+   d="M 51.500001,51 C 47.831509,68.258899 38.357515,82.25 24.857607,82.25 11.357515,82.25 7.8315053,68.2589 11.499998,51 15.16849,33.7411 24.642301,19.749997 38.142393,19.749998 51.642301,19.749999 55.168493,33.741101 51.500001,51 Z"
+   sodipodi:nodetypes="sssss" /></g>
 </svg>

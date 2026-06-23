@@ -25,16 +25,16 @@
    inkscape:deskcolor="#d1d1d1"
    inkscape:document-units="px"
    showgrid="false"
-   inkscape:zoom="0.6030587"
-   inkscape:cx="512.38793"
-   inkscape:cy="746.19602"
-   inkscape:window-width="1920"
-   inkscape:window-height="995"
+   inkscape:zoom="0.64"
+   inkscape:cx="753.90625"
+   inkscape:cy="807.8125"
+   inkscape:window-width="2304"
+   inkscape:window-height="1427"
    inkscape:window-x="0"
    inkscape:window-y="0"
    inkscape:window-maximized="1"
    inkscape:current-layer="layer1"
-   showguides="false"
+   showguides="true"
    inkscape:lockguides="false">
     <inkscape:grid
    type="xygrid"
@@ -45,7 +45,7 @@
    originx="0"
    originy="0"
    units="px"
-   visible="false" />
+   visible="true" />
     
     
     
@@ -251,10 +251,10 @@
    inkscape:groupmode="layer"
    id="layer1"
    style="display:inline">
-    
-  <path
-   id="path35"
+    <path
+   id="path36-4"
    style="display:inline;fill:none;stroke:#000000;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-   d="M 56.750602,27.55886 C 52.140716,22.439063 45.587248,19.75 37.802801,19.75 23.878946,19.75 11.776535,33.706378 9.802652,52.486622 9.355547,56.740538 8.2430123,65.86195 11.54615,71.537457 15.480265,78.29712 22.175075,82.25 31.006996,82.25 c 10.931953,0 18.580113,-6.124409 19.735314,-17.115413 1.028471,-9.785242 -5.786119,-18.282155 -17.018718,-18.282155 -10.689485,0 -21.504569,6.622267 -23.539101,16.193989 -0.563803,2.652488 -0.124154,4.758665 0.424125,6.528985"
-   sodipodi:nodetypes="csssssssc" /></g>
+   d="M 56.125602,27.55886 C 53.835944,23.858602 48.283445,19.75 40.498998,19.75 27.196973,19.75 13.858332,30.465754 9.1776516,52.486622 8.2883411,56.670499 6.5312003,65.609373 9.2229914,71.599061 12.428977,78.73292 19.478878,82.25 28.310799,82.25 c 10.931953,0 20.65131,-6.874409 21.806511,-17.865413 1.028471,-9.785242 -5.786119,-17.532155 -17.018718,-17.532155 -10.689485,0 -22.556344,6.561921 -24.5908759,16.133643 -0.5638037,2.652488 -0.3722595,4.745751 -0.012033,6.563684"
+   sodipodi:nodetypes="csssssssc" />
+  </g>
 </svg>
