@@ -4,6 +4,7 @@ import os, argparse, fontforge, re
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("filename", help="font filename")
+    parser.add_argument("-v", "--verbose", action="count", default=0)
     parser.add_argument("import_filenames", nargs="+", help="vector files, typically SVG")
     parser.add_argument("--width", type=int, help="width for imported glyphs")
     args = parser.parse_args()
@@ -11,6 +12,8 @@ def main():
     font = fontforge.open(args.filename)
     for import_filename in args.import_filenames:
         (codepoint, glyphname, *_) = parse_glyph_filename(import_filename)
+        if args.verbose:
+            print("fontimport.py: importing %s into %s at U+%04X" % (import_filename, glyphname, codepoint))
         glyph = font.createChar(codepoint, glyphname)
         glyph.foreground = fontforge.layer() # clear existing glyph
         space_glyphname = fontforge.nameFromUnicode(32)
