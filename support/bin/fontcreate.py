@@ -4,6 +4,7 @@ import os, argparse, fontforge
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("filename", help="new font filename")
+    parser.add_argument("-v", "--verbose", action="count", default=0)
     parser.add_argument("--create", action="store_true", help="force creation of new font if filename exists")
     parser.add_argument("--font-name", "--fontname", help="e.g., \"Courier-Bold\", \"AvantGardeGothic\"")
     parser.add_argument("--full-name", "--fullname", help="e.g., \"Courier Bold\", \"ITC Avant Garde Gothic\"")
