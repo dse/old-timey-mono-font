@@ -369,22 +369,60 @@ website: FORCE
 
 italic: FORCE
 	support/bin/fontcreate.py -v \
-		--encoding=UnicodeFull --compacted \
+		--create \
+		--encoding=UnicodeFull \
 		--fontname="OldTimeyMono-Italic" \
 		--fullname="Old Timey Mono Italic" \
 		--family-name="Old Timey Mono" \
+		--weight-name="Medium" \
 		--version=0.0.0 --sfnt-revision=0.000 \
 		--ascent 1344 --descent 336 \
 		--width 1008 \
-		--italicangle -12 \
+		--italic-angle -12 \
+		--vendor DARN \
+		--upos -300 \
+		--uwidth 96 \
+		--ttf-weight 500 \
+		--panose 0 0 0 9 0 0 0 0 0 0 \
+		--no-grid-fit \
 		OldTimeyMono-Italic.sfd
 	support/bin/fontimport.py -v \
 		OldTimeyMono-Italic.sfd \
 		$(SRC_VECTOR_UPRIGHT)/0000*/*.svg \
-		$(SRC_VECTOR_ITALIC)/*/*.svg
+		$(SRC_VECTOR_ITALIC)/*/*.svg \
+		$(SRC_VECTOR_ITALIC)/variants/*/*.svg
+	support/bin/fontimport.py -v \
+		OldTimeyMono-Italic.sfd \
+		src/data/italic.json
 	support/bin/fontrefs.py -v \
 		OldTimeyMono-Italic.sfd \
 		src/data/italic.json
+
+upright: FORCE
+	support/bin/fontcreate.py -v \
+		--create \
+		--encoding=UnicodeFull \
+		--fontname="OldTimeyMono" \
+		--fullname="Old Timey Mono" \
+		--family-name="Old Timey Mono" \
+		--weight-name="Medium" \
+		--version=0.0.0 --sfnt-revision=0.000 \
+		--ascent 1344 --descent 336 \
+		--width 1008 \
+		--italic-angle 0 \
+		--vendor DARN \
+		--upos -300 \
+		--uwidth 96 \
+		--ttf-weight 500 \
+		--panose 0 0 0 9 0 0 0 0 0 0 \
+		--no-grid-fit \
+		OldTimeyMono.sfd
+
+fontinfo: FORCE
+	support/bin/fontinfo.py src/basefont/OldTimeyMono.sfd > OldTimeyMono.txt
+	support/bin/fontinfo.py OldTimeyMono-Italic.sfd > OldTimeyMono-Italic.txt
+	sed -E -e '/^BeginChars: /q' src/basefont/OldTimeyMono.sfd > OldTimeyMono.sfd.txt
+	sed -E -e '/^BeginChars: /q' OldTimeyMono-Italic.sfd > OldTimeyMono-Italic.sfd.txt
 
 .PHONY: FORCE
 
