@@ -1,6 +1,12 @@
 #!/usr/bin/env -S fontforge -quiet -script
 # -*- mode: python; coding: utf-8 -*-
-import os, argparse, fontforge, re
+import os, argparse, fontforge, re, math, json
+
+sys.path.append("%s/git/dse.d/pyfontutils/lib" % os.environ["HOME"])
+from font_utils import parse_char_str, u
+
+STROKE_WIDTH = 96
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("filename", help="font filename")
@@ -10,23 +16,59 @@ def main():
     args = parser.parse_args()
 
     font = fontforge.open(args.filename)
+
+    if args.width is not None:
+        glyph_width = args.width
+    elif "space" in font:
+        glyph_width = font["space"].width
+    else:
+        glyph_width = round(font.em / 3)
+
     for import_filename in args.import_filenames:
-        (codepoint, glyphname, *_) = parse_glyph_filename(import_filename)
-        if args.verbose:
-            print("fontimport.py: importing %s into %s at U+%04X" % (import_filename, glyphname, codepoint))
-        glyph = font.createChar(codepoint, glyphname)
-        glyph.foreground = fontforge.layer() # clear existing glyph
-        space_glyphname = fontforge.nameFromUnicode(32)
-        if args.width is not None:
-            glyph.width = args.width
-        elif space_glyphname in font:
-            glyph.width = font[space_glyphname].width
-        else:
-            glyph.width = round(font.em/3)
-        font.strokedfont = True # avoid expanding strokes automatically
-        glyph.importOutlines(import_filename)
-        font.strokedfont = False
-        glyph.stroke("circular", 96)
+
+        if import_filename.endswith(".svg"):
+            (codepoint, glyphname, *_) = parse_glyph_filename(import_filename)
+            if args.verbose:
+                print("fontimport.py: importing %s into %s at %s" % (import_filename, glyphname, u(codepoint)))
+
+            glyph = font.createChar(codepoint, glyphname)
+            glyph.foreground = fontforge.layer() # clear existing glyph
+            glyph.width = glyph_width
+            font.strokedfont = True # avoid expanding strokes automatically
+            glyph.importOutlines(import_filename)
+            font.strokedfont = False
+            glyph.stroke("circular", STROKE_WIDTH)
+
+        elif import_filename.endswith(".json"):
+            with open(import_filename, "r") as fh:
+                data = json.load(fh)
+            imports = data["imports"]
+            for idx, (charname, source) in enumerate(imports.items()):
+                (codepoint, glyphname, base_codepoint, base_glyphname, variant) = parse_char_str(charname)
+                print("%s => (codepoint=%s, glyphname=%s, base_codepoint=%s, base_glyphname=%s, variant=%s)" % (charname, codepoint, glyphname, base_codepoint, base_glyphname, variant))
+                if type(source) is dict:
+                    import_filename = source.get("filename")
+                elif type(source) is str:
+                    import_filename = source
+                if args.verbose:
+                    print("fontimport.py: importing %s into %s at %s" % (import_filename, glyphname, u(codepoint)))
+
+                glyph = font.createChar(codepoint, glyphname)
+                glyph.foreground = fontforge.layer() # clear existing glyph
+                glyph.width = glyph_width
+                font.strokedfont = True # avoid expanding strokes automatically
+                glyph.importOutlines(import_filename)
+                font.strokedfont = False
+                glyph.stroke("circular", STROKE_WIDTH)
+
+                if "italicShift" in source:
+                    italic_shift = source["italicShift"]
+                    (_, y_min, _, y_max) = glyph.boundingBox()
+                    y_center = (y_min + y_max) / 2
+                    y_pivot = italic_shift.get("y", 0)
+                    angle = italic_shift.get("angle", -12)
+                    shift_x = (y_pivot - y_center) * math.tan(angle * math.pi / 180)
+                    glyph.transform(psMat.translate(shift_x, 0))
 
     if args.filename.endswith(".sfd"):
         font.save(args.filename)
