@@ -27,6 +27,11 @@ def main():
     parser.add_argument("--vendor", help="font creator's registered 4-character vendor string (bit.ly/fontvendors)")
     parser.add_argument("--encoding")
     parser.add_argument("--compacted", action="store_true")
+    parser.add_argument("--keep-default-metrics", action="store_true")
+    parser.add_argument("--ttf-weight", "--os2-weight", type=int)
+    parser.add_argument("--no-grid-fit", action="store_true")
+    # parser.add_argument("--family-class", "--os2-family-class", "--ibm-family-class", type=int)
+    # parser.add_argument("--fstype", type=int)
     args = parser.parse_args()
 
     if os.path.exists(args.filename) and not args.create:
@@ -89,9 +94,35 @@ def main():
     print("os2_weight = %s" % font.os2_weight)
     print("os2_width = %s" % font.os2_width)
     print("sfnt_names = %s" % repr(font.sfnt_names))
-    # print("style_set_names = %s" % repr(font.style_set_names))
     print("upos = %f; uwidth = %f" % (font.upos, font.uwidth))
     print("italicangle = %f" % font.italicangle)
+
+    if not args.keep_default_metrics:
+        font.hhea_ascent = font.ascent
+        font.hhea_ascent_add = 0
+        font.hhea_descent = -font.descent
+        font.hhea_descent_add = 0
+        font.hhea_linegap = 0
+        font.os2_typoascent = font.ascent
+        font.os2_typoascent_add = 0
+        font.os2_typodescent = -font.descent
+        font.os2_typodescent_add = 0
+        font.os2_typolinegap = 0
+        font.os2_winascent = font.ascent
+        font.os2_winascent_add = 0
+        font.os2_windescent = font.descent
+        font.os2_windescent_add = 0
+        font.vhea_linegap = 0
+
+    if args.ttf_weight is not None:
+        font.os2_weight = args.ttf_weight
+
+    if args.no_grid_fit:
+        font.gasp_version = 1
+        font.gasp = (
+            (10, ('antialias', 'symmetric-smoothing')),
+            (65535, ('gridfit', 'antialias', 'symmetric-smoothing', 'gridfit+smoothing')),
+        )
         
     if args.filename.endswith(".sfd"):
         font.save(args.filename)
