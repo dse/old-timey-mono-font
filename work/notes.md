@@ -1,3 +1,11 @@
+# Even More Notes:
+
+-   tan(12°) = 0.212556561670022
+-   ex-height = 756
+    -   ex-height / 2 = 378
+-   cap-height = 1056
+    -   cap-height / 2 = 528
+
 # More Notes
 
 -   in a 4800dpi scanned image:
