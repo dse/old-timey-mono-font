@@ -388,7 +388,7 @@ italic: FORCE
 		OldTimeyMono-Italic.sfd
 	support/bin/fontimport.py -v \
 		OldTimeyMono-Italic.sfd \
-		$(SRC_VECTOR_UPRIGHT)/0000*/*.svg \
+		$(SRC_VECTOR_UPRIGHT)/0000/*.svg \
 		$(SRC_VECTOR_ITALIC)/*/*.svg \
 		$(SRC_VECTOR_ITALIC)/variants/*/*.svg
 	support/bin/fontimport.py -v \
