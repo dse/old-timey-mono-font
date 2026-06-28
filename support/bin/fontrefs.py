@@ -27,43 +27,42 @@ def main():
         old_width = base_glyph.width
 
         for j, (ref_char_name, ref_char_data) in enumerate(char_data.items()):
-            (ref_codepoint, ref_glyphname, ref_base_codepoint, ref_base_glyphname, ref_variant) = font_utils.parse_char_str(ref_char_name)
+            if ref_char_data is None:
+                continue
+
+            (ref_codepoint, ref_glyphname, ref_base_codepoint, ref_base_glyphname, ref_variant) = \
+                font_utils.parse_char_str(ref_char_name)
             if ref_glyphname not in font:
                 print("%s: %s: %s: referent glyph %s not found" % (
                     args.filename, args.json_filename, base_glyphname, ref_glyphname
                 ))
 
-            if ref_char_data is not None:
-                x = 0
-                y = 0
-                rotate = 0
-                if "center" in ref_char_data:
-                    if "x" in ref_char_data["center"]:
-                        x = ref_char_data["center"]["x"]
-                    if "y" in ref_char_data["center"]:
-                        y = ref_char_data["center"]["y"]
-                if "rotate" in ref_char_data:
-                    rotate = ref_char_data["rotate"]
+            x = 0
+            y = 0
+            rotate = 0
+            if "center" in ref_char_data:
+                if "x" in ref_char_data["center"]:
+                    x = ref_char_data["center"]["x"]
+                if "y" in ref_char_data["center"]:
+                    y = ref_char_data["center"]["y"]
+            if "rotate" in ref_char_data:
+                rotate = ref_char_data["rotate"]
 
-                xform = psMat.identity()
-                if y or x:
-                    xform = psMat.compose(xform, psMat.translate(-x, -y))
-                if rotate:
-                    xform = psMat.compose(xform, psMat.rotate(rotate / 180 * math.pi))
-                if y or x:
-                    xform = psMat.compose(xform, psMat.translate(x, y))
-                if "translate" in ref_char_data:
-                    [x, y] = ref_char_data["translate"]
-                    xform = psMat.compose(xform, psMat.translate(x, y))
-                xform = tuple([round_if_approx(n) for n in xform])
+            xform = psMat.identity()
+            if y or x:
+                xform = psMat.compose(xform, psMat.translate(-x, -y))
+            if rotate:
+                xform = psMat.compose(xform, psMat.rotate(rotate / 180 * math.pi))
+            if y or x:
+                xform = psMat.compose(xform, psMat.translate(x, y))
+            if "translate" in ref_char_data:
+                [x, y] = ref_char_data["translate"]
+                xform = psMat.compose(xform, psMat.translate(x, y))
+            xform = tuple([round_if_approx(n) for n in xform])
 
-                if args.verbose:
-                    print("%s: %s: adding reference to %s" % (args.filename, base_glyphname, ref_glyphname))
-                base_glyph.addReference(ref_glyphname, xform)
-            else:
-                if args.verbose:
-                    print("%s: %s: adding reference to %s" % (args.filename, base_glyphname, ref_glyphname))
-                base_glyph.addReference(ref_glyphname)
+            if args.verbose:
+                print("%s: %s: adding reference to %s" % (args.filename, base_glyphname, ref_glyphname))
+            base_glyph.addReference(ref_glyphname, xform)
 
         if old_width:
             base_glyph.width = old_width
