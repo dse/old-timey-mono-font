@@ -18,6 +18,7 @@ def main():
         data = data["references"]
 
     for i, (char_name, char_data) in enumerate(data.items()):
+        build_char_data = char_data["build"]
         (codepoint, glyphname, base_codepoint, base_glyphname, variant) = font_utils.parse_char_str(char_name)
 
         base_glyph = font.createChar(codepoint, glyphname)
@@ -26,8 +27,8 @@ def main():
 
         old_width = base_glyph.width
 
-        for j, (ref_char_name, ref_char_data) in enumerate(char_data.items()):
-            if ref_char_data is None:
+        for j, (ref_char_name, build_ref_char_data) in enumerate(build_char_data.items()):
+            if build_ref_char_data is None:
                 continue
 
             (ref_codepoint, ref_glyphname, ref_base_codepoint, ref_base_glyphname, ref_variant) = \
@@ -40,13 +41,13 @@ def main():
             x = 0
             y = 0
             rotate = 0
-            if "center" in ref_char_data:
-                if "x" in ref_char_data["center"]:
-                    x = ref_char_data["center"]["x"]
-                if "y" in ref_char_data["center"]:
-                    y = ref_char_data["center"]["y"]
-            if "rotate" in ref_char_data:
-                rotate = ref_char_data["rotate"]
+            if "center" in build_ref_char_data:
+                if "x" in build_ref_char_data["center"]:
+                    x = build_ref_char_data["center"]["x"]
+                if "y" in build_ref_char_data["center"]:
+                    y = build_ref_char_data["center"]["y"]
+            if "rotate" in build_ref_char_data:
+                rotate = build_ref_char_data["rotate"]
 
             xform = psMat.identity()
             if y or x:
@@ -55,8 +56,8 @@ def main():
                 xform = psMat.compose(xform, psMat.rotate(rotate / 180 * math.pi))
             if y or x:
                 xform = psMat.compose(xform, psMat.translate(x, y))
-            if "translate" in ref_char_data:
-                [x, y] = ref_char_data["translate"]
+            if "translate" in build_ref_char_data:
+                [x, y] = build_ref_char_data["translate"]
                 xform = psMat.compose(xform, psMat.translate(x, y))
             xform = tuple([round_if_approx(n) for n in xform])
 
