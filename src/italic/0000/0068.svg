@@ -8,8 +8,8 @@
    version="1.1"
    id="svg5"
    xml:space="preserve"
-   inkscape:version="1.3.2 (091e20e, 2023-11-25)"
-   sodipodi:docname="0068-latin-small-letter-h.svg"
+   inkscape:version="1.4.4 (1:1.4.4+202605061436+dcaf3e7d9e)"
+   sodipodi:docname="0068.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -25,14 +25,14 @@
    inkscape:deskcolor="#d1d1d1"
    inkscape:document-units="px"
    showgrid="false"
-   inkscape:zoom="0.19500451"
-   inkscape:cx="-612.80633"
-   inkscape:cy="487.16821"
-   inkscape:window-width="1440"
-   inkscape:window-height="847"
+   inkscape:zoom="1.1031121"
+   inkscape:cx="-135.52567"
+   inkscape:cy="1201.1472"
+   inkscape:window-width="2304"
+   inkscape:window-height="1427"
    inkscape:window-x="0"
-   inkscape:window-y="25"
-   inkscape:window-maximized="0"
+   inkscape:window-y="0"
+   inkscape:window-maximized="1"
    inkscape:current-layer="layer1"
    showguides="true"
    inkscape:lockguides="false">
@@ -229,8 +229,8 @@
     
     
     <path
-   style="display:inline;fill:none;stroke:#000000;stroke-width:0.249999;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
-   d="M 10.435813,81.000001 22.684653,23.373735"
+   style="display:inline;fill:none;stroke:#000000;stroke-width:0.255422;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+   d="M 10.170118,82.25 22.684653,23.373735"
    id="path274"
    sodipodi:nodetypes="cc" />
     <path

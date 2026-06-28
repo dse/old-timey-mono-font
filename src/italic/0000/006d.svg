@@ -8,8 +8,8 @@
    version="1.1"
    id="svg5"
    xml:space="preserve"
-   inkscape:version="1.3.2 (091e20e, 2023-11-25)"
-   sodipodi:docname="006d-latin-small-letter-m.svg"
+   inkscape:version="1.4.4 (1:1.4.4+202605061436+dcaf3e7d9e)"
+   sodipodi:docname="006d.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -25,14 +25,14 @@
    inkscape:deskcolor="#d1d1d1"
    inkscape:document-units="px"
    showgrid="false"
-   inkscape:zoom="0.46265371"
-   inkscape:cx="210.74077"
-   inkscape:cy="1257.9603"
-   inkscape:window-width="1440"
-   inkscape:window-height="847"
+   inkscape:zoom="0.92530742"
+   inkscape:cx="330.16054"
+   inkscape:cy="1024.5244"
+   inkscape:window-width="2304"
+   inkscape:window-height="1427"
    inkscape:window-x="0"
-   inkscape:window-y="25"
-   inkscape:window-maximized="0"
+   inkscape:window-y="0"
+   inkscape:window-maximized="1"
    inkscape:current-layer="layer1"
    showguides="true"
    inkscape:lockguides="true">
@@ -234,11 +234,11 @@
     
     
     <path
-   style="fill:none;stroke:#030303;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round"
-   d="M 8.5535209,81 16.816925,42.123735"
+   style="fill:none;stroke:#030303;stroke-width:0.258038;stroke-linecap:round;stroke-linejoin:round"
+   d="M 8.2878252,82.25 16.816925,42.123735"
    id="path691"
    sodipodi:nodetypes="cc"
-   inkscape:transform-center-x="19" />
+   inkscape:transform-center-x="19.610913" />
     <path
    style="fill:none;stroke:#030303;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round"
    d="M 47.058073,78.626265 53.418677,48.701979 C 54.683809,42.75 52.547962,38.5 47.829631,38.5 c -4.679111,0 -10.14457,5.230708 -13.575467,10.975951"
@@ -248,11 +248,11 @@
    inkscape:transform-center-y="-0.625" />
     <path
    style="fill:none;stroke:#030303;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round"
-   d="M 27.553521,81 34.418677,48.701979 C 35.683809,42.75 33.547962,38.5 28.829631,38.5 c -4.679111,0 -10.14457,5.230708 -13.575467,10.975951"
-   id="path701"
-   sodipodi:nodetypes="ccsc"
-   inkscape:transform-center-x="6.9218722"
-   inkscape:transform-center-y="-0.625" />
+   d="M 34.418677,48.701979 C 35.683809,42.75 33.547962,38.5 28.829631,38.5 c -4.679111,0 -10.14457,5.230708 -13.575467,10.975951"
+   id="path1" /><path
+   style="fill:none;stroke:#030303;stroke-width:0.259676;stroke-linecap:round;stroke-linejoin:round"
+   d="M 27.287825,82.25 34.418677,48.701979"
+   id="path701" />
   <path
    style="display:inline;fill:none;stroke:#000000;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round"
    id="path32"
