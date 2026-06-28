@@ -45,10 +45,17 @@ def main():
             y = 0
             rotate = 0
             if "center" in ref_char_data:
-                if "x" in ref_char_data["center"]:
-                    x = ref_char_data["center"]["x"]
-                if "y" in ref_char_data["center"]:
-                    y = ref_char_data["center"]["y"]
+                center = ref_char_data["center"]
+                if type(center) is list:
+                    if len(center) >= 1:
+                        x = center[0]
+                    if len(center) >= 2:
+                        y = center[1]
+                elif type(center) is dict:
+                    if "x" in center:
+                        x = center["x"]
+                    if "y" in center:
+                        y = center["y"]
             if "rotate" in ref_char_data:
                 rotate = ref_char_data["rotate"]
 
@@ -62,7 +69,7 @@ def main():
             if "translate" in ref_char_data:
                 [x, y] = ref_char_data["translate"]
                 xform = psMat.compose(xform, psMat.translate(x, y))
-            xform = tuple([round_if_approx(n) for n in xform])
+            xform = tuple([round_if_approx(n) for n in xform]) # something doesn't like x.xxxe-16 floats
 
             if args.verbose:
                 print("%s: %s: adding reference to %s" % (args.filename, base_glyphname, ref_glyphname))
