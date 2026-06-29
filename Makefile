@@ -108,7 +108,7 @@ FONTTOOL__LIGHT			= --expand-stroke 72
 
 FONTTOOL__COND			= --aspect 0.833333 # 12cpi
 
-SRC_SVGS			= $(shell find $(SRC_VECTOR) -type f -name '*.svg')
+SRC_SVGS			= $(shell find $(SRC_VECTOR_UPRIGHT) -type f -name '*.svg')
 
 TESTFONTS_DIR			= tmp/testfonts
 
@@ -397,26 +397,6 @@ italic: FORCE
 	support/bin/fontrefs.py -v \
 		OldTimeyMono-Italic.sfd \
 		src/data/italic.json
-
-upright: FORCE
-	support/bin/fontcreate.py -v \
-		--create \
-		--encoding=UnicodeFull \
-		--fontname="OldTimeyMono" \
-		--fullname="Old Timey Mono" \
-		--family-name="Old Timey Mono" \
-		--weight-name="Medium" \
-		--version=0.0.0 --sfnt-revision=0.000 \
-		--ascent 1344 --descent 336 \
-		--width 1008 \
-		--italic-angle 0 \
-		--vendor DARN \
-		--upos -300 \
-		--uwidth 96 \
-		--ttf-weight 500 \
-		--panose 0 0 0 9 0 0 0 0 0 0 \
-		--no-grid-fit \
-		OldTimeyMono.sfd
 
 fontinfo: FORCE
 	support/bin/fontinfo.py src/basefont/OldTimeyMono.sfd > OldTimeyMono.txt
