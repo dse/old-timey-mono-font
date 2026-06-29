@@ -65,90 +65,64 @@ def main():
     # MONOSPACE
     common_glyph_width = statistics.mode([glyph.width for glyph in font.glyphs()])
 
-    if args.expand_stroke is None:
-        if args.verbose >= 2:
-            print("strokes.py %s: --expand-stroke not specified; not expanding strokes" % args.font_filename)
-    else:
-        for glyph in font.glyphs():
-            if glyph.glyphname == ".notdef":
-                continue
-                
-            glyph_data = get_glyph_char_data(glyph) # always a dict
-            real_codepoint = get_base_codepoint(glyph)
-            print(real_codepoint)
+    for glyph in font.glyphs():
+        if glyph.glyphname == ".notdef":
+            continue
 
-            if real_codepoint in range(0xfaf00, 0xfaf00 + 0x0100):
-                print(repr(glyph_data))
+        glyph_data = get_glyph_char_data(glyph) # always a dict
+        real_codepoint = get_base_codepoint(glyph)
 
-            fill_flag = glyph_data.get("fill", False)
-            expand_flag = glyph_data.get("expandStrokes", True)
-            if not expand_flag:
-                if args.verbose >= 2:
-                    print("strokes.py %s: %s %s is flagged 'expandStrokes: false'; not expanding strokes on this glyph" %
-                          (args.font_filename, glyph.glyphname, u(real_codepoint)))
-                continue
-            has_contours   = len(glyph.foreground) != 0
-            has_references = len(glyph.references) != 0
+        fill_flag = glyph_data.get("fill", False)
+        expand_flag = glyph_data.get("expandStrokes", True)
+        if not expand_flag:
+            if args.verbose >= 2:
+                print("strokes.py: %s: %s (%s): flagged 'expandStrokes: false'; not expanding strokes" %
+                      (args.font_filename, glyph.glyphname, u(glyph.unicode)))
+            continue
+        has_contours   = len(glyph.foreground) != 0
+        has_references = len(glyph.references) != 0
 
+        if args.verbose:
             if not has_contours:
-                if args.verbose >= 2:
-                    print("strokes.py %s: %s %s: no contours; continuing" %
-                          (args.font_filename, glyph.glyphname, u(real_codepoint)))
+                print("strokes.py: %s: %s (%s): INFO: has no contours" % 
+                      (args.font_filename, glyph.glyphname, u(glyph.unicode)))
             elif has_references:
-                if args.verbose >= 2:
-                    print("strokes.py %s: %s %s: NOTICE: contains both references AND contours; continuing" %
-                          (args.font_filename, glyph.glyphname, u(real_codepoint)))
+                print("strokes.py: %s: %s (%s): INFO: contains both references AND contours" %
+                      (args.font_filename, glyph.glyphname, u(glyph.unicode)))
 
-            if args.verbose:
-                if glyph.unicode >= 0:
-                    print("strokes.py: expanding strokes on %s U+%04X" % (glyph.glyphname, glyph.unicode))
-                else:
-                    print("strokes.py: expanding strokes on %s (-1)" % glyph.glyphname)
-            orig_width = glyph.width
-            expand_params = {}
-            line_join = glyph_data.get("linejoin")
-            line_cap = glyph_data.get("linecap")
-            if line_join is not None and not (line_join in SVG_LINEJOIN_VALUES):
-                raise Exception("invalid line join value: %s" % line_join)
-            if line_cap is not None and not (line_cap in SVG_LINECAP_VALUES):
-                raise Exception("invalid line cap value: %s" % line_cap)
-            if line_join is not None:
-                if line_join == "miter-clip":
-                    line_join = "miterclip"
-                expand_params["join"] = line_join
-            if line_cap is not None:
-                if line_cap == "square":
-                    line_cap = "butt"
-                    expand_params["extendcap"] = 0.5
-                expand_params["cap"] = line_cap
-            if fill_flag:
-                expand_params["removeinternal"] = True
-            if args.verbose < 2:
-                silence.on()
-            if args.verbose >= 2:
-                print("strokes.py: calling glyph.stroke(%s, %s)" % 
-                      (repr(args.expand_stroke),
-                       json.dumps(expand_params)))
-            glyph.stroke("circular", args.expand_stroke, **expand_params)
-            # nib type: circular
-            # major axis: 96
-            # minor axis: 96
-            # nib angle: 45
-            # line cap: round
-            # line join: round
-            # accuracy target: 0.25
-            # remove overlap: by layer
-            # simplify: yes
-            # add extremata: yes
-            if args.verbose >= 2:
-                print("strokes.py: glyph.stroke() finished")
-            # glyph.correctDirection()
-            if args.verbose < 2:
-                silence.off()
-            if orig_width != 0:
-                glyph.width = orig_width
-            else:
-                glyph.width = common_glyph_width # MONOSPACE
+        if args.verbose:
+            print("strokes.py: %s: %s (%s): will expand strokes" % 
+                  (args.font_filename, glyph.glyphname, u(glyph.unicode)))
+        orig_width = glyph.width
+        expand_params = {}
+        line_join = glyph_data.get("linejoin")
+        line_cap = glyph_data.get("linecap")
+        if line_join is not None and not (line_join in SVG_LINEJOIN_VALUES):
+            raise Exception("invalid line join value: %s" % line_join)
+        if line_cap is not None and not (line_cap in SVG_LINECAP_VALUES):
+            raise Exception("invalid line cap value: %s" % line_cap)
+        if line_join is not None:
+            if line_join == "miter-clip":
+                line_join = "miterclip"
+            expand_params["join"] = line_join
+        if line_cap is not None:
+            if line_cap == "square":
+                line_cap = "butt"
+                expand_params["extendcap"] = 0.5
+            expand_params["cap"] = line_cap
+        if fill_flag:
+            expand_params["removeinternal"] = True
+        if args.verbose:
+            print("strokes.py: %s: %s (%s): expanding strokes by %d, with parameters %s" % 
+                  (args.font_filename, glyph.glyphname, u(glyph.unicode), repr(args.expand_stroke), json.dumps(expand_params)))
+        glyph.stroke("circular", args.expand_stroke, **expand_params)
+        if args.verbose:
+            print("strokes.py: %s: %s (%s): finished expanding strokes" % 
+                  (args.font_filename, glyph.glyphname, u(glyph.unicode)))
+        if orig_width != 0:
+            glyph.width = orig_width
+        else:
+            glyph.width = common_glyph_width # MONOSPACE
 
     if write_font_filename.endswith('.sfd'):
         if args.verbose >= 2:
