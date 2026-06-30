@@ -395,10 +395,10 @@ italic: FORCE
 	support/bin/fontimport.py -v \
 		--italic \
 		OldTimeyMono-Italic.sfd \
-		src/data/italic.json
+		src/data/old-timey-mono.json
 	support/bin/fontrefs.py -v \
 		OldTimeyMono-Italic.sfd \
-		src/data/italic.json
+		src/data/old-timey-mono.json
 
 fontinfo: FORCE
 	support/bin/fontinfo.py src/basefont/OldTimeyMono.sfd > OldTimeyMono.txt
