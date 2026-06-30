@@ -109,6 +109,7 @@ FONTTOOL__LIGHT			= --expand-stroke 72
 FONTTOOL__COND			= --aspect 0.833333 # 12cpi
 
 SRC_SVGS			= $(shell find $(SRC_VECTOR_UPRIGHT) -type f -name '*.svg')
+SRC_ITALIC_SVGS			= $(shell find $(SRC_VECTOR_ITALIC) -type f -name '*.svg')
 
 TESTFONTS_DIR			= tmp/testfonts
 
@@ -367,44 +368,19 @@ release:
 website: FORCE
 	cd website/v5 && make
 
+ITALIC_SFD = OldTimeyMono-Italic.sfd
+
 italic: FORCE
-	support/bin/fontcreate.py -v \
-		--create \
-		--encoding=UnicodeFull \
-		--fontname="OldTimeyMono-Italic" \
-		--fullname="Old Timey Mono Italic" \
-		--family-name="Old Timey Mono" \
-		--weight-name="Medium" \
-		--version=0.0.0 --sfnt-revision=0.000 \
-		--ascent 1344 --descent 336 \
-		--width 1008 \
-		--italic-angle -12 \
-		--vendor DARN \
-		--upos -300 \
-		--uwidth 96 \
-		--ttf-weight 500 \
-		--panose 0 0 0 9 0 0 0 0 0 0 \
-		--no-grid-fit \
-		OldTimeyMono-Italic.sfd
-	support/bin/fontimport.py -v \
-		--italic \
-		OldTimeyMono-Italic.sfd \
-		$(SRC_VECTOR_UPRIGHT)/0000/*.svg \
-		$(SRC_VECTOR_ITALIC)/*/*.svg \
-		$(SRC_VECTOR_ITALIC)/variants/*/*.svg
-	support/bin/fontimport.py -v \
-		--italic \
-		OldTimeyMono-Italic.sfd \
-		src/data/old-timey-mono.json
-	support/bin/fontrefs.py -v \
-		OldTimeyMono-Italic.sfd \
-		src/data/old-timey-mono.json
+	cp src/basefont/OldTimeyMono.sfd $(ITALIC_SFD)
+	support/bin/fontset.py -v --fontname="OldTimeyMono-Italic" --fullname="Old Timey Mono Italic" --family-name="Old Timey Mono" --italic-angle -12 \
+		$(ITALIC_SFD)			
+	support/bin/glyphcomments.py --erase $(ITALIC_SFD)
+	support/bin/fontimport.py -v --italic $(ITALIC_SFD) $(SRC_ITALIC_SVGS)
+	support/bin/italicadjust.py -v $(ITALIC_SFD)
 
 fontinfo: FORCE
-	support/bin/fontinfo.py src/basefont/OldTimeyMono.sfd > OldTimeyMono.txt
-	support/bin/fontinfo.py OldTimeyMono-Italic.sfd > OldTimeyMono-Italic.txt
-	sed -E -e '/^BeginChars: /q' src/basefont/OldTimeyMono.sfd > OldTimeyMono.sfd.txt
-	sed -E -e '/^BeginChars: /q' OldTimeyMono-Italic.sfd > OldTimeyMono-Italic.sfd.txt
+	support/bin/fontinfo.py $(ITALIC_SFD) > $(ITALIC_SFD).info.txt
+	sed -E -e '/^BeginChars: /q' $(ITALIC_SFD) > $(ITALIC_SFD).txt
 
 .PHONY: FORCE
 
