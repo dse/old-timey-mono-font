@@ -375,7 +375,7 @@ italic: FORCE
 	support/bin/fontset.py -v --fontname="OldTimeyMono-Italic" --fullname="Old Timey Mono Italic" --family-name="Old Timey Mono" --italic-angle -12 \
 		$(ITALIC_SFD)			
 	support/bin/glyphcomments.py --erase $(ITALIC_SFD)
-	support/bin/fontimport.py -v --italic $(ITALIC_SFD) $(SRC_ITALIC_SVGS)
+	support/bin/fontimport.py --comment "italicized" -w 1008 -v --italic $(ITALIC_SFD) $(SRC_ITALIC_SVGS)
 	support/bin/italicadjust.py -v $(ITALIC_SFD)
 
 fontinfo: FORCE

@@ -11,8 +11,9 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("filename", help="font filename")
     parser.add_argument("-v", "--verbose", action="count", default=0)
+    parser.add_argument("-w", "--width", type=int)
+    parser.add_argument("--comment", type=str)
     parser.add_argument("import_filenames", nargs="+", help="vector files, typically SVG")
-    parser.add_argument("--width", type=int, help="width for imported glyphs")
     parser.add_argument("--italic", action="store_true")
     args = parser.parse_args()
 
@@ -25,6 +26,8 @@ def main():
     else:
         glyph_width = round(font.em / 3)
 
+    print(glyph_width)
+
     for import_filename in args.import_filenames:
 
         if import_filename.endswith(".svg"):
@@ -34,11 +37,14 @@ def main():
 
             glyph = font.createChar(codepoint, glyphname)
             glyph.foreground = fontforge.layer() # clear existing glyph
-            glyph.width = glyph_width
             font.strokedfont = True # avoid expanding strokes automatically
             glyph.importOutlines(import_filename)
             font.strokedfont = False
             glyph.stroke("circular", STROKE_WIDTH)
+            glyph.width = glyph_width
+
+            if args.comment is not None:
+                glyph.comment = args.comment
 
         elif import_filename.endswith(".json"):
             if args.verbose:
@@ -55,8 +61,8 @@ def main():
                     import_filename = source
 
                 glyph = font.createChar(codepoint, glyphname)
+                glyph_width = glyph.width
                 glyph.foreground = fontforge.layer() # clear existing glyph
-                glyph.width = glyph_width
                 font.strokedfont = True # avoid expanding strokes automatically
                 glyph.importOutlines(import_filename)
                 font.strokedfont = False
@@ -71,6 +77,11 @@ def main():
                         angle = italic_shift.get("angle", -12)
                         shift_x = (y_pivot - y_center) * math.tan(angle * math.pi / 180)
                         glyph.transform(psMat.translate(shift_x, 0))
+
+                glyph.width = glyph_width
+
+                if args.comment is not None:
+                    glyph.comment = args.comment
 
     if args.filename.endswith(".sfd"):
         font.save(args.filename)
