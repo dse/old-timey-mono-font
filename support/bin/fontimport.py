@@ -13,6 +13,7 @@ def main():
     parser.add_argument("-v", "--verbose", action="count", default=0)
     parser.add_argument("import_filenames", nargs="+", help="vector files, typically SVG")
     parser.add_argument("--width", type=int, help="width for imported glyphs")
+    parser.add_argument("--italic", action="store_true")
     args = parser.parse_args()
 
     font = fontforge.open(args.filename)
@@ -45,13 +46,10 @@ def main():
             imports = data["imports"]
             for idx, (charname, source) in enumerate(imports.items()):
                 (codepoint, glyphname, base_codepoint, base_glyphname, variant) = parse_char_str(charname)
-                print("%s => (codepoint=%s, glyphname=%s, base_codepoint=%s, base_glyphname=%s, variant=%s)" % (charname, codepoint, glyphname, base_codepoint, base_glyphname, variant))
                 if type(source) is dict:
                     import_filename = source.get("filename")
                 elif type(source) is str:
                     import_filename = source
-                if args.verbose:
-                    print("fontimport.py: importing %s into %s at %s" % (import_filename, glyphname, u(codepoint)))
 
                 glyph = font.createChar(codepoint, glyphname)
                 glyph.foreground = fontforge.layer() # clear existing glyph
@@ -61,14 +59,15 @@ def main():
                 font.strokedfont = False
                 glyph.stroke("circular", STROKE_WIDTH)
 
-                if "italicShift" in source:
-                    italic_shift = source["italicShift"]
-                    (_, y_min, _, y_max) = glyph.boundingBox()
-                    y_center = (y_min + y_max) / 2
-                    y_pivot = italic_shift.get("y", 0)
-                    angle = italic_shift.get("angle", -12)
-                    shift_x = (y_pivot - y_center) * math.tan(angle * math.pi / 180)
-                    glyph.transform(psMat.translate(shift_x, 0))
+                if args.italic:
+                    if "italicShift" in source:
+                        italic_shift = source["italicShift"]
+                        (_, y_min, _, y_max) = glyph.boundingBox()
+                        y_center = (y_min + y_max) / 2
+                        y_pivot = italic_shift.get("y", 0)
+                        angle = italic_shift.get("angle", -12)
+                        shift_x = (y_pivot - y_center) * math.tan(angle * math.pi / 180)
+                        glyph.transform(psMat.translate(shift_x, 0))
 
     if args.filename.endswith(".sfd"):
         font.save(args.filename)
