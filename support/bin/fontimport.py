@@ -41,11 +41,14 @@ def main():
             glyph.stroke("circular", STROKE_WIDTH)
 
         elif import_filename.endswith(".json"):
+            if args.verbose:
+                print("fontimport.py: reading JSON imports from %s" % import_filename)
             with open(import_filename, "r") as fh:
                 data = json.load(fh)
             imports = data["imports"]
+            aliases = data["aliases"]
             for idx, (charname, source) in enumerate(imports.items()):
-                (codepoint, glyphname, base_codepoint, base_glyphname, variant) = parse_char_str(charname)
+                (codepoint, glyphname, base_codepoint, base_glyphname, variant) = parse_char_str(charname, aliases=aliases)
                 if type(source) is dict:
                     import_filename = source.get("filename")
                 elif type(source) is str:
