@@ -74,13 +74,23 @@ def do_italic_shift(glyph, italic_shift_type):
         return
     new_refs = []
 
+    glyphs = get_glyph_ref_struct(glyph)
+    italicizable_base_glyph_names = [g.glyphname for g in glyphs if is_italicizable_base(g)]
+    italicizable_marks = [
+        glyph.font[ref[0]]
+        for ref in glyph.references
+        if is_italicizable_mark(glyph.font[ref[0]])
+    ]
+
     ref_glyphs = [glyph.font[ref[0]] for ref in glyph.references]
     ref_base_glyphs = [glyph for glyph in ref_glyphs if is_italicizable_base(glyph)]
     ref_base_glyph_names = [glyph.glyphname for glyph in ref_base_glyphs]
 
     correction = 0
-    if ref_base_glyph_names == ["a"]:
+    if italicizable_base_glyph_names == ["a"]:
         correction = 80
+    elif italicizable_base_glyph_names == ["y"]:
+        correction = -60
 
     for ref in glyph.references:
         ref_glyph = glyph.font[ref[0]]
@@ -123,5 +133,19 @@ def transform_point(point, transform):
     t = numpy.array([[a, c, e], [b, d, f], [0, 0, 1]])
     point = t @ point
     return point[0:2]
+
+def get_glyph_ref_struct(glyph):
+    a = [glyph] if len(glyph.foreground) else []
+    for ref in glyph.references:
+        a += get_glyph_ref_struct(glyph.font[ref[0]])
+    return a
+
+def flatten_deep(iterable):
+    for item in iterable:
+        # Check if the item is a list or tuple, but exclude strings
+        if isinstance(item, (list, tuple)):
+            yield from flatten_deep(item)
+        else:
+            yield item
 
 main()
