@@ -234,12 +234,12 @@
             "features": ["ss01", "ss02"],
             "subtables": {
                 "Code Brackets-1": {
-                    "parenleft": "parenleft.ss02",
-                    "parenright": "parenright.ss02",
-                    "bracketleft": "bracketleft.ss02",
-                    "bracketright": "bracketright.ss02",
-                    "braceleft": "braceleft.ss02",
-                    "braceright": "braceright.ss02"
+                    "parenleft": "parenleft.WIDE",
+                    "parenright": "parenright.WIDE",
+                    "bracketleft": "bracketleft.WIDE",
+                    "bracketright": "bracketright.WIDE",
+                    "braceleft": "braceleft.WIDE",
+                    "braceright": "braceright.WIDE"
                 }
             }
         },
@@ -517,6 +517,12 @@
         "parenright.ss02":       "RIGHT PARENTHESIS, WITH ENHANCED VISIBILITY",
         "braceright.ss02":       "RIGHT CURLY BRACKET, WITH ENHANCED VISIBILITY",
         "braceleft.ss02":        "LEFT CURLY BRACKET, WITH ENHANCED VISIBILITY",
+        "parenleft.WIDE":        "LEFT PARENTHESIS, WITH EXTRA ENHANCED VISIBILITY",
+        "bracketleft.WIDE":      "LEFT SQUARE BRACKET, WITH EXTRA ENHANCED VISIBILITY",
+        "bracketright.WIDE":     "RIGHT SQUARE BRACKET, WITH EXTRA ENHANCED VISIBILITY",
+        "parenright.WIDE":       "RIGHT PARENTHESIS, WITH EXTRA ENHANCED VISIBILITY",
+        "braceright.WIDE":       "RIGHT CURLY BRACKET, WITH EXTRA ENHANCED VISIBILITY",
+        "braceleft.WIDE":        "LEFT CURLY BRACKET, WITH EXTRA ENHANCED VISIBILITY",
         "asciitilde.cv14":       "TILDE WITH ENHANCED VISIBILITY"
     }
 }
