@@ -387,11 +387,13 @@ italic: FORCE
 		--no-grid-fit \
 		OldTimeyMono-Italic.sfd
 	support/bin/fontimport.py -v \
+		--italic \
 		OldTimeyMono-Italic.sfd \
 		$(SRC_VECTOR_UPRIGHT)/0000/*.svg \
 		$(SRC_VECTOR_ITALIC)/*/*.svg \
 		$(SRC_VECTOR_ITALIC)/variants/*/*.svg
 	support/bin/fontimport.py -v \
+		--italic \
 		OldTimeyMono-Italic.sfd \
 		src/data/italic.json
 	support/bin/fontrefs.py -v \
