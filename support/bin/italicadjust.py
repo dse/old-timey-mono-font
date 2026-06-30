@@ -1,5 +1,5 @@
 #!/usr/bin/env -S fontforge -quiet -lang=py -script
-import fontforge, argparse, math, unicodedata, psMat, os, sys
+import fontforge, argparse, math, unicodedata, psMat, os, sys, numpy
 
 sys.path.append(os.getenv("HOME") + "/git/dse.d/pyfontutils/lib")
 from font_utils import parse_char_str, u
@@ -86,7 +86,13 @@ def do_italic_shift(glyph, italic_shift_type):
         ref_glyph = glyph.font[ref[0]]
         if is_italicizable_mark(ref_glyph):
             (_, y_min, _, y_max) = ref_glyph.boundingBox()
-            mark_y_center = (y_min + y_max) / 2
+            (x_min, y_min, x_max, y_max) = ref_glyph.boundingBox()
+
+            # work with transformed accent references
+            center = ((x_min + x_max) / 2, (y_min + y_max) / 2)
+            center = transform_point(center, ref[1])
+            mark_y_center = center[1]
+
             if args.verbose:
                 print("    %s (%s) is %d milliems above the appropriate height" % (ref_glyph.glyphname,
                                                                                    u(ref_glyph.unicode),
@@ -110,5 +116,12 @@ def is_italicizable_mark(glyph):
 
 def is_italicizable_base(glyph):
     return glyph.temporary["cat"] in ["Ll", "Lu"]
+
+def transform_point(point, transform):
+    point = (*point, 1)
+    (a, b, c, d, e, f) = transform
+    t = numpy.array([[a, c, e], [b, d, f], [0, 0, 1]])
+    point = t @ point
+    return point[0:2]
 
 main()
