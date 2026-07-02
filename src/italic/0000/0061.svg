@@ -25,9 +25,9 @@
    inkscape:deskcolor="#d1d1d1"
    inkscape:document-units="px"
    showgrid="false"
-   inkscape:zoom="0.57301635"
-   inkscape:cx="590.73358"
-   inkscape:cy="816.73062"
+   inkscape:zoom="1.620735"
+   inkscape:cx="602.50442"
+   inkscape:cy="1077.906"
    inkscape:window-width="2304"
    inkscape:window-height="1427"
    inkscape:window-x="0"
@@ -225,18 +225,18 @@
    inkscape:groupmode="layer"
    id="layer1"
    style="display:inline"><path
-   style="display:inline;opacity:1;fill:none;stroke:#000000;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+   style="display:inline;opacity:1;fill:none;stroke:#000000;stroke-width:0.249999;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
    id="path36"
    sodipodi:type="arc"
-   sodipodi:cx="47.367455"
-   sodipodi:cy="79.249992"
-   sodipodi:rx="3"
-   sodipodi:ry="3"
+   sodipodi:cx="51.072178"
+   sodipodi:cy="76.249969"
+   sodipodi:rx="6.0000248"
+   sodipodi:ry="6.0000248"
    sodipodi:start="1.3613568"
    sodipodi:end="3.3510322"
    sodipodi:open="true"
    sodipodi:arc-type="arc"
-   d="M 47.99119,82.184435 A 3,3 0 0 1 45.246134,81.371313 3,3 0 0 1 44.433012,78.626257" /><path
+   d="M 52.319653,82.118879 A 6.0000248,6.0000248 0 0 1 46.82952,80.492628 6.0000248,6.0000248 0 0 1 45.203268,75.002494" /><path
    id="path2079-3"
    style="display:inline;opacity:1;fill:none;stroke:#000000;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
    d="M 9.7187946,60.374992 C 6.9932332,73.19775 12.738178,82.249991 23.909489,82.249991 c 10.258387,0 21.834995,-9.793766 24.402941,-21.874999 2.567943,-12.081225 -5.453811,-21.875 -15.205029,-21.875 -10.055522,0 -20.730587,9.370042 -23.3886064,21.875 z"
@@ -245,7 +245,7 @@
    inkscape:transform-center-y="-8.5e-06" />
     <path
    style="display:inline;fill:none;stroke:#000000;stroke-width:0.258038;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-   d="M 52.962113,38.5 44.433012,78.626257"
+   d="M 52.962113,38.5 45.203268,75.002494"
    id="path34"
    inkscape:transform-center-x="-13.973214"
    inkscape:transform-center-y="-6.9661155"
@@ -253,6 +253,6 @@
     
   <path
    style="opacity:1;fill:none;stroke:#000000;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
-   d="M 47.991191,82.184429 59.135849,79.815561"
+   d="m 52.319653,82.118879 6.816196,-1.448825"
    id="path38" /></g>
 </svg>

@@ -25,9 +25,9 @@
    inkscape:deskcolor="#d1d1d1"
    inkscape:document-units="px"
    showgrid="false"
-   inkscape:zoom="0.87918413"
-   inkscape:cx="398.66506"
-   inkscape:cy="1069.1731"
+   inkscape:zoom="1.8114236"
+   inkscape:cx="599.25242"
+   inkscape:cy="1068.7726"
    inkscape:window-width="2304"
    inkscape:window-height="1427"
    inkscape:window-x="0"
@@ -240,26 +240,26 @@
     
     <path
    style="fill:none;stroke:#030303;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round"
-   d="M 42.389497,78.626265 48.449515,50.116116 C 49.861626,43.472657 46.888069,38.5 39.803112,38.5 33.430665,38.5 28.097498,42.21967 19.155855,51"
+   d="M 43.15975,75.002502 48.449515,50.116116 C 49.861626,43.472657 46.888069,38.5 39.803112,38.5 33.430665,38.5 28.097498,42.21967 19.155855,51"
    id="path922"
    sodipodi:nodetypes="ccsc"
    inkscape:transform-center-x="-2.473765"
    inkscape:transform-center-y="-0.625" />
   <path
-   style="display:inline;fill:none;stroke:#000000;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+   style="display:inline;fill:none;stroke:#000000;stroke-width:0.249999;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
    id="path36"
    sodipodi:type="arc"
-   sodipodi:cx="45.32394"
-   sodipodi:cy="79.25"
-   sodipodi:rx="3"
-   sodipodi:ry="3"
+   sodipodi:cx="49.02866"
+   sodipodi:cy="76.249977"
+   sodipodi:rx="6.0000248"
+   sodipodi:ry="6.0000248"
    sodipodi:start="1.3613568"
    sodipodi:end="3.3510322"
    sodipodi:open="true"
    sodipodi:arc-type="arc"
-   d="M 45.947675,82.184443 A 3,3 0 0 1 43.20262,81.37132 3,3 0 0 1 42.389497,78.626265" /><path
+   d="M 50.276135,82.118887 A 6.0000248,6.0000248 0 0 1 44.786002,80.492635 6.0000248,6.0000248 0 0 1 43.15975,75.002502" /><path
    style="display:inline;fill:none;stroke:#000000;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
-   d="M 45.947673,82.184433 57.09232,79.815567"
+   d="M 50.276135,82.118887 57.09232,80.670064"
    id="path38" /><path
    style="display:inline;fill:none;stroke:#000000;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round"
    id="path32"
