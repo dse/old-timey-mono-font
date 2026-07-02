@@ -90,7 +90,7 @@ def do_italic_shift(glyph, italic_shift_type):
     if italicizable_base_glyph_names == ["a"]:
         correction = 80
     elif italicizable_base_glyph_names == ["y"]:
-        correction = -60
+        correction = 20
 
     for ref in glyph.references:
         ref_glyph = glyph.font[ref[0]]
