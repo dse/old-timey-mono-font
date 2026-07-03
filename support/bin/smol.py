@@ -16,12 +16,16 @@ def main():
     parser.add_argument('font_filename', help="font filename")
     parser.add_argument('-o', '--save-as', '--output', type=str)
     parser.add_argument('--verbose', '-v', action='count', default=0)
+    parser.add_argument('--no-special', action='store_true')
+    parser.add_argument('--expand-stroke', '--expand', type=int, default=0)
     args = parser.parse_args()
 
     if "DEBUG" in os.environ:
         print("smol.py %s: Opening and reading..." % args.font_filename)
     font = fontforge.open(args.font_filename)
     write_font_filename = args.save_as if args.save_as is not None else args.font_filename
+
+    special = not args.no_special
 
     if "DEBUG" in os.environ:
         print("smol.py %s: Creating small glyphs..." % args.font_filename)
@@ -32,7 +36,9 @@ def main():
                       UNICODE["GREEK_SMALL_LETTER_RHO"],
                       UNICODE["GREEK_SMALL_LETTER_PHI"],
                       UNICODE["GREEK_SMALL_LETTER_CHI"]]:
-        create_smol_glyph(font, codepoint)
+        glyph = create_smol_glyph(font, codepoint, special=special)
+        if args.expand_stroke:
+            glyph.stroke("circular", args.expand_stroke, join="round", cap="round")
 
     if write_font_filename.endswith('.sfd'):
         if "DEBUG" in os.environ:

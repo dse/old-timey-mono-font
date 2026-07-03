@@ -135,34 +135,38 @@ def parse_glyph_svg_filename(filename):
 
 STROKE_WIDTH_BASIS = 96
 
-def create_smol_glyph(font, codepoint):
+def create_smol_glyph(font, codepoint, special=False):
     font_path = os.path.relpath(font.path)
     plain_glyphname = fontforge.nameFromUnicode(codepoint)
     simpl_glyphname = fontforge.nameFromUnicode(codepoint) + ".ss07"
     orig_glyphname = fontforge.nameFromUnicode(codepoint) + ".ORIG"
     glyphname = None
 
-    # for certain regular glyphs, use a special glyph to make smaller.
-    if plain_glyphname == 'equal':
-        glyphname = 'equal.cv11'
-    elif plain_glyphname == 'comma':
-        glyphname = 'comma.ss05'
-    elif plain_glyphname == 'period':
-        glyphname = 'period.ss05'
-    elif plain_glyphname == 'colon':
-        glyphname = 'colon.ss05'
-    elif plain_glyphname == 'semicolon':
-        glyphname = 'semicolon.ss05'
+    if special:
+        # for certain regular glyphs, use a special glyph to make smaller.
+        if plain_glyphname == 'equal':
+            glyphname = 'equal.cv11'
+        elif plain_glyphname == 'comma':
+            glyphname = 'comma.ss05'
+        elif plain_glyphname == 'period':
+            glyphname = 'period.ss05'
+        elif plain_glyphname == 'colon':
+            glyphname = 'colon.ss05'
+        elif plain_glyphname == 'semicolon':
+            glyphname = 'semicolon.ss05'
 
-    # for certain glyphs, if certain variants are there use them.
-    elif simpl_glyphname in font:
-        glyphname = simpl_glyphname
-    elif orig_glyphname in font:
-        glyphname = orig_glyphname
-    elif plain_glyphname in font: # most of the time this is the case.
-        glyphname = plain_glyphname
+        # for certain glyphs, if certain variants are there use them.
+        elif simpl_glyphname in font:
+            glyphname = simpl_glyphname
+        elif orig_glyphname in font:
+            glyphname = orig_glyphname
+        elif plain_glyphname in font: # most of the time this is the case.
+            glyphname = plain_glyphname
+        else:
+            return
     else:
-        return
+        glyphname = plain_glyphname
+
     glyph = font[glyphname]
     orig_width = glyph.width
 
@@ -181,6 +185,8 @@ def create_smol_glyph(font, codepoint):
     sm_glyph.transform(psMat.scale(0.5))
     sm_glyph.transform(psMat.translate(orig_width / 4, STROKE_WIDTH_BASIS / 4))
     sm_glyph.width = glyph.width
+
+    return sm_glyph
 
 def check_all_glyph_bounds(font, width=None):
     for glyph in font.glyphs():

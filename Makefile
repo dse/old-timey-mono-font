@@ -377,6 +377,7 @@ italic: FORCE
 	support/bin/glyphcomments.py --erase $(ITALIC_SFD)
 	support/bin/fontimport.py --comment "italicized" -w 1008 -v --italic $(ITALIC_SFD) $(SRC_ITALIC_SVGS)
 	support/bin/italicadjust.py -v $(ITALIC_SFD)
+	$(SMOL_PY) --no-special --expand-stroke 48 $(ITALIC_SFD)
 
 fontinfo: FORCE
 	support/bin/fontinfo.py $(ITALIC_SFD) > $(ITALIC_SFD).info.txt
