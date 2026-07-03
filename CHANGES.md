@@ -26,7 +26,7 @@
 -   Specimen fixes.
 -   Build process fixes.
 
-## Next Version
+## 0.11.0
 
 as of 2025-12-21
 
@@ -82,3 +82,55 @@ Administrative Changes Not Affecting the Font:
 -   I have an official vendor ID!  I am officially registered on
     Microsoft's font vendor registry as "DARN"!
 -   Numerous build process enhancements and fixes.
+
+## 0.12.0
+
+2026-07-03
+
+-   redrawn U+00DF LATIN SMALL LETTER SHARP S
+-   redrawn U+1E9E LATIN CAPITAL LETTER SHARP S
+-   improved code variants for \( \) \[ \] \{ \}
+-   redrawn U+20AC EURO SIGN
+-   more accent placement fixes
+-   U+2260 NOT EQUAL TO had wrong symbol; no longer does
+-   some box drawing characters fixed
+-   heavy box drawing characters made heavier
+-   new glyphs:
+    -   U+03F4    GREEK CAPITAL THETA SYMBOL
+    -   U+2213    MINUS-OR-PLUS SIGN
+    -   U+222C    DOUBLE INTEGRAL
+    -   U+222D    TRIPLE INTEGRAL
+    -   U+2235    BECAUSE
+    -   U+2236    RATIO
+    -   U+2237    PROPORTION
+    -   U+2249    NOT ALMOST EQUAL TO
+    -   U+2262    NOT IDENTICAL TO
+    -   U+2263    STRICTLY EQUIVALENT TO
+    -   U+22A2    RIGHT TACK
+    -   U+22A3    LEFT TACK
+    -   U+22A4    DOWN TACK
+    -   U+27E8    MATHEMATICAL LEFT ANGLE BRACKET
+    -   U+27E9    MATHEMATICAL RIGHT ANGLE BRACKET
+    -   U+27EA    MATHEMATICAL LEFT DOUBLE ANGLE BRACKET
+    -   U+27EB    MATHEMATICAL RIGHT DOUBLE ANGLE BRACKET
+    -   U+1FB81   HORIZONTAL ONE EIGHTH BLOCK-1358 (window title bar)
+    -   U+1FB95   CHECKER BOARD FILL
+    -   U+1FB96   INVERSE CHECKER BOARD FILL
+    -   U+1FB97   HEAVY HORIZONTAL FILL
+    -   U+1FB9A   UPPER AND LOWER TRIANGULAR HALF BLOCK
+    -   U+1FB9B   LEFT AND RIGHT TRIANGULAR HALF BLOCK
+    -   U+1FB9C   UPPER LEFT TRIANGULAR MEDIUM SHADE
+    -   U+1FB9D   UPPER RIGHT TRIANGULAR MEDIUM SHADE
+    -   U+1FB9E   LOWER RIGHT TRIANGULAR MEDIUM SHADE
+    -   U+1FB9F   LOWER LEFT TRIANGULAR MEDIUM SHADE
+    -   U+1FBCE   LEFT TWO THIRDS BLOCK
+    -   U+1FBCF   LEFT ONE THIRD BLOCK
+    -   U+1FBE4   UPPER CENTRE ONE QUARTER BLOCK
+    -   U+1FBE5   LOWER CENTRE ONE QUARTER BLOCK
+    -   U+1FBE6   MIDDLE LEFT ONE QUARTER BLOCK
+    -   U+1FBE7   MIDDLE RIGHT ONE QUARTER BLOCK
+    -   Symbols for Legacy Computing:
+        -   Block mosaic terminal graphic characters: U+1FB00 to U+1FB3B
+        -   Smooth mosaic terminal graphic characters: U+1FB3C to U+1FB6F
+        -   Block elements: U+1FB70 to U+1FB80; U+1FB82 to U+1FB8B
+        -   Segmented digits 0 to 9: U+1FBF0 to U+1FBF9   SEGMENTED DIGIT NINE
