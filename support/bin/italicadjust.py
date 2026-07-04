@@ -1,4 +1,4 @@
-#!/usr/bin/env -S fontforge -quiet -lang=py -script
+#!/usr/bin/env fontforge -quiet -lang=py -script
 import fontforge, argparse, math, unicodedata, psMat, os, sys, numpy
 
 sys.path.append(os.getenv("HOME") + "/git/dse.d/pyfontutils/lib")

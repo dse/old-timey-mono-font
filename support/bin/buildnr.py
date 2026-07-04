@@ -1,4 +1,4 @@
-#!/usr/bin/env -S python
+#!/usr/bin/env python
 import os, fcntl, struct, re
 
 VAR_DIR       = "../../var"

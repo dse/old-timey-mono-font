@@ -1,4 +1,4 @@
-#!/usr/bin/env -S fontforge -quiet -lang=py -script
+#!/usr/bin/env fontforge -quiet -lang=py -script
 # -*- mode: python; coding: utf-8 -*-
 #
 # coexist - warn about any glyphs containing references AND contours -
