@@ -36,6 +36,9 @@ def main():
                 print("fontimport.py: importing %s into %s at %s" % (import_filename, glyphname, u(codepoint)))
 
             glyph = font.createChar(codepoint, glyphname)
+            if len(glyph.references) and not len(glyph.foreground):
+                # when replacing a reference glyph with a contour glyph
+                glyph.references = ()
             glyph.foreground = fontforge.layer() # clear existing glyph
             font.strokedfont = True # avoid expanding strokes automatically
             glyph.importOutlines(import_filename)
@@ -61,6 +64,9 @@ def main():
                     import_filename = source
 
                 glyph = font.createChar(codepoint, glyphname)
+                if len(glyph.references) and not len(glyph.foreground):
+                    # when replacing a reference glyph with a contour glyph
+                    glyph.references = ()
                 glyph_width = glyph.width
                 glyph.foreground = fontforge.layer() # clear existing glyph
                 font.strokedfont = True # avoid expanding strokes automatically
