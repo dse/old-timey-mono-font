@@ -1,4 +1,4 @@
-#!/usr/bin/env fontforge -quiet -lang=py -script
+#!/usr/bin/env -S fontforge -quiet -lang=py -script
 # -*- mode: python; coding: utf-8 -*-
 import os, argparse, fontforge
 def main():
