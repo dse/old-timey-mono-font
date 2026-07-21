@@ -369,15 +369,47 @@ website: FORCE
 	cd website/v5 && make
 
 ITALIC_SFD = OldTimeyMono-Italic.sfd
+UPRIGHT_SFD = OldTimeyMono.sfd
+
+FONT_ITALIC_SETTINGS = \
+		--fontname="OldTimeyMono-Italic" \
+		--fullname="Old Timey Mono Italic" \
+		--family-name="Old Timey Mono" \
+		--italic-angle -12
+
+FONT_UPRIGHT_SETTINGS = \
+		--fontname="OldTimeyMono" \
+		--fullname="Old Timey Mono" \
+		--family-name="Old Timey Mono" \
+		--italic-angle 0
+
+FONT_SETTINGS = \
+		--upos -300 --uwidth 96 \
+		--ascent 1344 --descent 336 \
+		--ttf-weight 500 \
+		--weight Medium \
+		--panose 2 0 5 9 0 0 0 0 0 0 \
+		--copyright "Copyright `date +%Y` Darren Embry" \
+		--version "$(VERSION)" \
+		--sfnt-revision "$(SFNT_REVISION)" \
+		--vendor "$(VENDOR)"
 
 italic: FORCE
 	cp src/basefont/OldTimeyMono.sfd $(ITALIC_SFD)
-	support/bin/fontset.py -v --fontname="OldTimeyMono-Italic" --fullname="Old Timey Mono Italic" --family-name="Old Timey Mono" --italic-angle -12 \
-		$(ITALIC_SFD)			
+#	support/bin/fontcreate.py --create $(ITALIC_SFD)
+	support/bin/fontset.py -v $(FONT_SETTINGS) $(FONT_ITALIC_SETTINGS) $(ITALIC_SFD)
 	support/bin/glyphcomments.py --erase $(ITALIC_SFD)
 	support/bin/fontimport.py --comment "italicized" -w 1008 -v --italic $(ITALIC_SFD) $(SRC_ITALIC_SVGS)
 	support/bin/italicadjust.py -v $(ITALIC_SFD)
 	$(SMOL_PY) --no-special --expand-stroke 48 $(ITALIC_SFD)
+
+upright: FORCE
+	cp src/basefont/OldTimeyMono.sfd $(UPRIGHT_SFD)
+#	support/bin/fontcreate.py --create $(UPRIGHT_SFD)
+	support/bin/fontset.py -v $(FONT_SETTINGS) $(FONT_UPRIGHT_SETTINGS) $(UPRIGHT_SFD)
+	support/bin/glyphcomments.py --erase $(UPRIGHT_SFD)
+	support/bin/fontimport.py --comment "{}" -w 1008 -v $(UPRIGHT_SFD) $(SRC_SVGS)
+	$(SMOL_PY) --no-special --expand-stroke 48 $(UPRIGHT_SFD)
 
 fontinfo: FORCE
 	support/bin/fontinfo.py $(ITALIC_SFD) > $(ITALIC_SFD).info.txt
