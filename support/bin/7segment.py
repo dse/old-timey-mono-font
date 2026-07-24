@@ -2,7 +2,7 @@
 # -*- mode: python; coding: utf-8 -*-
 import fontforge, argparse, os, sys, statistics, math
 
-sys.path.append("%s/git/dse.d/my-python/src/my_python_dse" % os.getenv("HOME"))
+sys.path.append("%s/git/dse.d/pyfontutils/lib" % os.getenv("HOME"))
 from font_utils import get_fonts_from
 
 def main():

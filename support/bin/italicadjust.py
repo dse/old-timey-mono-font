@@ -2,7 +2,7 @@
 import fontforge, argparse, math, unicodedata, psMat, os, sys, numpy
 
 sys.path.append(os.getenv("HOME") + "/git/dse.d/pyfontutils/lib")
-from font_utils import parse_char_str, u
+from font_utils import parse_char_str, u, unicodedata_name
 
 def main():
     global args
@@ -22,14 +22,22 @@ def main():
         glyph.temporary["cat"] = unicodedata.category(chr(norm_cp)) if norm_cp >= 0 else None
 
     for glyph in font.glyphs():
+        if args.verbose:
+            if glyph.unicode < 0:
+                print("glyph: %s %d" % (glyph.glyphname, glyph.unicode))
+            else:
+                print("glyph: %s U+%04X %s" % (glyph.glyphname, glyph.unicode, unicodedata_name(chr(glyph.unicode))))
         italic_shift_type = compute_italic_shift_type(glyph)
         if italic_shift_type is not None:
             if args.verbose:
-                print("%s: %s (%s): italic shift for %s case letters" % (args.filename,
-                                                                         glyph.glyphname,
-                                                                         u(glyph.unicode),
-                                                                         italic_shift_type))
+                print("%s: %s (%s): italic shift type is %s" % (args.filename,
+                                                                glyph.glyphname,
+                                                                u(glyph.unicode),
+                                                                italic_shift_type))
             do_italic_shift(glyph, italic_shift_type)
+        else:
+            if args.verbose:
+                print("%s: %s (%s): no italic shift" % (args.filename, glyph.glyphname, u(glyph.unicode)))
 
     if args.filename.endswith(".sfd"):
         font.save(args.filename)
@@ -40,23 +48,52 @@ def main():
 
 def compute_italic_shift_type(glyph):
     global args
+
+    print("compute_italic_shift_type(%s)" % repr(glyph))
+    if args.verbose:
+        if glyph.unicode < 0:
+            print("    %d" % glyph.unicode)
+        else:
+            print("    U+%04X %s" % (glyph.unicode, unicodedata_name(chr(glyph.unicode))))
     if is_italicized(glyph):
+        if args.verbose:
+            print("    is italicized")
         if glyph.temporary["cat"] in ["Ll"]:
+            if args.verbose:
+                print("        Letter_lowercase italic shift type is lower case")
             return "lower"
-        elif glyph.temporary["cat"] in ["Lu"]:
+        elif glyph.temporary["cat"] in ["Lu", "Lt"]:
+            if args.verbose:
+                print("        Letter_uppercase italic shift type is upper case")
             return "upper"
         else:
+            if args.verbose:
+                print("        general category %s: italic shift type is none" % glyph.temporary["cat"])
             return None
     if not len(glyph.references): # non-italicized without references
+        if args.verbose:
+            print("    no references; not shifting")
         return None
     ref_glyphs = [glyph.font[ref[0]] for ref in glyph.references]
+    if args.verbose:
+        print("    ref_glyphs: %s" % repr(ref_glyphs))
     ref_base_glyphs = [glyph for glyph in ref_glyphs if is_italicizable_base(glyph)]
+    if args.verbose:
+        print("    ref_base_glyphs: %s" % repr(ref_base_glyphs))
     italic_shift_types = set([compute_italic_shift_type(glyph) for glyph in ref_base_glyphs])
+    if args.verbose:
+        print("    italic_shift_types are %s" % repr(italic_shift_types))
     if italic_shift_types == set("Ll"):
+        if args.verbose:
+            print("        is lowercase")
         return "lower"
     elif None in italic_shift_types:
+        if args.verbose:
+            print("        is None")
         return None
     else:                       # either uppercase only or mixed upper/lowercase
+        if args.verbose:
+            print("        is uppercase")
         return "upper"
 
 def is_italicized(glyph):
@@ -66,11 +103,20 @@ def is_italicized(glyph):
 
 def do_italic_shift(glyph, italic_shift_type):
     global args
+
+    if args.verbose:
+        print("do_italic_shift(%s, %s)" % (glyph, italic_shift_type))
+        if glyph.unicode < 0:
+            print("    unicode %d" % glyph.unicode)
+        else:
+            print("    unicode U+%04X %s" % (glyph.unicode, unicodedata_name(chr(glyph.unicode))))
     if italic_shift_type == "lower":
         base_y_center = glyph.font.xHeight / 2
     else:
         base_y_center = glyph.font.capHeight / 2
     if not len(glyph.references):
+        if args.verbose:
+            print("    glyph contains no references; skipping");
         return
     new_refs = []
 
@@ -81,6 +127,8 @@ def do_italic_shift(glyph, italic_shift_type):
         for ref in glyph.references
         if is_italicizable_mark(glyph.font[ref[0]])
     ]
+    print("    italicizable_base_glyph_names: %s" % repr(italicizable_base_glyph_names))
+    print("    italicizable_marks: %s" % repr(italicizable_marks))
 
     ref_glyphs = [glyph.font[ref[0]] for ref in glyph.references]
     ref_base_glyphs = [glyph for glyph in ref_glyphs if is_italicizable_base(glyph)]
@@ -122,10 +170,29 @@ def do_italic_shift(glyph, italic_shift_type):
 
 def is_italicizable_mark(glyph):
     return glyph.temporary["norm_codepoint"] in range(0x0300, 0x0370) or \
-        glyph.glyphname == "x_mediumhorizline"
+        glyph.glyphname == "x_mediumhorizline" or \
+        glyph.temporary["norm_codepoint"] in [
+            0x0384, 
+            0x1fbd,
+            0x1fbe,
+            0x1fbf,
+            # 0x1fc0,
+            # 0x1fc1,
+            # 0x1fcd,
+            # 0x1fce,
+            # 0x1fcf,
+            # 0x1fdd,
+            # 0x1fde,
+            # 0x1fdf,
+            # 0x1fed,
+            # 0x1fee,
+            0x1fef,
+            0x1ffd,
+            0x1ffe,
+        ]
 
 def is_italicizable_base(glyph):
-    return glyph.temporary["cat"] in ["Ll", "Lu"]
+    return glyph.temporary["cat"] in ["Ll", "Lu", "Lt"]
 
 def transform_point(point, transform):
     point = (*point, 1)

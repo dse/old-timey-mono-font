@@ -2,10 +2,9 @@
 # -*- mode: python; coding: utf-8 -*-
 import fontforge, argparse, os, sys, json, re
 
-sys.path.append("%s/git/dse.d/my-python/src/my_python_dse" % os.getenv("HOME"))
+sys.path.append("%s/git/dse.d/pyfontutils/lib" % os.getenv("HOME"))
 
 from font_utils import parse_char
-import silence
 
 def main():
     global args
@@ -17,9 +16,7 @@ def main():
     args = parser.parse_args()
     json_data = json.loads(open(args.json_filename).read())
     for filename in args.filenames:
-        silence.on()
         font = fontforge.open(filename)
-        silence.off()
 
         for lookup_name in font.gsub_lookups:
             (lookup_type, _, _) = font.getLookupInfo(lookup_name)
@@ -67,7 +64,7 @@ def main():
                 font.addLookupSubtable(lookup_name, subtable_name)
                 for char_name, other_glyph_name in subtable_data.items():
 
-                    codepoint = parse_char(char_name, throw=True)
+                    codepoint = parse_char(char_name, default=Exception)[2]
                     glyph_name = fontforge.nameFromUnicode(codepoint)
 
                     if other_glyph_name in font: # e.g., "colon.VCEN"

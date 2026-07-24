@@ -37,6 +37,8 @@ def main():
                       UNICODE["GREEK_SMALL_LETTER_PHI"],
                       UNICODE["GREEK_SMALL_LETTER_CHI"]]:
         glyph = create_smol_glyph(font, codepoint, special=special)
+        if args.verbose:
+            print("smol.py %s:     created glyph %s" % (args.font_filename, glyph.glyphname))
         if args.expand_stroke:
             glyph.stroke("circular", args.expand_stroke, join="round", cap="round")
 

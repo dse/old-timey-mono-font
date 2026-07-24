@@ -19,7 +19,7 @@ def main():
     parser.add_argument('--verbose', '-v', action='count', default=0)
     args = parser.parse_args()
     for [font, filename, fontname] in get_fonts_from(args.filenames, with_filenames=True):
-        boxdrawing.draw(font)
+        boxdrawing.draw(font, verbose=args.verbose)
         if filename.endswith(".sfd"):
             print("Saving %s" % filename)
             font.save(filename)

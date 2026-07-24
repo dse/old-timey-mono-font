@@ -12,7 +12,7 @@ import re
 import unicodedata
 import json
 
-# sys.path.append("%s/git/dse.d/my-python/src/my_python_dse" % os.getenv("HOME"))
+# sys.path.append("%s/git/dse.d/pyfontutils/lib" % os.getenv("HOME"))
 
 mod_path = os.getenv("HOME") + "/git/dse.d/fontforge-utilities/lib"
 if not mod_path in sys.path:
@@ -22,15 +22,14 @@ mod_path = os.getenv("HOME") + "/git/dse.d/fonts.d/old-timey-mono-font/support/l
 if not mod_path in sys.path:
     sys.path.append(mod_path)
 
-mod_path = os.getenv("HOME") + "/git/dse.d/my-python/src/my_python_dse"
+mod_path = os.getenv("HOME") + "/git/dse.d/pyfontutils/lib"
 if not mod_path in sys.path:
     sys.path.append(mod_path)
 
 import mixedjsontext
-import silence
 
-from my_font_utils import u, get_glyph_char_data
-from font_utils import get_base_codepoint
+from my_font_utils import get_glyph_char_data
+from font_utils import get_base_codepoint, u
 
 SVG_LINECAP_VALUES = ["butt", "round", "square"]
 SVG_LINEJOIN_VALUES = ["arcs", "bevel", "miter", "miter-clip", "miterclip", "round"]
@@ -76,6 +75,7 @@ def main():
         expand_flag = glyph_data.get("expandStrokes", True)
         if not expand_flag:
             if args.verbose >= 2:
+                print("A")
                 print("strokes.py: %s: %s (%s): flagged 'expandStrokes: false'; not expanding strokes" %
                       (args.font_filename, glyph.glyphname, u(glyph.unicode)))
             continue
@@ -84,13 +84,16 @@ def main():
 
         if args.verbose:
             if not has_contours:
+                print("B")
                 print("strokes.py: %s: %s (%s): INFO: has no contours" % 
                       (args.font_filename, glyph.glyphname, u(glyph.unicode)))
             elif has_references:
+                print("C")
                 print("strokes.py: %s: %s (%s): INFO: contains both references AND contours" %
                       (args.font_filename, glyph.glyphname, u(glyph.unicode)))
 
         if args.verbose:
+            print("D")
             print("strokes.py: %s: %s (%s): will expand strokes" % 
                   (args.font_filename, glyph.glyphname, u(glyph.unicode)))
         orig_width = glyph.width
@@ -113,10 +116,12 @@ def main():
         if fill_flag:
             expand_params["removeinternal"] = True
         if args.verbose:
+            print("E")
             print("strokes.py: %s: %s (%s): expanding strokes by %d, with parameters %s" % 
-                  (args.font_filename, glyph.glyphname, u(glyph.unicode), repr(args.expand_stroke), json.dumps(expand_params)))
+                  (args.font_filename, glyph.glyphname, u(glyph.unicode), args.expand_stroke, json.dumps(expand_params)))
         glyph.stroke("circular", args.expand_stroke, **expand_params)
         if args.verbose:
+            print("F")
             print("strokes.py: %s: %s (%s): finished expanding strokes" % 
                   (args.font_filename, glyph.glyphname, u(glyph.unicode)))
         if orig_width != 0:
@@ -126,10 +131,12 @@ def main():
 
     if write_font_filename.endswith('.sfd'):
         if args.verbose >= 2:
+            print("G")
             print("strokes.py %s: Saving %s..." % (args.font_filename, write_font_filename))
         font.save(write_font_filename)
     else:
         if args.verbose >= 2:
+            print("H")
             print("strokes.py %s: Generating %s..." % (args.font_filename, write_font_filename))
         font.generate(write_font_filename)
 

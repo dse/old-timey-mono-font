@@ -2,8 +2,7 @@
 # -*- mode: python; coding: utf-8 -*-
 import fontforge, argparse, os, sys, json, re
 
-sys.path.append("%s/git/dse.d/my-python/src/my_python_dse" % os.getenv("HOME"))
-import silence
+sys.path.append("%s/git/dse.d/pyfontutils/lib" % os.getenv("HOME"))
 
 def main():
     global args

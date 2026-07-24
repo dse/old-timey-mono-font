@@ -7,12 +7,10 @@ import os
 import sys
 import json
 import re
+from os.path import basename
 
 sys.path.append(os.path.dirname(__file__) + "/../lib")
-from my_font_utils import reconstitute_references
 from my_font_utils import parse_glyph_svg_filename
-from my_font_utils import create_smol_glyph
-from my_font_utils import check_all_glyph_bounds
 
 sys.path.append(os.getenv("HOME") + "/git/dse.d/fontforge-utilities/lib")
 import mixedjsontext
@@ -57,8 +55,15 @@ def main():
 def import_svg_glyph(font, svg_filename, width, allow_json_data=False):
     global args
 
+    svg_base_filename = basename(svg_filename)
+
     font_path = os.path.relpath(font.path)
-    (codepoint, glyphname, real_codepoint, plain_glyphname, stroke_width) = parse_glyph_svg_filename(svg_filename)
+    parse_result = parse_glyph_svg_filename(svg_filename)
+    (codepoint, glyphname, _, _, stroke_width) = parse_result
+    if args.verbose:
+        print("parse_glyph_svg_filename(%s) => %s" % (
+            repr(svg_filename), repr(parse_result)
+        ))
     if codepoint is None and glyphname is None:
         if args.verbose:
             print("redraw.py: %s: not importing" % svg_filename)
@@ -71,12 +76,14 @@ def import_svg_glyph(font, svg_filename, width, allow_json_data=False):
                 print("redraw.py: %s: %s (%s): has references; not redrawing" % (svg_filename, glyphname, u(glyph.unicode)))
             return
 
-    if args.verbose:
-        print("redraw.py: %s: %s (%s): creating" % (svg_filename, glyphname, u(glyph.unicode)))
     glyph = font.createChar(codepoint, glyphname)
+    if args.verbose:
+        print("redraw.py: %s: %s (%s): clearing" % (svg_filename, glyphname, u(glyph.unicode)))
     glyph.foreground = fontforge.layer()
     if width is None:
         orig_width = glyph.width
+    if args.verbose:
+        print("redraw.py: %s: %s (%s): importing outline" % (svg_filename, glyphname, u(glyph.unicode)))
     if stroke_width is not None:
         font.strokedfont = True
         glyph.importOutlines(svg_filename, correctdir=True)

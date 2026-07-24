@@ -12,7 +12,6 @@ def main():
     parser.add_argument('--cv-only', action='store_true')
     args = parser.parse_args()
     for filename in args.filenames:
-        silence()
         font = fontforge.open(filename)
         silence_off()
         glyphs = list(font.glyphs())
@@ -54,14 +53,6 @@ def main():
                 ))
         font.close()
 stderr_fd = os.dup(2)
-def silence():
-    if "DISABLE_SILENCE" in os.environ:
-        return
-    os.close(2)
-def silence_off():
-    if "DISABLE_SILENCE" in os.environ:
-        return
-    os.dup2(stderr_fd, 2)
 def glyph_sort(glyph_a, glyph_b):
     a = glyph_a.unicode
     b = glyph_b.unicode

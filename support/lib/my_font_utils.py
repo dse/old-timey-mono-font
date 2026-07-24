@@ -1,10 +1,23 @@
 import fontforge, re, os, psMat, unicodedata, json, sys
 
-font_utils_path = "%s/git/dse.d/my-python/src/my_python_dse" % os.getenv("HOME")
+font_utils_path = "%s/git/dse.d/pyfontutils/lib" % os.getenv("HOME")
+
 if font_utils_path not in sys.path:
     sys.path.append(font_utils_path)
 
-from font_utils import u, parse_char, get_base_codepoint, get_base_glyphname, get_variant_name
+from font_utils import parse_char, u
+
+def get_base_codepoint(glyph, default=-1):
+    if glyph.unicode >= 0:
+        return glyph.unicode
+    return fontforge.unicodeFromName(glyph.glyphname.split(".")[0])
+
+def get_base_glyphname(glyph, default=None):
+    return glyph.glyphname.split(".")[0]
+
+def get_variant_name(glyph, default=None):
+    if "." in glyph.glyphname:
+        return glyph.glyphname.split(".", 1)[1]
 
 def parse_codepoint_argument(str):
     return parse_char(str)
@@ -21,73 +34,12 @@ def reconstitute_references(glyph):
 def parse_glyph_svg_filename(filename):
     (dirname, basename) = os.path.split(filename) # "/home/dse"; "foo.svg"
     (stem, ext) = os.path.splitext(basename)      # "foo"; ".svg"
-    codepoint = None            # -1 for variants or specials; 0+ for normal glyphs
-    glyphname = None            # glyphname with optional suffix
-    real_codepoint = None       # -1 for specials; 0+ for variants or normal glyphs
-    plain_glyphname = None      # glyphname without suffix
-    suffix = None               # suffix without "." or "--" prefix, or None
-    stroke_width = None         # int if stroke width specified in SVG file; None otherwise
-    stem_copy = stem
-    custom = False
-    while len(stem_copy):
-        if match := re.search(r'^(?:u\+|0x)?([0-9A-Fa-f]+)(?:$|(?=[-.]))-?', stem_copy, flags=re.IGNORECASE):
-            # filename without extension
-            # hex with optional "U", "U+", or "0x" prefix (case-insens.)
-            # followed by EOL, "-", or "."
-            codepoint = int(match.group(1), 16)
-            real_codepoint = codepoint
-            stem_copy = stem_copy[match.end(0):]
-            continue
-        if match := re.search(r'^x--', stem_copy, flags=re.IGNORECASE):
-            # for non-Unicode characters
-            custom = True
-            codepoint = -1
-            real_codepoint = None
-            stem_copy = stem_copy[match.end(0):]
-            continue
-        if match := re.search(r'x_', stem_copy, flags=re.IGNORECASE):
-            # for non-Unicode characters
-            custom = True
-            codepoint = -1
-            real_codepoint = None
-            stem_copy = stem_copy[match.end(0):]
-            continue
-        if match := re.search(r'--(?:([0-9]+)(?:px)?)$', stem_copy, flags=re.IGNORECASE):
-            # I'm not actually using this meaningfully.  At least not
-            # at this time.  (04/20/2025)
-            stroke_width = int(match.group(1))
-            stem_copy = stem_copy[0:match.start()]
-            continue
-        if match := re.search(r'--(.+)$', stem_copy, flags=re.IGNORECASE):
-            # --xxx extensions for variants
-            suffix = match.group(1)
-            stem_copy = stem_copy[0:match.start()]
-            continue
-        if match := re.search(r'\.(.+)$', stem_copy, flags=re.IGNORECASE):
-            # .xxx extensions for variants
-            suffix = match.group(1)
-            stem_copy = stem_copy[0:match.start()]
-            continue
-        break
-    if codepoint is None:
-        return [None, None, None, None, None]
-    if codepoint < 0:
-        plain_glyphname = stem_copy
-        glyphname = "x_" + stem_copy
-        if suffix is not None:
-            glyphname += ("." + suffix)
-        real_codepoint = fontforge.unicodeFromName(plain_glyphname)
-        return [codepoint, glyphname, real_codepoint, plain_glyphname, stroke_width]
-    if suffix is not None:
-        plain_glyphname = fontforge.nameFromUnicode(codepoint)
-        glyphname = (plain_glyphname + "." + suffix)
-        real_codepoint = codepoint
-        codepoint = -1
-        return [codepoint, glyphname, real_codepoint, plain_glyphname, stroke_width]
-    plain_glyphname = fontforge.nameFromUnicode(codepoint)
-    glyphname = fontforge.nameFromUnicode(codepoint)
-    real_codepoint = codepoint
-    return [codepoint, glyphname, real_codepoint, plain_glyphname, stroke_width]
+    if "-" in stem:
+        stem = stem.split("-")[0]
+    parse_result = parse_char(stem, default=None, plain_hex=True)
+    if parse_result is None:
+        return [-1, stem, None, None, None]
+    return parse_result
 
 # # FIXME: if allow_json_data is True, allow a ".svg" to override.
 # def import_svg_glyph(font, svg_filename, width, allow_json_data=False):
@@ -229,11 +181,19 @@ def get_glyph_char_data(glyph):
 
     if "__RANGES__" in glyph_data:
         for range_item in glyph_data["__RANGES__"]:
-            start_cp = parse_char(range_item["from"])
-            end_cp   = parse_char(range_item["to"])
+            start_cp = parse_char(range_item["from"])[2]
+            end_cp   = parse_char(range_item["to"])[2]
+            print("from = %s; to = %s; start_cp = %d; end_cp = %d" % (
+                range_item["from"],
+                range_item["to"],
+                start_cp, end_cp
+            ))
             if base_codepoint in range(start_cp, end_cp + 1) and "data" in range_item:
+                print("  base_codepoint %d matches" % base_codepoint)
                 data = range_item["data"]
                 char_data = { **char_data, **data }
+            else:
+                print("  base_codepoint %d does NOT match" % base_codepoint)
 
     if base_codepoint in range(0, 0x110000) and chr(base_codepoint) in glyph_data:
         data = glyph_data[chr(base_codepoint)]
