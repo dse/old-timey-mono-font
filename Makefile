@@ -397,9 +397,4 @@ upright: FORCE
 	support/bin/fontimport.py --comment "{}" -w 1008 -v $(UPRIGHT_SFD) $(SRC_SVGS)
 	$(SMOL_PY) --no-special --expand-stroke 48 $(UPRIGHT_SFD)
 
-fontinfo: FORCE
-	support/bin/fontinfo.py $(ITALIC_SFD) > $(ITALIC_SFD).info.txt
-	sed -E -e '/^BeginChars: /q' $(ITALIC_SFD) > $(ITALIC_SFD).txt
-
 .PHONY: FORCE
-
