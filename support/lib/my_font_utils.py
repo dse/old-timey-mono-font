@@ -1,11 +1,12 @@
 import fontforge, re, os, psMat, unicodedata, json, sys
 
-font_utils_path = "%s/git/dse.d/pyfontutils/lib" % os.getenv("HOME")
-
-if font_utils_path not in sys.path:
-    sys.path.append(font_utils_path)
+for dir in ["%s/git/dse.d/pyfontutils/lib" % os.getenv("HOME"),
+            "%s/git/dse.d/fonts.d/old-timey-mono-font/support/lib" % os.getenv("HOME")]:
+    if dir not in sys.path:
+        sys.path.append(dir)
 
 from font_utils import parse_char, u
+from my_font_utils.filenames import DEFAULT_GLYPHS_JSON_FILENAME
 
 def get_base_codepoint(glyph, default=-1):
     if glyph.unicode >= 0:
@@ -167,11 +168,13 @@ def check_glyph_bounds(glyph, width=None):
         if ymax > glyph.font.ascent + height/2:
             print("check_all_glyph_bounds %s:     top" % font_path)
 
+
+
 glyph_data = None
-def get_glyph_char_data(glyph):
+def get_glyph_char_data(glyph, json_filename=DEFAULT_GLYPHS_JSON_FILENAME):
     global glyph_data
     if glyph_data is None:
-        with open("src/data/glyphs.json") as fh:
+        with open(json_filename) as fh:
             glyph_data = json.loads(fh.read())
     base_codepoint = get_base_codepoint(glyph)
     base_glyphname = get_base_glyphname(glyph)

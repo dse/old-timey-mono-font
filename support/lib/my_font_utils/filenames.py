@@ -1,0 +1,9 @@
+__all__ = [
+    "DEFAULT_GLYPHS_DATA_JSON_FILENAME",
+    "DEFAULT_GLYPHS_JSON_FILENAME",
+    "DEFAULT_PANOSE_JSON_FILENAME",
+]
+
+DEFAULT_GLYPHS_DATA_JSON_FILENAME = "src/data/glyphs.json"
+DEFAULT_GLYPHS_JSON_FILENAME      = "src/data/glyphs.json"
+DEFAULT_PANOSE_JSON_FILENAME      = "src/data/panose.json"

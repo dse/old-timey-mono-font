@@ -2,10 +2,17 @@
 # -*- mode: python; coding: utf-8 -*-
 import fontforge, argparse, os, sys, math, json
 
+for dir in ["%s/git/dse.d/fonts.d/old-timey-mono-font/support/lib" % os.getenv("HOME")]:
+    if dir not in sys.path:
+        sys.path.append(dir)
+
+from my_font_utils.filenames import DEFAULT_GLYPHS_JSON_FILENAME
+
 def main():
     global args
     parser = argparse.ArgumentParser()
     parser.add_argument("filename")
+    parser.add_argument("json-filename", type=str, nargs="?", default=DEFAULT_PANOSE_JSON_FILENAME)
     args = parser.parse_args()
 
     font = fontforge.open(args.filename)
@@ -81,8 +88,7 @@ def main():
         "exHeight": font.xHeight,
     }
 
-    panose_file = os.path.join(os.path.dirname(__file__), "../../src/data/panose.json")
-    with open(panose_file, "r") as fh:
+    with open(args.json_filename, "r") as fh:
         panose_json = fh.read()
     panose_data = json.loads(panose_json)
     family_kinds_data = panose_data["familyKinds"][font.os2_panose[0]]

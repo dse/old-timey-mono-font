@@ -28,7 +28,7 @@ if not mod_path in sys.path:
 
 import mixedjsontext
 
-from my_font_utils import get_glyph_char_data
+from my_font_utils import get_glyph_char_data, DEFAULT_GLYPHS_DATA_JSON_FILENAME
 from font_utils import get_base_codepoint, u
 
 def main():
@@ -41,9 +41,10 @@ def main():
     parser.add_argument('--verbose', '-v', action='count', default=0)
     parser.add_argument('--log', action='store_true')
     parser.add_argument('--allow-json-data', action='store_true')
+    parser.add_argument('json_filename', nargs='?', type=str, default=DEFAULT_GLYPHS_DATA_JSON_FILENAME)
     args = parser.parse_args()
 
-    with open("src/data/glyphs.json") as fh:
+    with open(args.json_filename) as fh:
         glyphs_data_json_text = fh.read()
     glyphs_data = json.loads(glyphs_data_json_text)
 
@@ -57,7 +58,7 @@ def main():
         if glyph.glyphname == ".notdef":
             continue
 
-        glyph_data = get_glyph_char_data(glyph) # always a dict
+        glyph_data = get_glyph_char_data(glyph, json_filename=args.json_filename) # always a dict
         real_codepoint = get_base_codepoint(glyph)
 
         fill_flag = glyph_data.get("fill", False)
