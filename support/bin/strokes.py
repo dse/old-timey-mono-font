@@ -31,17 +31,6 @@ import mixedjsontext
 from my_font_utils import get_glyph_char_data
 from font_utils import get_base_codepoint, u
 
-SVG_LINECAP_VALUES = ["butt", "round", "square"]
-SVG_LINEJOIN_VALUES = ["arcs", "bevel", "miter", "miter-clip", "miterclip", "round"]
-# allowable linecaps                allowed linejoins
-# svg     fontforge                 svg         fontforge
-# ------  -----------------------   ----------  ----------
-# butt    butt                      arcs        arcs
-# round   round                     bevel       bevel
-# square  butt with extendcap=0.5   miter       miter
-#         bevel                     miter-clip  miterclip
-#                                   round       round
-
 def main():
     global args
     parser = argparse.ArgumentParser()
@@ -98,21 +87,6 @@ def main():
                   (args.font_filename, glyph.glyphname, u(glyph.unicode)))
         orig_width = glyph.width
         expand_params = {}
-        line_join = glyph_data.get("linejoin")
-        line_cap = glyph_data.get("linecap")
-        if line_join is not None and not (line_join in SVG_LINEJOIN_VALUES):
-            raise Exception("invalid line join value: %s" % line_join)
-        if line_cap is not None and not (line_cap in SVG_LINECAP_VALUES):
-            raise Exception("invalid line cap value: %s" % line_cap)
-        if line_join is not None:
-            if line_join == "miter-clip":
-                line_join = "miterclip"
-            expand_params["join"] = line_join
-        if line_cap is not None:
-            if line_cap == "square":
-                line_cap = "butt"
-                expand_params["extendcap"] = 0.5
-            expand_params["cap"] = line_cap
         if fill_flag:
             expand_params["removeinternal"] = True
         if args.verbose:

@@ -1,9 +1,7 @@
 {
     "<char>": {
-        "linecap": "butt|round|square",
-        "linejoin": "bevel|round|miter",
-        "fill": "false|true",
-        "having_stroke_width": "<int>",
+        "fill": "<bool>",
+        "expandStrokes": "<bool>",
         "variant.<name>": { "<prop1>": "<value1>", "<prop2>": "<value2>" }
     },
     "\"": { "fill": true },
