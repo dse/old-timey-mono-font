@@ -8,7 +8,7 @@ import sys
 import json
 import psMat
 
-sys.path.append("%s/git/dse.d/my-python/src/my_python_dse" % os.getenv("HOME"))
+sys.path.append("%s/git/dse.d/pyfontutils/lib" % os.getenv("HOME"))
 from font_utils import parse_char
 
 def main():
@@ -26,7 +26,7 @@ def main():
     font = fontforge.open(args.filename)
 
     for glyph_name, dest_char in references.items():
-        dest_codepoint = parse_char(dest_char)
+        dest_codepoint = parse_char(dest_char)[2]
         dest_glyph_name = fontforge.nameFromUnicode(dest_codepoint)
 
         if dest_char is None:
