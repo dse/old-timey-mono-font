@@ -15,9 +15,11 @@ def main():
     font = fontforge.open(args.filename)
     
     replCharName = fontforge.nameFromUnicode(REPLACEMENT_CHARACTER)
+    # notdef can't be a reference apparently?)
     if replCharName in font:
         replChar = font[replCharName]
         notdef = font.createChar(-1, ".notdef")
+        notdef.references = ()
         notdef.foreground = replChar.foreground
         notdef.background = replChar.background
         notdef.dhints = replChar.dhints
