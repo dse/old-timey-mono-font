@@ -3,6 +3,7 @@
 import fontforge, argparse
 parser = argparse.ArgumentParser()
 parser.add_argument('filenames', nargs='+')
+parser.add_argument('--verbose', '-v', action='count', default=0)
 args = parser.parse_args()
 for filename in args.filenames:
     font = fontforge.open(filename)

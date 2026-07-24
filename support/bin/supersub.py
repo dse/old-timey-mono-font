@@ -14,6 +14,7 @@ def main():
     global args
     parser = argparse.ArgumentParser()
     parser.add_argument('filename')
+    parser.add_argument('--verbose', '-v', action='count', default=0)
     args = parser.parse_args()
 
     if "DEBUG" in os.environ:

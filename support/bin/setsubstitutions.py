@@ -13,6 +13,7 @@ def main():
     parser.add_argument('json_filename')
     parser.add_argument('filenames', nargs='+')
     parser.add_argument('--pyftfeatfreeze', action='store_true')
+    parser.add_argument('--verbose', '-v', action='count', default=0)
     args = parser.parse_args()
     json_data = json.loads(open(args.json_filename).read())
     for filename in args.filenames:

@@ -16,6 +16,7 @@ from pyfontutils.utils import get_fonts_from
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("filenames", nargs="+")
+    parser.add_argument('--verbose', '-v', action='count', default=0)
     args = parser.parse_args()
     for [font, filename, fontname] in get_fonts_from(args.filenames, with_filenames=True):
         boxdrawing.draw(font)

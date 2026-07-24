@@ -18,6 +18,7 @@ def main():
     parser.add_argument('json_filename', help="json references file")
     parser.add_argument('-o', '--save-as', '--output', type=str,
                         help="after editing, save as new file, converts if file extension is different")
+    parser.add_argument('--verbose', '-v', action='count', default=0)
     args = parser.parse_args()
     references = json.loads(open(args.json_filename).read())
     print("%s" % type(references))
