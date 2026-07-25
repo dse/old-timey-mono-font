@@ -1,4 +1,14 @@
-import fontforge, re, os, psMat, unicodedata, json, sys
+__all__ = [
+    "DEFAULT_GLYPHS_DATA_JSON_FILENAME",
+    "DEFAULT_GLYPHS_JSON_FILENAME",
+    "DEFAULT_PANOSE_JSON_FILENAME",
+]
+
+import fontforge, re, os, psMat, unicodedata, json, sys, math
+
+DEFAULT_GLYPHS_DATA_JSON_FILENAME = "src/data/glyphs.json"
+DEFAULT_GLYPHS_JSON_FILENAME      = "src/data/glyphs.json"
+DEFAULT_PANOSE_JSON_FILENAME      = "src/data/panose.json"
 
 for dir in ["%s/git/dse.d/pyfontutils/lib" % os.getenv("HOME"),
             "%s/git/dse.d/fonts.d/old-timey-mono-font/support/lib" % os.getenv("HOME")]:
@@ -6,7 +16,6 @@ for dir in ["%s/git/dse.d/pyfontutils/lib" % os.getenv("HOME"),
         sys.path.append(dir)
 
 from font_utils import parse_char, u
-from my_font_utils.filenames import DEFAULT_GLYPHS_JSON_FILENAME
 
 def get_base_codepoint(glyph, default=-1):
     if glyph.unicode >= 0:
