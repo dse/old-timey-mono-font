@@ -91,6 +91,7 @@ BOXDRAWING_PY                   = $(BOXDRAWING_PY_PROG) -v
 
 SUBSTITUTIONS_JSON		= $(SRC_DATA)/substitutions.json
 REFERENCES_JSON                 = $(SRC_DATA)/references.json
+GLYPHS_JSON                     = $(SRC_DATA)/glyphs.json
 
 ZIP_FILE			= $(DIST_ZIP)/$(PS_OTMONO_FONT_FAMILY)-$(VERSION).zip
 ZIP_FILE_REL_TO_DIST_ZIP	= $(PS_OTMONO_FONT_FAMILY)-$(VERSION).zip
@@ -212,7 +213,7 @@ redraw: FORCE
 	$(BOUNDS_PY) $(BASEFONT_SFD)
 	$(SMOL_PY) $(BASEFONT_SFD)
 	$(SUPERSUB_PY) $(BASEFONT_SFD)
-	$(STROKES_PY) --expand-stroke 96 $(BASEFONT_SFD)
+	$(STROKES_PY) --expand-stroke 96 $(BASEFONT_SFD) $(GLYPHS_JSON)
 	$(NOTDEF_PY) $(BASEFONT_SFD)
 	$(FONTAUTOHINT_PY) $(BASEFONT_SFD)
 	$(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) $(BASEFONT_SFD)
@@ -226,7 +227,7 @@ redraw-test: FORCE
 	$(BOUNDS_PY) $(BASEFONT_SFD)
 	$(SMOL_PY) $(BASEFONT_SFD)
 	$(SUPERSUB_PY) $(BASEFONT_SFD)
-	$(STROKES_PY) --expand-stroke 96 --allow-json-data $(BASEFONT_SFD)
+	$(STROKES_PY) --expand-stroke 96 --allow-json-data $(BASEFONT_SFD) $(GLYPHS_JSON)
 	$(NOTDEF_PY) $(BASEFONT_SFD)
 	$(FONTAUTOHINT_PY) $(BASEFONT_SFD)
 	$(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) $(BASEFONT_SFD)
@@ -292,19 +293,19 @@ $(SRC_BUILD)/$(PS_OTMONO_FONT_FAMILY)Cond.stage1.sfd: $(SRC_BUILD)/$(PS_OTMONO_F
 	$(ASPECT_PY) --aspect 0.833333333333 "$<" -o "$@"
 
 # Stage 3: make weights
-$(DIST_TTF)/%.ttf: $(SRC_BUILD)/%.stage1.sfd $(MAKEFILE) $(STROKES_PY_PROG) $(METAS_PY_PROG) $(UNDERLINE_PY_PROG)
+$(DIST_TTF)/%.ttf: $(SRC_BUILD)/%.stage1.sfd $(MAKEFILE) $(STROKES_PY_PROG) $(METAS_PY_PROG) $(UNDERLINE_PY_PROG) $(GLYPHS_JSON)
 	@echo "stage 3 normal (weight)"
 	mkdir -p "$(DIST_TTF)"
-	$(STROKES_PY) -x 96 "$<" -o "$@"
+	$(STROKES_PY) -x 96 "$<" -o "$@" $(GLYPHS_JSON)
 	$(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) "$@"
 	$(FONTFIX_PY) "$@"
 	$(FONTAUTOHINT_PY) "$@"
 	$(METAS_PY) "$@"
 	$(UNDERLINE_PY) -102 96 "$@"
-$(DIST_TTF)/%-Light.ttf: $(SRC_BUILD)/%.stage1.sfd $(MAKEFILE) $(STROKES_PY_PROG) $(METAS_PY_PROG) $(UNDERLINE_PY_PROG)
+$(DIST_TTF)/%-Light.ttf: $(SRC_BUILD)/%.stage1.sfd $(MAKEFILE) $(STROKES_PY_PROG) $(METAS_PY_PROG) $(UNDERLINE_PY_PROG) $(GLYPHS_JSON)
 	@echo "stage 3 light"
 	mkdir -p "$(DIST_TTF)"
-	$(STROKES_PY) -x 72 "$<" -o "$@"
+	$(STROKES_PY) -x 72 "$<" -o "$@" $(GLYPHS_JSON)
 	$(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) "$@"
 	$(FONTFIX_PY) "$@"
 	$(FONTAUTOHINT_PY) "$@"
