@@ -177,8 +177,6 @@ def check_glyph_bounds(glyph, width=None):
         if ymax > glyph.font.ascent + height/2:
             print("check_all_glyph_bounds %s:     top" % font_path)
 
-
-
 glyph_data = None
 def get_glyph_char_data(glyph, json_filename=DEFAULT_GLYPHS_JSON_FILENAME):
     global glyph_data
@@ -359,3 +357,65 @@ def draw_shape(width, x_max, y_max, polygons, font=None, codept=None, glyph=None
             first_point = False
         pen.closePath()
     glyph.width = width
+
+def guess_transform_sequence(t):
+    (a, b, c, d, dx, dy) = t
+    if deep_is_close(t, (1, 0, 0, 1, 0, 0)):
+        return []
+    if deep_is_close((a, b, c, d), (1, 0, 0, 1)):
+        return [ { "op": "translate", "dx": dx, "dy": dy } ]
+    if deep_is_close((a, b, c, d), (-1, 0, 0, -1)):
+        if deep_is_close((dx, dy), (0, 0)):
+            return [ { "op": "scale", "x": -1, "y": -1 } ]
+        return [ { "op": "scale", "x": -1, "y": -1, "cx": dx/2, "cy": dx/2 } ]
+    if deep_is_close((b, c), (0, 0)):
+        if a == 1 or d == 1:
+            return [ { "op": "scale", "x": a, "y": d }, { "op": "translate", "dx": dx, "dy": dy } ]
+        x = dx / (1-a)
+        y = dy / (1-d)
+        if deep_is_close((x, y), (0, 0)):
+            return [ { "op": "scale", "x": a, "y": d } ]
+        return [ { "op": "scale", "x": a, "y": d, "cx": x, "cy": y } ]
+    if deep_is_close((b, c, dx, dy), (0, 0, 0, 0)):
+        return [ { "op": "scale", "x": a, "y": d } ]
+    if deep_is_close((a, b, d, dx, dy), (1, 0, 1, 0, 0)):
+        return [ { "op": "skew", "theta": math.atan(t[2]) } ]
+    if deep_is_close(a, d) and deep_is_close(b, -c) and deep_is_close(dx, 0) and deep_is_close(dy, 0) and deep_is_close(t[0] ** 2 + t[1] ** 2, 1):
+        (sin, cos) = (b, a)
+        theta = math.asin(sin)  # between -math.pi/2 and math.pi/2
+        if cos < 0:
+            theta = math.pi - theta # between math.pi/2 and 3*math.pi/2
+        theta = theta % (math.pi*2)
+        if theta == 0.0:
+            return []
+        return [ { "op": "rotate", "theta": theta } ]
+    return [ { "op": "matrix", "values": t } ]
+
+def deep_is_close(a, b, rel_tol=1e-09, abs_tol=1e-09):
+    def _deep_is_close_(a, b):  # a closure so we don't pass rel_tol and abs_tol all the time.
+        retval = None
+        rule = 0
+        if type(a) == float and type(b) == float:
+            retval = math.isclose(a, b, rel_tol=rel_tol, abs_tol=abs_tol)
+            rule = 1
+        elif type(a) == int and type(b) == int:
+            retval = a == b
+            rule = 2
+        elif (type(a) == int and type(b) == float) or (type(a) == float and type(b) == int):
+            retval = math.isclose(float(a), float(b), rel_tol=rel_tol, abs_tol=abs_tol)
+            rule = 3
+        elif type(a) == list and type(b) == list:
+            retval = len(a) == len(b) and all([_deep_is_close_(a[i], b[i]) for i in range(0, len(a))])
+            rule = 4
+        elif type(a) == tuple and type(b) == tuple:
+            retval = len(a) == len(b) and all([_deep_is_close_(a[i], b[i]) for i in range(0, len(a))])
+            rule = 5
+        elif type(a) == dict and type(b) == dict:
+            retval = (sorted(a.keys()) == sorted(b.keys())) and all([_deep_is_close_(a[k], b[k]) for k in a.keys()])
+            rule = 6
+        else:
+            retval = a == b
+            rule = 7
+        return retval
+
+    return _deep_is_close_(a, b)
