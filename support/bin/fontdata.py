@@ -6,7 +6,7 @@ for dir in ["%s/git/dse.d/fonts.d/old-timey-mono-font/support/lib" % os.getenv("
     if dir not in sys.path:
         sys.path.append(dir)
 
-from my_font_utils.filenames import DEFAULT_GLYPHS_JSON_FILENAME
+from my_font_utils import DEFAULT_GLYPHS_JSON_FILENAME
 
 def main():
     global args
