@@ -1,0 +1,5813 @@
+{
+    "references": {
+        "A.c2pc": "uni1D00",
+        "AEacute": [
+            [
+                "acutecomb",
+                [
+                    {"op":"translate","dx":120.0,"dy":0.0}
+                ]
+            ],
+            "AE"
+        ],
+        "Aacute": [
+            "acutecomb",
+            "A"
+        ],
+        "Abreve": [
+            "uni0306",
+            "A"
+        ],
+        "Acircumflex": [
+            "uni0302",
+            "A"
+        ],
+        "Adieresis": [
+            "uni0308",
+            "A"
+        ],
+        "Agrave": [
+            "gravecomb",
+            "A"
+        ],
+        "Alpha": "A",
+        "Alphatonos": [
+            [
+                "tonos",
+                [
+                    {"op":"translate","dx":0.0,"dy":24.0}
+                ]
+            ],
+            "Alpha"
+        ],
+        "Amacron": [
+            "uni0304",
+            "A"
+        ],
+        "Aogonek": [
+            [
+                "uni0328",
+                [
+                    {"op":"translate","dx":304.0,"dy":-0.2667}
+                ]
+            ],
+            "A"
+        ],
+        "Aring": [
+            "uni030A",
+            "A"
+        ],
+        "Aringacute": [
+            [
+                "acutecomb",
+                [
+                    {"op":"translate","dx":-16.0,"dy":250.0}
+                ]
+            ],
+            "Aring"
+        ],
+        "Atilde": [
+            "tildecomb",
+            "A"
+        ],
+        "B.c2pc": "uni0299",
+        "Beta": "B",
+        "C.c2pc": "uni1D04",
+        "Cacute": [
+            [
+                "acutecomb",
+                [
+                    {"op":"translate","dx":20.0,"dy":0.0}
+                ]
+            ],
+            "C"
+        ],
+        "Ccaron": [
+            [
+                "uni030C",
+                [
+                    {"op":"translate","dx":20.0,"dy":0.0}
+                ]
+            ],
+            "C"
+        ],
+        "Ccedilla": [
+            [
+                "uni0327",
+                [
+                    {"op":"translate","dx":30.0,"dy":-20.2665}
+                ]
+            ],
+            "C"
+        ],
+        "Ccircumflex": [
+            [
+                "uni0302",
+                [
+                    {"op":"translate","dx":20.0,"dy":0.0}
+                ]
+            ],
+            "C"
+        ],
+        "Cdotaccent": [
+            [
+                "uni0307",
+                [
+                    {"op":"translate","dx":20.0,"dy":0.0}
+                ]
+            ],
+            "C"
+        ],
+        "Chi": "X",
+        "D.c2pc": "uni1D05",
+        "Dcaron": [
+            "uni030C",
+            "D"
+        ],
+        "Dcroat": "Eth",
+        "E.c2pc": "uni1D07",
+        "Eacute": [
+            "acutecomb",
+            "E"
+        ],
+        "Ebreve": [
+            "uni0306",
+            "E"
+        ],
+        "Ecaron": [
+            "uni030C",
+            "E"
+        ],
+        "Ecircumflex": [
+            "uni0302",
+            "E"
+        ],
+        "Edieresis": [
+            "uni0308",
+            "E"
+        ],
+        "Edotaccent": [
+            "uni0307",
+            "E"
+        ],
+        "Egrave": [
+            "gravecomb",
+            "E"
+        ],
+        "Emacron": [
+            "uni0304",
+            "E"
+        ],
+        "Eogonek": [
+            [
+                "uni0328",
+                [
+                    {"op":"translate","dx":273.0,"dy":-0.2667}
+                ]
+            ],
+            "E"
+        ],
+        "Epsilon": "E",
+        "Epsilontonos": [
+            [
+                "tonos",
+                [
+                    {"op":"translate","dx":0.15625,"dy":24.0}
+                ]
+            ],
+            "Epsilon"
+        ],
+        "Eta": "H",
+        "Etatonos": [
+            [
+                "tonos",
+                [
+                    {"op":"translate","dx":0.0,"dy":24.0}
+                ]
+            ],
+            "Eta"
+        ],
+        "F.c2pc": "uniA730",
+        "G.c2pc": "uni0262",
+        "Gamma": [
+            [
+                "L",
+                [
+                    {"op":"scale","x":1.0,"y":-1.0},
+                    {"op":"translate","dx":0.0,"dy":1056.0}
+                ]
+            ]
+        ],
+        "Gbreve": [
+            [
+                "uni0306",
+                [
+                    {"op":"translate","dx":20.0,"dy":0.0}
+                ]
+            ],
+            "G"
+        ],
+        "Gcaron": [
+            [
+                "uni030C",
+                [
+                    {"op":"translate","dx":20.0,"dy":0.0}
+                ]
+            ],
+            "G"
+        ],
+        "Gcircumflex": [
+            [
+                "uni0302",
+                [
+                    {"op":"translate","dx":20.0,"dy":0.0}
+                ]
+            ],
+            "G"
+        ],
+        "Gdotaccent": [
+            [
+                "uni0307",
+                [
+                    {"op":"translate","dx":20.0,"dy":0.0}
+                ]
+            ],
+            "G"
+        ],
+        "H.c2pc": "uni029C",
+        "Hbar": [
+            "uni0305",
+            "H"
+        ],
+        "Hcircumflex": [
+            "uni0302",
+            "H"
+        ],
+        "I.c2pc": "uni026A",
+        "Iacute": [
+            "acutecomb",
+            "I"
+        ],
+        "Ibreve": [
+            "uni0306",
+            "I"
+        ],
+        "Icircumflex": [
+            "uni0302",
+            "I"
+        ],
+        "Idieresis": [
+            "uni0308",
+            "I"
+        ],
+        "Idotaccent": [
+            "uni0307",
+            "I"
+        ],
+        "Igrave": [
+            "gravecomb",
+            "I"
+        ],
+        "Imacron": [
+            "uni0304",
+            "I"
+        ],
+        "Iogonek": [
+            [
+                "uni0328",
+                [
+                    {"op":"translate","dx":0.0,"dy":-0.2667}
+                ]
+            ],
+            "I"
+        ],
+        "Iota": "I",
+        "Iotadieresis": [
+            "uni0308",
+            "Iota"
+        ],
+        "Iotatonos": [
+            [
+                "tonos",
+                [
+                    {"op":"translate","dx":0.0,"dy":24.0}
+                ]
+            ],
+            "Iota"
+        ],
+        "Itilde": [
+            "tildecomb",
+            "I"
+        ],
+        "J.c2pc": "uni1D0A",
+        "Jcircumflex": [
+            [
+                "uni0302",
+                [
+                    {"op":"translate","dx":240.0,"dy":0.0}
+                ]
+            ],
+            "J"
+        ],
+        "K.c2pc": "uni1D0B",
+        "Kappa": "K",
+        "L.c2pc": "uni029F",
+        "Lacute": [
+            [
+                "acutecomb",
+                [
+                    {"op":"translate","dx":-200.0,"dy":0.0}
+                ]
+            ],
+            "L"
+        ],
+        "Lambda": [
+            [
+                "V",
+                [
+                    {"op":"scale","x":1.0,"y":-1.0},
+                    {"op":"translate","dx":0.0,"dy":1055.99}
+                ]
+            ]
+        ],
+        "Lcaron": [
+            [
+                "uni0315",
+                [
+                    {"op":"translate","dx":-65.996,"dy":-288.0}
+                ]
+            ],
+            "L"
+        ],
+        "Ldot": [
+            [
+                "periodcentered",
+                [
+                    {"op":"translate","dx":4.00197,"dy":160.0}
+                ]
+            ],
+            "L"
+        ],
+        "Lslash": [
+            [
+                "x_shortstroke45",
+                [
+                    {"op":"translate","dx":-250.0,"dy":0.0}
+                ]
+            ],
+            "L"
+        ],
+        "M.c2pc": "uni1D0D",
+        "Mu": "M",
+        "N.c2pc": "uni0274",
+        "Nacute": [
+            "acutecomb",
+            "N"
+        ],
+        "Ncaron": [
+            "uni030C",
+            "N"
+        ],
+        "Ntilde": [
+            "tildecomb",
+            "N"
+        ],
+        "Nu": "N",
+        "O.c2pc": "uni1D0F",
+        "Oacute": [
+            "acutecomb",
+            "O"
+        ],
+        "Obreve": [
+            "uni0306",
+            "O"
+        ],
+        "Ocircumflex": [
+            "uni0302",
+            "O"
+        ],
+        "Odieresis": [
+            "uni0308",
+            "O"
+        ],
+        "Ograve": [
+            "gravecomb",
+            "O"
+        ],
+        "Ohorn": [
+            [
+                "uni031B",
+                [
+                    {"op":"translate","dx":98.0,"dy":20.0}
+                ]
+            ],
+            "O"
+        ],
+        "Ohungarumlaut": [
+            "uni030B",
+            "O"
+        ],
+        "Omacron": [
+            "uni0304",
+            "O"
+        ],
+        "Omega": "uni03A9",
+        "Omegatonos": [
+            [
+                "tonos",
+                [
+                    {"op":"translate","dx":0.0,"dy":24.0}
+                ]
+            ],
+            "uni03A9"
+        ],
+        "Omicron": "O",
+        "Omicrontonos": [
+            [
+                "tonos",
+                [
+                    {"op":"translate","dx":0.0,"dy":24.0}
+                ]
+            ],
+            "Omicron"
+        ],
+        "Oslash": [
+            "x_longstroke45",
+            "O"
+        ],
+        "Oslashacute": [
+            [
+                "acutecomb",
+                [
+                    {"op":"translate","dx":0.0,"dy":20.0}
+                ]
+            ],
+            "Oslash"
+        ],
+        "Otilde": [
+            "tildecomb",
+            "O"
+        ],
+        "P.c2pc": "uni1D18",
+        "Q.c2pc": "uniA7AF",
+        "R.c2pc": "uni0280",
+        "Racute": [
+            "acutecomb",
+            "R"
+        ],
+        "Rcaron": [
+            "uni030C",
+            "R"
+        ],
+        "Rho": "P",
+        "S.c2pc": "uniA731",
+        "Sacute": [
+            "acutecomb",
+            "S"
+        ],
+        "Scaron": [
+            "uni030C",
+            "S"
+        ],
+        "Scedilla": [
+            [
+                "uni0327",
+                [
+                    {"op":"translate","dx":57.9824,"dy":-20.2665}
+                ]
+            ],
+            "S"
+        ],
+        "Scircumflex": [
+            "uni0302",
+            "S"
+        ],
+        "T.c2pc": "uni1D1B",
+        "Tau": "T",
+        "Tbar": [
+            [
+                "x_mediumhorizline",
+                [
+                    {"op":"translate","dx":0.0,"dy":-700.0}
+                ]
+            ],
+            "T"
+        ],
+        "Tcaron": [
+            "uni030C",
+            "T"
+        ],
+        "U.c2pc": "uni1D1C",
+        "Uacute": [
+            "acutecomb",
+            "U"
+        ],
+        "Ubreve": [
+            "uni0306",
+            "U"
+        ],
+        "Ucircumflex": [
+            "uni0302",
+            "U"
+        ],
+        "Udieresis": [
+            "uni0308",
+            "U"
+        ],
+        "Ugrave": [
+            "gravecomb",
+            "U"
+        ],
+        "Uhorn": [
+            [
+                "uni031B",
+                [
+                    {"op":"translate","dx":265.997,"dy":0.0}
+                ]
+            ],
+            "U"
+        ],
+        "Uhungarumlaut": [
+            "uni030B",
+            "U"
+        ],
+        "Umacron": [
+            "uni0304",
+            "U"
+        ],
+        "Uogonek": [
+            [
+                "uni0328",
+                [
+                    {"op":"translate","dx":0.319336,"dy":-20.0772}
+                ]
+            ],
+            "U"
+        ],
+        "Upsilon": "Y",
+        "Upsilondieresis": [
+            "uni0308",
+            "Upsilon"
+        ],
+        "Upsilontonos": [
+            [
+                "tonos",
+                [
+                    {"op":"translate","dx":0.0,"dy":24.0}
+                ]
+            ],
+            "Upsilon"
+        ],
+        "Uring": [
+            "uni030A",
+            "U"
+        ],
+        "Utilde": [
+            "tildecomb",
+            "U"
+        ],
+        "V.c2pc": "uni1D20",
+        "W.c2pc": "uni1D21",
+        "Wacute": [
+            "acutecomb",
+            "W"
+        ],
+        "Wcircumflex": [
+            "uni0302",
+            "W"
+        ],
+        "Wdieresis": [
+            "uni0308",
+            "W"
+        ],
+        "Wgrave": [
+            "gravecomb",
+            "W"
+        ],
+        "X.c2pc": "x",
+        "Y.c2pc": "uni028F",
+        "Yacute": [
+            "acutecomb",
+            "Y"
+        ],
+        "Ycircumflex": [
+            "uni0302",
+            "Y"
+        ],
+        "Ydieresis": [
+            "uni0308",
+            "Y"
+        ],
+        "Ygrave": [
+            "gravecomb",
+            "Y"
+        ],
+        "Z.c2pc": "uni1D22",
+        "Zacute": [
+            "acutecomb",
+            "Z"
+        ],
+        "Zcaron": [
+            "uni030C",
+            "Z"
+        ],
+        "Zdotaccent": [
+            "uni0307",
+            "Z"
+        ],
+        "Zeta": "Z",
+        "a.pcap": "uni1D00",
+        "aacute": [
+            [
+                "acutecomb.LCCM",
+                [
+                    {"op":"translate","dx":-80.0,"dy":0.0}
+                ]
+            ],
+            "a"
+        ],
+        "abreve": [
+            [
+                "uni0306.LCCM",
+                [
+                    {"op":"translate","dx":-80.0,"dy":0.0}
+                ]
+            ],
+            "a"
+        ],
+        "acircumflex": [
+            [
+                "uni0302.LCCM",
+                [
+                    {"op":"translate","dx":-80.0,"dy":0.0}
+                ]
+            ],
+            "a"
+        ],
+        "adieresis": [
+            [
+                "uni0308.LCCM",
+                [
+                    {"op":"translate","dx":-80.0,"dy":0.0}
+                ]
+            ],
+            "a"
+        ],
+        "aeacute": [
+            "acutecomb.LCCM",
+            "ae"
+        ],
+        "agrave": [
+            [
+                "gravecomb.LCCM",
+                [
+                    {"op":"translate","dx":-80.0,"dy":0.0}
+                ]
+            ],
+            "a"
+        ],
+        "alphatonos": [
+            [
+                "tonos",
+                [
+                    {"op":"translate","dx":-68.0,"dy":-218.0}
+                ]
+            ],
+            "alpha"
+        ],
+        "amacron": [
+            [
+                "uni0304.LCCM",
+                [
+                    {"op":"translate","dx":-80.0,"dy":0.0}
+                ]
+            ],
+            "a"
+        ],
+        "anoteleia": "periodcentered",
+        "aogonek": [
+            [
+                "uni0328",
+                [
+                    {"op":"translate","dx":312.0,"dy":-20.2667}
+                ]
+            ],
+            "a"
+        ],
+        "aring": [
+            [
+                "uni030A.LCCM",
+                [
+                    {"op":"translate","dx":-80.0,"dy":0.0}
+                ]
+            ],
+            "a"
+        ],
+        "aringacute": [
+            [
+                "acutecomb",
+                [
+                    {"op":"translate","dx":-113.0,"dy":118.0}
+                ]
+            ],
+            "aring"
+        ],
+        "atilde": [
+            [
+                "tildecomb.LCCM",
+                [
+                    {"op":"translate","dx":-80.0,"dy":0.0}
+                ]
+            ],
+            "a"
+        ],
+        "b.pcap": "uni0299",
+        "breve": [
+            [
+                "uni0306",
+                [
+                    {"op":"translate","dx":0.0,"dy":-1004.09}
+                ]
+            ]
+        ],
+        "c.pcap": "uni1D04",
+        "cacute": [
+            "acutecomb.LCCM",
+            "c"
+        ],
+        "caron": "uni030C",
+        "ccaron": [
+            "uni030C.LCCM",
+            "c"
+        ],
+        "ccedilla": [
+            [
+                "uni0327",
+                [
+                    {"op":"translate","dx":31.4326,"dy":-20.2646}
+                ]
+            ],
+            "c"
+        ],
+        "ccircumflex": [
+            "uni0302.LCCM",
+            "c"
+        ],
+        "cdotaccent": [
+            "uni0307.LCCM",
+            "c"
+        ],
+        "cent": [
+            "slash",
+            "c"
+        ],
+        "circumflex": "asciicircum",
+        "copyright": [
+            [
+                "C.SMOL",
+                [
+                    {"op":"translate","dx":-28.0,"dy":240.0}
+                ]
+            ],
+            "x_copyrightcircle"
+        ],
+        "d.pcap": "uni1D05",
+        "dcaron": [
+            [
+                "uni0315",
+                [
+                    {"op":"translate","dx":240.997,"dy":-288.01}
+                ]
+            ],
+            "d"
+        ],
+        "dcroat": [
+            [
+                "x_mediumhorizline",
+                [
+                    {"op":"translate","dx":165.0,"dy":-356.0}
+                ]
+            ],
+            "d"
+        ],
+        "dieresistonos": [
+            [
+                "uni0308.ALTM",
+                [
+                    {"op":"translate","dx":0.0,"dy":-48.0}
+                ]
+            ],
+            [
+                "tonos",
+                [
+                    {"op":"translate","dx":-80.0,"dy":0.0}
+                ]
+            ]
+        ],
+        "dieresistonos.LCCM": [
+            "tonos",
+            [
+                "uni0308.LCCM",
+                [
+                    {"op":"translate","dx":0.0,"dy":-40.0}
+                ]
+            ]
+        ],
+        "dotaccent": [
+            [
+                "uni0307",
+                [
+                    {"op":"translate","dx":0.0,"dy":-1028.0}
+                ]
+            ]
+        ],
+        "e.pcap": "uni1D07",
+        "eacute": [
+            "acutecomb.LCCM",
+            "e"
+        ],
+        "ebreve": [
+            "uni0306.LCCM",
+            "e"
+        ],
+        "ecaron": [
+            "uni030C.LCCM",
+            "e"
+        ],
+        "ecircumflex": [
+            "uni0302.LCCM",
+            "e"
+        ],
+        "edieresis": [
+            "uni0308.LCCM",
+            "e"
+        ],
+        "edotaccent": [
+            "uni0307.LCCM",
+            "e"
+        ],
+        "egrave": [
+            "gravecomb.LCCM",
+            "e"
+        ],
+        "emacron": [
+            "uni0304.LCCM",
+            "e"
+        ],
+        "eogonek": [
+            [
+                "uni0328",
+                [
+                    {"op":"translate","dx":14.8701,"dy":-20.2667}
+                ]
+            ],
+            "e"
+        ],
+        "epsilontonos": [
+            [
+                "tonos",
+                [
+                    {"op":"translate","dx":0.0,"dy":-223.0}
+                ]
+            ],
+            "epsilon"
+        ],
+        "etatonos": [
+            [
+                "tonos",
+                [
+                    {"op":"translate","dx":-99.1455,"dy":-240.0}
+                ]
+            ],
+            "eta"
+        ],
+        "exclamdbl": [
+            [
+                "exclam",
+                [
+                    {"op":"translate","dx":200.0,"dy":0.0}
+                ]
+            ],
+            [
+                "exclam",
+                [
+                    {"op":"translate","dx":-200.0,"dy":0.0}
+                ]
+            ]
+        ],
+        "exclamdown": [
+            [
+                "exclam",
+                [
+                    {"op":"scale","x":-1,"y":-1,"cx":504.0,"cy":378.0}
+                ]
+            ]
+        ],
+        "f.pcap": "uniA730",
+        "fiveeighths": [
+            [
+                "eight.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":-231.0}
+                ]
+            ],
+            [
+                "five.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":561.0}
+                ]
+            ],
+            [
+                "x_nutfractionbar",
+                [
+                    {"op":"translate","dx":0.0,"dy":75.0}
+                ]
+            ]
+        ],
+        "fraction": "slash.cv04",
+        "g.pcap": "uni0262",
+        "gbreve": [
+            [
+                "uni0306.LCCM",
+                [
+                    {"op":"translate","dx":-60.0,"dy":0.0}
+                ]
+            ],
+            "g"
+        ],
+        "gcaron": [
+            [
+                "uni030C.LCCM",
+                [
+                    {"op":"translate","dx":-60.0,"dy":0.0}
+                ]
+            ],
+            "g"
+        ],
+        "gcircumflex": [
+            [
+                "uni0302.LCCM",
+                [
+                    {"op":"translate","dx":-60.0,"dy":0.0}
+                ]
+            ],
+            "g"
+        ],
+        "gdotaccent": [
+            [
+                "uni0307.LCCM",
+                [
+                    {"op":"translate","dx":-60.0,"dy":0.0}
+                ]
+            ],
+            "g"
+        ],
+        "glyph2044": [
+            [
+                "i.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":636.0}
+                ]
+            ]
+        ],
+        "glyph2061": [
+            [
+                "i.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":-156.0}
+                ]
+            ]
+        ],
+        "glyph2062": [
+            [
+                "r.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":-156.0}
+                ]
+            ]
+        ],
+        "glyph2063": [
+            [
+                "u.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":-156.0}
+                ]
+            ]
+        ],
+        "glyph2064": [
+            [
+                "v.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":-156.0}
+                ]
+            ]
+        ],
+        "glyph2065": [
+            [
+                "j.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":-156.0}
+                ]
+            ]
+        ],
+        "glyph2066": [
+            [
+                "beta.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":-156.0}
+                ]
+            ]
+        ],
+        "glyph2067": [
+            [
+                "gamma.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":-156.0}
+                ]
+            ]
+        ],
+        "glyph2068": [
+            [
+                "rho.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":-156.0}
+                ]
+            ]
+        ],
+        "glyph2069": [
+            [
+                "phi.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":-156.0}
+                ]
+            ]
+        ],
+        "glyph2070": [
+            [
+                "chi.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":-156.0}
+                ]
+            ]
+        ],
+        "h.pcap": "uni029C",
+        "hbar": [
+            "h",
+            [
+                "x_mediumhorizline",
+                [
+                    {"op":"translate","dx":-145.0,"dy":-356.0}
+                ]
+            ]
+        ],
+        "hcircumflex": [
+            "uni0302",
+            "h"
+        ],
+        "hungarumlaut": [
+            [
+                "uni030B",
+                [
+                    {"op":"translate","dx":-24.0,"dy":-1004.0}
+                ]
+            ]
+        ],
+        "i.pcap": "uni026A",
+        "iacute": [
+            [
+                "acutecomb.LCCM",
+                [
+                    {"op":"translate","dx":-60.0,"dy":0.0}
+                ]
+            ],
+            "dotlessi"
+        ],
+        "ibreve": [
+            [
+                "uni0306.LCCM",
+                [
+                    {"op":"translate","dx":-60.0,"dy":0.0}
+                ]
+            ],
+            "dotlessi"
+        ],
+        "icircumflex": [
+            [
+                "uni0302.LCCM",
+                [
+                    {"op":"translate","dx":-60.0,"dy":0.0}
+                ]
+            ],
+            "dotlessi"
+        ],
+        "idieresis": [
+            [
+                "uni0308.LCCM",
+                [
+                    {"op":"translate","dx":-60.0,"dy":0.0}
+                ]
+            ],
+            "dotlessi"
+        ],
+        "igrave": [
+            [
+                "gravecomb.LCCM",
+                [
+                    {"op":"translate","dx":-60.0,"dy":0.0}
+                ]
+            ],
+            "dotlessi"
+        ],
+        "imacron": [
+            [
+                "uni0304.LCCM",
+                [
+                    {"op":"translate","dx":-60.0,"dy":0.0}
+                ]
+            ],
+            "dotlessi"
+        ],
+        "iogonek": [
+            [
+                "uni0328",
+                [
+                    {"op":"translate","dx":0.0,"dy":-0.2667}
+                ]
+            ],
+            "i"
+        ],
+        "iotadieresis": [
+            "uni0308.LCCM",
+            "iota"
+        ],
+        "iotadieresistonos": [
+            [
+                "dieresistonos.LCCM",
+                [
+                    {"op":"translate","dx":-60.0,"dy":0.0}
+                ]
+            ],
+            "iota"
+        ],
+        "iotatonos": [
+            [
+                "tonos",
+                [
+                    {"op":"translate","dx":-66.0,"dy":-239.0}
+                ]
+            ],
+            "iota"
+        ],
+        "itilde": [
+            [
+                "tildecomb.LCCM",
+                [
+                    {"op":"translate","dx":-60.0,"dy":0.0}
+                ]
+            ],
+            "dotlessi"
+        ],
+        "j.pcap": "uni1D0A",
+        "jcircumflex": [
+            "uni0302.LCCM",
+            "uni0237"
+        ],
+        "k.pcap": "uni1D0B",
+        "l.pcap": "uni029F",
+        "lacute": [
+            "acutecomb",
+            "l"
+        ],
+        "lcaron": [
+            [
+                "uni0315",
+                [
+                    {"op":"translate","dx":67.0,"dy":-288.0}
+                ]
+            ],
+            "l"
+        ],
+        "ldot": [
+            [
+                "periodcentered",
+                [
+                    {"op":"translate","dx":218.0,"dy":150.0}
+                ]
+            ],
+            "l"
+        ],
+        "lslash": [
+            [
+                "x_shortstroke45",
+                [
+                    {"op":"translate","dx":16.0,"dy":0.0}
+                ]
+            ],
+            "l"
+        ],
+        "m.pcap": "uni1D0D",
+        "n.pcap": "uni0274",
+        "nacute": [
+            [
+                "acutecomb.LCCM",
+                [
+                    {"op":"translate","dx":-40.0,"dy":0.0}
+                ]
+            ],
+            "n"
+        ],
+        "napostrophe": [
+            [
+                "n",
+                [
+                    {"op":"translate","dx":57.0,"dy":0.0}
+                ]
+            ],
+            [
+                "uni02BC",
+                [
+                    {"op":"translate","dx":-346.0,"dy":-171.0}
+                ]
+            ]
+        ],
+        "ncaron": [
+            [
+                "uni030C.LCCM",
+                [
+                    {"op":"translate","dx":-40.0,"dy":0.0}
+                ]
+            ],
+            "n"
+        ],
+        "notelement": [
+            "slash",
+            "element"
+        ],
+        "notequal": [
+            "slash",
+            "equal"
+        ],
+        "notsubset": [
+            "slash",
+            "propersubset"
+        ],
+        "ntilde": [
+            [
+                "tildecomb.LCCM",
+                [
+                    {"op":"translate","dx":-40.0,"dy":0.0}
+                ]
+            ],
+            "n"
+        ],
+        "o.pcap": "uni1D0F",
+        "oacute": [
+            "acutecomb.LCCM",
+            "o"
+        ],
+        "obreve": [
+            "uni0306.LCCM",
+            "o"
+        ],
+        "ocircumflex": [
+            "uni0302.LCCM",
+            "o"
+        ],
+        "odieresis": [
+            "uni0308.LCCM",
+            "o"
+        ],
+        "ograve": [
+            "gravecomb.LCCM",
+            "o"
+        ],
+        "ohorn": [
+            [
+                "uni031B",
+                [
+                    {"op":"translate","dx":130.0,"dy":-280.0}
+                ]
+            ],
+            "o"
+        ],
+        "ohungarumlaut": [
+            "uni030B.LCCM",
+            "o"
+        ],
+        "omacron": [
+            "uni0304.LCCM",
+            "o"
+        ],
+        "omegatonos": [
+            [
+                "tonos",
+                [
+                    {"op":"translate","dx":-40.0,"dy":-240.0}
+                ]
+            ],
+            "omega"
+        ],
+        "omicron": "o",
+        "omicrontonos": [
+            [
+                "tonos",
+                [
+                    {"op":"translate","dx":-40.0,"dy":-221.0}
+                ]
+            ],
+            "omicron"
+        ],
+        "oneeighth": [
+            [
+                "eight.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":-231.0}
+                ]
+            ],
+            [
+                "one.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":561.0}
+                ]
+            ],
+            [
+                "x_nutfractionbar",
+                [
+                    {"op":"translate","dx":0.0,"dy":75.0}
+                ]
+            ]
+        ],
+        "onehalf": [
+            [
+                "two.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":-231.0}
+                ]
+            ],
+            [
+                "one.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":561.0}
+                ]
+            ],
+            [
+                "x_nutfractionbar",
+                [
+                    {"op":"translate","dx":0.0,"dy":75.0}
+                ]
+            ]
+        ],
+        "onequarter": [
+            [
+                "four.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":-231.0}
+                ]
+            ],
+            [
+                "one.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":561.0}
+                ]
+            ],
+            [
+                "x_nutfractionbar",
+                [
+                    {"op":"translate","dx":0.0,"dy":75.0}
+                ]
+            ]
+        ],
+        "onethird": [
+            [
+                "three.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":-231.0}
+                ]
+            ],
+            [
+                "one.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":561.0}
+                ]
+            ],
+            [
+                "x_nutfractionbar",
+                [
+                    {"op":"translate","dx":0.0,"dy":75.0}
+                ]
+            ]
+        ],
+        "ordfeminine": [
+            [
+                "a.SMOL",
+                [
+                    {"op":"translate","dx":-26.0,"dy":630.0}
+                ]
+            ],
+            "x_ordinalindicatorbar"
+        ],
+        "ordmasculine": [
+            [
+                "o.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":630.0}
+                ]
+            ],
+            "x_ordinalindicatorbar"
+        ],
+        "oslash": [
+            [
+                "x_longstroke45",
+                [
+                    {"op":"translate","dx":0.0,"dy":-150.0}
+                ]
+            ],
+            "o"
+        ],
+        "oslashacute": [
+            "acutecomb.LCCM",
+            "oslash"
+        ],
+        "otilde": [
+            "tildecomb.LCCM",
+            "o"
+        ],
+        "p.pcap": "uni1D18",
+        "plusminus": [
+            [
+                "minus",
+                [
+                    {"op":"translate","dx":0.0,"dy":-416.0}
+                ]
+            ],
+            [
+                "plus",
+                [
+                    {"op":"translate","dx":0.0,"dy":96.0}
+                ]
+            ]
+        ],
+        "q.pcap": "uniA7AF",
+        "questiondown": [
+            [
+                "question",
+                [
+                    {"op":"scale","x":-1,"y":-1,"cx":503.98,"cy":378.992}
+                ]
+            ]
+        ],
+        "r.pcap": "uni0280",
+        "racute": [
+            "acutecomb.LCCM",
+            "r"
+        ],
+        "rcaron": [
+            "uni030C.LCCM",
+            "r"
+        ],
+        "registered": [
+            [
+                "R.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":240.0}
+                ]
+            ],
+            "x_copyrightcircle"
+        ],
+        "ring": [
+            [
+                "uni030A",
+                [
+                    {"op":"translate","dx":0.0,"dy":-880.0}
+                ]
+            ]
+        ],
+        "s.pcap": "uniA731",
+        "s.ss07": "s.ss04",
+        "sacute": [
+            "acutecomb.LCCM",
+            "s"
+        ],
+        "scaron": [
+            "uni030C.LCCM",
+            "s"
+        ],
+        "scedilla": [
+            [
+                "uni0327",
+                [
+                    {"op":"translate","dx":72.4258,"dy":-20.2665}
+                ]
+            ],
+            "s"
+        ],
+        "schwa.ss04": [
+            [
+                "e.ss04",
+                [
+                    {"op":"scale","x":-1,"y":-1,"cx":504.045,"cy":378.0}
+                ]
+            ]
+        ],
+        "scircumflex": [
+            "uni0302.LCCM",
+            "s"
+        ],
+        "seveneighths": [
+            [
+                "eight.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":-231.0}
+                ]
+            ],
+            [
+                "seven.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":561.0}
+                ]
+            ],
+            [
+                "x_nutfractionbar",
+                [
+                    {"op":"translate","dx":0.0,"dy":75.0}
+                ]
+            ]
+        ],
+        "t.pcap": "uni1D1B",
+        "tbar": [
+            [
+                "x_mediumhorizline",
+                [
+                    {"op":"translate","dx":-80.0,"dy":-770.0}
+                ]
+            ],
+            "t"
+        ],
+        "tcaron": [
+            [
+                "uni0315",
+                [
+                    {"op":"translate","dx":80.0,"dy":-290.0}
+                ]
+            ],
+            "t"
+        ],
+        "threeeighths": [
+            [
+                "eight.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":-231.0}
+                ]
+            ],
+            [
+                "three.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":561.0}
+                ]
+            ],
+            [
+                "x_nutfractionbar",
+                [
+                    {"op":"translate","dx":0.0,"dy":75.0}
+                ]
+            ]
+        ],
+        "threequarters": [
+            [
+                "four.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":-231.0}
+                ]
+            ],
+            [
+                "three.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":561.0}
+                ]
+            ],
+            [
+                "x_nutfractionbar",
+                [
+                    {"op":"translate","dx":0.0,"dy":75.0}
+                ]
+            ]
+        ],
+        "tilde": [
+            [
+                "tildecomb",
+                [
+                    {"op":"translate","dx":0.0,"dy":-1016.0}
+                ]
+            ]
+        ],
+        "trademark": [
+            [
+                "T.SMOL",
+                [
+                    {"op":"translate","dx":-252.0,"dy":480.0}
+                ]
+            ],
+            [
+                "M.SMOL",
+                [
+                    {"op":"translate","dx":252.0,"dy":478.0}
+                ]
+            ]
+        ],
+        "twothirds": [
+            [
+                "three.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":-231.0}
+                ]
+            ],
+            [
+                "two.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":561.0}
+                ]
+            ],
+            [
+                "x_nutfractionbar",
+                [
+                    {"op":"translate","dx":0.0,"dy":75.0}
+                ]
+            ]
+        ],
+        "u.pcap": "uni1D1C",
+        "uacute": [
+            [
+                "acutecomb.LCCM",
+                [
+                    {"op":"translate","dx":-30.0,"dy":0.0}
+                ]
+            ],
+            "u"
+        ],
+        "ubreve": [
+            [
+                "uni0306.LCCM",
+                [
+                    {"op":"translate","dx":-30.0,"dy":0.0}
+                ]
+            ],
+            "u"
+        ],
+        "ucircumflex": [
+            [
+                "uni0302.LCCM",
+                [
+                    {"op":"translate","dx":-30.0,"dy":0.0}
+                ]
+            ],
+            "u"
+        ],
+        "udieresis": [
+            [
+                "uni0308.LCCM",
+                [
+                    {"op":"translate","dx":-30.0,"dy":0.0}
+                ]
+            ],
+            "u"
+        ],
+        "ugrave": [
+            [
+                "gravecomb.LCCM",
+                [
+                    {"op":"translate","dx":-30.0,"dy":0.0}
+                ]
+            ],
+            "u"
+        ],
+        "uhorn": [
+            [
+                "uni031B",
+                [
+                    {"op":"translate","dx":60.0,"dy":-300.0}
+                ]
+            ],
+            "u"
+        ],
+        "uhungarumlaut": [
+            [
+                "uni030B.LCCM",
+                [
+                    {"op":"translate","dx":-30.0,"dy":0.0}
+                ]
+            ],
+            "u"
+        ],
+        "umacron": [
+            [
+                "uni0304.LCCM",
+                [
+                    {"op":"translate","dx":-30.0,"dy":0.0}
+                ]
+            ],
+            "u"
+        ],
+        "uni00AD": "uni2010",
+        "uni00B2": [
+            [
+                "two.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":636.0}
+                ]
+            ]
+        ],
+        "uni00B3": [
+            [
+                "three.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":636.0}
+                ]
+            ]
+        ],
+        "uni00B9": [
+            [
+                "one.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":636.0}
+                ]
+            ]
+        ],
+        "uni0122": [
+            [
+                "uni0326",
+                [
+                    {"op":"translate","dx":-37.9443,"dy":-62.0}
+                ]
+            ],
+            "G"
+        ],
+        "uni0123": [
+            [
+                "uni0312.LCCM",
+                [
+                    {"op":"translate","dx":-60.0,"dy":-190.0}
+                ]
+            ],
+            "g"
+        ],
+        "uni0136": [
+            [
+                "uni0326",
+                [
+                    {"op":"translate","dx":7.73389,"dy":-10.0}
+                ]
+            ],
+            "K"
+        ],
+        "uni0137": [
+            [
+                "uni0326",
+                [
+                    {"op":"translate","dx":-0.487793,"dy":-10.0}
+                ]
+            ],
+            "k"
+        ],
+        "uni013B": [
+            [
+                "uni0326",
+                [
+                    {"op":"translate","dx":3.0,"dy":-10.0}
+                ]
+            ],
+            "L"
+        ],
+        "uni013C": [
+            [
+                "uni0326",
+                [
+                    {"op":"translate","dx":-0.0649414,"dy":26.0}
+                ]
+            ],
+            "l"
+        ],
+        "uni0145": [
+            [
+                "uni0326",
+                [
+                    {"op":"translate","dx":-49.9995,"dy":-11.0}
+                ]
+            ],
+            "N"
+        ],
+        "uni0146": [
+            [
+                "uni0326",
+                [
+                    {"op":"translate","dx":1.25049,"dy":-11.0}
+                ]
+            ],
+            "n"
+        ],
+        "uni0156": [
+            [
+                "uni0326",
+                [
+                    {"op":"translate","dx":3.58594,"dy":-10.0}
+                ]
+            ],
+            "R"
+        ],
+        "uni0157": [
+            [
+                "uni0326",
+                [
+                    {"op":"translate","dx":-157.451,"dy":-10.0}
+                ]
+            ],
+            "r"
+        ],
+        "uni0162": [
+            [
+                "uni0327",
+                [
+                    {"op":"translate","dx":0.0,"dy":-0.2665}
+                ]
+            ],
+            "T"
+        ],
+        "uni0163": [
+            [
+                "uni0327",
+                [
+                    {"op":"translate","dx":106.095,"dy":-20.2665}
+                ]
+            ],
+            "t"
+        ],
+        "uni018E": [
+            [
+                "E",
+                [
+                    {"op":"scale","x":-1.0,"y":1.0},
+                    {"op":"translate","dx":1007.69,"dy":0.0}
+                ]
+            ]
+        ],
+        "uni01B7": "three",
+        "uni01B8": [
+            [
+                "three",
+                [
+                    {"op":"scale","x":-1.0,"y":1.0},
+                    {"op":"translate","dx":1008.16,"dy":0.0}
+                ]
+            ]
+        ],
+        "uni01B9": [
+            [
+                "three",
+                [
+                    {"op":"scale","x":-1.0,"y":1.0},
+                    {"op":"translate","dx":1008.16,"dy":-300.0}
+                ]
+            ]
+        ],
+        "uni01CD": [
+            "uni030C",
+            "A"
+        ],
+        "uni01CE": [
+            [
+                "uni030C.LCCM",
+                [
+                    {"op":"translate","dx":-80.0,"dy":0.0}
+                ]
+            ],
+            "a"
+        ],
+        "uni01CF": [
+            "uni030C",
+            "I"
+        ],
+        "uni01D0": [
+            [
+                "uni030C.LCCM",
+                [
+                    {"op":"translate","dx":-60.0,"dy":0.0}
+                ]
+            ],
+            "dotlessi"
+        ],
+        "uni01D1": [
+            "uni030C",
+            "O"
+        ],
+        "uni01D2": [
+            "uni030C.LCCM",
+            "o"
+        ],
+        "uni01D3": [
+            "uni030C",
+            "U"
+        ],
+        "uni01D4": [
+            [
+                "uni030C.LCCM",
+                [
+                    {"op":"translate","dx":-30.0,"dy":0.0}
+                ]
+            ],
+            "u"
+        ],
+        "uni01D5": [
+            [
+                "uni0304",
+                [
+                    {"op":"translate","dx":0.0,"dy":232.0}
+                ]
+            ],
+            "Udieresis"
+        ],
+        "uni01D6": [
+            [
+                "uni0304",
+                [
+                    {"op":"translate","dx":-40.0,"dy":-8.0}
+                ]
+            ],
+            "udieresis"
+        ],
+        "uni01D7": [
+            [
+                "acutecomb",
+                [
+                    {"op":"translate","dx":4.0,"dy":244.0}
+                ]
+            ],
+            [
+                "Udieresis",
+                [
+                    {"op":"translate","dx":0.0,"dy":-20.0}
+                ]
+            ]
+        ],
+        "uni01D8": [
+            [
+                "acutecomb",
+                [
+                    {"op":"translate","dx":-36.0,"dy":4.0}
+                ]
+            ],
+            "udieresis"
+        ],
+        "uni01D9": [
+            [
+                "uni030C",
+                [
+                    {"op":"translate","dx":0.0,"dy":264.0}
+                ]
+            ],
+            "Udieresis"
+        ],
+        "uni01DA": [
+            [
+                "uni030C",
+                [
+                    {"op":"translate","dx":-20.0,"dy":4.0}
+                ]
+            ],
+            "udieresis"
+        ],
+        "uni01DB": [
+            [
+                "gravecomb",
+                [
+                    {"op":"translate","dx":-4.0,"dy":264.0}
+                ]
+            ],
+            "Udieresis"
+        ],
+        "uni01DC": [
+            [
+                "gravecomb",
+                [
+                    {"op":"translate","dx":-44.0,"dy":-16.0}
+                ]
+            ],
+            "udieresis"
+        ],
+        "uni01DD": [
+            [
+                "e",
+                [
+                    {"op":"scale","x":-1,"y":-1,"cx":503.995,"cy":378.0}
+                ]
+            ]
+        ],
+        "uni01DE": [
+            [
+                "uni0304",
+                [
+                    {"op":"translate","dx":0.0,"dy":232.0}
+                ]
+            ],
+            "Adieresis"
+        ],
+        "uni01DF": [
+            [
+                "uni0304",
+                [
+                    {"op":"translate","dx":-80.0,"dy":-28.0}
+                ]
+            ],
+            "adieresis"
+        ],
+        "uni01E0": [
+            [
+                "uni0304",
+                [
+                    {"op":"translate","dx":0.0,"dy":232.0}
+                ]
+            ],
+            "uni0226"
+        ],
+        "uni01E1": [
+            [
+                "uni0304",
+                [
+                    {"op":"translate","dx":-100.0,"dy":-28.0}
+                ]
+            ],
+            "uni0227"
+        ],
+        "uni01E2": [
+            [
+                "uni0304",
+                [
+                    {"op":"translate","dx":160.0,"dy":0.0}
+                ]
+            ],
+            "AE"
+        ],
+        "uni01E3": [
+            "uni0304.LCCM",
+            "ae"
+        ],
+        "uni01E8": [
+            "uni030C",
+            "K"
+        ],
+        "uni01E9": [
+            "uni030C",
+            "k"
+        ],
+        "uni01EA": [
+            [
+                "uni0328",
+                [
+                    {"op":"translate","dx":0.0,"dy":-20.2667}
+                ]
+            ],
+            "O"
+        ],
+        "uni01EB": [
+            [
+                "uni0328",
+                [
+                    {"op":"translate","dx":0.0,"dy":-20.2667}
+                ]
+            ],
+            "o"
+        ],
+        "uni01EC": [
+            "uni0304",
+            "uni01EA"
+        ],
+        "uni01ED": [
+            "uni0304.LCCM",
+            "uni01EB"
+        ],
+        "uni01EE": [
+            "uni030C",
+            "uni01B7"
+        ],
+        "uni01F0": [
+            "uni030C.LCCM",
+            "uni0237"
+        ],
+        "uni01F4": [
+            [
+                "acutecomb",
+                [
+                    {"op":"translate","dx":20.0,"dy":0.0}
+                ]
+            ],
+            "G"
+        ],
+        "uni01F5": [
+            [
+                "acutecomb.LCCM",
+                [
+                    {"op":"translate","dx":-60.0,"dy":0.0}
+                ]
+            ],
+            "g"
+        ],
+        "uni01F8": [
+            "gravecomb",
+            "N"
+        ],
+        "uni01F9": [
+            [
+                "gravecomb.LCCM",
+                [
+                    {"op":"translate","dx":-40.0,"dy":0.0}
+                ]
+            ],
+            "n"
+        ],
+        "uni0200": [
+            "uni030F",
+            "A"
+        ],
+        "uni0201": [
+            [
+                "uni030F.LCCM",
+                [
+                    {"op":"translate","dx":-80.0,"dy":0.0}
+                ]
+            ],
+            "a"
+        ],
+        "uni0202": [
+            "uni0311",
+            "A"
+        ],
+        "uni0203": [
+            [
+                "uni0311.LCCM",
+                [
+                    {"op":"translate","dx":-80.0,"dy":0.0}
+                ]
+            ],
+            "a"
+        ],
+        "uni0204": [
+            "uni030F",
+            "E"
+        ],
+        "uni0205": [
+            "uni030F.LCCM",
+            "e"
+        ],
+        "uni0206": [
+            "uni0311",
+            "E"
+        ],
+        "uni0207": [
+            "uni0311.LCCM",
+            "e"
+        ],
+        "uni0208": [
+            "uni030F",
+            "I"
+        ],
+        "uni0209": [
+            [
+                "uni030F.LCCM",
+                [
+                    {"op":"translate","dx":-60.0,"dy":0.0}
+                ]
+            ],
+            "dotlessi"
+        ],
+        "uni020A": [
+            "uni0311",
+            "I"
+        ],
+        "uni020B": [
+            [
+                "uni0311.LCCM",
+                [
+                    {"op":"translate","dx":-60.0,"dy":0.0}
+                ]
+            ],
+            "dotlessi"
+        ],
+        "uni020C": [
+            "uni030F",
+            "O"
+        ],
+        "uni020D": [
+            "uni030F.LCCM",
+            "o"
+        ],
+        "uni020E": [
+            "uni0311",
+            "O"
+        ],
+        "uni020F": [
+            "uni0311.LCCM",
+            "o"
+        ],
+        "uni0210": [
+            "uni030F",
+            "R"
+        ],
+        "uni0211": [
+            "uni030F.LCCM",
+            "r"
+        ],
+        "uni0212": [
+            "uni0311",
+            "R"
+        ],
+        "uni0213": [
+            "uni0311.LCCM",
+            "r"
+        ],
+        "uni0214": [
+            "uni030F",
+            "U"
+        ],
+        "uni0215": [
+            [
+                "uni030F.LCCM",
+                [
+                    {"op":"translate","dx":-30.0,"dy":0.0}
+                ]
+            ],
+            "u"
+        ],
+        "uni0216": [
+            "uni0311",
+            "U"
+        ],
+        "uni0217": [
+            [
+                "uni0311.LCCM",
+                [
+                    {"op":"translate","dx":-30.0,"dy":0.0}
+                ]
+            ],
+            "u"
+        ],
+        "uni0218": [
+            [
+                "uni0326",
+                [
+                    {"op":"translate","dx":57.9824,"dy":-10.0}
+                ]
+            ],
+            "S"
+        ],
+        "uni0219": [
+            [
+                "uni0326",
+                [
+                    {"op":"translate","dx":72.4258,"dy":-10.0}
+                ]
+            ],
+            "s"
+        ],
+        "uni021A": [
+            [
+                "uni0326",
+                [
+                    {"op":"translate","dx":0.0,"dy":-10.0}
+                ]
+            ],
+            "T"
+        ],
+        "uni021B": [
+            [
+                "uni0326",
+                [
+                    {"op":"translate","dx":106.095,"dy":-10.0}
+                ]
+            ],
+            "t"
+        ],
+        "uni021E": [
+            "uni030C",
+            "H"
+        ],
+        "uni021F": [
+            "uni030C",
+            "h"
+        ],
+        "uni0226": [
+            "uni0307",
+            "A"
+        ],
+        "uni0227": [
+            [
+                "uni0307.LCCM",
+                [
+                    {"op":"translate","dx":-80.0,"dy":0.0}
+                ]
+            ],
+            "a"
+        ],
+        "uni0228": [
+            [
+                "uni0327",
+                [
+                    {"op":"translate","dx":0.0,"dy":-0.2665}
+                ]
+            ],
+            "E"
+        ],
+        "uni0229": [
+            [
+                "uni0327",
+                [
+                    {"op":"translate","dx":14.8701,"dy":-20.2665}
+                ]
+            ],
+            "e"
+        ],
+        "uni022A": [
+            [
+                "uni0304",
+                [
+                    {"op":"translate","dx":0.0,"dy":252.0}
+                ]
+            ],
+            "Odieresis"
+        ],
+        "uni022B": [
+            [
+                "uni0304",
+                [
+                    {"op":"translate","dx":0.0,"dy":-28.0}
+                ]
+            ],
+            "odieresis"
+        ],
+        "uni022C": [
+            [
+                "uni0304",
+                [
+                    {"op":"translate","dx":12.0,"dy":276.0}
+                ]
+            ],
+            "Otilde"
+        ],
+        "uni022D": [
+            [
+                "uni0304",
+                [
+                    {"op":"translate","dx":32.0,"dy":136.0}
+                ]
+            ],
+            "otilde"
+        ],
+        "uni022E": [
+            "uni0307",
+            "O"
+        ],
+        "uni022F": [
+            "uni0307.LCCM",
+            "o"
+        ],
+        "uni0230": [
+            [
+                "uni0304",
+                [
+                    {"op":"translate","dx":0.0,"dy":252.0}
+                ]
+            ],
+            "uni022E"
+        ],
+        "uni0231": [
+            [
+                "uni0304",
+                [
+                    {"op":"translate","dx":0.0,"dy":-28.0}
+                ]
+            ],
+            "uni022F"
+        ],
+        "uni0232": [
+            "uni0304",
+            "Y"
+        ],
+        "uni0233": [
+            "uni0304.LCCM",
+            "y"
+        ],
+        "uni0245": [
+            [
+                "V",
+                [
+                    {"op":"scale","x":-1,"y":-1,"cx":503.995,"cy":527.995}
+                ]
+            ]
+        ],
+        "uni0250": [
+            [
+                "a",
+                [
+                    {"op":"scale","x":-1,"y":-1,"cx":504.315,"cy":378.0}
+                ]
+            ]
+        ],
+        "uni0254": [
+            [
+                "c",
+                [
+                    {"op":"scale","x":-1,"y":-1,"cx":504.9,"cy":378.001}
+                ]
+            ]
+        ],
+        "uni0258": [
+            [
+                "e",
+                [
+                    {"op":"scale","x":-1.0,"y":1.0},
+                    {"op":"translate","dx":1008.09,"dy":0.0}
+                ]
+            ]
+        ],
+        "uni0259": [
+            [
+                "e",
+                [
+                    {"op":"scale","x":-1,"y":-1,"cx":504.045,"cy":378.0}
+                ]
+            ]
+        ],
+        "uni0259.ss07": [
+            [
+                "e.ss07",
+                [
+                    {"op":"scale","x":-1,"y":-1,"cx":504.045,"cy":378.7665}
+                ]
+            ]
+        ],
+        "uni0265": [
+            [
+                "h",
+                [
+                    {"op":"scale","x":-1,"y":-1,"cx":504.0,"cy":378.0}
+                ]
+            ]
+        ],
+        "uni026F": [
+            [
+                "m",
+                [
+                    {"op":"scale","x":-1,"y":-1,"cx":504.0,"cy":377.9955}
+                ]
+            ]
+        ],
+        "uni0287": [
+            [
+                "t",
+                [
+                    {"op":"scale","x":-1,"y":-1,"cx":503.935,"cy":528.0}
+                ]
+            ]
+        ],
+        "uni028C": [
+            [
+                "v",
+                [
+                    {"op":"scale","x":-1,"y":-1,"cx":505.0,"cy":378.0}
+                ]
+            ]
+        ],
+        "uni028D": [
+            [
+                "w",
+                [
+                    {"op":"scale","x":-1,"y":-1,"cx":505.0,"cy":378.0}
+                ]
+            ]
+        ],
+        "uni028E": [
+            [
+                "y",
+                [
+                    {"op":"scale","x":-1,"y":-1,"cx":504.0,"cy":378.0}
+                ]
+            ]
+        ],
+        "uni0292": [
+            [
+                "three",
+                [
+                    {"op":"translate","dx":0.0,"dy":-300.0}
+                ]
+            ]
+        ],
+        "uni029E": [
+            [
+                "k",
+                [
+                    {"op":"scale","x":-1,"y":-1,"cx":503.51,"cy":378.0}
+                ]
+            ]
+        ],
+        "uni02BC": [
+            [
+                "quoteright",
+                [
+                    {"op":"translate","dx":0.0,"dy":268.0}
+                ]
+            ]
+        ],
+        "uni02C9": "uni0304",
+        "uni0342.LCCM": "tildecomb.LCCM",
+        "uni037E": "semicolon",
+        "uni037F": "J",
+        "uni03D3": [
+            [
+                "tonos",
+                [
+                    {"op":"translate","dx":0.0,"dy":1.0}
+                ]
+            ],
+            "Upsilon1"
+        ],
+        "uni03D4": [
+            "uni0308",
+            "Upsilon1"
+        ],
+        "uni03DC": "F",
+        "uni03F3": "j",
+        "uni0400": [
+            "gravecomb",
+            "uni0415"
+        ],
+        "uni0401": [
+            "uni0308",
+            "uni0415"
+        ],
+        "uni0403": [
+            "acutecomb",
+            "uni0413"
+        ],
+        "uni0404": [
+            [
+                "uni042D",
+                [
+                    {"op":"scale","x":-1.0,"y":1.0},
+                    {"op":"translate","dx":1008.38,"dy":0.0}
+                ]
+            ]
+        ],
+        "uni0405": "S",
+        "uni0406": "I",
+        "uni0407": [
+            "uni0308",
+            "uni0406"
+        ],
+        "uni0408": "J",
+        "uni040C": [
+            "acutecomb",
+            "uni041A"
+        ],
+        "uni040D": [
+            "gravecomb",
+            "uni0418"
+        ],
+        "uni040E": [
+            "uni0306",
+            "uni0423"
+        ],
+        "uni0410": "A",
+        "uni0412": "B",
+        "uni0413": "Gamma",
+        "uni0415": "E",
+        "uni0419": [
+            "uni0306",
+            "uni0418"
+        ],
+        "uni041C": "M",
+        "uni041D": "H",
+        "uni041E": "O",
+        "uni041F": "Pi",
+        "uni0420": "P",
+        "uni0421": "C",
+        "uni0422": "T",
+        "uni0423": [
+            [
+                "y",
+                [
+                    {"op":"translate","dx":0.0,"dy":300.0}
+                ]
+            ]
+        ],
+        "uni0424": "Phi",
+        "uni0425": "X",
+        "uni042F": [
+            [
+                "R",
+                [
+                    {"op":"scale","x":-1.0,"y":1.0},
+                    {"op":"translate","dx":1008.17,"dy":0.0}
+                ]
+            ]
+        ],
+        "uni0430": "a",
+        "uni0432": "uni0299",
+        "uni0435": "e",
+        "uni0439": [
+            "uni0306.LCCM",
+            "uni0438"
+        ],
+        "uni043C": "uni1D0D",
+        "uni043D": "uni029C",
+        "uni043E": "uni1D0F",
+        "uni0440": "p",
+        "uni0441": "c",
+        "uni0442": "uni1D1B",
+        "uni0443": "y",
+        "uni0445": "x",
+        "uni0450": [
+            "gravecomb.LCCM",
+            "uni0435"
+        ],
+        "uni0451": [
+            "uni0308.LCCM",
+            "uni0435"
+        ],
+        "uni0453": [
+            "acutecomb.LCCM",
+            "uni0433"
+        ],
+        "uni0455": "s",
+        "uni0456": "i",
+        "uni0457": [
+            [
+                "uni0308.LCCM",
+                [
+                    {"op":"translate","dx":-60.0,"dy":0.0}
+                ]
+            ],
+            "dotlessi"
+        ],
+        "uni0458": "j",
+        "uni045C": [
+            "acutecomb.LCCM",
+            "uni043A"
+        ],
+        "uni045D": [
+            "gravecomb.LCCM",
+            "uni0438"
+        ],
+        "uni045E": [
+            "uni0306.LCCM",
+            "uni0443"
+        ],
+        "uni04BA": [
+            [
+                "uni0427",
+                [
+                    {"op":"scale","x":-1,"y":-1,"cx":504.0,"cy":528.0}
+                ]
+            ]
+        ],
+        "uni04BB": "h",
+        "uni04C0": "I",
+        "uni04C1": [
+            "uni0306",
+            "uni0416"
+        ],
+        "uni04C2": [
+            "uni0306.LCCM",
+            "uni0436"
+        ],
+        "uni04D0": [
+            "uni0306",
+            "uni0410"
+        ],
+        "uni04D1": [
+            [
+                "uni0306.LCCM",
+                [
+                    {"op":"translate","dx":-80.0,"dy":0.0}
+                ]
+            ],
+            "uni0430"
+        ],
+        "uni04D2": [
+            "uni0308",
+            "uni0410"
+        ],
+        "uni04D3": [
+            [
+                "uni0308.LCCM",
+                [
+                    {"op":"translate","dx":-80.0,"dy":0.0}
+                ]
+            ],
+            "uni0430"
+        ],
+        "uni04D4": "AE",
+        "uni04D5": "ae",
+        "uni04D6": [
+            "uni0306",
+            "uni0415"
+        ],
+        "uni04D7": [
+            "uni0306.LCCM",
+            "uni0435"
+        ],
+        "uni04DC": [
+            "uni0308",
+            "uni0416"
+        ],
+        "uni04DD": [
+            "uni0308.LCCM",
+            "uni0436"
+        ],
+        "uni04DE": [
+            "uni0308",
+            "uni0417"
+        ],
+        "uni04DF": [
+            "uni0308.LCCM",
+            "uni0437"
+        ],
+        "uni04E0": "three",
+        "uni04E1": [
+            [
+                "three",
+                [
+                    {"op":"translate","dx":0.0,"dy":-300.0}
+                ]
+            ]
+        ],
+        "uni04E2": [
+            "uni0304",
+            "uni0418"
+        ],
+        "uni04E3": [
+            "uni0304.LCCM",
+            "uni0438"
+        ],
+        "uni04E4": [
+            "uni0308",
+            "uni0418"
+        ],
+        "uni04E5": [
+            "uni0308.LCCM",
+            "uni0438"
+        ],
+        "uni04E6": [
+            "uni0308",
+            "uni041E"
+        ],
+        "uni04E7": [
+            "uni0308.LCCM",
+            "uni043E"
+        ],
+        "uni04EC": [
+            "uni0308",
+            "uni042D"
+        ],
+        "uni04ED": [
+            "uni0308.LCCM",
+            "uni044D"
+        ],
+        "uni04EE": [
+            "uni0304",
+            "uni0423"
+        ],
+        "uni04EF": [
+            "uni0304.LCCM",
+            "uni0443"
+        ],
+        "uni04F0": [
+            "uni0308",
+            "uni0423"
+        ],
+        "uni04F1": [
+            "uni0308.LCCM",
+            "uni0443"
+        ],
+        "uni04F2": [
+            "uni030B",
+            "uni0423"
+        ],
+        "uni04F3": [
+            "uni030B.LCCM",
+            "uni0443"
+        ],
+        "uni04F4": [
+            "uni0308",
+            "uni0427"
+        ],
+        "uni04F5": [
+            "uni0308.LCCM",
+            "uni0447"
+        ],
+        "uni04F8": [
+            "uni0308",
+            "uni042B"
+        ],
+        "uni04F9": [
+            "uni0308.LCCM",
+            "uni044B"
+        ],
+        "uni1E02": [
+            "uni0307",
+            "B"
+        ],
+        "uni1E03": [
+            "uni0307",
+            "b"
+        ],
+        "uni1E0A": [
+            "uni0307",
+            "D"
+        ],
+        "uni1E0B": [
+            "uni0307",
+            "d"
+        ],
+        "uni1E1E": [
+            "uni0307",
+            "F"
+        ],
+        "uni1E1F": [
+            [
+                "uni0307",
+                [
+                    {"op":"translate","dx":120.0,"dy":0.0}
+                ]
+            ],
+            "f"
+        ],
+        "uni1E40": [
+            "uni0307",
+            "M"
+        ],
+        "uni1E41": [
+            "uni0307.LCCM",
+            "m"
+        ],
+        "uni1E56": [
+            "uni0307",
+            "P"
+        ],
+        "uni1E57": [
+            "uni0307.LCCM",
+            "p"
+        ],
+        "uni1E60": [
+            "uni0307",
+            "S"
+        ],
+        "uni1E61": [
+            "uni0307.LCCM",
+            "s"
+        ],
+        "uni1E6A": [
+            "uni0307",
+            "T"
+        ],
+        "uni1E6B": [
+            [
+                "uni0307",
+                [
+                    {"op":"translate","dx":-80.0,"dy":0.0}
+                ]
+            ],
+            "t"
+        ],
+        "uni1E9B": [
+            [
+                "uni0307.LCCM",
+                [
+                    {"op":"translate","dx":120.0,"dy":280.0}
+                ]
+            ],
+            "longs"
+        ],
+        "uni1F00": [
+            [
+                "uni1FBF",
+                [
+                    {"op":"translate","dx":2.0,"dy":-102.0}
+                ]
+            ],
+            "alpha"
+        ],
+        "uni1F01": [
+            [
+                "uni1FFE",
+                [
+                    {"op":"translate","dx":-58.0,"dy":-102.0}
+                ]
+            ],
+            "alpha"
+        ],
+        "uni1F02": [
+            [
+                "uni1FCD",
+                [
+                    {"op":"translate","dx":-118.5,"dy":-102.0}
+                ]
+            ],
+            "alpha"
+        ],
+        "uni1F03": [
+            [
+                "uni1FDD",
+                [
+                    {"op":"translate","dx":-188.5,"dy":-102.0}
+                ]
+            ],
+            "alpha"
+        ],
+        "uni1F04": [
+            [
+                "uni1FCE",
+                [
+                    {"op":"translate","dx":-118.5,"dy":-102.0}
+                ]
+            ],
+            "alpha"
+        ],
+        "uni1F05": [
+            [
+                "uni1FDE",
+                [
+                    {"op":"translate","dx":-148.5,"dy":-102.0}
+                ]
+            ],
+            "alpha"
+        ],
+        "uni1F06": [
+            [
+                "uni1FCF",
+                [
+                    {"op":"translate","dx":-28.0,"dy":-102.0}
+                ]
+            ],
+            "alpha"
+        ],
+        "uni1F07": [
+            [
+                "uni1FDF",
+                [
+                    {"op":"translate","dx":-28.0,"dy":-102.0}
+                ]
+            ],
+            "alpha"
+        ],
+        "uni1F08": [
+            [
+                "uni1FBF",
+                [
+                    {"op":"translate","dx":-308.0,"dy":-290.0}
+                ]
+            ],
+            "Alpha"
+        ],
+        "uni1F09": [
+            [
+                "uni1FFE",
+                [
+                    {"op":"translate","dx":-428.0,"dy":-290.0}
+                ]
+            ],
+            "Alpha"
+        ],
+        "uni1F0A": [
+            [
+                "uni1FCD",
+                [
+                    {"op":"translate","dx":-629.0,"dy":-290.0}
+                ]
+            ],
+            "Alpha"
+        ],
+        "uni1F0B": [
+            [
+                "uni1FDD",
+                [
+                    {"op":"translate","dx":-629.0,"dy":-290.0}
+                ]
+            ],
+            "Alpha"
+        ],
+        "uni1F0C": [
+            [
+                "uni1FCE",
+                [
+                    {"op":"translate","dx":-589.0,"dy":-290.0}
+                ]
+            ],
+            "Alpha"
+        ],
+        "uni1F0D": [
+            [
+                "uni1FDE",
+                [
+                    {"op":"translate","dx":-589.0,"dy":-290.0}
+                ]
+            ],
+            "Alpha"
+        ],
+        "uni1F0E": [
+            [
+                "uni1FCF",
+                [
+                    {"op":"translate","dx":-546.0,"dy":-532.0}
+                ]
+            ],
+            "Alpha"
+        ],
+        "uni1F0F": [
+            [
+                "uni1FDF",
+                [
+                    {"op":"translate","dx":-546.0,"dy":-532.0}
+                ]
+            ],
+            "Alpha"
+        ],
+        "uni1F10": [
+            [
+                "uni1FBF",
+                [
+                    {"op":"translate","dx":30.0,"dy":-102.0}
+                ]
+            ],
+            "epsilon"
+        ],
+        "uni1F11": [
+            [
+                "uni1FFE",
+                [
+                    {"op":"translate","dx":-30.0,"dy":-102.0}
+                ]
+            ],
+            "epsilon"
+        ],
+        "uni1F12": [
+            [
+                "uni1FCD",
+                [
+                    {"op":"translate","dx":-90.5,"dy":-102.0}
+                ]
+            ],
+            "epsilon"
+        ],
+        "uni1F13": [
+            [
+                "uni1FDD",
+                [
+                    {"op":"translate","dx":-120.5,"dy":-102.0}
+                ]
+            ],
+            "epsilon"
+        ],
+        "uni1F14": [
+            [
+                "uni1FCE",
+                [
+                    {"op":"translate","dx":-90.5,"dy":-102.0}
+                ]
+            ],
+            "epsilon"
+        ],
+        "uni1F15": [
+            [
+                "uni1FDE",
+                [
+                    {"op":"translate","dx":-120.5,"dy":-102.0}
+                ]
+            ],
+            "epsilon"
+        ],
+        "uni1F18": [
+            [
+                "uni1FBF",
+                [
+                    {"op":"translate","dx":-608.0,"dy":-290.0}
+                ]
+            ],
+            "Epsilon"
+        ],
+        "uni1F19": [
+            [
+                "uni1FFE",
+                [
+                    {"op":"translate","dx":-608.0,"dy":-290.0}
+                ]
+            ],
+            "Epsilon"
+        ],
+        "uni1F1A": [
+            [
+                "uni1FCD",
+                [
+                    {"op":"translate","dx":-809.0,"dy":-290.0}
+                ]
+            ],
+            "Epsilon"
+        ],
+        "uni1F1B": [
+            [
+                "uni1FDD",
+                [
+                    {"op":"translate","dx":-809.0,"dy":-290.0}
+                ]
+            ],
+            "Epsilon"
+        ],
+        "uni1F1C": [
+            [
+                "uni1FCE",
+                [
+                    {"op":"translate","dx":-889.0,"dy":-290.0}
+                ]
+            ],
+            "Epsilon"
+        ],
+        "uni1F1D": [
+            [
+                "uni1FDE",
+                [
+                    {"op":"translate","dx":-889.0,"dy":-288.0}
+                ]
+            ],
+            "Epsilon"
+        ],
+        "uni1F20": [
+            [
+                "uni1FBF",
+                [
+                    {"op":"translate","dx":-29.1455,"dy":-102.0}
+                ]
+            ],
+            "eta"
+        ],
+        "uni1F21": [
+            [
+                "uni1FFE",
+                [
+                    {"op":"translate","dx":-89.1455,"dy":-102.0}
+                ]
+            ],
+            "eta"
+        ],
+        "uni1F22": [
+            [
+                "uni1FCD",
+                [
+                    {"op":"translate","dx":-149.646,"dy":-102.0}
+                ]
+            ],
+            "eta"
+        ],
+        "uni1F23": [
+            [
+                "uni1FDD",
+                [
+                    {"op":"translate","dx":-179.646,"dy":-102.0}
+                ]
+            ],
+            "eta"
+        ],
+        "uni1F24": [
+            [
+                "uni1FCE",
+                [
+                    {"op":"translate","dx":-129.646,"dy":-102.0}
+                ]
+            ],
+            "eta"
+        ],
+        "uni1F25": [
+            [
+                "uni1FDE",
+                [
+                    {"op":"translate","dx":-139.646,"dy":-102.0}
+                ]
+            ],
+            "eta"
+        ],
+        "uni1F26": [
+            [
+                "uni1FCF",
+                [
+                    {"op":"translate","dx":0.854492,"dy":-102.0}
+                ]
+            ],
+            "eta"
+        ],
+        "uni1F27": [
+            [
+                "uni1FDF",
+                [
+                    {"op":"translate","dx":0.854492,"dy":-102.0}
+                ]
+            ],
+            "eta"
+        ],
+        "uni1F28": [
+            [
+                "uni1FBF",
+                [
+                    {"op":"translate","dx":-623.0,"dy":-288.0}
+                ]
+            ],
+            "Eta"
+        ],
+        "uni1F29": [
+            [
+                "uni1FFE",
+                [
+                    {"op":"translate","dx":-623.0,"dy":-288.0}
+                ]
+            ],
+            "Eta"
+        ],
+        "uni1F2A": [
+            [
+                "uni1FCD",
+                [
+                    {"op":"translate","dx":-824.0,"dy":-288.0}
+                ]
+            ],
+            "Eta"
+        ],
+        "uni1F2B": [
+            [
+                "uni1FDD",
+                [
+                    {"op":"translate","dx":-824.0,"dy":-288.0}
+                ]
+            ],
+            "Eta"
+        ],
+        "uni1F2C": [
+            [
+                "uni1FCE",
+                [
+                    {"op":"translate","dx":-924.0,"dy":-288.0}
+                ]
+            ],
+            "Eta"
+        ],
+        "uni1F2D": [
+            [
+                "uni1FDE",
+                [
+                    {"op":"translate","dx":-924.0,"dy":-288.0}
+                ]
+            ],
+            "Eta"
+        ],
+        "uni1F2E": [
+            [
+                "uni1FCF",
+                [
+                    {"op":"translate","dx":-861.0,"dy":-530.0}
+                ]
+            ],
+            "Eta"
+        ],
+        "uni1F2F": [
+            [
+                "uni1FDF",
+                [
+                    {"op":"translate","dx":-862.0,"dy":-531.0}
+                ]
+            ],
+            "Eta"
+        ],
+        "uni1F30": [
+            [
+                "uni1FBF",
+                [
+                    {"op":"translate","dx":-36.0,"dy":-102.0}
+                ]
+            ],
+            "iota"
+        ],
+        "uni1F31": [
+            [
+                "uni1FFE",
+                [
+                    {"op":"translate","dx":-96.0,"dy":-102.0}
+                ]
+            ],
+            "iota"
+        ],
+        "uni1F32": [
+            [
+                "uni1FCD",
+                [
+                    {"op":"translate","dx":-156.5,"dy":-102.0}
+                ]
+            ],
+            "iota"
+        ],
+        "uni1F33": [
+            [
+                "uni1FDD",
+                [
+                    {"op":"translate","dx":-186.5,"dy":-102.0}
+                ]
+            ],
+            "iota"
+        ],
+        "uni1F34": [
+            [
+                "uni1FCE",
+                [
+                    {"op":"translate","dx":-156.5,"dy":-102.0}
+                ]
+            ],
+            "iota"
+        ],
+        "uni1F35": [
+            [
+                "uni1FDE",
+                [
+                    {"op":"translate","dx":-186.5,"dy":-102.0}
+                ]
+            ],
+            "iota"
+        ],
+        "uni1F36": [
+            [
+                "uni1FCF",
+                [
+                    {"op":"translate","dx":-66.0,"dy":-142.0}
+                ]
+            ],
+            "iota"
+        ],
+        "uni1F37": [
+            [
+                "uni1FDF",
+                [
+                    {"op":"translate","dx":-66.0,"dy":-142.0}
+                ]
+            ],
+            "iota"
+        ],
+        "uni1F38": [
+            [
+                "uni1FBF",
+                [
+                    {"op":"translate","dx":-533.657,"dy":-288.0}
+                ]
+            ],
+            "Iota"
+        ],
+        "uni1F39": [
+            [
+                "uni1FFE",
+                [
+                    {"op":"translate","dx":-533.657,"dy":-288.0}
+                ]
+            ],
+            "Iota"
+        ],
+        "uni1F3A": [
+            [
+                "uni1FCD",
+                [
+                    {"op":"translate","dx":-754.657,"dy":-288.0}
+                ]
+            ],
+            "Iota"
+        ],
+        "uni1F3B": [
+            [
+                "uni1FDD",
+                [
+                    {"op":"translate","dx":-754.657,"dy":-288.0}
+                ]
+            ],
+            "Iota"
+        ],
+        "uni1F3C": [
+            [
+                "uni1FCE",
+                [
+                    {"op":"translate","dx":-834.657,"dy":-288.0}
+                ]
+            ],
+            "Iota"
+        ],
+        "uni1F3D": [
+            [
+                "uni1FDE",
+                [
+                    {"op":"translate","dx":-834.657,"dy":-288.0}
+                ]
+            ],
+            "Iota"
+        ],
+        "uni1F3E": [
+            [
+                "uni1FCF",
+                [
+                    {"op":"translate","dx":-771.657,"dy":-530.0}
+                ]
+            ],
+            "Iota"
+        ],
+        "uni1F3F": [
+            [
+                "uni1FDF",
+                [
+                    {"op":"translate","dx":-771.657,"dy":-530.0}
+                ]
+            ],
+            "Iota"
+        ],
+        "uni1F40": [
+            [
+                "uni1FBF",
+                [
+                    {"op":"translate","dx":30.0,"dy":-102.0}
+                ]
+            ],
+            "omicron"
+        ],
+        "uni1F41": [
+            [
+                "uni1FFE",
+                [
+                    {"op":"translate","dx":-30.0,"dy":-102.0}
+                ]
+            ],
+            "omicron"
+        ],
+        "uni1F42": [
+            [
+                "uni1FCD",
+                [
+                    {"op":"translate","dx":-90.5,"dy":-102.0}
+                ]
+            ],
+            "omicron"
+        ],
+        "uni1F43": [
+            [
+                "uni1FDD",
+                [
+                    {"op":"translate","dx":-120.5,"dy":-102.0}
+                ]
+            ],
+            "omicron"
+        ],
+        "uni1F44": [
+            [
+                "uni1FCE",
+                [
+                    {"op":"translate","dx":-90.5,"dy":-102.0}
+                ]
+            ],
+            "omicron"
+        ],
+        "uni1F45": [
+            [
+                "uni1FDE",
+                [
+                    {"op":"translate","dx":-120.5,"dy":-102.0}
+                ]
+            ],
+            "omicron"
+        ],
+        "uni1F48": [
+            [
+                "uni1FBF",
+                [
+                    {"op":"translate","dx":-488.0,"dy":-267.0}
+                ]
+            ],
+            "Omicron"
+        ],
+        "uni1F49": [
+            [
+                "uni1FFE",
+                [
+                    {"op":"translate","dx":-608.0,"dy":-268.0}
+                ]
+            ],
+            "Omicron"
+        ],
+        "uni1F4A": [
+            [
+                "uni1FCD",
+                [
+                    {"op":"translate","dx":-829.0,"dy":-268.0}
+                ]
+            ],
+            "Omicron"
+        ],
+        "uni1F4B": [
+            [
+                "uni1FDD",
+                [
+                    {"op":"translate","dx":-829.0,"dy":-268.0}
+                ]
+            ],
+            "Omicron"
+        ],
+        "uni1F4C": [
+            [
+                "uni1FCE",
+                [
+                    {"op":"translate","dx":-729.0,"dy":-268.0}
+                ]
+            ],
+            "Omicron"
+        ],
+        "uni1F4D": [
+            [
+                "uni1FDE",
+                [
+                    {"op":"translate","dx":-729.0,"dy":-268.0}
+                ]
+            ],
+            "Omicron"
+        ],
+        "uni1F50": [
+            [
+                "uni1FBF",
+                [
+                    {"op":"translate","dx":-47.1621,"dy":-102.0}
+                ]
+            ],
+            "upsilon"
+        ],
+        "uni1F51": [
+            [
+                "uni1FFE",
+                [
+                    {"op":"translate","dx":-107.162,"dy":-102.0}
+                ]
+            ],
+            "upsilon"
+        ],
+        "uni1F52": [
+            [
+                "uni1FCD",
+                [
+                    {"op":"translate","dx":-167.662,"dy":-102.0}
+                ]
+            ],
+            "upsilon"
+        ],
+        "uni1F53": [
+            [
+                "uni1FDD",
+                [
+                    {"op":"translate","dx":-197.662,"dy":-102.0}
+                ]
+            ],
+            "upsilon"
+        ],
+        "uni1F54": [
+            [
+                "uni1FCE",
+                [
+                    {"op":"translate","dx":-167.662,"dy":-122.0}
+                ]
+            ],
+            "upsilon"
+        ],
+        "uni1F55": [
+            [
+                "uni1FDE",
+                [
+                    {"op":"translate","dx":-197.662,"dy":-122.0}
+                ]
+            ],
+            "upsilon"
+        ],
+        "uni1F56": [
+            [
+                "uni1FCF",
+                [
+                    {"op":"translate","dx":-77.1621,"dy":-142.0}
+                ]
+            ],
+            "upsilon"
+        ],
+        "uni1F57": [
+            [
+                "uni1FDF",
+                [
+                    {"op":"translate","dx":-77.1621,"dy":-142.0}
+                ]
+            ],
+            "upsilon"
+        ],
+        "uni1F59": [
+            [
+                "uni1FFE",
+                [
+                    {"op":"translate","dx":-644.0,"dy":-288.0}
+                ]
+            ],
+            "Upsilon"
+        ],
+        "uni1F5B": [
+            [
+                "uni1FDD",
+                [
+                    {"op":"translate","dx":-825.0,"dy":-288.0}
+                ]
+            ],
+            "Upsilon"
+        ],
+        "uni1F5D": [
+            [
+                "uni1FDE",
+                [
+                    {"op":"translate","dx":-945.0,"dy":-288.0}
+                ]
+            ],
+            "Upsilon"
+        ],
+        "uni1F5F": [
+            [
+                "uni1FDF",
+                [
+                    {"op":"translate","dx":-882.0,"dy":-530.0}
+                ]
+            ],
+            "Upsilon"
+        ],
+        "uni1F60": [
+            [
+                "uni1FBF",
+                [
+                    {"op":"translate","dx":30.0,"dy":-102.0}
+                ]
+            ],
+            "omega"
+        ],
+        "uni1F61": [
+            [
+                "uni1FFE",
+                [
+                    {"op":"translate","dx":-30.0,"dy":-102.0}
+                ]
+            ],
+            "omega"
+        ],
+        "uni1F62": [
+            [
+                "uni1FCD",
+                [
+                    {"op":"translate","dx":-90.5,"dy":-102.0}
+                ]
+            ],
+            "omega"
+        ],
+        "uni1F63": [
+            [
+                "uni1FDD",
+                [
+                    {"op":"translate","dx":-120.5,"dy":-102.0}
+                ]
+            ],
+            "omega"
+        ],
+        "uni1F64": [
+            [
+                "uni1FCE",
+                [
+                    {"op":"translate","dx":-90.5,"dy":-102.0}
+                ]
+            ],
+            "omega"
+        ],
+        "uni1F65": [
+            [
+                "uni1FDE",
+                [
+                    {"op":"translate","dx":-120.5,"dy":-102.0}
+                ]
+            ],
+            "omega"
+        ],
+        "uni1F66": [
+            [
+                "uni1FCF",
+                [
+                    {"op":"translate","dx":0.0,"dy":-142.0}
+                ]
+            ],
+            "omega"
+        ],
+        "uni1F67": [
+            [
+                "uni1FDF",
+                [
+                    {"op":"translate","dx":0.0,"dy":-142.0}
+                ]
+            ],
+            "omega"
+        ],
+        "uni1F68": [
+            [
+                "uni1FBF",
+                [
+                    {"op":"translate","dx":-488.0,"dy":-268.0}
+                ]
+            ],
+            "uni03A9"
+        ],
+        "uni1F69": [
+            [
+                "uni1FFE",
+                [
+                    {"op":"translate","dx":-628.0,"dy":-268.0}
+                ]
+            ],
+            "uni03A9"
+        ],
+        "uni1F6A": [
+            [
+                "uni1FCD",
+                [
+                    {"op":"translate","dx":-829.0,"dy":-268.0}
+                ]
+            ],
+            "uni03A9"
+        ],
+        "uni1F6B": [
+            [
+                "uni1FDD",
+                [
+                    {"op":"translate","dx":-829.0,"dy":-268.0}
+                ]
+            ],
+            "uni03A9"
+        ],
+        "uni1F6C": [
+            [
+                "uni1FCE",
+                [
+                    {"op":"translate","dx":-729.0,"dy":-268.0}
+                ]
+            ],
+            "uni03A9"
+        ],
+        "uni1F6D": [
+            [
+                "uni1FDE",
+                [
+                    {"op":"translate","dx":-729.0,"dy":-268.0}
+                ]
+            ],
+            "uni03A9"
+        ],
+        "uni1F6E": [
+            [
+                "uni1FCF",
+                [
+                    {"op":"translate","dx":-686.0,"dy":-510.0}
+                ]
+            ],
+            "uni03A9"
+        ],
+        "uni1F6F": [
+            [
+                "uni1FDF",
+                [
+                    {"op":"translate","dx":-686.0,"dy":-510.0}
+                ]
+            ],
+            "uni03A9"
+        ],
+        "uni1F70": [
+            [
+                "uni1FEF",
+                [
+                    {"op":"translate","dx":-68.0,"dy":-214.0}
+                ]
+            ],
+            "alpha"
+        ],
+        "uni1F71": [
+            [
+                "uni1FFD",
+                [
+                    {"op":"translate","dx":-68.0,"dy":-214.0}
+                ]
+            ],
+            "alpha"
+        ],
+        "uni1F72": [
+            [
+                "uni1FEF",
+                [
+                    {"op":"translate","dx":0.0,"dy":-214.0}
+                ]
+            ],
+            "epsilon"
+        ],
+        "uni1F73": [
+            [
+                "uni1FFD",
+                [
+                    {"op":"translate","dx":0.0,"dy":-214.0}
+                ]
+            ],
+            "epsilon"
+        ],
+        "uni1F74": [
+            [
+                "uni1FEF",
+                [
+                    {"op":"translate","dx":-56.1455,"dy":-214.0}
+                ]
+            ],
+            "eta"
+        ],
+        "uni1F75": [
+            [
+                "uni1FFD",
+                [
+                    {"op":"translate","dx":-19.1455,"dy":-214.0}
+                ]
+            ],
+            "eta"
+        ],
+        "uni1F76": [
+            [
+                "uni1FEF",
+                [
+                    {"op":"translate","dx":-66.0,"dy":-214.0}
+                ]
+            ],
+            "iota"
+        ],
+        "uni1F77": [
+            [
+                "uni1FFD",
+                [
+                    {"op":"translate","dx":-66.0,"dy":-214.0}
+                ]
+            ],
+            "iota"
+        ],
+        "uni1F78": [
+            [
+                "uni1FEF",
+                [
+                    {"op":"translate","dx":0.0,"dy":-214.0}
+                ]
+            ],
+            "omicron"
+        ],
+        "uni1F79": [
+            [
+                "uni1FFD",
+                [
+                    {"op":"translate","dx":0.0,"dy":-214.0}
+                ]
+            ],
+            "omicron"
+        ],
+        "uni1F7A": [
+            [
+                "uni1FEF",
+                [
+                    {"op":"translate","dx":-77.1621,"dy":-214.0}
+                ]
+            ],
+            "upsilon"
+        ],
+        "uni1F7B": [
+            [
+                "uni1FFD",
+                [
+                    {"op":"translate","dx":-17.1621,"dy":-214.0}
+                ]
+            ],
+            "upsilon"
+        ],
+        "uni1F7C": [
+            [
+                "uni1FEF",
+                [
+                    {"op":"translate","dx":0.0,"dy":-214.0}
+                ]
+            ],
+            "omega"
+        ],
+        "uni1F7D": [
+            [
+                "uni1FFD",
+                [
+                    {"op":"translate","dx":0.0,"dy":-214.0}
+                ]
+            ],
+            "omega"
+        ],
+        "uni1F80": [
+            [
+                "uni0345",
+                [
+                    {"op":"translate","dx":106.146,"dy":-146.0}
+                ]
+            ],
+            "uni1F00"
+        ],
+        "uni1F81": [
+            [
+                "uni0345",
+                [
+                    {"op":"translate","dx":-93.854,"dy":-146.0}
+                ]
+            ],
+            "uni1F01"
+        ],
+        "uni1F82": [
+            [
+                "uni0345",
+                [
+                    {"op":"translate","dx":-93.854,"dy":-146.0}
+                ]
+            ],
+            "uni1F02"
+        ],
+        "uni1F83": [
+            [
+                "uni0345",
+                [
+                    {"op":"translate","dx":-93.854,"dy":-146.0}
+                ]
+            ],
+            "uni1F03"
+        ],
+        "uni1F84": [
+            [
+                "uni0345",
+                [
+                    {"op":"translate","dx":-93.854,"dy":-146.0}
+                ]
+            ],
+            "uni1F04"
+        ],
+        "uni1F85": [
+            [
+                "uni0345",
+                [
+                    {"op":"translate","dx":-93.854,"dy":-146.0}
+                ]
+            ],
+            "uni1F05"
+        ],
+        "uni1F86": [
+            [
+                "uni0345",
+                [
+                    {"op":"translate","dx":-93.854,"dy":-146.0}
+                ]
+            ],
+            "uni1F06"
+        ],
+        "uni1F87": [
+            [
+                "uni0345",
+                [
+                    {"op":"translate","dx":-93.854,"dy":-146.0}
+                ]
+            ],
+            "uni1F07"
+        ],
+        "uni1F88": [
+            [
+                "uni1FBE",
+                [
+                    {"op":"translate","dx":623.0,"dy":336.0}
+                ]
+            ],
+            "uni1F08"
+        ],
+        "uni1F89": [
+            [
+                "uni1FBE",
+                [
+                    {"op":"translate","dx":623.0,"dy":336.0}
+                ]
+            ],
+            "uni1F09"
+        ],
+        "uni1F8A": [
+            [
+                "uni1FBE",
+                [
+                    {"op":"translate","dx":623.0,"dy":336.0}
+                ]
+            ],
+            "uni1F0A"
+        ],
+        "uni1F8B": [
+            [
+                "uni1FBE",
+                [
+                    {"op":"translate","dx":623.0,"dy":336.0}
+                ]
+            ],
+            "uni1F0B"
+        ],
+        "uni1F8C": [
+            [
+                "uni1FBE",
+                [
+                    {"op":"translate","dx":623.0,"dy":336.0}
+                ]
+            ],
+            "uni1F0C"
+        ],
+        "uni1F8D": [
+            [
+                "uni1FBE",
+                [
+                    {"op":"translate","dx":623.0,"dy":336.0}
+                ]
+            ],
+            "uni1F0D"
+        ],
+        "uni1F8E": [
+            [
+                "uni1FBE",
+                [
+                    {"op":"translate","dx":623.0,"dy":336.0}
+                ]
+            ],
+            "uni1F0E"
+        ],
+        "uni1F8F": [
+            [
+                "uni1FBE",
+                [
+                    {"op":"translate","dx":623.0,"dy":336.0}
+                ]
+            ],
+            "uni1F0F"
+        ],
+        "uni1F90": [
+            [
+                "uni0345",
+                [
+                    {"op":"translate","dx":-192.0,"dy":-126.0}
+                ]
+            ],
+            "uni1F20"
+        ],
+        "uni1F91": [
+            [
+                "uni0345",
+                [
+                    {"op":"translate","dx":-188.0,"dy":-126.0}
+                ]
+            ],
+            "uni1F21"
+        ],
+        "uni1F92": [
+            [
+                "uni0345",
+                [
+                    {"op":"translate","dx":-188.0,"dy":-126.0}
+                ]
+            ],
+            "uni1F22"
+        ],
+        "uni1F93": [
+            [
+                "uni0345",
+                [
+                    {"op":"translate","dx":-188.0,"dy":-126.0}
+                ]
+            ],
+            "uni1F23"
+        ],
+        "uni1F94": [
+            [
+                "uni0345",
+                [
+                    {"op":"translate","dx":-188.0,"dy":-126.0}
+                ]
+            ],
+            "uni1F24"
+        ],
+        "uni1F95": [
+            [
+                "uni0345",
+                [
+                    {"op":"translate","dx":-188.0,"dy":-126.0}
+                ]
+            ],
+            "uni1F25"
+        ],
+        "uni1F96": [
+            [
+                "uni0345",
+                [
+                    {"op":"translate","dx":-188.0,"dy":-126.0}
+                ]
+            ],
+            "uni1F26"
+        ],
+        "uni1F97": [
+            [
+                "uni0345",
+                [
+                    {"op":"translate","dx":-188.0,"dy":-126.0}
+                ]
+            ],
+            "uni1F27"
+        ],
+        "uni1F98": [
+            [
+                "uni1FBE",
+                [
+                    {"op":"translate","dx":618.0,"dy":336.0}
+                ]
+            ],
+            "uni1F28"
+        ],
+        "uni1F99": [
+            [
+                "uni1FBE",
+                [
+                    {"op":"translate","dx":618.0,"dy":336.0}
+                ]
+            ],
+            "uni1F29"
+        ],
+        "uni1F9A": [
+            [
+                "uni1FBE",
+                [
+                    {"op":"translate","dx":618.0,"dy":336.0}
+                ]
+            ],
+            "uni1F2A"
+        ],
+        "uni1F9B": [
+            [
+                "uni1FBE",
+                [
+                    {"op":"translate","dx":618.0,"dy":336.0}
+                ]
+            ],
+            "uni1F2B"
+        ],
+        "uni1F9C": [
+            [
+                "uni1FBE",
+                [
+                    {"op":"translate","dx":618.0,"dy":336.0}
+                ]
+            ],
+            "uni1F2C"
+        ],
+        "uni1F9D": [
+            [
+                "uni1FBE",
+                [
+                    {"op":"translate","dx":618.0,"dy":336.0}
+                ]
+            ],
+            "uni1F2D"
+        ],
+        "uni1F9E": [
+            [
+                "uni1FBE",
+                [
+                    {"op":"translate","dx":618.0,"dy":336.0}
+                ]
+            ],
+            "uni1F2E"
+        ],
+        "uni1F9F": [
+            [
+                "uni1FBE",
+                [
+                    {"op":"translate","dx":618.0,"dy":336.0}
+                ]
+            ],
+            "uni1F2F"
+        ],
+        "uni1FA0": [
+            [
+                "uni0345",
+                [
+                    {"op":"translate","dx":0.0,"dy":-146.0}
+                ]
+            ],
+            "uni1F60"
+        ],
+        "uni1FA1": [
+            [
+                "uni0345",
+                [
+                    {"op":"translate","dx":0.0,"dy":-146.0}
+                ]
+            ],
+            "uni1F61"
+        ],
+        "uni1FA2": [
+            [
+                "uni0345",
+                [
+                    {"op":"translate","dx":0.0,"dy":-146.0}
+                ]
+            ],
+            "uni1F62"
+        ],
+        "uni1FA3": [
+            [
+                "uni0345",
+                [
+                    {"op":"translate","dx":0.0,"dy":-146.0}
+                ]
+            ],
+            "uni1F63"
+        ],
+        "uni1FA4": [
+            [
+                "uni0345",
+                [
+                    {"op":"translate","dx":0.0,"dy":-146.0}
+                ]
+            ],
+            "uni1F64"
+        ],
+        "uni1FA5": [
+            [
+                "uni0345",
+                [
+                    {"op":"translate","dx":0.0,"dy":-146.0}
+                ]
+            ],
+            "uni1F65"
+        ],
+        "uni1FA6": [
+            [
+                "uni0345",
+                [
+                    {"op":"translate","dx":0.0,"dy":-146.0}
+                ]
+            ],
+            "uni1F66"
+        ],
+        "uni1FA7": [
+            [
+                "uni0345",
+                [
+                    {"op":"translate","dx":0.0,"dy":-146.0}
+                ]
+            ],
+            "uni1F67"
+        ],
+        "uni1FA8": [
+            [
+                "uni1FBE",
+                [
+                    {"op":"translate","dx":607.0,"dy":336.0}
+                ]
+            ],
+            "uni1F68"
+        ],
+        "uni1FA9": [
+            [
+                "uni1FBE",
+                [
+                    {"op":"translate","dx":607.0,"dy":336.0}
+                ]
+            ],
+            "uni1F69"
+        ],
+        "uni1FAA": [
+            [
+                "uni1FBE",
+                [
+                    {"op":"translate","dx":607.0,"dy":336.0}
+                ]
+            ],
+            "uni1F6A"
+        ],
+        "uni1FAB": [
+            [
+                "uni1FBE",
+                [
+                    {"op":"translate","dx":607.0,"dy":336.0}
+                ]
+            ],
+            "uni1F6B"
+        ],
+        "uni1FAC": [
+            [
+                "uni1FBE",
+                [
+                    {"op":"translate","dx":607.0,"dy":336.0}
+                ]
+            ],
+            "uni1F6C"
+        ],
+        "uni1FAD": [
+            [
+                "uni1FBE",
+                [
+                    {"op":"translate","dx":607.0,"dy":336.0}
+                ]
+            ],
+            "uni1F6D"
+        ],
+        "uni1FAE": [
+            [
+                "uni1FBE",
+                [
+                    {"op":"translate","dx":607.0,"dy":336.0}
+                ]
+            ],
+            "uni1F6E"
+        ],
+        "uni1FAF": [
+            [
+                "uni1FBE",
+                [
+                    {"op":"translate","dx":607.0,"dy":336.0}
+                ]
+            ],
+            "uni1F6F"
+        ],
+        "uni1FB0": [
+            [
+                "uni0306",
+                [
+                    {"op":"translate","dx":0.0,"dy":-260.0}
+                ]
+            ],
+            "alpha"
+        ],
+        "uni1FB1": [
+            [
+                "uni0304",
+                [
+                    {"op":"translate","dx":-20.0,"dy":-279.0}
+                ]
+            ],
+            "alpha"
+        ],
+        "uni1FB2": [
+            [
+                "uni0345",
+                [
+                    {"op":"translate","dx":-93.854,"dy":-146.0}
+                ]
+            ],
+            "uni1F70"
+        ],
+        "uni1FB3": [
+            [
+                "uni0345",
+                [
+                    {"op":"translate","dx":-93.854,"dy":-146.0}
+                ]
+            ],
+            "alpha"
+        ],
+        "uni1FB4": [
+            [
+                "uni0345",
+                [
+                    {"op":"translate","dx":-93.854,"dy":-146.0}
+                ]
+            ],
+            "uni1F71"
+        ],
+        "uni1FB6": [
+            [
+                "uni1FC0",
+                [
+                    {"op":"translate","dx":496.0,"dy":-124.0}
+                ]
+            ],
+            "alpha"
+        ],
+        "uni1FB7": [
+            [
+                "uni0345",
+                [
+                    {"op":"translate","dx":-93.854,"dy":-146.0}
+                ]
+            ],
+            "uni1FB6"
+        ],
+        "uni1FB8": [
+            "uni0306",
+            "Alpha"
+        ],
+        "uni1FB9": [
+            [
+                "uni0304",
+                [
+                    {"op":"translate","dx":0.0,"dy":-19.0}
+                ]
+            ],
+            "Alpha"
+        ],
+        "uni1FBA": [
+            [
+                "uni1FEF",
+                [
+                    {"op":"translate","dx":-362.0,"dy":-288.0}
+                ]
+            ],
+            "Alpha"
+        ],
+        "uni1FBB": [
+            [
+                "uni1FFD",
+                [
+                    {"op":"translate","dx":-322.0,"dy":-288.0}
+                ]
+            ],
+            "Alpha"
+        ],
+        "uni1FBC": [
+            [
+                "uni1FBE",
+                [
+                    {"op":"translate","dx":623.0,"dy":336.0}
+                ]
+            ],
+            "Alpha"
+        ],
+        "uni1FC0": [
+            [
+                "uni0342",
+                [
+                    {"op":"translate","dx":-504.0,"dy":-162.0}
+                ]
+            ]
+        ],
+        "uni1FC1": [
+            [
+                "uni1FC0",
+                [
+                    {"op":"translate","dx":504.0,"dy":184.0}
+                ]
+            ],
+            "dieresis"
+        ],
+        "uni1FC1.LCCM": [
+            "uni0342",
+            "uni0308.LCCM"
+        ],
+        "uni1FC2": [
+            [
+                "uni0345",
+                [
+                    {"op":"translate","dx":-188.0,"dy":-126.0}
+                ]
+            ],
+            "uni1F74"
+        ],
+        "uni1FC3": [
+            [
+                "uni0345",
+                [
+                    {"op":"translate","dx":-188.0,"dy":-126.0}
+                ]
+            ],
+            "eta"
+        ],
+        "uni1FC4": [
+            [
+                "uni0345",
+                [
+                    {"op":"translate","dx":-188.0,"dy":-126.0}
+                ]
+            ],
+            "uni1F75"
+        ],
+        "uni1FC6": [
+            [
+                "uni1FC0",
+                [
+                    {"op":"translate","dx":444.854,"dy":-124.0}
+                ]
+            ],
+            "eta"
+        ],
+        "uni1FC7": [
+            [
+                "uni0345",
+                [
+                    {"op":"translate","dx":-188.0,"dy":-126.0}
+                ]
+            ],
+            "uni1FC6"
+        ],
+        "uni1FC8": [
+            [
+                "uni1FEF",
+                [
+                    {"op":"translate","dx":-562.0,"dy":-288.0}
+                ]
+            ],
+            "Epsilon"
+        ],
+        "uni1FC9": [
+            [
+                "uni1FFD",
+                [
+                    {"op":"translate","dx":-644.0,"dy":-288.0}
+                ]
+            ],
+            "Epsilon"
+        ],
+        "uni1FCA": [
+            [
+                "uni1FEF",
+                [
+                    {"op":"translate","dx":-597.0,"dy":-288.0}
+                ]
+            ],
+            "Eta"
+        ],
+        "uni1FCB": [
+            [
+                "uni1FFD",
+                [
+                    {"op":"translate","dx":-657.0,"dy":-288.0}
+                ]
+            ],
+            "Eta"
+        ],
+        "uni1FCC": [
+            [
+                "uni1FBE",
+                [
+                    {"op":"translate","dx":618.0,"dy":336.0}
+                ]
+            ],
+            "Eta"
+        ],
+        "uni1FCD": [
+            [
+                "uni1FEF",
+                [
+                    {"op":"translate","dx":267.0,"dy":0.0}
+                ]
+            ],
+            [
+                "uni1FBF",
+                [
+                    {"op":"translate","dx":-60.0,"dy":0.0}
+                ]
+            ]
+        ],
+        "uni1FCE": [
+            [
+                "uni1FFD",
+                [
+                    {"op":"translate","dx":267.0,"dy":0.0}
+                ]
+            ],
+            [
+                "uni1FBF",
+                [
+                    {"op":"translate","dx":-60.0,"dy":0.0}
+                ]
+            ]
+        ],
+        "uni1FCF": [
+            [
+                "uni1FC0",
+                [
+                    {"op":"translate","dx":504.0,"dy":404.0}
+                ]
+            ],
+            "uni1FBF"
+        ],
+        "uni1FD0": [
+            [
+                "uni0306",
+                [
+                    {"op":"translate","dx":-66.0,"dy":-240.0}
+                ]
+            ],
+            "iota"
+        ],
+        "uni1FD1": [
+            [
+                "uni0304",
+                [
+                    {"op":"translate","dx":-66.0,"dy":-299.0}
+                ]
+            ],
+            "iota"
+        ],
+        "uni1FD2": [
+            [
+                "uni1FEE.LCCM",
+                [
+                    {"op":"translate","dx":-60.0,"dy":0.0}
+                ]
+            ],
+            "iota"
+        ],
+        "uni1FD3": [
+            [
+                "uni1FED.LCCM",
+                [
+                    {"op":"translate","dx":-60.0,"dy":0.0}
+                ]
+            ],
+            "iota"
+        ],
+        "uni1FD6": [
+            [
+                "uni1FC0",
+                [
+                    {"op":"translate","dx":438.0,"dy":-124.0}
+                ]
+            ],
+            "iota"
+        ],
+        "uni1FD7": [
+            [
+                "uni1FC1",
+                [
+                    {"op":"translate","dx":-66.0,"dy":-142.0}
+                ]
+            ],
+            "iota"
+        ],
+        "uni1FD8": [
+            "uni0306",
+            "Iota"
+        ],
+        "uni1FD9": [
+            [
+                "uni0304",
+                [
+                    {"op":"translate","dx":0.0,"dy":1.0}
+                ]
+            ],
+            "Iota"
+        ],
+        "uni1FDA": [
+            [
+                "uni1FEF",
+                [
+                    {"op":"translate","dx":-487.657,"dy":-288.0}
+                ]
+            ],
+            "Iota"
+        ],
+        "uni1FDB": [
+            [
+                "uni1FFD",
+                [
+                    {"op":"translate","dx":-567.657,"dy":-288.0}
+                ]
+            ],
+            "Iota"
+        ],
+        "uni1FDD": [
+            [
+                "uni1FEF",
+                [
+                    {"op":"translate","dx":267.0,"dy":0.0}
+                ]
+            ],
+            [
+                "uni1FFE",
+                [
+                    {"op":"translate","dx":-60.0,"dy":0.0}
+                ]
+            ]
+        ],
+        "uni1FDE": [
+            [
+                "uni1FFD",
+                [
+                    {"op":"translate","dx":267.0,"dy":0.0}
+                ]
+            ],
+            [
+                "uni1FFE",
+                [
+                    {"op":"translate","dx":-60.0,"dy":0.0}
+                ]
+            ]
+        ],
+        "uni1FDF": [
+            [
+                "uni1FC0",
+                [
+                    {"op":"translate","dx":504.0,"dy":404.0}
+                ]
+            ],
+            "uni1FFE"
+        ],
+        "uni1FE0": [
+            [
+                "uni0306",
+                [
+                    {"op":"translate","dx":-20.0,"dy":-280.0}
+                ]
+            ],
+            "upsilon"
+        ],
+        "uni1FE1": [
+            [
+                "uni0304",
+                [
+                    {"op":"translate","dx":-20.0,"dy":-299.0}
+                ]
+            ],
+            "upsilon"
+        ],
+        "uni1FE2": [
+            "uni1FEE.LCCM",
+            "upsilon"
+        ],
+        "uni1FE3": [
+            "uni1FED.LCCM",
+            "upsilon"
+        ],
+        "uni1FE4": [
+            [
+                "uni1FBF",
+                [
+                    {"op":"translate","dx":51.4561,"dy":-102.0}
+                ]
+            ],
+            "rho"
+        ],
+        "uni1FE5": [
+            [
+                "uni1FFE",
+                [
+                    {"op":"translate","dx":-8.54395,"dy":-102.0}
+                ]
+            ],
+            "rho"
+        ],
+        "uni1FE6": [
+            [
+                "uni1FC0",
+                [
+                    {"op":"translate","dx":466.838,"dy":-124.0}
+                ]
+            ],
+            "upsilon"
+        ],
+        "uni1FE7": [
+            [
+                "uni1FC1.LCCM",
+                [
+                    {"op":"translate","dx":-40.0,"dy":0.0}
+                ]
+            ],
+            "upsilon"
+        ],
+        "uni1FE8": [
+            "uni0306",
+            "Upsilon"
+        ],
+        "uni1FE9": [
+            [
+                "uni0304",
+                [
+                    {"op":"translate","dx":0.0,"dy":1.0}
+                ]
+            ],
+            "Upsilon"
+        ],
+        "uni1FEA": [
+            [
+                "uni1FEF",
+                [
+                    {"op":"translate","dx":-598.0,"dy":-288.0}
+                ]
+            ],
+            "Upsilon"
+        ],
+        "uni1FEB": [
+            [
+                "uni1FFD",
+                [
+                    {"op":"translate","dx":-678.0,"dy":-288.0}
+                ]
+            ],
+            "Upsilon"
+        ],
+        "uni1FEC": [
+            [
+                "uni1FFE",
+                [
+                    {"op":"translate","dx":-564.938,"dy":-288.0}
+                ]
+            ],
+            "Rho"
+        ],
+        "uni1FED": [
+            [
+                "uni0308.ALTM",
+                [
+                    {"op":"translate","dx":0.0,"dy":-48.0}
+                ]
+            ],
+            "uni1FEF"
+        ],
+        "uni1FED.LCCM": [
+            "tonos",
+            [
+                "uni0308.LCCM",
+                [
+                    {"op":"translate","dx":0.0,"dy":-40.0}
+                ]
+            ]
+        ],
+        "uni1FEE": "dieresistonos",
+        "uni1FEE.LCCM": [
+            [
+                "uni1FEF",
+                [
+                    {"op":"translate","dx":-84.0,"dy":0.0}
+                ]
+            ],
+            [
+                "uni0308.LCCM",
+                [
+                    {"op":"translate","dx":0.0,"dy":-40.0}
+                ]
+            ]
+        ],
+        "uni1FF2": [
+            [
+                "uni0345",
+                [
+                    {"op":"translate","dx":0.0,"dy":-146.0}
+                ]
+            ],
+            "uni1F7C"
+        ],
+        "uni1FF3": [
+            [
+                "uni0345",
+                [
+                    {"op":"translate","dx":0.0,"dy":-146.0}
+                ]
+            ],
+            "omega"
+        ],
+        "uni1FF4": [
+            [
+                "uni0345",
+                [
+                    {"op":"translate","dx":0.0,"dy":-146.0}
+                ]
+            ],
+            "omegatonos"
+        ],
+        "uni1FF6": [
+            [
+                "uni1FC0",
+                [
+                    {"op":"translate","dx":504.0,"dy":-124.0}
+                ]
+            ],
+            "omega"
+        ],
+        "uni1FF7": [
+            [
+                "uni0345",
+                [
+                    {"op":"translate","dx":0.0,"dy":-146.0}
+                ]
+            ],
+            "uni1FF6"
+        ],
+        "uni1FF8": [
+            [
+                "uni1FEF",
+                [
+                    {"op":"translate","dx":-542.0,"dy":-268.0}
+                ]
+            ],
+            "Omicron"
+        ],
+        "uni1FF9": [
+            [
+                "uni1FFD",
+                [
+                    {"op":"translate","dx":-442.0,"dy":-268.0}
+                ]
+            ],
+            "Omicron"
+        ],
+        "uni1FFA": [
+            [
+                "uni1FEF",
+                [
+                    {"op":"translate","dx":-542.0,"dy":-268.0}
+                ]
+            ],
+            "uni03A9"
+        ],
+        "uni1FFB": [
+            [
+                "uni1FFD",
+                [
+                    {"op":"translate","dx":-442.0,"dy":-268.0}
+                ]
+            ],
+            "uni03A9"
+        ],
+        "uni1FFC": [
+            [
+                "uni1FBE",
+                [
+                    {"op":"translate","dx":607.0,"dy":336.0}
+                ]
+            ],
+            "uni03A9"
+        ],
+        "uni2011": "uni2010",
+        "uni2043": "uni2010",
+        "uni204E": [
+            [
+                "asterisk",
+                [
+                    {"op":"translate","dx":0.0,"dy":-399.0}
+                ]
+            ]
+        ],
+        "uni2051": [
+            [
+                "asterisk",
+                [
+                    {"op":"translate","dx":0.0,"dy":-720.0}
+                ]
+            ],
+            [
+                "asterisk",
+                [
+                    {"op":"translate","dx":0.0,"dy":20.0}
+                ]
+            ]
+        ],
+        "uni2070": [
+            [
+                "zero.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":636.0}
+                ]
+            ]
+        ],
+        "uni2074": [
+            [
+                "four.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":636.0}
+                ]
+            ]
+        ],
+        "uni2075": [
+            [
+                "five.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":636.0}
+                ]
+            ]
+        ],
+        "uni2076": [
+            [
+                "six.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":636.0}
+                ]
+            ]
+        ],
+        "uni2077": [
+            [
+                "seven.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":636.0}
+                ]
+            ]
+        ],
+        "uni2078": [
+            [
+                "eight.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":636.0}
+                ]
+            ]
+        ],
+        "uni2079": [
+            [
+                "nine.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":636.0}
+                ]
+            ]
+        ],
+        "uni207A": [
+            [
+                "plus.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":636.0}
+                ]
+            ]
+        ],
+        "uni207B": [
+            [
+                "hyphen.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":636.0}
+                ]
+            ]
+        ],
+        "uni207C": [
+            [
+                "equal.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":636.0}
+                ]
+            ]
+        ],
+        "uni207D": [
+            [
+                "parenleft.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":636.0}
+                ]
+            ]
+        ],
+        "uni207E": [
+            [
+                "parenright.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":636.0}
+                ]
+            ]
+        ],
+        "uni207F": [
+            [
+                "n.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":636.0}
+                ]
+            ]
+        ],
+        "uni2080": [
+            [
+                "zero.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":-156.0}
+                ]
+            ]
+        ],
+        "uni2081": [
+            [
+                "one.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":-156.0}
+                ]
+            ]
+        ],
+        "uni2082": [
+            [
+                "two.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":-156.0}
+                ]
+            ]
+        ],
+        "uni2083": [
+            [
+                "three.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":-156.0}
+                ]
+            ]
+        ],
+        "uni2084": [
+            [
+                "four.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":-156.0}
+                ]
+            ]
+        ],
+        "uni2085": [
+            [
+                "five.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":-156.0}
+                ]
+            ]
+        ],
+        "uni2086": [
+            [
+                "six.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":-156.0}
+                ]
+            ]
+        ],
+        "uni2087": [
+            [
+                "seven.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":-156.0}
+                ]
+            ]
+        ],
+        "uni2088": [
+            [
+                "eight.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":-156.0}
+                ]
+            ]
+        ],
+        "uni2089": [
+            [
+                "nine.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":-156.0}
+                ]
+            ]
+        ],
+        "uni208A": [
+            [
+                "plus.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":-156.0}
+                ]
+            ]
+        ],
+        "uni208B": [
+            [
+                "hyphen.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":-156.0}
+                ]
+            ]
+        ],
+        "uni208C": [
+            [
+                "equal.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":-156.0}
+                ]
+            ]
+        ],
+        "uni208D": [
+            [
+                "parenleft.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":-156.0}
+                ]
+            ]
+        ],
+        "uni208E": [
+            [
+                "parenright.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":-156.0}
+                ]
+            ]
+        ],
+        "uni2090": [
+            [
+                "a.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":-156.0}
+                ]
+            ]
+        ],
+        "uni2091": [
+            [
+                "e.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":-156.0}
+                ]
+            ]
+        ],
+        "uni2092": [
+            [
+                "o.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":-156.0}
+                ]
+            ]
+        ],
+        "uni2093": [
+            [
+                "x.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":-156.0}
+                ]
+            ]
+        ],
+        "uni2094": [
+            [
+                "uni0259.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":-156.0}
+                ]
+            ]
+        ],
+        "uni2095": [
+            [
+                "h.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":-156.0}
+                ]
+            ]
+        ],
+        "uni2096": [
+            [
+                "k.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":-156.0}
+                ]
+            ]
+        ],
+        "uni2097": [
+            [
+                "l.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":-156.0}
+                ]
+            ]
+        ],
+        "uni2098": [
+            [
+                "m.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":-156.0}
+                ]
+            ]
+        ],
+        "uni2099": [
+            [
+                "n.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":-156.0}
+                ]
+            ]
+        ],
+        "uni209A": [
+            [
+                "p.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":-156.0}
+                ]
+            ]
+        ],
+        "uni209B": [
+            [
+                "s.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":-156.0}
+                ]
+            ]
+        ],
+        "uni209C": [
+            [
+                "t.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":-156.0}
+                ]
+            ]
+        ],
+        "uni2117": [
+            [
+                "P.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":240.0}
+                ]
+            ],
+            "x_copyrightcircle"
+        ],
+        "uni2120": [
+            [
+                "S.SMOL",
+                [
+                    {"op":"translate","dx":-252.0,"dy":480.0}
+                ]
+            ],
+            [
+                "M.SMOL",
+                [
+                    {"op":"translate","dx":252.0,"dy":479.0}
+                ]
+            ]
+        ],
+        "uni2127": [
+            [
+                "uni03A9",
+                [
+                    {"op":"scale","x":-1,"y":-1,"cx":504.0,"cy":528.0}
+                ]
+            ]
+        ],
+        "uni212B": "Aring",
+        "uni2150": [
+            [
+                "seven.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":-231.0}
+                ]
+            ],
+            [
+                "one.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":561.0}
+                ]
+            ],
+            [
+                "x_nutfractionbar",
+                [
+                    {"op":"translate","dx":0.0,"dy":75.0}
+                ]
+            ]
+        ],
+        "uni2151": [
+            [
+                "nine.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":-231.0}
+                ]
+            ],
+            [
+                "one.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":561.0}
+                ]
+            ],
+            [
+                "x_nutfractionbar",
+                [
+                    {"op":"translate","dx":0.0,"dy":75.0}
+                ]
+            ]
+        ],
+        "uni2152": [
+            [
+                "zero.SMOL",
+                [
+                    {"op":"translate","dx":252.0,"dy":-231.0}
+                ]
+            ],
+            [
+                "one.SMOL",
+                [
+                    {"op":"translate","dx":-252.0,"dy":-231.0}
+                ]
+            ],
+            [
+                "one.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":561.0}
+                ]
+            ],
+            [
+                "x_nutfractionbar",
+                [
+                    {"op":"translate","dx":0.0,"dy":75.0}
+                ]
+            ]
+        ],
+        "uni2155": [
+            [
+                "five.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":-231.0}
+                ]
+            ],
+            [
+                "one.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":561.0}
+                ]
+            ],
+            [
+                "x_nutfractionbar",
+                [
+                    {"op":"translate","dx":0.0,"dy":75.0}
+                ]
+            ]
+        ],
+        "uni2156": [
+            [
+                "five.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":-231.0}
+                ]
+            ],
+            [
+                "two.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":561.0}
+                ]
+            ],
+            [
+                "x_nutfractionbar",
+                [
+                    {"op":"translate","dx":0.0,"dy":75.0}
+                ]
+            ]
+        ],
+        "uni2157": [
+            [
+                "five.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":-231.0}
+                ]
+            ],
+            [
+                "three.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":561.0}
+                ]
+            ],
+            [
+                "x_nutfractionbar",
+                [
+                    {"op":"translate","dx":0.0,"dy":75.0}
+                ]
+            ]
+        ],
+        "uni2158": [
+            [
+                "five.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":-231.0}
+                ]
+            ],
+            [
+                "four.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":561.0}
+                ]
+            ],
+            [
+                "x_nutfractionbar",
+                [
+                    {"op":"translate","dx":0.0,"dy":75.0}
+                ]
+            ]
+        ],
+        "uni2159": [
+            [
+                "six.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":-231.0}
+                ]
+            ],
+            [
+                "one.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":561.0}
+                ]
+            ],
+            [
+                "x_nutfractionbar",
+                [
+                    {"op":"translate","dx":0.0,"dy":75.0}
+                ]
+            ]
+        ],
+        "uni215A": [
+            [
+                "six.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":-231.0}
+                ]
+            ],
+            [
+                "five.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":561.0}
+                ]
+            ],
+            [
+                "x_nutfractionbar",
+                [
+                    {"op":"translate","dx":0.0,"dy":75.0}
+                ]
+            ]
+        ],
+        "uni215F": [
+            [
+                "one.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":561.0}
+                ]
+            ],
+            [
+                "x_nutfractionbar",
+                [
+                    {"op":"translate","dx":0.0,"dy":75.0}
+                ]
+            ]
+        ],
+        "uni2189": [
+            [
+                "three.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":-231.0}
+                ]
+            ],
+            [
+                "zero.SMOL",
+                [
+                    {"op":"translate","dx":0.0,"dy":561.0}
+                ]
+            ],
+            [
+                "x_nutfractionbar",
+                [
+                    {"op":"translate","dx":0.0,"dy":75.0}
+                ]
+            ]
+        ],
+        "uni218A": [
+            [
+                "two",
+                [
+                    {"op":"scale","x":-1,"y":-1,"cx":504.0,"cy":528.86}
+                ]
+            ]
+        ],
+        "uni218B": [
+            [
+                "three",
+                [
+                    {"op":"scale","x":-1,"y":-1,"cx":504.08,"cy":528.0}
+                ]
+            ]
+        ],
+        "uni219A": [
+            "slash",
+            "arrowleft"
+        ],
+        "uni219B": [
+            "slash",
+            "arrowright"
+        ],
+        "uni21AE": [
+            "slash",
+            "arrowboth"
+        ],
+        "uni2204": [
+            [
+                "slash",
+                [
+                    {"op":"translate","dx":0.0,"dy":145.0}
+                ]
+            ],
+            "existential"
+        ],
+        "uni220C": [
+            "slash",
+            "suchthat"
+        ],
+        "uni2213": [
+            [
+                "minus",
+                [
+                    {"op":"translate","dx":0.0,"dy":416.0}
+                ]
+            ],
+            [
+                "plus",
+                [
+                    {"op":"translate","dx":0.0,"dy":-96.0}
+                ]
+            ]
+        ],
+        "uni2215": "slash",
+        "uni2219": [
+            "periodcentered",
+            "periodcentered"
+        ],
+        "uni221B": [
+            [
+                "three.SMOL",
+                [
+                    {"op":"translate","dx":-252.0,"dy":672.0}
+                ]
+            ],
+            "radical"
+        ],
+        "uni221C": [
+            [
+                "four.SMOL",
+                [
+                    {"op":"translate","dx":-252.0,"dy":672.0}
+                ]
+            ],
+            "radical"
+        ],
+        "uni2249": [
+            "slash",
+            "approxequal"
+        ],
+        "uni2262": [
+            "slash",
+            "equivalence"
+        ],
+        "uni226E": [
+            "slash",
+            "less"
+        ],
+        "uni226F": [
+            "slash",
+            "greater"
+        ],
+        "uni2270": [
+            "slash",
+            "lessequal"
+        ],
+        "uni2271": [
+            "slash",
+            "greaterequal"
+        ],
+        "uni2285": [
+            "slash",
+            "propersuperset"
+        ],
+        "uni2288": [
+            "slash",
+            "reflexsubset"
+        ],
+        "uni2289": [
+            "slash",
+            "reflexsuperset"
+        ],
+        "uni22C7": [
+            "divide",
+            "multiply"
+        ],
+        "uni27EA": [
+            [
+                "uni27E8",
+                [
+                    {"op":"translate","dx":-150.0,"dy":0.0}
+                ]
+            ],
+            [
+                "uni27E8",
+                [
+                    {"op":"translate","dx":150.0,"dy":0.0}
+                ]
+            ]
+        ],
+        "uni27EB": [
+            [
+                "uni27E9",
+                [
+                    {"op":"translate","dx":150.0,"dy":0.0}
+                ]
+            ],
+            [
+                "uni27E9",
+                [
+                    {"op":"translate","dx":-150.0,"dy":0.0}
+                ]
+            ]
+        ],
+        "uni2E18": [
+            [
+                "uni203D",
+                [
+                    {"op":"scale","x":-1,"y":-1,"cx":504.0,"cy":377.995}
+                ]
+            ]
+        ],
+        "uni2E2E": [
+            [
+                "question",
+                [
+                    {"op":"scale","x":-1.0,"y":1.0},
+                    {"op":"translate","dx":1008.23,"dy":0.0}
+                ]
+            ]
+        ],
+        "uogonek": [
+            [
+                "uni0328",
+                [
+                    {"op":"translate","dx":310.0,"dy":-0.2667}
+                ]
+            ],
+            "u"
+        ],
+        "upsilondieresis": [
+            "uni0308.LCCM",
+            "upsilon"
+        ],
+        "upsilondieresistonos": [
+            [
+                "dieresistonos.LCCM",
+                [
+                    {"op":"translate","dx":-60.0,"dy":0.0}
+                ]
+            ],
+            "upsilon"
+        ],
+        "upsilontonos": [
+            [
+                "tonos",
+                [
+                    {"op":"translate","dx":-77.1621,"dy":-245.0}
+                ]
+            ],
+            "upsilon"
+        ],
+        "uring": [
+            [
+                "uni030A.LCCM",
+                [
+                    {"op":"translate","dx":-30.0,"dy":0.0}
+                ]
+            ],
+            "u"
+        ],
+        "utilde": [
+            [
+                "tildecomb.LCCM",
+                [
+                    {"op":"translate","dx":-30.0,"dy":0.0}
+                ]
+            ],
+            "u"
+        ],
+        "v.pcap": "uni1D20",
+        "w.pcap": "uni1D21",
+        "wacute": [
+            "acutecomb.LCCM",
+            "w"
+        ],
+        "wcircumflex": [
+            "uni0302.LCCM",
+            "w"
+        ],
+        "wdieresis": [
+            "uni0308.LCCM",
+            "w"
+        ],
+        "wgrave": [
+            "gravecomb.LCCM",
+            "w"
+        ],
+        "x.pcap": "x",
+        "y.pcap": "uni028F",
+        "yacute": [
+            "acutecomb.LCCM",
+            "y"
+        ],
+        "ycircumflex": [
+            "uni0302.LCCM",
+            "y"
+        ],
+        "ydieresis": [
+            "uni0308.LCCM",
+            "y"
+        ],
+        "yen": [
+            "equal",
+            "Y"
+        ],
+        "ygrave": [
+            "gravecomb.LCCM",
+            "y"
+        ],
+        "z.pcap": "uni1D22",
+        "zacute": [
+            "acutecomb.LCCM",
+            "z"
+        ],
+        "zcaron": [
+            "uni030C.LCCM",
+            "z"
+        ],
+        "zdotaccent": [
+            "uni0307.LCCM",
+            "z"
+        ]
+    }
+}

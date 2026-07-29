@@ -1,0 +1,76 @@
+{
+    "fontData": {
+        "glyphWidth": 1008,
+        "strokeWidth": 96,
+        "smolStrokeWidth": 72
+    },
+    "fontforgeData": {
+        "defaults": {
+            "ascent": 1344,
+            "descent": 336,
+            "hhea_ascent": 1344,
+            "hhea_descent": -336,
+            "os2_typoascent": 1344,
+            "os2_typodescent": -336,
+            "os2_winascent": 1344,
+            "os2_windescent": 336,
+
+            "hhea_ascent_add": 0,
+            "hhea_descent_add": 0,
+            "os2_typoascent_add": 0,
+            "os2_typodescent_add": 0,
+            "os2_winascent_add": 0,
+            "os2_windescent_add": 0,
+
+            "hhea_linegap": 0,
+            "os2_typolinegap": 0,
+            "vhea_linegap": 0,
+
+            "italicangle": 0.0,
+            "os2_capheight": 1056,
+            "os2_xheight": 756,
+            "os2_weight": 500,
+            "upos": -192.0,
+            "uwidth": 96.0,
+            "os2_strikeypos": 330,
+            "os2_strikeysize": 96,
+
+            "macstyle": -1,
+            "os2_family_class": 0,
+            "os2_fstype": 0,
+            "os2_stylemap": 0,
+            "os2_panose": [2, 0, 5, 3, 0, 0, 0, 0, 0, 0],
+
+            "os2_vendor": "DARN",
+            "comment": "2026-7-25: Created with FontForge (http://fontforge.org)",
+            "copyright": "Copyright (c) `year`, Darren Embry",
+            "encoding": ["UnicodeFull", "compacted"],
+            "sfntRevision": null,
+            "version": "001.000",
+
+            "familyname": "Old Timey Mono",
+            "fontname": "OldTimeyMono",
+            "fullname": "Old Timey Mono",
+            "weight": "Medium",
+            "gasp": [
+                [10, ["antialias", "symmetric-smoothing"]],
+                [65535, ["gridfit", "antialias", "symmetric-smoothing", "gridfit+smoothing"]]
+            ],
+            "gasp_version": 1,
+
+            "os2_use_typo_metrics": 1,
+            "os2_width": 5
+        },
+        "fonts": {
+            "OldTimeyMono-Italic": {
+                "macstyle": -1,
+                "os2_fstype": 0,
+                "os2_stylemap": 0,
+                "italicangle": -12.0,
+                "fontname": "OldTimeyMono-Italic",
+                "fullname": "Old Timey Mono Italic",
+                "os2_panose": [2, 0, 5, 3, 0, 0, 0, 0, 0, 0]
+            }
+        }
+    }
+}

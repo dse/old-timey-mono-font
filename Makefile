@@ -383,7 +383,6 @@ FONT_SETTINGS = \
 
 italic: FORCE
 	cp src/basefont/OldTimeyMono.sfd $(ITALIC_SFD)
-#	support/bin/fontcreate.py --create $(ITALIC_SFD)
 	support/bin/fontset.py -v $(FONT_SETTINGS) $(FONT_ITALIC_SETTINGS) $(ITALIC_SFD)
 	support/bin/glyphcomments.py --erase $(ITALIC_SFD)
 	support/bin/fontimport.py --comment "italicized" -w 1008 -v --italic $(ITALIC_SFD) $(SRC_ITALIC_SVGS)
@@ -391,11 +390,14 @@ italic: FORCE
 	$(SMOL_PY) --no-special --expand-stroke 48 $(ITALIC_SFD)
 
 upright: FORCE
-	cp src/basefont/OldTimeyMono.sfd $(UPRIGHT_SFD)
-#	support/bin/fontcreate.py --create $(UPRIGHT_SFD)
-	support/bin/fontset.py -v $(FONT_SETTINGS) $(FONT_UPRIGHT_SETTINGS) $(UPRIGHT_SFD)
-	support/bin/glyphcomments.py --erase $(UPRIGHT_SFD)
-	support/bin/fontimport.py --comment "{}" -w 1008 -v $(UPRIGHT_SFD) $(SRC_SVGS)
-	$(SMOL_PY) --no-special --expand-stroke 48 $(UPRIGHT_SFD)
+	work/bin/getreferences.py src/basefont/OldTimeyMono.sfd > src/data/new-references.json
+	work/bin/getglyphorder.py src/basefont/OldTimeyMono.sfd > src/data/glyph-order.json
+	work/bin/fontcreate.py \
+		--verbose \
+		--font-data-json src/data/font-data.json \
+		--glyph-order-json src/data/glyph-order.json \
+		--references-json src/data/new-references.json \
+		OldTimeyMono.sfd \
+		`find src/upright -type f -name '*.svg'`
 
 .PHONY: FORCE
