@@ -399,5 +399,14 @@ upright: FORCE
 		--references-json src/data/new-references.json \
 		OldTimeyMono.sfd \
 		`find src/upright -type f -name '*.svg'`
+	fontbraille -W 200 -f OldTimeyMono.sfd
+	support/bin/boxdrawing.py OldTimeyMono.sfd
+	support/bin/7segment.py OldTimeyMono.sfd
+	support/bin/blocksextants.py OldTimeyMono.sfd
+	support/bin/diagonalblocks.py OldTimeyMono.sfd
+	support/bin/triangularblocks.py OldTimeyMono.sfd
+	support/bin/retrosymbols.py OldTimeyMono.sfd
+	support/bin/vcchars.py OldTimeyMono.sfd
+	support/bin/blockelements.py OldTimeyMono.sfd
 
 .PHONY: FORCE
