@@ -367,7 +367,7 @@ def guess_transform_sequence(t):
     if deep_is_close((a, b, c, d), (-1, 0, 0, -1)):
         if deep_is_close((dx, dy), (0, 0)):
             return [ { "op": "scale", "x": -1, "y": -1 } ]
-        return [ { "op": "scale", "x": -1, "y": -1, "cx": dx/2, "cy": dx/2 } ]
+        return [ { "op": "scale", "x": -1, "y": -1, "cx": dx/2, "cy": dy/2 } ]
     if deep_is_close((b, c), (0, 0)):
         if a == 1 or d == 1:
             return [ { "op": "scale", "x": a, "y": d }, { "op": "translate", "dx": dx, "dy": dy } ]
