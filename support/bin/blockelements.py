@@ -122,17 +122,19 @@ def draw_medium_shade(glyph):
                       (col+1)/x_pixel_count,
                       (row+1)/y_pixel_count)
 
-def draw_poly(glyph, points):
+def draw_poly(glyph, points, counterclockwise=False):
     pen = glyph.glyphPen(replace=False)
     xx = None
     yy = None
     horizontal = None
+
+    new_points = []
     for i, point in enumerate(points):
         x = None
         y = None
         if i == 0:
             (x, y) = point
-            pen.moveTo(coords(glyph, x, y))
+            points.append((x, y))
         else:
             if type(point) in [list, tuple]:
                 (x, y) = point
@@ -150,8 +152,18 @@ def draw_poly(glyph, points):
                     x = xx
                     y = point
                 horizontal = not horizontal
-            pen.lineTo(coords(glyph, x, y))
+            points.append((x, y))
         (xx, yy) = (x, y)
+    points = new_points
+    if counterclockwise:
+        points.reverse()
+
+    for i, point in enumerate(points):
+        (x, y) = point
+        if i == 0:
+            pen.moveTo(coords(glyph, x, y))
+        else:
+            pen.lineTo(coords(glyph, x, y))
     pen.closePath()
     pen = None
 
