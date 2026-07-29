@@ -101,5 +101,31 @@
     "U+1FBE6": { "expandStrokes": false },
     "U+1FBE7": { "expandStrokes": false },
 
+    "x_nutfractionbar": { "strokeWidth": 72 },
+    "x_ordinalindicatorbar": { "strokeWidth": 72 },
+    "x_copyrightcircle": { "strokeWidth": 72 },
+
+    "\u237c": { "strokeWidth": 48 },
+    "\u2388": { "strokeWidth": 48 },
+    "\u2139": { "strokeWidth": 48 },
+    "\u2190": { "strokeWidth": 72 },
+    "\u2191": { "strokeWidth": 72 },
+    "\u2192": { "strokeWidth": 72 },
+    "\u2193": { "strokeWidth": 72 },
+    "\u2194": { "strokeWidth": 72 },
+    "\u2195": { "strokeWidth": 72 },
+    "\u2196": { "strokeWidth": 72 },
+    "\u2197": { "strokeWidth": 72 },
+    "\u2198": { "strokeWidth": 72 },
+    "\u2199": { "strokeWidth": 72 },
+    "\u219a": { "strokeWidth": 72 },
+    "\u219b": { "strokeWidth": 72 },
+    "\u219e": { "strokeWidth": 72 },
+    "\u219f": { "strokeWidth": 72 },
+    "\u21a0": { "strokeWidth": 72 },
+    "\u21a1": { "strokeWidth": 72 },
+    "\u21a8": { "strokeWidth": 72 },
+    "\u21ae": { "strokeWidth": 72 },
+
     "dummy": null
 }
