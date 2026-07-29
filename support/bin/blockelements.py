@@ -66,9 +66,9 @@ def main():
         font.generate(args.filename)
     font.close()
 
-def draw_rect(glyph, x1, y1, x2, y2, counterclockwise=False):
+def draw_rect(glyph, x1, y1, x2, y2, reverse=False):
     pen = glyph.glyphPen(replace=False)
-    if counterclockwise:
+    if reverse:
         pen.moveTo(coords(glyph, x1, y2))
         pen.lineTo(coords(glyph, x2, y2))
         pen.lineTo(coords(glyph, x2, y1))
@@ -107,7 +107,7 @@ def draw_dark_shade(glyph):
                       (row+0)/y_pixel_count,
                       (col+1.5)/x_pixel_count,
                       (row+1)/y_pixel_count,
-                      counterclockwise=True)
+                      reverse=True)
 
 def draw_medium_shade(glyph):
     x_pixel_size = 84
@@ -122,7 +122,7 @@ def draw_medium_shade(glyph):
                       (col+1)/x_pixel_count,
                       (row+1)/y_pixel_count)
 
-def draw_poly(glyph, points, counterclockwise=False):
+def draw_poly(glyph, points, reverse=False):
     pen = glyph.glyphPen(replace=False)
     xx = None
     yy = None
@@ -155,7 +155,7 @@ def draw_poly(glyph, points, counterclockwise=False):
             points.append((x, y))
         (xx, yy) = (x, y)
     points = new_points
-    if counterclockwise:
+    if reverse:
         points.reverse()
 
     for i, point in enumerate(points):
