@@ -18,7 +18,8 @@ def main():
     parser.add_argument("filenames", nargs="+")
     parser.add_argument('--verbose', '-v', action='count', default=0)
     args = parser.parse_args()
-    for [font, filename, fontname] in get_fonts_from(args.filenames, with_filenames=True):
+    for filename in args.filenames:
+        font = fontforge.open(filename)
         boxdrawing.draw(font, verbose=args.verbose)
         if filename.endswith(".sfd"):
             print("Saving %s" % filename)
@@ -26,5 +27,6 @@ def main():
         else:
             print("Generating %s" % filename)
             font.generate(filename)
+        font.close()
 
 main()

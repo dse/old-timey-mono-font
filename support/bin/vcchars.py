@@ -13,7 +13,6 @@ if dir not in sys.path:
 from pyfontdrawutils.draw import rect, poly
 from pyfontdrawutils import vcdrawing
 from pyfontdrawutils import settings
-from pyfontutils.utils import get_fonts_from
 
 def main():
     parser = argparse.ArgumentParser()
@@ -22,11 +21,13 @@ def main():
 
     settings.set_arc_drawing_radius_factor(7/8)
 
-    for [font, filename, font_in_file] in get_fonts_from(args.filenames, with_filenames=True, ttc=False):
+    for filename in args.filenames:
+        font = fontforge.open(filename)
         vcdrawing.draw(font)
         if filename.endswith(".sfd"):
             font.save(filename)
         else:
             font.generate(filename)
+        font.close()
 
 main()
