@@ -182,31 +182,31 @@ FONTFORGE_GLYPH_ATTR_NAMES = [
     "vwidth",
 ]
 
-def get_valid_font_attr_names(exclude_json=False):
+def get_valid_font_attr_names(exclude_non_serializable=False):
     font = fontforge.font()
     attr_names = get_valid_attr_names(font,
                                       FONTFORGE_FONT_ATTR_NAMES,
-                                      exclude_json=exclude_json)
+                                      exclude_non_serializable=exclude_non_serializable)
     font.close()
     return sorted(attr_names)
 
-def get_valid_glyph_attr_names(exclude_json=False):
+def get_valid_glyph_attr_names(exclude_non_serializable=False):
     font = fontforge.font()
     glyph = font.createChar(32)
     attr_names = get_valid_attr_names(glyph,
                                       FONTFORGE_GLYPH_ATTR_NAMES,
-                                      exclude_json=exclude_json)
+                                      exclude_non_serializable=exclude_non_serializable)
     font.close()
     return sorted(attr_names)
 
-def get_valid_attr_names(obj, attr_names, exclude_json=False):
+def get_valid_attr_names(obj, attr_names, exclude_non_serializable=False):
     valid_attr_names = []
     for attr_name in attr_names:
         try:
             value = getattr(obj, attr_name)
         except:
             continue
-        if exclude_json:
+        if exclude_non_serializable:
             try:
                 json_txt = json.dumps(value)
             except:

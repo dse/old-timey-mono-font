@@ -20,7 +20,7 @@ def main():
 
     font = fontforge.font()
     glyph = font.createChar(65)
-    for attr_name in get_valid_glyph_attr_names(exclude_json=True):
+    for attr_name in get_valid_glyph_attr_names(exclude_non_serializable=True):
         glyph_data[attr_name] = getattr(glyph, attr_name)
     font.close()
 

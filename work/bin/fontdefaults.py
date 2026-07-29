@@ -19,7 +19,7 @@ def main():
     font_data = data["fontData"]
 
     font = fontforge.font()
-    for attr_name in get_valid_font_attr_names(exclude_json=True):
+    for attr_name in get_valid_font_attr_names(exclude_non_serializable=True):
         font_data[attr_name] = getattr(font, attr_name)
     font.close()
 
