@@ -24,7 +24,6 @@ def main():
             font.removeLookup(lookup_name)
 
     for lookup_name, lookup_dict in reversed(lookups_dict.items()):
-        print(lookup_name, lookup_dict)
         features_dict = lookup_dict["features"]
         subtables_dict = lookup_dict["subtables"]
         lookup_type = lookup_dict["type"]
