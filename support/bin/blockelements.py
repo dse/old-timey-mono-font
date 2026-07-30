@@ -112,8 +112,8 @@ def draw_dark_shade(glyph):
 def draw_medium_shade(glyph):
     x_pixel_size = 84
     y_pixel_size = 84
-    x_pixel_count = round(glyph.width / x_pixel_size)
-    y_pixel_count = round(glyph.font.em / y_pixel_size)
+    x_pixel_count = round(glyph.width / x_pixel_size / 2) * 2 # even number of columns
+    y_pixel_count = round(glyph.font.em / y_pixel_size / 2) * 2 # even number of rows
     for row in range(0, y_pixel_count):
         for col in range(row % 2, x_pixel_count, 2):
             draw_rect(glyph,
@@ -134,7 +134,7 @@ def draw_poly(glyph, points, reverse=False):
         y = None
         if i == 0:
             (x, y) = point
-            points.append((x, y))
+            new_points.append((x, y))
         else:
             if type(point) in [list, tuple]:
                 (x, y) = point
@@ -152,7 +152,7 @@ def draw_poly(glyph, points, reverse=False):
                     x = xx
                     y = point
                 horizontal = not horizontal
-            points.append((x, y))
+            new_points.append((x, y))
         (xx, yy) = (x, y)
     points = new_points
     if reverse:
