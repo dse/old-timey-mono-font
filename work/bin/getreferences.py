@@ -33,10 +33,8 @@ def main():
                         this_charname += "." + variant
                     return this_charname
                 except:
-                    print("glyph.glyphname = %s; glyph.unicode = %s => glyphname = %s; variant = %s => %s; unicode = %d" % (glyph.glyphname, glyph.unicode, glyphname, variant, glyph.glyphname, unicode))
                     return glyph.glyphname
             else:
-                print("glyph.glyphname = %s; glyph.unicode = %s => glyphname = %s; variant = %s => %s; unicode = %d" % (glyph.glyphname, glyph.unicode, glyphname, variant, glyph.glyphname, unicode))
                 return glyph.glyphname
         return glyph.glyphname
 
