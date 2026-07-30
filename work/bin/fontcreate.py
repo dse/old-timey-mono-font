@@ -270,6 +270,21 @@ def main():
             print("    %s.references = %s" % (repr(glyph), repr(item.data)))
         glyph.references = item.data
 
+    # Substitutions
+    #--------------------------------------------------------------------------
+    if args.substitutions_json is not None:
+        substns_data = json.load(open(args.substitutions_json, "r"))["substitutions"]
+        features_data = substns_data["features"]
+        lookups_data = substns_data["lookups"]
+        script_lang_tuples_data = substns_data["scriptLangTuples"]
+        for lookup_name in font.gsub_lookups:
+            font.removeLookup(lookup_name)
+        for (lookup_name, lookup) in lookups_data.items():
+            font.addLookup(lookup_name, "gsub_single", None)
+            for (subtable_name, subtable) in lookup.items():
+                for (glyph_name, replacement_glyph_name) in subtable.items():
+                    font[glyph_name].addPosSub(subtable_name, replacement_glyph_name)
+
     # Save the font.
     #--------------------------------------------------------------------------
 
