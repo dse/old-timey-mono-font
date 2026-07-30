@@ -2,7 +2,7 @@
 # -*- mode: python; coding: utf-8 -*-
 import fontforge, argparse, os, sys, statistics
 
-sys.path.append(os.path.dirname(__file__) + "/../lib")
+sys.path.append(os.path.dirname(__file__) + "/../../lib")
 from my_font_utils import draw_grid_shape
 
 def main():
@@ -91,7 +91,6 @@ def main():
         font.generate()
 
 def draw_block_sextant(font, width, codept, bits):
-    print("draw_block_sextant")
     glyphname = fontforge.nameFromUnicode(codept)
     if glyphname in font:
         font.removeGlyph(glyphname)
