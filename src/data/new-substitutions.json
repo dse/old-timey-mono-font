@@ -1,0 +1,576 @@
+{
+    "substitutions": {
+        "lookups": {
+            "'cv14' Visibility Enhanced Tilde (asciitilde.cv14)": {
+                "features": {
+                    "cv14": {
+                        "scriptLangTupleIndex": 0
+                    }
+                },
+                "subtables": {
+                    "'cv14' Visibility Enhanced Tilde-1 (asciitilde.cv14)": {
+                        "asciitilde": "asciitilde.cv14"
+                    }
+                },
+                "type": "gsub_single",
+                "flags": []
+            },
+            "'cv13' Larger Right Curly Bracket, Alternate (braceright.cv13)": {
+                "features": {
+                    "cv13": {
+                        "scriptLangTupleIndex": 0
+                    }
+                },
+                "subtables": {
+                    "'cv13' Larger Right Curly Bracket, Alternate-1 (braceright.cv13)": {
+                        "braceright": "braceright.cv13"
+                    }
+                },
+                "type": "gsub_single",
+                "flags": []
+            },
+            "'cv12' Larger Left Curly Bracket, Alternate (braceleft.cv12)": {
+                "features": {
+                    "cv12": {
+                        "scriptLangTupleIndex": 0
+                    }
+                },
+                "subtables": {
+                    "'cv12' Larger Left Curly Bracket, Alternate-1 (braceleft.cv12)": {
+                        "braceleft": "braceleft.cv12"
+                    }
+                },
+                "type": "gsub_single",
+                "flags": []
+            },
+            "'cv11' Taller Equal Sign (equal.cv11)": {
+                "features": {
+                    "cv11": {
+                        "scriptLangTupleIndex": 0
+                    }
+                },
+                "subtables": {
+                    "'cv11' Taller Equal Sign-1 (equal.cv11)": {
+                        "equal": "equal.cv11"
+                    }
+                },
+                "type": "gsub_single",
+                "flags": []
+            },
+            "'cv10' Curly Small L (l.cv10)": {
+                "features": {
+                    "cv10": {
+                        "scriptLangTupleIndex": 0
+                    }
+                },
+                "subtables": {
+                    "'cv10' Curly Small L-1 (l.cv10)": {
+                        "l": "l.cv10"
+                    }
+                },
+                "type": "gsub_single",
+                "flags": []
+            },
+            "'cv09' Plain Grave Accent (grave.cv09)": {
+                "features": {
+                    "cv09": {
+                        "scriptLangTupleIndex": 0
+                    }
+                },
+                "subtables": {
+                    "'cv09' Plain Grave Accent-1 (grave.cv09)": {
+                        "grave": "grave.cv09"
+                    }
+                },
+                "type": "gsub_single",
+                "flags": []
+            },
+            "'cv08' Shortened Backslash (backslash.cv08)": {
+                "features": {
+                    "cv08": {
+                        "scriptLangTupleIndex": 0
+                    }
+                },
+                "subtables": {
+                    "'cv08' Shortened Backslash-1 (backslash.cv08)": {
+                        "backslash": "backslash.cv08"
+                    }
+                },
+                "type": "gsub_single",
+                "flags": []
+            },
+            "'cv07' Alternate At-Sign (at.cv07)": {
+                "features": {
+                    "cv07": {
+                        "scriptLangTupleIndex": 0
+                    }
+                },
+                "subtables": {
+                    "'cv07' Alternate At-Sign-1 (at.cv07)": {
+                        "at": "at.cv07"
+                    }
+                },
+                "type": "gsub_single",
+                "flags": []
+            },
+            "'cv05' Zero with Dot (zero.cv05)": {
+                "features": {
+                    "cv05": {
+                        "scriptLangTupleIndex": 0
+                    }
+                },
+                "subtables": {
+                    "'cv05' Zero with Dot-1 (zero.cv05)": {
+                        "zero": "zero.cv05"
+                    }
+                },
+                "type": "gsub_single",
+                "flags": []
+            },
+            "'cv06' Zero with Large Dot (zero.cv06)": {
+                "features": {
+                    "cv06": {
+                        "scriptLangTupleIndex": 0
+                    }
+                },
+                "subtables": {
+                    "'cv06' Zero with Large Dot-1 (zero.cv06)": {
+                        "zero": "zero.cv06"
+                    }
+                },
+                "type": "gsub_single",
+                "flags": []
+            },
+            "'cv04' Shortened Slash (slash.cv04)": {
+                "features": {
+                    "cv04": {
+                        "scriptLangTupleIndex": 0
+                    }
+                },
+                "subtables": {
+                    "'cv04' Shortened Slash-1 (slash.cv04)": {
+                        "slash": "slash.cv04"
+                    }
+                },
+                "type": "gsub_single",
+                "flags": []
+            },
+            "'cv03' Shortened Number Sign (numbersign.cv03)": {
+                "features": {
+                    "cv03": {
+                        "scriptLangTupleIndex": 0
+                    }
+                },
+                "subtables": {
+                    "'cv03' Shortened Number Sign-1 (numbersign.cv03)": {
+                        "numbersign": "numbersign.cv03"
+                    }
+                },
+                "type": "gsub_single",
+                "flags": []
+            },
+            "'cv02' Code-Friendly Small L (l.cv02)": {
+                "features": {
+                    "cv02": {
+                        "scriptLangTupleIndex": 0
+                    }
+                },
+                "subtables": {
+                    "'cv02' Code-Friendly Small L-1 (l.cv02)": {
+                        "l": "l.cv02"
+                    }
+                },
+                "type": "gsub_single",
+                "flags": []
+            },
+            "'cv01' Digit One with Curly Top (one.cv01)": {
+                "features": {
+                    "cv01": {
+                        "scriptLangTupleIndex": 0
+                    }
+                },
+                "subtables": {
+                    "'cv01' Digit One with Curly Top-1 (one.cv01)": {
+                        "one": "one.cv01"
+                    }
+                },
+                "type": "gsub_single",
+                "flags": []
+            },
+            "'ss07' Simplified Forms for Size Reduction": {
+                "features": {
+                    "ss07": {
+                        "scriptLangTupleIndex": 0
+                    }
+                },
+                "subtables": {
+                    "'ss07' Simplified Forms for Size Reduction-1": {
+                        "numbersign": "numbersign.ss07",
+                        "dollar": "dollar.ss07",
+                        "zero": "zero.ss07",
+                        "one": "one.ss07",
+                        "two": "two.ss07",
+                        "three": "three.ss07",
+                        "five": "five.ss07",
+                        "a": "a.ss07",
+                        "c": "c.ss04",
+                        "e": "e.ss04",
+                        "s": "s.ss04"
+                    }
+                },
+                "type": "gsub_single",
+                "flags": []
+            },
+            "Code Brackets": {
+                "features": {
+                    "ss01": {
+                        "scriptLangTupleIndex": 0
+                    },
+                    "ss02": {
+                        "scriptLangTupleIndex": 0
+                    }
+                },
+                "subtables": {
+                    "Code Brackets-1": {
+                        "parenleft": "parenleft.WIDE",
+                        "parenright": "parenright.WIDE",
+                        "bracketleft": "bracketleft.WIDE",
+                        "bracketright": "bracketright.WIDE",
+                        "braceleft": "braceleft.WIDE",
+                        "braceright": "braceright.WIDE"
+                    }
+                },
+                "type": "gsub_single",
+                "flags": []
+            },
+            "Apertured Letters": {
+                "features": {
+                    "ss01": {
+                        "scriptLangTupleIndex": 0
+                    },
+                    "ss04": {
+                        "scriptLangTupleIndex": 0
+                    }
+                },
+                "subtables": {
+                    "Apertured Letters-1": {
+                        "a": "a.ss04",
+                        "c": "c.ss04",
+                        "e": "e.ss04",
+                        "s": "s.ss04"
+                    }
+                },
+                "type": "gsub_single",
+                "flags": []
+            },
+            "Code Symbols": {
+                "features": {
+                    "ss01": {
+                        "scriptLangTupleIndex": 0
+                    },
+                    "ss06": {
+                        "scriptLangTupleIndex": 0
+                    }
+                },
+                "subtables": {
+                    "Code Symbols-1": {
+                        "equal": "equal.cv11",
+                        "grave": "grave.cv09"
+                    }
+                },
+                "type": "gsub_single",
+                "flags": []
+            },
+            "Larger Punctuation": {
+                "features": {
+                    "ss01": {
+                        "scriptLangTupleIndex": 0
+                    },
+                    "ss05": {
+                        "scriptLangTupleIndex": 0
+                    }
+                },
+                "subtables": {
+                    "Larger Punctuation-1": {
+                        "periodcentered": "periodcentered.ss05",
+                        "onedotenleader": "onedotenleader.ss05",
+                        "twodotenleader": "twodotenleader.ss05",
+                        "ellipsis": "ellipsis.ss05",
+                        "uni2027": "uni2027.ss05",
+                        "quotesinglbase": "quotesinglbase.ss05",
+                        "quotereversed": "quotereversed.ss05",
+                        "quotedblbase": "quotedblbase.ss05",
+                        "uni201F": "uni201F.ss05",
+                        "uni204F": "uni204F.ss05",
+                        "comma": "comma.ss05",
+                        "period": "period.ss05",
+                        "colon": "colon.ss05",
+                        "semicolon": "semicolon.ss05",
+                        "asciitilde": "asciitilde.cv14",
+                        "quoteleft": "quoteleft.ss05",
+                        "quoteright": "quoteright.ss05",
+                        "quotedblleft": "quotedblleft.ss05",
+                        "quotedblright": "quotedblright.ss05"
+                    }
+                },
+                "type": "gsub_single",
+                "flags": []
+            },
+            "Code Digits": {
+                "features": {
+                    "ss01": {
+                        "scriptLangTupleIndex": 0
+                    },
+                    "ss03": {
+                        "scriptLangTupleIndex": 0
+                    }
+                },
+                "subtables": {
+                    "Code Digits Zero Slash-1": {
+                        "zero": "zero.zero",
+                        "one": "one.cv01"
+                    }
+                },
+                "type": "gsub_single",
+                "flags": []
+            },
+            "'smcp' Lowercase to Small Caps": {
+                "features": {
+                    "smcp": {
+                        "scriptLangTupleIndex": 0
+                    }
+                },
+                "subtables": {
+                    "'smcp' Lowercase to Small Caps-1": {
+                        "a": "A.c2sc",
+                        "b": "B.c2sc",
+                        "c": "C.c2sc",
+                        "d": "D.c2sc",
+                        "e": "E.c2sc",
+                        "f": "F.c2sc",
+                        "g": "G.c2sc",
+                        "h": "H.c2sc",
+                        "k": "K.c2sc",
+                        "l": "L.c2sc",
+                        "m": "M.c2sc",
+                        "n": "N.c2sc",
+                        "o": "O.c2sc",
+                        "p": "P.c2sc",
+                        "q": "Q.c2sc",
+                        "r": "R.c2sc",
+                        "s": "S.c2sc",
+                        "t": "T.c2sc",
+                        "u": "U.c2sc",
+                        "v": "V.c2sc",
+                        "w": "W.c2sc",
+                        "x": "X.c2sc",
+                        "y": "Y.c2sc",
+                        "z": "Z.c2sc",
+                        "i": "I.c2sc",
+                        "j": "J.c2sc"
+                    }
+                },
+                "type": "gsub_single",
+                "flags": []
+            },
+            "'c2sc' Caps to Small Caps": {
+                "features": {
+                    "c2sc": {
+                        "scriptLangTupleIndex": 0
+                    }
+                },
+                "subtables": {
+                    "'c2sc' Caps to Small Caps-1": {
+                        "A": "A.c2sc",
+                        "B": "B.c2sc",
+                        "C": "C.c2sc",
+                        "D": "D.c2sc",
+                        "E": "E.c2sc",
+                        "F": "F.c2sc",
+                        "G": "G.c2sc",
+                        "H": "H.c2sc",
+                        "I": "I.c2sc",
+                        "J": "J.c2sc",
+                        "K": "K.c2sc",
+                        "L": "L.c2sc",
+                        "M": "M.c2sc",
+                        "N": "N.c2sc",
+                        "O": "O.c2sc",
+                        "P": "P.c2sc",
+                        "Q": "Q.c2sc",
+                        "R": "R.c2sc",
+                        "S": "S.c2sc",
+                        "T": "T.c2sc",
+                        "U": "U.c2sc",
+                        "V": "V.c2sc",
+                        "W": "W.c2sc",
+                        "X": "X.c2sc",
+                        "Y": "Y.c2sc",
+                        "Z": "Z.c2sc"
+                    }
+                },
+                "type": "gsub_single",
+                "flags": []
+            },
+            "'pcap' Lowercase to Petite Caps": {
+                "features": {
+                    "pcap": {
+                        "scriptLangTupleIndex": 0
+                    }
+                },
+                "subtables": {
+                    "'pcap' Lowercase to Petite Caps-1": {
+                        "a": "A.c2pc",
+                        "b": "B.c2pc",
+                        "c": "C.c2pc",
+                        "d": "D.c2pc",
+                        "e": "E.c2pc",
+                        "f": "F.c2pc",
+                        "g": "G.c2pc",
+                        "h": "H.c2pc",
+                        "k": "K.c2pc",
+                        "l": "L.c2pc",
+                        "m": "M.c2pc",
+                        "n": "N.c2pc",
+                        "o": "O.c2pc",
+                        "p": "P.c2pc",
+                        "q": "Q.c2pc",
+                        "r": "R.c2pc",
+                        "s": "S.c2pc",
+                        "t": "T.c2pc",
+                        "u": "U.c2pc",
+                        "v": "V.c2pc",
+                        "w": "W.c2pc",
+                        "x": "X.c2pc",
+                        "y": "Y.c2pc",
+                        "z": "Z.c2pc",
+                        "i": "I.c2pc",
+                        "j": "J.c2pc"
+                    }
+                },
+                "type": "gsub_single",
+                "flags": []
+            },
+            "'c2pc' Caps to Petite Caps": {
+                "features": {
+                    "c2pc": {
+                        "scriptLangTupleIndex": 0
+                    }
+                },
+                "subtables": {
+                    "'c2pc' Caps to Petite Caps-1": {
+                        "A": "A.c2pc",
+                        "B": "B.c2pc",
+                        "C": "C.c2pc",
+                        "D": "D.c2pc",
+                        "E": "E.c2pc",
+                        "F": "F.c2pc",
+                        "G": "G.c2pc",
+                        "H": "H.c2pc",
+                        "I": "I.c2pc",
+                        "J": "J.c2pc",
+                        "K": "K.c2pc",
+                        "L": "L.c2pc",
+                        "M": "M.c2pc",
+                        "N": "N.c2pc",
+                        "O": "O.c2pc",
+                        "P": "P.c2pc",
+                        "Q": "Q.c2pc",
+                        "R": "R.c2pc",
+                        "S": "S.c2pc",
+                        "T": "T.c2pc",
+                        "U": "U.c2pc",
+                        "V": "V.c2pc",
+                        "W": "W.c2pc",
+                        "X": "X.c2pc",
+                        "Y": "Y.c2pc",
+                        "Z": "Z.c2pc"
+                    }
+                },
+                "type": "gsub_single",
+                "flags": []
+            },
+            "'VCEN' Vertically Centered Glyphs": {
+                "features": {
+                    "VCEN": {
+                        "scriptLangTupleIndex": 0
+                    }
+                },
+                "subtables": {
+                    "'VCEN' Vertically Centered Glyphs-1": {
+                        "numbersign": "numbersign.VCEN",
+                        "percent": "percent.VCEN",
+                        "parenleft": "parenleft.VCEN",
+                        "parenright": "parenright.VCEN",
+                        "asterisk": "asterisk.VCEN",
+                        "plus": "plus.VCEN",
+                        "hyphen": "hyphen.VCEN",
+                        "slash": "slash.VCEN",
+                        "colon": "colon.VCEN",
+                        "less": "less.VCEN",
+                        "equal": "equal.VCEN",
+                        "greater": "greater.VCEN",
+                        "at": "at.VCEN",
+                        "bracketleft": "bracketleft.VCEN",
+                        "backslash": "backslash.VCEN",
+                        "bracketright": "bracketright.VCEN",
+                        "asciicircum": "asciicircum.VCEN",
+                        "braceleft": "braceleft.VCEN",
+                        "bar": "bar.VCEN",
+                        "braceright": "braceright.VCEN",
+                        "asciitilde": "asciitilde.VCEN"
+                    }
+                },
+                "type": "gsub_single",
+                "flags": []
+            },
+            "'BASE' Baseline Underlines": {
+                "features": {
+                    "BASE": {
+                        "scriptLangTupleIndex": 0
+                    }
+                },
+                "subtables": {
+                    "'BASE' Baseline Underlines-1": {
+                        "underscoredbl": "underscoredbl.BASE",
+                        "underscore": "underscore.BASE"
+                    }
+                },
+                "type": "gsub_single",
+                "flags": []
+            }
+        },
+        "scriptLangTuples": [
+            [
+                [
+                    "latn",
+                    [
+                        "ENG ",
+                        "dflt"
+                    ]
+                ],
+                [
+                    "cyrl",
+                    [
+                        "ENG ",
+                        "dflt"
+                    ]
+                ],
+                [
+                    "grek",
+                    [
+                        "ENG ",
+                        "dflt"
+                    ]
+                ],
+                [
+                    "DFLT",
+                    [
+                        "ENG ",
+                        "dflt"
+                    ]
+                ]
+            ]
+        ]
+    }
+}
