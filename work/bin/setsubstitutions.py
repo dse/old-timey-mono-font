@@ -10,7 +10,10 @@ def main():
     args = parser.parse_args()
 
     font = fontforge.open(args.font_filename)
-    data = json.loads(open(args.json_filename).read())
+    root = json.loads(open(args.json_filename).read())
+
+    lookups_dict = root["substitutions"]["lookups"]
+    script_lang_tuples_list = root["substitutions"]["scriptLangTuples"]
 
     # clear all lookups
     lookup_names = font.gsub_lookups
@@ -20,20 +23,28 @@ def main():
         if lookup_type == "gsub_single":
             font.removeLookup(lookup_name)
 
-    script_lang_tuples = [deep_tuple(t) for t in data["substitutions"]["scriptLangTuples"]]
-
-    for lookup_name, lookup_data in data["substitutions"]["lookups"].items():
-        fslt = []
-        for feature_name, feature_data_items in data["substitutions"]["features"].items():
-            for script_lang_tuple_idx, each_lookup_name in feature_data_items:
-                if lookup_name == each_lookup_name:
-                    fslt.append([feature_name, data["substitutions"]["scriptLangTuples"][script_lang_tuple_idx]])
-        fslt = deep_tuple(fslt)
-        font.addLookup(lookup_name, "gsub_single", (), fslt)
-        for subtable_name, subtable_data in lookup_data.items():
+    for lookup_name, lookup_dict in reversed(lookups_dict.items()):
+        print(lookup_name, lookup_dict)
+        features_dict = lookup_dict["features"]
+        subtables_dict = lookup_dict["subtables"]
+        lookup_type = lookup_dict["type"]
+        lookup_flags = lookup_dict["flags"]
+        if lookup_type != "gsub_single":
+            continue
+        if len(lookup_flags) == 0:
+            lookup_flags = None
+        else:
+            lookup_flags = tuple(lookup_flags)
+        feature_script_lang_tuple = []
+        for feature_name, feature_dict in features_dict.items():
+            script_lang_tuple = script_lang_tuples_list[feature_dict["scriptLangTupleIndex"]]
+            feature_script_lang_tuple.append([feature_name, script_lang_tuple])
+        feature_script_lang_tuple = deep_tuple(feature_script_lang_tuple)
+        font.addLookup(lookup_name, lookup_type, lookup_flags, feature_script_lang_tuple)
+        for subtable_name, subtable_dict in subtables_dict.items():
             font.addLookupSubtable(lookup_name, subtable_name)
-            for glyph_name, repl_glyph_name in subtable_data.items():
-                font[glyph_name].addPosSub(subtable_name, repl_glyph_name)
+            for glyphname, replacement_glyphname in subtable_dict.items():
+                font[glyphname].addPosSub(subtable_name, replacement_glyphname)
 
     if args.font_filename.endswith(".sfd"):
         font.save(args.font_filename)

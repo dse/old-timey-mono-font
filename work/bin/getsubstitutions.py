@@ -8,60 +8,59 @@ def main():
     parser.add_argument("filename")
     args = parser.parse_args()
 
-    font = fontforge.open(args.filename)
     root = {
         "substitutions": {
-            "scriptLangTuples": [
-            ],
-            "features": {
-            },
             "lookups": {
             },
-        },
+            "scriptLangTuples": [
+            ]
+        }
     }
 
-    def get_script_lang_tuple_idx(script_lang_tuple):
-        for idx, each_script_lang_tuple in enumerate(data["scriptLangTuples"]):
-            each_script_lang_tuple = deep_tuple(each_script_lang_tuple)
-            if each_script_lang_tuple == script_lang_tuple:
-                return idx
-        idx = len(data["scriptLangTuples"])
-        data["scriptLangTuples"].append(script_lang_tuple)
-        return idx
+    font = fontforge.open(args.filename)
 
-    lookup_names = font.gsub_lookups
-    for lookup_name in lookup_names:
-        lookup_info = font.getLookupInfo(lookup_name)
-        (lookup_type, lookup_flags, feature_script_lang_tuple) = lookup_info
-        if lookup_type == "gsub_single":
-            lookup_data = {}
-            data["lookups"][lookup_name] = lookup_data
-            for feature, script_lang_tuple in feature_script_lang_tuple:
-                script_lang_tuple_idx = get_script_lang_tuple_idx(script_lang_tuple)
-                data["lookups"][lookup_name]
-                if feature not in data["features"]:
-                    data["features"][feature] = []
-                data["features"][feature].append([script_lang_tuple_idx, lookup_name])
-            for subtable_name in font.getLookupSubtables(lookup_name):
-                subtable_data = {}
-                data["lookups"][lookup_name][subtable_name] = subtable_data
-                for glyph in font.glyphs():
-                    for gsub_tuple in glyph.getPosSub(subtable_name):
-                        tuple_type = gsub_tuple[1]
-                        if tuple_type == "Substitution":
-                            replacement_glyph_name = gsub_tuple[2]
-                        else:
-                            raise Exception("unsupported getPosSub tuple type: %s" % repr(tuple_type))
-                        subtable_data[glyph.glyphname] = replacement_glyph_name
-        else:
-            raise Exception("unsupported lookup type: %s" % repr(lookup_type))
+    lookups_dict = root["substitutions"]["lookups"]
+    script_lang_tuples_list = root["substitutions"]["scriptLangTuples"]
 
-    print(json.dumps(root, indent=4, sort_keys=True))
+    for lookup_name in font.gsub_lookups:
+        lookup_dict = {
+            "features": {},
+            "subtables": {}
+        }
+        lookups_dict[lookup_name] = lookup_dict
+        lookup_type, lookup_flags, feature_script_lang_tuple = font.getLookupInfo(lookup_name)
+        features_dict = lookup_dict["features"]
+        subtables_dict = lookup_dict["subtables"]
+        lookup_dict["type"] = lookup_type
+        lookup_dict["flags"] = lookup_flags
+
+        for feature_name, script_lang_tuple in feature_script_lang_tuple:
+            script_lang_tuple_dict = {}
+            for script, lang_tuple in script_lang_tuple:
+                script_lang_tuple_dict[script] = lang_tuple
+            feature_dict = {}
+            features_dict[feature_name] = feature_dict
+            try:
+                feature_dict["scriptLangTupleIndex"] = script_lang_tuples_list.index(script_lang_tuple)
+            except ValueError:
+                feature_dict["scriptLangTupleIndex"] = len(script_lang_tuples_list)
+                script_lang_tuples_list.append(script_lang_tuple)
+        for subtable_name in font.getLookupSubtables(lookup_name):
+            subtables_dict[subtable_name] = {}
+
+    for glyph in font.glyphs():
+        for subtable_name, kind, replacement_glyph_name, *_ in glyph.getPosSub("*"):
+            if kind != "Substitution":
+                continue
+            lookup_name = font.getLookupOfSubtable(subtable_name)
+            lookup_dict = lookups_dict[lookup_name]
+            subtables_dict = lookup_dict["subtables"]
+            subtable_dict = subtables_dict[subtable_name]
+            subtable_dict[glyph.glyphname] = replacement_glyph_name
+
+    font = fontforge.open(args.filename)
     font.close()
 
-def deep_tuple(val):
-    if type(val) in [list, tuple]:
-        return tuple([deep_tuple(v) for v in val])
-    return val
+    print(json.dumps(root, indent=4))
 
 main()
