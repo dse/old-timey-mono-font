@@ -10,6 +10,7 @@ SRC_BUILD			= tmp/_build
 SRC_VECTOR_UPRIGHT		= src/upright
 SRC_VECTOR_ITALIC		= src/italic
 SUPPORT_BIN			= support/bin
+SUPPORT_DRAWING_BIN             = support/drawing/bin
 DIST_DIR			= dist
 DIST_TTF			= $(DIST_DIR)/ttf
 DIST_SFD			= $(DIST_DIR)/sfd
@@ -59,7 +60,7 @@ BUILDNR_PY_PROG			= $(SUPPORT_BIN)/buildnr.py
 VERSION_PY_PROG			= $(SUPPORT_BIN)/version.py
 FONTFIX_PY_PROG			= $(SUPPORT_BIN)/fontfix.py
 REFERENCES_PY_PROG              = $(SUPPORT_BIN)/references.py
-BOXDRAWING_PY_PROG		= $(SUPPORT_BIN)/boxdrawing.py
+BOXDRAWING_PY_PROG		= $(SUPPORT_DRAWING_BIN)/boxdrawing.py
 
 METAS_PY_ARGS			= --ffn='$(OTMONO_FONT_FAMILY)' --psfn='$(PS_OTMONO_FONT_FAMILY)'
 METAS_PY_CODE_ARGS		= --ffn='$(OTCODE_FONT_FAMILY)' --psfn='$(PS_OTCODE_FONT_FAMILY)'
@@ -253,13 +254,13 @@ update-test: FORCE
 
 symbols: FORCE
 	fontbraille -W 200 -f $(BASEFONT_SFD)
-	support/bin/boxdrawing.py $(BASEFONT_SFD)
-	support/bin/7segment.py $(BASEFONT_SFD)
-	support/bin/blocksextants.py $(BASEFONT_SFD)
-	support/bin/diagonalblocks.py $(BASEFONT_SFD)
-	support/bin/triangularblocks.py $(BASEFONT_SFD)
-	support/bin/retrosymbols.py $(BASEFONT_SFD)
-	support/bin/vcchars.py $(BASEFONT_SFD)
+	$(SUPPORT_DRAWING_BIN)/boxdrawing.py $(BASEFONT_SFD)
+	$(SUPPORT_DRAWING_BIN)/7segment.py $(BASEFONT_SFD)
+	$(SUPPORT_DRAWING_BIN)/blocksextants.py $(BASEFONT_SFD)
+	$(SUPPORT_DRAWING_BIN)/diagonalblocks.py $(BASEFONT_SFD)
+	$(SUPPORT_DRAWING_BIN)/triangularblocks.py $(BASEFONT_SFD)
+	$(SUPPORT_DRAWING_BIN)/retrosymbols.py $(BASEFONT_SFD)
+	$(SUPPORT_DRAWING_BIN)/vcchars.py $(BASEFONT_SFD)
 
 $(ZIP_FILE): FORCE
 	cd $(DIST_ZIP) && \
@@ -392,6 +393,7 @@ italic: FORCE
 upright: FORCE
 	work/bin/getreferences.py src/basefont/OldTimeyMono.sfd > src/data/new-references.json
 	work/bin/getglyphorder.py src/basefont/OldTimeyMono.sfd > src/data/glyph-order.json
+	work/bin/getsubstitutions.py src/basefont/OldTimeyMono.sfd > src/data/new-substitutions.json
 	work/bin/fontcreate.py \
 		--verbose \
 		--font-data-json src/data/font-data.json \
@@ -400,13 +402,14 @@ upright: FORCE
 		OldTimeyMono.sfd \
 		`find src/upright -type f -name '*.svg'`
 	fontbraille -W 200 -f OldTimeyMono.sfd
-	support/bin/boxdrawing.py OldTimeyMono.sfd
-	support/bin/7segment.py OldTimeyMono.sfd
-	support/bin/blocksextants.py OldTimeyMono.sfd
-	support/bin/diagonalblocks.py OldTimeyMono.sfd
-	support/bin/triangularblocks.py OldTimeyMono.sfd
-	support/bin/retrosymbols.py OldTimeyMono.sfd
-	support/bin/vcchars.py OldTimeyMono.sfd
-	support/bin/blockelements.py OldTimeyMono.sfd
+	$(SUPPORT_DRAWING_BIN)/boxdrawing.py OldTimeyMono.sfd
+	$(SUPPORT_DRAWING_BIN)/7segment.py OldTimeyMono.sfd
+	$(SUPPORT_DRAWING_BIN)/blocksextants.py OldTimeyMono.sfd
+	$(SUPPORT_DRAWING_BIN)/diagonalblocks.py OldTimeyMono.sfd
+	$(SUPPORT_DRAWING_BIN)/triangularblocks.py OldTimeyMono.sfd
+	$(SUPPORT_DRAWING_BIN)/retrosymbols.py OldTimeyMono.sfd
+	$(SUPPORT_DRAWING_BIN)/vcchars.py OldTimeyMono.sfd
+	$(SUPPORT_DRAWING_BIN)/blockelements.py OldTimeyMono.sfd
+	work/bin/setsubstitutions.py OldTimeyMono.sfd src/data/new-substitutions.json
 
 .PHONY: FORCE
