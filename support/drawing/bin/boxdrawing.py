@@ -2,7 +2,7 @@
 # -*- mode: python; coding: utf-8 -*-
 import sys, os, argparse
 
-dir = "%s/git/dse.d/pyfontdrawutils/src" % os.getenv("HOME")
+dir = "%s/git/dse.d/fonts.d/old-timey-mono-font/support/lib" % os.getenv("HOME")
 if dir not in sys.path:
     sys.path.append(dir)
 
