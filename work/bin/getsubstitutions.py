@@ -9,12 +9,14 @@ def main():
     args = parser.parse_args()
 
     font = fontforge.open(args.filename)
-    data = {
-        "scriptLangTuples": [
-        ],
-        "features": {
-        },
-        "lookups": {
+    root = {
+        "substitutions": {
+            "scriptLangTuples": [
+            ],
+            "features": {
+            },
+            "lookups": {
+            },
         },
     }
 
@@ -54,7 +56,7 @@ def main():
         else:
             raise Exception("unsupported lookup type: %s" % repr(lookup_type))
 
-    print(json.dumps(data, indent=4, sort_keys=True))
+    print(json.dumps(root, indent=4, sort_keys=True))
     font.close()
 
 def deep_tuple(val):
