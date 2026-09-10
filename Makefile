@@ -261,6 +261,7 @@ symbols: FORCE
 	$(SUPPORT_DRAWING_BIN)/triangularblocks.py $(BASEFONT_SFD)
 	$(SUPPORT_DRAWING_BIN)/retrosymbols.py $(BASEFONT_SFD)
 	$(SUPPORT_DRAWING_BIN)/vcchars.py $(BASEFONT_SFD)
+	$(SUPPORT_DRAWING_BIN)/blockelements.py $(BASEFONT_SFD)
 
 $(ZIP_FILE): FORCE
 	cd $(DIST_ZIP) && \
