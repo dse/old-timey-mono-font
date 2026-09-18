@@ -65,7 +65,6 @@ def main():
         expand_flag = glyph_data.get("expandStrokes", True)
         if not expand_flag:
             if args.verbose >= 2:
-                print("A")
                 print("strokes.py: %s: %s (%s): flagged 'expandStrokes: false'; not expanding strokes" %
                       (args.font_filename, glyph.glyphname, u(glyph.unicode)))
             continue
@@ -74,16 +73,13 @@ def main():
 
         if args.verbose:
             if not has_contours:
-                print("B")
                 print("strokes.py: %s: %s (%s): INFO: has no contours" % 
                       (args.font_filename, glyph.glyphname, u(glyph.unicode)))
             elif has_references:
-                print("C")
                 print("strokes.py: %s: %s (%s): INFO: contains both references AND contours" %
                       (args.font_filename, glyph.glyphname, u(glyph.unicode)))
 
         if args.verbose:
-            print("D")
             print("strokes.py: %s: %s (%s): will expand strokes" % 
                   (args.font_filename, glyph.glyphname, u(glyph.unicode)))
         orig_width = glyph.width
@@ -91,12 +87,10 @@ def main():
         if fill_flag:
             expand_params["removeinternal"] = True
         if args.verbose:
-            print("E")
             print("strokes.py: %s: %s (%s): expanding strokes by %d, with parameters %s" % 
                   (args.font_filename, glyph.glyphname, u(glyph.unicode), args.expand_stroke, json.dumps(expand_params)))
         glyph.stroke("circular", args.expand_stroke, **expand_params)
         if args.verbose:
-            print("F")
             print("strokes.py: %s: %s (%s): finished expanding strokes" % 
                   (args.font_filename, glyph.glyphname, u(glyph.unicode)))
         if orig_width != 0:
@@ -106,12 +100,10 @@ def main():
 
     if write_font_filename.endswith('.sfd'):
         if args.verbose >= 2:
-            print("G")
             print("strokes.py %s: Saving %s..." % (args.font_filename, write_font_filename))
         font.save(write_font_filename)
     else:
         if args.verbose >= 2:
-            print("H")
             print("strokes.py %s: Generating %s..." % (args.font_filename, write_font_filename))
         font.generate(write_font_filename)
 
