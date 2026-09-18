@@ -363,21 +363,21 @@ $(SRC_BUILD)/$(PS_OTMONO_FONT_FAMILY)Cond.stage1.sfd: $(SRC_BUILD)/$(PS_OTMONO_F
 $(DIST_TTF)/%.ttf: $(SRC_BUILD)/%.stage1.sfd $(MAKEFILE) $(STROKES_PY_PROG) $(METAS_PY_PROG) $(UNDERLINE_PY_PROG) $(GLYPHS_JSON)
 	@echo "stage 3 normal (weight)"
 	mkdir -p "$(DIST_TTF)"
-	$(STROKES_PY) -x 96 "$<" -o "$@" $(GLYPHS_JSON)
+	$(STROKES_PY) -x 96 -o "$@" "$<" $(GLYPHS_JSON)
 	$(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) "$@"
 	$(FONTFIX_PY) "$@"
 	$(FONTAUTOHINT_PY) "$@"
 	$(METAS_PY) "$@"
-	$(UNDERLINE_PY) -102 96 "$@"
+	$(UNDERLINE_PY) -- -102 96 "$@"
 $(DIST_TTF)/%-Light.ttf: $(SRC_BUILD)/%.stage1.sfd $(MAKEFILE) $(STROKES_PY_PROG) $(METAS_PY_PROG) $(UNDERLINE_PY_PROG) $(GLYPHS_JSON)
 	@echo "stage 3 light"
 	mkdir -p "$(DIST_TTF)"
-	$(STROKES_PY) -x 72 "$<" -o "$@" $(GLYPHS_JSON)
+	$(STROKES_PY) -x 72 -o "$@" "$<" $(GLYPHS_JSON)
 	$(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) "$@"
 	$(FONTFIX_PY) "$@"
 	$(FONTAUTOHINT_PY) "$@"
 	$(METAS_PY) "$@"
-	$(UNDERLINE_PY) -102 72 "$@"
+	$(UNDERLINE_PY) -- -102 72 "$@"
 
 $(DIST_TTF)/$(NH_PS_OTMONO_FONT_FAMILY)%ttf: $(DIST_TTF)/$(PS_OTMONO_FONT_FAMILY)%ttf $(FONTUNHINT_PY_PROG) $(METAS_PY_PROG)
 	cp "$<" "$@"
