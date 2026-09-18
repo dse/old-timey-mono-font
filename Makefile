@@ -325,7 +325,7 @@ symbols: FORCE
 	$(SUPPORT_DRAWING_BIN)/diagonalblocks.py $(BASEFONT_SFD)
 	$(SUPPORT_DRAWING_BIN)/triangularblocks.py $(BASEFONT_SFD)
 	$(SUPPORT_DRAWING_BIN)/retrosymbols.py $(BASEFONT_SFD)
-	$(SUPPORT_DRAWING_BIN)/vcchars.py $(BASEFONT_SFD)
+	$(SUPPORT_DRAWING_BIN)/pua.py $(BASEFONT_SFD)
 	$(SUPPORT_DRAWING_BIN)/blockelements.py $(BASEFONT_SFD)
 
 $(ZIP_FILE): FORCE
@@ -474,7 +474,7 @@ upright: FORCE
 	$(SUPPORT_DRAWING_BIN)/diagonalblocks.py OldTimeyMono.sfd
 	$(SUPPORT_DRAWING_BIN)/triangularblocks.py OldTimeyMono.sfd
 	$(SUPPORT_DRAWING_BIN)/retrosymbols.py OldTimeyMono.sfd
-	$(SUPPORT_DRAWING_BIN)/vcchars.py OldTimeyMono.sfd
+	$(SUPPORT_DRAWING_BIN)/pua.py OldTimeyMono.sfd
 	$(SUPPORT_DRAWING_BIN)/blockelements.py OldTimeyMono.sfd
 	work/bin/setsubstitutions.py OldTimeyMono.sfd src/data/new-substitutions.json
 
