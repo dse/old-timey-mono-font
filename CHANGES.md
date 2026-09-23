@@ -1,5 +1,15 @@
 # Change Log
 
+## 0.13.0
+
+2026-09-22
+
+-   more italics (font not ready yet)
+-   update the specimen website
+-   shorter filenames
+-   lots of build fixes and cleanups
+-   add some symbols into the PUA (work in progress, don't use them)
+
 ## 0.12.0
 
 2026-07-03
