@@ -73,28 +73,30 @@ METAS_PY_CODE_ARGS		= --ffn='$(OTCODE_FONT_FAMILY)' --psfn='$(PS_OTCODE_FONT_FAM
 NH_METAS_PY_ARGS		= --ffn='$(NH_OTMONO_FONT_FAMILY)' --psfn='$(NH_PS_OTMONO_FONT_FAMILY)'
 NH_METAS_PY_CODE_ARGS		= --ffn='$(NH_OTCODE_FONT_FAMILY)' --psfn='$(NH_PS_OTCODE_FONT_FAMILY)'
 
+VERBOSITY                       =
+
 # You can specify arguments to executable programs here.
-REDRAW_PY			= $(REDRAW_PY_PROG) -v
-STROKES_PY			= $(STROKES_PY_PROG) -v
-ASPECT_PY			= $(ASPECT_PY_PROG) -v
-METAS_PY			= $(METAS_PY_PROG) -v $(METAS_PY_ARGS)
-METAS_PY_CODE			= $(METAS_PY_PROG) -v $(METAS_PY_CODE_ARGS)
-NH_METAS_PY			= $(METAS_PY_PROG) -v $(NH_METAS_PY_ARGS)
-NH_METAS_PY_CODE		= $(METAS_PY_PROG) -v $(NH_METAS_PY_CODE_ARGS)
-NOTDEF_PY			= $(NOTDEF_PY_PROG) -v
-SMOL_PY				= $(SMOL_PY_PROG) -v
-BOUNDS_PY			= $(BOUNDS_PY_PROG) -v
-SUPERSUB_PY			= $(SUPERSUB_PY_PROG) -v
-UNDERLINE_PY			= $(UNDERLINE_PY_PROG) -v
-SETSUBSTITUTIONS_PY		= $(SETSUBSTITUTIONS_PY_PROG) -v
-FONTAUTOHINT_PY			= $(FONTAUTOHINT_PY_PROG) -v
-FONTUNHINT_PY			= $(FONTUNHINT_PY_PROG) -v
-BUILDNR_PY			= $(BUILDNR_PY_PROG) -v
-VERSION_PY			= $(VERSION_PY_PROG) -v
-FONTFIX_PY			= $(FONTFIX_PY_PROG) -v
-REFERENCES_PY                   = $(REFERENCES_PY_PROG) -v
-BOXDRAWING_PY                   = $(BOXDRAWING_PY_PROG) -v
-EMBOLDEN_PY			= $(EMBOLDEN_PY_PROG) -v
+REDRAW_PY			= $(REDRAW_PY_PROG) $(VERBOSITY)
+STROKES_PY			= $(STROKES_PY_PROG) $(VERBOSITY)
+ASPECT_PY			= $(ASPECT_PY_PROG) $(VERBOSITY)
+METAS_PY			= $(METAS_PY_PROG) $(VERBOSITY) $(METAS_PY_ARGS)
+METAS_PY_CODE			= $(METAS_PY_PROG) $(VERBOSITY) $(METAS_PY_CODE_ARGS)
+NH_METAS_PY			= $(METAS_PY_PROG) $(VERBOSITY) $(NH_METAS_PY_ARGS)
+NH_METAS_PY_CODE		= $(METAS_PY_PROG) $(VERBOSITY) $(NH_METAS_PY_CODE_ARGS)
+NOTDEF_PY			= $(NOTDEF_PY_PROG) $(VERBOSITY)
+SMOL_PY				= $(SMOL_PY_PROG) $(VERBOSITY)
+BOUNDS_PY			= $(BOUNDS_PY_PROG) $(VERBOSITY)
+SUPERSUB_PY			= $(SUPERSUB_PY_PROG) $(VERBOSITY)
+UNDERLINE_PY			= $(UNDERLINE_PY_PROG) $(VERBOSITY)
+SETSUBSTITUTIONS_PY		= $(SETSUBSTITUTIONS_PY_PROG) $(VERBOSITY)
+FONTAUTOHINT_PY			= $(FONTAUTOHINT_PY_PROG) $(VERBOSITY)
+FONTUNHINT_PY			= $(FONTUNHINT_PY_PROG) $(VERBOSITY)
+BUILDNR_PY			= $(BUILDNR_PY_PROG) $(VERBOSITY)
+VERSION_PY			= $(VERSION_PY_PROG) $(VERBOSITY)
+FONTFIX_PY			= $(FONTFIX_PY_PROG) $(VERBOSITY)
+REFERENCES_PY                   = $(REFERENCES_PY_PROG) $(VERBOSITY)
+BOXDRAWING_PY                   = $(BOXDRAWING_PY_PROG) $(VERBOSITY)
+EMBOLDEN_PY			= $(EMBOLDEN_PY_PROG) $(VERBOSITY)
 
 SUBSTITUTIONS_JSON		= $(SRC_DATA)/substitutions.json
 REFERENCES_JSON                 = $(SRC_DATA)/references.json
@@ -464,10 +466,10 @@ FONT_SETTINGS = \
 
 italic: FORCE
 	cp src/basefont/OldTimeyMono.sfd $(ITALIC_SFD)
-	support/bin/fontset.py -v $(FONT_SETTINGS) $(FONT_ITALIC_SETTINGS) $(ITALIC_SFD)
+	support/bin/fontset.py $(VERBOSITY) $(FONT_SETTINGS) $(FONT_ITALIC_SETTINGS) $(ITALIC_SFD)
 	support/bin/glyphcomments.py --erase $(ITALIC_SFD)
-	support/bin/fontimport.py --comment "italicized" -w 1008 -v --italic $(ITALIC_SFD) $(SRC_ITALIC_SVGS)
-	support/bin/italicadjust.py -v $(ITALIC_SFD)
+	support/bin/fontimport.py --comment "italicized" -w 1008 $(VERBOSITY) --italic $(ITALIC_SFD) $(SRC_ITALIC_SVGS)
+	support/bin/italicadjust.py $(VERBOSITY) $(ITALIC_SFD)
 	$(SMOL_PY) --no-special --expand-stroke 48 $(ITALIC_SFD)
 
 upright: FORCE
@@ -475,7 +477,7 @@ upright: FORCE
 	work/bin/getglyphorder.py src/basefont/OldTimeyMono.sfd > src/data/glyph-order.json
 	work/bin/getsubstitutions.py src/basefont/OldTimeyMono.sfd > src/data/new-substitutions.json
 	work/bin/fontcreate.py \
-		--verbose \
+		$(VERBOSITY) \
 		--font-data-json src/data/font-data.json \
 		--glyph-order-json src/data/glyph-order.json \
 		--references-json src/data/new-references.json \
