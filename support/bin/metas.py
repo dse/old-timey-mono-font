@@ -31,24 +31,8 @@ def main():
         basename = os.path.basename(filename)
         is_code = basename.find("Code") >= 0
 
-        # compute styles from filename
+        # compute numeric properties
         #----------------------------------------------------------------------
-
-
-
-        if args.font_family_name is not None:
-            font_family_name = args.font_family_name
-        else:
-            font_family_name = "Old Timey Mono"
-            if is_code:
-                font_family_name = "Old Timey Code"
-
-        if args.ps_family_name is not None:
-            ps_family_name = args.ps_family_name
-        else:
-            ps_family_name = "OldTimeyMono"
-            if is_code:
-                ps_family_name = "OldTimeyCode"
 
         weight = WEIGHT_NORMAL
         panose_2 = 5
@@ -58,6 +42,9 @@ def main():
         elif basename.find("Thin") >= 0:
             weight = WEIGHT_THIN
             panose_2 = 1
+        elif basename.find("Bold") >= 0:
+            weight = WEIGHT_BOLD
+            panose_2 = 8
 
         aspect = ASPECT_NORMAL
         if basename.find("Elite") >= 0:
@@ -69,35 +56,60 @@ def main():
         elif basename.find("Comp") >= 0:
             aspect = ASPECT_COMPRESSED
 
-        # compute names
+        # compute font names
         #----------------------------------------------------------------------
 
-        full_name = font_family_name
-        if weight == WEIGHT_LIGHT:
-            full_name += " Light"
-        elif weight == WEIGHT_THIN:
-            full_name += " Thin"
-        if aspect == ASPECT_CONDENSED:
-            full_name += " Condensed"
-        elif aspect == ASPECT_COMPRESSED:
-            full_name += " Compressed"
-        if args.regular and aspect == ASPECT_NORMAL and weight == WEIGHT_NORMAL:
-            full_name += " Regular"
+        if args.font_family_name is not None:
+            font_family_name = args.font_family_name
+        else:
+            font_family_name = "Old Timey Mono"
+            if is_code:
+                font_family_name = "Old Timey Code"
+        font_full_name = font_family_name
 
+        if args.ps_family_name is not None:
+            ps_family_name = args.ps_family_name
+        else:
+            ps_family_name = "OldTimeyMono"
+            if is_code:
+                ps_family_name = "OldTimeyCode"
         ps_name = ps_family_name
-        ps_name_suffix = ""
-        if weight == WEIGHT_LIGHT:
-            ps_name_suffix += "Light"
-        elif weight == WEIGHT_THIN:
-            ps_name_suffix += "Thin"
+
+        # condensedness is part of the family name
+
         if aspect == ASPECT_CONDENSED:
-            ps_name_suffix += "Cond"
+            font_full_name += " Condensed"
+            font_family_name += " Condensed"
+            ps_name += "Cond"
+            ps_family_name += "Cond"
         elif aspect == ASPECT_COMPRESSED:
-            ps_name_suffix += "Comp"
-        if args.regular and aspect == ASPECT_NORMAL and weight == WEIGHT_NORMAL:
-            ps_name_suffix += "Regular"
-        if ps_name_suffix != "":
-            ps_name += "-" + ps_name_suffix
+            font_full_name += " Compressed"
+            font_family_name += " Compressed"
+            ps_name += "Comp"
+            ps_family_name += "Comp"
+
+        # boldness is not
+
+        if weight == WEIGHT_LIGHT:
+            font_full_name += " Light"
+            if "-" not in ps_name:
+                ps_name += "-"
+            ps_name += "Light"
+        elif weight == WEIGHT_THIN:
+            font_full_name += " Thin"
+            if "-" not in ps_name:
+                ps_name += "-"
+            ps_name += "Thin"
+        elif weight == WEIGHT_BOLD:
+            font_full_name += " Bold"
+            if "-" not in ps_name:
+                ps_name += "-"
+            ps_name += "Bold"
+        elif args.regular and aspect == ASPECT_NORMAL and weight == WEIGHT_NORMAL:
+            font_full_name += " Regular"
+            if "-" not in ps_name:
+                ps_name += "-"
+            ps_name += "Regular"
 
         styles = []
         if weight == WEIGHT_LIGHT:
@@ -115,21 +127,12 @@ def main():
         #----------------------------------------------------------------------
 
         font.familyname = font_family_name
-        if weight == WEIGHT_LIGHT:
-            font.familyname += " Light"
-        elif weight == WEIGHT_THIN:
-            font.familyname += " Thin"
-        if aspect == ASPECT_CONDENSED:
-            font.familyname += " Condensed"
-        elif aspect == ASPECT_COMPRESSED:
-            font.familyname += " Compressed"
-        font.appendSFNTName(LANG, "Family", font.familyname)
-
+        font.appendSFNTName(LANG, "Family", font_family_name)
         font.appendSFNTName(LANG, "Preferred Family", font_family_name)
         font.appendSFNTName(LANG, "WWS Family", font_family_name)
 
-        font.fullname = full_name
-        font.appendSFNTName(LANG, "Fullname", full_name)
+        font.fullname = font_full_name
+        font.appendSFNTName(LANG, "Fullname", font_full_name)
 
         font.fontname = ps_name
         font.appendSFNTName(LANG, "PostScriptName", ps_name)

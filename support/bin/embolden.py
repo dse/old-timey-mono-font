@@ -60,34 +60,31 @@ def main():
                 0x237c,
                 0x2388,
             ]):
-            print(f'embolden.py: skipping {repr(glyph.glyphname)} (U+{base_unicode:04X})')
+            if args.verbose:
+                print(f'embolden.py: skipping {repr(glyph.glyphname)} (U+{base_unicode:04X})')
             continue
         if args.verbose:
             print(f'embolden.py: emboldening the {repr(glyph.glyphname)} glyph (U+{base_unicode:04X})')
 
         layer1 = glyph.foreground.dup()
-        print(f'             {len(layer1)} contours')
+        if args.verbose:
+            print(f'             {len(layer1)} contours')
         layer1.transform(psMat.translate(-args.widen / 2, 0))
         layer2 = glyph.foreground.dup()
         layer2.transform(psMat.translate(args.widen / 2, 0))
         glyph.foreground = layer1 + layer2
         glyph.removeOverlap()
 
-    if "-" not in font.fontname:
-        font.fontname += "-Bold"
-    else:
-        font.fontname += "Bold"
+    orig_fontname = font.fontname
+    orig_fullname = font.fullname
 
-    if font.fullname.endswith(" " + font.weight):
-        chop = len(" " + font.weight)
-        font.fontname = font.fontname[:-chop] + " " + "Bold"
+    font.fontname = font.fontname.split("-", 1)[0] + "-Bold"
+    font.fullname = font.fullname.replace(" Bold", "").replace(" Light", "").replace(" Thin", "") + " Bold"
 
-    if font.familyname.endswith(" " + font.weight):
-        chop = len(" " + font.weight)
-        font.fontname = font.fontname[:-chop] + " " + "Bold"
+    print(f'{args.output_filename}: FONT NAME CHANGE: {orig_fontname} => {font.fontname}')
+    print(f'{args.output_filename}: FULL NAME CHANGE: {orig_fullname} => {font.fullname}')
 
     font.weight = "Bold"
-
     font.os2_weight = 700
 
     panose = list(font.os2_panose)
@@ -98,8 +95,12 @@ def main():
     if output_filename is None:
         output_filename = args.filename
     if output_filename.endswith(".sfd"):
+        if args.verbose:
+            print(f'Saving {output_filename} ...')
         font.save(output_filename)
     else:
+        if args.verbose:
+            print(f'Generating {output_filename} ...')
         font.generate(output_filename)
     font.close()
         
