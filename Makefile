@@ -266,6 +266,7 @@ fonts: $(TTF_FONTS) $(SFD_FONTS)
 original: $(OTMONO_FONTS)
 coding: $(OTCODE_FONTS)
 condensed: $(STRETCH_COND_FONTS)
+bold: $(WEIGHT_BOLD_FONTS)
 ttf: $(TTF_FONTS)
 sfd: $(SFD_FONTS)
 zip: $(ZIP_FILE) $(UNVERSIONED_ZIP_FILE)
@@ -392,8 +393,16 @@ $(DIST_TTF)/%-Light.ttf: $(SRC_BUILD)/%.stage1.sfd $(STROKES_PY_PROG) $(METAS_PY
 	$(FONTAUTOHINT_PY) "$@"
 	$(METAS_PY) "$@"
 	$(UNDERLINE_PY) -- -102 72 "$@"
-$(DIST_TTF)/%-Bold.ttf: $(DIST_TTF)/%.ttf $(EMBOLDEN_PY_PROG) $(MAKEFILE_IF_AS_DEPCY)
-	$(EMBOLDEN_PY) -o "$@" "$<"
+$(DIST_TTF)/%-Bold.ttf: $(SRC_BUILD)/%.stage1.sfd $(STROKES_PY_PROG) $(METAS_PY_PROG) $(UNDERLINE_PY_PROG) $(GLYPHS_JSON) $(MAKEFILE_IF_AS_DEPCY) $(EMBOLDEN_PY_PROG)
+	@echo "stage 3 bold"
+	mkdir -p "$(DIST_TTF)"
+	$(STROKES_PY) -x 96 -o "$@" "$<" $(GLYPHS_JSON)
+	$(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) "$@"
+	$(FONTFIX_PY) "$@"
+	$(FONTAUTOHINT_PY) "$@"
+	$(METAS_PY) "$@"
+	$(UNDERLINE_PY) -- -102 96 "$@"
+	$(EMBOLDEN_PY) "$@"
 
 $(DIST_TTF)/$(NH_PS_OTMONO_FONT_FAMILY)%ttf: $(DIST_TTF)/$(PS_OTMONO_FONT_FAMILY)%ttf $(FONTUNHINT_PY_PROG) $(METAS_PY_PROG) $(MAKEFILE_IF_AS_DEPCY)
 	cp "$<" "$@"
