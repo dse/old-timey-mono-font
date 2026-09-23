@@ -73,26 +73,26 @@ def main():
         glyph.foreground = layer1 + layer2
         glyph.removeOverlap()
 
-        if "-" not in font.fontname:
-            font.fontname += "-Bold"
-        else:
-            font.fontname += "Bold"
+    if "-" not in font.fontname:
+        font.fontname += "-Bold"
+    else:
+        font.fontname += "Bold"
 
-        if font.fullname.endswith(" " + font.weight):
-            chop = len(" " + font.weight)
-            font.fontname = font.fontname[:-chop] + " " + "Bold"
+    if font.fullname.endswith(" " + font.weight):
+        chop = len(" " + font.weight)
+        font.fontname = font.fontname[:-chop] + " " + "Bold"
 
-        if font.familyname.endswith(" " + font.weight):
-            chop = len(" " + font.weight)
-            font.fontname = font.fontname[:-chop] + " " + "Bold"
+    if font.familyname.endswith(" " + font.weight):
+        chop = len(" " + font.weight)
+        font.fontname = font.fontname[:-chop] + " " + "Bold"
 
-        font.weight = "Bold"
+    font.weight = "Bold"
 
-        font.os2_weight = 700
+    font.os2_weight = 700
 
-        panose = list(font.os2_panose)
-        panose[2] = 7
-        font.os2_panose = tuple(panose)
+    panose = list(font.os2_panose)
+    panose[2] = 7
+    font.os2_panose = tuple(panose)
 
     output_filename = args.output_filename
     if output_filename is None:
