@@ -193,17 +193,17 @@ def get_glyph_char_data(glyph, json_filename=DEFAULT_GLYPHS_JSON_FILENAME):
         for range_item in glyph_data["__RANGES__"]:
             start_cp = parse_char(range_item["from"])[2]
             end_cp   = parse_char(range_item["to"])[2]
-            print("from = %s; to = %s; start_cp = %d; end_cp = %d" % (
-                range_item["from"],
-                range_item["to"],
-                start_cp, end_cp
-            ))
+            # print("from = %s; to = %s; start_cp = %d; end_cp = %d" % (
+            #     range_item["from"],
+            #     range_item["to"],
+            #     start_cp, end_cp
+            # ))
             if base_codepoint in range(start_cp, end_cp + 1) and "data" in range_item:
-                print("  base_codepoint %d matches" % base_codepoint)
+                # print("  base_codepoint %d matches" % base_codepoint)
                 data = range_item["data"]
                 char_data = { **char_data, **data }
-            else:
-                print("  base_codepoint %d does NOT match" % base_codepoint)
+            # else:
+            #     print("  base_codepoint %d does NOT match" % base_codepoint)
 
     if base_codepoint in range(0, 0x110000) and chr(base_codepoint) in glyph_data:
         data = glyph_data[chr(base_codepoint)]
@@ -316,7 +316,7 @@ def draw_grid_shape(width, x_max, y_max, polygons, font=None, codept=None, glyph
             points = polygon[0:]
         first_point = True
         for point in points:
-            print(repr(point))
+            # print(repr(point))
             [x,y] = point
             x = x * width / x_max
             y = font.ascent - y * (font.descent + font.ascent) / y_max
