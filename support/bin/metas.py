@@ -11,6 +11,7 @@ LANG = "English (US)"
 WEIGHT_NORMAL = 400
 WEIGHT_LIGHT = 300
 WEIGHT_THIN = 100
+WEIGHT_BOLD = 700
 
 ASPECT_NORMAL = 500
 ASPECT_CONDENSED = 400
@@ -33,10 +34,10 @@ def main():
         # compute styles from filename
         #----------------------------------------------------------------------
 
+
+
         if args.font_family_name is not None:
             font_family_name = args.font_family_name
-        elif match := re.match(r'RT\d+', basename):
-            font_family_name = match.group(0)
         else:
             font_family_name = "Old Timey Mono"
             if is_code:
@@ -44,8 +45,6 @@ def main():
 
         if args.ps_family_name is not None:
             ps_family_name = args.ps_family_name
-        elif match := re.match(r'RT\d+', basename):
-            ps_family_name = match.group(0)
         else:
             ps_family_name = "OldTimeyMono"
             if is_code:
