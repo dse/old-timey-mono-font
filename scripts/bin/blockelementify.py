@@ -133,6 +133,7 @@ def draw_2593(glyph):
     font = glyph.font
     shade_dots_x = round(glyph.width / SHADE_DOT_SIZE / 2) * 2
     shade_dots_y = round(font.em / SHADE_DOT_SIZE / 2) * 2
+    draw_rel_rect(glyph, 0, 0, 1, 1)
     for x in range(0, shade_dots_x):
         x1 = x/shade_dots_x
         x2 = (x+1)/shade_dots_x
@@ -141,9 +142,7 @@ def draw_2593(glyph):
                 if (x + y * 2) % 4 == 0:
                     y1 = y/shade_dots_y
                     y2 = (y+1)/shade_dots_y
-                    draw_rel_rect(glyph, x1, y1, x2, y2)
-        else:
-            draw_rel_rect(glyph, x1, 0, x2, 1)
+                    draw_rel_rect(glyph, x1, y1, x2, y2, withershins=True)
 def draw_2594(glyph): draw_rel_rect(glyph, 0, 7/8, 1, 1)
 def draw_2595(glyph): draw_rel_rect(glyph, 7/8, 0, 1, 1)
 def draw_2596(glyph): 
@@ -182,7 +181,7 @@ def draw_right_half(glyph):           draw_rel_rect(glyph, 0.5, 0, 1, 1)
 def draw_upper_half(glyph):           draw_rel_rect(glyph, 0, 0.5, 1, 1)
 def draw_lower_half(glyph):           draw_rel_rect(glyph, 0, 0, 1, 0.5)
 
-def draw_rel_rect(glyph, x1, y1, x2, y2):
+def draw_rel_rect(glyph, x1, y1, x2, y2, withershins=False):
     font = glyph.font
     (x1, x2) = (min(x1, x2), max(x1, x2))
     (y1, y2) = (min(y1, y2), max(y1, y2))
@@ -214,16 +213,23 @@ def draw_rel_rect(glyph, x1, y1, x2, y2):
     x2 = round(glyph.width * x2)
     y1 = round(-font.descent + font.em * y1)
     y2 = round(-font.descent + font.em * y2)
-    draw_rect(glyph, x1, y1, x2, y2)
+    draw_rect(glyph, x1, y1, x2, y2, withershins=withershins)
 
-def draw_rect(glyph, x1, y1, x2, y2):
+def draw_rect(glyph, x1, y1, x2, y2, withershins=False):
     (x1, x2) = (min(x1, x2), max(x1, x2))
     (y1, y2) = (min(y1, y2), max(y1, y2))
+    (x1, y1, x2, y2) = [round(w) for w in (x1, y1, x2, y2)]
     pen = glyph.glyphPen(replace=False)
-    pen.moveTo((x1, y1))
-    pen.lineTo((x1, y2))
-    pen.lineTo((x2, y2))
-    pen.lineTo((x2, y1))
+    if withershins:
+        pen.moveTo((x1, y1))
+        pen.lineTo((x2, y1))
+        pen.lineTo((x2, y2))
+        pen.lineTo((x1, y2))
+    else:
+        pen.moveTo((x1, y1))
+        pen.lineTo((x1, y2))
+        pen.lineTo((x2, y2))
+        pen.lineTo((x2, y1))
     pen.closePath()
     pen = None
 
