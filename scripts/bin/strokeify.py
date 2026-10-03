@@ -98,6 +98,8 @@ def main():
         if args.verbose >= 2:
             print(f'{output_filename}: finished generating')
 
+    font.close()
+
 def ranges_key_conv(key):
     if type(key) == float:
         return round(key)

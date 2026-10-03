@@ -160,4 +160,6 @@ def main():
         if args.verbose >= 2:
             print(f'{output_filename}: finished generating')
 
+    font.close()
+
 main()
