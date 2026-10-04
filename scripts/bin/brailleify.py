@@ -1,8 +1,19 @@
 #!/usr/bin/env -S fontforge -quiet -lang=py -script
 # -*- mode: python; coding: utf-8 -*-
-import fontforge, argparse, unicodedata, statistics, math
+import fontforge, argparse, unicodedata, math
+
+import os, sys
+dir = os.path.dirname(os.path.dirname(__file__)) + "/lib"
+if dir not in sys.path:
+    sys.path.append(dir)
+
+from otm.util import draw_dot, get_font_glyph_width
 
 KAPPA = 0.5519150244935105707435627
+
+RANGES = [
+    range(0x2800,0x2900)
+]
 
 def main():
     global args
@@ -10,23 +21,22 @@ def main():
     parser.add_argument("filename", type=str)
     parser.add_argument("-o", "--output_filename", type=str)
     parser.add_argument("-v", "--verbose", action="count", default=0)
+    parser.add_argument("-c", "--clear", action="store_true")
     args = parser.parse_args()
 
     font = fontforge.open(args.filename)
 
-    glyphs = []
-    for glyph in font.glyphs():
-        if glyph.glyphname == ".notdef":
-            continue
-        if glyph.glyphname == ".null":
-            continue
-        if glyph.glyphname == "nonmarkingreturn":
-            continue
-        if glyph.width == 0:
-            continue
-        glyphs.append(glyph)
-
-    new_glyph_width = round(statistics.median([glyph.width for glyph in glyphs]))
+    if args.clear:
+        for r in RANGES:
+            for code in r:
+                try:
+                    font.removeGlyph(code)
+                except ValueError as e:
+                    if str(e) != "This glyph is not in the font":
+                        raise
+        return
+                
+    new_glyph_width = get_font_glyph_width(font)
     x_radius = new_glyph_width / 8
     y_radius = font.em / 16
     radius = round(math.sqrt(x_radius * y_radius))
@@ -48,6 +58,12 @@ def main():
     center["7"] = (xc_a, yc_d)
     center["8"] = (xc_b, yc_d)
     
+    for r in RANGES:
+        for code in r:
+            glyph = font.createChar(code)
+            glyph.foreground = fontforge.layer()
+            glyph.width = new_glyph_width
+
     glyph = font.createChar(0x2800) # BRAILLE PATTERN BLANK
     glyph.width = new_glyph_width
     glyph.foreground = fontforge.layer()
@@ -77,29 +93,5 @@ def main():
             print(f'{output_filename}: finished generating')
 
     font.close()
-
-def draw_dot(glyph, center, r):
-    (xc, yc) = center
-    pt_1 = (xc - r, yc)
-    pt_2 = (xc, yc + r)
-    pt_3 = (xc + r, yc)
-    pt_4 = (xc, yc - r)
-    cp_1 = (xc - r, yc + r * KAPPA)
-    cp_2 = (xc - KAPPA * r, yc + r)
-    cp_3 = (xc + KAPPA * r, yc + r)
-    cp_4 = (xc + r, yc + r * KAPPA)
-    cp_5 = (xc + r, yc - r * KAPPA)
-    cp_6 = (xc + KAPPA * r, yc - r)
-    cp_7 = (xc - KAPPA * r, yc - r)
-    cp_8 = (xc - r, yc - r * KAPPA)
-
-    pen = glyph.glyphPen(replace=False)
-    pen.moveTo(pt_1)
-    pen.curveTo(cp_1, cp_2, pt_2)
-    pen.curveTo(cp_3, cp_4, pt_3)
-    pen.curveTo(cp_5, cp_6, pt_4)
-    pen.curveTo(cp_7, cp_8, pt_1)
-    pen.closePath()
-    pen = None                  # finalize the pen
 
 main()

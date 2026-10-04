@@ -1,11 +1,22 @@
 #!/usr/bin/env -S fontforge -quiet -lang=py -script
 # -*- mode: python; coding: utf-8 -*-
-import fontforge, argparse, unicodedata, statistics, math
+import fontforge, argparse, unicodedata, math
+
+import os, sys
+dir = os.path.dirname(os.path.dirname(__file__)) + "/lib"
+if dir not in sys.path:
+    sys.path.append(dir)
+
+from otm.util import draw_rect, get_font_glyph_width
 
 STROKE_WIDTH = 96
 HEAVY_STROKE_WIDTH = 288
 
 KAPPA = 0.5519150244935105707435627
+
+RANGES = [
+    range(0x2500, 0x2580),
+]
 
 def main():
     global HEAVY_STROKE_WIDTH, STROKE_WIDTH
@@ -16,6 +27,7 @@ def main():
     parser.add_argument("-o", "--output_filename", type=str)
     parser.add_argument("-v", "--verbose", action="count", default=0)
     parser.add_argument("-w", "--stroke-width", "--width", type=int, default=96)
+    parser.add_argument("-c", "--clear", action="store_true")
     args = parser.parse_args()
 
     if args.stroke_width is not None:
@@ -23,28 +35,27 @@ def main():
 
     font = fontforge.open(args.filename)
 
-    glyphs = []
-    for glyph in font.glyphs():
-        if glyph.glyphname == ".notdef":
-            continue
-        if glyph.glyphname == ".null":
-            continue
-        if glyph.glyphname == "nonmarkingreturn":
-            continue
-        if glyph.width == 0:
-            continue
-        glyphs.append(glyph)
-
-    new_glyph_width = round(statistics.median([glyph.width for glyph in glyphs]))
+    if args.clear:
+        for r in RANGES:
+            for code in r:
+                try:
+                    font.removeGlyph(code)
+                except ValueError as e:
+                    if str(e) != "This glyph is not in the font":
+                        raise
+        return
+                
+    new_glyph_width = get_font_glyph_width(font)
 
     x_heavy_thickness = round(new_glyph_width / math.sqrt(6))
     y_heavy_thickness = round(font.em / math.sqrt(6))
     HEAVY_STROKE_WIDTH = min(x_heavy_thickness, y_heavy_thickness)
 
-    for code in range(0x2500, 0x2580):
-        glyph = font.createChar(code)
-        glyph.foreground = fontforge.layer()
-        glyph.width = new_glyph_width
+    for r in RANGES:
+        for code in r:
+            glyph = font.createChar(code)
+            glyph.foreground = fontforge.layer()
+            glyph.width = new_glyph_width
 
     draw_2500(font.createChar(0x2500))
     draw_2501(font.createChar(0x2501))
@@ -175,10 +186,11 @@ def main():
     draw_257E(font.createChar(0x257e))
     draw_257F(font.createChar(0x257f))
 
-    for code in range(0x2500, 0x2580):
-        glyph = font.createChar(code)
-        glyph.removeOverlap()
-        glyph.simplify()
+    for r in RANGES:
+        for code in r:
+            glyph = font.createChar(code)
+            glyph.removeOverlap()
+            glyph.simplify()
 
     output_filename = args.output_filename if args.output_filename is not None else args.filename
     if output_filename.lower().endswith(".sfd"):
@@ -630,17 +642,6 @@ def draw_solidus(glyph, reverse=False):
         pen.lineTo((x4, y4))
         pen.lineTo((x3, y3))
         pen.closePath()
-    pen = None
-
-def draw_rect(glyph, x1, y1, x2, y2):
-    (x1, x2) = (min(x1, x2), max(x1, x2))
-    (y1, y2) = (min(y1, y2), max(y1, y2))
-    pen = glyph.glyphPen(replace=False)
-    pen.moveTo((x1, y1))
-    pen.lineTo((x1, y2))
-    pen.lineTo((x2, y2))
-    pen.lineTo((x2, y1))
-    pen.closePath()
     pen = None
 
 main()

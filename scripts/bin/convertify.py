@@ -2,6 +2,11 @@
 # -*- mode: python; coding: utf-8 -*-
 import fontforge, argparse
 
+import os, sys
+dir = os.path.dirname(os.path.dirname(__file__)) + "/lib"
+if dir not in sys.path:
+    sys.path.append(dir)
+
 def main():
     global args
     parser = argparse.ArgumentParser()

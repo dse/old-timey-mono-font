@@ -1,6 +1,13 @@
 #!/usr/bin/env -S fontforge -quiet -lang=py -script
 # -*- mode: python; coding: utf-8 -*-
-import fontforge, argparse, glob, os, re, json, statistics, psMat
+import fontforge, argparse, glob, os, re, json, psMat
+
+import os, sys
+dir = os.path.dirname(os.path.dirname(__file__)) + "/lib"
+if dir not in sys.path:
+    sys.path.append(dir)
+
+from otm.util import get_font_glyph_width
 
 def main():
     global args
@@ -12,19 +19,7 @@ def main():
     args = parser.parse_args()
     font = fontforge.open(args.filename)
 
-    glyphs = []
-    for glyph in font.glyphs():
-        if glyph.glyphname == ".notdef":
-            continue
-        if glyph.glyphname == ".null":
-            continue
-        if glyph.glyphname == "nonmarkingreturn":
-            continue
-        if glyph.width == 0:
-            continue
-        glyphs.append(glyph)
-
-    new_glyph_width = round(statistics.median([glyph.width for glyph in glyphs]) * args.aspect)
+    new_glyph_width = get_font_glyph_width(font)
 
     for glyph in font.glyphs():
         glyph.transform(psMat.scale(args.aspect, 1), ("partialRefs",))

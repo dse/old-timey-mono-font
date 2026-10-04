@@ -1,6 +1,13 @@
 #!/usr/bin/env -S fontforge -quiet -lang=py -script
 # -*- mode: python; coding: utf-8 -*-
-import fontforge, argparse, glob, os, re, json, statistics
+import fontforge, argparse, glob, os, re, json
+
+import os, sys
+dir = os.path.dirname(os.path.dirname(__file__)) + "/lib"
+if dir not in sys.path:
+    sys.path.append(dir)
+
+from otm.util import get_font_glyph_width
 
 def main():
     global args
@@ -97,22 +104,10 @@ def main():
                     fail = True
         return
 
-    glyphs = []
-    for glyph in font.glyphs():
-        if glyph.glyphname == ".notdef":
-            continue
-        if glyph.glyphname == ".null":
-            continue
-        if glyph.glyphname == "nonmarkingreturn":
-            continue
-        if glyph.width == 0:
-            continue
-        glyphs.append(glyph)
-
     if len(glyphs) == 0:
         new_glyph_width = args.width
     else:
-        new_glyph_width = statistics.median([glyph.width for glyph in glyphs])
+        new_glyph_width = get_font_glyph_width(font)
 
     glyphs_data = json.loads(open("src/data/glyphs.json").read())
     references_data = json.loads(open("src/data/references.json").read())
