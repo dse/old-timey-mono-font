@@ -3,11 +3,11 @@
 import fontforge, argparse, unicodedata, math
 
 import os, sys
-dir = os.path.dirname(os.path.dirname(__file__)) + "/lib"
+dir = os.path.dirname(os.path.dirname(__file__)) + "/../scripts/lib"
 if dir not in sys.path:
     sys.path.append(dir)
 
-from otm.util import draw_rect, draw_rel_rect, get_font_glyph_width
+from otm.util import draw_rect, draw_rel_rect, get_font_glyph_width, remove_glyphs, initialize_glyphs, finalize_glyphs, save_font
 
 SHADE_DOT_SIZE_PX = 84
 
@@ -17,6 +17,7 @@ RANGES = [
     range(0x1fbce, 0x1fbd0),
     range(0x1fbe4, 0x1fbe8),
 ]
+EXCLUDE = [0x1fb93]
 
 def main():
     global args
@@ -30,24 +31,13 @@ def main():
     font = fontforge.open(args.filename)
 
     if args.clear:
-        for r in RANGES:
-            for code in r:
-                try:
-                    font.removeGlyph(code)
-                except ValueError as e:
-                    if str(e) != "This glyph is not in the font":
-                        raise
+        remove_glyphs(font, RANGES, args, exclude=EXCLUDE)
+        save_font(font, args)
         return
                 
     new_glyph_width = get_font_glyph_width(font)
 
-    for r in RANGES:
-        for code in r:
-            if code == 0x1fb93:     # reserved
-                continue
-            glyph = font.createChar(code)
-            glyph.foreground = fontforge.layer()
-            glyph.width = new_glyph_width
+    initialize_glyphs(font, RANGES, args, new_glyph_width, exclude=EXCLUDE)
 
     draw_2580(font.createChar(0x2580))
     draw_2581(font.createChar(0x2581))
@@ -130,27 +120,8 @@ def main():
     draw_1FBE6(font.createChar(0x1FBE6))
     draw_1FBE7(font.createChar(0x1FBE7))
 
-    for r in RANGES:
-        for code in r:
-            if code == 0x1fb93: # reserved
-                continue
-            glyph = font.createChar(code)
-            glyph.removeOverlap()
-            glyph.simplify()
-
-    output_filename = args.output_filename if args.output_filename is not None else args.filename
-    if output_filename.lower().endswith(".sfd"):
-        if args.verbose:
-            print(f'{output_filename}: saving')
-        font.save(output_filename)
-        if args.verbose >= 2:
-            print(f'{output_filename}: finished saving')
-    else:
-        if args.verbose:
-            print(f'{output_filename}: generating')
-        font.generate(output_filename)
-        if args.verbose >= 2:
-            print(f'{output_filename}: finished generating')
+    finalize_glyphs(font, RANGES, args, exclude=EXCLUDE)
+    save_font(font, args)
 
     font.close()
 

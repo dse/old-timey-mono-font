@@ -3,16 +3,15 @@
 import fontforge, argparse, unicodedata, math
 
 import os, sys
-dir = os.path.dirname(os.path.dirname(__file__)) + "/lib"
+dir = os.path.dirname(os.path.dirname(__file__)) + "/../scripts/lib"
 if dir not in sys.path:
     sys.path.append(dir)
 
-from otm.util import draw_rect, get_font_glyph_width
+from otm.util import draw_rect, get_font_glyph_width, remove_glyphs, initialize_glyphs, finalize_glyphs, save_font
+from otm.constants import KAPPA
 
 STROKE_WIDTH = 96
 HEAVY_STROKE_WIDTH = 288
-
-KAPPA = 0.5519150244935105707435627
 
 RANGES = [
     range(0x2500, 0x2580),
@@ -36,13 +35,8 @@ def main():
     font = fontforge.open(args.filename)
 
     if args.clear:
-        for r in RANGES:
-            for code in r:
-                try:
-                    font.removeGlyph(code)
-                except ValueError as e:
-                    if str(e) != "This glyph is not in the font":
-                        raise
+        remove_glyphs(font, RANGES, args)
+        save_font(font, args)
         return
                 
     new_glyph_width = get_font_glyph_width(font)
@@ -51,11 +45,7 @@ def main():
     y_heavy_thickness = round(font.em / math.sqrt(6))
     HEAVY_STROKE_WIDTH = min(x_heavy_thickness, y_heavy_thickness)
 
-    for r in RANGES:
-        for code in r:
-            glyph = font.createChar(code)
-            glyph.foreground = fontforge.layer()
-            glyph.width = new_glyph_width
+    initialize_glyphs(font, RANGES, args, new_glyph_width)
 
     draw_2500(font.createChar(0x2500))
     draw_2501(font.createChar(0x2501))
@@ -186,25 +176,8 @@ def main():
     draw_257E(font.createChar(0x257e))
     draw_257F(font.createChar(0x257f))
 
-    for r in RANGES:
-        for code in r:
-            glyph = font.createChar(code)
-            glyph.removeOverlap()
-            glyph.simplify()
-
-    output_filename = args.output_filename if args.output_filename is not None else args.filename
-    if output_filename.lower().endswith(".sfd"):
-        if args.verbose:
-            print(f'{output_filename}: saving')
-        font.save(output_filename)
-        if args.verbose >= 2:
-            print(f'{output_filename}: finished saving')
-    else:
-        if args.verbose:
-            print(f'{output_filename}: generating')
-        font.generate(output_filename)
-        if args.verbose >= 2:
-            print(f'{output_filename}: finished generating')
+    finalize_glyphs(font, RANGES, args)
+    save_font(font, args)
 
     font.close()
 
@@ -391,7 +364,6 @@ def draw_vert_dashed(glyph, stroke_width, dash_count):
         draw_rect(glyph, x1, y1, x2, y2)
 
 def draw_right_piece(glyph, stroke_width, x):
-    print(f'    draw_right_piece({glyph.glyphname}, {stroke_width}, x={x})')
     font = glyph.font
     y1 = round(-font.descent + font.em/2 - stroke_width/2)
     y2 = round(-font.descent + font.em/2 + stroke_width/2)
@@ -400,7 +372,6 @@ def draw_right_piece(glyph, stroke_width, x):
     draw_rect(glyph, x1, y1, x2, y2)
 
 def draw_left_piece(glyph, stroke_width, x):
-    print(f'    draw_left_piece({glyph.glyphname}, {stroke_width}, x={x})')
     font = glyph.font
     y1 = round(-font.descent + font.em/2 - stroke_width/2)
     y2 = round(-font.descent + font.em/2 + stroke_width/2)
@@ -409,7 +380,6 @@ def draw_left_piece(glyph, stroke_width, x):
     draw_rect(glyph, x1, y1, x2, y2)
 
 def draw_top_piece(glyph, stroke_width, y):
-    print(f'    draw_top_piece({glyph.glyphname}, {stroke_width}, y={y})')
     font = glyph.font
     x1 = round(glyph.width/2 - stroke_width/2)
     x2 = round(glyph.width/2 + stroke_width/2)
@@ -418,7 +388,6 @@ def draw_top_piece(glyph, stroke_width, y):
     draw_rect(glyph, x1, y1, x2, y2)
 
 def draw_bottom_piece(glyph, stroke_width, y):
-    print(f'    draw_bottom_piece({glyph.glyphname}, {stroke_width}, y={y})')
     font = glyph.font
     x1 = round(glyph.width/2 - stroke_width/2)
     x2 = round(glyph.width/2 + stroke_width/2)
@@ -427,7 +396,6 @@ def draw_bottom_piece(glyph, stroke_width, y):
     draw_rect(glyph, x1, y1, x2, y2)
     
 def draw_boxdraw(glyph, top_stroke_width, right_stroke_width, bottom_stroke_width, left_stroke_width):
-    print(f'draw_boxdraw({glyph.glyphname}, {top_stroke_width}, {right_stroke_width}, {bottom_stroke_width}, {left_stroke_width})')
     font = glyph.font
     if top_stroke_width:
         y = round(-font.descent + font.em/2 - max(left_stroke_width, right_stroke_width) / 2)

@@ -3,13 +3,12 @@
 import fontforge, argparse, unicodedata, math
 
 import os, sys
-dir = os.path.dirname(os.path.dirname(__file__)) + "/lib"
+dir = os.path.dirname(os.path.dirname(__file__)) + "/../scripts/lib"
 if dir not in sys.path:
     sys.path.append(dir)
 
-from otm.util import draw_dot, get_font_glyph_width
-
-KAPPA = 0.5519150244935105707435627
+from otm.util import draw_dot, get_font_glyph_width, remove_glyphs, initialize_glyphs, finalize_glyphs, save_font
+from otm.constants import KAPPA
 
 RANGES = [
     range(0x2800,0x2900)
@@ -27,13 +26,8 @@ def main():
     font = fontforge.open(args.filename)
 
     if args.clear:
-        for r in RANGES:
-            for code in r:
-                try:
-                    font.removeGlyph(code)
-                except ValueError as e:
-                    if str(e) != "This glyph is not in the font":
-                        raise
+        remove_glyphs(font, RANGES, args)
+        save_font(font, args)
         return
                 
     new_glyph_width = get_font_glyph_width(font)
@@ -58,39 +52,22 @@ def main():
     center["7"] = (xc_a, yc_d)
     center["8"] = (xc_b, yc_d)
     
-    for r in RANGES:
-        for code in r:
-            glyph = font.createChar(code)
-            glyph.foreground = fontforge.layer()
-            glyph.width = new_glyph_width
+    initialize_glyphs(font, RANGES, args, new_glyph_width)
 
     glyph = font.createChar(0x2800) # BRAILLE PATTERN BLANK
     glyph.width = new_glyph_width
     glyph.foreground = fontforge.layer()
 
     for code in range(0x2801, 0x2900):
-        print(f'{code}')
         glyph = font.createChar(code)
         glyph.width = new_glyph_width
         glyph.foreground = fontforge.layer()
         dots = unicodedata.name(chr(code)).removeprefix("BRAILLE PATTERN DOTS-")
         for dot in dots:
-            print(f'    {dot}')
             draw_dot(glyph, center[dot], radius)
 
-    output_filename = args.output_filename if args.output_filename is not None else args.filename
-    if output_filename.lower().endswith(".sfd"):
-        if args.verbose:
-            print(f'{output_filename}: saving')
-        font.save(output_filename)
-        if args.verbose >= 2:
-            print(f'{output_filename}: finished saving')
-    else:
-        if args.verbose:
-            print(f'{output_filename}: generating')
-        font.generate(output_filename)
-        if args.verbose >= 2:
-            print(f'{output_filename}: finished generating')
+    finalize_glyphs(font, RANGES, args)
+    save_font(font, args)
 
     font.close()
 

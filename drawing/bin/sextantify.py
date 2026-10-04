@@ -3,11 +3,11 @@
 import fontforge, argparse, unicodedata, math
 
 import os, sys
-dir = os.path.dirname(os.path.dirname(__file__)) + "/lib"
+dir = os.path.dirname(os.path.dirname(__file__)) + "/../scripts/lib"
 if dir not in sys.path:
     sys.path.append(dir)
 
-from otm.util import draw_rect, draw_rel_rect, get_font_glyph_width
+from otm.util import draw_rect, draw_rel_rect, get_font_glyph_width, remove_glyphs, initialize_glyphs, finalize_glyphs, save_font
 
 RANGES = [
     range(0x1fb00, 0x1fb3c),
@@ -25,22 +25,13 @@ def main():
     font = fontforge.open(args.filename)
 
     if args.clear:
-        for r in RANGES:
-            for code in r:
-                try:
-                    font.removeGlyph(code)
-                except ValueError as e:
-                    if str(e) != "This glyph is not in the font":
-                        raise
+        remove_glyphs(font, RANGES, args)
+        save_font(font, args)
         return
                 
     new_glyph_width = get_font_glyph_width(font)
 
-    for r in RANGES:
-        for code in r:
-            glyph = font.createChar(code)
-            glyph.foreground = fontforge.layer()
-            glyph.width = new_glyph_width
+    initialize_glyphs(font, RANGES, args, new_glyph_width)
 
     draw_block_sextant(font.createChar(0x1FB00))
     draw_block_sextant(font.createChar(0x1FB01))
@@ -103,25 +94,8 @@ def main():
     draw_block_sextant(font.createChar(0x1FB3A))
     draw_block_sextant(font.createChar(0x1FB3B))
 
-    for r in RANGES:
-        for code in r:
-            glyph = font.createChar(code)
-            glyph.removeOverlap()
-            glyph.simplify()
-
-    output_filename = args.output_filename if args.output_filename is not None else args.filename
-    if output_filename.lower().endswith(".sfd"):
-        if args.verbose:
-            print(f'{output_filename}: saving')
-        font.save(output_filename)
-        if args.verbose >= 2:
-            print(f'{output_filename}: finished saving')
-    else:
-        if args.verbose:
-            print(f'{output_filename}: generating')
-        font.generate(output_filename)
-        if args.verbose >= 2:
-            print(f'{output_filename}: finished generating')
+    finalize_glyphs(font, RANGES, args)
+    save_font(font, args)
 
     font.close()
 
