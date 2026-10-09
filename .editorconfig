@@ -8,6 +8,6 @@ root = true
         charset = utf-8
 [{package.json,package-lock.json}]
         indent_size = 2
-[Makefile]
+[{,GNU}Makefile]
         indent_style = tab
         indent_size = 8
