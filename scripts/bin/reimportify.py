@@ -8,6 +8,9 @@ if dir not in sys.path:
     sys.path.append(dir)
 
 from otm.util import get_font_glyph_width
+from otm.index import index_svg_files, index_glyphs, verify
+
+args = None
 
 def main():
     global args
@@ -19,92 +22,19 @@ def main():
     parser.add_argument("--verify", action="store_true")
     args = parser.parse_args()
 
-    svg_list = []
-    glyph_list = []
-    svg_dict = {}
-    glyph_dict = {}
-
     font = fontforge.open(args.filename)
+
     svg_filenames = glob.glob("src/upright/**/*.svg", recursive=True)
 
-    for svg_filename in svg_filenames:
-        basename = os.path.basename(svg_filename)
-        (stem, ext) = os.path.splitext(basename)
-
-        if match := re.fullmatch(r'([0-9a-f]{4,})\.([^.]+)', stem, flags=re.I):
-            code = int(match[1], 16)
-            variant = match[2]
-            final_glyphname = fontforge.nameFromUnicode(code) + "." + variant
-        elif match := re.fullmatch(r'([0-9a-f]{4,})', stem, flags=re.I):
-            code = int(match[1], 16)
-            variant = None
-            final_glyphname = fontforge.nameFromUnicode(code)
-        elif match := re.fullmatch(r'([^.]+)\.([^.]+)', stem):
-            code = fontforge.unicodeFromName(match[1])
-            variant = match[2]
-            final_glyphname = stem
-        elif match := re.fullmatch(r'([^.]+)', stem):
-            code = fontforge.unicodeFromName(match[1])
-            variant = None
-            final_glyphname = stem
-
-        final_base_glyphname = final_glyphname.split(".", 1)[0]
-
-        entry = [svg_filename, final_glyphname, final_base_glyphname, code, variant]
-        if code < 0:
-            svg_dict[final_glyphname] = entry
-        else:
-            svg_dict[code,variant] = entry
-        svg_list.append(entry)
-
-        if args.verbose >= 2:
-            print(f'{svg_filename}: stem={stem}; code={code}; variant={variant}; glyphname={final_glyphname}')
-
-    for glyph in font.glyphs():
-        if "." in glyph.glyphname:
-            base_glyphname, variant = glyph.glyphname.split(".", 1)
-        else:
-            base_glyphname, variant = glyph.glyphname, None
-        code = glyph.unicode
-        if code < 0:
-            code = fontforge.unicodeFromName(base_glyphname)
-
-        entry = [None, glyph.glyphname, base_glyphname, code, variant, glyph]
-        if code < 0:
-            glyph_dict[glyph.glyphname] = entry
-        else:
-            glyph_dict[code,variant] = entry
-        glyph_list.append(entry)
+    svg_list, svg_dict = index_svg_files()
+    glyph_list, glyph_dict = index_glyphs(font)
 
     if args.verify:
-        fail = False
-        for svg_filename, glyphname, _, code, variant in svg_list:
-            if code < 0:
-                if glyphname not in glyph_dict:
-                    print(f'{svg_filename}: no such glyph: {glyphname}')
-                    fail = True
-            else:
-                if (code,variant) not in glyph_dict:
-                    nom_glyphname = f'(U+{code:04X})'
-                    if variant is not None:
-                        nom_glyphname += "." + variant
-                    print(f'{svg_filename}: no such glyph: {nom_glyphname}')
-                    fail = True
-        for svg_filename, glyphname, _, code, variant in glyph_list:
-            if code < 0:
-                if glyphname not in svg_dict:
-                    print(f'{glyphname}: no SVG found')
-                    fail = True
-            else:
-                if (code,variant) not in glyph_dict:
-                    nom_glyphname = f'(U+{code:04X})'
-                    if variant is not None:
-                        nom_glyphname += "." + variant
-                    print(f'{nom_glyphname}: no SVG found')
-                    fail = True
-        return
+        success = verify(svg_list, svg_dict, glyph_list, glyph_dict)
+        if not success:
+            raise Exception("verify found an issue")
 
-    if len(glyphs) == 0:
+    if len(glyph_list) == 0:
         new_glyph_width = args.width
     else:
         new_glyph_width = get_font_glyph_width(font)
