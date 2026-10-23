@@ -26,8 +26,6 @@ mod_path = os.getenv("HOME") + "/git/dse.d/pyfontutils/lib"
 if not mod_path in sys.path:
     sys.path.append(mod_path)
 
-import mixedjsontext
-
 from my_font_utils import get_glyph_char_data, DEFAULT_GLYPHS_DATA_JSON_FILENAME
 from font_utils import get_base_codepoint, u
 
@@ -35,6 +33,8 @@ def main():
     global args
     parser = argparse.ArgumentParser()
     parser.add_argument('font_filename', help="font filename")
+    parser.add_argument('svg_filenames', nargs='*', help="svg characters")
+
     parser.add_argument('--expand-stroke', '-x', type=int, help="number of pixels to expand stroke", default=96)
     parser.add_argument('-o', '--save-as', '--output', type=str,
                         help="after editing, save as new file, converts if file extension is different")
@@ -43,6 +43,11 @@ def main():
     parser.add_argument('--allow-json-data', action='store_true')
     parser.add_argument('json_filename', nargs='?', type=str, default=DEFAULT_GLYPHS_DATA_JSON_FILENAME)
     args = parser.parse_args()
+
+    if args.svg_filenames is None:
+        svg_filenames = glob("src/upright/**/*.svg")
+    else:
+        svg_filenames = args.svg_filenames
 
     with open(args.json_filename) as fh:
         glyphs_data_json_text = fh.read()
