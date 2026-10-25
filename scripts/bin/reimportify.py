@@ -16,7 +16,6 @@ def main():
     global args
     parser = argparse.ArgumentParser()
     parser.add_argument("filename", type=str)
-    parser.add_argument("-o", "--output-filename", type=str, nargs="?", default=None)
     parser.add_argument("-v", "--verbose", action="count", default=0)
     parser.add_argument("-w", "--width", "--glyph-width", type=int, default=1008)
     parser.add_argument("--verify", action="store_true")
@@ -71,20 +70,10 @@ def main():
             if args.verbose >= 2:
                 print(f'{svg_filename}: finished importing into glyph {glyph.glyphname}')
 
-    output_filename = args.output_filename if args.output_filename is not None else args.filename
-    if output_filename.lower().endswith(".sfd"):
-        if args.verbose:
-            print(f'{output_filename}: saving')
-        font.save(output_filename)
-        if args.verbose >= 2:
-            print(f'{output_filename}: finished saving')
+    if args.filename.lower().endswith(".sfd"):
+        font.save(args.filename)
     else:
-        if args.verbose:
-            print(f'{output_filename}: generating')
-        font.generate(output_filename)
-        if args.verbose >= 2:
-            print(f'{output_filename}: finished generating')
-
+        font.generate(args.filename)
     font.close()
 
 main()
