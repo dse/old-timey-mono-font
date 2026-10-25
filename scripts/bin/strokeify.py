@@ -2,38 +2,16 @@
 # -*- mode: python; coding: utf-8 -*-
 import fontforge, argparse, glob, os, re, json
 
-import os, sys
-dir = os.path.dirname(os.path.dirname(__file__)) + "/lib"
-if dir not in sys.path:
-    sys.path.append(dir)
-
 def main():
     global args
     parser = argparse.ArgumentParser()
     parser.add_argument("filename", type=str)
-    parser.add_argument("-o", "--output-filename", type=str, nargs="?", default=None)
     parser.add_argument("-v", "--verbose", action="count", default=0)
     parser.add_argument("-w", "--stroke-width", "--width", type=int, default=96)
     args = parser.parse_args()
-    font = fontforge.open(args.filename)
 
     glyphs_data = json.loads(open("src/data/glyphs.json").read())
-
-    stderr_copy = os.dup(2)
-    silent = False
-    def silence():
-        nonlocal silent
-        if silent:
-            return
-        os.close(2)
-        silent = True
-    def unsilence():
-        nonlocal silent, stderr_copy
-        if not silent:
-            return
-        os.dup2(stderr_copy, 2)
-        silent = False
-
+    font = fontforge.open(args.filename)
     for glyph in font.glyphs():
         code = glyph.unicode
         if code < 0:
@@ -76,32 +54,12 @@ def main():
 
         if args.verbose:
             print(f'{args.filename}: expanding strokes on glyph {glyph.glyphname}')
-        try:
-            silence()
-            glyph.stroke("circular", stroke_width, removeinternal=fill)
-            unsilence()
-        except:
-            unsilence()
-            print(f'FATAL: {args.filename}: error stroking {glyph.glyphname}:', file=sys.stderr)
-            raise
-        finally:
-            unsilence()
-        if args.verbose >= 2:
-            print(f'{args.filename}: finished expanding strokes on glyph {glyph.glyphname}')
+        glyph.stroke("circular", stroke_width, removeinternal=fill)
 
-    output_filename = args.output_filename if args.output_filename is not None else args.filename
-    if output_filename.lower().endswith(".sfd"):
-        if args.verbose:
-            print(f'{output_filename}: saving')
-        font.save(output_filename)
-        if args.verbose >= 2:
-            print(f'{output_filename}: finished saving')
+    if args.filename.lower().endswith(".sfd"):
+        font.save(args.filename)
     else:
-        if args.verbose:
-            print(f'{output_filename}: generating')
-        font.generate(output_filename)
-        if args.verbose >= 2:
-            print(f'{output_filename}: finished generating')
+        font.generate(args.filename)
 
     font.close()
 
