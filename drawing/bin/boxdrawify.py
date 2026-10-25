@@ -23,7 +23,6 @@ def main():
     global args
     parser = argparse.ArgumentParser()
     parser.add_argument("filename", type=str)
-    parser.add_argument("-o", "--output_filename", type=str)
     parser.add_argument("-v", "--verbose", action="count", default=0)
     parser.add_argument("-w", "--stroke-width", "--width", type=int, default=96)
     parser.add_argument("-c", "--clear", action="store_true")

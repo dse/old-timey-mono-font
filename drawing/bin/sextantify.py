@@ -17,22 +17,16 @@ def main():
     global args
     parser = argparse.ArgumentParser()
     parser.add_argument("filename", type=str)
-    parser.add_argument("-o", "--output_filename", type=str)
     parser.add_argument("-v", "--verbose", action="count", default=0)
     parser.add_argument("-c", "--clear", action="store_true")
     args = parser.parse_args()
-
     font = fontforge.open(args.filename)
-
     if args.clear:
         remove_glyphs(font, RANGES, args)
         save_font(font, args)
         return
-                
     new_glyph_width = get_font_glyph_width(font)
-
     initialize_glyphs(font, RANGES, args, new_glyph_width)
-
     draw_block_sextant(font.createChar(0x1FB00))
     draw_block_sextant(font.createChar(0x1FB01))
     draw_block_sextant(font.createChar(0x1FB02))
