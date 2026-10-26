@@ -11,7 +11,6 @@ if dir not in sys.path:
     sys.path.append(dir)
 
 from pyfontdrawutils import boxdrawing
-from pyfontutils.utils import get_fonts_from
 
 def main():
     parser = argparse.ArgumentParser()
