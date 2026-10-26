@@ -15,7 +15,7 @@ from my_font_utils import parse_glyph_svg_filename
 sys.path.append(os.getenv("HOME") + "/git/dse.d/pyfontutils/lib")
 from font_utils import u
 
-sys.path.append(os.path.dirname(__file__) + "/../../scripts/lib")
+sys.path.append(os.path.dirname(__file__) + "/../lib")
 from otm.index import index_svg_files, index_glyphs
 
 DEFAULT_WIDTH = 1008
