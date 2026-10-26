@@ -5,19 +5,16 @@ import fontforge, argparse, os, sys, statistics, math
 def main():
     global args
     parser = argparse.ArgumentParser()
-    parser.add_argument("filenames", nargs="+")
+    parser.add_argument("filename", type=str)
     args = parser.parse_args()
 
-    for filename in args.filenames:
-        font = fontforge.open(filename)
-        draw_seven_segment_digits(font)
-        if filename.endswith(".sfd"):
-            print("Saving %s" % filename)
-            font.save(filename)
-        else:
-            print("Generating %s" % filename)
-            font.generate(filename)
-        font.close()
+    font = fontforge.open(args.filename)
+    draw_seven_segment_digits(font)
+    if args.filename.lower().endswith(".sfd"):
+        font.save(args.filename)
+    else:
+        font.generate(args.filename)
+    font.close()
 
 def draw_seven_segment_digits(font):
     glyphs = list(font.glyphs())
