@@ -2,8 +2,6 @@
 # -*- mode: python; coding: utf-8 -*-
 import fontforge, argparse, os, sys, statistics, math
 
-sys.path.append("%s/git/dse.d/pyfontutils/lib" % os.getenv("HOME"))
-
 def main():
     global args
     parser = argparse.ArgumentParser()
