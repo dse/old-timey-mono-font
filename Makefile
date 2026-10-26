@@ -10,7 +10,7 @@ SRC_BUILD			= tmp/_build
 SRC_VECTOR_UPRIGHT		= src/upright
 SRC_VECTOR_ITALIC		= src/italic
 SUPPORT_BIN			= support/bin
-SUPPORT_DRAWING_BIN             = support/drawing/bin
+SUPPORT_DRAWING_BIN             = support/bin
 DIST_DIR			= dist
 DIST_TTF			= $(DIST_DIR)/ttf
 DIST_SFD			= $(DIST_DIR)/sfd
@@ -480,27 +480,5 @@ italic: FORCE
 	support/bin/fontimport.py --comment "italicized" -w 1008 $(VERBOSITY) --italic $(ITALIC_SFD) $(SRC_ITALIC_SVGS)
 	support/bin/italicadjust.py $(VERBOSITY) $(ITALIC_SFD)
 	$(SMOL_PY) --no-special --expand-stroke 48 $(ITALIC_SFD)
-
-upright: FORCE
-	support/bin/getreferences.py src/basefont/OldTimeyMono.sfd > src/data/new-references.json
-	support/bin/getglyphorder.py src/basefont/OldTimeyMono.sfd > src/data/glyph-order.json
-	support/bin/getsubstitutions.py src/basefont/OldTimeyMono.sfd > src/data/new-substitutions.json
-	support/bin/fontcreate2.py \
-		$(VERBOSITY) \
-		--font-data-json src/data/font-data.json \
-		--glyph-order-json src/data/glyph-order.json \
-		--references-json src/data/new-references.json \
-		OldTimeyMono.sfd \
-		`find src/upright -type f -name '*.svg'`
-	fontbraille -W 200 -f OldTimeyMono.sfd
-	$(SUPPORT_DRAWING_BIN)/boxdrawing.py OldTimeyMono.sfd
-	$(SUPPORT_DRAWING_BIN)/7segment.py OldTimeyMono.sfd
-	$(SUPPORT_DRAWING_BIN)/blocksextants.py OldTimeyMono.sfd
-	$(SUPPORT_DRAWING_BIN)/diagonalblocks.py OldTimeyMono.sfd
-	$(SUPPORT_DRAWING_BIN)/triangularblocks.py OldTimeyMono.sfd
-	$(SUPPORT_DRAWING_BIN)/retrosymbols.py OldTimeyMono.sfd
-	$(SUPPORT_DRAWING_BIN)/pua.py OldTimeyMono.sfd
-	$(SUPPORT_DRAWING_BIN)/blockelements.py OldTimeyMono.sfd
-	support/bin/setsubstitutions2.py OldTimeyMono.sfd src/data/new-substitutions.json
 
 .PHONY: FORCE
