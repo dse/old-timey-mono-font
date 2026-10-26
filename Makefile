@@ -482,10 +482,10 @@ italic: FORCE
 	$(SMOL_PY) --no-special --expand-stroke 48 $(ITALIC_SFD)
 
 upright: FORCE
-	work/bin/getreferences.py src/basefont/OldTimeyMono.sfd > src/data/new-references.json
-	work/bin/getglyphorder.py src/basefont/OldTimeyMono.sfd > src/data/glyph-order.json
-	work/bin/getsubstitutions.py src/basefont/OldTimeyMono.sfd > src/data/new-substitutions.json
-	work/bin/fontcreate.py \
+	support/bin/getreferences.py src/basefont/OldTimeyMono.sfd > src/data/new-references.json
+	support/bin/getglyphorder.py src/basefont/OldTimeyMono.sfd > src/data/glyph-order.json
+	support/bin/getsubstitutions.py src/basefont/OldTimeyMono.sfd > src/data/new-substitutions.json
+	support/bin/fontcreate2.py \
 		$(VERBOSITY) \
 		--font-data-json src/data/font-data.json \
 		--glyph-order-json src/data/glyph-order.json \
@@ -501,6 +501,6 @@ upright: FORCE
 	$(SUPPORT_DRAWING_BIN)/retrosymbols.py OldTimeyMono.sfd
 	$(SUPPORT_DRAWING_BIN)/pua.py OldTimeyMono.sfd
 	$(SUPPORT_DRAWING_BIN)/blockelements.py OldTimeyMono.sfd
-	work/bin/setsubstitutions.py OldTimeyMono.sfd src/data/new-substitutions.json
+	support/bin/setsubstitutions2.py OldTimeyMono.sfd src/data/new-substitutions.json
 
 .PHONY: FORCE
