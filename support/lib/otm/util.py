@@ -107,17 +107,3 @@ def finalize_glyphs(font, ranges, args, exclude=None):
     if args.verbose >= 2:
         print("finished finalizing glyphs")
 
-def save_font(font, args):
-    output_filename = args.output_filename if args.output_filename is not None else args.filename
-    if output_filename.lower().endswith(".sfd"):
-        if args.verbose:
-            print(f'{output_filename}: saving')
-        font.save(output_filename)
-        if args.verbose >= 2:
-            print(f'{output_filename}: finished saving')
-    else:
-        if args.verbose:
-            print(f'{output_filename}: generating')
-        font.generate(output_filename)
-        if args.verbose >= 2:
-            print(f'{output_filename}: finished generating')

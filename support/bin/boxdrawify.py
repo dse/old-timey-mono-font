@@ -7,7 +7,7 @@ dir = os.path.dirname(__file__) + "/../lib"
 if dir not in sys.path:
     sys.path.append(dir)
 
-from otm.util import draw_rect, get_font_glyph_width, remove_glyphs, initialize_glyphs, finalize_glyphs, save_font
+from otm.util import draw_rect, get_font_glyph_width, remove_glyphs, initialize_glyphs, finalize_glyphs
 from otm.constants import KAPPA
 
 STROKE_WIDTH = 96
@@ -25,7 +25,6 @@ def main():
     parser.add_argument("filename", type=str)
     parser.add_argument("-v", "--verbose", action="count", default=0)
     parser.add_argument("-w", "--stroke-width", "--width", type=int, default=96)
-    parser.add_argument("-c", "--clear", action="store_true")
     args = parser.parse_args()
 
     if args.stroke_width is not None:
@@ -33,11 +32,6 @@ def main():
 
     font = fontforge.open(args.filename)
 
-    if args.clear:
-        remove_glyphs(font, RANGES, args)
-        save_font(font, args)
-        return
-                
     new_glyph_width = get_font_glyph_width(font)
 
     x_heavy_thickness = round(new_glyph_width / math.sqrt(6))
@@ -176,7 +170,11 @@ def main():
     draw_257F(font.createChar(0x257f))
 
     finalize_glyphs(font, RANGES, args)
-    save_font(font, args)
+
+    if args.filename.lower().endswith(".sfd"):
+        font.save(args.filename)
+    else:
+        font.generate(args.filename)
 
     font.close()
 

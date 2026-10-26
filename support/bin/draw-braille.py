@@ -2,12 +2,9 @@
 # -*- mode: python; coding: utf-8 -*-
 import fontforge, argparse, unicodedata, math
 
-import os, sys
-dir = os.path.dirname(__file__) + "/../lib"
-if dir not in sys.path:
-    sys.path.append(dir)
+sys.path.append(os.path.dirname(__file__) + "/../lib")
 
-from otm.util import draw_dot, get_font_glyph_width, remove_glyphs, initialize_glyphs, finalize_glyphs, save_font
+from otm.util import draw_dot, get_font_glyph_width, remove_glyphs, initialize_glyphs, finalize_glyphs
 from otm.constants import KAPPA
 
 RANGES = [
@@ -19,16 +16,10 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("filename", type=str)
     parser.add_argument("-v", "--verbose", action="count", default=0)
-    parser.add_argument("-c", "--clear", action="store_true")
     args = parser.parse_args()
 
     font = fontforge.open(args.filename)
 
-    if args.clear:
-        remove_glyphs(font, RANGES, args)
-        save_font(font, args)
-        return
-                
     new_glyph_width = get_font_glyph_width(font)
     x_radius = new_glyph_width / 8
     y_radius = font.em / 16
@@ -66,7 +57,11 @@ def main():
             draw_dot(glyph, center[dot], radius)
 
     finalize_glyphs(font, RANGES, args)
-    save_font(font, args)
+
+    if args.filename.lower().endswith(".sfd"):
+        font.save(args.filename)
+    else:
+        font.generate(args.filename)
 
     font.close()
 

@@ -7,7 +7,7 @@ dir = os.path.dirname(__file__) + "/../lib"
 if dir not in sys.path:
     sys.path.append(dir)
 
-from otm.util import draw_rel_poly, get_font_glyph_width, remove_glyphs, initialize_glyphs, finalize_glyphs, save_font
+from otm.util import draw_rel_poly, get_font_glyph_width, remove_glyphs, initialize_glyphs, finalize_glyphs
 
 RANGES = [
     range(0x1fb3c, 0x1fb70),
@@ -19,16 +19,10 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("filename", type=str)
     parser.add_argument("-v", "--verbose", action="count", default=0)
-    parser.add_argument("-c", "--clear", action="store_true")
     args = parser.parse_args()
 
     font = fontforge.open(args.filename)
 
-    if args.clear:
-        remove_glyphs(font, RANGES, args)
-        save_font(font, args)
-        return
-                
     new_glyph_width = get_font_glyph_width(font)
 
     initialize_glyphs(font, RANGES, args, new_glyph_width)
@@ -94,7 +88,11 @@ def main():
     # draw_1FB9F(font.createChar(0x1FB9F))
 
     finalize_glyphs(font, RANGES, args)
-    save_font(font, args)
+
+    if args.filename.lower().endswith(".sfd"):
+        font.save(args.filename)
+    else:
+        font.generate(args.filename)
 
     font.close()
 
