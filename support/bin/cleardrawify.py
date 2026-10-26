@@ -6,6 +6,7 @@ BOX_DRAWING                            = range(0x2500, 0x2580)
 BLOCK_ELEMENTS                         = range(0x2580, 0x25a0)
 SYMBOLS_FOR_LEGACY_COMPUTING_PORTION_1 = range(0x1fb00, 0x1fb70)
 BRAILLE                                = range(0x2800, 0x2900)
+SEGMENTED_DIGITS                       = range(0x1fbf0, 0x1fbfa)
 
 def main():
     global args
@@ -18,6 +19,7 @@ def main():
     for r in [BOX_DRAWING,
               BLOCK_ELEMENTS,
               SYMBOLS_FOR_LEGACY_COMPUTING_PORTION_1,
+              SEGMENTED_DIGITS,
               BRAILLE]:
         for code in r:
             try:
