@@ -3,7 +3,7 @@
 import fontforge, argparse, unicodedata, math
 
 import os, sys
-dir = os.path.dirname(os.path.dirname(__file__)) + "/../scripts/lib"
+dir = os.path.dirname(__file__) + "/../lib"
 if dir not in sys.path:
     sys.path.append(dir)
 
