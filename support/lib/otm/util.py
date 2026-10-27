@@ -106,4 +106,3 @@ def finalize_glyphs(font, ranges, args, exclude=None):
             glyph.simplify()
     if args.verbose >= 2:
         print("finished finalizing glyphs")
-

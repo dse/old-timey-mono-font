@@ -1,76 +1,97 @@
-import os, re
-from glob import glob
+import fontforge, os, re, glob
 
-def index_svg_files(filenames):
-    if len(filenames) == 0:
-        filenames = glob("src/upright/**/*.svg")
-    else:
-        glob_list = [glob(f) for f in filenames]
-        filenames = []
-        for item in glob_list:
-            filenames += item
+def index_svg_files(filenames=None, args=None):
+    if filenames is None:
+        filenames = glob.glob("src/upright/**/*.svg", recursive=True)
+
     svg_list = []
-    svg_dict = {
-        "filename": {},
-        "char": {},
-    }
+    svg_dict = {}
+
     for filename in filenames:
         basename = os.path.basename(filename)
-        (glyphname, ext) = os.path.splitext(basename)
-        if "." in glyphname:
-            (name_or_code, variant) = glyphname.split(".", 1)
-        else:
-            name_or_code = glyphname
+        (stem, ext) = os.path.splitext(basename)
+
+        if match := re.fullmatch(r'([0-9a-f]{4,})\.([^.]+)', stem, flags=re.I):
+            # <hex>.<variant>.svg
+            code = int(match[1], 16)
+            variant = match[2]
+            final_glyphname = fontforge.nameFromUnicode(code) + "." + variant
+        elif match := re.fullmatch(r'([0-9a-f]{4,})', stem, flags=re.I):
+            # <hex>.svg
+            code = int(match[1], 16)
             variant = None
-        if re.fullmatch('[0-9a-f]{4,}', name_or_code, flags=re.I):
-            code = int(name_or_code, 16)
-            name = fontforge.nameFromUnicode(code)
+            final_glyphname = fontforge.nameFromUnicode(code)
+        elif match := re.fullmatch(r'([^.]+)\.([^.]+)', stem):
+            # <name>.<variant>.svg
+            code = fontforge.unicodeFromName(match[1])
+            variant = match[2]
+            final_glyphname = stem
+        elif match := re.fullmatch(r'([^.]+)', stem):
+            # <name>.svg
+            code = fontforge.unicodeFromName(match[1])
+            variant = None
+            final_glyphname = stem
+
+        final_base_glyphname = final_glyphname.split(".", 1)[0]
+
+        entry = [filename, final_glyphname, final_base_glyphname, code, variant]
+        if code < 0:
+            svg_dict[final_glyphname] = entry
         else:
-            code = fontforge.unicodeFromName(name_or_code)
-            name = fontforge.nameFromUnicode(code)
-        if variant is not None:
-            code = -1
-        item = {
-            "fileame": filename,
-            "variant": variant,
-            "code": code,
-            "name": name,
-        }
-        svg_list.append(item)
-        svg_dict["filename"][filename] = item
-        svg_dict["char"][name,variant] = item
+            svg_dict[code,variant] = entry
+        svg_list.append(entry)
+
+        if args is not None and args.verbose >= 2:
+            print(f'{filename}: stem={stem}; code={code}; variant={variant}; glyphname={final_glyphname}')
+
     return svg_list, svg_dict
 
 def index_glyphs(font):
     glyph_list = []
-    glyph_dict = {
-        "char": {}
-    }
+    glyph_dict = {}
+
     for glyph in font.glyphs():
-        glyphname = glyph.glyphname
-        if "." in glyphname:
-            (name, variant) = glyphname.split(".", 1)
+        if "." in glyph.glyphname:
+            base_glyphname, variant = glyph.glyphname.split(".", 1)
         else:
-            name = glyphname
-            variant = None
+            base_glyphname, variant = glyph.glyphname, None
         code = glyph.unicode
-        item = {
-            "code": code,
-            "name": name,
-            "variant": variant,
-        }
-        glyph_dict["char"][name,variant] = item
+        if code < 0:
+            code = fontforge.unicodeFromName(base_glyphname)
+
+        entry = [None, glyph.glyphname, base_glyphname, code, variant, glyph]
+        if code < 0:
+            glyph_dict[glyph.glyphname] = entry
+        else:
+            glyph_dict[code,variant] = entry
+        glyph_list.append(entry)
+
     return glyph_list, glyph_dict
 
-def verify_font(svg_list, svg_dict, glyph_list, glyph_dict):
+def verify(svg_list, svg_dict, glyph_list, glyph_dict):
     success = True
-    for key in svg_dict["char"].keys():
-        if key not in glyph_dict["char"]:
-            filename = svg_dict["char"][key]["filename"]
-            print(f"{key} from {filename} is not in the font")
-            success = False
-    for key in glyph_dict["char"].keys():
-        if key not in svg_dict["char"]:
-            print(f"{key} in the font is not in the svg directory tree")
-            success = False
+    for svg_filename, glyphname, _, code, variant in svg_list:
+        if code < 0:
+            if glyphname not in glyph_dict:
+                print(f'{svg_filename}: no such glyph: {glyphname}')
+                success = False
+        else:
+            if (code,variant) not in glyph_dict:
+                nom_glyphname = f'(U+{code:04X})'
+                if variant is not None:
+                    nom_glyphname += "." + variant
+                print(f'{svg_filename}: no such glyph: {nom_glyphname}')
+                success = False
+    for svg_filename, glyphname, _, code, variant, _ in glyph_list:
+        if code < 0:
+            if glyphname not in svg_dict:
+                print(f'{glyphname}: no SVG found')
+                success = False
+        else:
+            if (code,variant) not in glyph_dict:
+                nom_glyphname = f'(U+{code:04X})'
+                if variant is not None:
+                    nom_glyphname += "." + variant
+                print(f'{nom_glyphname}: no SVG found')
+                success = False
     return success
