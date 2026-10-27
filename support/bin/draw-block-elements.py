@@ -94,7 +94,7 @@ def main():
     draw_1FB8A(font.createChar(0x1FB8A))
     draw_1FB8B(font.createChar(0x1FB8B))
 
-    # shade
+    # rectangular shade characters
     draw_1FB8C(font.createChar(0x1FB8C))
     draw_1FB8D(font.createChar(0x1FB8D))
     draw_1FB8E(font.createChar(0x1FB8E))
@@ -103,9 +103,12 @@ def main():
     draw_1FB91(font.createChar(0x1FB91))
     draw_1FB92(font.createChar(0x1FB92))
     draw_1FB94(font.createChar(0x1FB94))
+
+    # checkerboard fill
     draw_1FB95(font.createChar(0x1FB95))
     draw_1FB96(font.createChar(0x1FB96))
 
+    # block elements
     draw_1FBCE(font.createChar(0x1FBCE))
     draw_1FBCF(font.createChar(0x1FBCF))
 

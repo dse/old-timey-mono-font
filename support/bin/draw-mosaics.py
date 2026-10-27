@@ -83,6 +83,7 @@ def main():
     draw_1FB6E(font.createChar(0x1FB6E))
     draw_1FB6F(font.createChar(0x1FB6F))
 
+    # mosaic quadrants
     draw_1FB9A(font.createChar(0x1FB9A))
     draw_1FB9B(font.createChar(0x1FB9B))
 
