@@ -11,7 +11,7 @@ from otm.util import draw_rel_poly, get_font_glyph_width, remove_glyphs, initial
 
 RANGES = [
     range(0x1fb3c, 0x1fb70),
-    range(0x1fb9a, 0x1fb9f),
+    range(0x1fb9a, 0x1fb9c),
 ]
 
 def main():
