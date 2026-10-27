@@ -102,6 +102,7 @@ def main():
     draw_1FB90(font.createChar(0x1FB90))
     draw_1FB91(font.createChar(0x1FB91))
     draw_1FB92(font.createChar(0x1FB92))
+    # U1FB93 reserved
     draw_1FB94(font.createChar(0x1FB94))
 
     # checkerboard fill
