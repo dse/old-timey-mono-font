@@ -46,12 +46,11 @@ def draw_7_segments(font, width, codept, bits):
     glyph = font.createChar(codept)
     glyph.width = width
 
-    pi = 3.14159265358979323846
     italic_angle = 8
     thickness = 120
     gap = 24
     margin = 96
-    shift = math.tan(italic_angle * pi / 180) * font.capHeight
+    shift = math.tan(italic_angle * math.pi / 180) * font.capHeight
 
     polygons = []
 
