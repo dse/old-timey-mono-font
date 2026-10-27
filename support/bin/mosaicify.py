@@ -27,6 +27,7 @@ def main():
 
     initialize_glyphs(font, RANGES, args, new_glyph_width)
 
+    # smooth mosaic terminal graphic characters (sextants)
     draw_1FB3C(font.createChar(0x1FB3C))
     draw_1FB3D(font.createChar(0x1FB3D))
     draw_1FB3E(font.createChar(0x1FB3E))
@@ -71,6 +72,8 @@ def main():
     draw_1FB65(font.createChar(0x1FB65))
     draw_1FB66(font.createChar(0x1FB66))
     draw_1FB67(font.createChar(0x1FB67))
+
+    # smooth mosaic terminal graphic characters (quadrants)
     draw_1FB68(font.createChar(0x1FB68))
     draw_1FB69(font.createChar(0x1FB69))
     draw_1FB6A(font.createChar(0x1FB6A))
@@ -82,10 +85,6 @@ def main():
 
     draw_1FB9A(font.createChar(0x1FB9A))
     draw_1FB9B(font.createChar(0x1FB9B))
-    # draw_1FB9C(font.createChar(0x1FB9C))
-    # draw_1FB9D(font.createChar(0x1FB9D))
-    # draw_1FB9E(font.createChar(0x1FB9E))
-    # draw_1FB9F(font.createChar(0x1FB9F))
 
     finalize_glyphs(font, RANGES, args)
 
@@ -180,10 +179,6 @@ def draw_1FB9A(glyph):
 def draw_1FB9B(glyph):
     draw_rel_poly(glyph, [A, G, E])
     draw_rel_poly(glyph, [E, I, G])
-# def draw_1FB9C(glyph):
-# def draw_1FB9D(glyph):
-# def draw_1FB9E(glyph):
-# def draw_1FB9F(glyph):
 
 def draw_block_sextant(glyph):
     code = glyph.unicode
