@@ -332,16 +332,20 @@ update-test: FORCE
 	@echo "use 'make redraw-test', DINGUS." >&2
 	false
 
+VERBOSITY_SYMBOLS =
+
 symbols: FORCE
-	fontbraille -W 200 -f $(BASEFONT_SFD)
-	$(SUPPORT_DRAWING_BIN)/boxdrawing.py $(BASEFONT_SFD)
-	$(SUPPORT_DRAWING_BIN)/7segment.py $(BASEFONT_SFD)
+	support/bin/clear-generated.py			$(VERBOSITY_SYMBOLS) $(BASEFONT_SFD)
+	support/bin/draw-braille.py			$(VERBOSITY_SYMBOLS) $(BASEFONT_SFD)
+	support/bin/draw-segmented-digits.py		$(VERBOSITY_SYMBOLS) $(BASEFONT_SFD)
+	support/bin/draw-box-drawing.py			$(VERBOSITY_SYMBOLS) $(BASEFONT_SFD)
+	support/bin/draw-block-elements.py		$(VERBOSITY_SYMBOLS) $(BASEFONT_SFD)
+
 	$(SUPPORT_DRAWING_BIN)/blocksextants.py $(BASEFONT_SFD)
 	$(SUPPORT_DRAWING_BIN)/diagonalblocks.py $(BASEFONT_SFD)
 	$(SUPPORT_DRAWING_BIN)/triangularblocks.py $(BASEFONT_SFD)
 	$(SUPPORT_DRAWING_BIN)/retrosymbols.py $(BASEFONT_SFD)
 	$(SUPPORT_DRAWING_BIN)/pua.py $(BASEFONT_SFD)
-	$(SUPPORT_DRAWING_BIN)/blockelements.py $(BASEFONT_SFD)
 
 $(ZIP_FILE): FORCE
 	cd $(DIST_ZIP) && \
