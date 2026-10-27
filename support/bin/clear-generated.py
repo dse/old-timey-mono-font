@@ -2,24 +2,8 @@
 # -*- mode: python; coding: utf-8 -*-
 import fontforge, argparse
 
-U2500_BOX_DRAWING             = range(0x2500, 0x2580)
-U2580_BLOCK_ELEMENTS          = range(0x2580, 0x25a0)
-U2800_BRAILLE                 = range(0x2800, 0x2900)
-U1FBF0_BLOCK_SEXTANTS         = range(0x1fb00, 0x1fb3c)
-U1FB3C_MOSAICS                = range(0x1fb3c, 0x1fb70)
-U1FB9A_TRIANGULAR_HALF_BLOCKS = range(0x1fb9a, 0x1fb9c)
-U1FBF0_SEGMENTED_DIGITS       = range(0x1fbf0, 0x1fbfa)
-
-ALL = (
-    U2500_BOX_DRAWING +
-    U2580_BLOCK_ELEMENTS +
-    U2800_BRAILLE +
-    U1FBF0_BLOCK_SEXTANTS +
-    U1FB3C_MOSAICS +
-    U1FB9A_TRIANGULAR_HALF_BLOCKS +
-    U1FBF0_SEGMENTED_DIGITS +
-    []
-)
+sys.path.append(os.path.dirname(__file__) + "/../lib")
+from otm.generated import ALL
 
 def main():
     global args

@@ -1,0 +1,38 @@
+__all__ = [
+    "U2500_BOX_DRAWING",
+    "U2580_BLOCK_ELEMENTS",
+    "U2800_BRAILLE",
+    "U1FB00_SEGMENTED_DIGITS",
+    "U1FB3C_MOSAICS",
+    "U1FB70_ONE_EIGHTH_BLOCKS",
+    "U1FB95_CHECKERBOARD_FILL",
+    "U1FB9A_TRIANGULAR_HALF_BLOCKS",
+    "U1FBF0_BLOCK_SEXTANTS",
+    "UFAF00_PUA_EXTRAS",
+    "ALL",
+]
+
+U2500_BOX_DRAWING             = range(0x2500, 0x2580)
+U2580_BLOCK_ELEMENTS          = range(0x2580, 0x25a0)
+U2800_BRAILLE                 = range(0x2800, 0x2900)
+U1FB00_BLOCK_SEXTANTS         = range(0x1fb00, 0x1fb3c)
+U1FB3C_MOSAICS                = range(0x1fb3c, 0x1fb70)
+U1FB70_ONE_EIGHTH_BLOCKS      = range(0x1fb70, 0x1fb8c)
+U1FB95_CHECKERBOARD_FILL      = range(0x1fb95, 0x1fb96)
+U1FB9A_TRIANGULAR_HALF_BLOCKS = range(0x1fb9a, 0x1fb9c)
+U1FBF0_SEGMENTED_DIGITS       = range(0x1fbf0, 0x1fbfa)
+UFAF00_PUA_EXTRAS             = range(0xfaf00, 0xfaf70)
+
+ALL = (
+    list(U2500_BOX_DRAWING) +
+    list(U2580_BLOCK_ELEMENTS) +
+    list(U2800_BRAILLE) +
+    list(U1FB00_BLOCK_SEXTANTS) +
+    list(U1FB3C_MOSAICS) +
+    list(U1FB70_ONE_EIGHTH_BLOCKS) +
+    list(U1FB95_CHECKERBOARD_FILL) +
+    list(U1FB9A_TRIANGULAR_HALF_BLOCKS) +
+    list(U1FBF0_SEGMENTED_DIGITS) +
+    list(UFAF00_PUA_EXTRAS) +
+    []
+)
