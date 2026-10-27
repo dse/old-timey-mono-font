@@ -94,6 +94,7 @@ def main():
     draw_1FB8A(font.createChar(0x1FB8A))
     draw_1FB8B(font.createChar(0x1FB8B))
 
+    # shade
     draw_1FB8C(font.createChar(0x1FB8C))
     draw_1FB8D(font.createChar(0x1FB8D))
     draw_1FB8E(font.createChar(0x1FB8E))
