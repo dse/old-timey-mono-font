@@ -342,10 +342,23 @@ symbols: FORCE
 	support/bin/draw-block-elements.py		$(VERBOSITY_SYMBOLS) $(BASEFONT_SFD)
 
 	$(SUPPORT_DRAWING_BIN)/blocksextants.py $(BASEFONT_SFD)
+	: 0x1fb00-0x1fb3c
+
 	$(SUPPORT_DRAWING_BIN)/diagonalblocks.py $(BASEFONT_SFD)
+	: 0x1fb3c-0x1fb68
+
 	$(SUPPORT_DRAWING_BIN)/triangularblocks.py $(BASEFONT_SFD)
+	: 0x1fb68-0x1fb70
+
 	$(SUPPORT_DRAWING_BIN)/retrosymbols.py $(BASEFONT_SFD)
+	: 0x1fb70-0x1fb8c
+	: 0x1fb95-0x1fb98
+	: 0x1fb9a-0x1fba0
+	: 0x1fbce-0x1fbd0
+	: 0x1fbe4-0x1fbe8
+
 	$(SUPPORT_DRAWING_BIN)/pua.py $(BASEFONT_SFD)
+	: 0xfaf00-0xfaf70
 
 $(ZIP_FILE): FORCE
 	cd $(DIST_ZIP) && \
