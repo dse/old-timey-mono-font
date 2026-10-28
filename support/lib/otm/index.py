@@ -145,7 +145,11 @@ def parse_glyph_name(glyph):
     ]
 
 def verify_glyphs(svg_list, svg_dict, glyph_list, glyph_dict):
+    verified_svg_list = []
+    verified_glyph_dict = []
+
     success = True
+
     for item in svg_list:
         glyphname = item[ITEM_NORM_GLYPH_NAME]
         code = item[ITEM_CODE]
@@ -155,6 +159,10 @@ def verify_glyphs(svg_list, svg_dict, glyph_list, glyph_dict):
         if glyphname not in glyph_dict:
             print(f"SVG:   {repr(glyphname)} from {svg_filename} not in glyphs")
             success = False
+        else:
+            verified_svg_list.append(item)
+            verified_svg_dict[glyphname] = item
+            verified_svg_dict[ITEM_GLYPH] = glyph_dict[glyphname][ITEM_GLYPH]
 
     for item in glyph_list:
         glyphname = item[ITEM_NORM_GLYPH_NAME]
@@ -169,8 +177,12 @@ def verify_glyphs(svg_list, svg_dict, glyph_list, glyph_dict):
         if glyphname not in svg_dict:
             print(f"GLYPH: {repr(glyphname)} from {glyph.font} not found in SVG files")
             success = False
+        else:
+            verified_glyph_list.append(item)
+            verified_glyph_dict[glyphname] = item
+            verified_glyph_dict[ITEM_FILENAME] = glyph_dict[glyphname][ITEM_FILENAME]
 
-    return success
+    return success, verified_svg_list, verified_svg_dict, verified_glyph_list, verified_glyph_dict
 
 def noindex(item):
     glyphname = item[ITEM_NORM_GLYPH_NAME]
