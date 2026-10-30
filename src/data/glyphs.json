@@ -8,36 +8,38 @@
     ".":  { "fill": true },
     "'":  { "fill": true },
     "!":  { "fill": true },
-    "\u00a8": { "fill": true },
-    "\u00ba": { "fill": true },
-    "\u0308": { "fill": true },
-    "\u0307": { "fill": true },
-    "\u0358": { "fill": true },
-    "\u0310": { "fill": true },
-    "\u0323": { "fill": true },
-    "\u0324": { "fill": true },
-    "\u0352": { "fill": true },
-    "\u2022": { "fill": true },
-    "\u2034": { "fill": true },
-    "\u2037": { "fill": true },
-    "\u204c": { "fill": true },
-    "\u204d": { "fill": true },
-    "\u2055": { "fill": true },
-    "\u2234": { "fill": true },
-    "\u25a0": { "fill": true },
-    "\u25cf": { "fill": true },
-    "\u25d8": { "fill": true },
-    "\u25d9": { "fill": true },
-    "\u2605": { "fill": true },
-    "\u263b": { "fill": true },
-    "\u2660": { "fill": true },
-    "\u2663": { "fill": true },
-    "\u2665": { "fill": true },
-    "\u2666": { "fill": true },
-    "\u269b": { "expandStrokes": false },
-    "\u2620": { "expandStrokes": false },
-    "\u2622": { "expandStrokes": false },
-    "\u2623": { "expandStrokes": false },
+
+    "\u00a8": { "fill": true,           "comment": "DIAERESIS (SPACING DIAERESIS)" },
+    "\u00ba": { "fill": true,           "comment": "MASCULINE ORDINAL INDICATOR" },
+    "\u0308": { "fill": true,           "comment": "COMBINING DIAERESIS (NON-SPACING DIAERESIS)" },
+    "\u0307": { "fill": true,           "comment": "COMBINING DOT ABOVE (NON-SPACING DOT ABOVE)" },
+    "\u0358": { "fill": true,           "comment": "COMBINING DOT ABOVE RIGHT" },
+    "\u0310": { "fill": true,           "comment": "COMBINING CANDRABINDU (NON-SPACING CANDRABINDU)" },
+    "\u0323": { "fill": true,           "comment": "COMBINING DOT BELOW (NON-SPACING DOT BELOW)" },
+    "\u0324": { "fill": true,           "comment": "COMBINING DIAERESIS BELOW (NON-SPACING DOUBLE DOT BELOW)" },
+    "\u0352": { "fill": true,           "comment": "COMBINING FERMATA" },
+    "\u2022": { "fill": true,           "comment": "BULLET" },
+    "\u2034": { "fill": true,           "comment": "TRIPLE PRIME" },
+    "\u2037": { "fill": true,           "comment": "REVERSED TRIPLE PRIME" },
+    "\u204c": { "fill": true,           "comment": "BLACK LEFTWARDS BULLET" },
+    "\u204d": { "fill": true,           "comment": "BLACK RIGHTWARDS BULLET" },
+    "\u2055": { "fill": true,           "comment": "FLOWER PUNCTUATION MARK" },
+    "\u2234": { "fill": true,           "comment": "THEREFORE" },
+    "\u25a0": { "fill": true,           "comment": "BLACK SQUARE" },
+    "\u25cf": { "fill": true,           "comment": "BLACK CIRCLE" },
+    "\u25d8": { "fill": true,           "comment": "INVERSE BULLET" },
+    "\u25d9": { "fill": true,           "comment": "INVERSE WHITE CIRCLE" },
+    "\u2605": { "fill": true,           "comment": "BLACK STAR" },
+    "\u263b": { "fill": true,           "comment": "BLACK SMILING FACE" },
+    "\u2660": { "fill": true,           "comment": "BLACK SPADE SUIT" },
+    "\u2663": { "fill": true,           "comment": "BLACK CLUB SUIT" },
+    "\u2665": { "fill": true,           "comment": "BLACK HEART SUIT" },
+    "\u2666": { "fill": true,           "comment": "BLACK DIAMOND SUIT" },
+    "\u269b": { "expandStrokes": false, "comment": "ATOM SYMBOL" },
+    "\u2620": { "expandStrokes": false, "comment": "SKULL AND CROSSBONES" },
+    "\u2622": { "expandStrokes": false, "comment": "RADIOACTIVE SIGN" },
+    "\u2623": { "expandStrokes": false, "comment": "BIOHAZARD SIGN" },
+
     "__RANGES__": [
         {
             "from": "\u2500",
@@ -45,7 +47,7 @@
             "data": {
                 "expandStrokes": false
             },
-            "note": "box drawing and some block elements"
+            "comment": "box drawing and some block elements"
         },
         {
             "from": "\u2800",
@@ -53,7 +55,7 @@
             "data": {
                 "expandStrokes": false
             },
-            "note": "braille"
+            "comment": "braille"
         },
         {
             "from": "U+1FB00",
@@ -61,7 +63,7 @@
             "data": {
                 "expandStrokes": false
             },
-            "note": "some symbols for legacy computing"
+            "comment": "some symbols for legacy computing"
         },
         {
             "from": "U+1FBF0",
@@ -69,7 +71,7 @@
             "data": {
                 "expandStrokes": false
             },
-            "note": "some symbols for legacy computing"
+            "comment": "some symbols for legacy computing"
         },
         {
             "from": "U+FAF00",
@@ -77,55 +79,52 @@
             "data": {
                 "expandStrokes": false
             },
-            "notes": "some experimental drawing symbols of my own creation, in a private use area"
+            "comment": "some experimental drawing symbols of my own creation, in a private use area"
         }
     ],
 
-    "U+1FB94": { "expandStrokes": false },
-    "U+1FB95": { "expandStrokes": false },
-    "U+1FB96": { "expandStrokes": false },
-    "U+1FB97": { "expandStrokes": false },
+    "U+1FB94": { "expandStrokes": false, "comment": "LEFT HALF INVERSE MEDIUM SHADE AND RIGHT HALF BLOCK" },
+    "U+1FB95": { "expandStrokes": false, "comment": "CHECKER BOARD FILL" },
+    "U+1FB96": { "expandStrokes": false, "comment": "INVERSE CHECKER BOARD FILL" },
+    "U+1FB97": { "expandStrokes": false, "comment": "HEAVY HORIZONTAL FILL" },
+    "U+1FB9A": { "expandStrokes": false, "comment": "UPPER AND LOWER TRIANGULAR HALF BLOCK" },
+    "U+1FB9B": { "expandStrokes": false, "comment": "LEFT AND RIGHT TRIANGULAR HALF BLOCK" },
+    "U+1FB9C": { "expandStrokes": false, "comment": "UPPER LEFT TRIANGULAR MEDIUM SHADE" },
+    "U+1FB9D": { "expandStrokes": false, "comment": "UPPER RIGHT TRIANGULAR MEDIUM SHADE" },
+    "U+1FB9E": { "expandStrokes": false, "comment": "LOWER RIGHT TRIANGULAR MEDIUM SHADE" },
+    "U+1FB9F": { "expandStrokes": false, "comment": "LOWER LEFT TRIANGULAR MEDIUM SHADE" },
+    "U+1FBCE": { "expandStrokes": false, "comment": "LEFT TWO THIRDS BLOCK" },
+    "U+1FBCF": { "expandStrokes": false, "comment": "LEFT ONE THIRD BLOCK" },
+    "U+1FBE4": { "expandStrokes": false, "comment": "UPPER CENTRE ONE QUARTER BLOCK" },
+    "U+1FBE5": { "expandStrokes": false, "comment": "LOWER CENTRE ONE QUARTER BLOCK" },
+    "U+1FBE6": { "expandStrokes": false, "comment": "MIDDLE LEFT ONE QUARTER BLOCK" },
+    "U+1FBE7": { "expandStrokes": false, "comment": "MIDDLE RIGHT ONE QUARTER BLOCK" },
 
-    "U+1FB9A": { "expandStrokes": false },
-    "U+1FB9B": { "expandStrokes": false },
-    "U+1FB9C": { "expandStrokes": false },
-    "U+1FB9D": { "expandStrokes": false },
-    "U+1FB9E": { "expandStrokes": false },
-    "U+1FB9F": { "expandStrokes": false },
-
-    "U+1FBCE": { "expandStrokes": false },
-    "U+1FBCF": { "expandStrokes": false },
-
-    "U+1FBE4": { "expandStrokes": false },
-    "U+1FBE5": { "expandStrokes": false },
-    "U+1FBE6": { "expandStrokes": false },
-    "U+1FBE7": { "expandStrokes": false },
-
-    "x_nutfractionbar": { "strokeWidth": 72 },
+    "x_nutfractionbar":      { "strokeWidth": 72 },
     "x_ordinalindicatorbar": { "strokeWidth": 72 },
-    "x_copyrightcircle": { "strokeWidth": 72 },
+    "x_copyrightcircle":     { "strokeWidth": 72 },
 
-    "\u237c": { "strokeWidth": 48 },
-    "\u2388": { "strokeWidth": 48 },
-    "\u2139": { "strokeWidth": 48 },
-    "\u2190": { "strokeWidth": 72 },
-    "\u2191": { "strokeWidth": 72 },
-    "\u2192": { "strokeWidth": 72 },
-    "\u2193": { "strokeWidth": 72 },
-    "\u2194": { "strokeWidth": 72 },
-    "\u2195": { "strokeWidth": 72 },
-    "\u2196": { "strokeWidth": 72 },
-    "\u2197": { "strokeWidth": 72 },
-    "\u2198": { "strokeWidth": 72 },
-    "\u2199": { "strokeWidth": 72 },
-    "\u219a": { "strokeWidth": 72 },
-    "\u219b": { "strokeWidth": 72 },
-    "\u219e": { "strokeWidth": 72 },
-    "\u219f": { "strokeWidth": 72 },
-    "\u21a0": { "strokeWidth": 72 },
-    "\u21a1": { "strokeWidth": 72 },
-    "\u21a8": { "strokeWidth": 72 },
-    "\u21ae": { "strokeWidth": 72 },
+    "\u237c": { "strokeWidth": 48, "comment": "RIGHT ANGLE WITH DOWNWARDS ZIGZAG ARROW" },
+    "\u2388": { "strokeWidth": 48, "comment": "HELM SYMBOL" },
+    "\u2139": { "strokeWidth": 48, "comment": "INFORMATION SOURCE" },
+    "\u2190": { "strokeWidth": 72, "comment": "LEFTWARDS ARROW (LEFT ARROW)" },
+    "\u2191": { "strokeWidth": 72, "comment": "UPWARDS ARROW (UP ARROW)" },
+    "\u2192": { "strokeWidth": 72, "comment": "RIGHTWARDS ARROW (RIGHT ARROW)" },
+    "\u2193": { "strokeWidth": 72, "comment": "DOWNWARDS ARROW (DOWN ARROW)" },
+    "\u2194": { "strokeWidth": 72, "comment": "LEFT RIGHT ARROW" },
+    "\u2195": { "strokeWidth": 72, "comment": "UP DOWN ARROW" },
+    "\u2196": { "strokeWidth": 72, "comment": "NORTH WEST ARROW (UPPER LEFT ARROW)" },
+    "\u2197": { "strokeWidth": 72, "comment": "NORTH EAST ARROW (UPPER RIGHT ARROW)" },
+    "\u2198": { "strokeWidth": 72, "comment": "SOUTH EAST ARROW (LOWER RIGHT ARROW)" },
+    "\u2199": { "strokeWidth": 72, "comment": "SOUTH WEST ARROW (LOWER LEFT ARROW)" },
+    "\u219a": { "strokeWidth": 72, "comment": "LEFTWARDS ARROW WITH STROKE (LEFT ARROW WITH STROKE)" },
+    "\u219b": { "strokeWidth": 72, "comment": "RIGHTWARDS ARROW WITH STROKE (RIGHT ARROW WITH STROKE)" },
+    "\u219e": { "strokeWidth": 72, "comment": "LEFTWARDS TWO HEADED ARROW (LEFT TWO HEADED ARROW)" },
+    "\u219f": { "strokeWidth": 72, "comment": "UPWARDS TWO HEADED ARROW (UP TWO HEADED ARROW)" },
+    "\u21a0": { "strokeWidth": 72, "comment": "RIGHTWARDS TWO HEADED ARROW (RIGHT TWO HEADED ARROW)" },
+    "\u21a1": { "strokeWidth": 72, "comment": "DOWNWARDS TWO HEADED ARROW (DOWN TWO HEADED ARROW)" },
+    "\u21a8": { "strokeWidth": 72, "comment": "UP DOWN ARROW WITH BASE" },
+    "\u21ae": { "strokeWidth": 72, "comment": "LEFT RIGHT ARROW WITH STROKE" },
 
     "dummy": null
 }
