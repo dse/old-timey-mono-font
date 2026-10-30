@@ -81,6 +81,7 @@ def remove_glyphs(font, ranges, args, exclude=None):
     if args.verbose >= 2:
         print("finished removing glyphs")
 
+# for generated glyphs
 def initialize_glyphs(font, ranges, args, width, exclude=None):
     if args.verbose:
         print("initializing glyphs...")
@@ -94,7 +95,8 @@ def initialize_glyphs(font, ranges, args, width, exclude=None):
     if args.verbose >= 2:
         print("finished initializing glyphs")
 
-def finalize_glyphs(font, ranges, args, exclude=None):
+# for generated glyphs
+def finalize_glyphs(font, ranges, args, exclude=None, expand_strokes=False):
     if args.verbose:
         print("finalizing glyphs...")
     for r in ranges:
@@ -104,5 +106,6 @@ def finalize_glyphs(font, ranges, args, exclude=None):
             glyph = font.createChar(code)
             glyph.removeOverlap()
             glyph.simplify()
+            glyph.comment = json.dumps({ "expand_strokes": expand_strokes })
     if args.verbose >= 2:
         print("finished finalizing glyphs")
