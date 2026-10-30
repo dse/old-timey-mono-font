@@ -13,7 +13,6 @@ def main():
     global args
     parser = argparse.ArgumentParser()
     parser.add_argument("filename", type=str)
-    parser.add_argument("-o", "--output-filename", type=str, nargs="?", default=None)
     parser.add_argument("-v", "--verbose", action="count", default=0)
     args = parser.parse_args()
 
@@ -26,19 +25,10 @@ def main():
     for glyph in font.glyphs():
         fix_refs(glyph)
 
-    output_filename = args.output_filename if args.output_filename is not None else args.filename
-    if output_filename.lower().endswith(".sfd"):
-        if args.verbose:
-            print(f'{output_filename}: saving')
-        font.save(output_filename)
-        if args.verbose >= 2:
-            print(f'{output_filename}: finished saving')
+    if args.filename.lower().endswith(".sfd"):
+        font.save(args.filename)
     else:
-        if args.verbose:
-            print(f'{output_filename}: generating')
-        font.generate(output_filename)
-        if args.verbose >= 2:
-            print(f'{output_filename}: finished generating')
+        font.generate(args.filename)
 
     font.close()
 

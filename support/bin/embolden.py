@@ -10,7 +10,6 @@ def main():
     parser.add_argument("filename")
     parser.add_argument("--verbose", "-v", action="count", default=0)
     parser.add_argument("--widen", "-w", type=int, default=96)
-    parser.add_argument("--output-filename", "--output", "-o")
     args = parser.parse_args()
     font = fontforge.open(args.filename)
     for glyph in font.glyphs():
@@ -81,9 +80,6 @@ def main():
     font.fontname = font.fontname.split("-", 1)[0] + "-Bold"
     font.fullname = font.fullname.replace(" Bold", "").replace(" Light", "").replace(" Thin", "") + " Bold"
 
-    print(f'{args.output_filename}: FONT NAME CHANGE: {orig_fontname} => {font.fontname}')
-    print(f'{args.output_filename}: FULL NAME CHANGE: {orig_fullname} => {font.fullname}')
-
     font.weight = "Bold"
     font.os2_weight = 700
 
@@ -91,17 +87,10 @@ def main():
     panose[2] = 7
     font.os2_panose = tuple(panose)
 
-    output_filename = args.output_filename
-    if output_filename is None:
-        output_filename = args.filename
-    if output_filename.endswith(".sfd"):
-        if args.verbose:
-            print(f'Saving {output_filename} ...')
-        font.save(output_filename)
+    if args.filename.endswith(".sfd"):
+        font.save(args.filename)
     else:
-        if args.verbose:
-            print(f'Generating {output_filename} ...')
-        font.generate(output_filename)
+        font.generate(args.filename)
     font.close()
         
 main()
