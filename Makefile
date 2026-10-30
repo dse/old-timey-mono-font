@@ -119,8 +119,6 @@ FONTTOOL__COND			= --aspect 0.833333 # 12cpi
 SRC_SVGS			= $(shell find $(SRC_VECTOR_UPRIGHT) -type f -name '*.svg')
 SRC_ITALIC_SVGS			= $(shell find $(SRC_VECTOR_ITALIC) -type f -name '*.svg')
 
-TESTFONTS_DIR			= tmp/testfonts
-
 OTMONO_TTF			= $(DIST_TTF)/$(PS_OTMONO_FONT_FAMILY).ttf
 OTCODE_TTF			= $(DIST_TTF)/$(PS_OTCODE_FONT_FAMILY).ttf
 OTMONO_LIGHT_TTF		= $(DIST_TTF)/$(PS_OTMONO_FONT_FAMILY)-Light.ttf
@@ -273,20 +271,6 @@ zip: $(ZIP_FILE) $(UNVERSIONED_ZIP_FILE)
 
 .SUFFIXES: .sfd .ttf
 
-limited-test-fonts: $(OTMONO_TTF) $(OTCODE_TTF)
-
-testfonts: FORCE
-	$(eval BUILD_NR = $(shell $(BUILDNR_PY)))
-	$(eval DIST_DIR_NAME = $(PS_OTMONO_FONT_FAMILY)$(BUILD_NR))
-	mkdir -p $(TESTFONTS_DIR)
-	make limited-test-fonts \
-		OTMONO_FONT_FAMILY="$(OTMONO_FONT_FAMILY) $(BUILD_NR)" \
-		PS_OTMONO_FONT_FAMILY="$(PS_OTMONO_FONT_FAMILY)$(BUILD_NR)" \
-		OTCODE_FONT_FAMILY="$(OTCODE_FONT_FAMILY) $(BUILD_NR)" \
-		PS_OTCODE_FONT_FAMILY="$(PS_OTCODE_FONT_FAMILY)$(BUILD_NR)" \
-		DIST_DIR="$(TESTFONTS_DIR)/$(DIST_DIR_NAME)"
-	ln -n -f -s "$(DIST_DIR_NAME)/ttf" $(TESTFONTS_DIR)/latest
-
 # update source font fron SVG files
 redraw: FORCE
 	$(REDRAW_PY) $(BASEFONT_SFD)
@@ -301,36 +285,6 @@ redraw: FORCE
 	$(REFERENCES_PY) $(BASEFONT_SFD) $(REFERENCES_JSON)
 	setfontmetas --vendor "$(VENDOR)" --version "$(VERSION)" --sfnt-revision "$(SFNT_REVISION)" $(BASEFONT_SFD)
 	make fix-strokes-log
-
-redraw-test: FORCE
-	$(REDRAW_PY) $(BASEFONT_SFD)
-	$(BOXDRAWING_PY) $(BASEFONT_SFD)
-	$(BOUNDS_PY) $(BASEFONT_SFD)
-	$(SMOL_PY) $(BASEFONT_SFD)
-	$(SUPERSUB_PY) $(BASEFONT_SFD)
-	$(STROKES_PY) --expand-stroke 96 --allow-json-data $(BASEFONT_SFD) $(GLYPHS_JSON)
-	$(NOTDEF_PY) $(BASEFONT_SFD)
-	$(FONTAUTOHINT_PY) $(BASEFONT_SFD)
-	$(SETSUBSTITUTIONS_PY) $(SUBSTITUTIONS_JSON) $(BASEFONT_SFD)
-	$(REFERENCES_PY) $(BASEFONT_SFD) $(REFERENCES_JSON)
-	setfontmetas --vendor "$(VENDOR)" --version "$(VERSION)" --sfnt-revision "$(SFNT_REVISION)" $(BASEFONT_SFD)
-	make fix-strokes-log
-
-fix-strokes-log:
-	if test -e strokes.log ; then sort -n strokes.log | sponge strokes.log ; else true ; fi
-
-fonttool: FORCE
-	@echo "use 'make redraw', DINGUS." >&2
-	false
-fontsvg: FORCE
-	@echo "use 'make redraw', DINGUS." >&2
-	false
-update: FORCE
-	@echo "use 'make redraw', DINGUS." >&2
-	false
-update-test: FORCE
-	@echo "use 'make redraw-test', DINGUS." >&2
-	false
 
 VERBOSITY_SYMBOLS =
 
