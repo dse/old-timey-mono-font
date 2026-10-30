@@ -1,79 +1,75 @@
 #!/usr/bin/env -S fontforge -quiet -lang=py -script
 # -*- mode: python; coding: utf-8 -*-
-import fontforge, argparse, glob, os, re, json
+import fontforge, argparse, glob, os, re, json, unicodedata
 
-import os, sys
-dir = os.path.dirname(os.path.dirname(__file__)) + "/lib"
-if dir not in sys.path:
-    sys.path.append(dir)
-
-from otm.util import get_font_glyph_width
-from otm.index import index_svg_files, index_glyphs, verify
-
-args = None
+sys.path.append(os.path.join(os.path.dirname(__file__), "..", "lib"))
+from otm.index import index_svg_filenames, index_glyphs, verify_glyphs
 
 def main():
-    global args
     parser = argparse.ArgumentParser()
-    parser.add_argument("filename", type=str)
-    parser.add_argument("-v", "--verbose", action="count", default=0)
-    parser.add_argument("-w", "--width", "--glyph-width", type=int, default=1008)
-    parser.add_argument("--verify", action="store_true")
+    parser.add_argument("filename")
+    parser.add_argument("svg_filenames", nargs="+")
     args = parser.parse_args()
 
+    svg_filenames = walk(args.svg_filenames)
     font = fontforge.open(args.filename)
 
-    svg_filenames = glob.glob("src/upright/**/*.svg", recursive=True)
-
-    svg_list, svg_dict = index_svg_files()
+    # dicts are indexed by normalized glyph name
+    svg_list, svg_dict = index_svg_filenames(svg_filenames)
     glyph_list, glyph_dict = index_glyphs(font)
 
-    if args.verify:
-        success = verify(svg_list, svg_dict, glyph_list, glyph_dict)
-        if not success:
-            raise Exception("verify found an issue")
+    (
+        success, 
+        verified_svg_list,
+        verified_svg_dict,
+        verified_glyph_list,
+        verified_glyph_dict,
+        svg_only_list,
+        svg_only_dict,
+        glyph_only_list,
+        glyph_only_dict,
+    ) = verify_glyphs(svg_list, svg_dict, glyph_list, glyph_dict)
 
-    if len(glyph_list) == 0:
-        new_glyph_width = args.width
-    else:
-        new_glyph_width = get_font_glyph_width(font)
+    widths = [glyph.width for glyph in font.glyphs()]
+    widths.sort()
+    glyph_width = statistics.median(widths)
 
-    glyphs_data = json.loads(open("src/data/glyphs.json").read())
-    references_data = json.loads(open("src/data/references.json").read())
-
-    for svg_filename, glyphname, _, code, variant in svg_list:
-        if code < 0:
-            glyph_entry = glyph_dict.get(glyphname)
-            svg_entry = svg_dict.get(glyphname)
+    for item in svg_list:
+        if item.name_is_arbitrary:
+            glyph = font.createChar(item.code)
         else:
-            glyph_entry = glyph_dict.get((code,variant))
-            svg_entry = svg_dict.get((code,variant))
-        (svg_filename, *_) = svg_entry
-        if glyph_entry is None:
-            glyph = font.createChar(code, glyphname)
-        else:
-            (*_, glyph) = glyph_entry
+            glyph = font.createChar(item.code, item.norm_glyph_name)
+        if len(glyph.references):
+            if len(glyph.foreground):
+                print(f"WARNING: glyph {glyph.glyphname} in {args.filename}\n" +
+                      f"         contains both references and contours; not importing from\" +
+                      f"         {svg_filename}")
+                continue
+            else:
+                glyph.references = ()
+        glyph.foreground = fontforge.layer()
 
-        import_glyphs = [glyph]
-        if code == 0xfffd:      # U+FFFD REPLACEMENT CHARACTER
-            import_glyphs.append(font.createChar(-1, ".notdef"))
-
-        for glyph in import_glyphs:
-            if args.verbose:
-                print(f'{svg_filename}: importing into glyph {glyph.glyphname}')
-            glyph.references = tuple()   # in case replacing reference glyph with contour glyph
-            glyph.foreground = fontforge.layer()
-            font.strokedfont = True # avoid expanding strokes to stroke-widths in SVG
-            glyph.importOutlines(svg_filename)
-            font.strokedfont = False
-            glyph.width = new_glyph_width
-            if args.verbose >= 2:
-                print(f'{svg_filename}: finished importing into glyph {glyph.glyphname}')
-
+        font.strokedfont = True
+        glyph.importOutline(item.svg_filename)
+        font.strokedfont = False
+        glyph.width = glyph_width
+        glyph.comment = json.dumps({ "source": { "type": "svg", "filename": item.svg_filename } })
+        
     if args.filename.lower().endswith(".sfd"):
         font.save(args.filename)
     else:
         font.generate(args.filename)
-    font.close()
+
+def walk(filenames):
+    retval = []
+    for filename in filenames:
+        if os.path.isdir(filename):
+            for dir_path, dir_names, dir_filenames in os.walk(filename):
+                for each_filename in dir_filenames:
+                    if each_filename.lower().endswith(".svg"):
+                        retval.append(os.path.join(dir_path, each_filename))
+        else:
+            retval.append(filename)
+    return retval
 
 main()
