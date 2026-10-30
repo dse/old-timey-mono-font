@@ -44,26 +44,26 @@ def index_svg_filenames(filenames):
         svg_dict[item.norm_glyph_name] = item
     return svg_list, svg_dict
 
-def parse_svg_filename(filename):
-    _, basename = os.path.split(filename)
-    stem, _ = os.path.splitext(basename)
+def parse_svg_filename(svg_filename):
+    _, svg_basename = os.path.split(svg_filename)
+    svg_stem, _ = os.path.splitext(svg_basename)
 
     name_is_arbitrary = False
-    if match := re.fullmatch(r'([0-9A-Fa-f]{4,})(\.[^\.]+)', stem):
+    if match := re.fullmatch(r'([0-9A-Fa-f]{4,})(\.[^\.]+)', svg_stem):
         code = int(match[1], 16)
         variant = match[2]
         orig_glyph_name      = fontforge.nameFromUnicode(code) + variant
         orig_base_glyph_name = fontforge.nameFromUnicode(code)
         norm_glyph_name      = fontforge.nameFromUnicode(code) + variant
         norm_base_glyph_name = fontforge.nameFromUnicode(code)
-    elif match := re.fullmatch(r'[0-9A-Fa-f]{4,}', stem):
-        code = int(stem, 16)
+    elif match := re.fullmatch(r'[0-9A-Fa-f]{4,}', svg_stem):
+        code = int(svg_stem, 16)
         variant = ""
         orig_glyph_name      = fontforge.nameFromUnicode(code)
         orig_base_glyph_name = fontforge.nameFromUnicode(code)
         norm_glyph_name      = fontforge.nameFromUnicode(code)
         norm_base_glyph_name = fontforge.nameFromUnicode(code)
-    elif match := re.fullmatch(r'([^\.]+)(\.[^\.]+)', stem):
+    elif match := re.fullmatch(r'([^\.]+)(\.[^\.]+)', svg_stem):
         variant = match[2]
         orig_glyph_name      = match[1] + variant
         orig_base_glyph_name = match[1]
@@ -75,7 +75,7 @@ def parse_svg_filename(filename):
         else:
             norm_glyph_name      = fontforge.nameFromUnicode(code) + variant
             norm_base_glyph_name = fontforge.nameFromUnicode(code)
-    elif match := re.fullmatch(r'([^\.]+)', stem):
+    elif match := re.fullmatch(r'([^\.]+)', svg_stem):
         variant = ""
         orig_glyph_name      = match[1] + variant
         orig_base_glyph_name = match[1]
@@ -96,7 +96,7 @@ def parse_svg_filename(filename):
         orig_base_glyph_name,
         norm_glyph_name,
         norm_base_glyph_name,
-        filename,
+        svg_filename,
         None,
         name_is_arbitrary,
     )
@@ -107,7 +107,7 @@ def parse_svg_filename(filename):
         orig_base_glyph_name=orig_base_glyph_name,
         norm_glyph_name     =norm_glyph_name,
         norm_base_glyph_name=norm_base_glyph_name,
-        filename            =filename,
+        svg_filename        =svg_filename,
         glyph               =None,
         name_is_arbitrary   =name_is_arbitrary,
         as_tuple            =as_tuple,
@@ -151,22 +151,22 @@ def parse_glyph_name(glyph):
         orig_base_glyph_name,
         norm_glyph_name,
         norm_base_glyph_name,
-        filename,
+        None,
         glyph,
         name_is_arbitrary,
     )
-    return [
+    return SimpleNamespace(
         code                =code,
         variant             =variant,
         orig_glyph_name     =orig_glyph_name,
         orig_base_glyph_name=orig_base_glyph_name,
         norm_glyph_name     =norm_glyph_name,
         norm_base_glyph_name=norm_base_glyph_name,
-        filename            =None,
+        svg_filename        =None,
         glyph               =glyph,
         name_is_arbitrary   =name_is_arbitrary,
         as_tuple            =as_tuple,
-    ]
+    )
 
 def verify_glyphs(svg_list, svg_dict, glyph_list, glyph_dict):
     verified_svg_list = []
@@ -186,7 +186,7 @@ def verify_glyphs(svg_list, svg_dict, glyph_list, glyph_dict):
         code = item.code
         if noindex(item):
             continue
-        svg_filename = item.filename
+        svg_filename = item.svg_filename
         if glyphname not in glyph_dict:
             print(f"SVG:   {repr(glyphname)} from {svg_filename} not in glyphs")
             success = False
