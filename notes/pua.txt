@@ -1,0 +1,73 @@
+Each default glyph, for which there is an alternate available, should
+be available somewhere in the PUA block U+F0000.
+
+Each alternate glyph should be available somewhere in the PUA block
+U+100000.
+
+ss07 glyphs go in 10Dxxx
+small caps  go in 10Exxx
+petite caps go in 10Fxxx
+
+"   100022  quotedbl (?)
+#   10D023  numbersign.ss07 (ensmallification)
+#   100023  numbersign.cv03 (shortened)
+$   100024  dollar.ss07 (simplified, one stroke)
+'   100027  quotesingle (?)
+(   100028  parenleft.WIDE .ss01 .ss02
+)   100029  parenright.WIDE .ss01 .ss02
+,   10002C  comma.ss05
+.   10002E  period.ss05
+/   10002F  slash.cv04 (shortened)
+0   101030  zero.cv05 (dotted)
+0   102030  zero.cv06 (large dot)
+0   10D030  zero.ss07 (simplified, default zero)
+0   100030  zero.zero (slashed)
+1   101031  one.???? (no serifs) [NEW!]
+1   10D031  one.ss07 (simplified, default one)
+1   100031  one.cv01 (curly top)
+2   10D032  two.ss07 (simplified, no bulb)
+3   10D033  three.ss07 (simplified, no bulb)
+5   10D035  five.ss07 (simplified, no bulb)
+:   10003A  colon.ss05
+;   10003B  semicolon.ss05
+=   10003D  equal.cv11 (taller)
+@   100040  <0040>.cv07 (alternate)
+A   10F041  A.c2pc a.pcap (petite caps)
+A   10E041  A.c2sc a.smcp (small caps)
+Z   10F05A  Z.c2pc z.pcap (petite caps)
+Z   10E05A  Z.c2sc z.smcp (small caps)
+[   10005B  bracketleft.WIDE .ss01 .ss02
+\   10005C  backslash.cv08 (shortened)
+]   10005D  bracketright.WIDE .ss01 .ss02
+_   10005F  <005F>.BASE (underline at baseline)
+`   100060  grave.cv09
+a   10D061  a.ss07 (simplified, no bulb)
+a   100061  a.ss04 (open aperture)
+c   10D063  c.ss07 (simplified, no bulb)
+c   100063  c.ss04 (open aperture)
+e   10D065  e.ss07 (simplified, ?)
+e   100065  e.ss04 (open aperture)
+l   10106C  l.cv10 (curly)
+l   10006C  l.cv02 (coding)
+s   10D073  s.ss07 (simplified, ?)
+s   100073  s.ss04 (open aperture)
+{   10107B  .cv12
+{   10007B  braceleft.WIDE .ss01 .ss02
+}   10107D  .cv13
+}   10007D  braceright.WIDE .ss01 .ss02
+~   10007E  asciitilde.cv14 (taller)
+·   1000B7  periodcentered.ss05
+‗   102017  <2017>.BASE (underline at baseline)
+‘   102018  quoteleft.ss05
+’   102019  quoteright.ss05
+‚   10201A  quotesinglbase.ss05
+‛   10201B  quotereversed.ss05
+“   10201C  quotedblleft.ss05
+”   10201D  quotedblright.ss05
+„   10201E  quotedblbase.ss05
+‟   10201F  uni201F.ss05
+․   102024  onedotleader.ss05
+‥   102025  twodotleader.ss05
+…   102026  ellipsis.ss05
+‧   102027  uni2027.ss05
+⁏   10204F  uni204F.ss05
