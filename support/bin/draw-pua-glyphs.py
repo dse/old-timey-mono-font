@@ -1,51 +1,33 @@
 #!/usr/bin/env -S fontforge -quiet -lang=py -script
 # -*- mode: python; coding: utf-8 -*-
-import fontforge, argparse
+import fontforge, argparse, os, sys
 
 import os, sys
-dir = os.path.dirname(os.path.dirname(__file__)) + "/../scripts/lib"
+dir = os.path.dirname(__file__) + "/../lib"
 if dir not in sys.path:
     sys.path.append(dir)
 
-from otm.util import draw_rect, draw_rel_rect, \
-    get_font_glyph_width, \
-    draw_circle, \
-    remove_glyphs, initialize_glyphs, finalize_glyphs, save_font
-
 import otm
+from otm.util import draw_rect, draw_rel_rect, get_font_glyph_width, draw_circle, remove_glyphs, initialize_glyphs, finalize_glyphs
 from otm.quarter_arc import elliptic_quarter_arc_contour
 
 LSW = 96
 RANGES = [
     range(0xfaf00, 0xfaf1c),
 ]
-DELETE_RANGES = [
-    range(0xfaf00, 0xfb000),
-]
-EXCLUDE = []
 
 def main():
     global args
     parser = argparse.ArgumentParser()
     parser.add_argument("filename", type=str)
-    parser.add_argument("-o", "--output_filename", type=str)
     parser.add_argument("-v", "--verbose", action="count", default=0)
-    parser.add_argument("-c", "--clear", action="store_true")
     args = parser.parse_args()
 
     font = fontforge.open(args.filename)
-
-    if args.clear:
-        remove_glyphs(font, RANGES, args, exclude=EXCLUDE)
-        save_font(font, args)
-        return
-
-    remove_glyphs(font, DELETE_RANGES, args, exclude=EXCLUDE)
-
     new_glyph_width = get_font_glyph_width(font)
-    initialize_glyphs(font, RANGES, args, new_glyph_width, exclude=EXCLUDE)
+    initialize_glyphs(font, RANGES, args, new_glyph_width)
 
-    # DRAW SHIT HERE
+    # DRAW THINGS HERE
     draw_FAF00(font.createChar(0xfaf00))
     draw_FAF01(font.createChar(0xfaf01))
     draw_FAF02(font.createChar(0xfaf02))
@@ -75,8 +57,12 @@ def main():
     draw_FAF1A(font.createChar(0xfaf1a))
     draw_FAF1B(font.createChar(0xfaf1b))
 
-    finalize_glyphs(font, RANGES, args, exclude=EXCLUDE)
-    save_font(font, args)
+    finalize_glyphs(font, RANGES, args)
+
+    if args.filename.lower().endswith(".sfd"):
+        font.save(args.filename)
+    else:
+        font.generate(args.filename)
 
     font.close()
 
@@ -85,39 +71,39 @@ def main():
 # BOX DRAWINGS LIGHT ARC UP AND LEFT FOR REVISION LOGS
 def draw_FAF00(glyph):
     draw_box_drawing_arc(glyph, otm.quarter_arc.UP_AND_LEFT)
-    
+
 # BOX DRAWINGS LIGHT ARC UP AND RIGHT FOR REVISION LOGS
 def draw_FAF01(glyph):
     draw_box_drawing_arc(glyph, otm.quarter_arc.UP_AND_RIGHT)
-    
+
 # BOX DRAWINGS LIGHT ARC DOWN AND LEFT FOR REVISION LOGS
 def draw_FAF02(glyph):
     draw_box_drawing_arc(glyph, otm.quarter_arc.DOWN_AND_LEFT)
-    
+
 # BOX DRAWINGS LIGHT ARC DOWN AND RIGHT FOR REVISION LOGS
 def draw_FAF03(glyph):
     draw_box_drawing_arc(glyph, otm.quarter_arc.DOWN_AND_RIGHT)
-    
+
 # BOX DRAWINGS LIGHT VERTICAL AND LIGHT ARC UP AND LEFT
 def draw_FAF04(glyph):
     draw_light_vertical(glyph)
     draw_box_drawing_arc(glyph, otm.quarter_arc.UP_AND_LEFT)
-    
+
 # BOX DRAWINGS LIGHT VERTICAL AND LIGHT ARC UP AND RIGHT
 def draw_FAF05(glyph):
     draw_light_vertical(glyph)
     draw_box_drawing_arc(glyph, otm.quarter_arc.UP_AND_RIGHT)
-    
+
 # BOX DRAWINGS LIGHT VERTICAL AND LIGHT ARC DOWN AND LEFT
 def draw_FAF06(glyph):
     draw_light_vertical(glyph)
     draw_box_drawing_arc(glyph, otm.quarter_arc.DOWN_AND_LEFT)
-    
+
 # BOX DRAWINGS LIGHT VERTICAL AND LIGHT ARC DOWN AND RIGHT
 def draw_FAF07(glyph):
     draw_light_vertical(glyph)
     draw_box_drawing_arc(glyph, otm.quarter_arc.DOWN_AND_RIGHT)
-    
+
 # BOX DRAWINGS LIGHT HORIZONTAL AND LIGHT ARC UP AND LEFT
 def draw_FAF08(glyph):
     draw_light_horizontal(glyph)
