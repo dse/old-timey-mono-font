@@ -1,14 +1,6 @@
 import fontforge, os, re
 from otm.generated import ALL
-
-ITEM_CODE = 0
-ITEM_VARIANT = 1
-ITEM_ORIG_GLYPH_NAME = 2
-ITEM_ORIG_BASE_GLYPH_NAME = 3
-ITEM_NORM_GLYPH_NAME = 4
-ITEM_NORM_BASE_GLYPH_NAME = 5
-ITEM_FILENAME = 6
-ITEM_GLYPH = 7
+from types import SimpleNamespace
 
 SPACES = [
     *list(range(0x0000, 0x0020)), # C0 controls
@@ -45,17 +37,18 @@ def index_svg_filenames(filenames):
     svg_list = [parse_svg_filename(filename) for filename in filenames]
     svg_list = [
         item for item in svg_list
-        if item[ITEM_ORIG_GLYPH_NAME] not in [".notdef", "nonmarkingreturn", ".null"]
+        if item.orig_glyph_name not in [".notdef", "nonmarkingreturn", ".null"]
     ]
     svg_dict = {}
     for item in svg_list:
-        svg_dict[item[ITEM_NORM_GLYPH_NAME]] = item
+        svg_dict[item.norm_glyph_name] = item
     return svg_list, svg_dict
 
 def parse_svg_filename(filename):
     _, basename = os.path.split(filename)
     stem, _ = os.path.splitext(basename)
 
+    name_is_arbitrary = False
     if match := re.fullmatch(r'([0-9A-Fa-f]{4,})(\.[^\.]+)', stem):
         code = int(match[1], 16)
         variant = match[2]
@@ -78,6 +71,7 @@ def parse_svg_filename(filename):
         if code < 0:
             norm_glyph_name      = match[1] + variant
             norm_base_glyph_name = match[1]
+            name_is_arbitrary    = True
         else:
             norm_glyph_name      = fontforge.nameFromUnicode(code) + variant
             norm_base_glyph_name = fontforge.nameFromUnicode(code)
@@ -89,12 +83,13 @@ def parse_svg_filename(filename):
         if code < 0:
             norm_glyph_name      = match[1] + variant
             norm_base_glyph_name = match[1]
+            name_is_arbitrary    = True
         else:
             norm_glyph_name      = fontforge.nameFromUnicode(code) + variant
             norm_base_glyph_name = fontforge.nameFromUnicode(code)
     else:
         raise Exception(f'{repr(filename)} cannot be parsed')
-    return [
+    as_tuple = (
         code,
         variant,
         orig_glyph_name,
@@ -103,17 +98,30 @@ def parse_svg_filename(filename):
         norm_base_glyph_name,
         filename,
         None,
-    ]
+        name_is_arbitrary,
+    )
+    return SimpleNamespace(
+        code                =code,
+        variant             =variant,
+        orig_glyph_name     =orig_glyph_name,
+        orig_base_glyph_name=orig_base_glyph_name,
+        norm_glyph_name     =norm_glyph_name,
+        norm_base_glyph_name=norm_base_glyph_name,
+        filename            =filename,
+        glyph               =None,
+        name_is_arbitrary   =name_is_arbitrary,
+        as_tuple            =as_tuple,
+    )
 
 def index_glyphs(font):
     glyph_list = [parse_glyph_name(glyph) for glyph in font.glyphs()]
     glyph_list = [
         item for item in glyph_list
-        if item[ITEM_ORIG_GLYPH_NAME] not in [".notdef", "nonmarkingreturn", ".null"]
+        if item.orig_glyph_name not in [".notdef", "nonmarkingreturn", ".null"]
     ]
     glyph_dict = {}
     for item in glyph_list:
-        glyph_dict[item[ITEM_NORM_GLYPH_NAME]] = item
+        glyph_dict[item.norm_glyph_name] = item
     return glyph_list, glyph_dict
 
 def parse_glyph_name(glyph):
@@ -125,49 +133,73 @@ def parse_glyph_name(glyph):
         orig_base_glyph_name = glyph.glyphname
         variant = ""
     code = fontforge.unicodeFromName(orig_base_glyph_name)
+    name_is_arbitrary = False
     if code < 0:
         code = glyph.unicode
+        if code in range(0, 0x110000):
+            name_is_arbitrary = True
     if code < 0:
         norm_base_glyph_name = orig_base_glyph_name
         norm_glyph_name      = orig_base_glyph_name + variant
     else:
         norm_base_glyph_name = fontforge.nameFromUnicode(code)
         norm_glyph_name      = fontforge.nameFromUnicode(code) + variant
-    return [
+    as_tuple = (
         code,
         variant,
         orig_glyph_name,
         orig_base_glyph_name,
         norm_glyph_name,
         norm_base_glyph_name,
-        None,
+        filename,
         glyph,
+        name_is_arbitrary,
+    )
+    return [
+        code                =code,
+        variant             =variant,
+        orig_glyph_name     =orig_glyph_name,
+        orig_base_glyph_name=orig_base_glyph_name,
+        norm_glyph_name     =norm_glyph_name,
+        norm_base_glyph_name=norm_base_glyph_name,
+        filename            =None,
+        glyph               =glyph,
+        name_is_arbitrary   =name_is_arbitrary,
+        as_tuple            =as_tuple,
     ]
 
 def verify_glyphs(svg_list, svg_dict, glyph_list, glyph_dict):
     verified_svg_list = []
-    verified_glyph_dict = []
+    verified_svg_dict = {}
+    verified_glyph_list = []
+    verified_glyph_dict = {}
+
+    svg_only_list = []
+    svg_only_dict = {}
+    glyph_only_list = []
+    glyph_only_dict = {}
 
     success = True
 
     for item in svg_list:
-        glyphname = item[ITEM_NORM_GLYPH_NAME]
-        code = item[ITEM_CODE]
+        glyphname = item.norm_glyph_name
+        code = item.code
         if noindex(item):
             continue
-        svg_filename = item[ITEM_FILENAME]
+        svg_filename = item.filename
         if glyphname not in glyph_dict:
             print(f"SVG:   {repr(glyphname)} from {svg_filename} not in glyphs")
             success = False
+            svg_only_list.append(item)
+            svg_only_dict[glyphname] = item
         else:
             verified_svg_list.append(item)
             verified_svg_dict[glyphname] = item
-            verified_svg_dict[ITEM_GLYPH] = glyph_dict[glyphname][ITEM_GLYPH]
 
     for item in glyph_list:
-        glyphname = item[ITEM_NORM_GLYPH_NAME]
-        code = item[ITEM_CODE]
-        glyph = item[ITEM_GLYPH]
+        glyphname = item.norm_glyph_name
+        code = item.code
+        glyph = item.glyph
         if len(glyph.references):
             if len(glyph.foreground):
                 print(f"GLYPH: {repr(glyphname)} contains both references AND contours")
@@ -177,16 +209,19 @@ def verify_glyphs(svg_list, svg_dict, glyph_list, glyph_dict):
         if glyphname not in svg_dict:
             print(f"GLYPH: {repr(glyphname)} from {glyph.font} not found in SVG files")
             success = False
+            glyph_only_list.append(item)
+            glyph_only_dict[glyphname] = item
         else:
             verified_glyph_list.append(item)
             verified_glyph_dict[glyphname] = item
-            verified_glyph_dict[ITEM_FILENAME] = glyph_dict[glyphname][ITEM_FILENAME]
 
-    return success, verified_svg_list, verified_svg_dict, verified_glyph_list, verified_glyph_dict
+    return (success, 
+            verified_svg_list, verified_svg_dict, verified_glyph_list, verified_glyph_dict,
+            svg_only_list,     svg_only_dict,     glyph_only_list,     glyph_only_dict)
 
 def noindex(item):
-    glyphname = item[ITEM_NORM_GLYPH_NAME]
-    code = item[ITEM_CODE]
+    glyphname = item.norm_glyph_name
+    code = item.code
     return (
         glyphname.endswith(".SMOL") or
         code in SPACES or
