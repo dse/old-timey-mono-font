@@ -1,0 +1,37 @@
+{
+    "defaults": {
+        "fontWeight": 400,
+        "strokeWidth": 96,
+        "width": 1008,
+        "em": 1680,
+        "ascent": 1344,
+        "descent": 336,
+        "vendor": "DARN",
+        "copyright": "Copyright 2026 Darren Embry.  SIL-OFL-1.1",
+        "comment": "Copyright 2026 Darren Embry.  SIL-OFL-1.1",
+        "underlinePosition": -150,
+        "underlineWidth": 96,
+        "sfntRevision": 0.9110,
+        "version": "0.12.0",
+        "pfmMonospace": true,
+        "lineGap": 0
+    },
+    "fonts": {
+        "OldTimeyMono": {
+            "familyName": "Old Timey Mono",
+            "fontName": "OldTimeyMono",
+            "fullName": "Old Timey Mono",
+            "ttfWeight": 400,
+            "weightName": "Book",
+            "panose": [2, 0, 5, 9, 2, 2, 0, 0, 0, 0]
+        },
+        "OldTimeyCode": {
+            "familyName": "Old Timey Mono",
+            "fontName": "OldTimeyCode",
+            "fullName": "Old Timey Code",
+            "ttfWeight": 400,
+            "weightName": "Book",
+            "panose": [2, 0, 5, 9, 2, 2, 0, 0, 0, 0]
+        }
+    }
+}
