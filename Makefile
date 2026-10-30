@@ -296,6 +296,9 @@ symbols: FORCE
 	support/bin/draw-block-elements.py		$(VERBOSITY_SYMBOLS) $(BASEFONT_SFD)
 	support/bin/draw-block-sextants.py		$(VERBOSITY_SYMBOLS) $(BASEFONT_SFD)
 	support/bin/draw-mosaics.py			$(VERBOSITY_SYMBOLS) $(BASEFONT_SFD)
+	support/bin/draw-pua-glyphs.py                  $(VERBOSITY_SYMBOLS) $(BASEFONT_SFD)
+	support/bin/import-svgs.py                      $(VERBOSITY_SYMBOLS) $(BASEFONT_SFD)
+	support/bin/redraw-glyphs.py                    $(VERBOSITY_SYMBOLS) $(BASEFONT_SFD)
 
 	$(SUPPORT_DRAWING_BIN)/pua.py $(BASEFONT_SFD)
 	: 0xfaf00-0xfaf70
