@@ -1,6 +1,6 @@
 #!/usr/bin/env -S fontforge -quiet -lang=py -script
 # -*- mode: python; coding: utf-8 -*-
-import fontforge, argparse
+import fontforge, argparse, os, sys
 
 sys.path.append(os.path.dirname(__file__) + "/../lib")
 from otm.generated import ALL
@@ -20,9 +20,9 @@ def main():
             if str(e) != "This glyph is not in the font":
                 raise
     if args.filename.endswith(".sfd"):
-        font.save(filename)
+        font.save(args.filename)
     else:
-        font.generate(filename)
+        font.generate(args.filename)
     font.close()
 
 main()
