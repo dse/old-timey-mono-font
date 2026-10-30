@@ -1,4 +1,4 @@
-import fontforge, statistics
+import fontforge, statistics, json
 
 from otm.constants import KAPPA
 from otm.point import round_point, rel_to_abs_point
@@ -109,3 +109,17 @@ def finalize_glyphs(font, ranges, args, exclude=None, expand_strokes=False):
             glyph.comment = json.dumps({ "expand_strokes": expand_strokes })
     if args.verbose >= 2:
         print("finished finalizing glyphs")
+
+def walk_svg(filenames):
+    if type(filenames) is not list:
+        filenames = [filenames]
+    retval = []
+    for filename in filenames:
+        if os.path.isdir(filename):
+            for dir_path, dir_names, dir_filenames in os.walk(filename):
+                for each_filename in dir_filenames:
+                    if each_filename.lower().endswith(".svg"):
+                        retval.append(os.path.join(dir_path, each_filename))
+        else:
+            retval.append(filename)
+    return retval
