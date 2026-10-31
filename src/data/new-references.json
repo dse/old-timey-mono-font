@@ -1,6 +1,57 @@
 {
     "references": {
         "A.c2pc": "uni1D00",
+        "B.c2pc": "uni0299",
+        "C.c2pc": "uni1D04",
+        "D.c2pc": "uni1D05",
+        "E.c2pc": "uni1D07",
+        "F.c2pc": "uniA730",
+        "G.c2pc": "uni0262",
+        "H.c2pc": "uni029C",
+        "I.c2pc": "uni026A",
+        "J.c2pc": "uni1D0A",
+        "K.c2pc": "uni1D0B",
+        "L.c2pc": "uni029F",
+        "M.c2pc": "uni1D0D",
+        "N.c2pc": "uni0274",
+        "O.c2pc": "uni1D0F",
+        "P.c2pc": "uni1D18",
+        "Q.c2pc": "uniA7AF",
+        "R.c2pc": "uni0280",
+        "S.c2pc": "uniA731",
+        "T.c2pc": "uni1D1B",
+        "U.c2pc": "uni1D1C",
+        "V.c2pc": "uni1D20",
+        "W.c2pc": "uni1D21",
+        "X.c2pc": "x",
+        "Y.c2pc": "uni028F",
+        "Z.c2pc": "uni1D22",
+        "a.pcap": "uni1D00",
+        "b.pcap": "uni0299",
+        "c.pcap": "uni1D04",
+        "d.pcap": "uni1D05",
+        "e.pcap": "uni1D07",
+        "f.pcap": "uniA730",
+        "g.pcap": "uni0262",
+        "h.pcap": "uni029C",
+        "i.pcap": "uni026A",
+        "j.pcap": "uni1D0A",
+        "k.pcap": "uni1D0B",
+        "l.pcap": "uni029F",
+        "m.pcap": "uni1D0D",
+        "n.pcap": "uni0274",
+        "o.pcap": "uni1D0F",
+        "p.pcap": "uni1D18",
+        "q.pcap": "uniA7AF",
+        "r.pcap": "uni0280",
+        "s.pcap": "uniA731",
+        "t.pcap": "uni1D1B",
+        "u.pcap": "uni1D1C",
+        "v.pcap": "uni1D20",
+        "w.pcap": "uni1D21",
+        "x.pcap": "x",
+        "y.pcap": "uni028F",
+        "z.pcap": "uni1D22",
         "AEacute": [
             [
                 "acutecomb",
@@ -70,9 +121,7 @@
             "tildecomb",
             "A"
         ],
-        "B.c2pc": "uni0299",
         "Beta": "B",
-        "C.c2pc": "uni1D04",
         "Cacute": [
             [
                 "acutecomb",
@@ -119,13 +168,11 @@
             "C"
         ],
         "Chi": "X",
-        "D.c2pc": "uni1D05",
         "Dcaron": [
             "uni030C",
             "D"
         ],
         "Dcroat": "Eth",
-        "E.c2pc": "uni1D07",
         "Eacute": [
             "acutecomb",
             "E"
@@ -187,8 +234,6 @@
             ],
             "Eta"
         ],
-        "F.c2pc": "uniA730",
-        "G.c2pc": "uni0262",
         "Gamma": [
             [
                 "L",
@@ -234,7 +279,6 @@
             ],
             "G"
         ],
-        "H.c2pc": "uni029C",
         "Hbar": [
             "uni0305",
             "H"
@@ -243,7 +287,6 @@
             "uni0302",
             "H"
         ],
-        "I.c2pc": "uni026A",
         "Iacute": [
             "acutecomb",
             "I"
@@ -299,7 +342,6 @@
             "tildecomb",
             "I"
         ],
-        "J.c2pc": "uni1D0A",
         "Jcircumflex": [
             [
                 "uni0302",
@@ -309,9 +351,7 @@
             ],
             "J"
         ],
-        "K.c2pc": "uni1D0B",
         "Kappa": "K",
-        "L.c2pc": "uni029F",
         "Lacute": [
             [
                 "acutecomb",
@@ -357,9 +397,7 @@
             ],
             "L"
         ],
-        "M.c2pc": "uni1D0D",
         "Mu": "M",
-        "N.c2pc": "uni0274",
         "Nacute": [
             "acutecomb",
             "N"
@@ -373,7 +411,6 @@
             "N"
         ],
         "Nu": "N",
-        "O.c2pc": "uni1D0F",
         "Oacute": [
             "acutecomb",
             "O"
@@ -448,9 +485,6 @@
             "tildecomb",
             "O"
         ],
-        "P.c2pc": "uni1D18",
-        "Q.c2pc": "uniA7AF",
-        "R.c2pc": "uni0280",
         "Racute": [
             "acutecomb",
             "R"
@@ -460,7 +494,6 @@
             "R"
         ],
         "Rho": "P",
-        "S.c2pc": "uniA731",
         "Sacute": [
             "acutecomb",
             "S"
@@ -482,7 +515,6 @@
             "uni0302",
             "S"
         ],
-        "T.c2pc": "uni1D1B",
         "Tau": "T",
         "Tbar": [
             [
@@ -497,7 +529,6 @@
             "uni030C",
             "T"
         ],
-        "U.c2pc": "uni1D1C",
         "Uacute": [
             "acutecomb",
             "U"
@@ -566,8 +597,6 @@
             "tildecomb",
             "U"
         ],
-        "V.c2pc": "uni1D20",
-        "W.c2pc": "uni1D21",
         "Wacute": [
             "acutecomb",
             "W"
@@ -584,8 +613,6 @@
             "gravecomb",
             "W"
         ],
-        "X.c2pc": "x",
-        "Y.c2pc": "uni028F",
         "Yacute": [
             "acutecomb",
             "Y"
@@ -602,7 +629,6 @@
             "gravecomb",
             "Y"
         ],
-        "Z.c2pc": "uni1D22",
         "Zacute": [
             "acutecomb",
             "Z"
@@ -616,7 +642,6 @@
             "Z"
         ],
         "Zeta": "Z",
-        "a.pcap": "uni1D00",
         "aacute": [
             [
                 "acutecomb.LCCM",
@@ -721,7 +746,6 @@
             ],
             "a"
         ],
-        "b.pcap": "uni0299",
         "breve": [
             [
                 "uni0306",
@@ -730,7 +754,6 @@
                 ]
             ]
         ],
-        "c.pcap": "uni1D04",
         "cacute": [
             "acutecomb.LCCM",
             "c"
@@ -771,7 +794,6 @@
             ],
             "x_copyrightcircle"
         ],
-        "d.pcap": "uni1D05",
         "dcaron": [
             [
                 "uni0315",
@@ -821,7 +843,6 @@
                 ]
             ]
         ],
-        "e.pcap": "uni1D07",
         "eacute": [
             "acutecomb.LCCM",
             "e"
@@ -903,7 +924,6 @@
                 ]
             ]
         ],
-        "f.pcap": "uniA730",
         "fiveeighths": [
             [
                 "eight.SMOL",
@@ -925,7 +945,6 @@
             ]
         ],
         "fraction": "slash.cv04",
-        "g.pcap": "uni0262",
         "gbreve": [
             [
                 "uni0306.LCCM",
@@ -1050,7 +1069,6 @@
                 ]
             ]
         ],
-        "h.pcap": "uni029C",
         "hbar": [
             "h",
             [
@@ -1072,7 +1090,6 @@
                 ]
             ]
         ],
-        "i.pcap": "uni026A",
         "iacute": [
             [
                 "acutecomb.LCCM",
@@ -1167,13 +1184,10 @@
             ],
             "dotlessi"
         ],
-        "j.pcap": "uni1D0A",
         "jcircumflex": [
             "uni0302.LCCM",
             "uni0237"
         ],
-        "k.pcap": "uni1D0B",
-        "l.pcap": "uni029F",
         "lacute": [
             "acutecomb",
             "l"
@@ -1205,8 +1219,6 @@
             ],
             "l"
         ],
-        "m.pcap": "uni1D0D",
-        "n.pcap": "uni0274",
         "nacute": [
             [
                 "acutecomb.LCCM",
@@ -1260,7 +1272,6 @@
             ],
             "n"
         ],
-        "o.pcap": "uni1D0F",
         "oacute": [
             "acutecomb.LCCM",
             "o"
@@ -1432,7 +1443,6 @@
             "tildecomb.LCCM",
             "o"
         ],
-        "p.pcap": "uni1D18",
         "plusminus": [
             [
                 "minus",
@@ -1447,7 +1457,6 @@
                 ]
             ]
         ],
-        "q.pcap": "uniA7AF",
         "questiondown": [
             [
                 "question",
@@ -1456,7 +1465,6 @@
                 ]
             ]
         ],
-        "r.pcap": "uni0280",
         "racute": [
             "acutecomb.LCCM",
             "r"
@@ -1482,7 +1490,6 @@
                 ]
             ]
         ],
-        "s.pcap": "uniA731",
         "s.ss07": "s.ss04",
         "sacute": [
             "acutecomb.LCCM",
@@ -1533,7 +1540,6 @@
                 ]
             ]
         ],
-        "t.pcap": "uni1D1B",
         "tbar": [
             [
                 "x_mediumhorizline",
@@ -1634,7 +1640,6 @@
                 ]
             ]
         ],
-        "u.pcap": "uni1D1C",
         "uacute": [
             [
                 "acutecomb.LCCM",
@@ -5756,8 +5761,6 @@
             ],
             "u"
         ],
-        "v.pcap": "uni1D20",
-        "w.pcap": "uni1D21",
         "wacute": [
             "acutecomb.LCCM",
             "w"
@@ -5774,8 +5777,6 @@
             "gravecomb.LCCM",
             "w"
         ],
-        "x.pcap": "x",
-        "y.pcap": "uni028F",
         "yacute": [
             "acutecomb.LCCM",
             "y"
@@ -5796,7 +5797,6 @@
             "gravecomb.LCCM",
             "y"
         ],
-        "z.pcap": "uni1D22",
         "zacute": [
             "acutecomb.LCCM",
             "z"
