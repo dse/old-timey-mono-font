@@ -3,7 +3,7 @@
 import fontforge, argparse, os, sys
 
 sys.path.append(os.path.dirname(__file__) + "/../lib")
-from otm.generated import ALL
+from otm.generated import GENERATED_GLYPH_CODES
 
 def main():
     global args
@@ -13,7 +13,7 @@ def main():
     args = parser.parse_args()
 
     font = fontforge.open(args.filename)
-    for code in ALL:
+    for code in GENERATED_GLYPH_CODES:
         try:
             font.removeGlyph(code)
         except ValueError as e:

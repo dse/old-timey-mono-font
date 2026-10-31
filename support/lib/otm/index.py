@@ -1,5 +1,5 @@
 import fontforge, os, re
-from otm.generated import ALL
+from otm.generated import GENERATED_GLYPH_CODES
 from types import SimpleNamespace
 
 SPACES = [
@@ -225,6 +225,6 @@ def noindex(item):
     return (
         glyphname.endswith(".SMOL") or
         code in SPACES or
-        code in ALL
+        code in GENERATED_GLYPH_CODES
     )
 

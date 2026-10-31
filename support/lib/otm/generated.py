@@ -12,7 +12,7 @@ __all__ = [
     "U1FBE4_CENTER_QUADRANTS",
     "U1FBF0_BLOCK_SEXTANTS",
     "UFAF00_PUA_EXTRAS",
-    "ALL",
+    "GENERATED_GLYPH_CODES",
 ]
 
 U2500_BOX_DRAWING             = range(0x2500, 0x2580) # draw-box-drawing.py
@@ -29,7 +29,7 @@ U1FBE4_CENTER_QUADRANTS       = range(0x1fbe4, 0x1fbe8) # draw-block-elements.py
 U1FBF0_SEGMENTED_DIGITS       = range(0x1fbf0, 0x1fbfa) # draw-segmented-digits.py
 UFAF00_PUA_EXTRAS             = range(0xfaf00, 0xfaf70)
 
-ALL = (
+GENERATED_GLYPH_CODES = (
     list(U2500_BOX_DRAWING) +
     list(U2580_BLOCK_ELEMENTS) +
     list(U2800_BRAILLE) +
