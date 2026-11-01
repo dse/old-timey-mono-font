@@ -9,12 +9,12 @@ SMOL_STROKE_WIDTH = 72
 
 CODES = [
     *range(32, 127),
-    unicodedata.lookup("LATIN_SMALL_LETTER_SCHWA"),
-    unicodedata.lookup("GREEK_SMALL_LETTER_BETA"),
-    unicodedata.lookup("GREEK_SMALL_LETTER_GAMMA"),
-    unicodedata.lookup("GREEK_SMALL_LETTER_RHO"),
-    unicodedata.lookup("GREEK_SMALL_LETTER_PHI"),
-    unicodedata.lookup("GREEK_SMALL_LETTER_CHI"),
+    ord(unicodedata.lookup("LATIN SMALL LETTER SCHWA")),
+    ord(unicodedata.lookup("GREEK SMALL LETTER BETA")),
+    ord(unicodedata.lookup("GREEK SMALL LETTER GAMMA")),
+    ord(unicodedata.lookup("GREEK SMALL LETTER RHO")),
+    ord(unicodedata.lookup("GREEK SMALL LETTER PHI")),
+    ord(unicodedata.lookup("GREEK SMALL LETTER CHI")),
 ]
 
 SPECIAL_GLYPHS = {
@@ -54,7 +54,7 @@ SPECIAL_GLYPHS = {
     "bracketleft": "bracketleft.WIDE",
     "bracketright": "bracketright.WIDE",
     "braceleft": "braceleft.WIDE",
-    "braceright": "braceright.WIDE"
+    "braceright": "braceright.WIDE",
 
 # simplified forms
     "zero": "zero.ss07",
@@ -86,7 +86,10 @@ def main():
         source_glyphname = fontforge.nameFromUnicode(code)
         if source_glyphname in SPECIAL_GLYPHS:
             source_glyphname = SPECIAL_GLYPHS[source_glyphname]
-        source_glyph = font.createChar(code)
+        elif source_glyphname + ".ss07" in font:
+            source_glyphname += ".ss07"
+
+        source_glyph = font[source_glyphname]
 
         smol_glyph = font.createChar(-1, plain_glyphname + ".SMOL")
         smol_glyph.foreground = fontforge.layer()
@@ -95,9 +98,13 @@ def main():
         source_glyph.draw(pen)
         pen = None
 
-        sm_glyph.transform(psMat.scale(0.5))
-        sm_glyph.transform(psMat.translate(source_glyph.width / 4, SMOL_STROKE_WIDTH / 2 - DEFAULT_STROKE_WIDTH / 4))
-        sm_glyph.width = glyph_width
+        # if len(smol_glyph.references):
+        #     reconstitute_references(smol_glyph)
+        #     smol_glyph.unlinkRef()
+
+        smol_glyph.transform(psMat.scale(0.5))
+        smol_glyph.transform(psMat.translate(source_glyph.width / 4, SMOL_STROKE_WIDTH / 2 - DEFAULT_STROKE_WIDTH / 4))
+        smol_glyph.width = round(glyph_width)
 
     if args.filename.lower().endswith(".sfd"):
         font.save(args.filename)
