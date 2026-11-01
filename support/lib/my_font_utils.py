@@ -205,11 +205,11 @@ def get_glyph_char_data(glyph, json_filename=DEFAULT_GLYPHS_JSON_FILENAME):
             # else:
             #     print("  base_codepoint %d does NOT match" % base_codepoint)
 
-    if base_codepoint in range(0, 0x110000) and chr(base_codepoint) in glyph_data:
+    if is_valid_code(base_codepoint) and chr(base_codepoint) in glyph_data:
         data = glyph_data[chr(base_codepoint)]
         char_data = { **char_data, **data }
 
-    if base_codepoint in range(0, 0x110000) and u(base_codepoint) in glyph_data:
+    if is_valid_code(base_codepoint) and u(base_codepoint) in glyph_data:
         data = glyph_data[u(base_codepoint)]
         char_data = { **char_data, **data }
 

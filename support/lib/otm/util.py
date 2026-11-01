@@ -126,4 +126,13 @@ def walk_svg(filenames):
 
 def u(code):
     # in range(0, 0x110000) was a bottleneck in this function
-    return "U+%04X" % code if type(code) is int and code >= 0 and code < 0x110000 else str(code)
+    return "U+%04X" % code if is_valid_code(code) else str(code)
+
+def is_valid_code(code):
+    if type(code) is float:
+        if code != round(code):
+            return False
+        code = int(round(code))
+    if type(code) is int:
+        return code >= 0 and code < 0x110000
+    return False

@@ -1,6 +1,6 @@
 import os, re, fontforge
 
-from otm.util import u
+from otm.util import u, is_valid_code
 
 ATTRS = [
     "code",
@@ -112,7 +112,7 @@ class CharData:
         return (
             chr(self.norm_code)
             if
-            type(self.norm_code) is int and self.norm_code >= 0 and self.norm_code < 0x110000
+            is_valid_code(self.norm_code)
             else
             "(no char)"
         )
