@@ -61,21 +61,27 @@ SMOL_GLYPH_CODES = [
     ord(unicodedata.lookup("GREEK SMALL LETTER CHI")),
 ]
 
-SPACES = [
-    *list(range(0x0000, 0x0020)), # C0 controls
-    *list(range(0x0080, 0x00a0)), # C1 controls
+SPACE_CODES = [
     0x0020,                       # SPACE
-    0x007f,                       # <control> (DELETE)
     0x00a0,                       # NO-BREAK SPACE
     0x2000,                       # EN QUAD
     0x2001,                       # EM QUAD
     0x2002,                       # EN SPACE
     0x2003,                       # EM SPACE
+    0x2007,                       # FIGURE SPACE
+    0x2008,                       # PUNCTUATION SPACE
+    0x205f,                       # MEDIUM MATHEMATICAL SPACE
+    0x3000,                       # IDEOGRAPHIC SPACE
+]
+
+NON_GRAPHIC_CODES = [
+    *SPACE_CODES,
+    *list(range(0x0000, 0x0020)), # C0 controls
+    0x007f,                       # "
+    *list(range(0x0080, 0x00a0)), # C1 controls
     0x2004,                       # THREE-PER-EM SPACE
     0x2005,                       # FOUR-PER-EM SPACE
     0x2006,                       # SIX-PER-EM SPACE
-    0x2007,                       # FIGURE SPACE
-    0x2008,                       # PUNCTUATION SPACE
     0x2009,                       # THIN SPACE
     0x200a,                       # HAIR SPACE
     0x200b,                       # ZERO WIDTH SPACE
@@ -86,8 +92,6 @@ SPACES = [
     0x2028,                       # LINE SEPARATOR
     0x2029,                       # PARAGRAPH SEPARATOR
     0x202f,                       # NARROW NO-BREAK SPACE
-    0x205f,                       # MEDIUM MATHEMATICAL SPACE
-    0x3000,                       # IDEOGRAPHIC SPACE
     0x1680,                       # OGHAM SPACE MARK
     0xfeff,              # ZERO WIDTH NO-BREAK SPACE (BYTE ORDER MARK)
 ]
