@@ -1,4 +1,4 @@
-import fontforge, statistics, json
+import fontforge, statistics, json, os
 
 from otm.constants import KAPPA
 from otm.point import round_point, rel_to_abs_point
@@ -72,7 +72,7 @@ def remove_glyphs(font, ranges, args, exclude=None):
                     print(f'removing glyph at U+{code:04X}')
                 font.removeGlyph(code)
                 if args.verbose >= 2:
-                    print(f'removedglyph at U+{code:04X}')
+                    print(f'removed glyph at U+{code:04X}')
             except ValueError as e:
                 if str(e) != "This glyph is not in the font":
                     raise
@@ -123,3 +123,7 @@ def walk_svg(filenames):
         else:
             retval.append(filename)
     return retval
+
+def u(code):
+    # in range(0, 0x110000) was a bottleneck in this function
+    return "U+%04X" % code if type(code) is int and code >= 0 and code < 0x110000 else str(code)
