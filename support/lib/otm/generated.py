@@ -9,6 +9,7 @@ __all__ = [
     "U1FB70_ONE_EIGHTH_BLOCKS",
     "U1FB8C_RECTANGULAR_SHADES",
     "U1FB95_CHECKERBOARD_FILL",
+    "U1FB96_INVERSE_CHECKERBOARD_FILL",
     "U1FB9A_TRIANGULAR_HALF_BLOCKS",
     "U1FBCE_THIRD_BLOCKS",
     "U1FBE4_CENTER_QUADRANTS",
@@ -98,3 +99,16 @@ NON_GRAPHIC_CODES = [
     0x1680,                       # OGHAM SPACE MARK
     0xfeff,              # ZERO WIDTH NO-BREAK SPACE (BYTE ORDER MARK)
 ]
+
+# the first three glyphs in the font IN ORDER
+SPECIAL_GLYPH_NAMES = [
+    ".notdef",
+    ".null",
+    "nonmarkingreturn"
+]
+
+SPECIAL_GLYPH_CODES = {
+    ".notdef": 0,
+    ".null": 0,
+    "nonmarkingreturn": 0x000d,
+}
