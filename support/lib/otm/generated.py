@@ -29,7 +29,7 @@ U1FBE4_CENTER_QUADRANTS       = range(0x1fbe4, 0x1fbe8) # draw-block-elements.py
 U1FBF0_SEGMENTED_DIGITS       = range(0x1fbf0, 0x1fbfa) # draw-segmented-digits.py
 UFAF00_PUA_EXTRAS             = range(0xfaf00, 0xfaf70)
 
-GENERATED_GLYPH_CODES = (
+GENERATED_GLYPH_CODES = [
     list(U2500_BOX_DRAWING) +
     list(U2580_BLOCK_ELEMENTS) +
     list(U2800_BRAILLE) +
@@ -44,4 +44,14 @@ GENERATED_GLYPH_CODES = (
     list(U1FBF0_SEGMENTED_DIGITS) +
     list(UFAF00_PUA_EXTRAS) +
     []
-)
+]
+
+SMOL_GLYPH_CODES = [
+    *range(32, 127),
+    ord(unicodedata.lookup("LATIN SMALL LETTER SCHWA")),
+    ord(unicodedata.lookup("GREEK SMALL LETTER BETA")),
+    ord(unicodedata.lookup("GREEK SMALL LETTER GAMMA")),
+    ord(unicodedata.lookup("GREEK SMALL LETTER RHO")),
+    ord(unicodedata.lookup("GREEK SMALL LETTER PHI")),
+    ord(unicodedata.lookup("GREEK SMALL LETTER CHI")),
+]

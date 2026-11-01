@@ -4,18 +4,10 @@ import fontforge, argparse, glob, os, sys, re, json, unicodedata, statistics
 
 sys.path.append(os.path.join(os.path.dirname(__file__), "..", "lib"))
 
+from otm.generated import SMOL_GLYPH_CODES
+
 DEFAULT_STROKE_WIDTH = 96
 SMOL_STROKE_WIDTH = 72
-
-CODES = [
-    *range(32, 127),
-    ord(unicodedata.lookup("LATIN SMALL LETTER SCHWA")),
-    ord(unicodedata.lookup("GREEK SMALL LETTER BETA")),
-    ord(unicodedata.lookup("GREEK SMALL LETTER GAMMA")),
-    ord(unicodedata.lookup("GREEK SMALL LETTER RHO")),
-    ord(unicodedata.lookup("GREEK SMALL LETTER PHI")),
-    ord(unicodedata.lookup("GREEK SMALL LETTER CHI")),
-]
 
 SPECIAL_GLYPHS = {
     "periodcentered": "periodcentered.ss05",
@@ -81,7 +73,7 @@ def main():
     for glyphname in smol_glyphnames:
         font.removeGlyph(glyphname)
 
-    for code in CODES:
+    for code in SMOL_GLYPH_CODES:
         plain_glyphname = fontforge.nameFromUnicode(code)
         source_glyphname = fontforge.nameFromUnicode(code)
         if source_glyphname in SPECIAL_GLYPHS:
