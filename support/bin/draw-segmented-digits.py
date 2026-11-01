@@ -41,9 +41,9 @@ def draw_seven_segment_digits(font):
 
 def draw_7_segments(font, width, codept, bits):
     glyphname = fontforge.nameFromUnicode(codept)
-    if glyphname in font:
-        font.deleteGlyph(glyphname)
     glyph = font.createChar(codept)
+    glyph.foreground = fontforge.layer()
+    glyph.references = ()
     glyph.width = width
 
     italic_angle = 8
