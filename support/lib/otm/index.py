@@ -2,37 +2,7 @@ import fontforge, os, re
 from otm.generated import GENERATED_GLYPH_CODES
 from types import SimpleNamespace
 from .char_data import SVGCharData, GlyphCharData, GlyphNameCharData
-
-SPACES = [
-    *list(range(0x0000, 0x0020)), # C0 controls
-    *list(range(0x0080, 0x00a0)), # C1 controls
-    0x0020,                       # SPACE
-    0x007f,                       # <control> (DELETE)
-    0x00a0,                       # NO-BREAK SPACE
-    0x2000,                       # EN QUAD
-    0x2001,                       # EM QUAD
-    0x2002,                       # EN SPACE
-    0x2003,                       # EM SPACE
-    0x2004,                       # THREE-PER-EM SPACE
-    0x2005,                       # FOUR-PER-EM SPACE
-    0x2006,                       # SIX-PER-EM SPACE
-    0x2007,                       # FIGURE SPACE
-    0x2008,                       # PUNCTUATION SPACE
-    0x2009,                       # THIN SPACE
-    0x200a,                       # HAIR SPACE
-    0x200b,                       # ZERO WIDTH SPACE
-    0x200c,                       # ZERO WIDTH NON-JOINER
-    0x200d,                       # ZERO WIDTH JOINER
-    0x200e,                       # LEFT-TO-RIGHT MARK
-    0x200f,                       # RIGHT-TO-LEFT MARK
-    0x2028,                       # LINE SEPARATOR
-    0x2029,                       # PARAGRAPH SEPARATOR
-    0x202f,                       # NARROW NO-BREAK SPACE
-    0x205f,                       # MEDIUM MATHEMATICAL SPACE
-    0x3000,                       # IDEOGRAPHIC SPACE
-    0x1680,                       # OGHAM SPACE MARK
-    0xfeff,              # ZERO WIDTH NO-BREAK SPACE (BYTE ORDER MARK)
-]
+from .constants import SPACES
 
 def index_svg_filenames(filenames, verbose=False):
     svg_list = [parse_svg_filename(filename, verbose=verbose) for filename in filenames]
@@ -57,7 +27,7 @@ def parse_svg_filename(svg_filename, verbose=False):
     return data
 
 def index_glyphs(font, verbose=False):
-    glyph_list = [parse_glyph_name(glyph, verbose=verbose) for glyph in font.glyphs()]
+    glyph_list = [parse_glyph_name(glyph.glyphname, verbose=verbose) for glyph in font.glyphs()]
     glyph_list = [
         item for item in glyph_list
         if item.orig_glyph_name not in [".notdef", "nonmarkingreturn", ".null"]
@@ -85,8 +55,8 @@ def index_glyph_names(glyph_names):
             named_glyph_dict[item.key] = item
     return named_glyph_list, named_glyph_dict
 
-def parse_glyph_name(glyph, verbose=False):
-    data = GlyphCharData(glyph)
+def parse_glyph_name(glyphname, verbose=False):
+    data = GlyphNameCharData(glyphname)
     # if verbose:
     #     print("parse_glyph_name: " + str(data))
     return data
