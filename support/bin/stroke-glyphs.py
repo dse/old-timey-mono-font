@@ -67,7 +67,8 @@ def main():
             stroke_width = DEFAULT_STROKE_WIDTH
         if not stroke_width:
             continue
-        glyph.stroke("circular", stroke_width)
+        fill = item.code in FILL_GLYPHS
+        glyph.stroke("circular", stroke_width, removeinternal=fill)
 
     if args.filename.endswith('.sfd'):
         font.save(args.filename)
@@ -106,5 +107,38 @@ STROKE_WIDTHS = {
     0x21a8: 72, # UP DOWN ARROW WITH BASE
     0x21ae: 72, # LEFT RIGHT ARROW WITH STROKE
 }
+
+FILL_GLYPHS = [
+    0x00a8, # DIAERESIS (SPACING DIAERESIS)
+    0x00ba, # MASCULINE ORDINAL INDICATOR
+    0x0308, # COMBINING DIAERESIS (NON-SPACING DIAERESIS)
+    0x0307, # COMBINING DOT ABOVE (NON-SPACING DOT ABOVE)
+    0x0358, # COMBINING DOT ABOVE RIGHT
+    0x0310, # COMBINING CANDRABINDU (NON-SPACING CANDRABINDU)
+    0x0323, # COMBINING DOT BELOW (NON-SPACING DOT BELOW)
+    0x0324, # COMBINING DIAERESIS BELOW (NON-SPACING DOUBLE DOT BELOW)
+    0x0352, # COMBINING FERMATA
+    0x2022, # BULLET
+    0x2034, # TRIPLE PRIME
+    0x2037, # REVERSED TRIPLE PRIME
+    0x204c, # BLACK LEFTWARDS BULLET
+    0x204d, # BLACK RIGHTWARDS BULLET
+    0x2055, # FLOWER PUNCTUATION MARK
+    0x2234, # THEREFORE
+    0x25a0, # BLACK SQUARE
+    0x25cf, # BLACK CIRCLE
+    0x25d8, # INVERSE BULLET
+    0x25d9, # INVERSE WHITE CIRCLE
+    0x2605, # BLACK STAR
+    0x263b, # BLACK SMILING FACE
+    0x2660, # BLACK SPADE SUIT
+    0x2663, # BLACK CLUB SUIT
+    0x2665, # BLACK HEART SUIT
+    0x2666, # BLACK DIAMOND SUIT
+    ord('"'),
+    ord("."),
+    ord("'"),
+    ord("!"),
+]
 
 main()
