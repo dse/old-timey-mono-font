@@ -6,7 +6,7 @@ sys.path.append(os.path.join(os.path.dirname(__file__), "..", "lib"))
 
 from otm.index import index_svg_filenames, index_glyphs, verify_glyphs
 from otm.util import walk_svg
-from otm.parse import parse_glyph_name
+from otm.char_data import GlyphNameCharData
 
 def main():
     parser = argparse.ArgumentParser()
@@ -26,7 +26,7 @@ def main():
         glyph_created_count = 0
         for glyphname, refdata1 in references_dict.items():
 
-            parse_result = parse_glyph_name(glyphname)
+            parse_result = GlyphNameCharData(glyphname)
             code = parse_result.code
             name = parse_result.norm_glyph_name
 
