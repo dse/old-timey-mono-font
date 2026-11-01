@@ -8,7 +8,7 @@ __all__ = [
     "RANGE_U1FB3C_MOSAICS",
     "RANGE_U1FB70_ONE_EIGHTH_BLOCKS",
     "RANGE_U1FB8C_RECTANGULAR_SHADES",
-    "RANGE_U1FB95_CHECKERBOARD_FILL",
+    "RANGE_U1FB95_CHECKER_BOARD_FILLS",
     "RANGE_U1FB9A_TRIANGULAR_HALF_BLOCKS",
     "RANGE_U1FBCE_THIRD_BLOCKS",
     "RANGE_U1FBE4_CENTER_QUADRANTS",
@@ -27,7 +27,7 @@ RANGE_U1FB00_BLOCK_SEXTANTS         = range(0x1fb00, 0x1fb3c) # draw-block-sexta
 RANGE_U1FB3C_MOSAICS                = range(0x1fb3c, 0x1fb70) # draw-mosaics.py
 RANGE_U1FB70_ONE_EIGHTH_BLOCKS      = range(0x1fb70, 0x1fb8c) # draw-block-elements.py
 RANGE_U1FB8C_RECTANGULAR_SHADES     = range(0x1fb8c, 0x1fb95) # draw-block-elements.py
-RANGE_U1FB95_CHECKERBOARD_FILL      = range(0x1fb95, 0x1fb96) # draw-block-elements.py
+RANGE_U1FB95_CHECKER_BOARD_FILLS    = range(0x1fb95, 0x1fb97) # draw-block-elements.py
 RANGE_U1FB9A_TRIANGULAR_HALF_BLOCKS = range(0x1fb9a, 0x1fb9c) # draw-mosaics.py
 RANGE_U1FBCE_THIRD_BLOCKS           = range(0x1fbce, 0x1fbd0) # draw-block-elements.py
 RANGE_U1FBE4_CENTER_QUADRANTS       = range(0x1fbe4, 0x1fbe8) # draw-block-elements.py
@@ -43,7 +43,7 @@ GENERATED_GLYPH_CODES = [
         list(RANGE_U1FB3C_MOSAICS) +
         list(RANGE_U1FB70_ONE_EIGHTH_BLOCKS) +
         list(RANGE_U1FB8C_RECTANGULAR_SHADES) +
-        list(RANGE_U1FB95_CHECKERBOARD_FILL) +
+        list(RANGE_U1FB95_CHECKER_BOARD_FILLS) +
         list(RANGE_U1FB9A_TRIANGULAR_HALF_BLOCKS) +
         list(RANGE_U1FBCE_THIRD_BLOCKS) +
         list(RANGE_U1FBE4_CENTER_QUADRANTS) +
