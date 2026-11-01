@@ -132,6 +132,38 @@ class CharData:
             "(no char)"
         )
 
+class GlyphCodeCharData(CharData):
+    def __init__(self, code):
+        super().__init__()
+        if is_valid_code(code):
+            name = fontforge.nameFromUnicode(code)
+        else:
+            name = "???"
+        self.code                 = code
+        self.variant              = ""
+        self.orig_glyph_name      = name
+        self.orig_base_glyph_name = name
+        self.norm_glyph_name      = name
+        self.norm_base_glyph_name = name
+        self.svg_filename         = None
+        self.glyph                = None
+        self.name_is_arbitrary    = False
+        self.u_code               = u(code)
+        self.u_orig_code          = u(code)
+        self.orig_code            = code
+        self.orig_encoding        = None
+        self.orig_altuni          = None
+        self.font_path            = None
+        self.norm_code            = code
+        self.u_norm_code          = u(code)
+        self.key                  = name
+        self.font_weight          = None
+        self.font_familyname      = None
+        self.font_fullname        = None
+        self.font_fontname        = None
+        self.is_special           = false
+        self.trace                = None
+
 class GlyphNameCharData(CharData):
     def __init__(self, name):
         super().__init__()
