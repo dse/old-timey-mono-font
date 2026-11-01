@@ -37,10 +37,7 @@ def main():
     smol_glyph_list, smol_glyph_dict = index_glyph_names(smol_glyph_names)
 
     for item in [*verified_svg_list, *smol_glyph_list]:
-        if type(item) is str:
-            glyph = font.createChar(-1, item)
-        else:
-            glyph = font.createChar(item.code, item.norm_glyph_name)
+        glyph = font.createChar(item.code, item.norm_glyph_name)
         if len(glyph.references) and len(glyph.foreground):
             raise Exception(f"glyph {glyph.glyphname} contains both contours AND references")
         if not len(glyph.foreground):
