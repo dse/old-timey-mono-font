@@ -5,10 +5,6 @@ from .char_data import SVGCharData, GlyphCharData, GlyphNameCharData
 
 def index_svg_filenames(filenames, verbose=False):
     svg_list = [parse_svg_filename(filename, verbose=verbose) for filename in filenames]
-    svg_list = [
-        item for item in svg_list
-        if item.orig_glyph_name not in [".notdef", "nonmarkingreturn", ".null"]
-    ]
     svg_dict = {}
     for item in svg_list:
         if verbose:
@@ -28,10 +24,6 @@ def parse_svg_filename(svg_filename, verbose=False):
 
 def index_glyphs(font, verbose=False):
     glyph_list = [parse_glyph_name(glyph.glyphname, verbose=verbose) for glyph in font.glyphs()]
-    glyph_list = [
-        item for item in glyph_list
-        if item.orig_glyph_name not in [".notdef", "nonmarkingreturn", ".null"]
-    ]
     glyph_dict = {}
     for item in glyph_list:
         if verbose:

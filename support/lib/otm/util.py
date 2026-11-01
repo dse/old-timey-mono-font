@@ -48,12 +48,6 @@ def draw_rel_circle(glyph, center, r, withershins=False, debug=False):
 def get_font_glyph_width(font):
     glyphs = []
     for glyph in font.glyphs():
-        if glyph.glyphname == ".notdef":
-            continue
-        if glyph.glyphname == ".null":
-            continue
-        if glyph.glyphname == "nonmarkingreturn":
-            continue
         if glyph.width == 0:
             continue
         glyphs.append(glyph)

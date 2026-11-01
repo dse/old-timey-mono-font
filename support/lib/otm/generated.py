@@ -98,16 +98,3 @@ NON_GRAPHIC_CODES = [
     0x1680,                       # OGHAM SPACE MARK
     0xfeff,              # ZERO WIDTH NO-BREAK SPACE (BYTE ORDER MARK)
 ]
-
-# the first three glyphs in the font IN ORDER
-SPECIAL_GLYPH_NAMES = [
-    ".notdef",
-    ".null",
-    "nonmarkingreturn"
-]
-
-SPECIAL_GLYPH_CODES = {
-    ".notdef": 0,
-    ".null": 0,
-    "nonmarkingreturn": 0x000d,
-}

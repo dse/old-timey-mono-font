@@ -4,7 +4,7 @@ import fontforge, argparse, os, sys, unicodedata, json
 
 sys.path.append(os.path.join(os.path.dirname(__file__), "..", "lib"))
 
-from otm.generated import GENERATED_GLYPH_CODES, SMOL_GLYPH_CODES, GENERATED_SPACE_CODES, SPECIAL_GLYPH_NAMES
+from otm.generated import GENERATED_GLYPH_CODES, SMOL_GLYPH_CODES, GENERATED_SPACE_CODES
 from otm.util import is_valid_code, walk_svg
 from otm.index import parse_glyph_name, parse_svg_filename
 
@@ -42,12 +42,7 @@ def main():
 
     matched_svg_items = [parse_svg_filename(filename) for filename in svg_filenames]
 
-    special_items = [
-        parse_glyph_name(name) for name in SPECIAL_GLYPH_NAMES
-    ]
-
     items = [
-        *special_items,
         *reference_items,
         *generated_items,
         *smol_items,
@@ -62,7 +57,7 @@ def main():
         norm_code = item.norm_code if is_valid_code(item.norm_code) else float('inf')
         name      = item.norm_glyph_name
         variant   = item.variant
-        return (0 if item.is_special else 1, variant, code, norm_code, name)
+        return (variant, code, norm_code, name)
 
     items.sort(key=items_key_fn)
 
@@ -73,10 +68,7 @@ def main():
         #     # fill-slots-in-order.py
         #     raise Exception("WHEEEEE")
         glyph = font.createChar(item.code, item.norm_glyph_name)
-        if glyph.glyphname in [".null", "nonmarkingreturn"]:
-            glyph.width = 0
-        else:
-            glyph.width = DEFAULT_GLYPH_WIDTH
+        glyph.width = DEFAULT_GLYPH_WIDTH
         glyph.changed = True
 
     print(f"createChar FFFF -1 DUMMY")

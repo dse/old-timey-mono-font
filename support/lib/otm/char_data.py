@@ -1,7 +1,6 @@
 import os, re, fontforge
 
 from otm.util import u, is_valid_code
-from otm.generated import SPECIAL_GLYPH_NAMES, SPECIAL_GLYPH_CODES
 
 ATTRS = [
     "code",
@@ -26,7 +25,6 @@ ATTRS = [
     "font_familyname",
     "font_fullname",
     "font_fontname",
-    "is_special",
     "trace",
 ]
 
@@ -87,7 +85,6 @@ class CharData:
         """
         for attr in ATTRS:
             setattr(self, attr, None)
-            self.is_special = False
             self.name_is_arbitrary = False
             self.variant = ""
             self.code = -1
@@ -161,39 +158,11 @@ class GlyphCodeCharData(CharData):
         self.font_familyname      = None
         self.font_fullname        = None
         self.font_fontname        = None
-        self.is_special           = false
         self.trace                = None
 
 class GlyphNameCharData(CharData):
     def __init__(self, name):
         super().__init__()
-
-        if name in SPECIAL_GLYPH_NAMES:
-            self.is_special = True
-            self.code = SPECIAL_GLYPH_CODES[name]
-            self.orig_code = self.code
-            self.norm_code = self.code
-            self.u_code = u(self.code)
-            self.u_orig_code = u(self.code)
-            self.u_norm_code = u(self.code)
-            self.variant = ""
-            self.orig_glyph_name = name
-            self.orig_base_glyph_name = name
-            self.norm_glyph_name = name
-            self.norm_base_glyph_name = name
-            self.name_is_arbitrary = False
-            # self.orig_encoding =
-            # self.orig_altuni =
-            # self.font_path =
-            # self.font_weight =
-            # self.font_familyname =
-            # self.font_fullname =
-            # self.font_fontname =
-
-            # make sure these are first (HACK)
-            self.key = "!" + str(SPECIAL_GLYPH_NAMES.index(name))
-            return None
-
         name_is_arbitrary = False
         if match := re.fullmatch(r'([0-9A-Fa-f]{4,})(\.[^\.]+)', name):
             self.trace = 1
