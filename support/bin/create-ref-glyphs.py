@@ -6,6 +6,7 @@ sys.path.append(os.path.join(os.path.dirname(__file__), "..", "lib"))
 
 from otm.index import index_svg_filenames, index_glyphs, verify_glyphs
 from otm.util import walk_svg
+from otm.parse import parse_glyph_name
 
 def main():
     parser = argparse.ArgumentParser()
@@ -24,7 +25,12 @@ def main():
         new_references_dict = {}
         glyph_created_count = 0
         for glyphname, refdata1 in references_dict.items():
-            if glyphname in font and len(glyph.foreground):
+
+            parse_result = parse_glyph_name(glyphname)
+            code = parse_result.code
+            name = parse_result.norm_glyph_name
+
+            if name in font and len(font[name].foreground):
                 raise Exception(f"glyph {glyphname} already contains contours; skipping")
             glyph_references = []
             skip_this_glyph = False
@@ -72,17 +78,16 @@ def main():
             else:
                 raise Exception(f"unknown refdata1 type: {repr(type(refdata2))}")
             if skip_this_glyph:
-                new_references_dict[glyphname] = refdata1
+                new_references_dict[name] = refdata1
                 continue
             if not len(glyph_references):
                 continue
 
             glyph_created_count += 1
-            glyph = font.createChar(fontforge.unicodeFromName(glyphname), glyphname)
+            glyph = font.createChar(code, name)
             glyph.width = round(glyph_width)
             for ref in glyph_references:
                 glyph.addReference(*ref)
-
 
         if not glyph_created_count:
             break
