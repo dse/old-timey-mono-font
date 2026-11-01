@@ -1,4 +1,4 @@
-import fontforge, os, re
+import fontforge, os, re, sys
 from otm.generated import GENERATED_GLYPH_CODES, GENERATED_SPACE_CODES, NON_GRAPHIC_CODES
 from types import SimpleNamespace
 from .char_data import SVGCharData, GlyphCharData, GlyphNameCharData
@@ -14,7 +14,8 @@ def index_svg_filenames(filenames, verbose=False):
         if verbose:
             print("index_svg_filenames: " + str(item))
         if item.key in svg_dict:
-            raise KeyError(f"{repr(item.key)} already in svg_dict:\n{item}")
+            sys.stderr.write(f"NEW ITEM: {item}\nOLD ITEM: {svg_dict[item.key]}\n")
+            raise KeyError(f"{repr(item.key)} already in svg_dict:\n")
         else:
             svg_dict[item.key] = item
     return svg_list, svg_dict
@@ -36,7 +37,8 @@ def index_glyphs(font, verbose=False):
         if verbose:
             print("index_glyphs: " + str(item))
         if item.key in glyph_dict:
-            raise KeyError(f"{repr(item.key)} already in glyph_dict:\n{item}")
+            sys.stderr.write(f"NEW ITEM: {item}\nOLD ITEM: {glyph_dict[item.key]}\n")
+            raise KeyError(f"{repr(item.key)} already in glyph_dict:")
             pass
         else:
             glyph_dict[item.key] = item
@@ -49,7 +51,8 @@ def index_glyph_names(glyph_names):
         item = GlyphNameCharData(glyph_name)
         named_glyph_list.append(item)
         if item.key in named_glyph_dict:
-            raise KeyError(f"{repr(item.key)} already in named_glyph_dict:\n{item}")
+            sys.stderr.write(f"NEW ITEM: {item}\nOLD ITEM: {named_glyph_dict[item.key]}\n")
+            raise KeyError(f"{repr(item.key)} already in named_glyph_dict:")
         else:
             named_glyph_dict[item.key] = item
     return named_glyph_list, named_glyph_dict
@@ -83,14 +86,16 @@ def verify_glyphs(svg_list, svg_dict, glyph_list, glyph_dict, verbose=False):
             success = False
             svg_only_list.append(item)
             if item.key in svg_only_dict:
-                raise KeyError(f"{repr(item.key)} already in svg_only_dict:\n{item}")
+                sys.stderr.write(f"NEW ITEM: {item}\nOLD ITEM: {svg_only_dict[item.key]}\n")
+                raise KeyError(f"{repr(item.key)} already in svg_only_dict:")
                 pass
             else:
                 svg_only_dict[item.key] = item
         else:
             verified_svg_list.append(item)
             if item.key in verified_glyph_dict:
-                raise KeyError(f"{repr(item.key)} already in verified_svg_dict:\n{item}")
+                sys.stderr.write(f"NEW ITEM: {item}\nOLD ITEM: {verified_glyph_dict[item.key]}\n")
+                raise KeyError(f"{repr(item.key)} already in verified_svg_dict:")
                 pass
             else:
                 verified_svg_dict[item.key] = item
@@ -102,7 +107,9 @@ def verify_glyphs(svg_list, svg_dict, glyph_list, glyph_dict, verbose=False):
             continue
 
         glyph = item.glyph
-        if len(glyph.references):
+        if glyph is None:
+            pass
+        elif len(glyph.references):
             if len(glyph.foreground):
                 if verbose:
                     print("verify_glyphs: " + str(item) + " -- contains both references AND contours")
@@ -113,14 +120,16 @@ def verify_glyphs(svg_list, svg_dict, glyph_list, glyph_dict, verbose=False):
             success = False
             glyph_only_list.append(item)
             if item.key in glyph_only_dict:
-                raise KeyError(f"{repr(item.key)} already in glyph_only_dict:\n{item}")
+                sys.stderr.write(f"NEW ITEM: {item}\nOLD ITEM: {glyph_only_dict[item.key]}\n")
+                raise KeyError(f"{repr(item.key)} already in glyph_only_dict:")
                 pass
             else:
                 glyph_only_dict[item.key] = item
         else:
             verified_glyph_list.append(item)
             if item.key in verified_glyph_dict:
-                raise KeyError(f"{repr(item.key)} already in verified_glyph_dict:\n{item}")
+                sys.stderr.write(f"NEW ITEM: {item}\nOLD ITEM: {verified_glyph_dict[item.key]}\n")
+                raise KeyError(f"{repr(item.key)} already in verified_glyph_dict:")
                 pass
             else:
                 verified_glyph_dict[item.key] = item
