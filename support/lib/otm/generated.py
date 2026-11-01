@@ -1,3 +1,5 @@
+import unicodedata
+
 __all__ = [
     "U2500_BOX_DRAWING",
     "U2580_BLOCK_ELEMENTS",
@@ -13,6 +15,7 @@ __all__ = [
     "U1FBF0_BLOCK_SEXTANTS",
     "UFAF00_PUA_EXTRAS",
     "GENERATED_GLYPH_CODES",
+    "SMOL_GLYPH_CODES",
 ]
 
 U2500_BOX_DRAWING             = range(0x2500, 0x2580) # draw-box-drawing.py
