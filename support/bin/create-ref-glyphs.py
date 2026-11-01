@@ -85,6 +85,9 @@ def main():
 
             glyph_created_count += 1
             glyph = font.createChar(code, name)
+            if len(glyph.foreground):
+                raise Exception(f"existing glyph {glyph.glyphname} contains contours!")
+            glyph.references = ()
             glyph.width = round(glyph_width)
             for ref in glyph_references:
                 glyph.addReference(*ref)
