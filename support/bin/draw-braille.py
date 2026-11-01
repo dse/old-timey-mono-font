@@ -2,7 +2,7 @@
 # -*- mode: python; coding: utf-8 -*-
 import fontforge, argparse, unicodedata, math, os, sys, json
 
-sys.path.append(os.path.dirname(__file__) + "/../lib")
+sys.path.append(os.path.join(os.path.dirname(__file__), "..", "lib"))
 
 from otm.util import draw_dot, get_font_glyph_width, remove_glyphs, initialize_glyphs, finalize_glyphs
 from otm.constants import KAPPA

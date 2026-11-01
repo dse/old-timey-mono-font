@@ -2,10 +2,7 @@
 # -*- mode: python; coding: utf-8 -*-
 import fontforge, argparse, os, sys
 
-import os, sys
-dir = os.path.dirname(__file__) + "/../lib"
-if dir not in sys.path:
-    sys.path.append(dir)
+sys.path.append(os.path.join(os.path.dirname(__file__), "..", "lib"))
 
 import otm
 from otm.util import draw_rect, draw_rel_rect, get_font_glyph_width, draw_circle, remove_glyphs, initialize_glyphs, finalize_glyphs

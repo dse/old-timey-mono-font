@@ -1,11 +1,8 @@
 #!/usr/bin/env -S fontforge -quiet -lang=py -script
 # -*- mode: python; coding: utf-8 -*-
-import fontforge, argparse, unicodedata, math
+import fontforge, argparse, unicodedata, math, os, sys
 
-import os, sys
-dir = os.path.dirname(__file__) + "/../lib"
-if dir not in sys.path:
-    sys.path.append(dir)
+sys.path.append(os.path.join(os.path.dirname(__file__), "..", "lib"))
 
 from otm.util import draw_rect, get_font_glyph_width, remove_glyphs, initialize_glyphs, finalize_glyphs
 from otm.constants import KAPPA

@@ -1,9 +1,11 @@
 #!/usr/bin/env -S fontforge -quiet -lang=py -script
 # -*- mode: python; coding: utf-8 -*-
-import fontforge, argparse, glob, os, re, json, unicodedata, statistics
+import fontforge, argparse, glob, os, sys, re, json, unicodedata, statistics
 
 sys.path.append(os.path.join(os.path.dirname(__file__), "..", "lib"))
-from otm.index import index_svg_filenames, index_glyphs, verify_glyphs, walk_svg
+
+from otm.index import index_svg_filenames, index_glyphs, verify_glyphs
+from otm.util import walk_svg
 
 def main():
     parser = argparse.ArgumentParser()

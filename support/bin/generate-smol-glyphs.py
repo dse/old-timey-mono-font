@@ -1,6 +1,8 @@
 #!/usr/bin/env -S fontforge -quiet -lang=py -script
 # -*- mode: python; coding: utf-8 -*-
-import fontforge, argparse, glob, os, re, json, unicodedata
+import fontforge, argparse, glob, os, sys, re, json, unicodedata, statistics
+
+sys.path.append(os.path.join(os.path.dirname(__file__), "..", "lib"))
 
 DEFAULT_STROKE_WIDTH = 96
 SMOL_STROKE_WIDTH = 72

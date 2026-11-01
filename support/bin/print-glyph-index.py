@@ -1,9 +1,9 @@
 #!/usr/bin/env -S fontforge -quiet -lang=py -script
 # -*- mode: python; coding: utf-8 -*-
-
 import fontforge, argparse, glob, os, sys, re, json
 
 sys.path.append(os.path.join(os.path.dirname(__file__), "..", "lib"))
+
 from otm.index import index_glyphs
 from otm.util import walk_svg
 
