@@ -69,10 +69,6 @@ def main():
     widths.sort()
     glyph_width = statistics.median(widths)
 
-    smol_glyphnames = [glyph.glyphname for glyph in font.glyphs() if glyph.glyphname.endswith(".SMOL")]
-    for glyphname in smol_glyphnames:
-        font.removeGlyph(glyphname)
-
     for code in SMOL_GLYPH_CODES:
         plain_glyphname = fontforge.nameFromUnicode(code)
         source_glyphname = fontforge.nameFromUnicode(code)
