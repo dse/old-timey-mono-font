@@ -1,8 +1,7 @@
 import fontforge, os, re
-from otm.generated import GENERATED_GLYPH_CODES
+from otm.generated import GENERATED_GLYPH_CODES, GENERATED_SPACE_CODES, NON_GRAPHIC_CODES
 from types import SimpleNamespace
 from .char_data import SVGCharData, GlyphCharData, GlyphNameCharData
-from .constants import SPACES
 
 def index_svg_filenames(filenames, verbose=False):
     svg_list = [parse_svg_filename(filename, verbose=verbose) for filename in filenames]
@@ -142,7 +141,7 @@ def noindex(item):
     code = item.code
     return (
         glyphname.endswith(".SMOL") or
-        code in SPACES or
+        code in GENERATED_SPACE_CODES or
+        code in NON_GRAPHIC_CODES or
         code in GENERATED_GLYPH_CODES
     )
-

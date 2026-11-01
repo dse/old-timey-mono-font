@@ -16,6 +16,8 @@ __all__ = [
     "UFAF00_PUA_EXTRAS",
     "GENERATED_GLYPH_CODES",
     "SMOL_GLYPH_CODES",
+    "GENERATED_SPACE_CODES",
+    "NON_GRAPHIC_CODES",
 ]
 
 U2500_BOX_DRAWING             = range(0x2500, 0x2580) # draw-box-drawing.py
@@ -61,7 +63,8 @@ SMOL_GLYPH_CODES = [
     ord(unicodedata.lookup("GREEK SMALL LETTER CHI")),
 ]
 
-SPACE_CODES = [
+# ones we populate
+GENERATED_SPACE_CODES = [
     0x0020,                       # SPACE
     0x00a0,                       # NO-BREAK SPACE
     0x2000,                       # EN QUAD
@@ -75,7 +78,7 @@ SPACE_CODES = [
 ]
 
 NON_GRAPHIC_CODES = [
-    *SPACE_CODES,
+    *GENERATED_SPACE_CODES,
     *list(range(0x0000, 0x0020)), # C0 controls
     0x007f,                       # "
     *list(range(0x0080, 0x00a0)), # C1 controls
