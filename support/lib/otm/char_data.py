@@ -1,6 +1,7 @@
 import os, re, fontforge
 
 from otm.util import u, is_valid_code
+from otm.generated import SPECIAL_GLYPH_NAMES, SPECIAL_GLYPH_CODES
 
 ATTRS = [
     "code",
@@ -25,10 +26,15 @@ ATTRS = [
     "font_familyname",
     "font_fullname",
     "font_fontname",
+    "is_special",
+    "trace",
 ]
 
 class CharData:
+    id = 0
     def __init__(self, item=None):
+        CharData.id += 1
+        self.id = CharData.id
         """Object constructor.
 
         if a CharData object is passed as the item parameter, clone
@@ -81,6 +87,15 @@ class CharData:
         """
         for attr in ATTRS:
             setattr(self, attr, None)
+            self.is_special = False
+            self.name_is_arbitrary = False
+            self.variant = ""
+            self.code = -1
+            self.orig_code = self.code
+            self.norm_code = self.code
+            self.u_code = u(self.code)
+            self.u_orig_code = u(self.code)
+            self.u_norm_code = u(self.code)
         if item is None:
             pass
         elif type(item) in [list, tuple]:
@@ -107,7 +122,7 @@ class CharData:
         orig_name = self.orig_glyph_name
         u_code = self.u_code
         u_orig_code = self.u_orig_code
-        return f"KEY={name:<24s} ({orig_name:<24s}) {u_code:<8s} ({u_orig_code:<8s})"
+        return f"<{self.__class__.__name__}> [{self.id:4d}] KEY={name:<24s} ({orig_name:<24s}) {u_code:<8s} ({u_orig_code:<8s})"
     def as_char(self):
         return (
             chr(self.norm_code)
@@ -120,8 +135,36 @@ class CharData:
 class GlyphNameCharData(CharData):
     def __init__(self, name):
         super().__init__()
+
+        if name in SPECIAL_GLYPH_NAMES:
+            self.is_special = True
+            self.code = SPECIAL_GLYPH_CODES[name]
+            self.orig_code = self.code
+            self.norm_code = self.code
+            self.u_code = u(self.code)
+            self.u_orig_code = u(self.code)
+            self.u_norm_code = u(self.code)
+            self.variant = ""
+            self.orig_glyph_name = name
+            self.orig_base_glyph_name = name
+            self.norm_glyph_name = name
+            self.norm_base_glyph_name = name
+            self.name_is_arbitrary = False
+            # self.orig_encoding =
+            # self.orig_altuni =
+            # self.font_path =
+            # self.font_weight =
+            # self.font_familyname =
+            # self.font_fullname =
+            # self.font_fontname =
+
+            # make sure these are first (HACK)
+            self.key = "!" + str(SPECIAL_GLYPH_NAMES.index(name))
+            return None
+
         name_is_arbitrary = False
         if match := re.fullmatch(r'([0-9A-Fa-f]{4,})(\.[^\.]+)', name):
+            self.trace = 1
             code = -1
             norm_code = int(match[1], 16)
             variant = match[2]
@@ -131,6 +174,7 @@ class GlyphNameCharData(CharData):
             norm_glyph_name      = char_name + variant
             norm_base_glyph_name = char_name
         elif match := re.fullmatch(r'[0-9A-Fa-f]{4,}', name):
+            self.trace = 2
             code = int(name, 16)
             norm_code = code
             variant = ""
@@ -146,10 +190,12 @@ class GlyphNameCharData(CharData):
             code = -1
             norm_code = fontforge.unicodeFromName(match[1])
             if norm_code < 0:
+                self.trace = 3
                 norm_glyph_name      = match[1] + variant
                 norm_base_glyph_name = match[1]
                 name_is_arbitrary    = True
             else:
+                self.trace = 4
                 char_name = fontforge.nameFromUnicode(norm_code)
                 norm_glyph_name      = char_name + variant
                 norm_base_glyph_name = char_name
@@ -160,10 +206,12 @@ class GlyphNameCharData(CharData):
             code = fontforge.unicodeFromName(match[1])
             norm_code = code
             if code < 0:
+                self.trace = 5
                 norm_glyph_name      = match[1] + variant
                 norm_base_glyph_name = match[1]
                 name_is_arbitrary    = True
             else:
+                self.trace = 6
                 char_name            = fontforge.nameFromUnicode(norm_code)
                 norm_glyph_name      = char_name + variant
                 norm_base_glyph_name = char_name
@@ -190,7 +238,7 @@ class GlyphNameCharData(CharData):
         self.font_path            = None
     def __str__(self):
         substr = super().__str__()
-        return f"NAMED:  {substr} from {self.svg_filename} => {self.as_createchar_call()}"
+        return f"NAMED:  (trace={self.trace}) {substr} from {self.svg_filename} => {self.as_createchar_call()}"
     def as_createchar_call(self):
         return f"font.createChar({repr(self.code)}, {repr(self.norm_glyph_name)}) # {repr(self.as_char())}"
 
