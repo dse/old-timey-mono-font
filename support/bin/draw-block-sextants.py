@@ -89,7 +89,6 @@ def main():
         font.save(args.filename)
     else:
         font.generate(args.filename)
-
     font.close()
 
 def draw_block_sextant(glyph):

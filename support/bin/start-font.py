@@ -94,5 +94,6 @@ def main():
         font.save(args.filename)
     else:
         font.generate(args.filename)
+    font.close()
 
 main()

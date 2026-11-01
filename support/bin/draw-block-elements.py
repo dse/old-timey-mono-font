@@ -124,7 +124,6 @@ def main():
         font.save(args.filename)
     else:
         font.generate(args.filename)
-
     font.close()
 
 def draw_2580(glyph): draw_rel_rect(glyph, 0, 0.5, 1, 1)

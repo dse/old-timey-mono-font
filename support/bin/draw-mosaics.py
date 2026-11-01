@@ -93,7 +93,6 @@ def main():
         font.save(args.filename)
     else:
         font.generate(args.filename)
-
     font.close()
 
 A = (0   ,0   )                 # J K L
