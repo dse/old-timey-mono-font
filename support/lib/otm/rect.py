@@ -5,6 +5,8 @@ from otm.clamp import clamp
 def rect_contour(glyph, x1, y1, x2, y2, withershins=False):
     contour = fontforge.contour()
     contour.closed = True
+    (x1, x2) = (min(x1, x2), max(x1, x2))
+    (y1, y2) = (min(y1, y2), max(y1, y2))
     if withershins:
         contour.moveTo(x1, y1)
         contour.lineTo(x2, y1)
