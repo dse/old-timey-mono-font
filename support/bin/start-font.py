@@ -83,13 +83,6 @@ def main():
     if "panose" in font_data:
         font.os2_panose = tuple(font_data["panose"])
 
-    font.createChar(32).width = font_data["width"]
-    font.createChar(33).width = font_data["width"]
-    font.createChar(34).width = font_data["width"]
-    font.createChar(35).width = font_data["width"]
-    font.createChar(-1, ".notdef").width = font_data["width"]
-
-
     if args.filename.lower().endswith(".sfd"):
         font.save(args.filename)
     else:
