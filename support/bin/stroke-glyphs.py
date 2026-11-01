@@ -67,7 +67,7 @@ def main():
             stroke_width = DEFAULT_STROKE_WIDTH
         if not stroke_width:
             continue
-        fill = item.code in FILL_GLYPHS
+        fill = item.code in FILL_GLYPHS or glyph.glyphname in FILL_GLYPHS
         glyph.stroke("circular", stroke_width, removeinternal=fill)
 
     if args.filename.endswith('.sfd'):
@@ -139,6 +139,8 @@ FILL_GLYPHS = [
     ord("."),
     ord("'"),
     ord("!"),
+    "uni0308.LCCM",             # diaeresis
+    "uni0307.LCCM",             # dot above
 ]
 
 main()
