@@ -62,7 +62,11 @@
         "Amacron":              ["uni0304", "A"],
         "Aogonek":              [["uni0328", [{"op":"translate","dx":304.0,"dy":-0.2667}]], "A"],
         "Aring":                ["uni030A", "A"],
-        "Aringacute":           [["acutecomb", [{"op":"translate","dx":-16.0,"dy":250.0}]], "Aring"],
+        "Aringacute":           [
+            "A",
+            ["uni030A.LCC2", [{"op":"translate","dx":-16.0,"dy":130.0}]],
+            ["acutecomb", [{"op":"translate","dx":-16.0,"dy":180.0}]]
+        ],
         "Atilde":               ["tildecomb", "A"],
         "Beta":                 "B",
         "Cacute":               [["acutecomb", [{"op":"translate","dx":20.0,"dy":0.0}]], "C"],
@@ -179,7 +183,11 @@
         "anoteleia":            "periodcentered",
         "aogonek":              [["uni0328", [{"op":"translate","dx":312.0,"dy":-20.2667}]], "a"],
         "aring":                [["uni030A.LCCM", [{"op":"translate","dx":-80.0,"dy":0.0}]], "a"],
-        "aringacute":           [["acutecomb", [{"op":"translate","dx":-113.0,"dy":118.0}]], "aring"],
+        "aringacute": [
+            "a",
+            ["uni030A.LCC2", [{"op":"translate","dx":-105.0,"dy":0.0}]],
+            ["acutecomb", [{"op":"translate","dx":-113.0,"dy":53.0}]]
+        ],
         "atilde":               [["tildecomb.LCCM", [{"op":"translate","dx":-80.0,"dy":0.0}]], "a"],
         "breve":                [["uni0306", [{"op":"translate","dx":0.0,"dy":-1004.09}]]],
         "cacute":               ["acutecomb.LCCM", "c"],
@@ -304,7 +312,7 @@
         "uni00B2":              [["two.SMOL", [{"op":"translate","dx":0.0,"dy":636.0}]]],
         "uni00B3":              [["three.SMOL", [{"op":"translate","dx":0.0,"dy":636.0}]]],
         "uni00B9":              [["one.SMOL", [{"op":"translate","dx":0.0,"dy":636.0}]]],
-        "uni0122":              [["uni0326", [{"op":"translate","dx":-37.9443,"dy":-62.0}]], "G"],
+        "uni0122":              [["uni0326", [{"op":"translate","dx":-37.9443,"dy":-24}]], "G"],
         "uni0123":              [["uni0312.LCCM", [{"op":"translate","dx":-60.0,"dy":-190.0}]], "g"],
         "uni0136":              [["uni0326", [{"op":"translate","dx":7.73389,"dy":-10.0}]], "K"],
         "uni0137":              [["uni0326", [{"op":"translate","dx":-0.487793,"dy":-10.0}]], "k"],
@@ -328,18 +336,41 @@
         "uni01D2":              ["uni030C.LCCM", "o"],
         "uni01D3":              ["uni030C", "U"],
         "uni01D4":              [["uni030C.LCCM", [{"op":"translate","dx":-30.0,"dy":0.0}]], "u"],
-        "uni01D5":              [["uni0304", [{"op":"translate","dx":0.0,"dy":232.0}]], "Udieresis"],
+        "uni01D5": [
+            ["U", [{"op":"translate","dx":0.0,"dy":0.0}]],
+            ["dieresis", [{"op":"translate","dx":0.0,"dy":130.0}]],
+            ["uni0304", [{"op":"translate","dx":4.0,"dy":134.0}]]
+        ],
         "uni01D6":              [["uni0304", [{"op":"translate","dx":-40.0,"dy":-8.0}]], "udieresis"],
-        "uni01D7":              [["acutecomb", [{"op":"translate","dx":4.0,"dy":244.0}]], ["Udieresis", [{"op":"translate","dx":0.0,"dy":-20.0}]]],
+        "uni01D7": [
+            ["U", [{"op":"translate","dx":0.0,"dy":0.0}]],
+            ["dieresis", [{"op":"translate","dx":0.0,"dy":130.0}]],
+            ["acutecomb", [{"op":"translate","dx":4.0,"dy":214.0}]]
+        ],
         "uni01D8":              [["acutecomb", [{"op":"translate","dx":-36.0,"dy":4.0}]], "udieresis"],
-        "uni01D9":              [["uni030C", [{"op":"translate","dx":0.0,"dy":264.0}]], "Udieresis"],
+        "uni01D9": [
+            ["U", [{"op":"translate","dx":0.0,"dy":0.0}]],
+            ["dieresis", [{"op":"translate","dx":0.0,"dy":130.0}]],
+            ["uni030C", [{"op":"translate","dx":0.0,"dy":144.0}]]
+        ],
         "uni01DA":              [["uni030C", [{"op":"translate","dx":-20.0,"dy":4.0}]], "udieresis"],
-        "uni01DB":              [["gravecomb", [{"op":"translate","dx":-4.0,"dy":264.0}]], "Udieresis"],
+        "uni01DB": [
+            ["U", [{"op":"translate","dx":0.0,"dy":0.0}]],
+            ["dieresis", [{"op":"translate","dx":0.0,"dy":130.0}]],
+            ["gravecomb", [{"op":"translate","dx":-4.0,"dy":219.0}]]
+        ],
         "uni01DC":              [["gravecomb", [{"op":"translate","dx":-44.0,"dy":-16.0}]], "udieresis"],
         "uni01DD":              [["e", [{"op":"scale","x":-1,"y":-1,"cx":503.995,"cy":378.0}]]],
-        "uni01DE":              [["uni0304", [{"op":"translate","dx":0.0,"dy":232.0}]], "Adieresis"],
+        "uni01DE": [
+            ["dieresis", [{"op":"translate","dx":0.0,"dy":130.0}]],
+            ["uni0304", [{"op":"translate","dx":0.0,"dy":137.0}]]
+        ],
         "uni01DF":              [["uni0304", [{"op":"translate","dx":-80.0,"dy":-28.0}]], "adieresis"],
-        "uni01E0":              [["uni0304", [{"op":"translate","dx":0.0,"dy":232.0}]], "uni0226"],
+        "uni01E0": [
+            ["A", [{"op":"translate","dx":0.0,"dy":0.0}]],
+            ["uni0304", [{"op":"translate","dx":0.0,"dy":147.0}]],
+            ["uni0307", [{"op":"translate","dx":0.0,"dy":-60.0}]]
+        ],
         "uni01E1":              [["uni0304", [{"op":"translate","dx":-100.0,"dy":-28.0}]], "uni0227"],
         "uni01E2":              [["uni0304", [{"op":"translate","dx":160.0,"dy":0.0}]], "AE"],
         "uni01E3":              ["uni0304.LCCM", "ae"],
@@ -389,13 +420,25 @@
         "uni0227":              [["uni0307.LCCM", [{"op":"translate","dx":-80.0,"dy":0.0}]], "a"],
         "uni0228":              [["uni0327", [{"op":"translate","dx":0.0,"dy":-0.2665}]], "E"],
         "uni0229":              [["uni0327", [{"op":"translate","dx":14.8701,"dy":-20.2665}]], "e"],
-        "uni022A":              [["uni0304", [{"op":"translate","dx":0.0,"dy":252.0}]], "Odieresis"],
+        "uni022A": [
+            "O",
+            ["uni0308", [{"op":"translate","dx":0.0,"dy":-80.0}]],
+            ["uni0304", [{"op":"translate","dx":0.0,"dy":127.0}]]
+        ],
         "uni022B":              [["uni0304", [{"op":"translate","dx":0.0,"dy":-28.0}]], "odieresis"],
-        "uni022C":              [["uni0304", [{"op":"translate","dx":12.0,"dy":276.0}]], "Otilde"],
-        "uni022D":              [["uni0304", [{"op":"translate","dx":32.0,"dy":136.0}]], "otilde"],
+        "uni022C":              [["uni0304", [{"op":"translate","dx":12.0,"dy":236.0}]], "Otilde"],
+        "uni022D": [
+            "o",
+            ["tildecomb", [{"op":"translate","dx":0.0,"dy":-239.0}]],
+            ["uni0304", [{"op":"translate","dx":32.0,"dy":17.0}]]
+        ],
         "uni022E":              ["uni0307", "O"],
         "uni022F":              ["uni0307.LCCM", "o"],
-        "uni0230":              [["uni0304", [{"op":"translate","dx":0.0,"dy":252.0}]], "uni022E"],
+        "uni0230": [
+            "O",
+            ["uni0307", [{"op":"translate","dx":0.0,"dy":-53.0}]],
+            ["uni0304", [{"op":"translate","dx":0.0,"dy":152.0}]]
+        ],
         "uni0231":              [["uni0304", [{"op":"translate","dx":0.0,"dy":-28.0}]], "uni022F"],
         "uni0232":              ["uni0304", "Y"],
         "uni0233":              ["uni0304.LCCM", "y"],
@@ -698,7 +741,7 @@
         "uni1FBB":              [["uni1FFD", [{"op":"translate","dx":-322.0,"dy":-288.0}]], "Alpha"],
         "uni1FBC":              [["uni1FBE", [{"op":"translate","dx":623.0,"dy":336.0}]], "Alpha"],
         "uni1FC0":              [["uni0342", [{"op":"translate","dx":-504.0,"dy":-162.0}]]],
-        "uni1FC1":              [["uni1FC0", [{"op":"translate","dx":504.0,"dy":184.0}]], "dieresis"],
+        "uni1FC1":              [["uni1FC0", [{"op":"translate","dx":584.0,"dy":184.0}]], "dieresis"],
         "uni1FC1.LCCM":         ["uni0342", "uni0308.LCCM"],
         "uni1FC2":              [["uni0345", [{"op":"translate","dx":-188.0,"dy":-126.0}]], "uni1F74"],
         "uni1FC3":              [["uni0345", [{"op":"translate","dx":-188.0,"dy":-126.0}]], "eta"],
