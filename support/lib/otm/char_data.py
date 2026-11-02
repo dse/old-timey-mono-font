@@ -12,8 +12,6 @@ ATTRS = [
     "svg_filename",
     "glyph",
     "orig_code",
-    "orig_encoding",
-    "orig_altuni",
     "norm_code",
     "key",
 ]
@@ -78,8 +76,6 @@ class GlyphCodeCharData(CharData):
         self.svg_filename         = None
         self.glyph                = None
         self.orig_code            = code
-        self.orig_encoding        = None
-        self.orig_altuni          = None
         self.norm_code            = code
         self.key                  = name
 
@@ -144,8 +140,6 @@ class GlyphNameCharData(CharData):
         self.norm_base_glyph_name = norm_base_glyph_name
         self.svg_filename         = None
         self.glyph                = None
-        self.orig_altuni          = None
-        self.orig_encoding        = None
     def __str__(self):
         substr = super().__str__()
         return f"NAMED:  {substr} from {self.svg_filename} => {self.as_createchar_call()}"
@@ -168,8 +162,6 @@ class GlyphCharData(CharData):
 
         orig_glyph_name = glyph.glyphname
         orig_code = glyph.unicode
-        orig_altuni = glyph.altuni
-        orig_encoding = glyph.encoding
 
         if match := re.fullmatch(r'([^\.]+)(\.[^\.]+)', glyph.glyphname):
             orig_base_glyph_name = match[1]
@@ -206,8 +198,6 @@ class GlyphCharData(CharData):
         self.norm_base_glyph_name = norm_base_glyph_name
         self.svg_filename         = None
         self.glyph                = glyph
-        self.orig_altuni          = orig_altuni
-        self.orig_encoding        = orig_encoding
 
         font = self.glyph.font
     def __str__(self):
