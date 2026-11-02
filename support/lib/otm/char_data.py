@@ -5,13 +5,9 @@ from otm.util import u, is_valid_code
 ATTRS = [
     "code",
     "variant",
-    "orig_glyph_name",
-    "orig_base_glyph_name",
     "norm_glyph_name",
-    "norm_base_glyph_name",
     "svg_filename",
     "glyph",
-    "orig_code",
     "norm_code",
     "key",
 ]
@@ -22,7 +18,6 @@ class CharData:
             setattr(self, attr, None)
             self.variant = ""
             self.code = -1
-            self.orig_code = self.code
             self.norm_code = self.code
         if item is None:
             pass
@@ -47,10 +42,8 @@ class CharData:
             yield getattr(self, key)
     def __str__(self):
         name = self.norm_glyph_name
-        orig_name = self.orig_glyph_name
-        u_code      = ("U+%04X" % self.code)      if is_valid_code(self.code)      else str(self.code)
-        u_orig_code = ("U+%04X" % self.orig_code) if is_valid_code(self.orig_code) else str(self.orig_code)
-        return f"<{self.__class__.__name__}> KEY={name:<24s} ({orig_name:<24s}) {u_code:<8s} ({u_orig_code:<8s})"
+        u_code = ("U+%04X" % self.code) if is_valid_code(self.code) else str(self.code)
+        return f"<{self.__class__.__name__}> KEY={name:<24s} {u_code:<8s}"
     def as_char(self):
         return (
             chr(self.norm_code)
@@ -69,13 +62,9 @@ class GlyphCodeCharData(CharData):
             name = "???"
         self.code                 = code
         self.variant              = ""
-        self.orig_glyph_name      = name
-        self.orig_base_glyph_name = name
         self.norm_glyph_name      = name
-        self.norm_base_glyph_name = name
         self.svg_filename         = None
         self.glyph                = None
-        self.orig_code            = code
         self.norm_code            = code
         self.key                  = name
 
@@ -132,12 +121,8 @@ class GlyphNameCharData(CharData):
         self.key                  = norm_glyph_name
         self.code                 = code
         self.norm_code            = norm_code
-        self.orig_code            = None
         self.variant              = variant
-        self.orig_glyph_name      = orig_glyph_name
-        self.orig_base_glyph_name = orig_base_glyph_name
         self.norm_glyph_name      = norm_glyph_name
-        self.norm_base_glyph_name = norm_base_glyph_name
         self.svg_filename         = None
         self.glyph                = None
     def __str__(self):
@@ -190,12 +175,8 @@ class GlyphCharData(CharData):
 
         self.code                 = code
         self.norm_code            = norm_code
-        self.orig_code            = orig_code
         self.variant              = variant
-        self.orig_glyph_name      = orig_glyph_name
-        self.orig_base_glyph_name = orig_base_glyph_name
         self.norm_glyph_name      = norm_glyph_name
-        self.norm_base_glyph_name = norm_base_glyph_name
         self.svg_filename         = None
         self.glyph                = glyph
 
