@@ -14,7 +14,6 @@ ATTRS = [
     "orig_code",
     "orig_encoding",
     "orig_altuni",
-    "font_path",
     "norm_code",
     "key",
 ]
@@ -81,7 +80,6 @@ class GlyphCodeCharData(CharData):
         self.orig_code            = code
         self.orig_encoding        = None
         self.orig_altuni          = None
-        self.font_path            = None
         self.norm_code            = code
         self.key                  = name
 
@@ -148,7 +146,6 @@ class GlyphNameCharData(CharData):
         self.glyph                = None
         self.orig_altuni          = None
         self.orig_encoding        = None
-        self.font_path            = None
     def __str__(self):
         substr = super().__str__()
         return f"NAMED:  {substr} from {self.svg_filename} => {self.as_createchar_call()}"
@@ -213,7 +210,6 @@ class GlyphCharData(CharData):
         self.orig_encoding        = orig_encoding
 
         font = self.glyph.font
-        self.font_path            = os.path.relpath(font.path)
     def __str__(self):
         substr = super().__str__()
-        return f"GLYPH:  {substr} from {self.font_path}"
+        return f"GLYPH:  {substr}"
