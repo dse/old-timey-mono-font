@@ -28,7 +28,7 @@ def main():
 
             parse_result = GlyphNameCharData(glyphname)
             code = parse_result.code
-            name = parse_result.norm_glyph_name
+            name = parse_result.name
 
             if name in font and len(font[name].foreground):
                 raise Exception(f"glyph {glyphname} already contains contours; skipping")

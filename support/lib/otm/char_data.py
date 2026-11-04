@@ -5,182 +5,168 @@ from otm.util import u, is_valid_code
 ATTRS = [
     "code",
     "variant",
-    "norm_glyph_name",
+    "name",
     "svg_filename",
     "glyph",
-    "norm_code",
+    "_norm_code",
     "key",
+    "sort_key",
 ]
 
 class CharData:
-    def __init__(self, item=None):
+
+    def __init__(self, *args, **kwargs):
+        self._real_init(*args, *kwargs)
+        if is_valid_code(self.code):
+            self.sort_key = (0, self.code)
+            self.key = self.name
+        elif is_valid_code(self._norm_code):
+            self.sort_key = (1, self.variant, self.code)
+            self.key = self.name
+        else:
+            self.sort_key = (2, self.name)
+            self.key = self.name
+
+    # we override _real_init in subclasses so the code in __init__
+    # that sets self.sort_key is always called after all
+    # initialization.
+    def _real_init(self):
         for attr in ATTRS:
             setattr(self, attr, None)
-            self.variant = ""
-            self.code = -1
-            self.norm_code = self.code
-        if item is None:
-            pass
-        elif type(item) in [list, tuple]:
-            for idx, attr_name in enumerate(ATTRS):
-                if idx >= len(item):
-                    break
-                setattr(self, attr_name, item[idx])
-        elif isinstance(item, CharData):
-            for idx, attr_name in enumerate(ATTRS):
-                setattr(self, attr_name, item.get(attr_name, None))
-        else:
-            raise TypeError(f"invalid item constructor param type: {type(item)}")
+        self.variant    = ""
+        self.code       = -1
+        self._norm_code = self.code
+
     def keys(self):
         return ATTRS
+
     def __getitem__(self, key):
         if key in self.keys():
             return getattr(self, key)
         return KeyError(key)
+
     def __iter__(self):
         for key in self.keys():
             yield getattr(self, key)
+
     def __str__(self):
-        name = self.norm_glyph_name
+        name = self.name
         u_code = ("U+%04X" % self.code) if is_valid_code(self.code) else str(self.code)
         return f"<{self.__class__.__name__}> KEY={name:<24s} {u_code:<8s}"
+
     def as_char(self):
         return (
-            chr(self.norm_code)
+            chr(self._norm_code)
             if
-            is_valid_code(self.norm_code)
+            is_valid_code(self._norm_code)
             else
             "(no char)"
         )
 
 class GlyphCodeCharData(CharData):
-    def __init__(self, code):
-        super().__init__()
+    def _real_init(self, code):
+        super()._real_init()
         if is_valid_code(code):
             name = fontforge.nameFromUnicode(code)
         else:
             name = "???"
-        self.code                 = code
-        self.variant              = ""
-        self.norm_glyph_name      = name
-        self.svg_filename         = None
-        self.glyph                = None
-        self.norm_code            = code
-        self.key                  = name
+        self.code         = code
+        self.variant      = ""
+        self.name         = name
+        self.svg_filename = None
+        self.glyph        = None
+        self._norm_code   = code
 
 class GlyphNameCharData(CharData):
-    def __init__(self, name):
-        super().__init__()
+    def _real_init(self, name):
+        super()._real_init()
         if match := re.fullmatch(r'([0-9A-Fa-f]{4,})(\.[^\.]+)', name):
-            code = -1
-            norm_code = int(match[1], 16)
-            variant = match[2]
-            char_name = fontforge.nameFromUnicode(norm_code)
+            code                 = -1
+            norm_code            = int(match[1], 16)
+            variant              = match[2]
+            char_name            = fontforge.nameFromUnicode(norm_code)
             orig_glyph_name      = char_name + variant
-            orig_base_glyph_name = char_name
-            norm_glyph_name      = char_name + variant
-            norm_base_glyph_name = char_name
+            name                 = char_name + variant
         elif match := re.fullmatch(r'[0-9A-Fa-f]{4,}', name):
-            code = int(name, 16)
-            norm_code = code
-            variant = ""
-            char_name = fontforge.nameFromUnicode(norm_code)
+            code                 = int(name, 16)
+            norm_code            = code
+            variant              = ""
+            char_name            = fontforge.nameFromUnicode(norm_code)
             orig_glyph_name      = char_name
-            orig_base_glyph_name = char_name
-            norm_glyph_name      = char_name
-            norm_base_glyph_name = char_name
+            name                 = char_name
         elif match := re.fullmatch(r'([^\.]+)(\.[^\.]+)', name):
-            variant = match[2]
+            variant              = match[2]
             orig_glyph_name      = match[1] + variant
-            orig_base_glyph_name = match[1]
-            code = -1
-            norm_code = fontforge.unicodeFromName(match[1])
+            code                 = -1
+            norm_code            = fontforge.unicodeFromName(match[1])
             if norm_code < 0:
-                norm_glyph_name      = match[1] + variant
-                norm_base_glyph_name = match[1]
-            else:
-                char_name = fontforge.nameFromUnicode(norm_code)
-                norm_glyph_name      = char_name + variant
-                norm_base_glyph_name = char_name
-        elif match := re.fullmatch(r'([^\.]+)', name):
-            variant = ""
-            orig_glyph_name      = match[1] + variant
-            orig_base_glyph_name = match[1]
-            code = fontforge.unicodeFromName(match[1])
-            norm_code = code
-            if code < 0:
-                norm_glyph_name      = match[1] + variant
-                norm_base_glyph_name = match[1]
+                name                 = match[1] + variant
             else:
                 char_name            = fontforge.nameFromUnicode(norm_code)
-                norm_glyph_name      = char_name + variant
-                norm_base_glyph_name = char_name
+                name                 = char_name + variant
+        elif match := re.fullmatch(r'([^\.]+)', name):
+            variant              = ""
+            orig_glyph_name      = match[1] + variant
+            code                 = fontforge.unicodeFromName(match[1])
+            norm_code            = code
+            if code < 0:
+                name                 = match[1] + variant
+            else:
+                char_name            = fontforge.nameFromUnicode(norm_code)
+                name                 = char_name + variant
         else:
             raise Exception(f'glyph name {repr(name)} cannot be parsed')
-
-        self.key                  = norm_glyph_name
-        self.code                 = code
-        self.norm_code            = norm_code
-        self.variant              = variant
-        self.norm_glyph_name      = norm_glyph_name
-        self.svg_filename         = None
-        self.glyph                = None
+        self.code         = code
+        self._norm_code   = norm_code
+        self.variant      = variant
+        self.name         = name
+        self.svg_filename = None
+        self.glyph        = None
     def __str__(self):
         substr = super().__str__()
         return f"NAMED:  {substr} from {self.svg_filename} => {self.as_createchar_call()}"
     def as_createchar_call(self):
-        return f"font.createChar({repr(self.code)}, {repr(self.norm_glyph_name)}) # {repr(self.as_char())}"
+        return f"font.createChar({repr(self.code)}, {repr(self.name)}) # {repr(self.as_char())}"
 
 class SVGCharData(GlyphNameCharData):
-    def __init__(self, svg_filename):
+    def _real_init(self, svg_filename):
         _, svg_basename = os.path.split(svg_filename)
         svg_stem, _ = os.path.splitext(svg_basename)
-        super().__init__(svg_stem)
+        super()._real_init(svg_stem)
         self.svg_filename = svg_filename
     def __str__(self):
         substr = super().__str__()
         return f"SVG:    {substr[8:]}"
 
 class GlyphCharData(CharData):
-    def __init__(self, glyph):
-        super().__init__()
-
+    def _real_init(self, glyph):
+        super()._real_init()
         orig_glyph_name = glyph.glyphname
-        orig_code = glyph.unicode
-
+        orig_code       = glyph.unicode
         if match := re.fullmatch(r'([^\.]+)(\.[^\.]+)', glyph.glyphname):
             orig_base_glyph_name = match[1]
-            variant = match[2]
+            variant              = match[2]
         else:
             orig_base_glyph_name = glyph.glyphname
-            variant = ""
-
+            variant              = ""
         norm_code = fontforge.unicodeFromName(orig_base_glyph_name)
         if norm_code < 0:
             norm_code = glyph.unicode
-
         code = norm_code
         if variant != "":
             code = -1
-
         if code < 0:
-            norm_base_glyph_name = orig_base_glyph_name
-            norm_glyph_name      = orig_base_glyph_name + variant
+            name                 = orig_base_glyph_name + variant
         else:
-            char_name = fontforge.nameFromUnicode(code)
-            norm_base_glyph_name = char_name
-            norm_glyph_name      = char_name + variant
+            char_name            = fontforge.nameFromUnicode(code)
+            name                 = char_name + variant
+        self.code         = code
+        self._norm_code   = norm_code
+        self.variant      = variant
+        self.name         = name
+        self.svg_filename = None
+        self.glyph        = glyph
 
-        self.key = norm_glyph_name
-
-        self.code                 = code
-        self.norm_code            = norm_code
-        self.variant              = variant
-        self.norm_glyph_name      = norm_glyph_name
-        self.svg_filename         = None
-        self.glyph                = glyph
-
-        font = self.glyph.font
     def __str__(self):
         substr = super().__str__()
         return f"GLYPH:  {substr}"

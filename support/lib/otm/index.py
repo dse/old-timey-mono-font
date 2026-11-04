@@ -138,7 +138,7 @@ def verify_glyphs(svg_list, svg_dict, glyph_list, glyph_dict, verbose=False):
             matches)
 
 def noindex(item):
-    glyphname = item.norm_glyph_name
+    glyphname = item.name
     code = item.code
     return (
         glyphname.endswith(".SMOL") or

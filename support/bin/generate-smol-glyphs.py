@@ -35,7 +35,7 @@ SPECIAL_GLYPHS = {
     "grave": "grave.cv09",
 
 # aperture
-    "a": "a.ss04",
+    "a": "a.ss07",
     "c": "c.ss04",
     "e": "e.ss04",
     "s": "s.ss04",
@@ -71,15 +71,18 @@ def main():
 
     for code in SMOL_GLYPH_CODES:
         plain_glyphname = fontforge.nameFromUnicode(code)
-        source_glyphname = fontforge.nameFromUnicode(code)
+        source_glyphname = plain_glyphname
         if source_glyphname in SPECIAL_GLYPHS:
             source_glyphname = SPECIAL_GLYPHS[source_glyphname]
         elif source_glyphname + ".ss07" in font:
             source_glyphname += ".ss07"
+        smol_glyphname = plain_glyphname + ".SMOL"
+
+        print("generating %s from %s" % (smol_glyphname, source_glyphname))
 
         source_glyph = font[source_glyphname]
 
-        smol_glyph = font.createChar(-1, plain_glyphname + ".SMOL")
+        smol_glyph = font.createChar(-1, smol_glyphname)
         smol_glyph.foreground = fontforge.layer()
         smol_glyph.references = ()
         pen = smol_glyph.glyphPen()

@@ -52,28 +52,24 @@ def main():
         ]
     ]
 
-    def items_key_fn(item):
-        code      = item.code      if is_valid_code(item.code)      else float('inf')
-        norm_code = item.norm_code if is_valid_code(item.norm_code) else float('inf')
-        name      = item.norm_glyph_name
-        variant   = item.variant
-        return (variant, code, norm_code, name)
-
-    items.sort(key=items_key_fn)
+    items.sort(key=lambda x: x.sort_key)
 
     for item in items:
         print(f"fill-slots-in-order {item}")
-        print(f"createChar EEEE {item.code} {item.norm_glyph_name}")
+        print(f"createChar EEEE {item.code} {item.name}")
         # if (item.code == 0x259):
         #     # fill-slots-in-order.py
         #     raise Exception("WHEEEEE")
-        glyph = font.createChar(item.code, item.norm_glyph_name)
+        glyph = font.createChar(item.code, item.name)
         glyph.width = DEFAULT_GLYPH_WIDTH
         glyph.changed = True
 
     print(f"createChar FFFF -1 DUMMY")
     glyph = font.createChar(-1, "DUMMY")
     glyph.width = DEFAULT_GLYPH_WIDTH
+
+    font.encoding = "UnicodeFull"
+    font.encoding = "compacted"
 
     if args.filename.lower().endswith(".sfd"):
         font.save(args.filename)

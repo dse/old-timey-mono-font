@@ -30,10 +30,7 @@ def main():
     glyph_width = round(statistics.median(widths))
 
     for item in svg_list:
-        if item.name_is_arbitrary:
-            glyph = font.createChar(item.code, item.norm_glyph_name)
-        else:
-            glyph = font.createChar(item.code, item.norm_glyph_name)
+        glyph = font.createChar(item.code, item.name)
         if len(glyph.references):
             if len(glyph.foreground):
                 raise Exception(f"glyph {glyph.glyphname} contains both contours AND references")

@@ -1,6 +1,6 @@
 #!/usr/bin/env -S fontforge -quiet -lang=py -script
 # -*- mode: python; coding: utf-8 -*-
-import fontforge, argparse, glob, os, sys, re, json
+import fontforge, argparse, glob, os, sys, re, json, psMat
 
 sys.path.append(os.path.join(os.path.dirname(__file__), "..", "lib"))
 
@@ -37,12 +37,23 @@ def main():
     smol_glyph_list, smol_glyph_dict = index_glyph_names(smol_glyph_names)
 
     for item in [*verified_svg_list, *smol_glyph_list]:
-        glyph = font.createChar(item.code, item.norm_glyph_name)
+        glyph = font.createChar(item.code, item.name)
+        if item.code in GENERATED_GLYPH_CODES:
+            # print("%s: is a generated char; skipping..." % glyph.glyphname)
+            continue
         if len(glyph.references) and len(glyph.foreground):
             raise Exception(f"glyph {glyph.glyphname} contains both contours AND references")
-        if not len(glyph.foreground):
-            continue
+        if len(glyph.references):
+            # print("%s: has %d references; trying to unroll..." % (glyph.glyphname, len(glyph.references)))
+            unroll(glyph)
+
+    for item in [*verified_svg_list, *smol_glyph_list]:
+        glyph = font.createChar(item.code, item.name)
         if item.code in GENERATED_GLYPH_CODES:
+            # print("%s: is a generated char; skipping..." % glyph.glyphname)
+            continue
+        if not len(glyph.foreground):
+            # print("%s: no contours; skipping..." % (glyph.glyphname))
             continue
         stroke_width = None
         if item.code in STROKE_WIDTHS:
@@ -68,6 +79,7 @@ def main():
         if not stroke_width:
             continue
         fill = item.code in FILL_GLYPHS or glyph.glyphname in FILL_GLYPHS
+        # print("%s: stroking ..." % glyph.glyphname)
         glyph.stroke("circular", stroke_width, removeinternal=fill)
 
     if args.filename.endswith('.sfd'):
@@ -143,4 +155,39 @@ FILL_GLYPHS = [
     "uni0307.LCCM",             # dot above
 ]
 
+def unroll(glyph, sub_glyph=None, transform=(1,0,0,1,0,0), indent=""):
+    print(indent + "unroll(%s, %s, transform=%s)" % (glyph.glyphname, sub_glyph.glyphname if sub_glyph else "None", transform))
+    if not sub_glyph and not glyph.references:
+        return
+    if not sub_glyph:
+        sub_glyph = glyph
+    for ref in sub_glyph.references:
+        print(indent + "  %s has reference %s" % (sub_glyph.glyphname, repr(ref)))
+        ref_glyphname, ref_transform, *_ = ref
+        ref_glyph = glyph.font[ref_glyphname]
+        new_transform = psMat.compose(transform, ref_transform)
+        unroll(glyph, ref_glyph, transform=new_transform, indent=indent+"    ")
+    if sub_glyph is not glyph:
+        for contour in sub_glyph.foreground:
+            print(indent + "  %s has contour of length %d; drawing into %s" % (sub_glyph.glyphname, len(contour), glyph.glyphname))
+            contour = contour.dup()
+            contour.transform(transform)
+            pen = glyph.glyphPen(replace=False)
+            contour.draw(pen)
+            pen = None
+    sub_glyph.references = ()
+
 main()
+
+# a.acutecedilla
+#     ((a.cedilla, xform1)
+#      (acute, xform2)))
+# a.cedilla
+#     ((a, xform3)
+#      (cedilla, xform4))
+
+# unroll(a.acutecedilla, ref_glyph=None, transform=None)
+#     unroll(a.acutecedilla, ref_glyph=a.cedilla, transform=xform1)
+#         unroll(a.acutecedilla, ref_glyph=a, transform=xform1|xform3)
+#         unroll(a.acutecedilla, ref_glyph=cedilla, transform=xform1|xform4)
+#     unroll(a.acutecedilla, ref_glyph=acute, transform=xform2)
