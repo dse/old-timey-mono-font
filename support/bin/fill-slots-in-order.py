@@ -33,12 +33,8 @@ def main():
     generated_glyph_names = [fontforge.nameFromUnicode(code) for code in GENERATED_GLYPH_CODES]
     generated_items = [parse_glyph_name(glyph_name) for glyph_name in generated_glyph_names]
 
-    print("C")
-
     smol_glyph_names = [fontforge.nameFromUnicode(code) + ".SMOL" for code in SMOL_GLYPH_CODES]
     smol_items = [parse_glyph_name(glyph_name) for glyph_name in smol_glyph_names]
-
-    print("D")
 
     matched_svg_items = [parse_svg_filename(filename) for filename in svg_filenames]
 
@@ -55,16 +51,10 @@ def main():
     items.sort(key=lambda x: x.sort_key)
 
     for item in items:
-        print(f"fill-slots-in-order {item}")
-        print(f"createChar EEEE {item.code} {item.name}")
-        # if (item.code == 0x259):
-        #     # fill-slots-in-order.py
-        #     raise Exception("WHEEEEE")
         glyph = font.createChar(item.code, item.name)
         glyph.width = DEFAULT_GLYPH_WIDTH
         glyph.changed = True
 
-    print(f"createChar FFFF -1 DUMMY")
     glyph = font.createChar(-1, "DUMMY")
     glyph.width = DEFAULT_GLYPH_WIDTH
 

@@ -78,7 +78,7 @@ def main():
             source_glyphname += ".ss07"
         smol_glyphname = plain_glyphname + ".SMOL"
 
-        print("generating %s from %s" % (smol_glyphname, source_glyphname))
+        # print("generating %s from %s" % (smol_glyphname, source_glyphname))
 
         source_glyph = font[source_glyphname]
 

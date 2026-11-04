@@ -156,20 +156,20 @@ FILL_GLYPHS = [
 ]
 
 def unroll(glyph, sub_glyph=None, transform=(1,0,0,1,0,0), indent=""):
-    print(indent + "unroll(%s, %s, transform=%s)" % (glyph.glyphname, sub_glyph.glyphname if sub_glyph else "None", transform))
+    # print(indent + "unroll(%s, %s, transform=%s)" % (glyph.glyphname, sub_glyph.glyphname if sub_glyph else "None", transform))
     if not sub_glyph and not glyph.references:
         return
     if not sub_glyph:
         sub_glyph = glyph
     for ref in sub_glyph.references:
-        print(indent + "  %s has reference %s" % (sub_glyph.glyphname, repr(ref)))
+        # print(indent + "  %s has reference %s" % (sub_glyph.glyphname, repr(ref)))
         ref_glyphname, ref_transform, *_ = ref
         ref_glyph = glyph.font[ref_glyphname]
         new_transform = psMat.compose(transform, ref_transform)
         unroll(glyph, ref_glyph, transform=new_transform, indent=indent+"    ")
     if sub_glyph is not glyph:
         for contour in sub_glyph.foreground:
-            print(indent + "  %s has contour of length %d; drawing into %s" % (sub_glyph.glyphname, len(contour), glyph.glyphname))
+            # print(indent + "  %s has contour of length %d; drawing into %s" % (sub_glyph.glyphname, len(contour), glyph.glyphname))
             contour = contour.dup()
             contour.transform(transform)
             pen = glyph.glyphPen(replace=False)
