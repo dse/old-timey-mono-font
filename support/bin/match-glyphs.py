@@ -4,7 +4,7 @@ import fontforge, argparse, glob, os, re, json, sys
 
 sys.path.append(os.path.join(os.path.dirname(__file__), "..", "lib"))
 
-from otm.index import index_svg_filenames, index_glyphs, verify_glyphs
+from otm.index import index_svg_filenames, index_glyphs, match_glyphs
 from otm.util import walk_svg
 
 def main():
@@ -25,6 +25,6 @@ def main():
 
     svg_list, svg_dict = index_svg_filenames(svg_filenames, verbose=True)
     glyph_list, glyph_dict = index_glyphs(font, verbose=True)
-    verify_glyphs(svg_list, svg_dict, glyph_list, glyph_dict, verbose=True)
+    match_glyphs(svg_list, svg_dict, glyph_list, glyph_dict, verbose=True)
 
 main()

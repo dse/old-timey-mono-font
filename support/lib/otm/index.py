@@ -55,16 +55,16 @@ def parse_glyph_name(glyphname, verbose=False):
     #     print("parse_glyph_name: " + str(data))
     return data
 
-def verify_glyphs(svg_list, svg_dict, glyph_list, glyph_dict, verbose=False):
-    verified_svg_list = []
-    verified_svg_dict = {}
-    verified_glyph_list = []
-    verified_glyph_dict = {}
+def match_glyphs(svg_list, svg_dict, glyph_list, glyph_dict, verbose=False):
+    matched_svg_list = []
+    matched_svg_dict = {}
+    matched_glyph_list = []
+    matched_glyph_dict = {}
 
-    svg_only_list = []
-    svg_only_dict = {}
-    glyph_only_list = []
-    glyph_only_dict = {}
+    unmatched_svg_list = []
+    unmatched_svg_dict = {}
+    unmatched_glyph_list = []
+    unmatched_glyph_dict = {}
 
     success = True
 
@@ -74,23 +74,23 @@ def verify_glyphs(svg_list, svg_dict, glyph_list, glyph_dict, verbose=False):
 
         if item.key not in glyph_dict:
             if verbose:
-                print("verify_glyphs: " + str(item) + " -- not in glyphs")
+                print("match_glyphs: " + str(item) + " -- not in glyphs")
             success = False
-            svg_only_list.append(item)
-            if item.key in svg_only_dict:
-                sys.stderr.write(f"NEW ITEM: {item}\nOLD ITEM: {svg_only_dict[item.key]}\n")
-                raise KeyError(f"{repr(item.key)} already in svg_only_dict:")
+            unmatched_svg_list.append(item)
+            if item.key in unmatched_svg_dict:
+                sys.stderr.write(f"NEW ITEM: {item}\nOLD ITEM: {unmatched_svg_dict[item.key]}\n")
+                raise KeyError(f"{repr(item.key)} already in unmatched_svg_dict:")
                 pass
             else:
-                svg_only_dict[item.key] = item
+                unmatched_svg_dict[item.key] = item
         else:
-            verified_svg_list.append(item)
-            if item.key in verified_glyph_dict:
-                sys.stderr.write(f"NEW ITEM: {item}\nOLD ITEM: {verified_glyph_dict[item.key]}\n")
-                raise KeyError(f"{repr(item.key)} already in verified_svg_dict:")
+            matched_svg_list.append(item)
+            if item.key in matched_glyph_dict:
+                sys.stderr.write(f"NEW ITEM: {item}\nOLD ITEM: {matched_glyph_dict[item.key]}\n")
+                raise KeyError(f"{repr(item.key)} already in matched_svg_dict:")
                 pass
             else:
-                verified_svg_dict[item.key] = item
+                matched_svg_dict[item.key] = item
 
     matches = []
 
@@ -104,37 +104,37 @@ def verify_glyphs(svg_list, svg_dict, glyph_list, glyph_dict, verbose=False):
         elif len(glyph.references):
             if len(glyph.foreground):
                 if verbose:
-                    print("verify_glyphs: " + str(item) + " -- contains both references AND contours")
+                    print("match_glyphs: " + str(item) + " -- contains both references AND contours")
             continue
         if item.key not in svg_dict:
             if verbose:
-                print("verify_glyphs: " + str(item) + " -- not found in SVG files")
+                print("match_glyphs: " + str(item) + " -- not found in SVG files")
             success = False
-            glyph_only_list.append(item)
-            if item.key in glyph_only_dict:
-                sys.stderr.write(f"NEW ITEM: {item}\nOLD ITEM: {glyph_only_dict[item.key]}\n")
-                raise KeyError(f"{repr(item.key)} already in glyph_only_dict:")
+            unmatched_glyph_list.append(item)
+            if item.key in unmatched_glyph_dict:
+                sys.stderr.write(f"NEW ITEM: {item}\nOLD ITEM: {unmatched_glyph_dict[item.key]}\n")
+                raise KeyError(f"{repr(item.key)} already in unmatched_glyph_dict:")
                 pass
             else:
-                glyph_only_dict[item.key] = item
+                unmatched_glyph_dict[item.key] = item
         else:
-            verified_glyph_list.append(item)
-            if item.key in verified_glyph_dict:
-                sys.stderr.write(f"NEW ITEM: {item}\nOLD ITEM: {verified_glyph_dict[item.key]}\n")
-                raise KeyError(f"{repr(item.key)} already in verified_glyph_dict:")
+            matched_glyph_list.append(item)
+            if item.key in matched_glyph_dict:
+                sys.stderr.write(f"NEW ITEM: {item}\nOLD ITEM: {matched_glyph_dict[item.key]}\n")
+                raise KeyError(f"{repr(item.key)} already in matched_glyph_dict:")
                 pass
             else:
-                verified_glyph_dict[item.key] = item
+                matched_glyph_dict[item.key] = item
             matches.append((svg_dict[item.key], item))
 
     if verbose:
         for match in matches:
-            print("verify_glyphs: MATCH:  %s" % match[0])
+            print("match_glyphs: MATCH:  %s" % match[0])
             print("                       %s" % match[1])
 
     return (success, 
-            verified_svg_list, verified_svg_dict, verified_glyph_list, verified_glyph_dict,
-            svg_only_list,     svg_only_dict,     glyph_only_list,     glyph_only_dict,
+            matched_svg_list, matched_svg_dict, matched_glyph_list, matched_glyph_dict,
+            unmatched_svg_list,    unmatched_svg_dict,    unmatched_glyph_list,    unmatched_glyph_dict,
             matches)
 
 def noindex(item):

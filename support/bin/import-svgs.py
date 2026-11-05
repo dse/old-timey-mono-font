@@ -4,7 +4,7 @@ import fontforge, argparse, glob, os, sys, re, json, unicodedata, statistics
 
 sys.path.append(os.path.join(os.path.dirname(__file__), "..", "lib"))
 
-from otm.index import index_svg_filenames, index_glyphs, verify_glyphs
+from otm.index import index_svg_filenames, index_glyphs, match_glyphs
 from otm.util import walk_svg
 
 def main():

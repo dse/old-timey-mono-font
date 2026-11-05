@@ -4,7 +4,7 @@ import fontforge, argparse, glob, os, sys, re, json, psMat
 
 sys.path.append(os.path.join(os.path.dirname(__file__), "..", "lib"))
 
-from otm.index import index_svg_filenames, index_glyphs, verify_glyphs, index_glyph_names
+from otm.index import index_svg_filenames, index_glyphs, match_glyphs, index_glyph_names
 from otm.util import walk_svg
 from my_font_utils import DEFAULT_GLYPHS_DATA_JSON_FILENAME
 from otm.generated import GENERATED_GLYPH_CODES
@@ -32,12 +32,12 @@ def main():
     svg_list, svg_dict = index_svg_filenames(svg_filenames)
     glyph_list, glyph_dict = index_glyphs(font)
 
-    verified_svg_list = verify_glyphs(svg_list, svg_dict, glyph_list, glyph_dict)[1]
+    matched_svg_list = match_glyphs(svg_list, svg_dict, glyph_list, glyph_dict)[1]
 
     smol_glyph_names = [glyph.glyphname for glyph in font.glyphs() if glyph.glyphname.endswith(".SMOL")]
     smol_glyph_list, smol_glyph_dict = index_glyph_names(smol_glyph_names)
 
-    for item in [*verified_svg_list, *smol_glyph_list]:
+    for item in [*matched_svg_list, *smol_glyph_list]:
         glyph = font.createChar(item.code, item.name)
         if item.code in GENERATED_GLYPH_CODES:
             # print("%s: is a generated char; skipping..." % glyph.glyphname)
@@ -48,7 +48,7 @@ def main():
             # print("%s: has %d references; trying to unroll..." % (glyph.glyphname, len(glyph.references)))
             unroll(glyph)
 
-    for item in [*verified_svg_list, *smol_glyph_list]:
+    for item in [*matched_svg_list, *smol_glyph_list]:
         glyph = font.createChar(item.code, item.name)
         if item.code in GENERATED_GLYPH_CODES:
             # print("%s: is a generated char; skipping..." % glyph.glyphname)
