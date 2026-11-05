@@ -11,6 +11,7 @@ from otm.char_data import GlyphNameCharData
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("filename")
+    parser.add_argument("-v", "--verbose", action="count", default=0)
     args = parser.parse_args()
 
     references_dict = json.loads(open("src/data/new-references.json", "r").read())["references"]

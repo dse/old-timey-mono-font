@@ -6,6 +6,7 @@ def main():
     global args
     parser = argparse.ArgumentParser()
     parser.add_argument("filename", type=str)
+    parser.add_argument("-v", "--verbose", action="count", default=0)
     args = parser.parse_args()
 
     font = fontforge.open(args.filename)

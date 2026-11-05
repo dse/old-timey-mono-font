@@ -7,6 +7,7 @@ def main():
     parser.add_argument("input_filename")
     parser.add_argument("output_filename")
     parser.add_argument("-n", "--dry-run", action="store_true")
+    parser.add_argument("-v", "--verbose", action="count", default=0)
     args = parser.parse_args()
 
     input_dir, input_basename = os.path.split(args.input_filename)

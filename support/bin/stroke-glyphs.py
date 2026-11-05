@@ -17,6 +17,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('filename')
     parser.add_argument('svg_filenames', nargs='*')
+    parser.add_argument("-v", "--verbose", action="count", default=0)
     args = parser.parse_args()
 
     if len(args.svg_filenames):

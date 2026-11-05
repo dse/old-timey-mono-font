@@ -6,6 +6,7 @@ import fontforge, json, argparse, os
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("filename")
+    parser.add_argument("-v", "--verbose", action="count", default=0)
     args = parser.parse_args()
 
     data = json.loads(open("fonts.json", "r").read())
