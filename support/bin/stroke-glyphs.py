@@ -179,16 +179,3 @@ def unroll(glyph, sub_glyph=None, transform=(1,0,0,1,0,0), indent=""):
     sub_glyph.references = ()
 
 main()
-
-# a.acutecedilla
-#     ((a.cedilla, xform1)
-#      (acute, xform2)))
-# a.cedilla
-#     ((a, xform3)
-#      (cedilla, xform4))
-
-# unroll(a.acutecedilla, ref_glyph=None, transform=None)
-#     unroll(a.acutecedilla, ref_glyph=a.cedilla, transform=xform1)
-#         unroll(a.acutecedilla, ref_glyph=a, transform=xform1|xform3)
-#         unroll(a.acutecedilla, ref_glyph=cedilla, transform=xform1|xform4)
-#     unroll(a.acutecedilla, ref_glyph=acute, transform=xform2)
